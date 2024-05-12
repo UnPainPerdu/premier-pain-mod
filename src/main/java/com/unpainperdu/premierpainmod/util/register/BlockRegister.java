@@ -21,8 +21,8 @@ public class BlockRegister
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ItemRegister.ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
 
-    public static final DeferredBlock<Block> TEST = BLOCKS.register("test",() -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.STONE).noOcclusion().strength(1.5f).requiresCorrectToolForDrops()));
-    public static final DeferredItem<BlockItem> TEST_ITEM = ItemRegister.ITEMS.registerSimpleBlockItem("test", TEST);
+    public static final DeferredBlock<Block> OAK_VILLAGER_STATUE = BLOCKS.register("oak_villager_statue",() -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(2.0f).requiresCorrectToolForDrops()));
+    public static final DeferredItem<BlockItem> TEST_ITEM = ItemRegister.ITEMS.registerSimpleBlockItem("oak_villager_statue", OAK_VILLAGER_STATUE);
     public static void register(IEventBus modEventBus)
     {
         BLOCKS.register(modEventBus);

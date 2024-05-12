@@ -23,7 +23,7 @@ public class CreativeTabRegister
                 output.accept(ItemRegister.EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
 
                 output.accept(BlockRegister.EXAMPLE_BLOCK.get());
-                output.accept(BlockRegister.TEST.get());
+                output.accept(BlockRegister.OAK_VILLAGER_STATUE.get());
             }).build());
     public static void register(IEventBus modEventBus)
     {
