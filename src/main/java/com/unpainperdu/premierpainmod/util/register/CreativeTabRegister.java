@@ -18,10 +18,10 @@ public class CreativeTabRegister
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("premier_pain_mod", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.premierpainmod")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> ItemRegister.EXAMPLE_ITEM.get().getDefaultInstance())
+            .icon(() -> ItemRegister.VILLAGER_ICON.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(ItemRegister.EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
-
+                //Items
+                //Blocks
                 output.accept(BlockRegister.OAK_VILLAGER_STATUE.get());
                 output.accept(BlockRegister.BIRCH_VILLAGER_STATUE.get());
             }).build());
