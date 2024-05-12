@@ -1,8 +1,10 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.world.block.VillagerStatue;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -19,6 +21,8 @@ public class BlockRegister
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ItemRegister.ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
 
+    public static final DeferredBlock<Block> TEST = BLOCKS.register("test",() -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.STONE).noOcclusion().strength(1.5f).requiresCorrectToolForDrops()));
+    public static final DeferredItem<BlockItem> TEST_ITEM = ItemRegister.ITEMS.registerSimpleBlockItem("test", TEST);
     public static void register(IEventBus modEventBus)
     {
         BLOCKS.register(modEventBus);

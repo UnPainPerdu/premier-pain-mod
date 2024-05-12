@@ -40,5 +40,4 @@ public class PremierPainMod {
     {
         RegisterHandler.globalRegister(modEventBus);
     }
-
 }
