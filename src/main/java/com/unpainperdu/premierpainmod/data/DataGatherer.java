@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.data;
 
+import com.unpainperdu.premierpainmod.data.language.ModLanguageProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -15,6 +16,7 @@ public class DataGatherer
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+        new ModLanguageProvider(event, generator, packOutput);
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
     }
 }
