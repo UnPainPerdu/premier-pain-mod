@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod;
 
+import com.unpainperdu.premierpainmod.data.DataGatherer;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.CreativeTabRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
@@ -38,6 +39,7 @@ public class PremierPainMod {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public PremierPainMod(IEventBus modEventBus, ModContainer modContainer)
     {
+        modEventBus.addListener(DataGatherer::dataGatherer);
         RegisterHandler.globalRegister(modEventBus);
     }
 }
