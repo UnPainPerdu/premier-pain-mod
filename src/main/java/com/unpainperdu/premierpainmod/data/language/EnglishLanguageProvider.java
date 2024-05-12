@@ -4,7 +4,8 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import org.apache.commons.lang3.text.WordUtils;
+
+import static org.apache.commons.lang3.StringUtils.capitalize;
 
 public class EnglishLanguageProvider extends LanguageProvider
 {
@@ -23,7 +24,7 @@ public class EnglishLanguageProvider extends LanguageProvider
     }
     private void StatueTranslation(String suffix)
     {
-        String translation = WordUtils.capitalizeFully(suffix);
+        String translation = capitalize(suffix);
         String statue = "_villager_statue";
         String Tstatue = " villager statue";
         add("block."+PremierPainMod.MODID+"."+suffix+statue,translation+Tstatue);
