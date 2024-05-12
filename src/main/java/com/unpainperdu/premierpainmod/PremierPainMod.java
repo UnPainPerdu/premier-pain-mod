@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.CreativeTabRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.RegisterHandler;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,12 +38,7 @@ public class PremierPainMod {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public PremierPainMod(IEventBus modEventBus, ModContainer modContainer)
     {
-        // Register the Deferred Register to the mod event bus so blocks get registered
-        BlockRegister.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
-        ItemRegister.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
-        CreativeTabRegister.register(modEventBus);
+        RegisterHandler.globalRegister(modEventBus);
     }
 
 }
