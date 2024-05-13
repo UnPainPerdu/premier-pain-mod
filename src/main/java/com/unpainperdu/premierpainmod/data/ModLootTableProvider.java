@@ -45,9 +45,9 @@ public class ModLootTableProvider extends LootTableProvider
         @Override
         public void generate()
         {
-            super.add(BlockRegister.OAK_VILLAGER_STATUE.get(), createDoubleBlockTable(BlockRegister.OAK_VILLAGER_STATUE.get()));
-            super.add(BlockRegister.BIRCH_VILLAGER_STATUE.get(), createDoubleBlockTable(BlockRegister.BIRCH_VILLAGER_STATUE.get()));
-            super.add(BlockRegister.STONE_VILLAGER_STATUE.get(), createDoubleBlockTable(BlockRegister.STONE_VILLAGER_STATUE.get()));
+            statueLootTableGenerator(BlockRegister.OAK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.BIRCH_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.STONE_VILLAGER_STATUE.get());
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
@@ -60,6 +60,10 @@ public class ModLootTableProvider extends LootTableProvider
         private LootTable.Builder createDoubleBlockTable(Block statue)
         {
             return this.createSinglePropConditionTable(statue, VillagerStatue.HALF, DoubleBlockHalf.LOWER);
+        }
+        private void statueLootTableGenerator(Block statue)
+        {
+            super.add(statue, createDoubleBlockTable(statue));
         }
     }
 }
