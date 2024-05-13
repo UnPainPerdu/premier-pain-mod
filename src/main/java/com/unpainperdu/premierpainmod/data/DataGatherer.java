@@ -18,5 +18,6 @@ public class DataGatherer
 
         new ModLanguageProvider(event, generator, packOutput);
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput, lookupProvider));
     }
 }
