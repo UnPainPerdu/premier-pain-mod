@@ -57,13 +57,9 @@ public class ModLootTableProvider extends LootTableProvider
                     .map(Map.Entry::getValue)
                     .collect(Collectors.toList());
         }
-        private LootTable.Builder createDoubleBlockTable(Block statue)
-        {
-            return this.createSinglePropConditionTable(statue, VillagerStatue.HALF, DoubleBlockHalf.LOWER);
-        }
         private void statueLootTableGenerator(Block statue)
         {
-            super.add(statue, createDoubleBlockTable(statue));
+            super.add(statue, this.createSinglePropConditionTable(statue, VillagerStatue.HALF, DoubleBlockHalf.LOWER));
         }
     }
 }
