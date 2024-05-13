@@ -1,3 +1,7 @@
-// 1.20.6	2024-05-12T17:43:00.4583859	Recipes
-b5ee2d90668a888e3cab9c809687fe562a6592e1 data/premierpainmod/advancements/recipes/building_blocks/oak_villager_statue.json
-f9ce4772e3e02d4dd62a936ce1718055a375514b data/premierpainmod/recipes/oak_villager_statue.json
+// 1.20.6	2024-05-13T14:26:01.8732661	Recipes
+3625ab635e388f3ec9ecdb2b94c3df6a11b02125 data/premierpainmod/advancements/recipes/building_blocks/birch_villager_statue.json
+68d13da3b785ed6ff6c2ba38779fbd120aded86c data/premierpainmod/advancements/recipes/building_blocks/oak_villager_statue.json
+12bd0e810e1abb3a45f5a8b47d4be51a9fc996e3 data/premierpainmod/advancements/recipes/building_blocks/stone_villager_statue.json
+52a37016facda7f41cf8f37dd09d2e64e8000efb data/premierpainmod/recipes/birch_villager_statue.json
+f7501a66c9c57a9fafa78ccfdeaeb776972e8e2f data/premierpainmod/recipes/oak_villager_statue.json
+2f5b4134dd8a22eecd19d20c17a18feaee0d7947 data/premierpainmod/recipes/stone_villager_statue.json

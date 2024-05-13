@@ -21,6 +21,7 @@ public class EnglishLanguageProvider extends LanguageProvider
 
         StatueTranslation("oak");
         StatueTranslation("birch");
+        StatueTranslation("stone");
     }
     private void StatueTranslation(String suffix)
     {

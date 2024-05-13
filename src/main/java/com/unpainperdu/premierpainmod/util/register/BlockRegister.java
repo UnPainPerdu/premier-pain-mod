@@ -7,7 +7,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -19,8 +18,9 @@ public class BlockRegister
 {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
-    public static final DeferredBlock<Block> OAK_VILLAGER_STATUE = registerBlock("oak_villager_statue", () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(2.0f)));
-    public static final DeferredBlock<Block> BIRCH_VILLAGER_STATUE = registerBlock("birch_villager_statue", () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(2.0f)));
+    public static final DeferredBlock<Block> OAK_VILLAGER_STATUE = registerBlock("oak_villager_statue", () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(2.0f,3.0f)));
+    public static final DeferredBlock<Block> BIRCH_VILLAGER_STATUE = registerBlock("birch_villager_statue", () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(2.0f,3.0f)));
+    public static final DeferredBlock<Block> STONE_VILLAGER_STATUE = registerBlock("stone_villager_statue", () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.STONE).noOcclusion().strength(1.5f,6.0f).requiresCorrectToolForDrops()));
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)

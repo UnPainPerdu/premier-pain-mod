@@ -24,6 +24,7 @@ public class CreativeTabRegister
                 //Blocks
                 output.accept(BlockRegister.OAK_VILLAGER_STATUE.get());
                 output.accept(BlockRegister.BIRCH_VILLAGER_STATUE.get());
+                output.accept(BlockRegister.STONE_VILLAGER_STATUE.get());
             }).build());
     public static void register(IEventBus modEventBus)
     {

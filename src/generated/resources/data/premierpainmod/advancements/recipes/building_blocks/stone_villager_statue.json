@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_oak_planks": {
+    "has_stone_planks": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:oak_planks"
+            "items": "minecraft:stone"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:oak_villager_statue"
+        "recipe": "premierpainmod:stone_villager_statue"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_oak_planks"
+      "has_stone_planks"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:oak_villager_statue"
+      "premierpainmod:stone_villager_statue"
     ]
   }
 }

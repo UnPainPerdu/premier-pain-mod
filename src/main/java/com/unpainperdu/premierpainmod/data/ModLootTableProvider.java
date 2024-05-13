@@ -47,6 +47,7 @@ public class ModLootTableProvider extends LootTableProvider
         {
             super.add(BlockRegister.OAK_VILLAGER_STATUE.get(), createDoubleBlockTable(BlockRegister.OAK_VILLAGER_STATUE.get()));
             super.add(BlockRegister.BIRCH_VILLAGER_STATUE.get(), createDoubleBlockTable(BlockRegister.BIRCH_VILLAGER_STATUE.get()));
+            super.add(BlockRegister.STONE_VILLAGER_STATUE.get(), createDoubleBlockTable(BlockRegister.STONE_VILLAGER_STATUE.get()));
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()

@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "minecraft:oak_planks"
+      "item": "minecraft:stone"
     }
   },
   "pattern": [
@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "premierpainmod:oak_villager_statue"
+    "id": "premierpainmod:stone_villager_statue"
   }
 }
