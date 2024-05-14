@@ -21,8 +21,18 @@ public class EnglishLanguageProvider extends LanguageProvider
 
         StatueTranslation("oak");
         StatueTranslation("birch");
+        StatueTranslation("spruce");
+        StatueTranslation("jungle");
+        StatueTranslation("acacia");
+        add("block.premierpainmod.dark_oak_villager_statue","Dark oak villager statue");
+        StatueTranslation("mangrove");
+        StatueTranslation("cherry");
+        StatueTranslation("crimson");
+        StatueTranslation("warped");
+        StatueTranslation("bamboo");
         StatueTranslation("stone");
     }
+    // will create translation : "block.premierpainmod.suffix_villager_statue": "Suffix villager statue"
     private void StatueTranslation(String suffix)
     {
         String translation = capitalize(suffix);

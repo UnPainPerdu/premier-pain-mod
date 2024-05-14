@@ -5,8 +5,10 @@ import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -23,7 +25,17 @@ public class ModBlockTagProvider extends BlockTagsProvider
     {
         this.tag(BlockTags.MINEABLE_WITH_AXE).add
                 (
-                        BlockRegister.OAK_VILLAGER_STATUE.get(),  BlockRegister.BIRCH_VILLAGER_STATUE.get()
+                        BlockRegister.OAK_VILLAGER_STATUE.get(),
+                        BlockRegister.BIRCH_VILLAGER_STATUE.get(),
+                        BlockRegister.SPRUCE_VILLAGER_STATUE.get(),
+                        BlockRegister.JUNGLE_VILLAGER_STATUE.get(),
+                        BlockRegister.ACACIA_VILLAGER_STATUE.get(),
+                        BlockRegister.DARK_OAK_VILLAGER_STATUE.get(),
+                        BlockRegister.MANGROVE_VILLAGER_STATUE.get(),
+                        BlockRegister.CHERRY_VILLAGER_STATUE.get(),
+                        BlockRegister.CRIMSON_VILLAGER_STATUE.get(),
+                        BlockRegister.WARPED_VILLAGER_STATUE.get(),
+                        BlockRegister.BAMBOO_VILLAGER_STATUE.get()
                 );
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add
                 (

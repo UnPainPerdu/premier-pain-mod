@@ -20,8 +20,18 @@ public class FrenchLanguageProvider extends LanguageProvider
 
         StatueTranslation("oak","chêne");
         StatueTranslation("birch","bouleau");
+        StatueTranslation("spruce","sapin");
+        StatueTranslation("jungle","acajou");
+        StatueTranslation("acacia","acacia");
+        add("block.premierpainmod.dark_oak_villager_statue","Statue de villageois en chêne noir");
+        StatueTranslation("mangrove","palétuvier");
+        StatueTranslation("cherry","cerisier");
+        add("block.premierpainmod.crimson_villager_statue","Statue de villageois en bois carmin");
+        add("block.premierpainmod.warped_villager_statue","Statue de villageois en bois biscornu");
+        StatueTranslation("bamboo","bambou");
         StatueTranslation("stone","pierre");
     }
+    // will create translation : "block.premierpainmod.'suffix'_villager_statue": "Statue de villageois en 'translation'"
     private void StatueTranslation(String suffix, String translation)
     {
         String statue = "_villager_statue";

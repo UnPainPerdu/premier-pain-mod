@@ -1,7 +1,16 @@
 {
+  "block.premierpainmod.acacia_villager_statue": "Acacia villager statue",
+  "block.premierpainmod.bamboo_villager_statue": "Bamboo villager statue",
   "block.premierpainmod.birch_villager_statue": "Birch villager statue",
+  "block.premierpainmod.cherry_villager_statue": "Cherry villager statue",
+  "block.premierpainmod.crimson_villager_statue": "Crimson villager statue",
+  "block.premierpainmod.dark_oak_villager_statue": "Dark oak villager statue",
+  "block.premierpainmod.jungle_villager_statue": "Jungle villager statue",
+  "block.premierpainmod.mangrove_villager_statue": "Mangrove villager statue",
   "block.premierpainmod.oak_villager_statue": "Oak villager statue",
+  "block.premierpainmod.spruce_villager_statue": "Spruce villager statue",
   "block.premierpainmod.stone_villager_statue": "Stone villager statue",
+  "block.premierpainmod.warped_villager_statue": "Warped villager statue",
   "item.premierpainmod.villager_icon": "Villager icon",
   "itemGroup.premierpainmod": "Premier Pain mod"
 }

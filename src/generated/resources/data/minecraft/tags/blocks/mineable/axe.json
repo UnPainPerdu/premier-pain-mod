@@ -1,6 +1,15 @@
 {
   "values": [
     "premierpainmod:oak_villager_statue",
-    "premierpainmod:birch_villager_statue"
+    "premierpainmod:birch_villager_statue",
+    "premierpainmod:spruce_villager_statue",
+    "premierpainmod:jungle_villager_statue",
+    "premierpainmod:acacia_villager_statue",
+    "premierpainmod:dark_oak_villager_statue",
+    "premierpainmod:mangrove_villager_statue",
+    "premierpainmod:cherry_villager_statue",
+    "premierpainmod:crimson_villager_statue",
+    "premierpainmod:warped_villager_statue",
+    "premierpainmod:bamboo_villager_statue"
   ]
 }
