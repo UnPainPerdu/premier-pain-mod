@@ -2,11 +2,13 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.world.block.VillagerStatue;
+import com.unpainperdu.premierpainmod.world.block.WeatheringCopperVillagerStatue;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -27,9 +29,10 @@ public class BlockRegister
     public static final DeferredBlock<Block> DARK_OAK_VILLAGER_STATUE = statueRegister("dark_oak_villager_statue","wood");
     public static final DeferredBlock<Block> MANGROVE_VILLAGER_STATUE = statueRegister("mangrove_villager_statue","wood");
     public static final DeferredBlock<Block> CHERRY_VILLAGER_STATUE = statueRegister("cherry_villager_statue","wood");
-    public static final DeferredBlock<Block> CRIMSON_VILLAGER_STATUE = statueRegister("crimson_villager_statue","wood");
-    public static final DeferredBlock<Block> WARPED_VILLAGER_STATUE = statueRegister("warped_villager_statue","wood");
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_STATUE = statueRegister("bamboo_villager_statue","wood");
+
+    public static final DeferredBlock<Block> CRIMSON_VILLAGER_STATUE = statueRegister("crimson_villager_statue","netherwood");
+    public static final DeferredBlock<Block> WARPED_VILLAGER_STATUE = statueRegister("warped_villager_statue","netherwood");
 
     public static final DeferredBlock<Block> STONE_VILLAGER_STATUE =  statueRegister("stone_villager_statue","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_STATUE =  statueRegister("andesite_villager_statue","stone");
@@ -67,12 +70,21 @@ public class BlockRegister
     public static final DeferredBlock<Block> EMERALD_BLOCK_VILLAGER_STATUE =  statueRegister("emerald_block_villager_statue","metal");
     public static final DeferredBlock<Block> DIAMOND_BLOCK_VILLAGER_STATUE =  statueRegister("diamond_block_villager_statue","metal");
 
-    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("copper_block_villager_statue","copper");
+    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_STATUE =  copperStatueRegister("copper_block_villager_statue","unexposed");
+    public static final DeferredBlock<Block> EXPOSED_COPPER_BLOCK_VILLAGER_STATUE =  copperStatueRegister("exposed_copper_block_villager_statue","exposed");
+    public static final DeferredBlock<Block> WEATHERED_COPPER_BLOCK_VILLAGER_STATUE =  copperStatueRegister("weathered_copper_block_villager_statue","weathered");
+    public static final DeferredBlock<Block> OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE =  copperStatueRegister("oxidized_copper_block_villager_statue","oxidized");
+
+    public static final DeferredBlock<Block> WAXED_COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("waxed_copper_block_villager_statue","copper");
+    public static final DeferredBlock<Block> WAXED_EXPOSED_COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("waxed_exposed_copper_block_villager_statue","copper");
+    public static final DeferredBlock<Block> WAXED_WEATHERED_COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("waxed_weathered_copper_block_villager_statue","copper");
+    public static final DeferredBlock<Block> WAXED_OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("waxed_oxidized_copper_block_villager_statue","copper");
 
     public static final DeferredBlock<Block> LAPIS_BLOCK_VILLAGER_STATUE =  statueRegister("lapis_block_villager_statue","mineral_weak");
 
     public static final DeferredBlock<Block> NETHERITE_BLOCK_VILLAGER_STATUE =  statueRegister("netherite_block_villager_statue","netherite");
-    public static final DeferredBlock<Block> OBSIDIAN_BLOCK_VILLAGER_STATUE =  statueRegister("obsidian_block_villager_statue","netherite");
+
+    public static final DeferredBlock<Block> OBSIDIAN_BLOCK_VILLAGER_STATUE =  statueRegister("obsidian_block_villager_statue","obsidan");
 
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_STATUE =  statueRegister("amethyst_block_villager_statue","amethyst");
 
@@ -97,80 +109,109 @@ public class BlockRegister
         ItemRegister.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
+    private static  <T extends Block> DeferredBlock<T> copperStatueRegister(String name, String oxidation)
+    {
+        switch (oxidation) {
+            case "exposed":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new WeatheringCopperVillagerStatue(WeatheringCopper.WeatherState.EXPOSED,BlockBehaviour.Properties.ofFullCopy(Blocks.EXPOSED_COPPER)));
+            }
+            case "weathered":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new WeatheringCopperVillagerStatue(WeatheringCopper.WeatherState.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.WEATHERED_COPPER)));
+            }
+            case "oxidized":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new WeatheringCopperVillagerStatue(WeatheringCopper.WeatherState.OXIDIZED,BlockBehaviour.Properties.ofFullCopy(Blocks.OXIDIZED_COPPER)));
+            }
+            default:
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new WeatheringCopperVillagerStatue(WeatheringCopper.WeatherState.UNAFFECTED,BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK)));
+            }
+        }
+    }
     private static  <T extends Block> DeferredBlock<T> statueRegister(String name, String type)
     {
         switch (type) {
             case "stone":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.STONE).noOcclusion().strength(1.5f,6.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
             }
             case "cobblestone":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.STONE).noOcclusion().strength(2.0f,6.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE)));
             }
             case "deepslate":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).noOcclusion().strength(3.5f,6.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE)));
             }
             case "tuff":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.TUFF).noOcclusion().strength(1.5f,6.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF)));
             }
             case "mud":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.MUD).noOcclusion().strength(1.0f,3.0f)));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_MUD)));
             }
             case "sandstone":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().noOcclusion().strength(0.8f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
             }
             case "netherbrick":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.NETHER_BRICKS).noOcclusion().strength(2.0f,6.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS)));
             }
             case "mineral_weak":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().noOcclusion().strength(3.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK)));
             }
             case "mineral_strong":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().noOcclusion().strength(5.0f,6.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_BLOCK)));
             }
             case "metal":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.METAL).noOcclusion().strength(5.0f,6.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
             }
             case "copper":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.COPPER).noOcclusion().strength(5.0f,6.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK)));
             }
             case "basalt":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.BASALT).noOcclusion().strength(1.25f,4.2f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT)));
             }
             case "endstone":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().noOcclusion().strength(3.0f,9.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
+            }
+            case "obsidan":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN)));
             }
             case "netherite":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(50.0f,1200.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK)));
             }
             case "amethyst":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.AMETHYST).noOcclusion().strength(1.5f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
             }
             case "dripstone":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.DRIPSTONE_BLOCK).noOcclusion().strength(1.5f, 1.0f).requiresCorrectToolForDrops()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK)));
             }
             case "bedrock":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().noOcclusion().strength(-1.0f, 3600000.0f).noLootTable()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK)));
+            }
+            case "netherwood":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS)));
             }
             default:
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(2.0f,3.0f)));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
             }
         }
     }

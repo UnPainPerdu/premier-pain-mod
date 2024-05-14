@@ -82,6 +82,13 @@ public class ModLootTableProvider extends LootTableProvider
             statueLootTableGenerator(BlockRegister.EMERALD_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.DIAMOND_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.EXPOSED_COPPER_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.WEATHERED_COPPER_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.WAXED_COPPER_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.WAXED_EXPOSED_COPPER_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.WAXED_WEATHERED_COPPER_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.WAXED_OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE.get());

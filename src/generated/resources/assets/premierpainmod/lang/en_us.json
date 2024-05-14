@@ -19,6 +19,7 @@
   "block.premierpainmod.dripstone_block_villager_statue": "Dripstone villager statue",
   "block.premierpainmod.emerald_block_villager_statue": "Emerald villager statue",
   "block.premierpainmod.end_stone_villager_statue": "End stone villager statue",
+  "block.premierpainmod.exposed_copper_block_villager_statue": "Exposed copper villager statue",
   "block.premierpainmod.gold_block_villager_statue": "Gold villager statue",
   "block.premierpainmod.granite_villager_statue": "Granite villager statue",
   "block.premierpainmod.iron_block_villager_statue": "Iron villager statue",
@@ -30,6 +31,7 @@
   "block.premierpainmod.netherite_block_villager_statue": "Netherite villager statue",
   "block.premierpainmod.oak_villager_statue": "Oak villager statue",
   "block.premierpainmod.obsidian_block_villager_statue": "Obsidian villager statue",
+  "block.premierpainmod.oxidized_copper_block_villager_statue": "Oxidized copper villager statue",
   "block.premierpainmod.packed_mud_villager_statue": "Packed mud villager statue",
   "block.premierpainmod.prismarine_villager_statue": "Prismarine villager statue",
   "block.premierpainmod.purpur_block_villager_statue": "Purpur villager statue",
@@ -42,6 +44,11 @@
   "block.premierpainmod.stone_villager_statue": "Stone villager statue",
   "block.premierpainmod.tuff_villager_statue": "Tuff villager statue",
   "block.premierpainmod.warped_villager_statue": "Warped villager statue",
+  "block.premierpainmod.waxed_copper_block_villager_statue": "Waxed copper villager statue",
+  "block.premierpainmod.waxed_exposed_copper_block_villager_statue": "Waxed exposed copper villager statue",
+  "block.premierpainmod.waxed_oxidized_copper_block_villager_statue": "Waxed oxidized copper villager statue",
+  "block.premierpainmod.waxed_weathered_copper_block_villager_statue": "Waxed weathered copper villager statue",
+  "block.premierpainmod.weathered_copper_block_villager_statue": "Weathered copper villager statue",
   "item.premierpainmod.villager_icon": "Villager icon",
   "itemGroup.premierpainmod": "Premier Pain mod"
 }

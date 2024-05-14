@@ -55,6 +55,13 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("block.premierpainmod.emerald_block_villager_statue","Emerald Statue de villageois en émeraude");
         add("block.premierpainmod.diamond_block_villager_statue","Statue de villageois en diamant");
         add("block.premierpainmod.copper_block_villager_statue","Statue de villageois en cuivre");
+        add("block.premierpainmod.exposed_copper_block_villager_statue","Statue de villageois en cuivre exposé");
+        add("block.premierpainmod.weathered_copper_block_villager_statue","Statue de villageois en cuivre érodé");
+        add("block.premierpainmod.oxidized_copper_block_villager_statue","Statue de villageois en cuivre oxydé");
+        add("block.premierpainmod.waxed_copper_block_villager_statue","Statue de villageois en cuivre ciré");
+        add("block.premierpainmod.waxed_exposed_copper_block_villager_statue","Statue de villageois en cuivre exposé ciré");
+        add("block.premierpainmod.waxed_weathered_copper_block_villager_statue","Statue de villageois en cuivre érodé ciré");
+        add("block.premierpainmod.waxed_oxidized_copper_block_villager_statue","Statue de villageois en cuivre oxydé ciré");
         add("block.premierpainmod.lapis_block_villager_statue","Statue de villageois en lapis-lazuli");
         add("block.premierpainmod.netherite_block_villager_statue","Statue de villageois en netherite");
         add("block.premierpainmod.obsidian_block_villager_statue","Statue de villageois en obsidienne");

@@ -64,6 +64,13 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.EMERALD_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.DIAMOND_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.EXPOSED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WEATHERED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WAXED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WAXED_EXPOSED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WAXED_WEATHERED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WAXED_OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE.get(),
@@ -74,7 +81,14 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 (
                         BlockRegister.IRON_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get()
+                        BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.EXPOSED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WEATHERED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WAXED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WAXED_EXPOSED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WAXED_WEATHERED_COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.WAXED_OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE.get()
                 );
         this.tag(BlockTags.NEEDS_IRON_TOOL).add
                 (

@@ -19,6 +19,7 @@
   "block.premierpainmod.dripstone_block_villager_statue": "Statue de villageois en spéléothème",
   "block.premierpainmod.emerald_block_villager_statue": "Emerald Statue de villageois en émeraude",
   "block.premierpainmod.end_stone_villager_statue": "Statue de villageois en pierre de l'end",
+  "block.premierpainmod.exposed_copper_block_villager_statue": "Statue de villageois en cuivre exposé",
   "block.premierpainmod.gold_block_villager_statue": "Gold Statue de villageois en or",
   "block.premierpainmod.granite_villager_statue": "Statue de villageois en granite",
   "block.premierpainmod.iron_block_villager_statue": "Iron Statue de villageois en fer",
@@ -30,6 +31,7 @@
   "block.premierpainmod.netherite_block_villager_statue": "Statue de villageois en netherite",
   "block.premierpainmod.oak_villager_statue": "Statue de villageois en chêne",
   "block.premierpainmod.obsidian_block_villager_statue": "Statue de villageois en obsidienne",
+  "block.premierpainmod.oxidized_copper_block_villager_statue": "Statue de villageois en cuivre oxydé",
   "block.premierpainmod.packed_mud_villager_statue": "Statue de villageois en terre crue",
   "block.premierpainmod.prismarine_villager_statue": "Statue de villageois en prismarine",
   "block.premierpainmod.purpur_block_villager_statue": "Statue de villageois en purpur",
@@ -42,6 +44,11 @@
   "block.premierpainmod.stone_villager_statue": "Statue de villageois en pierre",
   "block.premierpainmod.tuff_villager_statue": "Statue de villageois en tuf",
   "block.premierpainmod.warped_villager_statue": "Statue de villageois en bois biscornu",
+  "block.premierpainmod.waxed_copper_block_villager_statue": "Statue de villageois en cuivre ciré",
+  "block.premierpainmod.waxed_exposed_copper_block_villager_statue": "Statue de villageois en cuivre exposé ciré",
+  "block.premierpainmod.waxed_oxidized_copper_block_villager_statue": "Statue de villageois en cuivre oxydé ciré",
+  "block.premierpainmod.waxed_weathered_copper_block_villager_statue": "Statue de villageois en cuivre érodé ciré",
+  "block.premierpainmod.weathered_copper_block_villager_statue": "Statue de villageois en cuivre érodé",
   "item.premierpainmod.villager_icon": "Icone de villageois",
   "itemGroup.premierpainmod": "Mod Premier Pain"
 }
