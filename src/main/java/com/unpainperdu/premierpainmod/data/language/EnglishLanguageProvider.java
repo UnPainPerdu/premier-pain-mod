@@ -56,13 +56,6 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("block.premierpainmod.emerald_block_villager_statue","Emerald villager statue");
         add("block.premierpainmod.diamond_block_villager_statue","Diamond villager statue");
         add("block.premierpainmod.copper_block_villager_statue","Copper villager statue");
-        add("block.premierpainmod.exposed_copper_block_villager_statue","Exposed copper villager statue");
-        add("block.premierpainmod.weathered_copper_block_villager_statue","Weathered copper villager statue");
-        add("block.premierpainmod.oxidized_copper_block_villager_statue","Oxidized copper villager statue");
-        add("block.premierpainmod.waxed_copper_block_villager_statue","Waxed copper villager statue");
-        add("block.premierpainmod.waxed_exposed_copper_block_villager_statue","Waxed exposed copper villager statue");
-        add("block.premierpainmod.waxed_weathered_copper_block_villager_statue","Waxed weathered copper villager statue");
-        add("block.premierpainmod.waxed_oxidized_copper_block_villager_statue","Waxed oxidized copper villager statue");
         add("block.premierpainmod.lapis_block_villager_statue","Lapis villager statue");
         add("block.premierpainmod.netherite_block_villager_statue","Netherite villager statue");
         add("block.premierpainmod.obsidian_block_villager_statue","Obsidian villager statue");

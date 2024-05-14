@@ -2,12 +2,10 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.world.block.VillagerStatue;
-import com.unpainperdu.premierpainmod.world.block.WeatheringCopperVillagerStatue;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -70,15 +68,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> EMERALD_BLOCK_VILLAGER_STATUE =  statueRegister("emerald_block_villager_statue","metal");
     public static final DeferredBlock<Block> DIAMOND_BLOCK_VILLAGER_STATUE =  statueRegister("diamond_block_villager_statue","metal");
 
-    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_STATUE =  copperStatueRegister("copper_block_villager_statue","unexposed");
-    public static final DeferredBlock<Block> EXPOSED_COPPER_BLOCK_VILLAGER_STATUE =  copperStatueRegister("exposed_copper_block_villager_statue","exposed");
-    public static final DeferredBlock<Block> WEATHERED_COPPER_BLOCK_VILLAGER_STATUE =  copperStatueRegister("weathered_copper_block_villager_statue","weathered");
-    public static final DeferredBlock<Block> OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE =  copperStatueRegister("oxidized_copper_block_villager_statue","oxidized");
-
-    public static final DeferredBlock<Block> WAXED_COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("waxed_copper_block_villager_statue","copper");
-    public static final DeferredBlock<Block> WAXED_EXPOSED_COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("waxed_exposed_copper_block_villager_statue","copper");
-    public static final DeferredBlock<Block> WAXED_WEATHERED_COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("waxed_weathered_copper_block_villager_statue","copper");
-    public static final DeferredBlock<Block> WAXED_OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("waxed_oxidized_copper_block_villager_statue","copper");
+    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_STATUE =  statueRegister("copper_block_villager_statue","copper");
 
     public static final DeferredBlock<Block> LAPIS_BLOCK_VILLAGER_STATUE =  statueRegister("lapis_block_villager_statue","mineral_weak");
 
@@ -107,28 +97,6 @@ public class BlockRegister
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block)
     {
         ItemRegister.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-    }
-
-    private static  <T extends Block> DeferredBlock<T> copperStatueRegister(String name, String oxidation)
-    {
-        switch (oxidation) {
-            case "exposed":
-            {
-                return (DeferredBlock<T>) registerBlock(name, () -> new WeatheringCopperVillagerStatue(WeatheringCopper.WeatherState.EXPOSED,BlockBehaviour.Properties.ofFullCopy(Blocks.EXPOSED_COPPER)));
-            }
-            case "weathered":
-            {
-                return (DeferredBlock<T>) registerBlock(name, () -> new WeatheringCopperVillagerStatue(WeatheringCopper.WeatherState.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.WEATHERED_COPPER)));
-            }
-            case "oxidized":
-            {
-                return (DeferredBlock<T>) registerBlock(name, () -> new WeatheringCopperVillagerStatue(WeatheringCopper.WeatherState.OXIDIZED,BlockBehaviour.Properties.ofFullCopy(Blocks.OXIDIZED_COPPER)));
-            }
-            default:
-            {
-                return (DeferredBlock<T>) registerBlock(name, () -> new WeatheringCopperVillagerStatue(WeatheringCopper.WeatherState.UNAFFECTED,BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK)));
-            }
-        }
     }
     private static  <T extends Block> DeferredBlock<T> statueRegister(String name, String type)
     {

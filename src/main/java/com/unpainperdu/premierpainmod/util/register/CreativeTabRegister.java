@@ -72,14 +72,6 @@ public class CreativeTabRegister
                 output.accept(BlockRegister.DIAMOND_BLOCK_VILLAGER_STATUE.get());
 
                 output.accept(BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get());
-                output.accept(BlockRegister.EXPOSED_COPPER_BLOCK_VILLAGER_STATUE.get());
-                output.accept(BlockRegister.WEATHERED_COPPER_BLOCK_VILLAGER_STATUE.get());
-                output.accept(BlockRegister.OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE.get());
-
-                output.accept(BlockRegister.WAXED_COPPER_BLOCK_VILLAGER_STATUE.get());
-                output.accept(BlockRegister.WAXED_EXPOSED_COPPER_BLOCK_VILLAGER_STATUE.get());
-                output.accept(BlockRegister.WAXED_WEATHERED_COPPER_BLOCK_VILLAGER_STATUE.get());
-                output.accept(BlockRegister.WAXED_OXIDIZED_COPPER_BLOCK_VILLAGER_STATUE.get());
 
                 output.accept(BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get());
 
