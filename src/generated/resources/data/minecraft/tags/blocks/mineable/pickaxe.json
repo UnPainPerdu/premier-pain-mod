@@ -1,5 +1,34 @@
 {
   "values": [
-    "premierpainmod:stone_villager_statue"
+    "premierpainmod:stone_villager_statue",
+    "premierpainmod:andesite_villager_statue",
+    "premierpainmod:diorite_villager_statue",
+    "premierpainmod:prismarine_villager_statue",
+    "premierpainmod:blackstone_villager_statue",
+    "premierpainmod:purpur_block_villager_statue",
+    "premierpainmod:cobblestone_villager_statue",
+    "premierpainmod:mossy_cobblestone_villager_statue",
+    "premierpainmod:smooth_stone_villager_statue",
+    "premierpainmod:cobbled_deepslate_villager_statue",
+    "premierpainmod:tuff_villager_statue",
+    "premierpainmod:packed_mud_villager_statue",
+    "premierpainmod:sandstone_villager_statue",
+    "premierpainmod:red_sandstone_villager_statue",
+    "premierpainmod:quartz_block_villager_statue",
+    "premierpainmod:nether_bricks_villager_statue",
+    "premierpainmod:basalt_villager_statue",
+    "premierpainmod:end_stone_villager_statue",
+    "premierpainmod:coal_block_villager_statue",
+    "premierpainmod:iron_block_villager_statue",
+    "premierpainmod:gold_block_villager_statue",
+    "premierpainmod:redstone_block_villager_statue",
+    "premierpainmod:emerald_block_villager_statue",
+    "premierpainmod:diamond_block_villager_statue",
+    "premierpainmod:copper_block_villager_statue",
+    "premierpainmod:lapis_block_villager_statue",
+    "premierpainmod:netherite_block_villager_statue",
+    "premierpainmod:obsidian_block_villager_statue",
+    "premierpainmod:amethyst_block_villager_statue",
+    "premierpainmod:dripstone_block_villager_statue"
   ]
 }

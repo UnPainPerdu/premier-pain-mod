@@ -57,6 +57,36 @@ public class ModLootTableProvider extends LootTableProvider
             statueLootTableGenerator(BlockRegister.WARPED_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.BAMBOO_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.STONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.ANDESITE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.DIORITE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.GRANITE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.PRISMARINE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.BLACKSTONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.COBBLESTONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.MOSSY_COBBLESTONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.SMOOTH_STONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.COBBLED_DEEPSLATE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.TUFF_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.PACKED_MUD_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.SANDSTONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.RED_SANDSTONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.QUARTZ_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.NETHER_BRICKS_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.BASALT_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.END_STONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.COAL_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.IRON_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.GOLD_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.REDSTONE_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.EMERALD_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.DIAMOND_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE.get());
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
