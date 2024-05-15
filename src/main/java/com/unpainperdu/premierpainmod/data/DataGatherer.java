@@ -22,5 +22,6 @@ public class DataGatherer
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(),new ModBlockTagProvider(packOutput, lookupProvider, fileHelper));
+        generator.addProvider(event.includeServer(),new ModModelProvider(packOutput, fileHelper));
     }
 }
