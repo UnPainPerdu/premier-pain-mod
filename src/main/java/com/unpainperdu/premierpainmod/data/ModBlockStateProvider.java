@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.world.block.VillagerStatue;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
@@ -24,16 +25,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        statueBlock(BlockRegister.OAK_VILLAGER_STATUE.get(),
-                models().singleTexture(
-                        BlockRegister.OAK_VILLAGER_STATUE.getId().getPath(),
-                        modLoc(ModelProvider.BLOCK_FOLDER + "/statueBlock"),
 
-                        ),
-                models().singleTexture(
-                        BlockRegister.OAK_VILLAGER_STATUE.getId().getPath(),
-                        modLoc(ModelProvider.BLOCK_FOLDER + "/statueBlock"),
-                );
     }
     public void statueBlock(Block block, ModelFile bottom, ModelFile top)
     {
