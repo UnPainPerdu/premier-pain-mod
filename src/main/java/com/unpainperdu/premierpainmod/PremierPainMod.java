@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod;
 
-import com.unpainperdu.premierpainmod.data.DataGatherer;
+import com.unpainperdu.premierpainmod.datagen.DataGatherer;
 import com.unpainperdu.premierpainmod.util.register.RegisterHandler;
 import org.slf4j.Logger;
 

@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.data.language;
+package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;

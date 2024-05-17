@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.data.language;
+package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;

@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.data;
+package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.core.HolderLookup;

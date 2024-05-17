@@ -1,10 +1,9 @@
-package com.unpainperdu.premierpainmod.data.language;
+package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import org.apache.commons.lang3.text.WordUtils;
 
 public class FrenchLanguageProvider extends LanguageProvider
 {
