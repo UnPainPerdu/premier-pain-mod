@@ -49,14 +49,15 @@ public class VillagerStatue extends Block
         BlockPos blockpos = pContext.getClickedPos();
         Level level = pContext.getLevel();
         if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(pContext)) {
-            return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER);
+            return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(FACING, pContext.getHorizontalDirection());
         } else {
             return null;
         }
     }
 
     // Pose le bloc du dessus
-    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack) {
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack)
+    {
         pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER), 3);
     }
 
@@ -70,7 +71,8 @@ public class VillagerStatue extends Block
         }
     }
     //créé un nouveau BlockState nommé HALF
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    {
         pBuilder.add(HALF, FACING);
     }
 
@@ -86,7 +88,8 @@ public class VillagerStatue extends Block
     }
 
     //Pète le bloc du dessous si dessus cassé
-    protected static void preventCreativeDropFromBottomPart(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+    protected static void preventCreativeDropFromBottomPart(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
+    {
         DoubleBlockHalf doubleblockhalf = pState.getValue(HALF);
         if (doubleblockhalf == DoubleBlockHalf.UPPER) {
             BlockPos blockpos = pPos.below();
