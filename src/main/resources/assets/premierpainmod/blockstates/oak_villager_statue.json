@@ -1,0 +1,6 @@
+{
+    "variants": {
+      "half=lower": {"model":  "premierpainmod:block/oak_villager_statue_bottom"},
+      "half=upper": {"model":  "premierpainmod:block/oak_villager_statue_upper"}
+    }
+}
