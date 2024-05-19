@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,half=lower": {
+      "model": "premierpainmod:block/oak_villager_statue_bottom",
+      "y": 270
+    },
+    "facing=east,half=upper": {
+      "model": "premierpainmod:block/oak_villager_statue_upper",
+      "y": 270
+    },
+    "facing=north,half=lower": {
+      "model": "premierpainmod:block/oak_villager_statue_bottom",
+      "y": 180
+    },
+    "facing=north,half=upper": {
+      "model": "premierpainmod:block/oak_villager_statue_upper",
+      "y": 180
+    },
+    "facing=south,half=lower": {
+      "model": "premierpainmod:block/oak_villager_statue_bottom"
+    },
+    "facing=south,half=upper": {
+      "model": "premierpainmod:block/oak_villager_statue_upper"
+    },
+    "facing=west,half=lower": {
+      "model": "premierpainmod:block/oak_villager_statue_bottom",
+      "y": 90
+    },
+    "facing=west,half=upper": {
+      "model": "premierpainmod:block/oak_villager_statue_upper",
+      "y": 90
+    }
+  }
+}
