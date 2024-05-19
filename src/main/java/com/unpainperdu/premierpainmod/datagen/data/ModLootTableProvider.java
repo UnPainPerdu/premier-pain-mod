@@ -81,7 +81,7 @@ public class ModLootTableProvider extends LootTableProvider
             statueLootTableGenerator(BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get());
-            statueLootTableGenerator(BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE.get());
         }

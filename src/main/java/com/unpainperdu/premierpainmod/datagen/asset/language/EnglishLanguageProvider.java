@@ -58,10 +58,10 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("block.premierpainmod.copper_block_villager_statue","Copper villager statue");
         add("block.premierpainmod.lapis_block_villager_statue","Lapis villager statue");
         add("block.premierpainmod.netherite_block_villager_statue","Netherite villager statue");
-        add("block.premierpainmod.obsidian_block_villager_statue","Obsidian villager statue");
+        add("block.premierpainmod.obsidian_villager_statue","Obsidian villager statue");
         add("block.premierpainmod.amethyst_block_villager_statue","Amethyst villager statue");
         add("block.premierpainmod.dripstone_block_villager_statue","Dripstone villager statue");
-        add("block.premierpainmod.bedrock_block_villager_statue","Bedrock villager statue");
+        add("block.premierpainmod.bedrock_villager_statue","Bedrock villager statue");
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
     private void StatueTranslation(String suffix)

@@ -69,7 +69,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         statueRecipeBuilder(BlockRegister.COPPER_BLOCK_VILLAGER_STATUE,"has_copper_block",Blocks.COPPER_BLOCK);
         statueRecipeBuilder(BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE,"has_lapis_block",Blocks.LAPIS_BLOCK);
         statueRecipeBuilder(BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE,"has_netherite_block",Blocks.NETHERITE_BLOCK);
-        statueRecipeBuilder(BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE,"has_obsidian",Blocks.OBSIDIAN);
+        statueRecipeBuilder(BlockRegister.OBSIDIAN_VILLAGER_STATUE,"has_obsidian",Blocks.OBSIDIAN);
         statueRecipeBuilder(BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE,"has_amethyst_block",Blocks.AMETHYST_BLOCK);
         statueRecipeBuilder(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE,"has_dripstone_block",Blocks.DRIPSTONE_BLOCK);
         statueRecipeBuilder(BlockRegister.BEDROCK_VILLAGER_STATUE,"has_bedrock",Blocks.BEDROCK);

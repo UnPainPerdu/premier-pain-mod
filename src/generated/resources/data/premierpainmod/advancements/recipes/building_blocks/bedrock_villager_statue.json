@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_obsidian": {
+    "has_bedrock": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:obsidian"
+            "items": "minecraft:bedrock"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:obsidian_block_villager_statue"
+        "recipe": "premierpainmod:bedrock_villager_statue"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_obsidian"
+      "has_bedrock"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:obsidian_block_villager_statue"
+      "premierpainmod:bedrock_villager_statue"
     ]
   }
 }

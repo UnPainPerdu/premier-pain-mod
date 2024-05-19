@@ -1,4 +1,4 @@
-// 1.20.6	2024-05-14T16:12:55.6012697	Loot Tables
+// 1.20.6	2024-05-19T19:48:19.4011804	Loot Tables
 266d7ee013fc386d0821e3ebbf8a5c33a11ef1a3 data/premierpainmod/loot_tables/blocks/acacia_villager_statue.json
 5e742ab213f1aa9eee40692cff9aafdaaf787c13 data/premierpainmod/loot_tables/blocks/amethyst_block_villager_statue.json
 e0ea696b0f6070e8b284a266969373c778456adc data/premierpainmod/loot_tables/blocks/andesite_villager_statue.json
@@ -28,7 +28,7 @@ c2229825621431c014332be2e5cd030ecb045cb0 data/premierpainmod/loot_tables/blocks/
 48175a5ea8c7ccbaed5e29638ebc53ce7476e544 data/premierpainmod/loot_tables/blocks/netherite_block_villager_statue.json
 1214021e4e1fb2bb69b78a6b65159c61d775175f data/premierpainmod/loot_tables/blocks/nether_bricks_villager_statue.json
 dad357692518251283387d50cc31c86d24c541e4 data/premierpainmod/loot_tables/blocks/oak_villager_statue.json
-c48511322bfc48b6dca04f43d85c2faed5a73c18 data/premierpainmod/loot_tables/blocks/obsidian_block_villager_statue.json
+9a0d1f6a21755e10b3955bfbeaf356415cbe6015 data/premierpainmod/loot_tables/blocks/obsidian_villager_statue.json
 9e14fabb2e164aec2eeae9e89e33e3bf77247829 data/premierpainmod/loot_tables/blocks/packed_mud_villager_statue.json
 55e361901f43cef27ff364ac1c0c848d41be1775 data/premierpainmod/loot_tables/blocks/prismarine_villager_statue.json
 33f15b0d8c7229c357f766d21009a621aae7f5ac data/premierpainmod/loot_tables/blocks/purpur_block_villager_statue.json

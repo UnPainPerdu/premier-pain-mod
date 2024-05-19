@@ -73,13 +73,13 @@ public class BlockRegister
 
     public static final DeferredBlock<Block> NETHERITE_BLOCK_VILLAGER_STATUE =  statueRegister("netherite_block_villager_statue","netherite");
 
-    public static final DeferredBlock<Block> OBSIDIAN_BLOCK_VILLAGER_STATUE =  statueRegister("obsidian_block_villager_statue","obsidan");
+    public static final DeferredBlock<Block> OBSIDIAN_VILLAGER_STATUE =  statueRegister("obsidian_villager_statue","obsidan");
 
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_STATUE =  statueRegister("amethyst_block_villager_statue","amethyst");
 
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_STATUE =  statueRegister("dripstone_block_villager_statue","dripstone");
 
-    public static final DeferredBlock<Block> BEDROCK_VILLAGER_STATUE =  statueRegister("bedrock_block_villager_statue","bedrock");
+    public static final DeferredBlock<Block> BEDROCK_VILLAGER_STATUE =  statueRegister("bedrock_villager_statue","bedrock");
     //
     //end
 

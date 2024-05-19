@@ -64,7 +64,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE.get(),
+                        BlockRegister.OBSIDIAN_VILLAGER_STATUE.get(),
                         BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE.get()
                 );
@@ -83,7 +83,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add
                 (
                         BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE.get()
+                        BlockRegister.OBSIDIAN_VILLAGER_STATUE.get()
                 );
     }
 }

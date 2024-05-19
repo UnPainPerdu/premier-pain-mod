@@ -61,7 +61,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         villagerStatueWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE.get());
+        villagerStatueWithItem(BlockRegister.OBSIDIAN_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.BEDROCK_VILLAGER_STATUE.get());
@@ -98,7 +98,11 @@ public class ModBlockStateProvider extends BlockStateProvider
                                 .build();
                     }
         });
-        //simpleBlockItem(statue, cubeAll(statue));
+        String statueName = BuiltInRegistries.BLOCK.getKey(statue).toString().replace(PremierPainMod.MODID+":","");
+        itemModels().getBuilder((key(statue).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0","item/villager_statue/" + statueName);
     }
     private ResourceLocation key(Block block)
     {

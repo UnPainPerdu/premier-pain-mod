@@ -77,7 +77,7 @@ public class CreativeTabRegister
 
                 output.accept(BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get());
 
-                output.accept(BlockRegister.OBSIDIAN_BLOCK_VILLAGER_STATUE.get());
+                output.accept(BlockRegister.OBSIDIAN_VILLAGER_STATUE.get());
 
                 output.accept(BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get());
 

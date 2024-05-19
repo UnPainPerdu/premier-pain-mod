@@ -56,10 +56,10 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("block.premierpainmod.copper_block_villager_statue","Statue de villageois en cuivre");
         add("block.premierpainmod.lapis_block_villager_statue","Statue de villageois en lapis-lazuli");
         add("block.premierpainmod.netherite_block_villager_statue","Statue de villageois en netherite");
-        add("block.premierpainmod.obsidian_block_villager_statue","Statue de villageois en obsidienne");
+        add("block.premierpainmod.obsidian_villager_statue","Statue de villageois en obsidienne");
         add("block.premierpainmod.amethyst_block_villager_statue","Statue de villageois en améthyste");
         add("block.premierpainmod.dripstone_block_villager_statue","Statue de villageois en spéléothème");
-        add("block.premierpainmod.bedrock_block_villager_statue","Statue de villageois en bedrock");
+        add("block.premierpainmod.bedrock_villager_statue","Statue de villageois en bedrock");
     }
     // will create translation : "block.premierpainmod.'suffix'_villager_statue": "Statue de villageois en 'translation'"
     private void StatueTranslation(String suffix, String translation)
