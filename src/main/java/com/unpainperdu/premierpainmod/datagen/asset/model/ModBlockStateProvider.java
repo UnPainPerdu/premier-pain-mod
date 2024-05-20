@@ -87,14 +87,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                         // Return a ConfiguredModel depending on the state's properties.
                         // For example, the following code will rotate the model depending on the horizontal rotation of the block.
                         return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(key(statue).toString()+"_bottom","premierpainmod:block/villager_statue_bottom").texture("0","block/villager_statue/" + statueName + "_bottom"))
+                                .modelFile(models().withExistingParent(key(statue).toString()+"_bottom","premierpainmod:block/villager_statue_bottom").texture("0","block/villager_statue/test_villager_statue_bottom"))//.texture("0","block/villager_statue/" + statueName + "_bottom"))
                                 .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                                 .build();
                     }
                     else
                     {
                         return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(key(statue).toString()+"_upper","premierpainmod:block/villager_statue_upper").texture("0","block/villager_statue/" + statueName + "_upper"))
+                                .modelFile(models().withExistingParent(key(statue).toString()+"_upper","premierpainmod:block/villager_statue_upper").texture("0","block/villager_statue/test_villager_statue_upper"))//.texture("0","block/villager_statue/" + statueName + "_upper"))
                                 .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                                 .build();
                     }

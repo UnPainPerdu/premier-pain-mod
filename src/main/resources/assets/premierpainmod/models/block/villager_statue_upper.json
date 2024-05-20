@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"textures": {"particle": "#0"},
 	"elements": [
 		{
 			"from": [4, 6, 4],
