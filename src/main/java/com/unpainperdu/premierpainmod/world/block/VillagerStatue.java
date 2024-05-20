@@ -33,7 +33,7 @@ public class VillagerStatue extends Block
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER));
     }
-    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
+    private static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 16, 12);
     //forme hit-box, début-fin x y z
 
     //Applique la hit-box
