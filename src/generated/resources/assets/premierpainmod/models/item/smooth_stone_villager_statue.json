@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "premierpainmod:item/villager_statue/smooth_stone_villager_statue"
-  }
-}

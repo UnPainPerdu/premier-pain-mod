@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/villager_statue_bottom",
   "textures": {
-    "0": "premierpainmod:block/villager_statue/test_villager_statue_bottom"
+    "0": "premierpainmod:block/villager_statue/dripstone_block_villager_statue_bottom"
   }
 }
