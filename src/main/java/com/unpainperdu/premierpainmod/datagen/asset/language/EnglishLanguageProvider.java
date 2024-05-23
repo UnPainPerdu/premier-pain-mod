@@ -31,15 +31,13 @@ public class EnglishLanguageProvider extends LanguageProvider
         StatueTranslation("warped");
         StatueTranslation("bamboo");
         StatueTranslation("stone");
+        add("block.premierpainmod.mossy_stone_villager_statue","mossy stone villager statue");
         StatueTranslation("andesite");
         StatueTranslation("diorite");
         StatueTranslation("granite");
         StatueTranslation("prismarine");
         StatueTranslation("blackstone");
         add("block.premierpainmod.purpur_block_villager_statue","Purpur villager statue");
-        StatueTranslation("cobblestone");
-        add("block.premierpainmod.mossy_cobblestone_villager_statue","Mossy cobblestone villager statue");
-        add("block.premierpainmod.smooth_stone_villager_statue","Smooth stone villager statue");
         add("block.premierpainmod.cobbled_deepslate_villager_statue","Deepslate villager statue");
         StatueTranslation("tuff");
         add("block.premierpainmod.packed_mud_villager_statue","Packed mud villager statue");

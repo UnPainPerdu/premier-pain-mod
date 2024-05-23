@@ -29,15 +29,13 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("block.premierpainmod.warped_villager_statue","Statue de villageois en bois biscornu");
         StatueTranslation("bamboo","bambou");
         StatueTranslation("stone","pierre");
+        add("block.premierpainmod.mossy_stone_villager_statue","Statue de villageois en pierre mossue");
         StatueTranslation("andesite","andésite");
         StatueTranslation("diorite","diorite");
         StatueTranslation("granite","granite");
         StatueTranslation("prismarine","prismarine");
         StatueTranslation("blackstone", "pierre noir");
         add("block.premierpainmod.purpur_block_villager_statue","Statue de villageois en purpur");
-        StatueTranslation("cobblestone", "pierre taillée");
-        add("block.premierpainmod.mossy_cobblestone_villager_statue","Statue de villageois en pierre mossue");
-        add("block.premierpainmod.smooth_stone_villager_statue","Statue de villageois en pierre lisse");
         add("block.premierpainmod.cobbled_deepslate_villager_statue","Statue de villageois en pierre des abîmes");
         StatueTranslation("tuff","tuf");
         add("block.premierpainmod.packed_mud_villager_statue","Statue de villageois en terre crue");

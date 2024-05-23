@@ -34,15 +34,13 @@ public class ModBlockStateProvider extends BlockStateProvider
         villagerStatueWithItem(BlockRegister.CRIMSON_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.WARPED_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.STONE_VILLAGER_STATUE.get());
+        villagerStatueWithItem(BlockRegister.MOSSY_STONE_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.ANDESITE_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.DIORITE_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.GRANITE_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.PRISMARINE_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.BLACKSTONE_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.COBBLESTONE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.MOSSY_COBBLESTONE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.SMOOTH_STONE_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.COBBLED_DEEPSLATE_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.TUFF_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.PACKED_MUD_VILLAGER_STATUE.get());

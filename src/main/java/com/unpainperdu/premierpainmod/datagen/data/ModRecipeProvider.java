@@ -41,16 +41,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         statueRecipeBuilder(BlockRegister.CRIMSON_VILLAGER_STATUE,"has_crimson_planks",Blocks.CRIMSON_PLANKS);
         statueRecipeBuilder(BlockRegister.WARPED_VILLAGER_STATUE,"has_warped_planks",Blocks.WARPED_PLANKS);
         statueRecipeBuilder(BlockRegister.BAMBOO_VILLAGER_STATUE,"has_bamboo_planks",Blocks.BAMBOO_PLANKS);
-        statueRecipeBuilder(BlockRegister.STONE_VILLAGER_STATUE,"has_stone",Blocks.STONE);
+        statueRecipeBuilder(BlockRegister.STONE_VILLAGER_STATUE,"has_cobblestone",Blocks.COBBLESTONE);
+        statueRecipeBuilder(BlockRegister.MOSSY_STONE_VILLAGER_STATUE,"has_mossy_cobblestone",Blocks.MOSSY_COBBLESTONE);
         statueRecipeBuilder(BlockRegister.ANDESITE_VILLAGER_STATUE,"has_andesite",Blocks.ANDESITE);
         statueRecipeBuilder(BlockRegister.DIORITE_VILLAGER_STATUE,"has_diorite",Blocks.DIORITE);
         statueRecipeBuilder(BlockRegister.GRANITE_VILLAGER_STATUE,"has_granite",Blocks.GRANITE);
         statueRecipeBuilder(BlockRegister.PRISMARINE_VILLAGER_STATUE,"has_prismarine",Blocks.PRISMARINE);
         statueRecipeBuilder(BlockRegister.BLACKSTONE_VILLAGER_STATUE,"has_blackstone",Blocks.BLACKSTONE);
         statueRecipeBuilder(BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE,"has_purpur_block",Blocks.PURPUR_BLOCK);
-        statueRecipeBuilder(BlockRegister.COBBLESTONE_VILLAGER_STATUE,"has_cobblestone",Blocks.COBBLESTONE);
-        statueRecipeBuilder(BlockRegister.MOSSY_COBBLESTONE_VILLAGER_STATUE,"has_mossy_cobblestone",Blocks.MOSSY_COBBLESTONE);
-        statueRecipeBuilder(BlockRegister.SMOOTH_STONE_VILLAGER_STATUE,"has_smooth_stone",Blocks.SMOOTH_STONE);
         statueRecipeBuilder(BlockRegister.COBBLED_DEEPSLATE_VILLAGER_STATUE,"has_deepslate",Blocks.DEEPSLATE);
         statueRecipeBuilder(BlockRegister.TUFF_VILLAGER_STATUE,"has_tuff",Blocks.TUFF);
         statueRecipeBuilder(BlockRegister.PACKED_MUD_VILLAGER_STATUE,"has_packed_mud",Blocks.PACKED_MUD);

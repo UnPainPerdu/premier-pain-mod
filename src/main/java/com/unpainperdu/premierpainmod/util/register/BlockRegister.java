@@ -32,16 +32,13 @@ public class BlockRegister
     public static final DeferredBlock<Block> WARPED_VILLAGER_STATUE = statueRegister("warped_villager_statue","netherwood");
 
     public static final DeferredBlock<Block> STONE_VILLAGER_STATUE =  statueRegister("stone_villager_statue","stone");
+    public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_STATUE =  statueRegister("mossy_stone_villager_statue","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_STATUE =  statueRegister("andesite_villager_statue","stone");
     public static final DeferredBlock<Block> DIORITE_VILLAGER_STATUE =  statueRegister("diorite_villager_statue","stone");
     public static final DeferredBlock<Block> GRANITE_VILLAGER_STATUE =  statueRegister("granite_villager_statue","stone");
     public static final DeferredBlock<Block> PRISMARINE_VILLAGER_STATUE =  statueRegister("prismarine_villager_statue","stone");
     public static final DeferredBlock<Block> BLACKSTONE_VILLAGER_STATUE =  statueRegister("blackstone_villager_statue","stone");
     public static final DeferredBlock<Block> PURPUR_BLOCK_VILLAGER_STATUE =  statueRegister("purpur_block_villager_statue","stone");
-
-    public static final DeferredBlock<Block> COBBLESTONE_VILLAGER_STATUE =  statueRegister("cobblestone_villager_statue","cobblestone");
-    public static final DeferredBlock<Block> MOSSY_COBBLESTONE_VILLAGER_STATUE =  statueRegister("mossy_cobblestone_villager_statue","cobblestone");
-    public static final DeferredBlock<Block> SMOOTH_STONE_VILLAGER_STATUE =  statueRegister("smooth_stone_villager_statue","cobblestone");
 
     public static final DeferredBlock<Block> COBBLED_DEEPSLATE_VILLAGER_STATUE =  statueRegister("cobbled_deepslate_villager_statue","deepslate");
 

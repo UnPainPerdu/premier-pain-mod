@@ -54,15 +54,13 @@ public class ModLootTableProvider extends LootTableProvider
             statueLootTableGenerator(BlockRegister.WARPED_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.BAMBOO_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.STONE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.MOSSY_STONE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.ANDESITE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.DIORITE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.GRANITE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.PRISMARINE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.BLACKSTONE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE.get());
-            statueLootTableGenerator(BlockRegister.COBBLESTONE_VILLAGER_STATUE.get());
-            statueLootTableGenerator(BlockRegister.MOSSY_COBBLESTONE_VILLAGER_STATUE.get());
-            statueLootTableGenerator(BlockRegister.SMOOTH_STONE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.COBBLED_DEEPSLATE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.TUFF_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.PACKED_MUD_VILLAGER_STATUE.get());

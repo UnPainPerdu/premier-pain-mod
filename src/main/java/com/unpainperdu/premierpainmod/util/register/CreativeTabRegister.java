@@ -36,6 +36,7 @@ public class CreativeTabRegister
                 output.accept(BlockRegister.BAMBOO_VILLAGER_STATUE.get());
 
                 output.accept(BlockRegister.STONE_VILLAGER_STATUE.get());
+                output.accept(BlockRegister.MOSSY_STONE_VILLAGER_STATUE.get());
                 output.accept(BlockRegister.ANDESITE_VILLAGER_STATUE.get());
                 output.accept(BlockRegister.DIORITE_VILLAGER_STATUE.get());
                 output.accept(BlockRegister.GRANITE_VILLAGER_STATUE.get());
@@ -43,9 +44,6 @@ public class CreativeTabRegister
                 output.accept(BlockRegister.BLACKSTONE_VILLAGER_STATUE.get());
                 output.accept(BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE.get());
 
-                output.accept(BlockRegister.COBBLESTONE_VILLAGER_STATUE.get());
-                output.accept(BlockRegister.MOSSY_COBBLESTONE_VILLAGER_STATUE.get());
-                output.accept(BlockRegister.SMOOTH_STONE_VILLAGER_STATUE.get());
 
                 output.accept(BlockRegister.COBBLED_DEEPSLATE_VILLAGER_STATUE.get());
 

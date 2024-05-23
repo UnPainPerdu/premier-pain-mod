@@ -38,14 +38,12 @@ public class ModBlockTagProvider extends BlockTagsProvider
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add
                 (
                         BlockRegister.STONE_VILLAGER_STATUE.get(),
+                        BlockRegister.MOSSY_STONE_VILLAGER_STATUE.get(),
                         BlockRegister.ANDESITE_VILLAGER_STATUE.get(),
                         BlockRegister.DIORITE_VILLAGER_STATUE.get(),
                         BlockRegister.PRISMARINE_VILLAGER_STATUE.get(),
                         BlockRegister.BLACKSTONE_VILLAGER_STATUE.get(),
                         BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.COBBLESTONE_VILLAGER_STATUE.get(),
-                        BlockRegister.MOSSY_COBBLESTONE_VILLAGER_STATUE.get(),
-                        BlockRegister.SMOOTH_STONE_VILLAGER_STATUE.get(),
                         BlockRegister.COBBLED_DEEPSLATE_VILLAGER_STATUE.get(),
                         BlockRegister.TUFF_VILLAGER_STATUE.get(),
                         BlockRegister.PACKED_MUD_VILLAGER_STATUE.get(),
