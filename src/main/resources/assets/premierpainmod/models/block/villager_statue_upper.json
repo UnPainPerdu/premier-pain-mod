@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
 	"textures": {"particle": "#0"},
 	"elements": [
 		{
@@ -107,8 +108,8 @@
 			}
 		},
 		{
-			"from": [4, 6, 3],
-			"to": [5.25, 8, 4],
+			"from": [4.25, 6, 3],
+			"to": [5.5, 8, 4],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 9, 2]},
 			"faces": {
 				"north": {"uv": [0, 10.25, 0.25, 10.75], "texture": "#0"},
