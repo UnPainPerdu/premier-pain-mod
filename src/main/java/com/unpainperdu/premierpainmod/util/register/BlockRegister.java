@@ -25,11 +25,11 @@ public class BlockRegister
     public static final DeferredBlock<Block> ACACIA_VILLAGER_STATUE = statueRegister("acacia_villager_statue","wood");
     public static final DeferredBlock<Block> DARK_OAK_VILLAGER_STATUE = statueRegister("dark_oak_villager_statue","wood");
     public static final DeferredBlock<Block> MANGROVE_VILLAGER_STATUE = statueRegister("mangrove_villager_statue","wood");
-    public static final DeferredBlock<Block> CHERRY_VILLAGER_STATUE = statueRegister("cherry_villager_statue","wood");
-    public static final DeferredBlock<Block> BAMBOO_VILLAGER_STATUE = statueRegister("bamboo_villager_statue","wood");
+    public static final DeferredBlock<Block> CHERRY_VILLAGER_STATUE = statueRegister("cherry_villager_statue","wood","cherry");
+    public static final DeferredBlock<Block> BAMBOO_VILLAGER_STATUE = statueRegister("bamboo_villager_statue","wood","bamboo");
 
-    public static final DeferredBlock<Block> CRIMSON_VILLAGER_STATUE = statueRegister("crimson_villager_statue","netherwood");
-    public static final DeferredBlock<Block> WARPED_VILLAGER_STATUE = statueRegister("warped_villager_statue","netherwood");
+    public static final DeferredBlock<Block> CRIMSON_VILLAGER_STATUE = statueRegister("crimson_villager_statue","wood","netherwood");
+    public static final DeferredBlock<Block> WARPED_VILLAGER_STATUE = statueRegister("warped_villager_statue","wood","netherwood");
 
     public static final DeferredBlock<Block> STONE_VILLAGER_STATUE =  statueRegister("stone_villager_statue","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_STATUE =  statueRegister("mossy_stone_villager_statue","stone");
@@ -93,6 +93,16 @@ public class BlockRegister
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block)
     {
         ItemRegister.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+    private static  <T extends Block> DeferredBlock<T> statueRegister(String name, String familie, String type)
+    {
+        switch (familie)
+        {
+            case "wood":
+                return (DeferredBlock<T>) statueRegister(name, type);
+            default:
+                return (DeferredBlock<T>) statueRegister(name, "default");
+        }
     }
     private static  <T extends Block> DeferredBlock<T> statueRegister(String name, String type)
     {
@@ -172,6 +182,14 @@ public class BlockRegister
             case "netherwood":
             {
                 return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion()));
+            }
+            case "cherry":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).noOcclusion()));
+            }
+            case "bamboo":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerStatue(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion()));
             }
             default:
             {
