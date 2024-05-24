@@ -1,0 +1,31 @@
+{
+"values": {
+    "premierpainmod:oak_villager_statue": {
+      "burn_time": 600
+    },
+  "premierpainmod:birch_villager_statue": {
+    "burn_time": 600
+  },
+  "premierpainmod:spruce_villager_statue": {
+    "burn_time": 600
+  },
+  "premierpainmod:jungle_villager_statue": {
+    "burn_time": 600
+  },
+  "premierpainmod:acacia_villager_statue": {
+    "burn_time": 600
+  },
+  "premierpainmod:dark_oak_villager_statue": {
+    "burn_time": 600
+  },
+  "premierpainmod:mangrove_villager_statue": {
+    "burn_time": 600
+  },
+  "premierpainmod:cherry_villager_statue": {
+    "burn_time": 600
+  },
+  "premierpainmod:bamboo_villager_statue": {
+    "burn_time": 600
+  }
+}
+}
