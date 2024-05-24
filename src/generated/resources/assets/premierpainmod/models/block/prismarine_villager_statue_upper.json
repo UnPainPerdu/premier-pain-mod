@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_statue_upper",
+  "textures": {
+    "0": "premierpainmod:block/villager_statue/prismarine_villager_statue_upper"
+  }
+}

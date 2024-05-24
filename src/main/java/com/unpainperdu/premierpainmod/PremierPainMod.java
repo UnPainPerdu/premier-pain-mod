@@ -1,31 +1,14 @@
 package com.unpainperdu.premierpainmod;
 
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.CreativeTabRegister;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.datagen.DataGatherer;
 import com.unpainperdu.premierpainmod.util.register.RegisterHandler;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(PremierPainMod.MODID)
@@ -38,7 +21,7 @@ public class PremierPainMod {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public PremierPainMod(IEventBus modEventBus, ModContainer modContainer)
     {
+        modEventBus.addListener(DataGatherer::dataGatherer);
         RegisterHandler.globalRegister(modEventBus);
     }
-
 }

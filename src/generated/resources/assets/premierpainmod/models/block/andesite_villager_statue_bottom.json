@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_statue_bottom",
+  "textures": {
+    "0": "premierpainmod:block/villager_statue/andesite_villager_statue_bottom"
+  }
+}

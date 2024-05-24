@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_statue_upper",
+  "textures": {
+    "0": "premierpainmod:block/villager_statue/dark_oak_villager_statue_upper"
+  }
+}
