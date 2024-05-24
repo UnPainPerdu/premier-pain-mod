@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.world.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,29 +10,32 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class VillagerStatue extends Block
+public class VillagerStatue extends Block implements SimpleWaterloggedBlock
 {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
     public VillagerStatue(Properties pProperties)
     {
         super(pProperties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.FALSE));
+    }
+    @Override
+    public MapCodec<VillagerStatue> codec() {
+        return CODEC;
     }
     private static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 16, 12);
     //forme hit-box, début-fin x y z
@@ -46,13 +50,20 @@ public class VillagerStatue extends Block
     //check si le dessus est libre
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+        boolean flag = fluidstate.getType() == Fluids.WATER;
         BlockPos blockpos = pContext.getClickedPos();
         Level level = pContext.getLevel();
         if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(pContext)) {
-            return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(FACING, pContext.getHorizontalDirection());
+            return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(FACING, pContext.getHorizontalDirection());
         } else {
             return null;
         }
+    }
+    @Override
+    protected @NotNull FluidState getFluidState(BlockState pState)
+    {
+        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
     }
 
     // Pose le bloc du dessus
@@ -64,6 +75,10 @@ public class VillagerStatue extends Block
     //Si dessous pété, péte le dessus
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
         DoubleBlockHalf doubleblockhalf = pState.getValue(HALF);
+        if (pState.getValue(WATERLOGGED))
+        {
+            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+        }
         if (pFacing.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (pFacing == Direction.UP)) {
             return pFacingState.is(this) && pFacingState.getValue(HALF) != doubleblockhalf ? pState.setValue(FACING, pFacingState.getValue(FACING)): Blocks.AIR.defaultBlockState();
         } else {
@@ -73,7 +88,7 @@ public class VillagerStatue extends Block
     //créé un nouveau BlockState nommé HALF
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add(HALF, FACING);
+        pBuilder.add(HALF, FACING, WATERLOGGED);
     }
 
     //quand le bloc est pété
