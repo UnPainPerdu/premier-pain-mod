@@ -28,6 +28,7 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
+    private Boolean WaterLog;
     public VillagerStatue(Properties pProperties)
     {
         super(pProperties);
@@ -49,11 +50,12 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     }
     //check si le dessus est libre
     @Nullable
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
-        boolean flag = fluidstate.getType() == Fluids.WATER;
+    public BlockState getStateForPlacement(BlockPlaceContext pContext)
+    {
         BlockPos blockpos = pContext.getClickedPos();
         Level level = pContext.getLevel();
+        FluidState fluidstate = level.getFluidState(blockpos.above());
+        boolean flag = fluidstate.getType() == Fluids.WATER;
         if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(pContext)) {
             return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(FACING, pContext.getHorizontalDirection());
         } else {
