@@ -8,5 +8,4 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class temp
 {
-
 }

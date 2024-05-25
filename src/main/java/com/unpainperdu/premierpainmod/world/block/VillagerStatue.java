@@ -28,7 +28,6 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
-    private Boolean WaterLog;
     public VillagerStatue(Properties pProperties)
     {
         super(pProperties);
@@ -46,7 +45,6 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
     {
         return SHAPE;
-
     }
     //check si le dessus est libre
     @Nullable

@@ -22,6 +22,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
+        //villager statue
         villagerStatueWithItem(BlockRegister.OAK_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.BIRCH_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.SPRUCE_VILLAGER_STATUE.get());
@@ -63,11 +64,57 @@ public class ModBlockStateProvider extends BlockStateProvider
         villagerStatueWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.BEDROCK_VILLAGER_STATUE.get());
-
+        //pedestal
+        pedestalWithItem(BlockRegister.OAK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.BIRCH_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.SPRUCE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.JUNGLE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.ACACIA_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.DARK_OAK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.MANGROVE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.CHERRY_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.BAMBOO_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.CRIMSON_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.WARPED_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.STONE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.MOSSY_STONE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.ANDESITE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.DIORITE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.GRANITE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.PRISMARINE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.BLACKSTONE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.PURPUR_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.DEEPSLATE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.TUFF_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.PACKED_MUD_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.SANDSTONE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.RED_SANDSTONE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.QUARTZ_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.NETHER_BRICKS_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.BASALT_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.END_STONE_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.COAL_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.IRON_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.GOLD_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.REDSTONE_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.EMERALD_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.DIAMOND_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.COPPER_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.LAPIS_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.NETHERITE_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.OBSIDIAN_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.AMETHYST_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get());
+        pedestalWithItem(BlockRegister.BEDROCK_PEDESTAL.get());
     }
     private void simpleBlockWithItem(Block block)
     {
         simpleBlockWithItem(block, cubeAll(block));
+    }
+    private void pedestalWithItem(Block pedestal)
+    {
+        ModelFile pedestalModel = models().withExistingParent(key(pedestal).toString()+"_bottom","premierpainmod:block/pedestal").texture("0","block/pedestal/test_pedestal");   //.texture("0","block/pedestal/" + pedestal);
+        simpleBlockWithItem(pedestal, pedestalModel);
     }
     private void villagerStatueWithItem(Block statue)
     {
