@@ -42,6 +42,7 @@ public class ModLootTableProvider extends LootTableProvider
         @Override
         public void generate()
         {
+            //statue
             statueLootTableGenerator(BlockRegister.OAK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.BIRCH_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.SPRUCE_VILLAGER_STATUE.get());
@@ -61,7 +62,7 @@ public class ModLootTableProvider extends LootTableProvider
             statueLootTableGenerator(BlockRegister.PRISMARINE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.BLACKSTONE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE.get());
-            statueLootTableGenerator(BlockRegister.COBBLED_DEEPSLATE_VILLAGER_STATUE.get());
+            statueLootTableGenerator(BlockRegister.DEEPSLATE_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.TUFF_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.PACKED_MUD_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.SANDSTONE_VILLAGER_STATUE.get());
@@ -82,6 +83,47 @@ public class ModLootTableProvider extends LootTableProvider
             statueLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE.get());
+            //pedestal
+            pedestalLootTableGenerator(BlockRegister.OAK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.BIRCH_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.SPRUCE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.JUNGLE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.ACACIA_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.DARK_OAK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.MANGROVE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.CHERRY_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.CRIMSON_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.WARPED_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.BAMBOO_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.STONE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.MOSSY_STONE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.ANDESITE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.DIORITE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.GRANITE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.PRISMARINE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.BLACKSTONE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.PURPUR_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.DEEPSLATE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.TUFF_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.PACKED_MUD_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.SANDSTONE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.RED_SANDSTONE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.QUARTZ_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.NETHER_BRICKS_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.BASALT_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.END_STONE_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.COAL_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.IRON_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.GOLD_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.REDSTONE_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.EMERALD_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.DIAMOND_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.COPPER_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.LAPIS_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.NETHERITE_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.OBSIDIAN_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.AMETHYST_BLOCK_PEDESTAL.get());
+            pedestalLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get());
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
@@ -94,6 +136,10 @@ public class ModLootTableProvider extends LootTableProvider
         private void statueLootTableGenerator(Block statue)
         {
             super.add(statue, this.createSinglePropConditionTable(statue, VillagerStatue.HALF, DoubleBlockHalf.LOWER));
+        }
+        private void pedestalLootTableGenerator(Block pedestal)
+        {
+            super.add(pedestal, this.createSingleItemTable(pedestal));
         }
     }
 }

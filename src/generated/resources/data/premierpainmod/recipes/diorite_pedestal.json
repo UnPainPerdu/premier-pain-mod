@@ -3,16 +3,15 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "minecraft:deepslate"
+      "item": "minecraft:diorite"
     }
   },
   "pattern": [
     " # ",
-    " # ",
-    " # "
+    "###"
   ],
   "result": {
     "count": 1,
-    "id": "premierpainmod:cobbled_deepslate_villager_statue"
+    "id": "premierpainmod:diorite_pedestal"
   }
 }

@@ -13,18 +13,18 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "premierpainmod:cobbled_deepslate_villager_statue",
+              "block": "premierpainmod:deepslate_villager_statue",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "half": "lower"
               }
             }
           ],
-          "name": "premierpainmod:cobbled_deepslate_villager_statue"
+          "name": "premierpainmod:deepslate_villager_statue"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "premierpainmod:blocks/cobbled_deepslate_villager_statue"
+  "random_sequence": "premierpainmod:blocks/deepslate_villager_statue"
 }

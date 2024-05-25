@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,half=lower,waterlogged=false": {
+      "model": "premierpainmod:block/deepslate_villager_statue_bottom",
+      "y": 270
+    },
+    "facing=east,half=lower,waterlogged=true": {
+      "model": "premierpainmod:block/deepslate_villager_statue_bottom",
+      "y": 270
+    },
+    "facing=east,half=upper,waterlogged=false": {
+      "model": "premierpainmod:block/deepslate_villager_statue_upper",
+      "y": 270
+    },
+    "facing=east,half=upper,waterlogged=true": {
+      "model": "premierpainmod:block/deepslate_villager_statue_upper",
+      "y": 270
+    },
+    "facing=north,half=lower,waterlogged=false": {
+      "model": "premierpainmod:block/deepslate_villager_statue_bottom",
+      "y": 180
+    },
+    "facing=north,half=lower,waterlogged=true": {
+      "model": "premierpainmod:block/deepslate_villager_statue_bottom",
+      "y": 180
+    },
+    "facing=north,half=upper,waterlogged=false": {
+      "model": "premierpainmod:block/deepslate_villager_statue_upper",
+      "y": 180
+    },
+    "facing=north,half=upper,waterlogged=true": {
+      "model": "premierpainmod:block/deepslate_villager_statue_upper",
+      "y": 180
+    },
+    "facing=south,half=lower,waterlogged=false": {
+      "model": "premierpainmod:block/deepslate_villager_statue_bottom"
+    },
+    "facing=south,half=lower,waterlogged=true": {
+      "model": "premierpainmod:block/deepslate_villager_statue_bottom"
+    },
+    "facing=south,half=upper,waterlogged=false": {
+      "model": "premierpainmod:block/deepslate_villager_statue_upper"
+    },
+    "facing=south,half=upper,waterlogged=true": {
+      "model": "premierpainmod:block/deepslate_villager_statue_upper"
+    },
+    "facing=west,half=lower,waterlogged=false": {
+      "model": "premierpainmod:block/deepslate_villager_statue_bottom",
+      "y": 90
+    },
+    "facing=west,half=lower,waterlogged=true": {
+      "model": "premierpainmod:block/deepslate_villager_statue_bottom",
+      "y": 90
+    },
+    "facing=west,half=upper,waterlogged=false": {
+      "model": "premierpainmod:block/deepslate_villager_statue_upper",
+      "y": 90
+    },
+    "facing=west,half=upper,waterlogged=true": {
+      "model": "premierpainmod:block/deepslate_villager_statue_upper",
+      "y": 90
+    }
+  }
+}

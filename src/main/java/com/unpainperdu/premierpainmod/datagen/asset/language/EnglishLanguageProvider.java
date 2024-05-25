@@ -18,55 +18,107 @@ public class EnglishLanguageProvider extends LanguageProvider
     {
         add("itemGroup.premierpainmod", "Premier Pain mod");
         add(ItemRegister.VILLAGER_ICON.get(), "Villager icon");
-
-        StatueTranslation("oak");
-        StatueTranslation("birch");
-        StatueTranslation("spruce");
-        StatueTranslation("jungle");
-        StatueTranslation("acacia");
-        add("block.premierpainmod.dark_oak_villager_statue","Dark oak villager statue");
-        StatueTranslation("mangrove");
-        StatueTranslation("cherry");
-        StatueTranslation("crimson");
-        StatueTranslation("warped");
-        StatueTranslation("bamboo");
-        StatueTranslation("stone");
-        add("block.premierpainmod.mossy_stone_villager_statue","mossy stone villager statue");
-        StatueTranslation("andesite");
-        StatueTranslation("diorite");
-        StatueTranslation("granite");
-        StatueTranslation("prismarine");
-        StatueTranslation("blackstone");
-        add("block.premierpainmod.purpur_block_villager_statue","Purpur villager statue");
-        add("block.premierpainmod.cobbled_deepslate_villager_statue","Deepslate villager statue");
-        StatueTranslation("tuff");
-        add("block.premierpainmod.packed_mud_villager_statue","Packed mud villager statue");
-        StatueTranslation("sandstone");
-        add("block.premierpainmod.red_sandstone_villager_statue","Red sandstone villager statue");
-        add("block.premierpainmod.quartz_block_villager_statue","Quartz villager statue");
-        add("block.premierpainmod.nether_bricks_villager_statue","Nether bricks villager statue");
-        StatueTranslation("basalt");
-        add("block.premierpainmod.end_stone_villager_statue","End stone villager statue");
-        add("block.premierpainmod.coal_block_villager_statue","Coal villager statue");
-        add("block.premierpainmod.iron_block_villager_statue","Iron villager statue");
-        add("block.premierpainmod.gold_block_villager_statue","Gold villager statue");
-        add("block.premierpainmod.redstone_block_villager_statue","Redstone villager statue");
-        add("block.premierpainmod.emerald_block_villager_statue","Emerald villager statue");
-        add("block.premierpainmod.diamond_block_villager_statue","Diamond villager statue");
-        add("block.premierpainmod.copper_block_villager_statue","Copper villager statue");
-        add("block.premierpainmod.lapis_block_villager_statue","Lapis villager statue");
-        add("block.premierpainmod.netherite_block_villager_statue","Netherite villager statue");
-        add("block.premierpainmod.obsidian_villager_statue","Obsidian villager statue");
-        add("block.premierpainmod.amethyst_block_villager_statue","Amethyst villager statue");
-        add("block.premierpainmod.dripstone_block_villager_statue","Dripstone villager statue");
-        add("block.premierpainmod.bedrock_villager_statue","Bedrock villager statue");
+        //block
+            // "All material"
+        globalAllMaterialTranslation("oak");
+        globalAllMaterialTranslation("birch");
+        globalAllMaterialTranslation("spruce");
+        globalAllMaterialTranslation("jungle");
+        globalAllMaterialTranslation("acacia");
+        globalAllMaterialTranslation("dark","oak",true);
+        globalAllMaterialTranslation("mangrove");
+        globalAllMaterialTranslation("cherry");
+        globalAllMaterialTranslation("crimson");
+        globalAllMaterialTranslation("warped");
+        globalAllMaterialTranslation("bamboo");
+        globalAllMaterialTranslation("stone");
+        globalAllMaterialTranslation("mossy","stone",true);
+        globalAllMaterialTranslation("andesite");
+        globalAllMaterialTranslation("diorite");
+        globalAllMaterialTranslation("granite");
+        globalAllMaterialTranslation("prismarine");
+        globalAllMaterialTranslation("blackstone");
+        globalAllMaterialTranslation("purpur","block",false);
+        globalAllMaterialTranslation("deepslate");
+        globalAllMaterialTranslation("tuff");
+        globalAllMaterialTranslation("packed","mud",true);
+        globalAllMaterialTranslation("sandstone");
+        globalAllMaterialTranslation("red","sandstone",true);
+        globalAllMaterialTranslation("quartz","block",false);
+        globalAllMaterialTranslation("nether","bricks",true);
+        globalAllMaterialTranslation("basalt");
+        globalAllMaterialTranslation("end","stone",true);
+        globalAllMaterialTranslation("coal","block",false);
+        globalAllMaterialTranslation("iron","block",false);
+        globalAllMaterialTranslation("gold","block",false);
+        globalAllMaterialTranslation("redstone","block",false);
+        globalAllMaterialTranslation("emerald","block",false);
+        globalAllMaterialTranslation("diamond","block",false);
+        globalAllMaterialTranslation("copper","block",false);
+        globalAllMaterialTranslation("lapis","block",false);
+        globalAllMaterialTranslation("netherite","block",false);
+        globalAllMaterialTranslation("obsidian");
+        globalAllMaterialTranslation("amethyst","block",false);
+        globalAllMaterialTranslation("dripstone","block",false);
+        globalAllMaterialTranslation("bedrock");
+        //
+    }
+    //Only use for "all material" blocks
+    private void globalAllMaterialTranslation(String suffix)
+    {
+        statueTranslation(suffix);
+        pedestalTranslation(suffix);
+    }
+    //Only use for "all material" blocks
+    private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        statueTranslation(suffix1, suffix2, isSuffix2Translate);
+        pedestalTranslation(suffix1, suffix2, isSuffix2Translate);
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
-    private void StatueTranslation(String suffix)
+    private void statueTranslation(String suffix)
     {
         String translation = capitalize(suffix);
         String statue = "_villager_statue";
-        String Tstatue = " villager statue";
-        add("block."+PremierPainMod.MODID+"."+suffix+statue,translation+Tstatue);
+        String translationStatue = " villager statue";
+        add("block."+PremierPainMod.MODID+"."+suffix+statue,translation+translationStatue);
+    }
+    // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix1' 'suffix2' villager statue"
+    private void statueTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String statue = "_villager_statue";
+        String translationStatue = " villager statue";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + statue, translation1 + translationStatue);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + statue, translation1 +" "+ suffix2 + translationStatue);
+        }
+    }
+    // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' pedestal"
+    private void pedestalTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String pedestal = "_pedestal";
+        String translationPedestal = " pedestal";
+        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translation+translationPedestal);
+    }
+    // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix1' 'suffix2' pedestal"
+    private void pedestalTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String pedestal = "_pedestal";
+        String translationPedestal = " pedestal";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 + translationPedestal);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 +" "+ suffix2 + translationPedestal);
+        }
     }
 }

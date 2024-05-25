@@ -2,6 +2,9 @@
   "values": [
     "premierpainmod:gold_block_villager_statue",
     "premierpainmod:emerald_block_villager_statue",
-    "premierpainmod:diamond_block_villager_statue"
+    "premierpainmod:diamond_block_villager_statue",
+    "premierpainmod:gold_block_pedestal",
+    "premierpainmod:emerald_block_pedestal",
+    "premierpainmod:diamond_block_pedestal"
   ]
 }
