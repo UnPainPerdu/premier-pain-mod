@@ -79,7 +79,7 @@ public class FrenchLanguageProvider extends LanguageProvider
     private void pedestalTranslation(String suffix, String translation)
     {
         String pedestal = "_pedestal";
-        String translationPedestal = "Piedestale en ";
+        String translationPedestal = "Piédestale en ";
         add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
     }
 }

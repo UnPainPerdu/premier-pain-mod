@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/pedestal",
   "textures": {
-    "0": "premierpainmod:block/pedestal/test_pedestal"
+    "0": "premierpainmod:block/pedestal/andesite_pedestal"
   }
 }
