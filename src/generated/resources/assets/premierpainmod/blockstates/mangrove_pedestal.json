@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "premierpainmod:block/mangrove_pedestal_bottom"
+      "model": "premierpainmod:block/mangrove_pedestal"
     }
   }
 }

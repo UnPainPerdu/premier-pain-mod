@@ -114,8 +114,9 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void pedestalWithItem(Block pedestal)
     {
         String pedestaleName = BuiltInRegistries.BLOCK.getKey(pedestal).toString().replace(PremierPainMod.MODID+":","");
-        ModelFile pedestalModel = models().withExistingParent(key(pedestal).toString()+"_bottom","premierpainmod:block/pedestal").texture("0","block/pedestal/" + pedestaleName);
-        simpleBlockWithItem(pedestal, pedestalModel);
+        ModelFile pedestalModel = models().withExistingParent(key(pedestal).toString(),"premierpainmod:block/pedestal").texture("0","block/pedestal/" + pedestaleName);
+        simpleBlock(pedestal, pedestalModel);
+        itemModels().getBuilder(key(pedestal).getPath()).parent(pedestalModel);
     }
     private void villagerStatueWithItem(Block statue)
     {

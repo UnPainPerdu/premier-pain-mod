@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "premierpainmod:block/copper_block_pedestal_bottom"
+      "model": "premierpainmod:block/copper_block_pedestal"
     }
   }
 }

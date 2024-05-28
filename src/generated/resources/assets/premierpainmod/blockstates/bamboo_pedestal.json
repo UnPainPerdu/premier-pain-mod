@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "premierpainmod:block/bamboo_pedestal_bottom"
+      "model": "premierpainmod:block/bamboo_pedestal"
     }
   }
 }

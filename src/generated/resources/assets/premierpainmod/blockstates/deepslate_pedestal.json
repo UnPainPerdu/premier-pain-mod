@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "premierpainmod:block/deepslate_pedestal_bottom"
+      "model": "premierpainmod:block/deepslate_pedestal"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "premierpainmod:block/diorite_pedestal_bottom"
+      "model": "premierpainmod:block/diorite_pedestal"
     }
   }
 }

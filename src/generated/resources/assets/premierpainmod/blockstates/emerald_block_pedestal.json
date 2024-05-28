@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "premierpainmod:block/emerald_block_pedestal_bottom"
+      "model": "premierpainmod:block/emerald_block_pedestal"
     }
   }
 }

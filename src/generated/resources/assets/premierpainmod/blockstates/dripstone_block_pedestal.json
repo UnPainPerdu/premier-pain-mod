@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "premierpainmod:block/dripstone_block_pedestal_bottom"
+      "model": "premierpainmod:block/dripstone_block_pedestal"
     }
   }
 }
