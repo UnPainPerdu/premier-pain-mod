@@ -3,7 +3,7 @@ package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
-import com.unpainperdu.premierpainmod.world.block.VillagerStatue;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerStatue;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;

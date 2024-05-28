@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.world.block;
+package com.unpainperdu.premierpainmod.level.world.block;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -18,20 +18,20 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class WaterloggableBlock extends Block implements SimpleWaterloggedBlock
+public class PedestalBlock extends Block implements SimpleWaterloggedBlock
 {
-    public static final MapCodec<WaterloggableBlock> CODEC = simpleCodec(WaterloggableBlock::new);
+    public static final MapCodec<PedestalBlock> CODEC = simpleCodec(PedestalBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape SHAPE = Block.box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
 
-    public WaterloggableBlock(Properties p_49795_)
+    public PedestalBlock(Properties p_49795_)
     {
         super(p_49795_);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE));
     }
 
     @Override
-    public MapCodec<? extends WaterloggableBlock> codec() {
+    public MapCodec<? extends PedestalBlock> codec() {
         return CODEC;
     }
 

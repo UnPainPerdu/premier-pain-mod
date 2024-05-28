@@ -22,7 +22,9 @@ public class CreativeTabRegister
             .displayItems((parameters, output) -> {
                 //Items
                 //Blocks
-                    //statue
+                //WorkShopZone
+                output.accept(BlockRegister.VILLAGER_WORKSHOP.get());
+                //statue
                 output.accept(BlockRegister.OAK_VILLAGER_STATUE.get());
                 output.accept(BlockRegister.BIRCH_VILLAGER_STATUE.get());
                 output.accept(BlockRegister.SPRUCE_VILLAGER_STATUE.get());
