@@ -50,6 +50,8 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 );
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add
                 (
+                        //villager workshop
+                        BlockRegister.VILLAGER_WORKSHOP.get(),
                         //statue
                         BlockRegister.STONE_VILLAGER_STATUE.get(),
                         BlockRegister.MOSSY_STONE_VILLAGER_STATUE.get(),

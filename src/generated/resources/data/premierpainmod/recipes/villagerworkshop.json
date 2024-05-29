@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stone"
+    },
+    "1": {
+      "item": "minecraft:copper_ingot"
+    },
+    "2": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "pattern": [
+    "121",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:villagerworkshop"
+  }
+}

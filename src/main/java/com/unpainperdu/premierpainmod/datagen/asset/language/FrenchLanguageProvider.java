@@ -19,6 +19,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("itemGroup.premierpainmod", "Mod Premier Pain");
         add(ItemRegister.VILLAGER_ICON.get(), "Icone de villageois");
         //block
+        // villager workshop
+        villagerWorkshopTranslation();
             // "All material"
         globalAllMaterialTranslation("oak", "chêne");
         globalAllMaterialTranslation("birch","bouleau");
@@ -81,5 +83,9 @@ public class FrenchLanguageProvider extends LanguageProvider
         String pedestal = "_pedestal";
         String translationPedestal = "Piédestale en ";
         add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+    }
+    private void villagerWorkshopTranslation()
+    {
+        add("block."+PremierPainMod.MODID+".villagerworkshop","Atelier du villageois");
     }
 }

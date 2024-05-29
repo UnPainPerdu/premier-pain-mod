@@ -94,7 +94,8 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     //quand le bloc est pété
     public BlockState playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
     {
-        if (!pLevel.isClientSide && (pPlayer.isCreative() || !pPlayer.hasCorrectToolForDrops(pState, pLevel, pPos))) {
+        if (!pLevel.isClientSide && (pPlayer.isCreative() || !pPlayer.hasCorrectToolForDrops(pState, pLevel, pPos)))
+        {
             preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
         }
 

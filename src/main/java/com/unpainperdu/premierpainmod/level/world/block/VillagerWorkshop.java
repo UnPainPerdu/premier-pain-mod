@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -47,7 +48,7 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
 
     protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
     {
-        if (pFacing != getNeighbourDirection((VillagerWorkshopPart) pState.getValue(PART), directionSwitcher(pState)))
+        if (pFacing != getNeighbourDirection((VillagerWorkshopPart) pState.getValue(PART), DirectionSwitcher(pState.getValue(FACING))))
         {
             return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
         }
@@ -63,28 +64,35 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
     }
     public BlockState playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
     {
-        if (!pLevel.isClientSide && pPlayer.isCreative())
+        if (!pLevel.isClientSide && (pPlayer.isCreative() || !pPlayer.hasCorrectToolForDrops(pState, pLevel, pPos)))
         {
-            VillagerWorkshopPart villagerWorkshopPart = (VillagerWorkshopPart)pState.getValue(PART);
-            if (villagerWorkshopPart == VillagerWorkshopPart.RIGHT)
+            preventCreativeDropFromRightPart(pLevel, pPos, pState, pPlayer);
+        }
+
+        super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
+        return pState;
+    }
+    //Pète le bloc de droite si gauche cassé
+    protected static void preventCreativeDropFromRightPart(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
+    {
+        VillagerWorkshopPart villagerWorkshopPart = (VillagerWorkshopPart)pState.getValue(PART);
+        if (villagerWorkshopPart == VillagerWorkshopPart.RIGHT)
+        {
+            BlockPos blockpos = pPos.relative(reverseDirectionSwitcher(pState.getValue(FACING)));
+            BlockState blockstate = pLevel.getBlockState(blockpos);
+            if (blockstate.is(pState.getBlock()) && blockstate.getValue(PART) == VillagerWorkshopPart.LEFT)
             {
-                BlockPos blockpos = pPos.relative(getNeighbourDirection(villagerWorkshopPart, directionSwitcher(pState)));
-                BlockState blockstate = pLevel.getBlockState(blockpos);
-                if (blockstate.is(this) && blockstate.getValue(PART) == VillagerWorkshopPart.LEFT)
-                {
-                    pLevel.setBlock(blockpos, Blocks.AIR.defaultBlockState(), 35);
-                    pLevel.levelEvent(pPlayer, 2001, blockpos, Block.getId(blockstate));
-                }
+                pLevel.setBlock(blockpos, Blocks.AIR.defaultBlockState(), 35);
+                pLevel.levelEvent(pPlayer, 2001, blockpos, Block.getId(blockstate));
             }
         }
-        return super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
     }
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext)
     {
         Direction direction = pContext.getHorizontalDirection();
         BlockPos blockpos = pContext.getClickedPos();
-        BlockPos blockpos1 = blockpos.relative(direction);
+        BlockPos blockpos1 = blockpos.relative(DirectionSwitcher(direction));
         Level level = pContext.getLevel();
         return level.getBlockState(blockpos1).canBeReplaced(pContext) && level.getWorldBorder().isWithinBounds(blockpos1) ? (BlockState)this.defaultBlockState().setValue(FACING, direction) : null;
     }
@@ -97,7 +105,7 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
 
     public static Direction getConnectedDirection(BlockState pState)
     {
-        Direction direction = directionSwitcher(pState);
+        Direction direction = DirectionSwitcher(pState.getValue(FACING));
         return pState.getValue(PART) == VillagerWorkshopPart.LEFT ? direction.getOpposite() : direction;
     }
 
@@ -116,16 +124,16 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         if (!pLevel.isClientSide)
         {
-            BlockPos blockpos = pPos.relative(directionSwitcher(pState));
+            BlockPos blockpos = pPos.relative(DirectionSwitcher(pState.getValue(FACING)));
             pLevel.setBlock(blockpos, (BlockState)pState.setValue(PART, VillagerWorkshopPart.LEFT), 3);
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
         }
 
     }
-    private static Direction directionSwitcher(BlockState pState)
+    private static Direction DirectionSwitcher(Direction direction)
     {
-        switch (pState.getValue(FACING))
+        switch (direction)
         {
             case Direction.WEST:
             {
@@ -142,6 +150,28 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
             default:
             {
                 return Direction.WEST;
+            }
+        }
+    }
+    private static Direction reverseDirectionSwitcher(Direction direction)
+    {
+        switch (direction)
+        {
+            case Direction.WEST:
+            {
+                return Direction.NORTH;
+            }
+            case Direction.EAST:
+            {
+                return Direction.SOUTH;
+            }
+            case Direction.SOUTH:
+            {
+                return Direction.WEST;
+            }
+            default:
+            {
+                return Direction.EAST;
             }
         }
     }

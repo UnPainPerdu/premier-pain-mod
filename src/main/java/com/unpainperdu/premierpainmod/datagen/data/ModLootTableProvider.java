@@ -2,6 +2,8 @@ package com.unpainperdu.premierpainmod.datagen.data;
 
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerStatue;
 import net.minecraft.core.HolderLookup;
@@ -42,6 +44,8 @@ public class ModLootTableProvider extends LootTableProvider
         @Override
         public void generate()
         {
+            //villager workshop
+            VillagerWorkshopLootTableGenerator(BlockRegister.VILLAGER_WORKSHOP.get());
             //statue
             statueLootTableGenerator(BlockRegister.OAK_VILLAGER_STATUE.get());
             statueLootTableGenerator(BlockRegister.BIRCH_VILLAGER_STATUE.get());
@@ -136,6 +140,10 @@ public class ModLootTableProvider extends LootTableProvider
         private void statueLootTableGenerator(Block statue)
         {
             super.add(statue, this.createSinglePropConditionTable(statue, VillagerStatue.HALF, DoubleBlockHalf.LOWER));
+        }
+        private void VillagerWorkshopLootTableGenerator(Block villagerWorkshop)
+        {
+            super.add(villagerWorkshop, this.createSinglePropConditionTable(villagerWorkshop, VillagerWorkshop.PART, VillagerWorkshopPart.RIGHT));
         }
         private void pedestalLootTableGenerator(Block pedestal)
         {

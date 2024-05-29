@@ -8,11 +8,15 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.text.html.HTML;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder
@@ -29,6 +33,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //item
         //block
+            // Villager workshop
+        villagerWorkshopRecipeBuilder(BlockRegister.VILLAGER_WORKSHOP);
             //statue
         statueRecipeBuilder(BlockRegister.OAK_VILLAGER_STATUE,"has_oak_planks",Blocks.OAK_PLANKS);
         statueRecipeBuilder(BlockRegister.BIRCH_VILLAGER_STATUE,"has_birch_planks",Blocks.BIRCH_PLANKS);
@@ -131,6 +137,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" # ")
                 .pattern("###")
                 .unlockedBy(pName, has(ingredient))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+    private void villagerWorkshopRecipeBuilder(ItemLike craftedBlock)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(craftedBlock, 1))
+                .define('1', Items.COPPER_INGOT)
+                .define('2', Items.EMERALD)
+                .define('#', Blocks.STONE)
+                .pattern("121")
+                .pattern("###")
+                .unlockedBy("has_stone", has(Blocks.STONE))
                 .save(ModRecipeProvider.recipeOutput);
     }
 }

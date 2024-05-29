@@ -1,4 +1,4 @@
-// 1.20.6	2024-05-25T11:27:43.4526354	Loot Tables
+// 1.20.6	2024-05-29T12:03:13.628332	Loot Tables
 5a5f9a5ef56642e5ea2662a133180a1dbefd02f7 data/premierpainmod/loot_tables/blocks/acacia_pedestal.json
 266d7ee013fc386d0821e3ebbf8a5c33a11ef1a3 data/premierpainmod/loot_tables/blocks/acacia_villager_statue.json
 2829d0429bcc49b5837a858e72add8fe5167d4d2 data/premierpainmod/loot_tables/blocks/amethyst_block_pedestal.json
@@ -77,5 +77,6 @@ a12a364bc361da6967f4f26f88fcfe7a7285931f data/premierpainmod/loot_tables/blocks/
 cf124f2d45f98e3dc226f34fa463e36730957aa2 data/premierpainmod/loot_tables/blocks/stone_villager_statue.json
 f31ac76a837ac1851b4788892bd292f8c7823302 data/premierpainmod/loot_tables/blocks/tuff_pedestal.json
 85f007318ed73cec0c9e6a7e2b5041521461f498 data/premierpainmod/loot_tables/blocks/tuff_villager_statue.json
+d5c65ac62cdad73174f10978435b58714e8dc295 data/premierpainmod/loot_tables/blocks/villagerworkshop.json
 c7a56bd1a00efb24392a766f4d015eb87ddf0acd data/premierpainmod/loot_tables/blocks/warped_pedestal.json
 def1560a67008f0e99013d390639725b2d2e56f0 data/premierpainmod/loot_tables/blocks/warped_villager_statue.json

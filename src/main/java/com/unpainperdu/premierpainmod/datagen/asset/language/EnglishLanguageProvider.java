@@ -19,6 +19,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("itemGroup.premierpainmod", "Premier Pain mod");
         add(ItemRegister.VILLAGER_ICON.get(), "Villager icon");
         //block
+            // villager workshop
+        villagerWorkshopTranslation();
             // "All material"
         globalAllMaterialTranslation("oak");
         globalAllMaterialTranslation("birch");
@@ -120,5 +122,9 @@ public class EnglishLanguageProvider extends LanguageProvider
         {
             add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 +" "+ suffix2 + translationPedestal);
         }
+    }
+    private void villagerWorkshopTranslation()
+    {
+        add("block."+PremierPainMod.MODID+".villagerworkshop","Villager Workshop");
     }
 }
