@@ -52,9 +52,11 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     {
         BlockPos blockpos = pContext.getClickedPos();
         Level level = pContext.getLevel();
-        FluidState fluidstate = level.getFluidState(blockpos.above());
-        boolean flag = fluidstate.getType() == Fluids.WATER;
-        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(pContext)) {
+        FluidState fluidstateDown = level.getFluidState(blockpos);
+        FluidState fluidstateUp = level.getFluidState(blockpos.above());
+        boolean flag = fluidstateDown.getType() == Fluids.WATER;
+        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(pContext))
+        {
             return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(FACING, pContext.getHorizontalDirection());
         } else {
             return null;
@@ -69,7 +71,9 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     // Pose le bloc du dessus
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack)
     {
-        pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER), 3);
+        FluidState fluidstateUp = pLevel.getFluidState(pPos.above());
+        boolean flag = fluidstateUp.getType() == Fluids.WATER;
+        pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER).setValue(WATERLOGGED, Boolean.valueOf(flag)), 3);
     }
 
     //Si dessous pété, péte le dessus
