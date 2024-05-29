@@ -157,7 +157,6 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private void villagerWorkshopWithItem(Block villagerWorkshop)
     {
-        String statueName = BuiltInRegistries.BLOCK.getKey(villagerWorkshop).toString().replace(PremierPainMod.MODID+":","");
         // Get a variant block state builder.
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWorkshop);
         // Create a partial state and set properties on it.
@@ -183,6 +182,9 @@ public class ModBlockStateProvider extends BlockStateProvider
                         .build();
             }
         });
+        String villagerWorkshopName = BuiltInRegistries.BLOCK.getKey(villagerWorkshop).toString().replace(PremierPainMod.MODID+":","");
+        ModelFile villagerWorkshopModel = models().withExistingParent(key(villagerWorkshop).toString(),"premierpainmod:block/villager_workshop_m");
+        itemModels().getBuilder(key(villagerWorkshop).getPath()).parent(villagerWorkshopModel);
     }
     private ResourceLocation key(Block block)
     {
