@@ -28,6 +28,7 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
+
     public VillagerStatue(Properties pProperties)
     {
         super(pProperties);

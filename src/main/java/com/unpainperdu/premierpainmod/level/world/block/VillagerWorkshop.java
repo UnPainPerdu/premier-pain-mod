@@ -15,21 +15,25 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class VillagerWorkshop extends HorizontalDirectionalBlock
+public class VillagerWorkshop extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock
 {
     public static final MapCodec<VillagerWorkshop> CODEC = simpleCodec(VillagerWorkshop::new);
     public static final EnumProperty<VillagerWorkshopPart> PART;
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
 
     public VillagerWorkshop(Properties pProperties)
     {
         super(pProperties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(PART, VillagerWorkshopPart.RIGHT));
+        this.registerDefaultState(this.stateDefinition.any().setValue(PART, VillagerWorkshopPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE));
     }
 
     @Override
@@ -47,6 +51,10 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
 
     protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
     {
+        if (pState.getValue(WATERLOGGED))
+        {
+            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+        }
         VillagerWorkshopPart villagerWorkshopPart = pState.getValue(PART);
         if (pFacing != getNeighbourDirection((VillagerWorkshopPart) pState.getValue(PART), DirectionSwitcher(pState.getValue(FACING))))
         {
@@ -56,6 +64,12 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
         {
             return pFacingState.is(this) && pFacingState.getValue(PART) != pState.getValue(PART) ? (BlockState)pState : Blocks.AIR.defaultBlockState();
         }
+    }
+
+    @Override
+    protected @NotNull FluidState getFluidState(BlockState pState)
+    {
+        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
     }
 
     private static Direction getNeighbourDirection(VillagerWorkshopPart pPart, Direction pDirection)
@@ -83,7 +97,8 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
             BlockState blockstate = pLevel.getBlockState(blockpos);
             if (blockstate.is(pState.getBlock()) && blockstate.getValue(PART) == VillagerWorkshopPart.RIGHT)
             {
-                pLevel.setBlock(blockpos, Blocks.AIR.defaultBlockState(), 35);
+                BlockState blockstate1 = blockstate.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
+                pLevel.setBlock(blockpos, blockstate1, 35);
                 pLevel.levelEvent(pPlayer, 2001, blockpos, Block.getId(blockstate));
             }
         }
@@ -91,11 +106,14 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext)
     {
+        Level level = pContext.getLevel();
         Direction direction = pContext.getHorizontalDirection();
         BlockPos blockpos = pContext.getClickedPos();
         BlockPos blockpos1 = blockpos.relative(DirectionSwitcher(direction));
-        Level level = pContext.getLevel();
-        return level.getBlockState(blockpos1).canBeReplaced(pContext) && level.getWorldBorder().isWithinBounds(blockpos1) ? (BlockState)this.defaultBlockState().setValue(FACING, direction) : null;
+        FluidState fluidstateDown = level.getFluidState(blockpos);
+        boolean flag = fluidstateDown.getType() == Fluids.WATER;
+
+        return level.getBlockState(blockpos1).canBeReplaced(pContext) && level.getWorldBorder().isWithinBounds(blockpos1) ? (BlockState)this.defaultBlockState().setValue(FACING, direction).setValue(WATERLOGGED, Boolean.valueOf(flag)) : null;
     }
     //Applique la hit-box
     @Override
@@ -118,15 +136,18 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add(new Property[]{FACING, PART});
+        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED});
     }
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack)
     {
+        BlockPos blockpos1 = pPos.relative(DirectionSwitcher(pState.getValue(FACING)));
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         if (!pLevel.isClientSide)
         {
+            FluidState fluidstateUp = pLevel.getFluidState(blockpos1);
+            boolean flag = fluidstateUp.getType() == Fluids.WATER;
             BlockPos blockpos = pPos.relative(DirectionSwitcher(pState.getValue(FACING)));
-            pLevel.setBlock(blockpos, (BlockState)pState.setValue(PART, VillagerWorkshopPart.LEFT), 3);
+            pLevel.setBlock(blockpos, (BlockState)pState.setValue(PART, VillagerWorkshopPart.LEFT).setValue(WATERLOGGED, Boolean.valueOf(flag)), 3);
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
         }
