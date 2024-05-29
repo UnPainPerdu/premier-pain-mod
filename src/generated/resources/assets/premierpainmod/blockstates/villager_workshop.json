@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,villagerworkshoppart=left": {
+      "model": "premierpainmod:block/villager_workshop_left",
+      "y": 270
+    },
+    "facing=east,villagerworkshoppart=right": {
+      "model": "premierpainmod:block/villager_workshop_right",
+      "y": 270
+    },
+    "facing=north,villagerworkshoppart=left": {
+      "model": "premierpainmod:block/villager_workshop_left",
+      "y": 180
+    },
+    "facing=north,villagerworkshoppart=right": {
+      "model": "premierpainmod:block/villager_workshop_right",
+      "y": 180
+    },
+    "facing=south,villagerworkshoppart=left": {
+      "model": "premierpainmod:block/villager_workshop_left"
+    },
+    "facing=south,villagerworkshoppart=right": {
+      "model": "premierpainmod:block/villager_workshop_right"
+    },
+    "facing=west,villagerworkshoppart=left": {
+      "model": "premierpainmod:block/villager_workshop_left",
+      "y": 90
+    },
+    "facing=west,villagerworkshoppart=right": {
+      "model": "premierpainmod:block/villager_workshop_right",
+      "y": 90
+    }
+  }
+}

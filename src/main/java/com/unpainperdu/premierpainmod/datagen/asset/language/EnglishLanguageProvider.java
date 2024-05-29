@@ -125,6 +125,6 @@ public class EnglishLanguageProvider extends LanguageProvider
     }
     private void villagerWorkshopTranslation()
     {
-        add("block."+PremierPainMod.MODID+".villagerworkshop","Villager Workshop");
+        add("block."+PremierPainMod.MODID+".villager_workshop","Villager Workshop");
     }
 }

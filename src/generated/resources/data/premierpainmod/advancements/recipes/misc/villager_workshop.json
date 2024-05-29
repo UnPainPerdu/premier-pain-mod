@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:villagerworkshop"
+        "recipe": "premierpainmod:villager_workshop"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:villagerworkshop"
+      "premierpainmod:villager_workshop"
     ]
   }
 }

@@ -86,6 +86,6 @@ public class FrenchLanguageProvider extends LanguageProvider
     }
     private void villagerWorkshopTranslation()
     {
-        add("block."+PremierPainMod.MODID+".villagerworkshop","Atelier du villageois");
+        add("block."+PremierPainMod.MODID+".villager_workshop","Atelier du villageois");
     }
 }

@@ -13,18 +13,18 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "premierpainmod:villagerworkshop",
+              "block": "premierpainmod:villager_workshop",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "villagerworkshoppart": "right"
               }
             }
           ],
-          "name": "premierpainmod:villagerworkshop"
+          "name": "premierpainmod:villager_workshop"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "premierpainmod:blocks/villagerworkshop"
+  "random_sequence": "premierpainmod:blocks/villager_workshop"
 }

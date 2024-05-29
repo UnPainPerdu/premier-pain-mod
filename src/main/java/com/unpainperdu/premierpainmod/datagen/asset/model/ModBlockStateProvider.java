@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.datagen.asset.model;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,6 +24,8 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
+        //workshop
+        villagerWorkshopWithItem(BlockRegister.VILLAGER_WORKSHOP.get());
         //villager statue
         villagerStatueWithItem(BlockRegister.OAK_VILLAGER_STATUE.get());
         villagerStatueWithItem(BlockRegister.BIRCH_VILLAGER_STATUE.get());
@@ -150,6 +154,35 @@ public class ModBlockStateProvider extends BlockStateProvider
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
                 .texture("layer0","item/villager_statue/" + statueName);
+    }
+    private void villagerWorkshopWithItem(Block villagerWorkshop)
+    {
+        String statueName = BuiltInRegistries.BLOCK.getKey(villagerWorkshop).toString().replace(PremierPainMod.MODID+":","");
+        // Get a variant block state builder.
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWorkshop);
+        // Create a partial state and set properties on it.
+        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
+        // Alternatively, forAllStates(Function<BlockState, ConfiguredModel[]>) creates a model for every state.
+        // The passed function will be called once for each possible state.
+        variantBuilder.forAllStates(state ->
+        {
+            if(state.getValue(VillagerWorkshop.PART) == VillagerWorkshopPart.RIGHT)
+            {
+                // Return a ConfiguredModel depending on the state's properties.
+                // For example, the following code will rotate the model depending on the horizontal rotation of the block.
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(villagerWorkshop).toString()+"_right","premierpainmod:block/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            else
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(villagerWorkshop).toString()+"_left","premierpainmod:block/villager_workshop_left_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+        });
     }
     private ResourceLocation key(Block block)
     {
