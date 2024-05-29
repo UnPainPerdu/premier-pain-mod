@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -48,9 +47,10 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
 
     protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
     {
+        VillagerWorkshopPart villagerWorkshopPart = pState.getValue(PART);
         if (pFacing != getNeighbourDirection((VillagerWorkshopPart) pState.getValue(PART), DirectionSwitcher(pState.getValue(FACING))))
         {
-            return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+            return villagerWorkshopPart == VillagerWorkshopPart.RIGHT && pFacing == reverseDirectionSwitcher(pState.getValue(FACING)) && !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
         }
         else
         {
@@ -62,6 +62,7 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
     {
         return pPart == VillagerWorkshopPart.RIGHT ? pDirection : pDirection.getOpposite();
     }
+
     public BlockState playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
     {
         if (!pLevel.isClientSide && (pPlayer.isCreative() || !pPlayer.hasCorrectToolForDrops(pState, pLevel, pPos)))
@@ -76,11 +77,11 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock
     protected static void preventCreativeDropFromRightPart(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
     {
         VillagerWorkshopPart villagerWorkshopPart = (VillagerWorkshopPart)pState.getValue(PART);
-        if (villagerWorkshopPart == VillagerWorkshopPart.RIGHT)
+        if (villagerWorkshopPart == VillagerWorkshopPart.LEFT)
         {
             BlockPos blockpos = pPos.relative(reverseDirectionSwitcher(pState.getValue(FACING)));
             BlockState blockstate = pLevel.getBlockState(blockpos);
-            if (blockstate.is(pState.getBlock()) && blockstate.getValue(PART) == VillagerWorkshopPart.LEFT)
+            if (blockstate.is(pState.getBlock()) && blockstate.getValue(PART) == VillagerWorkshopPart.RIGHT)
             {
                 pLevel.setBlock(blockpos, Blocks.AIR.defaultBlockState(), 35);
                 pLevel.levelEvent(pPlayer, 2001, blockpos, Block.getId(blockstate));
