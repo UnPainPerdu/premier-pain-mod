@@ -22,6 +22,7 @@ public class CreativeTabRegister
             .displayItems((parameters, output) -> {
                 //Items
                 //Blocks
+                output.accept(BlockRegister.TEST_BLOCK.get());
                 //WorkShopZone
                 output.accept(BlockRegister.VILLAGER_WORKSHOP.get());
                 //statue

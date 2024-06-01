@@ -12,5 +12,6 @@ public class RegisterHandler
         ItemRegister.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CreativeTabRegister.register(modEventBus);
+        RecipeTypeRegister.register(modEventBus);
     }
 }
