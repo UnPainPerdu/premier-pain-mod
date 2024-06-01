@@ -1,11 +1,19 @@
 package com.unpainperdu.premierpainmod.level.world.block;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
+import com.unpainperdu.premierpainmod.level.world.menu.VillagerWorkshopMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -17,6 +25,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
@@ -26,6 +35,7 @@ import javax.annotation.Nullable;
 public class VillagerWorkshop extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock
 {
     public static final MapCodec<VillagerWorkshop> CODEC = simpleCodec(VillagerWorkshop::new);
+    private static final Component CONTAINER_TITLE = Component.translatable("container."+ PremierPainMod.MODID +"villager_workshop");
     public static final EnumProperty<VillagerWorkshopPart> PART;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
@@ -200,5 +210,26 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock implements Simp
     static
     {
         PART = EnumProperty.create("villagerworkshoppart", VillagerWorkshopPart.class);
+    }
+
+    @Override
+    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult)
+    {
+        if (pLevel.isClientSide)
+        {
+            return InteractionResult.SUCCESS;
+        }
+        else
+        {
+            pPlayer.openMenu(pState.getMenuProvider(pLevel, pPos));
+            return InteractionResult.CONSUME;
+        }
+    }
+
+    @Nullable
+    @Override
+    protected MenuProvider getMenuProvider(BlockState pState, Level pLevel, BlockPos pPos)
+    {
+        return new SimpleMenuProvider((pContainerId, pPlayerInventory, pAccess) -> new VillagerWorkshopMenu(pContainerId, pPlayerInventory, ContainerLevelAccess.create(pLevel, pPos)), CONTAINER_TITLE);
     }
 }

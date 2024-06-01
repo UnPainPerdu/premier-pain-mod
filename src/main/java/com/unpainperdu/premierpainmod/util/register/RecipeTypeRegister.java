@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.TestRecipe;
 import net.minecraft.world.item.crafting.Recipe;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.VillagerWorkshopRecipe;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,7 +20,7 @@ public class RecipeTypeRegister
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(BuiltInRegistries.RECIPE_SERIALIZER, PremierPainMod.MODID);
 
     public static final RecipeType<VillagerWorkshopRecipe> VILLAGER_WORKSHOP_RECIPE_TYPE = registerType("villager_workshopping");
-    public static final DeferredHolder<RecipeSerializer<VillagerWorkshopRecipe>,RecipeSerializer<VillagerWorkshopRecipe>> VILLAGER_WORKSHOPPING = register("villager_workshopping", () -> new VillagerWorkshopRecipe.Serializer(VillagerWorkshopRecipe::new), VILLAGER_WORKSHOP_RECIPE_TYPE);
+    public static final DeferredHolder<RecipeSerializer<VillagerWorkshopRecipe>,RecipeSerializer<VillagerWorkshopRecipe>> VILLAGER_WORKSHOPPING = register("villager_workshopping", () -> new VillagerWorkshopRecipe.Serializer(TestRecipe::new), VILLAGER_WORKSHOP_RECIPE_TYPE);
 
     private static <T extends Recipe<?>> DeferredHolder<RecipeSerializer<?>,RecipeSerializer<T>> register(final String name, final Supplier<RecipeSerializer<T>> serializer, RecipeType<T> recipeType)
     {

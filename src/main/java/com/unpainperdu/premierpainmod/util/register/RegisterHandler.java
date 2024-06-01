@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.util.register;
 
+import com.unpainperdu.premierpainmod.client.ScreenRegister;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.NeoForge;
 
 public class RegisterHandler
 {

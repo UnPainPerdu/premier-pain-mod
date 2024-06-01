@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import java.util.List;
 
 import com.unpainperdu.premierpainmod.level.world.item.crafting.VillagerWorkshopRecipe;
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import com.unpainperdu.premierpainmod.util.register.RecipeTypeRegister;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -15,11 +17,9 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 
-public class VillagerWorkshopMenu extends AbstractContainerMenu
+public class VillagerWorkshopMenu<T extends VillagerWorkshopRecipe> extends AbstractContainerMenu
 {
     public static final int INPUT_SLOT = 0;
     public static final int RESULT_SLOT = 1;
@@ -149,7 +149,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
      */
     @Override
     public boolean stillValid(Player pPlayer) {
-        return stillValid(this.access, pPlayer, Blocks.STONECUTTER);
+        return stillValid(this.access, pPlayer, BlockRegister.VILLAGER_WORKSHOP.get());
     }
 
     /**
@@ -222,7 +222,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
 
     @Override
     public MenuType<?> getType() {
-        return MenuType.STONECUTTER;
+        return MenuTypesRegister.VILLAGER_WORKSHOP.get();
     }
 
     public void registerUpdateListener(Runnable pListener) {
@@ -267,7 +267,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
                     return ItemStack.EMPTY;
                 }
             }
-            else if (this.level.getRecipeManager().getRecipeFor(RecipeType.STONECUTTING, new SimpleContainer(itemstack1), this.level).isPresent())
+            else if (this.level.getRecipeManager().getRecipeFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, new SimpleContainer(itemstack1), this.level).isPresent())
             {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false))
                 {
