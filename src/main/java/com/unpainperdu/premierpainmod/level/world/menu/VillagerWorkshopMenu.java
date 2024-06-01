@@ -81,10 +81,10 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
             }
 
             @Override
-            public void onTake(Player p_150672_, ItemStack p_150673_)
+            public void onTake(Player player, ItemStack stack)
             {
-                p_150673_.onCraftedBy(p_150672_.level(), p_150672_, p_150673_.getCount());
-                VillagerWorkshopMenu.this.resultContainer.awardUsedRecipes(p_150672_, this.getRelevantItems());
+                stack.onCraftedBy(player.level(), player, stack.getCount());
+                VillagerWorkshopMenu.this.resultContainer.awardUsedRecipes(player, this.getRelevantItems());
                 ItemStack itemstack = VillagerWorkshopMenu.this.inputSlot.remove(1);
                 if (!itemstack.isEmpty())
                 {
@@ -100,7 +100,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
                         VillagerWorkshopMenu.this.lastSoundTime = l;
                     }
                 });
-                super.onTake(p_150672_, p_150673_);
+                super.onTake(player, stack);
             }
 
             private List<ItemStack> getRelevantItems()

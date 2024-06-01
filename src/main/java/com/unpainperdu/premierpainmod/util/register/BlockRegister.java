@@ -4,7 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.PedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.block.state.TestBlock;
+import com.unpainperdu.premierpainmod.level.world.block.TestBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
