@@ -1,7 +1,6 @@
-package com.unpainperdu.premierpainmod.level.world.item.crafting;
+package com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe;
 
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.RecipeTypeRegister;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;

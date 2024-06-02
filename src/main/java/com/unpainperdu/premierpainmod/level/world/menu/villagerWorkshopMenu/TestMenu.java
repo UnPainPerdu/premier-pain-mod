@@ -1,6 +1,6 @@
-package com.unpainperdu.premierpainmod.level.world.menu;
+package com.unpainperdu.premierpainmod.level.world.menu.villagerWorkshopMenu;
 
-import com.unpainperdu.premierpainmod.level.world.item.crafting.VillagerWorkshopRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.VillagerWorkshopRecipe;
 import net.minecraft.world.entity.player.Inventory;
 
 public class TestMenu extends VillagerWorkshopMenu<VillagerWorkshopRecipe>

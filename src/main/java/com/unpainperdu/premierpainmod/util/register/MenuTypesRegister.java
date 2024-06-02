@@ -1,8 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.menu.TestMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.VillagerWorkshopMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.villagerWorkshopMenu.TestMenu;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.AbstractContainerMenu;

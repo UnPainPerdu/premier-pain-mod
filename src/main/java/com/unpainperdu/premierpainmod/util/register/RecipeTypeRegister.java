@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.item.crafting.TestRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.TestRecipe;
 import net.minecraft.world.item.crafting.Recipe;
-import com.unpainperdu.premierpainmod.level.world.item.crafting.VillagerWorkshopRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.VillagerWorkshopRecipe;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;

@@ -1,8 +1,7 @@
-package com.unpainperdu.premierpainmod.client.gui.screen;
+package com.unpainperdu.premierpainmod.client.gui.screen.villagerWorkshopRecipeScreen;
 
-import com.unpainperdu.premierpainmod.level.world.item.crafting.VillagerWorkshopRecipe;
-import com.unpainperdu.premierpainmod.level.world.menu.TestMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.VillagerWorkshopMenu;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.VillagerWorkshopRecipe;
+import com.unpainperdu.premierpainmod.level.world.menu.villagerWorkshopMenu.TestMenu;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.neoforged.api.distmarker.Dist;
