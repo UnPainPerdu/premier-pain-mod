@@ -82,6 +82,7 @@
   "block.premierpainmod.villager_workshop": "Villager Workshop",
   "block.premierpainmod.warped_pedestal": "Warped pedestal",
   "block.premierpainmod.warped_villager_statue": "Warped villager statue",
+  "container.premierpainmodvillager_workshop": "Villager workshop",
   "item.premierpainmod.villager_icon": "Villager icon",
   "itemGroup.premierpainmod": "Premier Pain mod"
 }

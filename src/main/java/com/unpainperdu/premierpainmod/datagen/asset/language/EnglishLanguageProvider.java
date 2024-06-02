@@ -17,6 +17,8 @@ public class EnglishLanguageProvider extends LanguageProvider
     protected void addTranslations()
     {
         add("itemGroup.premierpainmod", "Premier Pain mod");
+        add("container."+ PremierPainMod.MODID +"villager_workshop","Villager workshop");
+        //item
         add(ItemRegister.VILLAGER_ICON.get(), "Villager icon");
         //block
             // villager workshop

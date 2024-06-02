@@ -17,9 +17,11 @@ public class FrenchLanguageProvider extends LanguageProvider
     protected void addTranslations()
     {
         add("itemGroup.premierpainmod", "Mod Premier Pain");
+        add("container."+ PremierPainMod.MODID +"villager_workshop","Atelier du villageois");
+        //item
         add(ItemRegister.VILLAGER_ICON.get(), "Icone de villageois");
         //block
-        // villager workshop
+            // villager workshop
         villagerWorkshopTranslation();
             // "All material"
         globalAllMaterialTranslation("oak", "chêne");

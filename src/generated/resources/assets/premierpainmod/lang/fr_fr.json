@@ -82,6 +82,7 @@
   "block.premierpainmod.villager_workshop": "Atelier du villageois",
   "block.premierpainmod.warped_pedestal": "Piédestale en bois biscornu",
   "block.premierpainmod.warped_villager_statue": "Statue de villageois en bois biscornu",
+  "container.premierpainmodvillager_workshop": "Atelier du villageois",
   "item.premierpainmod.villager_icon": "Icone de villageois",
   "itemGroup.premierpainmod": "Mod Premier Pain"
 }
