@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:dark_oak_planks"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:dark_oak_pedestal"
+  }
+}

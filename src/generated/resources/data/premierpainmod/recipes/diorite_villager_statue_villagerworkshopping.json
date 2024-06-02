@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:diorite"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:diorite_villager_statue"
+  }
+}

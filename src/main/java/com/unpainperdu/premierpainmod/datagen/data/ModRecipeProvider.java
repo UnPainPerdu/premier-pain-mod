@@ -1,14 +1,14 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
+import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -119,25 +119,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         pedestalRecipeBuilder(BlockRegister.AMETHYST_BLOCK_PEDESTAL,"has_amethyst_block",Blocks.AMETHYST_BLOCK);
         pedestalRecipeBuilder(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL,"has_dripstone_block",Blocks.DRIPSTONE_BLOCK);
         pedestalRecipeBuilder(BlockRegister.BEDROCK_PEDESTAL,"has_bedrock",Blocks.BEDROCK);
+        //test zone
+
     }
     private void statueRecipeBuilder(ItemLike craftedBlock,String pName, ItemLike ingredient)
     {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, new ItemStack(craftedBlock, 1))
-                .define('#', ingredient)
-                .pattern(" # ")
-                .pattern(" # ")
-                .pattern(" # ")
-                .unlockedBy(pName, has(ingredient))
-                .save(ModRecipeProvider.recipeOutput);
+        villagerWorkshopResultFromBase(craftedBlock,RecipeCategory.BUILDING_BLOCKS,ingredient);
     }
     private void pedestalRecipeBuilder(ItemLike craftedBlock,String pName, ItemLike ingredient)
     {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, new ItemStack(craftedBlock, 1))
-                .define('#', ingredient)
-                .pattern(" # ")
-                .pattern("###")
-                .unlockedBy(pName, has(ingredient))
-                .save(ModRecipeProvider.recipeOutput);
+        villagerWorkshopResultFromBase(craftedBlock,RecipeCategory.BUILDING_BLOCKS,ingredient);
     }
     private void villagerWorkshopRecipeBuilder(ItemLike craftedBlock)
     {
@@ -149,5 +140,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("###")
                 .unlockedBy("has_stone", has(Blocks.STONE))
                 .save(ModRecipeProvider.recipeOutput);
+    }
+
+    //pCategory = RecipeCategory. / pResult = crafted block / pmaterial = ingredient / pRecipeOutput =
+    protected static void villagerWorkshopResultFromBase( ItemLike pResult,RecipeCategory pCategory, ItemLike pMaterial)
+    {
+        villagerWorkshopResultFromBase(pCategory, pResult, pMaterial, 1);
+    }
+
+    protected static void villagerWorkshopResultFromBase(RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount)
+    {
+        VillagerWorkshopRecipeBuilder.villagerWorkshoping(Ingredient.of(pMaterial), pCategory, pResult, pResultCount)
+                .unlockedBy(getHasName(pMaterial), has(pMaterial))
+                .save(ModRecipeProvider.recipeOutput, BuiltInRegistries.ITEM.getKey(pResult.asItem())+"_villagerworkshopping");
     }
 }
