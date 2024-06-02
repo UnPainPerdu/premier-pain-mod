@@ -24,8 +24,8 @@ public class VillagerBrazier extends AbstactTwoBlockHeightBlock
         return CODEC;
     }
 
-    private static final VoxelShape UPPER_SHAPE = Block.box(4, 0, 4, 12, 16, 12);
-    private static final VoxelShape BELOW_SHAPE = Block.box(1, 0, 1, 12, 16, 12);
+    private static final VoxelShape UPPER_SHAPE = Block.box(2, 0, 2, 14, 4, 14);
+    private static final VoxelShape BELOW_SHAPE = Block.box(2, 0, 2, 14, 16, 14);
     //forme hit-box, début-fin x y z
 
     //Applique la hit-box

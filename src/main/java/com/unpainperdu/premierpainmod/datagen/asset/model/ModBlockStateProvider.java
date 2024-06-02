@@ -24,6 +24,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
+        villagerBrazierWithItem(BlockRegister.TEST.get());
         //workshop
         villagerWorkshopWithItem(BlockRegister.VILLAGER_WORKSHOP.get());
         //villager statue
@@ -185,6 +186,39 @@ public class ModBlockStateProvider extends BlockStateProvider
         String villagerWorkshopName = BuiltInRegistries.BLOCK.getKey(villagerWorkshop).toString().replace(PremierPainMod.MODID+":","");
         ModelFile villagerWorkshopModel = models().withExistingParent(key(villagerWorkshop).toString(),"premierpainmod:block/villager_workshop_m");
         itemModels().getBuilder(key(villagerWorkshop).getPath()).parent(villagerWorkshopModel);
+    }
+    private void villagerBrazierWithItem(Block brazier)
+    {
+        String brazierName = BuiltInRegistries.BLOCK.getKey(brazier).toString().replace(PremierPainMod.MODID+":","");
+        // Get a variant block state builder.
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(brazier);
+        // Create a partial state and set properties on it.
+        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
+        // Alternatively, forAllStates(Function<BlockState, ConfiguredModel[]>) creates a model for every state.
+        // The passed function will be called once for each possible state.
+        variantBuilder.forAllStates(state ->
+        {
+            if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
+            {
+                // Return a ConfiguredModel depending on the state's properties.
+                // For example, the following code will rotate the model depending on the horizontal rotation of the block.
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(brazier).toString()+"_bottom","premierpainmod:block/brazier/brazier_bottom").texture("0","block/brazier/brazier_bottom"))//.texture("0","block/brazier/" + brazierName + "_bottom"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            else
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(brazier).toString()+"_upper","premierpainmod:block/brazier/brazier_upper").texture("0","block/brazier/brazier_upper"))//.texture("0","block/brazier/" + brazierName + "_upper"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+        });
+        /*itemModels().getBuilder((key(brazier).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0","item/villager_statue/" + statueName);*/
     }
     private ResourceLocation key(Block block)
     {

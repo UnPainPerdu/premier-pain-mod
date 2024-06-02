@@ -21,7 +21,7 @@ public class BlockRegister
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
     //test zone
-    public static final DeferredBlock<Block> TEST = registerBlock("test", () -> new VillagerBrazier(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+    public static final DeferredBlock<Block> TEST = registerBlock("test", () -> new VillagerBrazier(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     //staute zone (41)
