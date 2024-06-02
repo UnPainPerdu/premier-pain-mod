@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block;
+package com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -10,7 +10,10 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
@@ -22,31 +25,22 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class VillagerStatue extends Block implements SimpleWaterloggedBlock
+public abstract class AbstactTwoBlockHeightBlock extends Block implements SimpleWaterloggedBlock
 {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
 
-    public VillagerStatue(Properties pProperties)
+    public AbstactTwoBlockHeightBlock(Properties pProperties)
     {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.FALSE));
     }
-    @Override
-    public MapCodec<VillagerStatue> codec() {
-        return CODEC;
-    }
-    private static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 16, 12);
-    //forme hit-box, début-fin x y z
 
     //Applique la hit-box
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
-    {
-        return SHAPE;
-    }
+    public abstract VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_);
+
     //check si le dessus est libre
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext)
@@ -112,10 +106,12 @@ public class VillagerStatue extends Block implements SimpleWaterloggedBlock
     protected static void preventCreativeDropFromBottomPart(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
     {
         DoubleBlockHalf doubleblockhalf = pState.getValue(HALF);
-        if (doubleblockhalf == DoubleBlockHalf.UPPER) {
+        if (doubleblockhalf == DoubleBlockHalf.UPPER)
+        {
             BlockPos blockpos = pPos.below();
             BlockState blockstate = pLevel.getBlockState(blockpos);
-            if (blockstate.is(pState.getBlock()) && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER) {
+            if (blockstate.is(pState.getBlock()) && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER)
+            {
                 BlockState blockstate1 = blockstate.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
                 pLevel.setBlock(blockpos, blockstate1, 35);
                 pLevel.levelEvent(pPlayer, 2001, blockpos, Block.getId(blockstate));

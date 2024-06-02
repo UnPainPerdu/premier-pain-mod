@@ -1,10 +1,10 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerStatue;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.PedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.block.TestBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -20,6 +20,8 @@ public class BlockRegister
 {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
+    //test zone
+    public static final DeferredBlock<Block> TEST = registerBlock("test", () -> new VillagerBrazier(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     //staute zone (41)
@@ -106,6 +108,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_PEDESTAL =  pedestalRegister("amethyst_block_pedestal","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_PEDESTAL =  pedestalRegister("dripstone_block_pedestal","dripstone");
     public static final DeferredBlock<Block> BEDROCK_PEDESTAL =  pedestalRegister("bedrock_pedestal","bedrock");
+        //brazier
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
