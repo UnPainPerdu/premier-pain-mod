@@ -212,22 +212,22 @@ public class VillagerWorkshopRecipeScreen<T extends VillagerWorkshopMenu<V>, V e
     }
 
     protected ResourceLocation getScrollerSprite() {
-        return loc("textures/gui/sprite/container/villager_workshop/scroller.png");
+        return loc("container/villager_workshop/scroller");
     }
 
     protected ResourceLocation getScrollerDisabledSprite() {
-        return loc("textures/gui/sprite/container/villager_workshop/scroller_disabled.png");
+        return loc("container/villager_workshop/scroller_disabled");
     }
 
     protected ResourceLocation getRecipeSprite() {
-        return loc("textures/gui/sprite/container/villager_workshop/recipe.png");
+        return loc("container/villager_workshop/recipe");
     }
 
     protected ResourceLocation getRecipeSelectedSprite() {
-        return loc("textures/gui/sprite/container/villager_workshop/recipe_selected.png");
+        return loc("container/villager_workshop/recipe_selected");
     }
 
     protected ResourceLocation getRecipeHighlightedSprite() {
-        return loc("textures/gui/sprite/container/villager_workshop/recipe_highlighted.png");
+        return loc("container/villager_workshop/recipe_highlighted");
     }
 }
