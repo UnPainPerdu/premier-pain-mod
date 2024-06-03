@@ -269,12 +269,9 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
             }
         });
-        /*
-        itemModels().getBuilder((key(brazier).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
-                .parent(models()
-                        .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/villager_statue/" + statueName);
-        */
+
+        ModelFile brazierModel = models().withExistingParent(key(brazier).toString()+"_m","premierpainmod:block/brazier/brazier_m");
+        itemModels().getBuilder(key(brazier).getPath()).parent(brazierModel).texture("3","block/brazier/" + brazierName + "_upper").texture("2","block/brazier/" + brazierName + "_bottom");
     }
     private ResourceLocation key(Block block)
     {

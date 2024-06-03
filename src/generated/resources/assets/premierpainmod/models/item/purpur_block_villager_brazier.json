@@ -1,0 +1,7 @@
+{
+  "parent": "premierpainmod:block/purpur_block_villager_brazier_m",
+  "textures": {
+    "2": "premierpainmod:block/brazier/purpur_block_villager_brazier_bottom",
+    "3": "premierpainmod:block/brazier/purpur_block_villager_brazier_upper"
+  }
+}

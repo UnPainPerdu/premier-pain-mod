@@ -1,0 +1,7 @@
+{
+  "parent": "premierpainmod:block/jungle_villager_brazier_m",
+  "textures": {
+    "2": "premierpainmod:block/brazier/jungle_villager_brazier_bottom",
+    "3": "premierpainmod:block/brazier/jungle_villager_brazier_upper"
+  }
+}
