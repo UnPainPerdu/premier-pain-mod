@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "premierpainmod:block/brazier/campfire_fire",
+		"0": "premierpainmod:block/brazier/static_campfire_fire",
 		"1": "premierpainmod:block/brazier/brazier_log",
 		"particle": "#2"
 	},
