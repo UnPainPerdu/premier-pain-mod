@@ -128,6 +128,47 @@ public class ModLootTableProvider extends LootTableProvider
             pedestalLootTableGenerator(BlockRegister.OBSIDIAN_PEDESTAL.get());
             pedestalLootTableGenerator(BlockRegister.AMETHYST_BLOCK_PEDESTAL.get());
             pedestalLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get());
+            //brazier
+            brazierLootTableGenerator(BlockRegister.OAK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.BIRCH_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.SPRUCE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.JUNGLE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.ACACIA_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.DARK_OAK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.MANGROVE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.CHERRY_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.CRIMSON_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.WARPED_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.BAMBOO_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.STONE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.MOSSY_STONE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.ANDESITE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.DIORITE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.GRANITE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.PRISMARINE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.BLACKSTONE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.PURPUR_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.DEEPSLATE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.TUFF_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.PACKED_MUD_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.SANDSTONE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.RED_SANDSTONE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.QUARTZ_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.NETHER_BRICKS_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.BASALT_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.END_STONE_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.COAL_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.REDSTONE_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get());
+            brazierLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get());
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
@@ -148,6 +189,10 @@ public class ModLootTableProvider extends LootTableProvider
         private void pedestalLootTableGenerator(Block pedestal)
         {
             super.add(pedestal, this.createSingleItemTable(pedestal));
+        }
+        private void brazierLootTableGenerator(Block brazier)
+        {
+            super.add(brazier, this.createSinglePropConditionTable(brazier, VillagerStatue.HALF, DoubleBlockHalf.LOWER));
         }
     }
 }

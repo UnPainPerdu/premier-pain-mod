@@ -71,6 +71,7 @@ public class FrenchLanguageProvider extends LanguageProvider
     {
         statueTranslation(suffix, translationSuffix);
         pedestalTranslation(suffix, translationSuffix);
+        brazierTranslation(suffix, translationSuffix);
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "Statue de villageois 'Suffix'"
     private void statueTranslation(String suffix, String translation)
@@ -84,6 +85,12 @@ public class FrenchLanguageProvider extends LanguageProvider
     {
         String pedestal = "_pedestal";
         String translationPedestal = "Piédestale en ";
+        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+    }
+    private void brazierTranslation(String suffix, String translation)
+    {
+        String pedestal = "_villager_brazier";
+        String translationPedestal = "Brazero en ";
         add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
     }
     private void villagerWorkshopTranslation()

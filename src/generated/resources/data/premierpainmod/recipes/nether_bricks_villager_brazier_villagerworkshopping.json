@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:nether_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:nether_bricks_villager_brazier"
+  }
+}

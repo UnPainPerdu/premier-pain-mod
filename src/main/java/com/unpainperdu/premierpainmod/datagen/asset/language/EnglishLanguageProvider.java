@@ -72,12 +72,14 @@ public class EnglishLanguageProvider extends LanguageProvider
     {
         statueTranslation(suffix);
         pedestalTranslation(suffix);
+        brazierTranslation(suffix);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
     {
         statueTranslation(suffix1, suffix2, isSuffix2Translate);
         pedestalTranslation(suffix1, suffix2, isSuffix2Translate);
+        brazierTranslation(suffix1, suffix2, isSuffix2Translate);
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
     private void statueTranslation(String suffix)
@@ -116,6 +118,29 @@ public class EnglishLanguageProvider extends LanguageProvider
         String translation1 = capitalize(suffix1);
         String pedestal = "_pedestal";
         String translationPedestal = " pedestal";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 + translationPedestal);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 +" "+ suffix2 + translationPedestal);
+        }
+    }
+
+    private void brazierTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String pedestal = "_villager_brazier";
+        String translationPedestal = " villager brazier";
+        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translation+translationPedestal);
+    }
+
+    private void brazierTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String pedestal = "_villager_brazier";
+        String translationPedestal = " villager brazier";
         if (!isSuffix2Translate)
         {
             add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 + translationPedestal);

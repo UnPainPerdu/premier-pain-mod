@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,half=lower,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 270
+    },
+    "facing=east,half=lower,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 270
+    },
+    "facing=east,half=lower,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 270
+    },
+    "facing=east,half=lower,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 270
+    },
+    "facing=east,half=upper,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_unlit",
+      "y": 270
+    },
+    "facing=east,half=upper,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_unlit",
+      "y": 270
+    },
+    "facing=east,half=upper,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_lit",
+      "y": 270
+    },
+    "facing=east,half=upper,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_lit",
+      "y": 270
+    },
+    "facing=north,half=lower,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 180
+    },
+    "facing=north,half=lower,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 180
+    },
+    "facing=north,half=lower,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 180
+    },
+    "facing=north,half=lower,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 180
+    },
+    "facing=north,half=upper,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_unlit",
+      "y": 180
+    },
+    "facing=north,half=upper,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_unlit",
+      "y": 180
+    },
+    "facing=north,half=upper,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_lit",
+      "y": 180
+    },
+    "facing=north,half=upper,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_lit",
+      "y": 180
+    },
+    "facing=south,half=lower,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom"
+    },
+    "facing=south,half=lower,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom"
+    },
+    "facing=south,half=lower,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom"
+    },
+    "facing=south,half=lower,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom"
+    },
+    "facing=south,half=upper,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_unlit"
+    },
+    "facing=south,half=upper,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_unlit"
+    },
+    "facing=south,half=upper,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_lit"
+    },
+    "facing=south,half=upper,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_lit"
+    },
+    "facing=west,half=lower,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 90
+    },
+    "facing=west,half=lower,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 90
+    },
+    "facing=west,half=lower,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 90
+    },
+    "facing=west,half=lower,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_bottom",
+      "y": 90
+    },
+    "facing=west,half=upper,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_unlit",
+      "y": 90
+    },
+    "facing=west,half=upper,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_unlit",
+      "y": 90
+    },
+    "facing=west,half=upper,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_lit",
+      "y": 90
+    },
+    "facing=west,half=upper,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_brazier_upper_lit",
+      "y": 90
+    }
+  }
+}

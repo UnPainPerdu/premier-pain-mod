@@ -46,7 +46,19 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.CHERRY_PEDESTAL.get(),
                         BlockRegister.CRIMSON_PEDESTAL.get(),
                         BlockRegister.WARPED_PEDESTAL.get(),
-                        BlockRegister.BAMBOO_PEDESTAL.get()
+                        BlockRegister.BAMBOO_PEDESTAL.get(),
+                        //brazier
+                        BlockRegister.OAK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.BIRCH_VILLAGER_BRAZIER.get(),
+                        BlockRegister.SPRUCE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.JUNGLE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.ACACIA_VILLAGER_BRAZIER.get(),
+                        BlockRegister.DARK_OAK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.MANGROVE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.CHERRY_VILLAGER_BRAZIER.get(),
+                        BlockRegister.CRIMSON_VILLAGER_BRAZIER.get(),
+                        BlockRegister.WARPED_VILLAGER_BRAZIER.get(),
+                        BlockRegister.BAMBOO_VILLAGER_BRAZIER.get()
                 );
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add
                 (
@@ -109,32 +121,78 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.NETHERITE_BLOCK_PEDESTAL.get(),
                         BlockRegister.OBSIDIAN_PEDESTAL.get(),
                         BlockRegister.AMETHYST_BLOCK_PEDESTAL.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get()
+                        BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get(),
+                        //brazier
+                        BlockRegister.STONE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.MOSSY_STONE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.ANDESITE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.DIORITE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.PRISMARINE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.BLACKSTONE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.PURPUR_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.DEEPSLATE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.TUFF_VILLAGER_BRAZIER.get(),
+                        BlockRegister.PACKED_MUD_VILLAGER_BRAZIER.get(),
+                        BlockRegister.SANDSTONE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.RED_SANDSTONE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.QUARTZ_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.NETHER_BRICKS_VILLAGER_BRAZIER.get(),
+                        BlockRegister.BASALT_VILLAGER_BRAZIER.get(),
+                        BlockRegister.END_STONE_VILLAGER_BRAZIER.get(),
+                        BlockRegister.COAL_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.REDSTONE_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get(),
+                        BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get()
                 );
         this.tag(BlockTags.NEEDS_STONE_TOOL).add
                 (
+                        //statue
                         BlockRegister.IRON_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get(),
+                        //pedestal
                         BlockRegister.IRON_BLOCK_PEDESTAL.get(),
                         BlockRegister.LAPIS_BLOCK_PEDESTAL.get(),
-                        BlockRegister.COPPER_BLOCK_PEDESTAL.get()
+                        BlockRegister.COPPER_BLOCK_PEDESTAL.get(),
+                        //brazier
+                        BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get()
                 );
         this.tag(BlockTags.NEEDS_IRON_TOOL).add
                 (
+                        //statue
                         BlockRegister.GOLD_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.EMERALD_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.DIAMOND_BLOCK_VILLAGER_STATUE.get(),
+                        //pedestal
                         BlockRegister.GOLD_BLOCK_PEDESTAL.get(),
                         BlockRegister.EMERALD_BLOCK_PEDESTAL.get(),
-                        BlockRegister.DIAMOND_BLOCK_PEDESTAL.get()
+                        BlockRegister.DIAMOND_BLOCK_PEDESTAL.get(),
+                        //brazier
+                        BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get()
                 );
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add
                 (
+                        //statue
                         BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get(),
                         BlockRegister.OBSIDIAN_VILLAGER_STATUE.get(),
+                        //pedestal
                         BlockRegister.NETHERITE_BLOCK_PEDESTAL.get(),
-                        BlockRegister.OBSIDIAN_PEDESTAL.get()
+                        BlockRegister.OBSIDIAN_PEDESTAL.get(),
+                        //brazier
+                        BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get(),
+                        BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get()
                 );
     }
 }

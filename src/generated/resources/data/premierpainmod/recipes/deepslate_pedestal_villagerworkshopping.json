@@ -1,7 +1,7 @@
 {
   "type": "premierpainmod:villager_workshopping",
   "ingredient": {
-    "item": "minecraft:deepslate"
+    "item": "minecraft:cobbled_deepslate"
   },
   "result": {
     "count": 1,

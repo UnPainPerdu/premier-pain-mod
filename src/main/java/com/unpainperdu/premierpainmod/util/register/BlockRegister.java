@@ -10,18 +10,20 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class BlockRegister
 {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
     //test zone
-    public static final DeferredBlock<Block> TEST = registerBlock("test", () -> new VillagerBrazier(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     //staute zone (41)
@@ -108,7 +110,49 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_PEDESTAL =  pedestalRegister("amethyst_block_pedestal","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_PEDESTAL =  pedestalRegister("dripstone_block_pedestal","dripstone");
     public static final DeferredBlock<Block> BEDROCK_PEDESTAL =  pedestalRegister("bedrock_pedestal","bedrock");
-        //brazier
+        //brazier zone
+        public static final DeferredBlock<Block> OAK_VILLAGER_BRAZIER = brazierRegister("oak_villager_brazier","wood");
+    public static final DeferredBlock<Block> BIRCH_VILLAGER_BRAZIER = brazierRegister("birch_villager_brazier","wood");
+    public static final DeferredBlock<Block> SPRUCE_VILLAGER_BRAZIER = brazierRegister("spruce_villager_brazier","wood");
+    public static final DeferredBlock<Block> JUNGLE_VILLAGER_BRAZIER = brazierRegister("jungle_villager_brazier","wood");
+    public static final DeferredBlock<Block> ACACIA_VILLAGER_BRAZIER = brazierRegister("acacia_villager_brazier","wood");
+    public static final DeferredBlock<Block> DARK_OAK_VILLAGER_BRAZIER = brazierRegister("dark_oak_villager_brazier","wood");
+    public static final DeferredBlock<Block> MANGROVE_VILLAGER_BRAZIER = brazierRegister("mangrove_villager_brazier","wood");
+    public static final DeferredBlock<Block> CHERRY_VILLAGER_BRAZIER = brazierRegister("cherry_villager_brazier","wood","cherry");
+    public static final DeferredBlock<Block> BAMBOO_VILLAGER_BRAZIER = brazierRegister("bamboo_villager_brazier","wood","bamboo");
+    public static final DeferredBlock<Block> CRIMSON_VILLAGER_BRAZIER = brazierRegister("crimson_villager_brazier","wood","netherwood");
+    public static final DeferredBlock<Block> WARPED_VILLAGER_BRAZIER = brazierRegister("warped_villager_brazier","wood","netherwood");
+    public static final DeferredBlock<Block> STONE_VILLAGER_BRAZIER =  brazierRegister("stone_villager_brazier","stone");
+    public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_BRAZIER =  brazierRegister("mossy_stone_villager_brazier","stone");
+    public static final DeferredBlock<Block> ANDESITE_VILLAGER_BRAZIER =  brazierRegister("andesite_villager_brazier","stone");
+    public static final DeferredBlock<Block> DIORITE_VILLAGER_BRAZIER =  brazierRegister("diorite_villager_brazier","stone");
+    public static final DeferredBlock<Block> GRANITE_VILLAGER_BRAZIER =  brazierRegister("granite_villager_brazier","stone");
+    public static final DeferredBlock<Block> PRISMARINE_VILLAGER_BRAZIER =  brazierRegister("prismarine_villager_brazier","stone");
+    public static final DeferredBlock<Block> BLACKSTONE_VILLAGER_BRAZIER =  brazierRegister("blackstone_villager_brazier","stone");
+    public static final DeferredBlock<Block> PURPUR_BLOCK_VILLAGER_BRAZIER =  brazierRegister("purpur_block_villager_brazier","stone");
+    public static final DeferredBlock<Block> DEEPSLATE_VILLAGER_BRAZIER =  brazierRegister("deepslate_villager_brazier","deepslate");
+    public static final DeferredBlock<Block> TUFF_VILLAGER_BRAZIER =  brazierRegister("tuff_villager_brazier","tuff");
+    public static final DeferredBlock<Block> PACKED_MUD_VILLAGER_BRAZIER =  brazierRegister("packed_mud_villager_brazier","mud");
+    public static final DeferredBlock<Block> SANDSTONE_VILLAGER_BRAZIER =  brazierRegister("sandstone_villager_brazier","sandstone");
+    public static final DeferredBlock<Block> RED_SANDSTONE_VILLAGER_BRAZIER =  brazierRegister("red_sandstone_villager_brazier","sandstone");
+    public static final DeferredBlock<Block> QUARTZ_BLOCK_VILLAGER_BRAZIER =  brazierRegister("quartz_block_villager_brazier","sandstone");
+    public static final DeferredBlock<Block> NETHER_BRICKS_VILLAGER_BRAZIER =  brazierRegister("nether_bricks_villager_brazier","netherbrick");
+    public static final DeferredBlock<Block> BASALT_VILLAGER_BRAZIER =  brazierRegister("basalt_villager_brazier","basalt");
+    public static final DeferredBlock<Block> END_STONE_VILLAGER_BRAZIER =  brazierRegister("end_stone_villager_brazier","endstone");
+    public static final DeferredBlock<Block> COAL_BLOCK_VILLAGER_BRAZIER =  brazierRegister("coal_block_villager_brazier","mineral_strong");
+    public static final DeferredBlock<Block> IRON_BLOCK_VILLAGER_BRAZIER =  brazierRegister("iron_block_villager_brazier","metal");
+    public static final DeferredBlock<Block> GOLD_BLOCK_VILLAGER_BRAZIER =  brazierRegister("gold_block_villager_brazier","metal");
+    public static final DeferredBlock<Block> REDSTONE_BLOCK_VILLAGER_BRAZIER =  brazierRegister("redstone_block_villager_brazier","metal");
+    public static final DeferredBlock<Block> EMERALD_BLOCK_VILLAGER_BRAZIER =  brazierRegister("emerald_block_villager_brazier","metal");
+    public static final DeferredBlock<Block> DIAMOND_BLOCK_VILLAGER_BRAZIER =  brazierRegister("diamond_block_villager_brazier","metal");
+    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_BRAZIER =  brazierRegister("copper_block_villager_brazier","copper");
+    public static final DeferredBlock<Block> LAPIS_BLOCK_VILLAGER_BRAZIER =  brazierRegister("lapis_block_villager_brazier","mineral_weak");
+    public static final DeferredBlock<Block> NETHERITE_BLOCK_VILLAGER_BRAZIER =  brazierRegister("netherite_block_villager_brazier","netherite");
+    public static final DeferredBlock<Block> OBSIDIAN_VILLAGER_BRAZIER =  brazierRegister("obsidian_villager_brazier","obsidan");
+    public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_BRAZIER =  brazierRegister("amethyst_block_villager_brazier","amethyst");
+    public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_BRAZIER =  brazierRegister("dripstone_block_villager_brazier","dripstone");
+    public static final DeferredBlock<Block> BEDROCK_VILLAGER_BRAZIER =  brazierRegister("bedrock_villager_brazier","bedrock");
+
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
@@ -306,6 +350,92 @@ public class BlockRegister
                 return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
             }
         }
+    }
+    private static  <T extends Block> DeferredBlock<T> brazierRegister(String name, String familie, String type)
+    {
+        switch (familie)
+        {
+            case "wood":
+                return (DeferredBlock<T>) brazierRegister(name, type);
+            default:
+                return (DeferredBlock<T>) brazierRegister(name, "default");
+        }
+    }
+    private static <T extends Block> DeferredBlock<T> brazierRegister(String name, String type)
+    {
+        switch (type) {
+            case "stone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "cobblestone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "deepslate": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "tuff": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "mud": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_MUD).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "sandstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "netherbrick": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "mineral_weak": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "mineral_strong": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_BLOCK).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "metal": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "copper": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "basalt": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "endstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "obsidan": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "netherite": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "amethyst": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "dripstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "bedrock": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "netherwood": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "cherry": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            case "bamboo": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+            default: {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+        }
+    }
+
+    private static ToIntFunction<BlockState> litBlockEmission(int pLightValue)
+    {
+        return p_50763_ -> p_50763_.getValue(BlockStateProperties.LIT) ? pLightValue : 0;
     }
 
     public static void register(IEventBus modEventBus)

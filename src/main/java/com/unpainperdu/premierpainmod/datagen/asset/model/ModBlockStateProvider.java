@@ -9,9 +9,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+import static java.lang.Boolean.TRUE;
 
 public class ModBlockStateProvider extends BlockStateProvider
 {
@@ -24,7 +27,6 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        villagerBrazierWithItem(BlockRegister.TEST.get());
         //workshop
         villagerWorkshopWithItem(BlockRegister.VILLAGER_WORKSHOP.get());
         //villager statue
@@ -111,6 +113,48 @@ public class ModBlockStateProvider extends BlockStateProvider
         pedestalWithItem(BlockRegister.AMETHYST_BLOCK_PEDESTAL.get());
         pedestalWithItem(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get());
         pedestalWithItem(BlockRegister.BEDROCK_PEDESTAL.get());
+        //brazier
+        villagerBrazierWithItem(BlockRegister.OAK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.BIRCH_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.SPRUCE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.JUNGLE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.ACACIA_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.DARK_OAK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.MANGROVE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.CHERRY_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.BAMBOO_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.CRIMSON_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.WARPED_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.STONE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.MOSSY_STONE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.ANDESITE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.DIORITE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.GRANITE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.PRISMARINE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.BLACKSTONE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.DEEPSLATE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.TUFF_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.PACKED_MUD_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.SANDSTONE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.BASALT_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.END_STONE_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.COAL_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get());
+        villagerBrazierWithItem(BlockRegister.BEDROCK_VILLAGER_BRAZIER.get());
     }
     private void simpleBlockWithItem(Block block)
     {
@@ -209,16 +253,28 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             else
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(brazier).toString()+"_upper","premierpainmod:block/brazier/brazier_upper").texture("0","block/brazier/brazier_upper"))//.texture("0","block/brazier/" + brazierName + "_upper"))
-                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                        .build();
+                if(state.getValue(BlockStateProperties.LIT ) == TRUE)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_lit", "premierpainmod:block/brazier/brazier_upper_lit").texture("0", "block/brazier/brazier_upper"))//.texture("0","block/brazier/" + brazierName + "_upper"))
+                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_unlit", "premierpainmod:block/brazier/brazier_upper_unlit").texture("0", "block/brazier/brazier_upper"))//.texture("0","block/brazier/" + brazierName + "_upper"))
+                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                            .build();
+                }
             }
         });
-        /*itemModels().getBuilder((key(brazier).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+        /*
+        itemModels().getBuilder((key(brazier).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/villager_statue/" + statueName);*/
+                .texture("layer0","item/villager_statue/" + statueName);
+        */
     }
     private ResourceLocation key(Block block)
     {

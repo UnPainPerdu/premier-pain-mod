@@ -55,7 +55,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         statueRecipeBuilder(BlockRegister.PRISMARINE_VILLAGER_STATUE,"has_prismarine",Blocks.PRISMARINE);
         statueRecipeBuilder(BlockRegister.BLACKSTONE_VILLAGER_STATUE,"has_blackstone",Blocks.BLACKSTONE);
         statueRecipeBuilder(BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE,"has_purpur_block",Blocks.PURPUR_BLOCK);
-        statueRecipeBuilder(BlockRegister.DEEPSLATE_VILLAGER_STATUE,"has_deepslate",Blocks.DEEPSLATE);
+        statueRecipeBuilder(BlockRegister.DEEPSLATE_VILLAGER_STATUE,"has_deepslate",Blocks.COBBLED_DEEPSLATE);
         statueRecipeBuilder(BlockRegister.TUFF_VILLAGER_STATUE,"has_tuff",Blocks.TUFF);
         statueRecipeBuilder(BlockRegister.PACKED_MUD_VILLAGER_STATUE,"has_packed_mud",Blocks.PACKED_MUD);
         statueRecipeBuilder(BlockRegister.SANDSTONE_VILLAGER_STATUE,"has_sandstone",Blocks.SANDSTONE);
@@ -97,7 +97,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         pedestalRecipeBuilder(BlockRegister.PRISMARINE_PEDESTAL,"has_prismarine",Blocks.PRISMARINE);
         pedestalRecipeBuilder(BlockRegister.BLACKSTONE_PEDESTAL,"has_blackstone",Blocks.BLACKSTONE);
         pedestalRecipeBuilder(BlockRegister.PURPUR_BLOCK_PEDESTAL,"has_purpur_block",Blocks.PURPUR_BLOCK);
-        pedestalRecipeBuilder(BlockRegister.DEEPSLATE_PEDESTAL,"has_deepslate",Blocks.DEEPSLATE);
+        pedestalRecipeBuilder(BlockRegister.DEEPSLATE_PEDESTAL,"has_deepslate",Blocks.COBBLED_DEEPSLATE);
         pedestalRecipeBuilder(BlockRegister.TUFF_PEDESTAL,"has_tuff",Blocks.TUFF);
         pedestalRecipeBuilder(BlockRegister.PACKED_MUD_PEDESTAL,"has_packed_mud",Blocks.PACKED_MUD);
         pedestalRecipeBuilder(BlockRegister.SANDSTONE_PEDESTAL,"has_sandstone",Blocks.SANDSTONE);
@@ -119,6 +119,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         pedestalRecipeBuilder(BlockRegister.AMETHYST_BLOCK_PEDESTAL,"has_amethyst_block",Blocks.AMETHYST_BLOCK);
         pedestalRecipeBuilder(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL,"has_dripstone_block",Blocks.DRIPSTONE_BLOCK);
         pedestalRecipeBuilder(BlockRegister.BEDROCK_PEDESTAL,"has_bedrock",Blocks.BEDROCK);
+            //brazier zone
+        brazierRecipeBuilder(BlockRegister.OAK_VILLAGER_BRAZIER,Blocks.OAK_PLANKS);
+        brazierRecipeBuilder(BlockRegister.BIRCH_VILLAGER_BRAZIER,Blocks.BIRCH_PLANKS);
+        brazierRecipeBuilder(BlockRegister.SPRUCE_VILLAGER_BRAZIER,Blocks.SPRUCE_PLANKS);
+        brazierRecipeBuilder(BlockRegister.JUNGLE_VILLAGER_BRAZIER,Blocks.JUNGLE_PLANKS);
+        brazierRecipeBuilder(BlockRegister.ACACIA_VILLAGER_BRAZIER,Blocks.ACACIA_PLANKS);
+        brazierRecipeBuilder(BlockRegister.DARK_OAK_VILLAGER_BRAZIER,Blocks.DARK_OAK_PLANKS);
+        brazierRecipeBuilder(BlockRegister.MANGROVE_VILLAGER_BRAZIER,Blocks.MANGROVE_PLANKS);
+        brazierRecipeBuilder(BlockRegister.CHERRY_VILLAGER_BRAZIER,Blocks.CHERRY_PLANKS);
+        brazierRecipeBuilder(BlockRegister.CRIMSON_VILLAGER_BRAZIER,Blocks.CRIMSON_PLANKS);
+        brazierRecipeBuilder(BlockRegister.WARPED_VILLAGER_BRAZIER,Blocks.WARPED_PLANKS);
+        brazierRecipeBuilder(BlockRegister.BAMBOO_VILLAGER_BRAZIER,Blocks.BAMBOO_PLANKS);
+        brazierRecipeBuilder(BlockRegister.STONE_VILLAGER_BRAZIER,Blocks.COBBLESTONE);
+        brazierRecipeBuilder(BlockRegister.MOSSY_STONE_VILLAGER_BRAZIER,Blocks.MOSSY_COBBLESTONE);
+        brazierRecipeBuilder(BlockRegister.ANDESITE_VILLAGER_BRAZIER,Blocks.ANDESITE);
+        brazierRecipeBuilder(BlockRegister.DIORITE_VILLAGER_BRAZIER,Blocks.DIORITE);
+        brazierRecipeBuilder(BlockRegister.GRANITE_VILLAGER_BRAZIER,Blocks.GRANITE);
+        brazierRecipeBuilder(BlockRegister.PRISMARINE_VILLAGER_BRAZIER,Blocks.PRISMARINE);
+        brazierRecipeBuilder(BlockRegister.BLACKSTONE_VILLAGER_BRAZIER,Blocks.BLACKSTONE);
+        brazierRecipeBuilder(BlockRegister.PURPUR_BLOCK_VILLAGER_BRAZIER,Blocks.PURPUR_BLOCK);
+        brazierRecipeBuilder(BlockRegister.DEEPSLATE_VILLAGER_BRAZIER,Blocks.COBBLED_DEEPSLATE);
+        brazierRecipeBuilder(BlockRegister.TUFF_VILLAGER_BRAZIER,Blocks.TUFF);
+        brazierRecipeBuilder(BlockRegister.PACKED_MUD_VILLAGER_BRAZIER,Blocks.PACKED_MUD);
+        brazierRecipeBuilder(BlockRegister.SANDSTONE_VILLAGER_BRAZIER,Blocks.SANDSTONE);
+        brazierRecipeBuilder(BlockRegister.RED_SANDSTONE_VILLAGER_BRAZIER,Blocks.RED_SANDSTONE);
+        brazierRecipeBuilder(BlockRegister.QUARTZ_BLOCK_VILLAGER_BRAZIER,Blocks.QUARTZ_BLOCK);
+        brazierRecipeBuilder(BlockRegister.NETHER_BRICKS_VILLAGER_BRAZIER,Blocks.NETHER_BRICKS);
+        brazierRecipeBuilder(BlockRegister.BASALT_VILLAGER_BRAZIER,Blocks.BASALT);
+        brazierRecipeBuilder(BlockRegister.END_STONE_VILLAGER_BRAZIER,Blocks.END_STONE);
+        brazierRecipeBuilder(BlockRegister.COAL_BLOCK_VILLAGER_BRAZIER,Blocks.COAL_BLOCK);
+        brazierRecipeBuilder(BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER,Blocks.IRON_BLOCK);
+        brazierRecipeBuilder(BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER,Blocks.GOLD_BLOCK);
+        brazierRecipeBuilder(BlockRegister.REDSTONE_BLOCK_VILLAGER_BRAZIER,Blocks.REDSTONE_BLOCK);
+        brazierRecipeBuilder(BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER,Blocks.EMERALD_BLOCK);
+        brazierRecipeBuilder(BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER,Blocks.DIAMOND_BLOCK);
+        brazierRecipeBuilder(BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER,Blocks.COPPER_BLOCK);
+        brazierRecipeBuilder(BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER,Blocks.LAPIS_BLOCK);
+        brazierRecipeBuilder(BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER,Blocks.NETHERITE_BLOCK);
+        brazierRecipeBuilder(BlockRegister.OBSIDIAN_VILLAGER_BRAZIER,Blocks.OBSIDIAN);
+        brazierRecipeBuilder(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER,Blocks.AMETHYST_BLOCK);
+        brazierRecipeBuilder(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER,Blocks.DRIPSTONE_BLOCK);
+        brazierRecipeBuilder(BlockRegister.BEDROCK_VILLAGER_BRAZIER,Blocks.BEDROCK);
         //test zone
 
     }
@@ -126,10 +168,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         villagerWorkshopResultFromBase(craftedBlock,RecipeCategory.BUILDING_BLOCKS,ingredient);
     }
+
     private void pedestalRecipeBuilder(ItemLike craftedBlock,String pName, ItemLike ingredient)
     {
         villagerWorkshopResultFromBase(craftedBlock,RecipeCategory.BUILDING_BLOCKS,ingredient);
     }
+
+    private void brazierRecipeBuilder(ItemLike craftedBlock, ItemLike ingredient)
+    {
+        villagerWorkshopResultFromBase(craftedBlock,RecipeCategory.BUILDING_BLOCKS,ingredient);
+    }
+
     private void villagerWorkshopRecipeBuilder(ItemLike craftedBlock)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(craftedBlock, 1))

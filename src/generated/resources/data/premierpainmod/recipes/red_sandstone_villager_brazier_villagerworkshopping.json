@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:red_sandstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:red_sandstone_villager_brazier"
+  }
+}

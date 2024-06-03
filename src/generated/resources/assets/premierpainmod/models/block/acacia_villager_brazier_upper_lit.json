@@ -1,5 +1,5 @@
 {
-  "parent": "premierpainmod:block/brazier/brazier_upper",
+  "parent": "premierpainmod:block/brazier/brazier_upper_lit",
   "textures": {
     "0": "premierpainmod:block/brazier/brazier_upper"
   }

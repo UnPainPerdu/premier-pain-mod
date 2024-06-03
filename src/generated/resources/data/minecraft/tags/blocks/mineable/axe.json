@@ -21,6 +21,17 @@
     "premierpainmod:cherry_pedestal",
     "premierpainmod:crimson_pedestal",
     "premierpainmod:warped_pedestal",
-    "premierpainmod:bamboo_pedestal"
+    "premierpainmod:bamboo_pedestal",
+    "premierpainmod:oak_villager_brazier",
+    "premierpainmod:birch_villager_brazier",
+    "premierpainmod:spruce_villager_brazier",
+    "premierpainmod:jungle_villager_brazier",
+    "premierpainmod:acacia_villager_brazier",
+    "premierpainmod:dark_oak_villager_brazier",
+    "premierpainmod:mangrove_villager_brazier",
+    "premierpainmod:cherry_villager_brazier",
+    "premierpainmod:crimson_villager_brazier",
+    "premierpainmod:warped_villager_brazier",
+    "premierpainmod:bamboo_villager_brazier"
   ]
 }
