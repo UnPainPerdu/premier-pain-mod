@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/brazier/brazier_upper_lit",
   "textures": {
-    "0": "premierpainmod:block/brazier/brazier_upper"
+    "0": "premierpainmod:block/brazier/jungle_villager_brazier_upper"
   }
 }

@@ -247,7 +247,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 // Return a ConfiguredModel depending on the state's properties.
                 // For example, the following code will rotate the model depending on the horizontal rotation of the block.
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(brazier).toString()+"_bottom","premierpainmod:block/brazier/brazier_bottom").texture("0","block/brazier/brazier_bottom"))//.texture("0","block/brazier/" + brazierName + "_bottom"))
+                        .modelFile(models().withExistingParent(key(brazier).toString()+"_bottom","premierpainmod:block/brazier/brazier_bottom").texture("0","block/brazier/" + brazierName + "_bottom"))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }
@@ -256,14 +256,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(state.getValue(BlockStateProperties.LIT ) == TRUE)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_lit", "premierpainmod:block/brazier/brazier_upper_lit").texture("0", "block/brazier/brazier_upper"))//.texture("0","block/brazier/" + brazierName + "_upper"))
+                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_lit", "premierpainmod:block/brazier/brazier_upper_lit").texture("0","block/brazier/" + brazierName + "_upper"))
                             .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_unlit", "premierpainmod:block/brazier/brazier_upper_unlit").texture("0", "block/brazier/brazier_upper"))//.texture("0","block/brazier/" + brazierName + "_upper"))
+                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_unlit", "premierpainmod:block/brazier/brazier_upper_unlit").texture("0","block/brazier/" + brazierName + "_upper"))
                             .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                             .build();
                 }

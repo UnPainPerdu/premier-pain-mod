@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/brazier/brazier_bottom",
   "textures": {
-    "0": "premierpainmod:block/brazier/brazier_bottom"
+    "0": "premierpainmod:block/brazier/lapis_block_villager_brazier_bottom"
   }
 }

@@ -111,7 +111,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_PEDESTAL =  pedestalRegister("dripstone_block_pedestal","dripstone");
     public static final DeferredBlock<Block> BEDROCK_PEDESTAL =  pedestalRegister("bedrock_pedestal","bedrock");
         //brazier zone
-        public static final DeferredBlock<Block> OAK_VILLAGER_BRAZIER = brazierRegister("oak_villager_brazier","wood");
+    public static final DeferredBlock<Block> OAK_VILLAGER_BRAZIER = brazierRegister("oak_villager_brazier","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_BRAZIER = brazierRegister("birch_villager_brazier","wood");
     public static final DeferredBlock<Block> SPRUCE_VILLAGER_BRAZIER = brazierRegister("spruce_villager_brazier","wood");
     public static final DeferredBlock<Block> JUNGLE_VILLAGER_BRAZIER = brazierRegister("jungle_villager_brazier","wood");
