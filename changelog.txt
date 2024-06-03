@@ -6,3 +6,5 @@ add :
     -villager brazier
 fix :
     -villager statue model
+    -villager pedestal model
+--------------
