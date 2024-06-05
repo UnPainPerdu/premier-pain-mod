@@ -1,7 +1,7 @@
 {
   "parent": "premierpainmod:block/bedrock_villager_brazier_m",
   "textures": {
-    "2": "premierpainmod:block/brazier/bedrock_villager_brazier_bottom",
-    "3": "premierpainmod:block/brazier/bedrock_villager_brazier_upper"
+    "2": "premierpainmod:block/villager_brazier/bedrock_villager_brazier_bottom",
+    "3": "premierpainmod:block/villager_brazier/bedrock_villager_brazier_upper"
   }
 }

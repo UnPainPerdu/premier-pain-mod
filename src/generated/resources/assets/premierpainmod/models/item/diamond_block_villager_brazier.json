@@ -1,7 +1,7 @@
 {
   "parent": "premierpainmod:block/diamond_block_villager_brazier_m",
   "textures": {
-    "2": "premierpainmod:block/brazier/diamond_block_villager_brazier_bottom",
-    "3": "premierpainmod:block/brazier/diamond_block_villager_brazier_upper"
+    "2": "premierpainmod:block/villager_brazier/diamond_block_villager_brazier_bottom",
+    "3": "premierpainmod:block/villager_brazier/diamond_block_villager_brazier_upper"
   }
 }

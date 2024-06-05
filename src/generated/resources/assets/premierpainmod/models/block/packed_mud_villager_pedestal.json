@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_pedestal",
+  "textures": {
+    "0": "premierpainmod:block/villager_pedestal/packed_mud_villager_pedestal"
+  }
+}

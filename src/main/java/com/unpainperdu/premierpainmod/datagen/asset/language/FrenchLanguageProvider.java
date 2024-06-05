@@ -83,7 +83,7 @@ public class FrenchLanguageProvider extends LanguageProvider
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' pedestal"
     private void pedestalTranslation(String suffix, String translation)
     {
-        String pedestal = "_pedestal";
+        String pedestal = "_villager_pedestal";
         String translationPedestal = "Piédestale en ";
         add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
     }

@@ -8,3 +8,7 @@ fix :
     -villager statue model
     -villager pedestal model
 --------------
+1.4.0
+WARNING Villager pedestal will be deleted from your world, pls note where they are and give you back after the update
+fix :
+    -remake some code

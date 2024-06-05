@@ -163,7 +163,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void pedestalWithItem(Block pedestal)
     {
         String pedestaleName = BuiltInRegistries.BLOCK.getKey(pedestal).toString().replace(PremierPainMod.MODID+":","");
-        ModelFile pedestalModel = models().withExistingParent(key(pedestal).toString(),"premierpainmod:block/pedestal").texture("0","block/pedestal/" + pedestaleName);
+        ModelFile pedestalModel = models().withExistingParent(key(pedestal).toString(),"premierpainmod:block/villager_pedestal").texture("0","block/villager_pedestal/" + pedestaleName);
         simpleBlock(pedestal, pedestalModel);
         itemModels().getBuilder(key(pedestal).getPath()).parent(pedestalModel);
     }
@@ -183,14 +183,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                         // Return a ConfiguredModel depending on the state's properties.
                         // For example, the following code will rotate the model depending on the horizontal rotation of the block.
                         return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(key(statue).toString()+"_bottom","premierpainmod:block/villager_statue_bottom").texture("0","block/villager_statue/" + statueName + "_bottom"))
+                                .modelFile(models().withExistingParent(key(statue).toString()+"_bottom","premierpainmod:block/villager_statue/villager_statue_bottom").texture("0","block/villager_statue/" + statueName + "_bottom"))
                                 .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                                 .build();
                     }
                     else
                     {
                         return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(key(statue).toString()+"_upper","premierpainmod:block/villager_statue_upper").texture("0","block/villager_statue/" + statueName + "_upper"))
+                                .modelFile(models().withExistingParent(key(statue).toString()+"_upper","premierpainmod:block/villager_statue/villager_statue_upper").texture("0","block/villager_statue/" + statueName + "_upper"))
                                 .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                                 .build();
                     }
@@ -215,20 +215,20 @@ public class ModBlockStateProvider extends BlockStateProvider
                 // Return a ConfiguredModel depending on the state's properties.
                 // For example, the following code will rotate the model depending on the horizontal rotation of the block.
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(villagerWorkshop).toString()+"_right","premierpainmod:block/villager_workshop_right_m"))
+                        .modelFile(models().withExistingParent(key(villagerWorkshop).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }
             else
             {
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(villagerWorkshop).toString()+"_left","premierpainmod:block/villager_workshop_left_m"))
+                        .modelFile(models().withExistingParent(key(villagerWorkshop).toString()+"_left","premierpainmod:block/villager_workshop/villager_workshop_left_m"))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }
         });
         String villagerWorkshopName = BuiltInRegistries.BLOCK.getKey(villagerWorkshop).toString().replace(PremierPainMod.MODID+":","");
-        ModelFile villagerWorkshopModel = models().withExistingParent(key(villagerWorkshop).toString(),"premierpainmod:block/villager_workshop_m");
+        ModelFile villagerWorkshopModel = models().withExistingParent(key(villagerWorkshop).toString(),"premierpainmod:block/villager_workshop/villager_workshop_m");
         itemModels().getBuilder(key(villagerWorkshop).getPath()).parent(villagerWorkshopModel);
     }
     private void villagerBrazierWithItem(Block brazier)
@@ -247,7 +247,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 // Return a ConfiguredModel depending on the state's properties.
                 // For example, the following code will rotate the model depending on the horizontal rotation of the block.
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(brazier).toString()+"_bottom","premierpainmod:block/brazier/brazier_bottom").texture("0","block/brazier/" + brazierName + "_bottom"))
+                        .modelFile(models().withExistingParent(key(brazier).toString()+"_bottom","premierpainmod:block/villager_brazier/villager_brazier_bottom").texture("0","block/villager_brazier/" + brazierName + "_bottom"))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }
@@ -256,22 +256,22 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(state.getValue(BlockStateProperties.LIT ) == TRUE)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_lit", "premierpainmod:block/brazier/brazier_upper_lit").texture("0","block/brazier/" + brazierName + "_upper"))
+                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_lit", "premierpainmod:block/villager_brazier/villager_brazier_upper_lit").texture("0","block/villager_brazier/" + brazierName + "_upper"))
                             .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_unlit", "premierpainmod:block/brazier/brazier_upper_unlit").texture("0","block/brazier/" + brazierName + "_upper"))
+                            .modelFile(models().withExistingParent(key(brazier).toString() + "_upper_unlit", "premierpainmod:block/villager_brazier/villager_brazier_upper_unlit").texture("0","block/villager_brazier/" + brazierName + "_upper"))
                             .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                             .build();
                 }
             }
         });
 
-        ModelFile brazierModel = models().withExistingParent(key(brazier).toString()+"_m","premierpainmod:block/brazier/brazier_m");
-        itemModels().getBuilder(key(brazier).getPath()).parent(brazierModel).texture("3","block/brazier/" + brazierName + "_upper").texture("2","block/brazier/" + brazierName + "_bottom");
+        ModelFile brazierModel = models().withExistingParent(key(brazier).toString()+"_m","premierpainmod:block/villager_brazier/villager_brazier_m");
+        itemModels().getBuilder(key(brazier).getPath()).parent(brazierModel).texture("3","block/villager_brazier/" + brazierName + "_upper").texture("2","block/villager_brazier/" + brazierName + "_bottom");
     }
     private ResourceLocation key(Block block)
     {

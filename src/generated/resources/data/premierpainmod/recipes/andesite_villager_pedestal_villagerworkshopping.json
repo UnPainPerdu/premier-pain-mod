@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:andesite"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:andesite_villager_pedestal"
+  }
+}

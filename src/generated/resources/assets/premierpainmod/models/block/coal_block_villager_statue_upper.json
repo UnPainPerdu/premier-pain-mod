@@ -1,5 +1,5 @@
 {
-  "parent": "premierpainmod:block/villager_statue_upper",
+  "parent": "premierpainmod:block/villager_statue/villager_statue_upper",
   "textures": {
     "0": "premierpainmod:block/villager_statue/coal_block_villager_statue_upper"
   }

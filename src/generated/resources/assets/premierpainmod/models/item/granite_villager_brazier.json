@@ -1,7 +1,7 @@
 {
   "parent": "premierpainmod:block/granite_villager_brazier_m",
   "textures": {
-    "2": "premierpainmod:block/brazier/granite_villager_brazier_bottom",
-    "3": "premierpainmod:block/brazier/granite_villager_brazier_upper"
+    "2": "premierpainmod:block/villager_brazier/granite_villager_brazier_bottom",
+    "3": "premierpainmod:block/villager_brazier/granite_villager_brazier_upper"
   }
 }

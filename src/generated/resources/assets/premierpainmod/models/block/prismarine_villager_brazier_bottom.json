@@ -1,6 +1,6 @@
 {
-  "parent": "premierpainmod:block/brazier/brazier_bottom",
+  "parent": "premierpainmod:block/villager_brazier/villager_brazier_bottom",
   "textures": {
-    "0": "premierpainmod:block/brazier/prismarine_villager_brazier_bottom"
+    "0": "premierpainmod:block/villager_brazier/prismarine_villager_brazier_bottom"
   }
 }

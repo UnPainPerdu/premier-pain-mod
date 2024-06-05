@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:tuff"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:tuff_villager_pedestal"
+  }
+}

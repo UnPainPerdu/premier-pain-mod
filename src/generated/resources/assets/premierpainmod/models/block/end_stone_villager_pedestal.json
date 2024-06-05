@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_pedestal",
+  "textures": {
+    "0": "premierpainmod:block/villager_pedestal/end_stone_villager_pedestal"
+  }
+}

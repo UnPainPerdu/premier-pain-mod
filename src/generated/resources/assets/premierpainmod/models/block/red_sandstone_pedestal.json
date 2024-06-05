@@ -1,6 +1,0 @@
-{
-  "parent": "premierpainmod:block/pedestal",
-  "textures": {
-    "0": "premierpainmod:block/pedestal/red_sandstone_pedestal"
-  }
-}

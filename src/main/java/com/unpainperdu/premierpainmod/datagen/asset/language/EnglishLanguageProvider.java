@@ -108,16 +108,16 @@ public class EnglishLanguageProvider extends LanguageProvider
     private void pedestalTranslation(String suffix)
     {
         String translation = capitalize(suffix);
-        String pedestal = "_pedestal";
-        String translationPedestal = " pedestal";
+        String pedestal = "_villager_pedestal";
+        String translationPedestal = " villager pedestal";
         add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translation+translationPedestal);
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix1' 'suffix2' pedestal"
     private void pedestalTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
     {
         String translation1 = capitalize(suffix1);
-        String pedestal = "_pedestal";
-        String translationPedestal = " pedestal";
+        String pedestal = "_villager_pedestal";
+        String translationPedestal = " villager pedestal";
         if (!isSuffix2Translate)
         {
             add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 + translationPedestal);
