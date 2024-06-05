@@ -37,7 +37,7 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock implements Simp
     private static final Component CONTAINER_TITLE = Component.translatable("container."+ PremierPainMod.MODID +"villager_workshop");
     public static final EnumProperty<VillagerWorkshopPart> PART;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
+    private static final VoxelShape SHAPE = Block.box(0, 7, 0, 16, 12, 16);
 
     public VillagerWorkshop(Properties pProperties)
     {
