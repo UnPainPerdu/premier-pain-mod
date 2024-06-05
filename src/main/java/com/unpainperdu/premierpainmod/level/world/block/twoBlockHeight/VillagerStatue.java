@@ -29,7 +29,10 @@ public class VillagerStatue extends AbstactTwoBlockHeightBlock
     public VillagerStatue(Properties pProperties)
     {
         super(pProperties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.FALSE));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(FACING, Direction.NORTH)
+                .setValue(HALF, DoubleBlockHalf.LOWER)
+                .setValue(WATERLOGGED, Boolean.FALSE));
     }
     @Override
     public MapCodec<VillagerStatue> codec() {

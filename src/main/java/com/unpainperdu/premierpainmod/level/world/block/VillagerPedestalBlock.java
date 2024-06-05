@@ -18,20 +18,20 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class PedestalBlock extends Block implements SimpleWaterloggedBlock
+public class VillagerPedestalBlock extends Block implements SimpleWaterloggedBlock
 {
-    public static final MapCodec<PedestalBlock> CODEC = simpleCodec(PedestalBlock::new);
+    public static final MapCodec<VillagerPedestalBlock> CODEC = simpleCodec(VillagerPedestalBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape SHAPE = Block.box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
 
-    public PedestalBlock(Properties p_49795_)
+    public VillagerPedestalBlock(Properties p_49795_)
     {
         super(p_49795_);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE));
     }
 
     @Override
-    public MapCodec<? extends PedestalBlock> codec() {
+    public MapCodec<? extends VillagerPedestalBlock> codec() {
         return CODEC;
     }
 

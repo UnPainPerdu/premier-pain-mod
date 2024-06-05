@@ -1,9 +1,10 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.PedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -24,6 +25,7 @@ public class BlockRegister
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
     //test zone
+    public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     //staute zone (41)
@@ -284,70 +286,70 @@ public class BlockRegister
     {
         switch (type) {
             case "stone": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
             }
             case "cobblestone": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE).noOcclusion()));
             }
             case "deepslate": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE).noOcclusion()));
             }
             case "tuff": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF).noOcclusion()));
             }
             case "mud": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_MUD).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_MUD).noOcclusion()));
             }
             case "sandstone": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion()));
             }
             case "netherbrick": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS).noOcclusion()));
             }
             case "mineral_weak": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK).noOcclusion()));
             }
             case "mineral_strong": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_BLOCK).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_BLOCK).noOcclusion()));
             }
             case "metal": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()));
             }
             case "copper": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion()));
             }
             case "basalt": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT).noOcclusion()));
             }
             case "endstone": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion()));
             }
             case "obsidan": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
             }
             case "netherite": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK).noOcclusion()));
             }
             case "amethyst": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
             }
             case "dripstone": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK).noOcclusion()));
             }
             case "bedrock": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
             }
             case "netherwood": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion()));
             }
             case "cherry": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).noOcclusion()));
             }
             case "bamboo": {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion()));
             }
             default: {
-                return (DeferredBlock<T>) registerBlock(name, () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerPedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
             }
         }
     }
