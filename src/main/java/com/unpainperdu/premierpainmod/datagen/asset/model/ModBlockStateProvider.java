@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.asset.model;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
@@ -8,12 +9,14 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GameMasterBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
+import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 public class ModBlockStateProvider extends BlockStateProvider
@@ -273,6 +276,154 @@ public class ModBlockStateProvider extends BlockStateProvider
         ModelFile brazierModel = models().withExistingParent(key(brazier).toString()+"_m","premierpainmod:block/villager_brazier/villager_brazier_m");
         itemModels().getBuilder(key(brazier).getPath()).parent(brazierModel).texture("3","block/villager_brazier/" + brazierName + "_upper").texture("2","block/villager_brazier/" + brazierName + "_bottom");
     }
+
+    private void villagerTableWithItem(Block table)
+    {
+        // Get a variant block state builder.
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(table);
+        // Create a partial state and set properties on it.
+        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
+        // Alternatively, forAllStates(Function<BlockState, ConfiguredModel[]>) creates a model for every state.
+        // The passed function will be called once for each possible state.
+        variantBuilder.forAllStates(state ->
+        {
+            //Duo part
+                //North only
+            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //West only
+            if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //South only
+            if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //East only
+            if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            //Trio Part
+                //N S
+            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //W E
+            if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //N W
+            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //N E
+            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //S W
+            if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //S E
+            if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            //Quatuor Part
+                //N E S
+            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //E S W
+            if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //S W N
+            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+                //W N E
+            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            //total part
+            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_right","premierpainmod:block/villager_workshop/villager_workshop_right_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            //solo
+            else
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(table).toString()+"_left","premierpainmod:block/villager_workshop/villager_workshop_left_m"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+        });
+        String villagerWorkshopName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MODID+":","");
+        ModelFile villagerWorkshopModel = models().withExistingParent(key(table).toString(),"premierpainmod:block/villager_workshop/villager_workshop_m");
+        itemModels().getBuilder(key(table).getPath()).parent(villagerWorkshopModel);
+    }
+
     private ResourceLocation key(Block block)
     {
         return BuiltInRegistries.BLOCK.getKey(block);
