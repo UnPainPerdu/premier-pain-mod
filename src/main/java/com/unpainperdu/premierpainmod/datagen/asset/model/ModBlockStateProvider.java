@@ -421,10 +421,8 @@ public class ModBlockStateProvider extends BlockStateProvider
                         .build();
             }
         });
-        /*
-        ModelFile villagerWorkshopModel = models().withExistingParent(key(table).toString(),"premierpainmod:block/villager_workshop/villager_workshop_m");
+        ModelFile villagerWorkshopModel = models().withExistingParent(key(table).toString(),"premierpainmod:block/villager_table/villager_table_solo").texture("0","block/villager_table/" + villagerTableName);
         itemModels().getBuilder(key(table).getPath()).parent(villagerWorkshopModel);
-        */
     }
 
     private ResourceLocation key(Block block)

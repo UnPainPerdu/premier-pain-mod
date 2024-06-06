@@ -1,4 +1,4 @@
-// 1.20.6	2024-06-06T11:59:26.1884046	Block States: premierpainmod
+// 1.20.6	2024-06-06T14:20:22.7870759	Block States: premierpainmod
 ede8ec4d8faec5810d24de82caa0ecf07b9e191f assets/premierpainmod/blockstates/acacia_villager_brazier.json
 cb429feb99ed8d55011c9f0dd54da4dc571af787 assets/premierpainmod/blockstates/acacia_villager_pedestal.json
 5359c735e298c9c3d6152755ac5bfb9861e52088 assets/premierpainmod/blockstates/acacia_villager_statue.json
@@ -397,6 +397,7 @@ b2d881976da06e1e826c8965f8791e9b9ec73bb3 assets/premierpainmod/models/block/ston
 4d4357dd082d6792640d6d6bfa29b7865d69f9d4 assets/premierpainmod/models/block/stone_villager_pedestal.json
 348a3e40d3f2089f1b6c01f23b26a1dbd26a0e46 assets/premierpainmod/models/block/stone_villager_statue_bottom.json
 c08b0bdd0d2d4ccb775445f099e15aebf28544a9 assets/premierpainmod/models/block/stone_villager_statue_upper.json
+0c3a7c152325358190badd1e269deeecc1e8da10 assets/premierpainmod/models/block/test_villager_table.json
 0057050e7e53b430ea49d55162715a28b79495e6 assets/premierpainmod/models/block/test_villager_table_duo_e.json
 0057050e7e53b430ea49d55162715a28b79495e6 assets/premierpainmod/models/block/test_villager_table_duo_n.json
 0057050e7e53b430ea49d55162715a28b79495e6 assets/premierpainmod/models/block/test_villager_table_duo_s.json
@@ -547,6 +548,7 @@ bbdf687e50f5ecd935ea86cfad94e38c7fa20b9d assets/premierpainmod/models/item/spruc
 e4500b70edaa0c2af7639c8d6a7c28823036348b assets/premierpainmod/models/item/stone_villager_brazier.json
 c55e0cfc09cedacc1e7338e12be4f130edad401d assets/premierpainmod/models/item/stone_villager_pedestal.json
 d812db7ae7c2a6ebedb3ea535cacc49cb739049a assets/premierpainmod/models/item/stone_villager_statue.json
+c784bc6a506ecb9c0a2f9dbbf46fae7cb776a33b assets/premierpainmod/models/item/test_villager_table.json
 e395fd45e816b7058c54e27f95e44d55ea311797 assets/premierpainmod/models/item/tuff_villager_brazier.json
 7ce42a3971347e2b4a85d52f3db32b45d9690d35 assets/premierpainmod/models/item/tuff_villager_pedestal.json
 60ef0166de3953cfe556cb31bbb31711dba6519d assets/premierpainmod/models/item/tuff_villager_statue.json

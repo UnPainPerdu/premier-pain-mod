@@ -10,6 +10,8 @@ fix :
 --------------
 1.4.0
 WARNING Villager pedestal will be deleted from your world, pls note where they are and give you back after the update
+add :
+    -villager table
 fix :
     -remake some code
     -voxel shape of villager workshop
