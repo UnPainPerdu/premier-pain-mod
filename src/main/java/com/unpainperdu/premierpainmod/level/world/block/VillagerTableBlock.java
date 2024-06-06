@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.block;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -13,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -30,6 +33,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
     public static final BooleanProperty SOUTH = PipeBlock.SOUTH;
     public static final BooleanProperty WEST = PipeBlock.WEST;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final EnumProperty<VillagerTableCarpetColor> COLOR;
     protected static final Map<Direction, BooleanProperty> PROPERTY_BY_DIRECTION = PipeBlock.PROPERTY_BY_DIRECTION;
     private static final VoxelShape SHAPE = Block.box(1, 12, 1, 15, 15, 15);
 
@@ -44,6 +48,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
                         .setValue(SOUTH, Boolean.FALSE)
                         .setValue(WEST, Boolean.FALSE)
                         .setValue(WATERLOGGED, Boolean.FALSE)
+                        .setValue(COLOR, VillagerTableCarpetColor.NONE)
         );
     }
 
@@ -54,7 +59,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add(NORTH, EAST, SOUTH, WEST, WATERLOGGED);
+        pBuilder.add(NORTH, EAST, SOUTH, WEST, WATERLOGGED, COLOR);
     }
 
     @Override
@@ -88,8 +93,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
     public boolean connectsTo(BlockState pState, boolean pIsSideSolid, Direction pDirection)
     {
         Block block = pState.getBlock();
-        boolean flag1 = block instanceof VillagerTableBlock;
-        return flag1;
+        return block instanceof VillagerTableBlock;
     }
     @Override
     protected @NotNull FluidState getFluidState(BlockState pState)
@@ -110,5 +114,9 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
                 this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite())
         )
                 : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+    }
+    static
+    {
+        COLOR = EnumProperty.create("villagertablecarpetcolor", VillagerTableCarpetColor.class);
     }
 }
