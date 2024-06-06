@@ -150,6 +150,48 @@ public class CreativeTabRegister
                 output.accept(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get());
                 output.accept(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get());
                 output.accept(BlockRegister.BEDROCK_VILLAGER_BRAZIER.get());
+                    //table zone
+                output.accept(BlockRegister.OAK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.BIRCH_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.SPRUCE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.JUNGLE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.ACACIA_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.DARK_OAK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.MANGROVE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.CHERRY_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.CRIMSON_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.WARPED_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.BAMBOO_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.STONE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.MOSSY_STONE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.ANDESITE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.DIORITE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.GRANITE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.PRISMARINE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.BLACKSTONE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.PURPUR_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.DEEPSLATE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.TUFF_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.PACKED_MUD_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.SANDSTONE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.RED_SANDSTONE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.QUARTZ_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.NETHER_BRICKS_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.BASALT_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.END_STONE_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.COAL_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.REDSTONE_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.OBSIDIAN_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get());
+                output.accept(BlockRegister.BEDROCK_VILLAGER_TABLE.get());
             }).build());
     public static void register(IEventBus modEventBus)
     {

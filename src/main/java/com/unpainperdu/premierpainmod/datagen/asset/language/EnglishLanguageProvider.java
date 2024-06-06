@@ -73,6 +73,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         statueTranslation(suffix);
         pedestalTranslation(suffix);
         brazierTranslation(suffix);
+        tableTranslation(suffix);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
@@ -80,6 +81,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         statueTranslation(suffix1, suffix2, isSuffix2Translate);
         pedestalTranslation(suffix1, suffix2, isSuffix2Translate);
         brazierTranslation(suffix1, suffix2, isSuffix2Translate);
+        tableTranslation(suffix1, suffix2, isSuffix2Translate);
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
     private void statueTranslation(String suffix)
@@ -153,5 +155,27 @@ public class EnglishLanguageProvider extends LanguageProvider
     private void villagerWorkshopTranslation()
     {
         add("block."+PremierPainMod.MODID+".villager_workshop","Villager Workshop");
+    }
+    private void tableTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String table = "_villager_table";
+        String translationTable = " villager table";
+        add("block."+PremierPainMod.MODID+"."+ suffix + table,translation + translationTable);
+    }
+
+    private void tableTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String table = "_villager_table";
+        String translationTable = " villager table";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
+        }
     }
 }

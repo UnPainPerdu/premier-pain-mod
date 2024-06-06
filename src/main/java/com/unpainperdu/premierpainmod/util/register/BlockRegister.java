@@ -28,7 +28,50 @@ public class BlockRegister
     public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_villager_table", () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
-    //staute zone (41)
+    /*materials :
+    oak
+    birch
+    spruce
+    jungle
+    acacia
+    dark_oak
+    mangrove
+    cherry
+    bamboo
+    crimson
+    warped
+    stone
+    end_stone
+    mossy_stone
+    andesite
+    diorite
+    granite
+    prismarine
+    blackstone
+    deepslate
+    tuff
+    sandstone
+    red_sandstone
+    basalt
+    obsidian
+    bedrock
+    packed_mud
+    nether_bricks
+    purpur_block
+    quartz_block
+    coal_block
+    iron_block
+    gold_block
+    redstone_block
+    emerald_block
+    diamond_block
+    copper_block
+    lapis_block
+    netherite_block
+    amethyst_block
+    dripstone_block
+     */
+        //staute zone (41)
     public static final DeferredBlock<Block> OAK_VILLAGER_STATUE = statueRegister("oak_villager_statue","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_STATUE = statueRegister("birch_villager_statue","wood");
     public static final DeferredBlock<Block> SPRUCE_VILLAGER_STATUE = statueRegister("spruce_villager_statue","wood");
@@ -154,7 +197,48 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_BRAZIER =  brazierRegister("amethyst_block_villager_brazier","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_BRAZIER =  brazierRegister("dripstone_block_villager_brazier","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_BRAZIER =  brazierRegister("bedrock_villager_brazier","bedrock");
-
+        //table zone
+    public static final DeferredBlock<Block> OAK_VILLAGER_TABLE = villagerTableRegister("oak_villager_table","wood");
+    public static final DeferredBlock<Block> BIRCH_VILLAGER_TABLE = villagerTableRegister("birch_villager_table","wood");
+    public static final DeferredBlock<Block> SPRUCE_VILLAGER_TABLE = villagerTableRegister("spruce_villager_table","wood");
+    public static final DeferredBlock<Block> JUNGLE_VILLAGER_TABLE = villagerTableRegister("jungle_villager_table","wood");
+    public static final DeferredBlock<Block> ACACIA_VILLAGER_TABLE = villagerTableRegister("acacia_villager_table","wood");
+    public static final DeferredBlock<Block> DARK_OAK_VILLAGER_TABLE = villagerTableRegister("dark_oak_villager_table","wood");
+    public static final DeferredBlock<Block> MANGROVE_VILLAGER_TABLE = villagerTableRegister("mangrove_villager_table","wood");
+    public static final DeferredBlock<Block> CHERRY_VILLAGER_TABLE = villagerTableRegister("cherry_villager_table","wood","cherry");
+    public static final DeferredBlock<Block> BAMBOO_VILLAGER_TABLE = villagerTableRegister("bamboo_villager_table","wood","bamboo");
+    public static final DeferredBlock<Block> CRIMSON_VILLAGER_TABLE = villagerTableRegister("crimson_villager_table","wood","netherwood");
+    public static final DeferredBlock<Block> WARPED_VILLAGER_TABLE = villagerTableRegister("warped_villager_table","wood","netherwood");
+    public static final DeferredBlock<Block> STONE_VILLAGER_TABLE =  villagerTableRegister("stone_villager_table","stone");
+    public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_TABLE =  villagerTableRegister("mossy_stone_villager_table","stone");
+    public static final DeferredBlock<Block> ANDESITE_VILLAGER_TABLE =  villagerTableRegister("andesite_villager_table","stone");
+    public static final DeferredBlock<Block> DIORITE_VILLAGER_TABLE =  villagerTableRegister("diorite_villager_table","stone");
+    public static final DeferredBlock<Block> GRANITE_VILLAGER_TABLE =  villagerTableRegister("granite_villager_table","stone");
+    public static final DeferredBlock<Block> PRISMARINE_VILLAGER_TABLE =  villagerTableRegister("prismarine_villager_table","stone");
+    public static final DeferredBlock<Block> BLACKSTONE_VILLAGER_TABLE =  villagerTableRegister("blackstone_villager_table","stone");
+    public static final DeferredBlock<Block> PURPUR_BLOCK_VILLAGER_TABLE =  villagerTableRegister("purpur_block_villager_table","stone");
+    public static final DeferredBlock<Block> DEEPSLATE_VILLAGER_TABLE =  villagerTableRegister("deepslate_villager_table","deepslate");
+    public static final DeferredBlock<Block> TUFF_VILLAGER_TABLE =  villagerTableRegister("tuff_villager_table","tuff");
+    public static final DeferredBlock<Block> PACKED_MUD_VILLAGER_TABLE =  villagerTableRegister("packed_mud_villager_table","mud");
+    public static final DeferredBlock<Block> SANDSTONE_VILLAGER_TABLE =  villagerTableRegister("sandstone_villager_table","sandstone");
+    public static final DeferredBlock<Block> RED_SANDSTONE_VILLAGER_TABLE =  villagerTableRegister("red_sandstone_villager_table","sandstone");
+    public static final DeferredBlock<Block> QUARTZ_BLOCK_VILLAGER_TABLE =  villagerTableRegister("quartz_block_villager_table","sandstone");
+    public static final DeferredBlock<Block> NETHER_BRICKS_VILLAGER_TABLE =  villagerTableRegister("nether_bricks_villager_table","netherbrick");
+    public static final DeferredBlock<Block> BASALT_VILLAGER_TABLE =  villagerTableRegister("basalt_villager_table","basalt");
+    public static final DeferredBlock<Block> END_STONE_VILLAGER_TABLE =  villagerTableRegister("end_stone_villager_table","endstone");
+    public static final DeferredBlock<Block> COAL_BLOCK_VILLAGER_TABLE =  villagerTableRegister("coal_block_villager_table","mineral_strong");
+    public static final DeferredBlock<Block> IRON_BLOCK_VILLAGER_TABLE =  villagerTableRegister("iron_block_villager_table","metal");
+    public static final DeferredBlock<Block> GOLD_BLOCK_VILLAGER_TABLE =  villagerTableRegister("gold_block_villager_table","metal");
+    public static final DeferredBlock<Block> REDSTONE_BLOCK_VILLAGER_TABLE =  villagerTableRegister("redstone_block_villager_table","metal");
+    public static final DeferredBlock<Block> EMERALD_BLOCK_VILLAGER_TABLE =  villagerTableRegister("emerald_block_villager_table","metal");
+    public static final DeferredBlock<Block> DIAMOND_BLOCK_VILLAGER_TABLE =  villagerTableRegister("diamond_block_villager_table","metal");
+    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_TABLE =  villagerTableRegister("copper_block_villager_table","copper");
+    public static final DeferredBlock<Block> LAPIS_BLOCK_VILLAGER_TABLE =  villagerTableRegister("lapis_block_villager_table","mineral_weak");
+    public static final DeferredBlock<Block> NETHERITE_BLOCK_VILLAGER_TABLE =  villagerTableRegister("netherite_block_villager_table","netherite");
+    public static final DeferredBlock<Block> OBSIDIAN_VILLAGER_TABLE =  villagerTableRegister("obsidian_villager_table","obsidan");
+    public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_TABLE =  villagerTableRegister("amethyst_block_villager_table","amethyst");
+    public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_TABLE =  villagerTableRegister("dripstone_block_villager_table","dripstone");
+    public static final DeferredBlock<Block> BEDROCK_VILLAGER_TABLE =  villagerTableRegister("bedrock_villager_table","bedrock");
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
@@ -431,6 +515,87 @@ public class BlockRegister
             }
             default: {
                 return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrazier(true,1,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion().lightLevel(litBlockEmission(15))));
+            }
+        }
+    }
+    private static  <T extends Block> DeferredBlock<T> villagerTableRegister(String name, String familie, String type)
+    {
+        switch (familie)
+        {
+            case "wood":
+                return (DeferredBlock<T>) villagerTableRegister(name, type);
+            default:
+                return (DeferredBlock<T>) villagerTableRegister(name, "default");
+        }
+    }
+    private static <T extends Block> DeferredBlock<T> villagerTableRegister(String name, String type)
+    {
+        switch (type) {
+            case "stone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock( BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+            }
+            case "cobblestone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE).noOcclusion()));
+            }
+            case "deepslate": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE).noOcclusion()));
+            }
+            case "tuff": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF).noOcclusion()));
+            }
+            case "mud": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_MUD).noOcclusion()));
+            }
+            case "sandstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion()));
+            }
+            case "netherbrick": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS).noOcclusion()));
+            }
+            case "mineral_weak": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK).noOcclusion()));
+            }
+            case "mineral_strong": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_BLOCK).noOcclusion()));
+            }
+            case "metal": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()));
+            }
+            case "copper": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion()));
+            }
+            case "basalt": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT).noOcclusion()));
+            }
+            case "endstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion()));
+            }
+            case "obsidan": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
+            }
+            case "netherite": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK).noOcclusion()));
+            }
+            case "amethyst": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+            }
+            case "dripstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK).noOcclusion()));
+            }
+            case "bedrock": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
+            }
+            case "netherwood": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion()));
+            }
+            case "cherry": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).noOcclusion()));
+            }
+            case "bamboo": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion()));
+            }
+            default: {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
             }
         }
     }

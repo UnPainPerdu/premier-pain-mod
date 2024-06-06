@@ -30,6 +30,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
+        //test zone
         villagerTableWithItem(BlockRegister.TEST_BLOCK.get());
         //workshop
         villagerWorkshopWithItem(BlockRegister.VILLAGER_WORKSHOP.get());
@@ -159,6 +160,48 @@ public class ModBlockStateProvider extends BlockStateProvider
         villagerBrazierWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get());
         villagerBrazierWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get());
         villagerBrazierWithItem(BlockRegister.BEDROCK_VILLAGER_BRAZIER.get());
+        //table
+        villagerTableWithItem(BlockRegister.OAK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.BIRCH_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.SPRUCE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.JUNGLE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.ACACIA_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.DARK_OAK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.MANGROVE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.CHERRY_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.BAMBOO_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.CRIMSON_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.WARPED_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.STONE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.MOSSY_STONE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.ANDESITE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.DIORITE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.GRANITE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.PRISMARINE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.BLACKSTONE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.DEEPSLATE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.TUFF_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.PACKED_MUD_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.SANDSTONE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.BASALT_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.END_STONE_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.COAL_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.OBSIDIAN_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get());
+        villagerTableWithItem(BlockRegister.BEDROCK_VILLAGER_TABLE.get());
     }
     private void simpleBlockWithItem(Block block)
     {

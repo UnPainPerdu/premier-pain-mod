@@ -169,6 +169,47 @@ public class ModLootTableProvider extends LootTableProvider
             brazierLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get());
             brazierLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get());
             brazierLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get());
+            //table
+            tableLootTableGenerator(BlockRegister.OAK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.BIRCH_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.SPRUCE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.JUNGLE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.ACACIA_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.DARK_OAK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.MANGROVE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.CHERRY_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.CRIMSON_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.WARPED_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.BAMBOO_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.STONE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.MOSSY_STONE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.ANDESITE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.DIORITE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.GRANITE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.PRISMARINE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.BLACKSTONE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.PURPUR_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.DEEPSLATE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.TUFF_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.PACKED_MUD_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.SANDSTONE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.RED_SANDSTONE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.QUARTZ_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.NETHER_BRICKS_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.BASALT_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.END_STONE_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.COAL_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.REDSTONE_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get());
+            tableLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get());
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
@@ -193,6 +234,10 @@ public class ModLootTableProvider extends LootTableProvider
         private void brazierLootTableGenerator(Block brazier)
         {
             super.add(brazier, this.createSinglePropConditionTable(brazier, VillagerStatue.HALF, DoubleBlockHalf.LOWER));
+        }
+        private void tableLootTableGenerator(Block table)
+        {
+            super.add(table, this.createSingleItemTable(table));
         }
     }
 }

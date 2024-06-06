@@ -32,6 +32,17 @@
     "premierpainmod:cherry_villager_brazier",
     "premierpainmod:crimson_villager_brazier",
     "premierpainmod:warped_villager_brazier",
-    "premierpainmod:bamboo_villager_brazier"
+    "premierpainmod:bamboo_villager_brazier",
+    "premierpainmod:oak_villager_table",
+    "premierpainmod:birch_villager_table",
+    "premierpainmod:spruce_villager_table",
+    "premierpainmod:jungle_villager_table",
+    "premierpainmod:acacia_villager_table",
+    "premierpainmod:dark_oak_villager_table",
+    "premierpainmod:mangrove_villager_table",
+    "premierpainmod:cherry_villager_table",
+    "premierpainmod:crimson_villager_table",
+    "premierpainmod:warped_villager_table",
+    "premierpainmod:bamboo_villager_table"
   ]
 }

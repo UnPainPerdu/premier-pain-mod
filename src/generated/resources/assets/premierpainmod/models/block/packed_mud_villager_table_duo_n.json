@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_table/villager_table_duo",
+  "textures": {
+    "0": "premierpainmod:block/villager_table/packed_mud_villager_table"
+  }
+}

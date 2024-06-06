@@ -58,7 +58,19 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.CHERRY_VILLAGER_BRAZIER.get(),
                         BlockRegister.CRIMSON_VILLAGER_BRAZIER.get(),
                         BlockRegister.WARPED_VILLAGER_BRAZIER.get(),
-                        BlockRegister.BAMBOO_VILLAGER_BRAZIER.get()
+                        BlockRegister.BAMBOO_VILLAGER_BRAZIER.get(),
+                        //table
+                        BlockRegister.OAK_VILLAGER_TABLE.get(),
+                        BlockRegister.BIRCH_VILLAGER_TABLE.get(),
+                        BlockRegister.SPRUCE_VILLAGER_TABLE.get(),
+                        BlockRegister.JUNGLE_VILLAGER_TABLE.get(),
+                        BlockRegister.ACACIA_VILLAGER_TABLE.get(),
+                        BlockRegister.DARK_OAK_VILLAGER_TABLE.get(),
+                        BlockRegister.MANGROVE_VILLAGER_TABLE.get(),
+                        BlockRegister.CHERRY_VILLAGER_TABLE.get(),
+                        BlockRegister.CRIMSON_VILLAGER_TABLE.get(),
+                        BlockRegister.WARPED_VILLAGER_TABLE.get(),
+                        BlockRegister.BAMBOO_VILLAGER_TABLE.get()
                 );
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add
                 (
@@ -150,7 +162,36 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get(),
                         BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get(),
                         BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get()
+                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get(),
+                        //table
+                        BlockRegister.STONE_VILLAGER_TABLE.get(),
+                        BlockRegister.MOSSY_STONE_VILLAGER_TABLE.get(),
+                        BlockRegister.ANDESITE_VILLAGER_TABLE.get(),
+                        BlockRegister.DIORITE_VILLAGER_TABLE.get(),
+                        BlockRegister.PRISMARINE_VILLAGER_TABLE.get(),
+                        BlockRegister.BLACKSTONE_VILLAGER_TABLE.get(),
+                        BlockRegister.PURPUR_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.DEEPSLATE_VILLAGER_TABLE.get(),
+                        BlockRegister.TUFF_VILLAGER_TABLE.get(),
+                        BlockRegister.PACKED_MUD_VILLAGER_TABLE.get(),
+                        BlockRegister.SANDSTONE_VILLAGER_TABLE.get(),
+                        BlockRegister.RED_SANDSTONE_VILLAGER_TABLE.get(),
+                        BlockRegister.QUARTZ_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.NETHER_BRICKS_VILLAGER_TABLE.get(),
+                        BlockRegister.BASALT_VILLAGER_TABLE.get(),
+                        BlockRegister.END_STONE_VILLAGER_TABLE.get(),
+                        BlockRegister.COAL_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.REDSTONE_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.OBSIDIAN_VILLAGER_TABLE.get(),
+                        BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get()
                 );
         this.tag(BlockTags.NEEDS_STONE_TOOL).add
                 (
@@ -165,7 +206,11 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         //brazier
                         BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER.get(),
                         BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get()
+                        BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get(),
+                        //table
+                        BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get()
                 );
         this.tag(BlockTags.NEEDS_IRON_TOOL).add
                 (
@@ -180,7 +225,11 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         //brazier
                         BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER.get(),
                         BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get()
+                        BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get(),
+                        //table
+                        BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get()
                 );
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add
                 (
@@ -192,7 +241,10 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.OBSIDIAN_PEDESTAL.get(),
                         //brazier
                         BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get()
+                        BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get(),
+                        //table
+                        BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get(),
+                        BlockRegister.OBSIDIAN_VILLAGER_TABLE.get()
                 );
     }
 }

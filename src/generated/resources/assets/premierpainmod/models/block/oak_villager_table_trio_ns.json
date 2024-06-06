@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_table/villager_table_trio_line",
+  "textures": {
+    "0": "premierpainmod:block/villager_table/oak_villager_table"
+  }
+}

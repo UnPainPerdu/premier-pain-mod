@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_table/villager_table_solo",
+  "textures": {
+    "0": "premierpainmod:block/villager_table/diamond_block_villager_table"
+  }
+}

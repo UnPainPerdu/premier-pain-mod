@@ -8,6 +8,9 @@
     "premierpainmod:copper_block_villager_pedestal",
     "premierpainmod:iron_block_villager_brazier",
     "premierpainmod:lapis_block_villager_brazier",
-    "premierpainmod:copper_block_villager_brazier"
+    "premierpainmod:copper_block_villager_brazier",
+    "premierpainmod:iron_block_villager_table",
+    "premierpainmod:lapis_block_villager_table",
+    "premierpainmod:copper_block_villager_table"
   ]
 }

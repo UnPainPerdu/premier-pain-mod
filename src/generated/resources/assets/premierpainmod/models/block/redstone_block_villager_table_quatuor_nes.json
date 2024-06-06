@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_table/villager_table_quatuor",
+  "textures": {
+    "0": "premierpainmod:block/villager_table/redstone_block_villager_table"
+  }
+}

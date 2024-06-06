@@ -8,6 +8,9 @@
     "premierpainmod:diamond_block_villager_pedestal",
     "premierpainmod:gold_block_villager_brazier",
     "premierpainmod:emerald_block_villager_brazier",
-    "premierpainmod:diamond_block_villager_brazier"
+    "premierpainmod:diamond_block_villager_brazier",
+    "premierpainmod:gold_block_villager_table",
+    "premierpainmod:emerald_block_villager_table",
+    "premierpainmod:diamond_block_villager_table"
   ]
 }

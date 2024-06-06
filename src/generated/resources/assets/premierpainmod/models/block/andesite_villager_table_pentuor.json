@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_table/villager_table_pentuor",
+  "textures": {
+    "0": "premierpainmod:block/villager_table/andesite_villager_table"
+  }
+}
