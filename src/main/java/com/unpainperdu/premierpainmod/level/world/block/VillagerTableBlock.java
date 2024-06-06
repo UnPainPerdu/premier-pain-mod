@@ -31,7 +31,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
     public static final BooleanProperty WEST = PipeBlock.WEST;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final Map<Direction, BooleanProperty> PROPERTY_BY_DIRECTION = PipeBlock.PROPERTY_BY_DIRECTION;
-    private static final VoxelShape SHAPE = Block.box(1, 1, 1, 15, 15, 15);
+    private static final VoxelShape SHAPE = Block.box(1, 12, 1, 15, 15, 15);
 
     public VillagerTableBlock(Properties properties)
     {
@@ -89,7 +89,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
     {
         Block block = pState.getBlock();
         boolean flag1 = block instanceof VillagerTableBlock;
-        return !isExceptionForConnection(pState) && pIsSideSolid || flag1;
+        return flag1;
     }
     @Override
     protected @NotNull FluidState getFluidState(BlockState pState)

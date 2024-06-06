@@ -1,120 +1,120 @@
 {
   "variants": {
     "east=false,north=false,south=false,waterlogged=false,west=false": {
-      "model": "premierpainmod:block/test_block_solo"
+      "model": "premierpainmod:block/test_villager_table_solo"
     },
     "east=false,north=false,south=false,waterlogged=false,west=true": {
-      "model": "premierpainmod:block/test_block_duo_w",
+      "model": "premierpainmod:block/test_villager_table_duo_w",
       "y": 180
     },
     "east=false,north=false,south=false,waterlogged=true,west=false": {
-      "model": "premierpainmod:block/test_block_solo"
+      "model": "premierpainmod:block/test_villager_table_solo"
     },
     "east=false,north=false,south=false,waterlogged=true,west=true": {
-      "model": "premierpainmod:block/test_block_duo_w",
+      "model": "premierpainmod:block/test_villager_table_duo_w",
       "y": 180
     },
     "east=false,north=false,south=true,waterlogged=false,west=false": {
-      "model": "premierpainmod:block/test_block_duo_s",
+      "model": "premierpainmod:block/test_villager_table_duo_s",
       "y": 90
     },
     "east=false,north=false,south=true,waterlogged=false,west=true": {
-      "model": "premierpainmod:block/test_block_trio_sw",
+      "model": "premierpainmod:block/test_villager_table_trio_sw",
       "y": 90
     },
     "east=false,north=false,south=true,waterlogged=true,west=false": {
-      "model": "premierpainmod:block/test_block_duo_s",
+      "model": "premierpainmod:block/test_villager_table_duo_s",
       "y": 90
     },
     "east=false,north=false,south=true,waterlogged=true,west=true": {
-      "model": "premierpainmod:block/test_block_trio_sw",
+      "model": "premierpainmod:block/test_villager_table_trio_sw",
       "y": 90
     },
     "east=false,north=true,south=false,waterlogged=false,west=false": {
-      "model": "premierpainmod:block/test_block_duo_n",
+      "model": "premierpainmod:block/test_villager_table_duo_n",
       "y": 270
     },
     "east=false,north=true,south=false,waterlogged=false,west=true": {
-      "model": "premierpainmod:block/test_block_trio_nw",
+      "model": "premierpainmod:block/test_villager_table_trio_nw",
       "y": 180
     },
     "east=false,north=true,south=false,waterlogged=true,west=false": {
-      "model": "premierpainmod:block/test_block_duo_n",
+      "model": "premierpainmod:block/test_villager_table_duo_n",
       "y": 270
     },
     "east=false,north=true,south=false,waterlogged=true,west=true": {
-      "model": "premierpainmod:block/test_block_trio_nw",
+      "model": "premierpainmod:block/test_villager_table_trio_nw",
       "y": 180
     },
     "east=false,north=true,south=true,waterlogged=false,west=false": {
-      "model": "premierpainmod:block/test_block_trio_ns",
+      "model": "premierpainmod:block/test_villager_table_trio_ns",
       "y": 90
     },
     "east=false,north=true,south=true,waterlogged=false,west=true": {
-      "model": "premierpainmod:block/test_block_quatuor_swn",
+      "model": "premierpainmod:block/test_villager_table_quatuor_swn",
       "y": 90
     },
     "east=false,north=true,south=true,waterlogged=true,west=false": {
-      "model": "premierpainmod:block/test_block_trio_ns",
+      "model": "premierpainmod:block/test_villager_table_trio_ns",
       "y": 90
     },
     "east=false,north=true,south=true,waterlogged=true,west=true": {
-      "model": "premierpainmod:block/test_block_quatuor_swn",
+      "model": "premierpainmod:block/test_villager_table_quatuor_swn",
       "y": 90
     },
     "east=true,north=false,south=false,waterlogged=false,west=false": {
-      "model": "premierpainmod:block/test_block_duo_e"
+      "model": "premierpainmod:block/test_villager_table_duo_e"
     },
     "east=true,north=false,south=false,waterlogged=false,west=true": {
-      "model": "premierpainmod:block/test_block_trio_we"
+      "model": "premierpainmod:block/test_villager_table_trio_we"
     },
     "east=true,north=false,south=false,waterlogged=true,west=false": {
-      "model": "premierpainmod:block/test_block_duo_e"
+      "model": "premierpainmod:block/test_villager_table_duo_e"
     },
     "east=true,north=false,south=false,waterlogged=true,west=true": {
-      "model": "premierpainmod:block/test_block_trio_we"
+      "model": "premierpainmod:block/test_villager_table_trio_we"
     },
     "east=true,north=false,south=true,waterlogged=false,west=false": {
-      "model": "premierpainmod:block/test_block_trio_se"
+      "model": "premierpainmod:block/test_villager_table_trio_se"
     },
     "east=true,north=false,south=true,waterlogged=false,west=true": {
-      "model": "premierpainmod:block/test_block_quatuor_esw"
+      "model": "premierpainmod:block/test_villager_table_quatuor_esw"
     },
     "east=true,north=false,south=true,waterlogged=true,west=false": {
-      "model": "premierpainmod:block/test_block_trio_se"
+      "model": "premierpainmod:block/test_villager_table_trio_se"
     },
     "east=true,north=false,south=true,waterlogged=true,west=true": {
-      "model": "premierpainmod:block/test_block_quatuor_esw"
+      "model": "premierpainmod:block/test_villager_table_quatuor_esw"
     },
     "east=true,north=true,south=false,waterlogged=false,west=false": {
-      "model": "premierpainmod:block/test_block_trio_ne",
+      "model": "premierpainmod:block/test_villager_table_trio_ne",
       "y": 270
     },
     "east=true,north=true,south=false,waterlogged=false,west=true": {
-      "model": "premierpainmod:block/test_block_quatuor_wne",
+      "model": "premierpainmod:block/test_villager_table_quatuor_wne",
       "y": 180
     },
     "east=true,north=true,south=false,waterlogged=true,west=false": {
-      "model": "premierpainmod:block/test_block_trio_ne",
+      "model": "premierpainmod:block/test_villager_table_trio_ne",
       "y": 270
     },
     "east=true,north=true,south=false,waterlogged=true,west=true": {
-      "model": "premierpainmod:block/test_block_quatuor_wne",
+      "model": "premierpainmod:block/test_villager_table_quatuor_wne",
       "y": 180
     },
     "east=true,north=true,south=true,waterlogged=false,west=false": {
-      "model": "premierpainmod:block/test_block_quatuor_nes",
+      "model": "premierpainmod:block/test_villager_table_quatuor_nes",
       "y": 270
     },
     "east=true,north=true,south=true,waterlogged=false,west=true": {
-      "model": "premierpainmod:block/test_block_pentuor"
+      "model": "premierpainmod:block/test_villager_table_pentuor"
     },
     "east=true,north=true,south=true,waterlogged=true,west=false": {
-      "model": "premierpainmod:block/test_block_quatuor_nes",
+      "model": "premierpainmod:block/test_villager_table_quatuor_nes",
       "y": 270
     },
     "east=true,north=true,south=true,waterlogged=true,west=true": {
-      "model": "premierpainmod:block/test_block_pentuor"
+      "model": "premierpainmod:block/test_villager_table_pentuor"
     }
   }
 }
