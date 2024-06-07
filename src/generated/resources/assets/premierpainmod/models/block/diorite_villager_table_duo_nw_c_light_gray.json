@@ -1,0 +1,7 @@
+{
+  "parent": "premierpainmod:block/villager_table/villager_table_trio_angle_carpeted",
+  "textures": {
+    "0": "premierpainmod:block/villager_table/table/diorite_villager_table",
+    "1": "premierpainmod:block/villager_table/carpet/villager_table_carpet_light_gray"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/villager_table/villager_table_duo",
   "textures": {
-    "0": "premierpainmod:block/villager_table/emerald_block_villager_table"
+    "0": "premierpainmod:block/villager_table/table/emerald_block_villager_table"
   }
 }

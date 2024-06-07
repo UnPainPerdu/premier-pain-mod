@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/villager_table/villager_table_pentuor",
   "textures": {
-    "0": "premierpainmod:block/villager_table/nether_bricks_villager_table"
+    "0": "premierpainmod:block/villager_table/table/nether_bricks_villager_table"
   }
 }

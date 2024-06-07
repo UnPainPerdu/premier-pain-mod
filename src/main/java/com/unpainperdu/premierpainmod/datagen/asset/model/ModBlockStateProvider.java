@@ -3,15 +3,15 @@ package com.unpainperdu.premierpainmod.datagen.asset.model;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GameMasterBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -332,140 +332,348 @@ public class ModBlockStateProvider extends BlockStateProvider
         // The passed function will be called once for each possible state.
         variantBuilder.forAllStates(state ->
         {
+            boolean flag = (state.getValue(VillagerTableBlock.COLOR) == VillagerTableCarpetColor.NONE);
             //Duo part
                 //North only
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_duo_n","premierpainmod:block/villager_table/villager_table_duo").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(270)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_n", "premierpainmod:block/villager_table/villager_table_duo").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(270)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_n_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(270)
+                            .build();
+                }
             }
                 //West only
             if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_duo_w","premierpainmod:block/villager_table/villager_table_duo").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(180)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_w", "premierpainmod:block/villager_table/villager_table_duo").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(180)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_w_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(180)
+                            .build();
+                }
             }
                 //South only
             if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_duo_s","premierpainmod:block/villager_table/villager_table_duo").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(90)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_s", "premierpainmod:block/villager_table/villager_table_duo").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(90)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_s_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(90)
+                            .build();
+                }
             }
                 //East only
             if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_duo_e","premierpainmod:block/villager_table/villager_table_duo").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(0)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_e", "premierpainmod:block/villager_table/villager_table_duo").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(0)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_e_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(0)
+                            .build();
+                }
             }
             //Trio Part
                 //N S
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_trio_ns","premierpainmod:block/villager_table/villager_table_trio_line").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(90)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_trio_ns", "premierpainmod:block/villager_table/villager_table_trio_line").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(90)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_ns_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio_line_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(90)
+                            .build();
+                }
             }
                 //W E
             if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_trio_we","premierpainmod:block/villager_table/villager_table_trio_line").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(0)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_trio_we", "premierpainmod:block/villager_table/villager_table_trio_line").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(0)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_we_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio_line_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(0)
+                            .build();
+                }
             }
                 //N W
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_trio_nw","premierpainmod:block/villager_table/villager_table_trio_angle").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(180)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_trio_nw", "premierpainmod:block/villager_table/villager_table_trio_angle").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(180)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_nw_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio_angle_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(180)
+                            .build();
+                }
             }
                 //N E
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_trio_ne","premierpainmod:block/villager_table/villager_table_trio_angle").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(270)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_trio_ne", "premierpainmod:block/villager_table/villager_table_trio_angle").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(270)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_ne_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio_angle_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(270)
+                            .build();
+                }
             }
                 //S W
             if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_trio_sw","premierpainmod:block/villager_table/villager_table_trio_angle").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(90)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_trio_sw", "premierpainmod:block/villager_table/villager_table_trio_angle").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(90)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_sw_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio_angle_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(90)
+                            .build();
+                }
             }
                 //S E
             if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_trio_se","premierpainmod:block/villager_table/villager_table_trio_angle").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(0)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_trio_se", "premierpainmod:block/villager_table/villager_table_trio_angle").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(0)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_duo_se_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio_angle_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(0)
+                            .build();
+                }
             }
             //Quatuor Part
                 //N E S
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_quatuor_nes","premierpainmod:block/villager_table/villager_table_quatuor").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(270)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_quatuor_nes", "premierpainmod:block/villager_table/villager_table_quatuor").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(270)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_quatuor_nes_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_quatuor_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(270)
+                            .build();
+                }
             }
                 //E S W
             if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_quatuor_esw","premierpainmod:block/villager_table/villager_table_quatuor").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(0)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_quatuor_esw", "premierpainmod:block/villager_table/villager_table_quatuor").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(0)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_quatuor_esw_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_quatuor_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(0)
+                            .build();
+                }
             }
                 //S W N
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_quatuor_swn","premierpainmod:block/villager_table/villager_table_quatuor").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(90)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_quatuor_swn", "premierpainmod:block/villager_table/villager_table_quatuor").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(90)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_quatuor_swn_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_quatuor_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(90)
+                            .build();
+                }
             }
                 //W N E
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_quatuor_wne","premierpainmod:block/villager_table/villager_table_quatuor").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(180)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_quatuor_wne", "premierpainmod:block/villager_table/villager_table_quatuor").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(180)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_quatuor_wne_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_quatuor_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(180)
+                            .build();
+                }
             }
             //total part
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_pentuor","premierpainmod:block/villager_table/villager_table_pentuor").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(0)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_pentuor", "premierpainmod:block/villager_table/villager_table_pentuor").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(0)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_pentuor_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_pentuor_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(0)
+                            .build();
+                }
             }
             //solo
             else
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(key(table).toString()+"_solo","premierpainmod:block/villager_table/villager_table_solo").texture("0","block/villager_table/" + villagerTableName))
-                        .rotationY(0)
-                        .build();
+                if(flag)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_solo", "premierpainmod:block/villager_table/villager_table_solo").texture("0", "block/villager_table/table/" + villagerTableName))
+                            .rotationY(0)
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(table).toString() + "_solo_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_solo_carpeted").texture("0", "block/villager_table/table/" + villagerTableName).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .rotationY(0)
+                            .build();
+                }
             }
         });
-        ModelFile villagerWorkshopModel = models().withExistingParent(key(table).toString(),"premierpainmod:block/villager_table/villager_table_solo").texture("0","block/villager_table/" + villagerTableName);
+        ModelFile villagerWorkshopModel = models().withExistingParent(key(table).toString(),"premierpainmod:block/villager_table/villager_table_solo").texture("0","block/villager_table/table/" + villagerTableName);
         itemModels().getBuilder(key(table).getPath()).parent(villagerWorkshopModel);
+    }
+    private String textureTableWithCarpetSelection(BlockState state,VillagerTableBlock table)
+    {
+        String villagerTableName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MODID+":","");
+        switch (state.getValue(VillagerTableBlock.COLOR))
+        {
+            case WHITE: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_white";
+            case LIGHT_GRAY: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_light_gray";
+            case GRAY: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_gray";
+            case BLACK: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_black";
+            case BROWN: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_brown";
+            case RED: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_red";
+            case ORANGE: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_orange";
+            case YELLOW: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_yellow";
+            case LIME: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_lime";
+            case GREEN: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_green";
+            case CYAN: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_cyan";
+            case LIGHT_BLUE: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_light_blue";
+            case BLUE: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_blue";
+            case PURPLE: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_purple";
+            case MAGENTA: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_magenta";
+            default: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_pink";
+        }
+    }
+
+    private String nameModelTableWithCarpetSelection(BlockState state,VillagerTableBlock table)
+    {
+        String villagerTableName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MODID+":","");
+        switch (state.getValue(VillagerTableBlock.COLOR))
+        {
+            case WHITE: return "_white";
+            case LIGHT_GRAY: return "_light_gray";
+            case GRAY: return "_gray";
+            case BLACK: return "_black";
+            case BROWN: return "_brown";
+            case RED: return "_red";
+            case ORANGE: return "_orange";
+            case YELLOW: return "_yellow";
+            case LIME: return "_lime";
+            case GREEN: return "_green";
+            case CYAN: return "_cyan";
+            case LIGHT_BLUE: return "_light_blue";
+            case BLUE: return "_blue";
+            case PURPLE: return "_purple";
+            case MAGENTA: return "_magenta";
+            default: return "_pink";
+        }
     }
 
     private ResourceLocation key(Block block)

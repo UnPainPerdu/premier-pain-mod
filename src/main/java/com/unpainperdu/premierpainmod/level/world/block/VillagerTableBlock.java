@@ -153,6 +153,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
             {
 
                 pLevel.setBlock(pPos, pState.setValue(COLOR, colorDedection((WoolCarpetBlock) carpetBlock)), 3);
+                pLevel.playSound(null, pPos, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
                 return ItemInteractionResult.CONSUME;
             }
 

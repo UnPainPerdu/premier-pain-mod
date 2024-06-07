@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/villager_table/villager_table_quatuor",
   "textures": {
-    "0": "premierpainmod:block/villager_table/bamboo_villager_table"
+    "0": "premierpainmod:block/villager_table/table/bamboo_villager_table"
   }
 }
