@@ -31,7 +31,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     protected void registerStatesAndModels()
     {
         //test zone
-        villagerTableWithItem(BlockRegister.TEST_BLOCK.get());
+        villagerChairWithItem(BlockRegister.TEST_BLOCK.get());
         //workshop
         villagerWorkshopWithItem(BlockRegister.VILLAGER_WORKSHOP.get());
         //villager statue
@@ -674,6 +674,32 @@ public class ModBlockStateProvider extends BlockStateProvider
             case MAGENTA: return "_magenta";
             default: return "_pink";
         }
+    }
+    private void villagerChairWithItem(Block chair)
+    {
+        String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MODID+":","");
+        // Get a variant block state builder.
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(chair);
+        // Create a partial state and set properties on it.
+        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
+        // Alternatively, forAllStates(Function<BlockState, ConfiguredModel[]>) creates a model for every state.
+        // The passed function will be called once for each possible state.
+        variantBuilder.forAllStates(state ->
+        {
+            // Return a ConfiguredModel depending on the state's properties.
+            // For example, the following code will rotate the model depending on the horizontal rotation of the block.
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair"))//.texture("0","block/villager_statue/" + statueName + "_bottom"))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
+
+        });
+        /*
+        itemModels().getBuilder((key(chair).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0","item/villager_statue/" + statueName);
+        */
     }
 
     private ResourceLocation key(Block block)
