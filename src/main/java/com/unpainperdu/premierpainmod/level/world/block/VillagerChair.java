@@ -1,8 +1,13 @@
 package com.unpainperdu.premierpainmod.level.world.block;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.SeatEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.monster.piglin.PiglinAi;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -18,6 +23,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
@@ -76,6 +82,20 @@ public class VillagerChair extends Block implements SimpleWaterloggedBlock, Enti
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
     {
-        return null;
+        return new SeatEntity(pPos, pState);
+    }
+
+    @Override
+    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult)
+    {
+        if (pLevel.isClientSide)
+        {
+            return InteractionResult.SUCCESS;
+
+        }
+        else
+        {
+            return InteractionResult.CONSUME;
+        }
     }
 }
