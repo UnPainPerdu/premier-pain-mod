@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 
 /*
-Credit to bl4ckscor3 for everithing about sitting with this block
+Credit to bl4ckscor3 for everything about sitting with this block
 see Seatentity, SeatUtil, SeatHandler and SeatClient
 */
 public class VillagerChair extends Block implements SimpleWaterloggedBlock
