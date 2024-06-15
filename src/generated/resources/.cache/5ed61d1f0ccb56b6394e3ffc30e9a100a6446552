@@ -1,6 +1,6 @@
-// 1.20.6	2024-06-06T15:46:58.4457043	Tags for minecraft:block mod id premierpainmod
-6bc928ff14f4e4aaac63a14e715d53d4344e2750 data/minecraft/tags/blocks/mineable/axe.json
-b05cb290b3b9568b856f586c0e00f88a17fa6e06 data/minecraft/tags/blocks/mineable/pickaxe.json
-d7f994e702765e4defcf54a4db2ee8e85ebdd9df data/minecraft/tags/blocks/needs_diamond_tool.json
-e142a67adeabb958f11c25b6b711f9c2ca62d5fd data/minecraft/tags/blocks/needs_iron_tool.json
-970aa48970f817ab912bb0967a9fda3c3f87a811 data/minecraft/tags/blocks/needs_stone_tool.json
+// 1.20.6	2024-06-15T22:39:49.6200525	Tags for minecraft:block mod id premierpainmod
+57ec51ad76a6bfefd44417262561a1f94326cf68 data/minecraft/tags/blocks/mineable/axe.json
+6a7b96fa9622e706e5cadc1373a237be3aed03f8 data/minecraft/tags/blocks/mineable/pickaxe.json
+9251bed1c4b454d002b51db131c9c6e45b7b46b9 data/minecraft/tags/blocks/needs_diamond_tool.json
+502c86c46871d84ea488d80217ea5d746e684fd0 data/minecraft/tags/blocks/needs_iron_tool.json
+da8e0f7dd2dc64a2cdc5a37a4d89325267e1e6ee data/minecraft/tags/blocks/needs_stone_tool.json

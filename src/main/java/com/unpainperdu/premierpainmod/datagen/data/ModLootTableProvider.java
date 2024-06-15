@@ -210,6 +210,48 @@ public class ModLootTableProvider extends LootTableProvider
             tableLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_TABLE.get());
             tableLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get());
             tableLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get());
+            //chair
+            chairLootTableGenerator(BlockRegister.OAK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.BIRCH_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.SPRUCE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.JUNGLE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.ACACIA_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.DARK_OAK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.MANGROVE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.CHERRY_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.CRIMSON_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.WARPED_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.BAMBOO_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.STONE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.MOSSY_STONE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.ANDESITE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.DIORITE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.GRANITE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.PRISMARINE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.BLACKSTONE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.PURPUR_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.DEEPSLATE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.TUFF_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.PACKED_MUD_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.SANDSTONE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.RED_SANDSTONE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.QUARTZ_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.NETHER_BRICKS_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.BASALT_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.END_STONE_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.COAL_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.IRON_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.GOLD_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.REDSTONE_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.EMERALD_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.DIAMOND_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.COPPER_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.LAPIS_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.NETHERITE_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR.get());
+            chairLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR.get());
+
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
@@ -238,6 +280,10 @@ public class ModLootTableProvider extends LootTableProvider
         private void tableLootTableGenerator(Block table)
         {
             super.add(table, this.createSingleItemTable(table));
+        }
+        private void chairLootTableGenerator(Block chair)
+        {
+            super.add(chair, this.createSingleItemTable(chair));
         }
     }
 }

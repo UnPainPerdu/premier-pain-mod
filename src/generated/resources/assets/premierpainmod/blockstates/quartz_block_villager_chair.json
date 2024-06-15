@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/quartz_block_villager_chair",
+      "y": 270
+    },
+    "facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/quartz_block_villager_chair",
+      "y": 270
+    },
+    "facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/quartz_block_villager_chair",
+      "y": 180
+    },
+    "facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/quartz_block_villager_chair",
+      "y": 180
+    },
+    "facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/quartz_block_villager_chair"
+    },
+    "facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/quartz_block_villager_chair"
+    },
+    "facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/quartz_block_villager_chair",
+      "y": 90
+    },
+    "facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/quartz_block_villager_chair",
+      "y": 90
+    }
+  }
+}

@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerChair;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
@@ -26,7 +26,7 @@ public class BlockRegister
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
     //test zone
-    public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_villager_chair", () -> new VillagerChair(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
+    public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_villager_chair", () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     /*materials :
@@ -240,6 +240,48 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_TABLE =  villagerTableRegister("amethyst_block_villager_table","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_TABLE =  villagerTableRegister("dripstone_block_villager_table","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_TABLE =  villagerTableRegister("bedrock_villager_table","bedrock");
+        //chair zone
+    public static final DeferredBlock<Block> OAK_VILLAGER_CHAIR = villagerChairRegister("oak_villager_chair","wood");
+    public static final DeferredBlock<Block> BIRCH_VILLAGER_CHAIR = villagerChairRegister("birch_villager_chair","wood");
+    public static final DeferredBlock<Block> SPRUCE_VILLAGER_CHAIR = villagerChairRegister("spruce_villager_chair","wood");
+    public static final DeferredBlock<Block> JUNGLE_VILLAGER_CHAIR = villagerChairRegister("jungle_villager_chair","wood");
+    public static final DeferredBlock<Block> ACACIA_VILLAGER_CHAIR = villagerChairRegister("acacia_villager_chair","wood");
+    public static final DeferredBlock<Block> DARK_OAK_VILLAGER_CHAIR = villagerChairRegister("dark_oak_villager_chair","wood");
+    public static final DeferredBlock<Block> MANGROVE_VILLAGER_CHAIR = villagerChairRegister("mangrove_villager_chair","wood");
+    public static final DeferredBlock<Block> CHERRY_VILLAGER_CHAIR = villagerChairRegister("cherry_villager_chair","wood","cherry");
+    public static final DeferredBlock<Block> BAMBOO_VILLAGER_CHAIR = villagerChairRegister("bamboo_villager_chair","wood","bamboo");
+    public static final DeferredBlock<Block> CRIMSON_VILLAGER_CHAIR = villagerChairRegister("crimson_villager_chair","wood","netherwood");
+    public static final DeferredBlock<Block> WARPED_VILLAGER_CHAIR = villagerChairRegister("warped_villager_chair","wood","netherwood");
+    public static final DeferredBlock<Block> STONE_VILLAGER_CHAIR =  villagerChairRegister("stone_villager_chair","stone");
+    public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_CHAIR =  villagerChairRegister("mossy_stone_villager_chair","stone");
+    public static final DeferredBlock<Block> ANDESITE_VILLAGER_CHAIR =  villagerChairRegister("andesite_villager_chair","stone");
+    public static final DeferredBlock<Block> DIORITE_VILLAGER_CHAIR =  villagerChairRegister("diorite_villager_chair","stone");
+    public static final DeferredBlock<Block> GRANITE_VILLAGER_CHAIR =  villagerChairRegister("granite_villager_chair","stone");
+    public static final DeferredBlock<Block> PRISMARINE_VILLAGER_CHAIR =  villagerChairRegister("prismarine_villager_chair","stone");
+    public static final DeferredBlock<Block> BLACKSTONE_VILLAGER_CHAIR =  villagerChairRegister("blackstone_villager_chair","stone");
+    public static final DeferredBlock<Block> PURPUR_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("purpur_block_villager_chair","stone");
+    public static final DeferredBlock<Block> DEEPSLATE_VILLAGER_CHAIR =  villagerChairRegister("deepslate_villager_chair","deepslate");
+    public static final DeferredBlock<Block> TUFF_VILLAGER_CHAIR =  villagerChairRegister("tuff_villager_chair","tuff");
+    public static final DeferredBlock<Block> PACKED_MUD_VILLAGER_CHAIR =  villagerChairRegister("packed_mud_villager_chair","mud");
+    public static final DeferredBlock<Block> SANDSTONE_VILLAGER_CHAIR =  villagerChairRegister("sandstone_villager_chair","sandstone");
+    public static final DeferredBlock<Block> RED_SANDSTONE_VILLAGER_CHAIR =  villagerChairRegister("red_sandstone_villager_chair","sandstone");
+    public static final DeferredBlock<Block> QUARTZ_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("quartz_block_villager_chair","sandstone");
+    public static final DeferredBlock<Block> NETHER_BRICKS_VILLAGER_CHAIR =  villagerChairRegister("nether_bricks_villager_chair","netherbrick");
+    public static final DeferredBlock<Block> BASALT_VILLAGER_CHAIR =  villagerChairRegister("basalt_villager_chair","basalt");
+    public static final DeferredBlock<Block> END_STONE_VILLAGER_CHAIR =  villagerChairRegister("end_stone_villager_chair","endstone");
+    public static final DeferredBlock<Block> COAL_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("coal_block_villager_chair","mineral_strong");
+    public static final DeferredBlock<Block> IRON_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("iron_block_villager_chair","metal");
+    public static final DeferredBlock<Block> GOLD_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("gold_block_villager_chair","metal");
+    public static final DeferredBlock<Block> REDSTONE_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("redstone_block_villager_chair","metal");
+    public static final DeferredBlock<Block> EMERALD_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("emerald_block_villager_chair","metal");
+    public static final DeferredBlock<Block> DIAMOND_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("diamond_block_villager_chair","metal");
+    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("copper_block_villager_chair","copper");
+    public static final DeferredBlock<Block> LAPIS_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("lapis_block_villager_chair","mineral_weak");
+    public static final DeferredBlock<Block> NETHERITE_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("netherite_block_villager_chair","netherite");
+    public static final DeferredBlock<Block> OBSIDIAN_VILLAGER_CHAIR =  villagerChairRegister("obsidian_villager_chair","obsidan");
+    public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("amethyst_block_villager_chair","amethyst");
+    public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_CHAIR =  villagerChairRegister("dripstone_block_villager_chair","dripstone");
+    public static final DeferredBlock<Block> BEDROCK_VILLAGER_CHAIR =  villagerChairRegister("bedrock_villager_chair","bedrock");
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
@@ -597,6 +639,87 @@ public class BlockRegister
             }
             default: {
                 return (DeferredBlock<T>) registerBlock(name, () -> new VillagerTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+            }
+        }
+    }
+    private static  <T extends Block> DeferredBlock<T> villagerChairRegister(String name, String familie, String type)
+    {
+        switch (familie)
+        {
+            case "wood":
+                return (DeferredBlock<T>) villagerChairRegister(name, type);
+            default:
+                return (DeferredBlock<T>) villagerChairRegister(name, "default");
+        }
+    }
+    private static <T extends Block> DeferredBlock<T> villagerChairRegister(String name, String type)
+    {
+        switch (type) {
+            case "stone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock( BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+            }
+            case "cobblestone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE).noOcclusion()));
+            }
+            case "deepslate": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE).noOcclusion()));
+            }
+            case "tuff": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF).noOcclusion()));
+            }
+            case "mud": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_MUD).noOcclusion()));
+            }
+            case "sandstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion()));
+            }
+            case "netherbrick": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS).noOcclusion()));
+            }
+            case "mineral_weak": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK).noOcclusion()));
+            }
+            case "mineral_strong": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_BLOCK).noOcclusion()));
+            }
+            case "metal": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()));
+            }
+            case "copper": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion()));
+            }
+            case "basalt": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT).noOcclusion()));
+            }
+            case "endstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion()));
+            }
+            case "obsidan": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
+            }
+            case "netherite": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK).noOcclusion()));
+            }
+            case "amethyst": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+            }
+            case "dripstone": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK).noOcclusion()));
+            }
+            case "bedrock": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
+            }
+            case "netherwood": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion()));
+            }
+            case "cherry": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).noOcclusion()));
+            }
+            case "bamboo": {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion()));
+            }
+            default: {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
             }
         }
     }

@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:packed_mud"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:packed_mud_villager_chair"
+  }
+}

@@ -11,6 +11,9 @@
     "premierpainmod:diamond_block_villager_brazier",
     "premierpainmod:gold_block_villager_table",
     "premierpainmod:emerald_block_villager_table",
-    "premierpainmod:diamond_block_villager_table"
+    "premierpainmod:diamond_block_villager_table",
+    "premierpainmod:gold_block_villager_chair",
+    "premierpainmod:emerald_block_villager_chair",
+    "premierpainmod:diamond_block_villager_chair"
   ]
 }

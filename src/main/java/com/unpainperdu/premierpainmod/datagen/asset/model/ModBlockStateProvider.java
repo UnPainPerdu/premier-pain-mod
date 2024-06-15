@@ -31,7 +31,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     protected void registerStatesAndModels()
     {
         //test zone
-        villagerChairWithItem(BlockRegister.TEST_BLOCK.get());
+
         //workshop
         villagerWorkshopWithItem(BlockRegister.VILLAGER_WORKSHOP.get());
         //villager statue
@@ -202,6 +202,48 @@ public class ModBlockStateProvider extends BlockStateProvider
         villagerTableWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get());
         villagerTableWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get());
         villagerTableWithItem(BlockRegister.BEDROCK_VILLAGER_TABLE.get());
+        //chair
+        villagerChairWithItem(BlockRegister.OAK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.BIRCH_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.SPRUCE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.JUNGLE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.ACACIA_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.DARK_OAK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.MANGROVE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.CHERRY_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.BAMBOO_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.CRIMSON_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.WARPED_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.STONE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.MOSSY_STONE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.ANDESITE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.DIORITE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.GRANITE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.PRISMARINE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.BLACKSTONE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.DEEPSLATE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.TUFF_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.PACKED_MUD_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.SANDSTONE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.BASALT_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.END_STONE_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.COAL_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.IRON_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.OBSIDIAN_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR.get());
+        villagerChairWithItem(BlockRegister.BEDROCK_VILLAGER_CHAIR.get());
     }
     private void simpleBlockWithItem(Block block)
     {
@@ -678,28 +720,17 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerChairWithItem(Block chair)
     {
         String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MODID+":","");
-        // Get a variant block state builder.
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(chair);
-        // Create a partial state and set properties on it.
         VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
-        // Alternatively, forAllStates(Function<BlockState, ConfiguredModel[]>) creates a model for every state.
-        // The passed function will be called once for each possible state.
         variantBuilder.forAllStates(state ->
         {
-            // Return a ConfiguredModel depending on the state's properties.
-            // For example, the following code will rotate the model depending on the horizontal rotation of the block.
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair"))//.texture("0","block/villager_statue/" + statueName + "_bottom"))
+                    .modelFile(models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair"))//.texture("0","block/villager_chair/" + chairName ))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
-
         });
-        /*
-        itemModels().getBuilder((key(chair).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
-                .parent(models()
-                        .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/villager_statue/" + statueName);
-        */
+        ModelFile villagerChairModel = models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair");//.texture("0","block/villager_chair/" + chairName);
+        itemModels().getBuilder(key(chair).getPath()).parent(villagerChairModel);
     }
 
     private ResourceLocation key(Block block)

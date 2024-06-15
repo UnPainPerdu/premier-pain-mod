@@ -26,18 +26,18 @@ import javax.annotation.Nullable;
 Credit to bl4ckscor3 for everything about sitting with this block
 see Seatentity, SeatUtil, SeatHandler and SeatClient
 */
-public class VillagerChair extends Block implements SimpleWaterloggedBlock
+public class VillagerChairBlock extends Block implements SimpleWaterloggedBlock
 {
-    public static final MapCodec<VillagerChair> CODEC = simpleCodec(VillagerChair::new);
+    public static final MapCodec<VillagerChairBlock> CODEC = simpleCodec(VillagerChairBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
-    public VillagerChair(Properties properties)
+    public VillagerChairBlock(Properties properties)
     {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, Boolean.FALSE));
     }
-    public MapCodec<VillagerChair> codec() {
+    public MapCodec<VillagerChairBlock> codec() {
         return CODEC;
     }
 

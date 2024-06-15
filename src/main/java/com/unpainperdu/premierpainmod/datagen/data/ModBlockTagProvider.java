@@ -70,7 +70,19 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.CHERRY_VILLAGER_TABLE.get(),
                         BlockRegister.CRIMSON_VILLAGER_TABLE.get(),
                         BlockRegister.WARPED_VILLAGER_TABLE.get(),
-                        BlockRegister.BAMBOO_VILLAGER_TABLE.get()
+                        BlockRegister.BAMBOO_VILLAGER_TABLE.get(),
+                        //chair
+                        BlockRegister.OAK_VILLAGER_CHAIR.get(),
+                        BlockRegister.BIRCH_VILLAGER_CHAIR.get(),
+                        BlockRegister.SPRUCE_VILLAGER_CHAIR.get(),
+                        BlockRegister.JUNGLE_VILLAGER_CHAIR.get(),
+                        BlockRegister.ACACIA_VILLAGER_CHAIR.get(),
+                        BlockRegister.DARK_OAK_VILLAGER_CHAIR.get(),
+                        BlockRegister.MANGROVE_VILLAGER_CHAIR.get(),
+                        BlockRegister.CHERRY_VILLAGER_CHAIR.get(),
+                        BlockRegister.CRIMSON_VILLAGER_CHAIR.get(),
+                        BlockRegister.WARPED_VILLAGER_CHAIR.get(),
+                        BlockRegister.BAMBOO_VILLAGER_CHAIR.get()
                 );
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add
                 (
@@ -191,7 +203,36 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get(),
                         BlockRegister.OBSIDIAN_VILLAGER_TABLE.get(),
                         BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get()
+                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get(),
+                        //chair
+                        BlockRegister.STONE_VILLAGER_CHAIR.get(),
+                        BlockRegister.MOSSY_STONE_VILLAGER_CHAIR.get(),
+                        BlockRegister.ANDESITE_VILLAGER_CHAIR.get(),
+                        BlockRegister.DIORITE_VILLAGER_CHAIR.get(),
+                        BlockRegister.PRISMARINE_VILLAGER_CHAIR.get(),
+                        BlockRegister.BLACKSTONE_VILLAGER_CHAIR.get(),
+                        BlockRegister.PURPUR_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.DEEPSLATE_VILLAGER_CHAIR.get(),
+                        BlockRegister.TUFF_VILLAGER_CHAIR.get(),
+                        BlockRegister.PACKED_MUD_VILLAGER_CHAIR.get(),
+                        BlockRegister.SANDSTONE_VILLAGER_CHAIR.get(),
+                        BlockRegister.RED_SANDSTONE_VILLAGER_CHAIR.get(),
+                        BlockRegister.QUARTZ_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.NETHER_BRICKS_VILLAGER_CHAIR.get(),
+                        BlockRegister.BASALT_VILLAGER_CHAIR.get(),
+                        BlockRegister.END_STONE_VILLAGER_CHAIR.get(),
+                        BlockRegister.COAL_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.IRON_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.GOLD_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.REDSTONE_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.EMERALD_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.DIAMOND_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.COPPER_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.LAPIS_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.NETHERITE_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.OBSIDIAN_VILLAGER_CHAIR.get(),
+                        BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR.get()
                 );
         this.tag(BlockTags.NEEDS_STONE_TOOL).add
                 (
@@ -210,7 +251,11 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         //table
                         BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get(),
                         BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get()
+                        BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get(),
+                        //chair
+                        BlockRegister.IRON_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.LAPIS_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.COPPER_BLOCK_VILLAGER_CHAIR.get()
                 );
         this.tag(BlockTags.NEEDS_IRON_TOOL).add
                 (
@@ -229,7 +274,11 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         //table
                         BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get(),
                         BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get()
+                        BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get(),
+                        //chair
+                        BlockRegister.GOLD_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.EMERALD_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.DIAMOND_BLOCK_VILLAGER_CHAIR.get()
                 );
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add
                 (
@@ -244,7 +293,10 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get(),
                         //table
                         BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_TABLE.get()
+                        BlockRegister.OBSIDIAN_VILLAGER_TABLE.get(),
+                        //chair
+                        BlockRegister.NETHERITE_BLOCK_VILLAGER_CHAIR.get(),
+                        BlockRegister.OBSIDIAN_VILLAGER_CHAIR.get()
                 );
     }
 }

@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.event;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerChair;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.SeatEntity;
 import com.unpainperdu.premierpainmod.util.seat.SeatUtil;
 import net.minecraft.core.BlockPos;
@@ -74,7 +74,7 @@ public class SeatHandler
      */
     private static boolean isValidBlock(Level level, BlockPos pos, BlockState state, Block block)
     {
-        boolean isValid = block instanceof VillagerChair || isModBlock(block);
+        boolean isValid = block instanceof VillagerChairBlock || isModBlock(block);
 
         if (!isValid && block instanceof BedBlock)
         {

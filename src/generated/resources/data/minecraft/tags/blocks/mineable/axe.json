@@ -43,6 +43,17 @@
     "premierpainmod:cherry_villager_table",
     "premierpainmod:crimson_villager_table",
     "premierpainmod:warped_villager_table",
-    "premierpainmod:bamboo_villager_table"
+    "premierpainmod:bamboo_villager_table",
+    "premierpainmod:oak_villager_chair",
+    "premierpainmod:birch_villager_chair",
+    "premierpainmod:spruce_villager_chair",
+    "premierpainmod:jungle_villager_chair",
+    "premierpainmod:acacia_villager_chair",
+    "premierpainmod:dark_oak_villager_chair",
+    "premierpainmod:mangrove_villager_chair",
+    "premierpainmod:cherry_villager_chair",
+    "premierpainmod:crimson_villager_chair",
+    "premierpainmod:warped_villager_chair",
+    "premierpainmod:bamboo_villager_chair"
   ]
 }
