@@ -1,12 +1,15 @@
 package com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -14,6 +17,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class VillagerThroneChairBlock extends AbstactTwoBlockHeightBlock
 {
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
+    public static final EnumProperty<VillagerTableCarpetColor> COLOR;
 
     public VillagerThroneChairBlock(Properties pProperties)
     {
@@ -21,7 +25,12 @@ public class VillagerThroneChairBlock extends AbstactTwoBlockHeightBlock
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(HALF, DoubleBlockHalf.LOWER)
-                .setValue(WATERLOGGED, Boolean.FALSE));
+                .setValue(WATERLOGGED, Boolean.FALSE)
+                .setValue(COLOR, VillagerTableCarpetColor.NONE));
+    }
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    {
+        pBuilder.add(HALF, FACING, WATERLOGGED, COLOR);
     }
 
     @Override
@@ -96,5 +105,9 @@ public class VillagerThroneChairBlock extends AbstactTwoBlockHeightBlock
                 }
             }
         }
+    }
+    static
+    {
+        COLOR = EnumProperty.create("villagertablecarpetcolor", VillagerTableCarpetColor.class);
     }
 }

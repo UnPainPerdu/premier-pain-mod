@@ -36,9 +36,9 @@ public class VillagerTableHandler
             BlockPos pos = event.getPos();
             BlockState state = level.getBlockState(pos);
             Block block = level.getBlockState(pos).getBlock();
-
             if ((isPlayerInRange(player, pos)) && (block instanceof VillagerTableBlock))
             {
+
                 ItemStack itemStack =player.getMainHandItem();
                 Item item = itemStack.getItem();
                 Block carpetBlock = Block.byItem(item);
