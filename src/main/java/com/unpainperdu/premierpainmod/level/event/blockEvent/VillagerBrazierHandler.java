@@ -23,9 +23,9 @@ import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 @EventBusSubscriber(modid = PremierPainMod.MODID)
-public class BrazierHandler
+public class VillagerBrazierHandler
 {
-    private BrazierHandler() {}
+    private VillagerBrazierHandler() {}
 
     @SubscribeEvent
     public static void onRightClickBlock(RightClickBlock event)
