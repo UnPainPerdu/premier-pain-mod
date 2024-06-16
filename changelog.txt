@@ -20,6 +20,9 @@ fix :
 update neoforge to 20.6.116
 fix :
     - texture of villager brazier item
+    - villager brazier need a shovel to unlit
+    - villager brazier have lit sound
+    - villager brazier allow block being placed from right click on it
 add :
     - Villager chair
     - Villager throne chair

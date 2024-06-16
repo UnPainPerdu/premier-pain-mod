@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.event;
+package com.unpainperdu.premierpainmod.level.event.blockEvent;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
@@ -100,7 +100,7 @@ public class SeatHandler
     private static boolean isPlayerInRange(Player player, BlockPos pos)
     {
         BlockPos playerPos = player.blockPosition();
-        int blockReachDistance = 2;
+        int blockReachDistance = 3;
 
         pos = BlockPos.containing(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D);
 

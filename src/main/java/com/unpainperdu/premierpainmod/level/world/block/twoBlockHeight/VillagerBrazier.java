@@ -201,38 +201,7 @@ public class VillagerBrazier extends AbstactTwoBlockHeightBlock
     {
         pBuilder.add(HALF,LIT, WATERLOGGED, FACING);
     }
-
-    @Override
-    protected ItemInteractionResult useItemOn(
-            ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult
-    )
-    {
-        if (pLevel.isClientSide)
-        {
-            return ItemInteractionResult.SUCCESS;
-        }
-        else
-        {
-            if((pStack.getItem() instanceof FlintAndSteelItem) && !pState.getValue(WATERLOGGED) && !pState.getValue(LIT) && !(pState.getValue(HALF) == DoubleBlockHalf.LOWER))
-            {
-                pLevel.setBlock(pPos, pState.setValue(LIT, TRUE), 3);
-                return ItemInteractionResult.CONSUME;
-            }
-            else
-            {
-                if ((pStack.getItem() instanceof BucketItem) && (((BucketItem) pStack.getItem()).content.isSame(WATER)) && (!pState.getValue(WATERLOGGED)) && (pState.getValue(LIT)) && !(pState.getValue(HALF) == DoubleBlockHalf.LOWER))
-                {
-                    pLevel.setBlock(pPos, pState.setValue(LIT, FALSE), 3);
-                    pLevel.playSound(null, pPos, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                    return ItemInteractionResult.CONSUME;
-                }
-                else
-                {
-                    return ItemInteractionResult.SUCCESS;
-                }
-            }
-        }
-    }
+    
     @Override
     public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity)
     {
