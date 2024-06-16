@@ -119,7 +119,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildingBlocksReciperBluilder(BlockRegister.AMETHYST_BLOCK_PEDESTAL,Blocks.AMETHYST_BLOCK);
         buildingBlocksReciperBluilder(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL,Blocks.DRIPSTONE_BLOCK);
         buildingBlocksReciperBluilder(BlockRegister.BEDROCK_PEDESTAL,Blocks.BEDROCK);
-            //brazier zone
+            //brazier
         buildingBlocksReciperBluilder(BlockRegister.OAK_VILLAGER_BRAZIER,Blocks.OAK_PLANKS);
         buildingBlocksReciperBluilder(BlockRegister.BIRCH_VILLAGER_BRAZIER,Blocks.BIRCH_PLANKS);
         buildingBlocksReciperBluilder(BlockRegister.SPRUCE_VILLAGER_BRAZIER,Blocks.SPRUCE_PLANKS);
@@ -161,7 +161,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildingBlocksReciperBluilder(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER,Blocks.AMETHYST_BLOCK);
         buildingBlocksReciperBluilder(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER,Blocks.DRIPSTONE_BLOCK);
         buildingBlocksReciperBluilder(BlockRegister.BEDROCK_VILLAGER_BRAZIER,Blocks.BEDROCK);
-            //table zone
+            //table
         buildingBlocksReciperBluilder(BlockRegister.OAK_VILLAGER_TABLE, Blocks.OAK_PLANKS);
         buildingBlocksReciperBluilder(BlockRegister.BIRCH_VILLAGER_TABLE,Blocks.BIRCH_PLANKS);
         buildingBlocksReciperBluilder(BlockRegister.SPRUCE_VILLAGER_TABLE,Blocks.SPRUCE_PLANKS);
@@ -203,7 +203,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildingBlocksReciperBluilder(BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE,Blocks.AMETHYST_BLOCK);
         buildingBlocksReciperBluilder(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE,Blocks.DRIPSTONE_BLOCK);
         buildingBlocksReciperBluilder(BlockRegister.BEDROCK_VILLAGER_TABLE,Blocks.BEDROCK);
-            //chair zone
+            //chair
         buildingBlocksReciperBluilder(BlockRegister.OAK_VILLAGER_CHAIR, Blocks.OAK_PLANKS);
         buildingBlocksReciperBluilder(BlockRegister.BIRCH_VILLAGER_CHAIR,Blocks.BIRCH_PLANKS);
         buildingBlocksReciperBluilder(BlockRegister.SPRUCE_VILLAGER_CHAIR,Blocks.SPRUCE_PLANKS);
@@ -245,6 +245,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildingBlocksReciperBluilder(BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR,Blocks.AMETHYST_BLOCK);
         buildingBlocksReciperBluilder(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR,Blocks.DRIPSTONE_BLOCK);
         buildingBlocksReciperBluilder(BlockRegister.BEDROCK_VILLAGER_CHAIR,Blocks.BEDROCK);
+            //throne chair
+        buildingBlocksReciperBluilder(BlockRegister.OAK_VILLAGER_THRONE_CHAIR, Blocks.OAK_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.BIRCH_VILLAGER_THRONE_CHAIR,Blocks.BIRCH_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.SPRUCE_VILLAGER_THRONE_CHAIR,Blocks.SPRUCE_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.JUNGLE_VILLAGER_THRONE_CHAIR,Blocks.JUNGLE_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.ACACIA_VILLAGER_THRONE_CHAIR,Blocks.ACACIA_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.DARK_OAK_VILLAGER_THRONE_CHAIR,Blocks.DARK_OAK_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.MANGROVE_VILLAGER_THRONE_CHAIR,Blocks.MANGROVE_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.CHERRY_VILLAGER_THRONE_CHAIR,Blocks.CHERRY_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.CRIMSON_VILLAGER_THRONE_CHAIR,Blocks.CRIMSON_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.WARPED_VILLAGER_THRONE_CHAIR,Blocks.WARPED_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.BAMBOO_VILLAGER_THRONE_CHAIR,Blocks.BAMBOO_PLANKS);
+        buildingBlocksReciperBluilder(BlockRegister.STONE_VILLAGER_THRONE_CHAIR,Blocks.COBBLESTONE);
+        buildingBlocksReciperBluilder(BlockRegister.MOSSY_STONE_VILLAGER_THRONE_CHAIR,Blocks.MOSSY_COBBLESTONE);
+        buildingBlocksReciperBluilder(BlockRegister.ANDESITE_VILLAGER_THRONE_CHAIR,Blocks.ANDESITE);
+        buildingBlocksReciperBluilder(BlockRegister.DIORITE_VILLAGER_THRONE_CHAIR,Blocks.DIORITE);
+        buildingBlocksReciperBluilder(BlockRegister.GRANITE_VILLAGER_THRONE_CHAIR,Blocks.GRANITE);
+        buildingBlocksReciperBluilder(BlockRegister.PRISMARINE_VILLAGER_THRONE_CHAIR,Blocks.PRISMARINE);
+        buildingBlocksReciperBluilder(BlockRegister.BLACKSTONE_VILLAGER_THRONE_CHAIR,Blocks.BLACKSTONE);
+        buildingBlocksReciperBluilder(BlockRegister.PURPUR_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.PURPUR_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.DEEPSLATE_VILLAGER_THRONE_CHAIR,Blocks.COBBLED_DEEPSLATE);
+        buildingBlocksReciperBluilder(BlockRegister.TUFF_VILLAGER_THRONE_CHAIR,Blocks.TUFF);
+        buildingBlocksReciperBluilder(BlockRegister.PACKED_MUD_VILLAGER_THRONE_CHAIR,Blocks.PACKED_MUD);
+        buildingBlocksReciperBluilder(BlockRegister.SANDSTONE_VILLAGER_THRONE_CHAIR,Blocks.SANDSTONE);
+        buildingBlocksReciperBluilder(BlockRegister.RED_SANDSTONE_VILLAGER_THRONE_CHAIR,Blocks.RED_SANDSTONE);
+        buildingBlocksReciperBluilder(BlockRegister.QUARTZ_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.QUARTZ_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.NETHER_BRICKS_VILLAGER_THRONE_CHAIR,Blocks.NETHER_BRICKS);
+        buildingBlocksReciperBluilder(BlockRegister.BASALT_VILLAGER_THRONE_CHAIR,Blocks.BASALT);
+        buildingBlocksReciperBluilder(BlockRegister.END_STONE_VILLAGER_THRONE_CHAIR,Blocks.END_STONE);
+        buildingBlocksReciperBluilder(BlockRegister.COAL_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.COAL_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.IRON_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.IRON_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.GOLD_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.GOLD_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.REDSTONE_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.REDSTONE_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.EMERALD_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.EMERALD_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.DIAMOND_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.DIAMOND_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.COPPER_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.COPPER_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.LAPIS_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.LAPIS_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.NETHERITE_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.NETHERITE_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.OBSIDIAN_VILLAGER_THRONE_CHAIR,Blocks.OBSIDIAN);
+        buildingBlocksReciperBluilder(BlockRegister.AMETHYST_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.AMETHYST_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR,Blocks.DRIPSTONE_BLOCK);
+        buildingBlocksReciperBluilder(BlockRegister.BEDROCK_VILLAGER_THRONE_CHAIR,Blocks.BEDROCK);
     }
     private void buildingBlocksReciperBluilder(ItemLike craftedBlock, ItemLike ingredient)
     {

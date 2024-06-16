@@ -22,7 +22,7 @@ public class CreativeTabRegister
             .displayItems((parameters, output) -> {
                 //Items
                 //Blocks
-                    //WorkShopZone
+                    //WorkShop
                 output.accept(BlockRegister.VILLAGER_WORKSHOP.get());
                     //statue
                 output.accept(BlockRegister.OAK_VILLAGER_STATUE.get());
@@ -108,7 +108,7 @@ public class CreativeTabRegister
                 output.accept(BlockRegister.AMETHYST_BLOCK_PEDESTAL.get());
                 output.accept(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get());
                 output.accept(BlockRegister.BEDROCK_PEDESTAL.get());
-                    //brazier zone
+                    //brazier
                 output.accept(BlockRegister.OAK_VILLAGER_BRAZIER.get());
                 output.accept(BlockRegister.BIRCH_VILLAGER_BRAZIER.get());
                 output.accept(BlockRegister.SPRUCE_VILLAGER_BRAZIER.get());
@@ -150,7 +150,7 @@ public class CreativeTabRegister
                 output.accept(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get());
                 output.accept(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get());
                 output.accept(BlockRegister.BEDROCK_VILLAGER_BRAZIER.get());
-                    //table zone
+                    //table
                 output.accept(BlockRegister.OAK_VILLAGER_TABLE.get());
                 output.accept(BlockRegister.BIRCH_VILLAGER_TABLE.get());
                 output.accept(BlockRegister.SPRUCE_VILLAGER_TABLE.get());
@@ -192,7 +192,7 @@ public class CreativeTabRegister
                 output.accept(BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get());
                 output.accept(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get());
                 output.accept(BlockRegister.BEDROCK_VILLAGER_TABLE.get());
-                    //chair zone
+                    //chair
                 output.accept(BlockRegister.OAK_VILLAGER_CHAIR.get());
                 output.accept(BlockRegister.BIRCH_VILLAGER_CHAIR.get());
                 output.accept(BlockRegister.SPRUCE_VILLAGER_CHAIR.get());
@@ -234,6 +234,48 @@ public class CreativeTabRegister
                 output.accept(BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR.get());
                 output.accept(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR.get());
                 output.accept(BlockRegister.BEDROCK_VILLAGER_CHAIR.get());
+                    //throne chair
+                output.accept(BlockRegister.OAK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.BIRCH_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.SPRUCE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.JUNGLE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.ACACIA_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.DARK_OAK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.MANGROVE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.CHERRY_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.CRIMSON_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.WARPED_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.BAMBOO_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.STONE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.MOSSY_STONE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.ANDESITE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.DIORITE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.GRANITE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.PRISMARINE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.BLACKSTONE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.PURPUR_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.DEEPSLATE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.TUFF_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.PACKED_MUD_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.SANDSTONE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.RED_SANDSTONE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.QUARTZ_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.NETHER_BRICKS_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.BASALT_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.END_STONE_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.COAL_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.IRON_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.GOLD_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.REDSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.EMERALD_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.DIAMOND_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.COPPER_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.LAPIS_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.NETHERITE_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.OBSIDIAN_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.AMETHYST_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get());
+                output.accept(BlockRegister.BEDROCK_VILLAGER_THRONE_CHAIR.get());
             }).build());
     public static void register(IEventBus modEventBus)
     {

@@ -14,6 +14,9 @@
     "premierpainmod:copper_block_villager_table",
     "premierpainmod:iron_block_villager_chair",
     "premierpainmod:lapis_block_villager_chair",
-    "premierpainmod:copper_block_villager_chair"
+    "premierpainmod:copper_block_villager_chair",
+    "premierpainmod:iron_block_villager_throne_chair",
+    "premierpainmod:lapis_block_villager_throne_chair",
+    "premierpainmod:copper_block_villager_throne_chair"
   ]
 }

@@ -244,6 +244,48 @@ public class ModBlockStateProvider extends BlockStateProvider
         villagerChairWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR.get());
         villagerChairWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR.get());
         villagerChairWithItem(BlockRegister.BEDROCK_VILLAGER_CHAIR.get());
+        //throne chair
+        villagerThroneChairWithItem(BlockRegister.OAK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.BIRCH_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.SPRUCE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.JUNGLE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.ACACIA_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.DARK_OAK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.MANGROVE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.CHERRY_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.BAMBOO_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.CRIMSON_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.WARPED_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.STONE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.MOSSY_STONE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.ANDESITE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.DIORITE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.GRANITE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.PRISMARINE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.BLACKSTONE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.DEEPSLATE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.TUFF_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.PACKED_MUD_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.SANDSTONE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.BASALT_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.END_STONE_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.COAL_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.IRON_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.OBSIDIAN_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get());
+        villagerThroneChairWithItem(BlockRegister.BEDROCK_VILLAGER_THRONE_CHAIR.get());
     }
     private void simpleBlockWithItem(Block block)
     {
@@ -731,6 +773,32 @@ public class ModBlockStateProvider extends BlockStateProvider
         });
         ModelFile villagerChairModel = models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair").texture("0","block/villager_chair/" + chairName);
         itemModels().getBuilder(key(chair).getPath()).parent(villagerChairModel);
+    }
+    private void villagerThroneChairWithItem(Block throneChair)
+    {
+        String throneChairName = BuiltInRegistries.BLOCK.getKey(throneChair).toString().replace(PremierPainMod.MODID+":","");
+        String modifThroneChairName = throneChairName.replace("_throne","");
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(throneChair);
+        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
+        variantBuilder.forAllStates(state ->
+        {
+            if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(throneChair).toString()+"_bottom","premierpainmod:block/villager_throne_chair/villager_throne_chair_bottom").texture("0","block/villager_chair/" + modifThroneChairName))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            else
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(throneChair).toString()+"_upper","premierpainmod:block/villager_throne_chair/villager_throne_chair_upper").texture("0","block/villager_chair/" + modifThroneChairName))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+        });
+        ModelFile villagerChairModel = models().withExistingParent(key(throneChair).toString(),"premierpainmod:block/villager_throne_chair/villager_throne_chair_m").texture("0","block/villager_chair/" + modifThroneChairName);
+        itemModels().getBuilder(key(throneChair).getPath()).parent(villagerChairModel);
     }
 
     private ResourceLocation key(Block block)

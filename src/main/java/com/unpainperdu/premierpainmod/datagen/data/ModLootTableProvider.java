@@ -4,6 +4,7 @@ package com.unpainperdu.premierpainmod.datagen.data;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import net.minecraft.core.HolderLookup;
@@ -251,7 +252,47 @@ public class ModLootTableProvider extends LootTableProvider
             chairLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_CHAIR.get());
             chairLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR.get());
             chairLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR.get());
-
+            //throne chair
+            throneChairLootTableGenerator(BlockRegister.OAK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.BIRCH_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.SPRUCE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.JUNGLE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.ACACIA_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.DARK_OAK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.MANGROVE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.CHERRY_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.CRIMSON_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.WARPED_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.BAMBOO_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.STONE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.MOSSY_STONE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.ANDESITE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.DIORITE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.GRANITE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.PRISMARINE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.BLACKSTONE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.PURPUR_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.DEEPSLATE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.TUFF_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.PACKED_MUD_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.SANDSTONE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.RED_SANDSTONE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.QUARTZ_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.NETHER_BRICKS_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.BASALT_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.END_STONE_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.COAL_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.IRON_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.GOLD_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.REDSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.EMERALD_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.DIAMOND_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.COPPER_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.LAPIS_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.NETHERITE_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.OBSIDIAN_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.AMETHYST_BLOCK_VILLAGER_THRONE_CHAIR.get());
+            throneChairLootTableGenerator(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get());
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
@@ -284,6 +325,10 @@ public class ModLootTableProvider extends LootTableProvider
         private void chairLootTableGenerator(Block chair)
         {
             super.add(chair, this.createSingleItemTable(chair));
+        }
+        private void throneChairLootTableGenerator(Block chair)
+        {
+            super.add(chair, this.createSinglePropConditionTable(chair, VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER));
         }
     }
 }

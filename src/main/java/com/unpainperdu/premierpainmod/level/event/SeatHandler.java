@@ -2,21 +2,22 @@ package com.unpainperdu.premierpainmod.level.event;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.SeatEntity;
 import com.unpainperdu.premierpainmod.util.seat.SeatUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BedPart;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.neoforged.neoforge.event.level.BlockEvent.BreakEvent;
+
+import static com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.AbstactTwoBlockHeightBlock.HALF;
 
 @EventBusSubscriber(modid = PremierPainMod.MODID)
 public class SeatHandler
@@ -35,7 +36,7 @@ public class SeatHandler
             BlockState state = level.getBlockState(pos);
             Block block = level.getBlockState(pos).getBlock();
 
-            if (isValidBlock(level, pos, state, block) && isPlayerInRange(player, pos) && !SeatUtil.isOccupied(level, pos) && player.getMainHandItem().isEmpty() && level.getBlockState(pos.above()).isAir())
+            if (isValidBlock(level, pos, state, block) && isPlayerInRange(player, pos) && !SeatUtil.isOccupied(level, pos) && player.getMainHandItem().isEmpty())
             {
                 SeatEntity sit = new SeatEntity(level, pos);
                 if (SeatUtil.addSitEntity(level, pos, sit, player.position()))
@@ -54,11 +55,17 @@ public class SeatHandler
         {
             //BreakEvent gets a Level in its constructor, so the cast is safe
             SeatEntity entity = SeatUtil.getSitEntity((Level) event.getLevel(), event.getPos());
+            SeatEntity bottomEntity = SeatUtil.getSitEntity((Level) event.getLevel(), event.getPos().below());
 
             if (entity != null)
             {
                 SeatUtil.removeSitEntity((Level) event.getLevel(), event.getPos());
                 entity.ejectPassengers();
+            }
+            if (bottomEntity != null)
+            {
+                SeatUtil.removeSitEntity((Level) event.getLevel(), event.getPos());
+                bottomEntity.ejectPassengers();
             }
         }
     }
@@ -74,35 +81,15 @@ public class SeatHandler
      */
     private static boolean isValidBlock(Level level, BlockPos pos, BlockState state, Block block)
     {
-        boolean isValid = block instanceof VillagerChairBlock || isModBlock(block);
+        boolean isValid = (block instanceof VillagerChairBlock) || (block instanceof VillagerThroneChairBlock);
 
-        if (!isValid && block instanceof BedBlock)
+        if ((block instanceof VillagerThroneChairBlock) && (state.getValue(HALF) == DoubleBlockHalf.UPPER))
         {
-            state = level.getBlockState(pos.relative(state.getValue(BedBlock.PART) == BedPart.HEAD ? state.getValue(HorizontalDirectionalBlock.FACING).getOpposite() : state.getValue(HorizontalDirectionalBlock.FACING)));
-
-            if (!(state.getBlock() instanceof BedBlock)) //it's half a bed!
-                isValid = true;
+            isValid = false;
         }
 
         return isValid;
     }
-
-    /**
-     * Checks whether the given block is a specific block from a mod. Used to support stairs/slabs from other mods that don't
-     * work with Sit by default.
-     *
-     * @param block The block to check
-     * @return true if the block is a block to additionally support, false otherwise
-     */
-    private static boolean isModBlock(Block block)
-    {
-        /*
-         * if(ModList.get().isLoaded("immersiveengineering") && b instanceof
-         * blusunrize.immersiveengineering.common.blocks.BlockIESlab) return true; else if(ModList.get().isLoaded("snowvariants") &&
-         * block instanceof trikzon.snowvariants.blocks.SnowSlab) return true; else
-         */ return false;
-    }
-
     /**
      * Returns whether or not the player is close enough to the block to be able to sit on it
      *

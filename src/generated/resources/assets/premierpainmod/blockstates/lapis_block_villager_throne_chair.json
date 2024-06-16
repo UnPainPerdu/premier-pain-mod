@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,half=lower,waterlogged=false": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
+      "y": 270
+    },
+    "facing=east,half=lower,waterlogged=true": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
+      "y": 270
+    },
+    "facing=east,half=upper,waterlogged=false": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
+      "y": 270
+    },
+    "facing=east,half=upper,waterlogged=true": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
+      "y": 270
+    },
+    "facing=north,half=lower,waterlogged=false": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
+      "y": 180
+    },
+    "facing=north,half=lower,waterlogged=true": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
+      "y": 180
+    },
+    "facing=north,half=upper,waterlogged=false": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
+      "y": 180
+    },
+    "facing=north,half=upper,waterlogged=true": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
+      "y": 180
+    },
+    "facing=south,half=lower,waterlogged=false": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom"
+    },
+    "facing=south,half=lower,waterlogged=true": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom"
+    },
+    "facing=south,half=upper,waterlogged=false": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper"
+    },
+    "facing=south,half=upper,waterlogged=true": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper"
+    },
+    "facing=west,half=lower,waterlogged=false": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
+      "y": 90
+    },
+    "facing=west,half=lower,waterlogged=true": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
+      "y": 90
+    },
+    "facing=west,half=upper,waterlogged=false": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
+      "y": 90
+    },
+    "facing=west,half=upper,waterlogged=true": {
+      "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_throne_chair/villager_throne_chair_upper",
+  "textures": {
+    "0": "premierpainmod:block/villager_chair/andesite_villager_chair"
+  }
+}
