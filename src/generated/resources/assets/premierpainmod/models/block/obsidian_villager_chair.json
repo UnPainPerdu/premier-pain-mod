@@ -1,3 +1,6 @@
 {
-  "parent": "premierpainmod:block/villager_chair/villager_chair"
+  "parent": "premierpainmod:block/villager_chair/villager_chair",
+  "textures": {
+    "0": "premierpainmod:block/villager_chair/obsidian_villager_chair"
+  }
 }

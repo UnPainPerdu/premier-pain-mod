@@ -725,11 +725,11 @@ public class ModBlockStateProvider extends BlockStateProvider
         variantBuilder.forAllStates(state ->
         {
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair"))//.texture("0","block/villager_chair/" + chairName ))
+                    .modelFile(models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair").texture("0","block/villager_chair/" + chairName ))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile villagerChairModel = models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair");//.texture("0","block/villager_chair/" + chairName);
+        ModelFile villagerChairModel = models().withExistingParent(key(chair).toString(),"premierpainmod:block/villager_chair/villager_chair").texture("0","block/villager_chair/" + chairName);
         itemModels().getBuilder(key(chair).getPath()).parent(villagerChairModel);
     }
 

@@ -31,7 +31,7 @@ public class VillagerChairBlock extends Block implements SimpleWaterloggedBlock
     public static final MapCodec<VillagerChairBlock> CODEC = simpleCodec(VillagerChairBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
+    public static final VoxelShape SHAPE = Block.box(3, 0, 3, 13, 8, 13);
     public VillagerChairBlock(Properties properties)
     {
         super(properties);

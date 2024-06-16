@@ -53,24 +53,24 @@ public class BlockRegister
     tuff
     sandstone
     red_sandstone
-    basalt
-    obsidian
+    basalt (polished as "planks")
+    obsidian (obsidian as "planks")
     bedrock
     packed_mud
     nether_bricks
-    purpur_block
-    quartz_block
-    coal_block
+    quartz_block (chiseled as "planks")
     iron_block
     gold_block
-    redstone_block
-    emerald_block
-    diamond_block
     copper_block
-    lapis_block
-    netherite_block
     amethyst_block
     dripstone_block
+    purpur_block
+    coal_block
+    redstone_block
+    diamond_block
+    emerald_block
+    lapis_block
+    netherite_block
      */
         //staute zone (41)
     public static final DeferredBlock<Block> OAK_VILLAGER_STATUE = statueRegister("oak_villager_statue","wood");
