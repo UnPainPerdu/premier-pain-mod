@@ -26,4 +26,4 @@ fix :
     - villager table allow block being placed from right click on it
 add :
     - Villager chair
-    - Villager throne chair
+    - Villager throne chair which can be carpeted as the villager table
