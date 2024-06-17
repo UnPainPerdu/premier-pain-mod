@@ -1,12 +1,16 @@
 package com.unpainperdu.premierpainmod.datagen.asset.model;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.BlockList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -16,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
@@ -32,267 +37,23 @@ public class ModBlockStateProvider extends BlockStateProvider
     protected void registerStatesAndModels()
     {
         //test zone
-
-        //workshop
-        villagerWorkshopWithItem(BlockRegister.VILLAGER_WORKSHOP.get());
-        //villager statue
-        villagerStatueWithItem(BlockRegister.OAK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.BIRCH_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.SPRUCE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.JUNGLE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.ACACIA_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.DARK_OAK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.MANGROVE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.CHERRY_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.BAMBOO_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.CRIMSON_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.WARPED_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.STONE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.MOSSY_STONE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.ANDESITE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.DIORITE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.GRANITE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.PRISMARINE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.BLACKSTONE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.DEEPSLATE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.TUFF_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.PACKED_MUD_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.SANDSTONE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.BASALT_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.END_STONE_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.COAL_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.IRON_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.OBSIDIAN_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE.get());
-        villagerStatueWithItem(BlockRegister.BEDROCK_VILLAGER_STATUE.get());
-        //pedestal
-        pedestalWithItem(BlockRegister.OAK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.BIRCH_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.SPRUCE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.JUNGLE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.ACACIA_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.DARK_OAK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.MANGROVE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.CHERRY_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.BAMBOO_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.CRIMSON_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.WARPED_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.STONE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.MOSSY_STONE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.ANDESITE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.DIORITE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.GRANITE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.PRISMARINE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.BLACKSTONE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.PURPUR_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.DEEPSLATE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.TUFF_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.PACKED_MUD_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.SANDSTONE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.RED_SANDSTONE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.QUARTZ_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.NETHER_BRICKS_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.BASALT_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.END_STONE_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.COAL_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.IRON_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.GOLD_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.REDSTONE_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.EMERALD_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.DIAMOND_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.COPPER_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.LAPIS_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.NETHERITE_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.OBSIDIAN_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.AMETHYST_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get());
-        pedestalWithItem(BlockRegister.BEDROCK_PEDESTAL.get());
-        //brazier
-        villagerBrazierWithItem(BlockRegister.OAK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.BIRCH_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.SPRUCE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.JUNGLE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.ACACIA_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.DARK_OAK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.MANGROVE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.CHERRY_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.BAMBOO_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.CRIMSON_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.WARPED_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.STONE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.MOSSY_STONE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.ANDESITE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.DIORITE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.GRANITE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.PRISMARINE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.BLACKSTONE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.DEEPSLATE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.TUFF_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.PACKED_MUD_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.SANDSTONE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.BASALT_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.END_STONE_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.COAL_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get());
-        villagerBrazierWithItem(BlockRegister.BEDROCK_VILLAGER_BRAZIER.get());
-        //table
-        villagerTableWithItem(BlockRegister.OAK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.BIRCH_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.SPRUCE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.JUNGLE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.ACACIA_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.DARK_OAK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.MANGROVE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.CHERRY_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.BAMBOO_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.CRIMSON_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.WARPED_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.STONE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.MOSSY_STONE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.ANDESITE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.DIORITE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.GRANITE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.PRISMARINE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.BLACKSTONE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.DEEPSLATE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.TUFF_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.PACKED_MUD_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.SANDSTONE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.BASALT_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.END_STONE_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.COAL_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.OBSIDIAN_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get());
-        villagerTableWithItem(BlockRegister.BEDROCK_VILLAGER_TABLE.get());
-        //chair
-        villagerChairWithItem(BlockRegister.OAK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.BIRCH_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.SPRUCE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.JUNGLE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.ACACIA_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.DARK_OAK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.MANGROVE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.CHERRY_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.BAMBOO_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.CRIMSON_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.WARPED_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.STONE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.MOSSY_STONE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.ANDESITE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.DIORITE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.GRANITE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.PRISMARINE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.BLACKSTONE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.DEEPSLATE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.TUFF_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.PACKED_MUD_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.SANDSTONE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.BASALT_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.END_STONE_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.COAL_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.IRON_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.OBSIDIAN_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR.get());
-        villagerChairWithItem(BlockRegister.BEDROCK_VILLAGER_CHAIR.get());
-        //throne chair
-        villagerThroneChairWithItem(BlockRegister.OAK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.BIRCH_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.SPRUCE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.JUNGLE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.ACACIA_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.DARK_OAK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.MANGROVE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.CHERRY_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.BAMBOO_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.CRIMSON_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.WARPED_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.STONE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.MOSSY_STONE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.ANDESITE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.DIORITE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.GRANITE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.PRISMARINE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.BLACKSTONE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.PURPUR_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.DEEPSLATE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.TUFF_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.PACKED_MUD_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.SANDSTONE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.RED_SANDSTONE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.QUARTZ_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.NETHER_BRICKS_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.BASALT_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.END_STONE_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.COAL_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.IRON_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.GOLD_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.REDSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.EMERALD_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.DIAMOND_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.COPPER_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.LAPIS_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.NETHERITE_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.OBSIDIAN_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.AMETHYST_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get());
-        villagerThroneChairWithItem(BlockRegister.BEDROCK_VILLAGER_THRONE_CHAIR.get());
+        for(DeferredBlock<Block> Defferedblock : BlockList.ALL_BLOCKS)
+        {
+            Block block = Defferedblock.get();
+            if(block instanceof VillagerWorkshop) {villagerWorkshopWithItem(block);}
+            else if(block instanceof VillagerStatue) {villagerStatueWithItem(block);}
+            else if(block instanceof VillagerPedestalBlock) {villagerPedestalWithItem(block);}
+            else if(block instanceof VillagerBrazier) {villagerBrazierWithItem(block);}
+            else if(block instanceof VillagerTableBlock) {villagerTableWithItem(block);}
+            else if(block instanceof VillagerChairBlock) {villagerChairWithItem(block);}
+            else if(block instanceof VillagerThroneChairBlock) {villagerThroneChairWithItem(block);}
+        }
     }
     private void simpleBlockWithItem(Block block)
     {
         simpleBlockWithItem(block, cubeAll(block));
     }
-    private void pedestalWithItem(Block pedestal)
+    private void villagerPedestalWithItem(Block pedestal)
     {
         String pedestaleName = BuiltInRegistries.BLOCK.getKey(pedestal).toString().replace(PremierPainMod.MODID+":","");
         ModelFile pedestalModel = models().withExistingParent(key(pedestal).toString(),"premierpainmod:block/villager_pedestal").texture("0","block/villager_pedestal/" + pedestaleName);
