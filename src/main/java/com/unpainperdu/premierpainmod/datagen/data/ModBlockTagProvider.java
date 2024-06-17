@@ -1,354 +1,106 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.util.register.BlockList;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagProvider extends BlockTagsProvider
-{
-    public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper)
-    {
-        super(packOutput,lookupProvider, PremierPainMod.MODID, fileHelper);
+public class ModBlockTagProvider extends BlockTagsProvider {
+    public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper) {
+        super(packOutput, lookupProvider, PremierPainMod.MODID, fileHelper);
     }
 
     @Override
-    protected void addTags(HolderLookup.@NotNull Provider pProvider)
-    {
-        this.tag(BlockTags.MINEABLE_WITH_AXE).add
-                (
-                        //statue
-                        BlockRegister.OAK_VILLAGER_STATUE.get(),
-                        BlockRegister.BIRCH_VILLAGER_STATUE.get(),
-                        BlockRegister.SPRUCE_VILLAGER_STATUE.get(),
-                        BlockRegister.JUNGLE_VILLAGER_STATUE.get(),
-                        BlockRegister.ACACIA_VILLAGER_STATUE.get(),
-                        BlockRegister.DARK_OAK_VILLAGER_STATUE.get(),
-                        BlockRegister.MANGROVE_VILLAGER_STATUE.get(),
-                        BlockRegister.CHERRY_VILLAGER_STATUE.get(),
-                        BlockRegister.CRIMSON_VILLAGER_STATUE.get(),
-                        BlockRegister.WARPED_VILLAGER_STATUE.get(),
-                        BlockRegister.BAMBOO_VILLAGER_STATUE.get(),
-                        //pedestal
-                        BlockRegister.OAK_PEDESTAL.get(),
-                        BlockRegister.BIRCH_PEDESTAL.get(),
-                        BlockRegister.SPRUCE_PEDESTAL.get(),
-                        BlockRegister.JUNGLE_PEDESTAL.get(),
-                        BlockRegister.ACACIA_PEDESTAL.get(),
-                        BlockRegister.DARK_OAK_PEDESTAL.get(),
-                        BlockRegister.MANGROVE_PEDESTAL.get(),
-                        BlockRegister.CHERRY_PEDESTAL.get(),
-                        BlockRegister.CRIMSON_PEDESTAL.get(),
-                        BlockRegister.WARPED_PEDESTAL.get(),
-                        BlockRegister.BAMBOO_PEDESTAL.get(),
-                        //brazier
-                        BlockRegister.OAK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.BIRCH_VILLAGER_BRAZIER.get(),
-                        BlockRegister.SPRUCE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.JUNGLE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.ACACIA_VILLAGER_BRAZIER.get(),
-                        BlockRegister.DARK_OAK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.MANGROVE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.CHERRY_VILLAGER_BRAZIER.get(),
-                        BlockRegister.CRIMSON_VILLAGER_BRAZIER.get(),
-                        BlockRegister.WARPED_VILLAGER_BRAZIER.get(),
-                        BlockRegister.BAMBOO_VILLAGER_BRAZIER.get(),
-                        //table
-                        BlockRegister.OAK_VILLAGER_TABLE.get(),
-                        BlockRegister.BIRCH_VILLAGER_TABLE.get(),
-                        BlockRegister.SPRUCE_VILLAGER_TABLE.get(),
-                        BlockRegister.JUNGLE_VILLAGER_TABLE.get(),
-                        BlockRegister.ACACIA_VILLAGER_TABLE.get(),
-                        BlockRegister.DARK_OAK_VILLAGER_TABLE.get(),
-                        BlockRegister.MANGROVE_VILLAGER_TABLE.get(),
-                        BlockRegister.CHERRY_VILLAGER_TABLE.get(),
-                        BlockRegister.CRIMSON_VILLAGER_TABLE.get(),
-                        BlockRegister.WARPED_VILLAGER_TABLE.get(),
-                        BlockRegister.BAMBOO_VILLAGER_TABLE.get(),
-                        //chair
-                        BlockRegister.OAK_VILLAGER_CHAIR.get(),
-                        BlockRegister.BIRCH_VILLAGER_CHAIR.get(),
-                        BlockRegister.SPRUCE_VILLAGER_CHAIR.get(),
-                        BlockRegister.JUNGLE_VILLAGER_CHAIR.get(),
-                        BlockRegister.ACACIA_VILLAGER_CHAIR.get(),
-                        BlockRegister.DARK_OAK_VILLAGER_CHAIR.get(),
-                        BlockRegister.MANGROVE_VILLAGER_CHAIR.get(),
-                        BlockRegister.CHERRY_VILLAGER_CHAIR.get(),
-                        BlockRegister.CRIMSON_VILLAGER_CHAIR.get(),
-                        BlockRegister.WARPED_VILLAGER_CHAIR.get(),
-                        BlockRegister.BAMBOO_VILLAGER_CHAIR.get(),
-                        //throne chair
-                        BlockRegister.OAK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.BIRCH_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.SPRUCE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.JUNGLE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.ACACIA_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.DARK_OAK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.MANGROVE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.CHERRY_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.CRIMSON_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.WARPED_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.BAMBOO_VILLAGER_THRONE_CHAIR.get()
-                );
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add
-                (
-                        //villager workshop
-                        BlockRegister.VILLAGER_WORKSHOP.get(),
-                        //statue
-                        BlockRegister.STONE_VILLAGER_STATUE.get(),
-                        BlockRegister.MOSSY_STONE_VILLAGER_STATUE.get(),
-                        BlockRegister.ANDESITE_VILLAGER_STATUE.get(),
-                        BlockRegister.DIORITE_VILLAGER_STATUE.get(),
-                        BlockRegister.PRISMARINE_VILLAGER_STATUE.get(),
-                        BlockRegister.BLACKSTONE_VILLAGER_STATUE.get(),
-                        BlockRegister.PURPUR_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.DEEPSLATE_VILLAGER_STATUE.get(),
-                        BlockRegister.TUFF_VILLAGER_STATUE.get(),
-                        BlockRegister.PACKED_MUD_VILLAGER_STATUE.get(),
-                        BlockRegister.SANDSTONE_VILLAGER_STATUE.get(),
-                        BlockRegister.RED_SANDSTONE_VILLAGER_STATUE.get(),
-                        BlockRegister.QUARTZ_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.NETHER_BRICKS_VILLAGER_STATUE.get(),
-                        BlockRegister.BASALT_VILLAGER_STATUE.get(),
-                        BlockRegister.END_STONE_VILLAGER_STATUE.get(),
-                        BlockRegister.COAL_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.IRON_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.GOLD_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.REDSTONE_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_STATUE.get(),
-                        BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE.get(),
-                        //pedestal
-                        BlockRegister.STONE_PEDESTAL.get(),
-                        BlockRegister.MOSSY_STONE_PEDESTAL.get(),
-                        BlockRegister.ANDESITE_PEDESTAL.get(),
-                        BlockRegister.DIORITE_PEDESTAL.get(),
-                        BlockRegister.PRISMARINE_PEDESTAL.get(),
-                        BlockRegister.BLACKSTONE_PEDESTAL.get(),
-                        BlockRegister.PURPUR_BLOCK_PEDESTAL.get(),
-                        BlockRegister.DEEPSLATE_PEDESTAL.get(),
-                        BlockRegister.TUFF_PEDESTAL.get(),
-                        BlockRegister.PACKED_MUD_PEDESTAL.get(),
-                        BlockRegister.SANDSTONE_PEDESTAL.get(),
-                        BlockRegister.RED_SANDSTONE_PEDESTAL.get(),
-                        BlockRegister.QUARTZ_BLOCK_PEDESTAL.get(),
-                        BlockRegister.NETHER_BRICKS_PEDESTAL.get(),
-                        BlockRegister.BASALT_PEDESTAL.get(),
-                        BlockRegister.END_STONE_PEDESTAL.get(),
-                        BlockRegister.COAL_BLOCK_PEDESTAL.get(),
-                        BlockRegister.IRON_BLOCK_PEDESTAL.get(),
-                        BlockRegister.GOLD_BLOCK_PEDESTAL.get(),
-                        BlockRegister.REDSTONE_BLOCK_PEDESTAL.get(),
-                        BlockRegister.EMERALD_BLOCK_PEDESTAL.get(),
-                        BlockRegister.DIAMOND_BLOCK_PEDESTAL.get(),
-                        BlockRegister.COPPER_BLOCK_PEDESTAL.get(),
-                        BlockRegister.LAPIS_BLOCK_PEDESTAL.get(),
-                        BlockRegister.NETHERITE_BLOCK_PEDESTAL.get(),
-                        BlockRegister.OBSIDIAN_PEDESTAL.get(),
-                        BlockRegister.AMETHYST_BLOCK_PEDESTAL.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_PEDESTAL.get(),
-                        //brazier
-                        BlockRegister.STONE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.MOSSY_STONE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.ANDESITE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.DIORITE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.PRISMARINE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.BLACKSTONE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.PURPUR_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.DEEPSLATE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.TUFF_VILLAGER_BRAZIER.get(),
-                        BlockRegister.PACKED_MUD_VILLAGER_BRAZIER.get(),
-                        BlockRegister.SANDSTONE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.RED_SANDSTONE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.QUARTZ_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.NETHER_BRICKS_VILLAGER_BRAZIER.get(),
-                        BlockRegister.BASALT_VILLAGER_BRAZIER.get(),
-                        BlockRegister.END_STONE_VILLAGER_BRAZIER.get(),
-                        BlockRegister.COAL_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.REDSTONE_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get(),
-                        BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER.get(),
-                        //table
-                        BlockRegister.STONE_VILLAGER_TABLE.get(),
-                        BlockRegister.MOSSY_STONE_VILLAGER_TABLE.get(),
-                        BlockRegister.ANDESITE_VILLAGER_TABLE.get(),
-                        BlockRegister.DIORITE_VILLAGER_TABLE.get(),
-                        BlockRegister.PRISMARINE_VILLAGER_TABLE.get(),
-                        BlockRegister.BLACKSTONE_VILLAGER_TABLE.get(),
-                        BlockRegister.PURPUR_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.DEEPSLATE_VILLAGER_TABLE.get(),
-                        BlockRegister.TUFF_VILLAGER_TABLE.get(),
-                        BlockRegister.PACKED_MUD_VILLAGER_TABLE.get(),
-                        BlockRegister.SANDSTONE_VILLAGER_TABLE.get(),
-                        BlockRegister.RED_SANDSTONE_VILLAGER_TABLE.get(),
-                        BlockRegister.QUARTZ_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.NETHER_BRICKS_VILLAGER_TABLE.get(),
-                        BlockRegister.BASALT_VILLAGER_TABLE.get(),
-                        BlockRegister.END_STONE_VILLAGER_TABLE.get(),
-                        BlockRegister.COAL_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.REDSTONE_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_TABLE.get(),
-                        BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE.get(),
-                        //chair
-                        BlockRegister.STONE_VILLAGER_CHAIR.get(),
-                        BlockRegister.MOSSY_STONE_VILLAGER_CHAIR.get(),
-                        BlockRegister.ANDESITE_VILLAGER_CHAIR.get(),
-                        BlockRegister.DIORITE_VILLAGER_CHAIR.get(),
-                        BlockRegister.PRISMARINE_VILLAGER_CHAIR.get(),
-                        BlockRegister.BLACKSTONE_VILLAGER_CHAIR.get(),
-                        BlockRegister.PURPUR_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.DEEPSLATE_VILLAGER_CHAIR.get(),
-                        BlockRegister.TUFF_VILLAGER_CHAIR.get(),
-                        BlockRegister.PACKED_MUD_VILLAGER_CHAIR.get(),
-                        BlockRegister.SANDSTONE_VILLAGER_CHAIR.get(),
-                        BlockRegister.RED_SANDSTONE_VILLAGER_CHAIR.get(),
-                        BlockRegister.QUARTZ_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.NETHER_BRICKS_VILLAGER_CHAIR.get(),
-                        BlockRegister.BASALT_VILLAGER_CHAIR.get(),
-                        BlockRegister.END_STONE_VILLAGER_CHAIR.get(),
-                        BlockRegister.COAL_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.IRON_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.GOLD_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.REDSTONE_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_CHAIR.get(),
-                        BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR.get(),
-                        //throne chair
-                        BlockRegister.STONE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.MOSSY_STONE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.ANDESITE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.DIORITE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.PRISMARINE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.BLACKSTONE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.PURPUR_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.DEEPSLATE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.TUFF_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.PACKED_MUD_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.SANDSTONE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.RED_SANDSTONE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.QUARTZ_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.NETHER_BRICKS_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.BASALT_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.END_STONE_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.COAL_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.IRON_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.GOLD_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.REDSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.AMETHYST_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR.get()
-                );
-        this.tag(BlockTags.NEEDS_STONE_TOOL).add
-                (
-                        //statue
-                        BlockRegister.IRON_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_STATUE.get(),
-                        //pedestal
-                        BlockRegister.IRON_BLOCK_PEDESTAL.get(),
-                        BlockRegister.LAPIS_BLOCK_PEDESTAL.get(),
-                        BlockRegister.COPPER_BLOCK_PEDESTAL.get(),
-                        //brazier
-                        BlockRegister.IRON_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_BRAZIER.get(),
-                        //table
-                        BlockRegister.IRON_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_TABLE.get(),
-                        //chair
-                        BlockRegister.IRON_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_CHAIR.get(),
-                        //throne chair
-                        BlockRegister.IRON_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.LAPIS_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.COPPER_BLOCK_VILLAGER_THRONE_CHAIR.get()
-                );
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add
-                (
-                        //statue
-                        BlockRegister.GOLD_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_STATUE.get(),
-                        //pedestal
-                        BlockRegister.GOLD_BLOCK_PEDESTAL.get(),
-                        BlockRegister.EMERALD_BLOCK_PEDESTAL.get(),
-                        BlockRegister.DIAMOND_BLOCK_PEDESTAL.get(),
-                        //brazier
-                        BlockRegister.GOLD_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_BRAZIER.get(),
-                        //table
-                        BlockRegister.GOLD_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_TABLE.get(),
-                        //chair
-                        BlockRegister.GOLD_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_CHAIR.get(),
-                        //throne chair
-                        BlockRegister.GOLD_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.EMERALD_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.DIAMOND_BLOCK_VILLAGER_THRONE_CHAIR.get()
-                );
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add
-                (
-                        //statue
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_STATUE.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_STATUE.get(),
-                        //pedestal
-                        BlockRegister.NETHERITE_BLOCK_PEDESTAL.get(),
-                        BlockRegister.OBSIDIAN_PEDESTAL.get(),
-                        //brazier
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_BRAZIER.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_BRAZIER.get(),
-                        //table
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_TABLE.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_TABLE.get(),
-                        //chair
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_CHAIR.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_CHAIR.get(),
-                        //throne chair
-                        BlockRegister.NETHERITE_BLOCK_VILLAGER_THRONE_CHAIR.get(),
-                        BlockRegister.OBSIDIAN_VILLAGER_THRONE_CHAIR.get()
-                );
+    protected void addTags(HolderLookup.@NotNull Provider pProvider) {
+        for (DeferredBlock<Block> Defferedblock : BlockList.ALL_BLOCKS) {
+            Block block = Defferedblock.get();
+            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MODID + ":", "");
+            //mineable with pickaxe
+            if ((block instanceof VillagerWorkshop)
+                    || (blockName.contains("red_sandstone"))
+                    || (blockName.contains("sandstone"))
+                    || (blockName.contains("mossy_stone"))
+                    || (blockName.contains("end_stone"))
+                    || (blockName.contains("blackstone"))
+                    || (blockName.contains("redstone"))
+                    || (blockName.contains("dripstone"))
+                    || (blockName.contains("stone"))
+                    || (blockName.contains("andesite"))
+                    || (blockName.contains("diorite"))
+                    || (blockName.contains("granite"))
+                    || (blockName.contains("prismarine"))
+                    || (blockName.contains("purpur"))
+                    || (blockName.contains("deepslate"))
+                    || (blockName.contains("tuff"))
+                    || (blockName.contains("packed_mud"))
+                    || (blockName.contains("quartz"))
+                    || (blockName.contains("nether_bricks"))
+                    || (blockName.contains("basalt"))
+                    || (blockName.contains("coal"))
+                    || (blockName.contains("iron"))
+                    || (blockName.contains("gold"))
+                    || (blockName.contains("emerald"))
+                    || (blockName.contains("diamond"))
+                    || (blockName.contains("copper"))
+                    || (blockName.contains("lapis"))
+                    || (blockName.contains("netherite"))
+                    || (blockName.contains("obsidian"))
+                    || (blockName.contains("amethyst"))
+            )
+            {
+                this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+                //need stone tool
+                if ((blockName.contains("iron"))
+                        || (blockName.contains("lapis"))
+                        || (blockName.contains("copper"))
+                )
+                {
+                    this.tag(BlockTags.NEEDS_STONE_TOOL).add(block);
+                }
+                //need iron tool
+                else if ((blockName.contains("gold"))
+                    || (blockName.contains("emerald"))
+                    || (blockName.contains("diamond"))
+                )
+                {
+                    this.tag(BlockTags.NEEDS_IRON_TOOL).add(block);
+                }
+                //need diamond tool
+                else if ((blockName.contains("netherite"))
+                        || (blockName.contains("obsidian"))
+                )
+                {
+                    this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block);
+                }
+            }
+            //mineable with axe
+            else if ((blockName.contains("dark_oak"))
+                    || (blockName.contains("oak"))
+                    || (blockName.contains("birch"))
+                    || (blockName.contains("spruce"))
+                    || (blockName.contains("jungle"))
+                    || (blockName.contains("acacia"))
+                    || (blockName.contains("mangrove"))
+                    || (blockName.contains("cherry"))
+                    || (blockName.contains("crimson"))
+                    || (blockName.contains("warped"))
+                    || (blockName.contains("bamboo"))
+            )
+            {
+                this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+            }
+        }
     }
 }
