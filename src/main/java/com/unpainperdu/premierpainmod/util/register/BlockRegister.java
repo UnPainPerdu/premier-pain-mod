@@ -24,6 +24,7 @@ import java.util.function.ToIntFunction;
 
 public class BlockRegister
 {
+
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
     //test zone
@@ -73,7 +74,7 @@ public class BlockRegister
     lapis_block
     netherite_block
      */
-        //staute zone (41)
+        //statue
     public static final DeferredBlock<Block> OAK_VILLAGER_STATUE = statueRegister("oak_villager_statue","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_STATUE = statueRegister("birch_villager_statue","wood");
     public static final DeferredBlock<Block> SPRUCE_VILLAGER_STATUE = statueRegister("spruce_villager_statue","wood");
@@ -115,7 +116,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_STATUE =  statueRegister("amethyst_block_villager_statue","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_STATUE =  statueRegister("dripstone_block_villager_statue","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_STATUE =  statueRegister("bedrock_villager_statue","bedrock");
-        //pedestal zone (41)
+        //pedestal
     public static final DeferredBlock<Block> OAK_PEDESTAL = pedestalRegister("oak_villager_pedestal","wood");
     public static final DeferredBlock<Block> BIRCH_PEDESTAL = pedestalRegister("birch_villager_pedestal","wood");
     public static final DeferredBlock<Block> SPRUCE_PEDESTAL = pedestalRegister("spruce_villager_pedestal","wood");
@@ -157,7 +158,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_PEDESTAL =  pedestalRegister("amethyst_block_villager_pedestal","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_PEDESTAL =  pedestalRegister("dripstone_block_villager_pedestal","dripstone");
     public static final DeferredBlock<Block> BEDROCK_PEDESTAL =  pedestalRegister("bedrock_villager_pedestal","bedrock");
-        //brazier zone
+        //brazier
     public static final DeferredBlock<Block> OAK_VILLAGER_BRAZIER = brazierRegister("oak_villager_brazier","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_BRAZIER = brazierRegister("birch_villager_brazier","wood");
     public static final DeferredBlock<Block> SPRUCE_VILLAGER_BRAZIER = brazierRegister("spruce_villager_brazier","wood");
