@@ -11,7 +11,7 @@ public class VillagerWorkshopRecipe extends SingleItemRecipe
 {
     public VillagerWorkshopRecipe(String pGroup, Ingredient pIngredient, ItemStack pResult)
     {
-        super(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, new Serializer<VillagerWorkshopRecipe>(VillagerWorkshopRecipe::new), pGroup, pIngredient, pResult);
+        super(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, RecipeTypeRegister.VILLAGER_WORKSHOPPING.get(), pGroup, pIngredient, pResult);
     }
 
     @Override

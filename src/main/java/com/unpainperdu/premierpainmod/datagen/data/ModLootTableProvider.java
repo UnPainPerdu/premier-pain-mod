@@ -30,16 +30,18 @@ public class ModLootTableProvider extends LootTableProvider
     public ModLootTableProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider)
     {
         super(
-                output, Set.of(), List.of(new LootTableProvider.SubProviderEntry(Blocks::new, LootContextParamSets.BLOCK)),
+                output,
+                Set.of(),
+                List.of(new LootTableProvider.SubProviderEntry(Blocks::new, LootContextParamSets.BLOCK)),
                 lookupProvider
         );
     }
 
     private static class Blocks extends BlockLootSubProvider
     {
-        protected Blocks()
+        public Blocks(HolderLookup.Provider provider)
         {
-            super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags());
+            super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(),provider);
         }
 
         @Override

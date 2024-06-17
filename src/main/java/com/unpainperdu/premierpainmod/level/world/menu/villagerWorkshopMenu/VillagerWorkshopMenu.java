@@ -17,6 +17,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 
 public class VillagerWorkshopMenu extends AbstractContainerMenu
@@ -50,7 +51,6 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
     Runnable slotUpdateListener = () -> {};
     public final Container container = new SimpleContainer(1)
     {
-
         @Override
         public void setChanged()
         {
@@ -194,7 +194,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
         this.resultSlot.set(ItemStack.EMPTY);
         if (!pStack.isEmpty())
         {
-            this.recipes = this.level.getRecipeManager().getRecipesFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, pContainer, this.level);
+            this.recipes = this.level.getRecipeManager().getRecipesFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, new SingleRecipeInput(pStack), this.level);
         }
     }
 
@@ -203,7 +203,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
         if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get()))
         {
             RecipeHolder<VillagerWorkshopRecipe> recipeholder = this.recipes.get(this.selectedRecipeIndex.get());
-            ItemStack itemstack = recipeholder.value().assemble(this.container, this.level.registryAccess());
+            ItemStack itemstack = recipeholder.value().assemble(new SingleRecipeInput(this.container.getItem(RESULT_SLOT)), this.level.registryAccess());
             if (itemstack.isItemEnabled(this.level.enabledFeatures()))
             {
                 this.resultContainer.setRecipeUsed(recipeholder);
@@ -268,7 +268,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
                     return ItemStack.EMPTY;
                 }
             }
-            else if (this.level.getRecipeManager().getRecipeFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, new SimpleContainer(itemstack1), this.level).isPresent())
+            else if (this.level.getRecipeManager().getRecipeFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, new SingleRecipeInput(itemstack1), this.level).isPresent())
             {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false))
                 {
