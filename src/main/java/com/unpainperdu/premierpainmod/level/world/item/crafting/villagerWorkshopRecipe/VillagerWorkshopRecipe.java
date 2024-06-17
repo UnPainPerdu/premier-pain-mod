@@ -1,25 +1,23 @@
 package com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe;
 
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.RecipeTypeRegister;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.SingleItemRecipe;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 public class VillagerWorkshopRecipe extends SingleItemRecipe
 {
-    public VillagerWorkshopRecipe(RecipeType<?> type, RecipeSerializer<?> serializer, String pGroup, Ingredient pIngredient, ItemStack pResult)
+    public VillagerWorkshopRecipe(String pGroup, Ingredient pIngredient, ItemStack pResult)
     {
-        super(type, serializer, pGroup, pIngredient, pResult);
+        super(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, new Serializer<VillagerWorkshopRecipe>(VillagerWorkshopRecipe::new), pGroup, pIngredient, pResult);
     }
 
     @Override
-    public boolean matches(Container pContainer, Level pLevel)
+    public boolean matches(SingleRecipeInput singleRecipeInput, Level level)
     {
-        return this.ingredient.test(pContainer.getItem(0));
+        return this.ingredient.test(singleRecipeInput.item());
     }
 
     @Override
@@ -27,10 +25,9 @@ public class VillagerWorkshopRecipe extends SingleItemRecipe
         return new ItemStack(BlockRegister.VILLAGER_WORKSHOP);
     }
 
-    public static class Serializer<T extends VillagerWorkshopRecipe> extends SingleItemRecipe.Serializer<T>
+    public static class Serializer<VillagerWorkshopRecipe extends SingleItemRecipe> extends SingleItemRecipe.Serializer<VillagerWorkshopRecipe>
     {
-
-        public Serializer(SingleItemRecipe.Factory<T> factory)
+        public Serializer(SingleItemRecipe.Factory<VillagerWorkshopRecipe> factory)
         {
             super(factory);
         }

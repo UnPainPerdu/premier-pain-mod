@@ -10,6 +10,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,29 +20,23 @@ import net.minecraft.world.level.block.SupportType;
 import net.minecraft.world.phys.Vec3;
 
 
-public class SeatEntity extends Entity
-{
-    public SeatEntity(EntityType<SeatEntity> type, Level level)
-    {
+public class SeatEntity extends Entity {
+    public SeatEntity(EntityType<SeatEntity> type, Level level) {
         super(type, level);
     }
 
-    public SeatEntity(Level level, BlockPos pos)
-    {
+    public SeatEntity(Level level, BlockPos pos) {
         super(EntityRegister.SEAT_ENTITY.get(), level);
         setPos(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D);
         noPhysics = true;
     }
 
     @Override
-    public Vec3 getDismountLocationForPassenger(LivingEntity passenger)
-    {
-        if (passenger instanceof Player player)
-        {
+    public Vec3 getDismountLocationForPassenger(LivingEntity passenger) {
+        if (passenger instanceof Player player) {
             Vec3 resetPosition = SeatUtil.getPreviousPlayerPosition(player, this);
 
-            if (resetPosition != null)
-            {
+            if (resetPosition != null) {
                 BlockPos belowResetPos = BlockPos.containing(resetPosition.x, resetPosition.y - 1, resetPosition.z);
 
                 discard();
@@ -65,16 +60,19 @@ public class SeatEntity extends Entity
     }
 
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {}
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+    }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag tag) {}
+    protected void readAdditionalSaveData(CompoundTag tag) {
+    }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag tag) {}
+    protected void addAdditionalSaveData(CompoundTag tag) {
+    }
 
     @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return new ClientboundAddEntityPacket(this);
+    public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity serverEntity) {
+        return new ClientboundAddEntityPacket(this, serverEntity);
     }
 }

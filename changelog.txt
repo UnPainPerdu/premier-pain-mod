@@ -27,3 +27,7 @@ fix :
 add :
     - Villager chair
     - Villager throne chair which can be carpeted as the villager table
+--------------
+1.21-1.5.1
+update minecraft to 1.21
+update neoforge to 21.0.14

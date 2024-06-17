@@ -207,7 +207,8 @@ public class VillagerBrazier extends AbstactTwoBlockHeightBlock
     {
         if(pState.getValue(LIT))
         {
-            if (!pEntity.isSteppingCarefully() && pEntity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity) pEntity)) {
+            if (!pEntity.isSteppingCarefully() && pEntity instanceof LivingEntity)
+            {
                 pEntity.hurt(pLevel.damageSources().hotFloor(), 1.0F);
             }
         }

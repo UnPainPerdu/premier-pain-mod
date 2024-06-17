@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.item.crafting.builders;
 
-import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.TestRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.VillagerWorkshopRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -15,11 +15,11 @@ public class VillagerWorkshopRecipeBuilder extends SingleItemRecipeBuilder
     }
     public static SingleItemRecipeBuilder villagerWorkshoping(Ingredient pIngredient, RecipeCategory pCategory, ItemLike pResult)
     {
-        return new SingleItemRecipeBuilder(pCategory, TestRecipe::new, pIngredient, pResult, 1);
+        return new SingleItemRecipeBuilder(pCategory, VillagerWorkshopRecipe::new, pIngredient, pResult, 1);
     }
 
     public static SingleItemRecipeBuilder villagerWorkshoping(Ingredient pIngredient, RecipeCategory pCategory, ItemLike pResult, int pCount)
     {
-        return new SingleItemRecipeBuilder(pCategory, TestRecipe::new, pIngredient, pResult, pCount);
+        return new SingleItemRecipeBuilder(pCategory, VillagerWorkshopRecipe::new, pIngredient, pResult, pCount);
     }
 }

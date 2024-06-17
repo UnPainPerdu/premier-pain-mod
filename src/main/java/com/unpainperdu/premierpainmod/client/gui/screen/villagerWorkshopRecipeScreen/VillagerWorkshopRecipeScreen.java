@@ -19,7 +19,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 import java.util.List;
 
 @OnlyIn(Dist.CLIENT)
-public class VillagerWorkshopRecipeScreen<T extends VillagerWorkshopMenu<V>, V extends VillagerWorkshopRecipe> extends AbstractContainerScreen<T>
+public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<VillagerWorkshopMenu>
 {
     private static final int SCROLLER_WIDTH = 12;
     private static final int SCROLLER_HEIGHT = 15;
@@ -36,7 +36,7 @@ public class VillagerWorkshopRecipeScreen<T extends VillagerWorkshopMenu<V>, V e
     private int startIndex;
     private boolean displayRecipes;
 
-    public VillagerWorkshopRecipeScreen(T menu, Inventory playerInventory, Component title)
+    public VillagerWorkshopRecipeScreen(VillagerWorkshopMenu menu, Inventory playerInventory, Component title)
     {
         super(menu, playerInventory, title);
 
@@ -203,8 +203,9 @@ public class VillagerWorkshopRecipeScreen<T extends VillagerWorkshopMenu<V>, V e
             startIndex = 0;
         }
     }
-    private static ResourceLocation loc(String path) {
-        return new ResourceLocation(PremierPainMod.MODID, path);
+    private static ResourceLocation loc(String path)
+    {
+        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MODID, path);
     }
 
     protected ResourceLocation getBackgroundTexture() {

@@ -19,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 
-public class VillagerWorkshopMenu<T extends VillagerWorkshopRecipe> extends AbstractContainerMenu
+public class VillagerWorkshopMenu extends AbstractContainerMenu
 {
     public static final int INPUT_SLOT = 0;
     public static final int RESULT_SLOT = 1;
@@ -52,7 +52,8 @@ public class VillagerWorkshopMenu<T extends VillagerWorkshopRecipe> extends Abst
     {
 
         @Override
-        public void setChanged() {
+        public void setChanged()
+        {
             super.setChanged();
             VillagerWorkshopMenu.this.slotsChanged(this);
             VillagerWorkshopMenu.this.slotUpdateListener.run();
