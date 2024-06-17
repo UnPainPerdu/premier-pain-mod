@@ -9,8 +9,9 @@ import java.util.List;
 public class BlockList
 {
     public static List<DeferredBlock<Block>> ALL_BLOCKS = Arrays.asList(
-            //statue
+            //workshop
             BlockRegister.VILLAGER_WORKSHOP,
+            //statue
             BlockRegister.OAK_VILLAGER_STATUE,
             BlockRegister.BIRCH_VILLAGER_STATUE,
             BlockRegister.SPRUCE_VILLAGER_STATUE,
