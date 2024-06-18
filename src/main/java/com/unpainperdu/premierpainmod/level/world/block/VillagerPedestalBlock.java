@@ -4,10 +4,13 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.PedestalBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -18,6 +21,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.CampfireBlockEntity;
@@ -25,6 +29,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -100,10 +105,12 @@ public class VillagerPedestalBlock extends BaseEntityBlock implements SimpleWate
             ItemStack itemstack = pPlayer.getItemInHand(pHand);
             if (!pLevel.isClientSide && pedestalBlockEntity.placeItem(pPlayer, itemstack))
             {
+                pLevel.playSound(null, pPos, SoundEvents.ITEM_FRAME_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
                 return ItemInteractionResult.SUCCESS;
             }
             else if(!pLevel.isClientSide && pedestalBlockEntity.removeItem(pPos, pLevel, pPlayer, itemstack))
             {
+                pLevel.playSound(null, pPos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
                 return ItemInteractionResult.SUCCESS;
             }
             return ItemInteractionResult.CONSUME;
@@ -120,5 +127,20 @@ public class VillagerPedestalBlock extends BaseEntityBlock implements SimpleWate
 
             super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
         }
+    }
+    @Override
+    protected RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
+    }
+
+    public static void dowse(@javax.annotation.Nullable Entity pEntity, LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+
+        BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+        if (blockentity instanceof PedestalBlockEntity)
+        {
+            ((PedestalBlockEntity)blockentity).dowse();
+        }
+
+        pLevel.gameEvent(pEntity, GameEvent.BLOCK_CHANGE, pPos);
     }
 }

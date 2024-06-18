@@ -77,7 +77,6 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
             ItemStack itemstack = this.items.get(i);
             if (itemstack.isEmpty())
             {
-                System.out.println("base : "+ itemstack + " now : " + pstack +" IN");
                 this.items.set(i, pstack.consumeAndReturn(1, entity));
                 this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(entity, this.getBlockState()));
                 this.markUpdated();
@@ -91,7 +90,6 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
         for (int i = 0; i < this.items.size(); i++)
         {
             ItemStack itemstack = this.items.get(i);
-            System.out.println("base : "+ itemstack + " now : " + pstack +" OUT");
             if (!itemstack.isEmpty())
             {
                 this.dropItem(level, pPos);
@@ -104,8 +102,10 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
         return false;
     }
 
-    public void dowse() {
-        if (this.level != null) {
+    public void dowse()
+    {
+        if (this.level != null)
+        {
             this.markUpdated();
         }
     }
@@ -148,7 +148,7 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
         }
         else
         {
-            ItemEntity itementity = new ItemEntity(level, pPos.getX(), pPos.getY() + (double)pOffsetY, pPos.getZ(), pStack);
+            ItemEntity itementity = new ItemEntity(level, pPos.getX() + 0.5, pPos.getY() +1+ (double)pOffsetY, pPos.getZ() + 0.5, pStack);
             itementity.setDefaultPickUpDelay();
             level.addFreshEntity(itementity);
             return itementity;
