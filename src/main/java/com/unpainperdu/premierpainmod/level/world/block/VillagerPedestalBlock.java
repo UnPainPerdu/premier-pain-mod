@@ -102,6 +102,10 @@ public class VillagerPedestalBlock extends BaseEntityBlock implements SimpleWate
             {
                 return ItemInteractionResult.SUCCESS;
             }
+            else if(!pLevel.isClientSide && pedestalBlockEntity.removeItem(pPos, pLevel, pPlayer, itemstack))
+            {
+                return ItemInteractionResult.SUCCESS;
+            }
             return ItemInteractionResult.CONSUME;
         }
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
@@ -110,8 +114,8 @@ public class VillagerPedestalBlock extends BaseEntityBlock implements SimpleWate
     protected void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (!pState.is(pNewState.getBlock())) {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-            if (blockentity instanceof CampfireBlockEntity) {
-                Containers.dropContents(pLevel, pPos, ((CampfireBlockEntity)blockentity).getItems());
+            if (blockentity instanceof PedestalBlockEntity) {
+                Containers.dropContents(pLevel, pPos, ((PedestalBlockEntity)blockentity).getItems());
             }
 
             super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
