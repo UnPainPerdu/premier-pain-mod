@@ -8,6 +8,7 @@ public class RegisterHandler
     {
         // Register the Deferred Register to the mod event bus so blocks get registered
         BlockRegister.register(modEventBus);
+        BlockEntityRegister.register(modEventBus);
         EntityRegister.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
         ItemRegister.register(modEventBus);
