@@ -9,14 +9,13 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Clearable;
+import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.Containers;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,7 +25,6 @@ import javax.annotation.Nullable;
 
 public class PedestalBlockEntity extends BlockEntity implements Clearable
 {
-    private static final int NUM_SLOTS = 1;
     private final NonNullList<ItemStack> items = NonNullList.withSize(1, ItemStack.EMPTY);
 
     public PedestalBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -92,7 +90,7 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
             ItemStack itemstack = this.items.get(i);
             if (!itemstack.isEmpty())
             {
-                this.dropItem(level, pPos);
+                Containers.dropContents(level, pPos, ((PedestalBlockEntity) level.getBlockEntity(pPos)).getItems());
                 this.items.set(i, pstack.consumeAndReturn(1, entity));
                 this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(entity, this.getBlockState()));
                 this.markUpdated();
@@ -127,32 +125,5 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
         pTag.remove("Items");
     }
 
-    private void dropItem(Level level, BlockPos pPos)
-    {
-        ItemStack itemstack = this.getItems().get(0);
-        if (!itemstack.isEmpty())
-        {
-            this.spawnAtLocation(pPos, level, itemstack, 0.0F);
-        }
-    }
-    @Nullable
-    public ItemEntity spawnAtLocation(BlockPos pPos,Level level,ItemStack pStack, float pOffsetY)
-    {
-        if (pStack.isEmpty())
-        {
-            return null;
-        }
-        else if (level.isClientSide)
-        {
-            return null;
-        }
-        else
-        {
-            ItemEntity itementity = new ItemEntity(level, pPos.getX() + 0.5, pPos.getY() +1+ (double)pOffsetY, pPos.getZ() + 0.5, pStack);
-            itementity.setDefaultPickUpDelay();
-            level.addFreshEntity(itementity);
-            return itementity;
-        }
-    }
 }
 
