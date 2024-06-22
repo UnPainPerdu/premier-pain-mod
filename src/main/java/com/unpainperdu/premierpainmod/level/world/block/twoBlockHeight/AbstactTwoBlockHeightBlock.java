@@ -79,9 +79,15 @@ public abstract class AbstactTwoBlockHeightBlock extends Block implements Simple
             pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
         }
         if (pFacing.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (pFacing == Direction.UP)) {
-            return pFacingState.is(this) && pFacingState.getValue(HALF) != doubleblockhalf ? pState.setValue(FACING, pFacingState.getValue(FACING)): Blocks.AIR.defaultBlockState();
-        } else {
-            return doubleblockhalf == DoubleBlockHalf.LOWER && pFacing == Direction.DOWN && !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+            return pFacingState.is(this) && pFacingState.getValue(HALF) != doubleblockhalf
+                    ? pState.setValue(FACING, pFacingState.getValue(FACING))
+                    : Blocks.AIR.defaultBlockState();
+        }
+        else
+        {
+            return doubleblockhalf == DoubleBlockHalf.LOWER && pFacing == Direction.DOWN && !pState.canSurvive(pLevel, pCurrentPos)
+                    ? Blocks.AIR.defaultBlockState()
+                    : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
         }
     }
     //créé un nouveau BlockState nommé HALF

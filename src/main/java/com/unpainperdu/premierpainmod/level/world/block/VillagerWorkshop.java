@@ -67,11 +67,15 @@ public class VillagerWorkshop extends HorizontalDirectionalBlock implements Simp
         VillagerWorkshopPart villagerWorkshopPart = pState.getValue(PART);
         if (pFacing != getNeighbourDirection((VillagerWorkshopPart) pState.getValue(PART), DirectionSwitcher(pState.getValue(FACING))))
         {
-            return villagerWorkshopPart == VillagerWorkshopPart.RIGHT && pFacing == reverseDirectionSwitcher(pState.getValue(FACING)) && !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+            return villagerWorkshopPart == VillagerWorkshopPart.RIGHT && pFacing == reverseDirectionSwitcher(pState.getValue(FACING)) && !pState.canSurvive(pLevel, pCurrentPos)
+                    ? Blocks.AIR.defaultBlockState()
+                    : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
         }
         else
         {
-            return pFacingState.is(this) && pFacingState.getValue(PART) != pState.getValue(PART) ? (BlockState)pState : Blocks.AIR.defaultBlockState();
+            return pFacingState.is(this) && pFacingState.getValue(PART) != pState.getValue(PART)
+                    ? (BlockState)pState
+                    : Blocks.AIR.defaultBlockState();
         }
     }
 

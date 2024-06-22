@@ -1,12 +1,9 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.*;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -28,7 +25,7 @@ public class BlockRegister
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
     //test zone
-    public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_villager_chair", () -> new VillagerThroneChairBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
+    public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_villager_drawer_and_shelf", () -> new VillagerDrawerAndShelf(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     /*materials :
