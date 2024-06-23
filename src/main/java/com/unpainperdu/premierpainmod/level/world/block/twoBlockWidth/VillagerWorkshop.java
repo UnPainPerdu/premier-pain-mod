@@ -31,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class VillagerWorkshop extends AbstractTwoBlockWidth implements SimpleWaterloggedBlock
+public class VillagerWorkshop extends AbstractTwoBlockWidth
 {
     public static final MapCodec<VillagerWorkshop> CODEC = simpleCodec(VillagerWorkshop::new);
     private static final Component CONTAINER_TITLE = Component.translatable("container."+ PremierPainMod.MODID +"villager_workshop");

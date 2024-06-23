@@ -14,6 +14,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -27,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public abstract class AbstractTwoBlockWidth extends HorizontalDirectionalBlock
+public abstract class AbstractTwoBlockWidth extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock
 {
     public static final EnumProperty<TwoBlockWidthPart> PART;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
