@@ -2,14 +2,14 @@ package com.unpainperdu.premierpainmod.level.world.block.state.properties;
 
 import net.minecraft.util.StringRepresentable;
 
-public enum VillagerWorkshopPart implements StringRepresentable
+public enum TwoBlockWidthPart implements StringRepresentable
 {
     RIGHT("right"),
     LEFT("left");
 
     private final String name;
 
-    private VillagerWorkshopPart(String pName) {
+    private TwoBlockWidthPart(String pName) {
         this.name = pName;
     }
 

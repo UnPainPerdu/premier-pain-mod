@@ -2,12 +2,11 @@ package com.unpainperdu.premierpainmod.datagen.data;
 
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.util.register.BlockList;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -96,7 +95,7 @@ public class ModLootTableProvider extends LootTableProvider
 
         private void villagerWorkshopLootTableGenerator(Block villagerWorkshop)
         {
-            super.add(villagerWorkshop, this.createSinglePropConditionTable(villagerWorkshop, VillagerWorkshop.PART, VillagerWorkshopPart.RIGHT));
+            super.add(villagerWorkshop, this.createSinglePropConditionTable(villagerWorkshop, VillagerWorkshop.PART, TwoBlockWidthPart.RIGHT));
         }
 
         private void villagerBrazierLootTableGenerator(Block brazier)

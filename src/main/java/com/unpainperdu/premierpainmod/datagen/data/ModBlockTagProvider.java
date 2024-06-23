@@ -1,15 +1,13 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.util.register.BlockList;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;

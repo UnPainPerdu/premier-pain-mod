@@ -4,9 +4,9 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerWorkshopPart;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
@@ -103,7 +103,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         // The passed function will be called once for each possible state.
         variantBuilder.forAllStates(state ->
         {
-            if(state.getValue(VillagerWorkshop.PART) == VillagerWorkshopPart.RIGHT)
+            if(state.getValue(VillagerWorkshop.PART) == TwoBlockWidthPart.RIGHT)
             {
                 // Return a ConfiguredModel depending on the state's properties.
                 // For example, the following code will rotate the model depending on the horizontal rotation of the block.
