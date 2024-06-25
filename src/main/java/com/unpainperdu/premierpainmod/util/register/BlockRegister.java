@@ -5,7 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.block.*;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
 import net.minecraft.world.item.BlockItem;
