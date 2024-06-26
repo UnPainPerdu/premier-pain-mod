@@ -1,18 +1,13 @@
 package com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.menu.villagerDrawerMenu.VillagerDrawerMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.villagerWorkshopMenu.VillagerWorkshopMenu;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -30,7 +25,6 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
 {
     private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
     public static final MapCodec<VillagerDrawer> CODEC = simpleCodec(VillagerDrawer::new);
-    private static final Component CONTAINER_TITLE = Component.translatable("container."+ PremierPainMod.MODID +"villager_drawer");
 
     public VillagerDrawer(Properties pProperties)
     {
@@ -80,17 +74,26 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
             MenuProvider menuprovider = this.getMenuProvider(pState, pLevel, pPos);
             if (menuprovider != null)
             {
-                pPlayer.openMenu(menuprovider);
+                this.openContainer(pLevel, pPos, pPlayer);
             }
 
             return InteractionResult.CONSUME;
         }
     }
 
-    @Nullable
-    @Override
-    protected MenuProvider getMenuProvider(BlockState pState, Level pLevel, BlockPos pPos)
+    protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer)
     {
-        return new SimpleMenuProvider((pContainerId, pPlayerInventory, pAccess) -> new VillagerDrawerMenu(pContainerId, pPlayerInventory, ContainerLevelAccess.create(pLevel, pPos)), CONTAINER_TITLE);
+        BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+        if (blockentity instanceof VillagerDrawerBlockEntity)
+        {
+            pPlayer.openMenu((MenuProvider)blockentity);
+        }
+    }
+
+    @Override
+    protected void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving)
+    {
+        Containers.dropContentsOnDestroy(pState, pNewState, pLevel, pPos);
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
 }

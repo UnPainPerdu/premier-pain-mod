@@ -5,7 +5,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -16,18 +16,33 @@ public class VillagerDrawerMenu extends AbstractContainerMenu
     private final Container container;
     private final int containerRows;
 
-    public VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
+    public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
     {
-        this(pContainerId, pPlayerInventory, ContainerLevelAccess.NULL);
+        return new VillagerDrawerMenu(MenuType.GENERIC_9x6, pContainerId, pPlayerInventory, 6);
+    }
+    public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory, Container pContainer)
+    {
+        return new VillagerDrawerMenu(MenuType.GENERIC_9x6, pContainerId, pPlayerInventory, pContainer, 6);
     }
 
-    public VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory, final ContainerLevelAccess pAccess)
+    private VillagerDrawerMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, int pRows)
+    {
+        this(pType, pContainerId, pPlayerInventory, new SimpleContainer(9 * pRows), pRows);
+    }
+
+    public VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
+    {
+        this(MenuType.GENERIC_9x6,pContainerId, pPlayerInventory,  new SimpleContainer(9 * 6),6);
+    }
+
+    public VillagerDrawerMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, Container pContainer, int pRows)
     {
         super(MenuType.GENERIC_9x6, pContainerId);
 
+        checkContainerSize(pContainer, 6 * 9);
         this.container = new SimpleContainer(9 * 6);
-        checkContainerSize(this.container, 6 * 9);
-        this.containerRows = 6;
+
+        this.containerRows = pRows;
         this.container.startOpen(pPlayerInventory.player);
         int i = (this.containerRows - 4) * 18;
 
