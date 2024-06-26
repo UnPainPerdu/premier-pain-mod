@@ -28,8 +28,8 @@ public class BlockRegister
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
     //test zone
-    public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_villager_drawer", () -> new VillagerDrawer(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
-    public static final DeferredBlock<Block> TEST_BLOCK2 = registerBlock("test_villager_shelf", () -> new VillagerShelf(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
+    public static final DeferredBlock<Block> TEST_DRAWER = registerBlock("test_villager_drawer", () -> new VillagerDrawer(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
+    public static final DeferredBlock<Block> TEST_SHELF = registerBlock("test_villager_shelf", () -> new VillagerShelf(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     /*materials :

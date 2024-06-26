@@ -1,22 +1,27 @@
 package com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.PedestalBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.menu.villagerDrawerMenu.VillagerDrawerMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.villagerWorkshopMenu.VillagerWorkshopMenu;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -25,8 +30,7 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
 {
     private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
     public static final MapCodec<VillagerDrawer> CODEC = simpleCodec(VillagerDrawer::new);
-
-
+    private static final Component CONTAINER_TITLE = Component.translatable("container."+ PremierPainMod.MODID +"villager_drawer");
 
     public VillagerDrawer(Properties pProperties)
     {
@@ -56,7 +60,7 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
     {
-        return null;
+        return new VillagerDrawerBlockEntity(pPos, pState);
     }
 
     @Override
@@ -64,14 +68,29 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
         return RenderShape.MODEL;
     }
 
-    public static void dowse(@javax.annotation.Nullable Entity pEntity, LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
-
-        BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-        if (blockentity instanceof VillagerDrawerBlockEntity)
+    @Override
+    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult)
+    {
+        if (pLevel.isClientSide)
         {
-            ((VillagerDrawerBlockEntity)blockentity).dowse();
+            return InteractionResult.SUCCESS;
         }
+        else
+        {
+            MenuProvider menuprovider = this.getMenuProvider(pState, pLevel, pPos);
+            if (menuprovider != null)
+            {
+                pPlayer.openMenu(menuprovider);
+            }
 
-        pLevel.gameEvent(pEntity, GameEvent.BLOCK_CHANGE, pPos);
+            return InteractionResult.CONSUME;
+        }
+    }
+
+    @Nullable
+    @Override
+    protected MenuProvider getMenuProvider(BlockState pState, Level pLevel, BlockPos pPos)
+    {
+        return new SimpleMenuProvider((pContainerId, pPlayerInventory, pAccess) -> new VillagerDrawerMenu(pContainerId, pPlayerInventory, ContainerLevelAccess.create(pLevel, pPos)), CONTAINER_TITLE);
     }
 }

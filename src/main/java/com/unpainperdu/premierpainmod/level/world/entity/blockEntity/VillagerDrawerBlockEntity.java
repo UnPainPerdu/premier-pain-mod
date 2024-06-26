@@ -1,21 +1,26 @@
 package com.unpainperdu.premierpainmod.level.world.entity.blockEntity;
 
+import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
 {
+    private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
 
-    protected VillagerDrawerBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState)
+    public VillagerDrawerBlockEntity( BlockPos pPos, BlockState pBlockState)
     {
-        super(pType, pPos, pBlockState);
+        super(BlockEntityRegister.VILLAGER_DRAWER_BLOCK_ENTITY.get(), pPos, pBlockState);
     }
 
     @Override
@@ -27,17 +32,17 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
     @Override
     protected NonNullList<ItemStack> getItems()
     {
-        return null;
+        return this.items;
     }
 
     @Override
     protected void setItems(NonNullList<ItemStack> pItems)
     {
-
+        this.items = pItems;
     }
 
     @Override
-    protected AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory)
+    protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer)
     {
         return null;
     }
@@ -45,19 +50,35 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
     @Override
     public int getContainerSize()
     {
-        return 0;
+        return 54;
     }
 
-    public void dowse()
+    @Override
+    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
     {
-        if (this.level != null)
-        {
-            this.markUpdated();
-        }
+        super.loadAdditional(pTag, pRegistries);
+        this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
     }
-    private void markUpdated()
+
+    @Override
+    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
     {
-        this.setChanged();
-        this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+        super.saveAdditional(pTag, pRegistries);
+        ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
     }
+
+
+    @Override
+    public void startOpen(Player pPlayer)
+    {
+
+    }
+
+    @Override
+    public void stopOpen(Player pPlayer)
+    {
+
+    }
+
 }
