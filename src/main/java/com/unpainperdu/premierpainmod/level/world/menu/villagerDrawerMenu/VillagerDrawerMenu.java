@@ -5,7 +5,6 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -18,11 +17,11 @@ public class VillagerDrawerMenu extends AbstractContainerMenu
 
     public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
     {
-        return new VillagerDrawerMenu(MenuType.GENERIC_9x6, pContainerId, pPlayerInventory, 6);
+        return new VillagerDrawerMenu(MenuType.GENERIC_9x3, pContainerId, pPlayerInventory, 3);
     }
     public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory, Container pContainer)
     {
-        return new VillagerDrawerMenu(MenuType.GENERIC_9x6, pContainerId, pPlayerInventory, pContainer, 6);
+        return new VillagerDrawerMenu(MenuType.GENERIC_9x3, pContainerId, pPlayerInventory, pContainer, 3);
     }
 
     private VillagerDrawerMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, int pRows)
@@ -32,15 +31,15 @@ public class VillagerDrawerMenu extends AbstractContainerMenu
 
     public VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
     {
-        this(MenuType.GENERIC_9x6,pContainerId, pPlayerInventory,  new SimpleContainer(9 * 6),6);
+        this(MenuType.GENERIC_9x3,pContainerId, pPlayerInventory,  new SimpleContainer(9 * 3),3);
     }
 
     public VillagerDrawerMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, Container pContainer, int pRows)
     {
-        super(MenuType.GENERIC_9x6, pContainerId);
+        super(MenuType.GENERIC_9x3, pContainerId);
 
-        checkContainerSize(pContainer, 6 * 9);
-        this.container = new SimpleContainer(9 * 6);
+        checkContainerSize(pContainer, 9 * 3);
+        this.container = new SimpleContainer(9 * 3);
 
         this.containerRows = pRows;
         this.container.startOpen(pPlayerInventory.player);

@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
 {
-    private NonNullList<ItemStack> items = NonNullList.withSize(54, ItemStack.EMPTY);
+    private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
 
     public VillagerDrawerBlockEntity( BlockPos pPos, BlockState pBlockState)
     {
@@ -52,7 +52,7 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
     @Override
     public int getContainerSize()
     {
-        return 54;
+        return 27;
     }
 
     @Override
