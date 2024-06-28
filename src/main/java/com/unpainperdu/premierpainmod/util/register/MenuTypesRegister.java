@@ -19,7 +19,7 @@ public class MenuTypesRegister
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(BuiltInRegistries.MENU, PremierPainMod.MODID);
 
     public static final DeferredHolder<MenuType<?>,MenuType<VillagerWorkshopMenu>> VILLAGER_WORKSHOP = register("villager_workshop", () -> new MenuType(VillagerWorkshopMenu::new, FeatureFlags.DEFAULT_FLAGS));
-    public static final DeferredHolder<MenuType<?>,MenuType<VillagerWorkshopMenu>> VILLAGER_DRAWER = register("villager_drawer", () -> new MenuType(VillagerDrawerMenu::new, FeatureFlags.DEFAULT_FLAGS));
+    public static final DeferredHolder<MenuType<?>,MenuType<VillagerDrawerMenu>> VILLAGER_DRAWER = register("villager_drawer", () -> new MenuType(VillagerDrawerMenu::new, FeatureFlags.DEFAULT_FLAGS));
 
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>,MenuType<T>> register(final String name, final Supplier<MenuType<T>> menu)
     {

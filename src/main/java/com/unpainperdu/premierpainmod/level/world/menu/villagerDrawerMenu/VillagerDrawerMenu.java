@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.menu.villagerDrawerMenu;
 
+import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -17,11 +18,11 @@ public class VillagerDrawerMenu extends AbstractContainerMenu
 
     public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
     {
-        return new VillagerDrawerMenu(MenuType.GENERIC_9x3, pContainerId, pPlayerInventory, 3);
+        return new VillagerDrawerMenu(MenuTypesRegister.VILLAGER_DRAWER.get(), pContainerId, pPlayerInventory, 3);
     }
     public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory, Container pContainer)
     {
-        return new VillagerDrawerMenu(MenuType.GENERIC_9x3, pContainerId, pPlayerInventory, pContainer, 3);
+        return new VillagerDrawerMenu(MenuTypesRegister.VILLAGER_DRAWER.get(), pContainerId, pPlayerInventory, pContainer, 3);
     }
 
     private VillagerDrawerMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, int pRows)
@@ -31,12 +32,12 @@ public class VillagerDrawerMenu extends AbstractContainerMenu
 
     public VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
     {
-        this(MenuType.GENERIC_9x3,pContainerId, pPlayerInventory,  new SimpleContainer(9 * 3),3);
+        this(MenuTypesRegister.VILLAGER_DRAWER.get(),pContainerId, pPlayerInventory,  new SimpleContainer(9 * 3),3);
     }
 
     public VillagerDrawerMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, Container pContainer, int pRows)
     {
-        super(MenuType.GENERIC_9x3, pContainerId);
+        super(MenuTypesRegister.VILLAGER_DRAWER.get(), pContainerId);
 
         checkContainerSize(pContainer, 9 * 3);
         this.container = new SimpleContainer(9 * 3);

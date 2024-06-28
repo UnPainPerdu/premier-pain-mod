@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.client;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.client.gui.screen.villagerWorkshopRecipeScreen.VillagerWorkshopRecipeScreen;
+import com.unpainperdu.premierpainmod.client.gui.screen.VillagerDrawerScreen.VillagerDrawerScreen;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -16,5 +17,6 @@ public class ScreenRegister
     private static void registerScreens(RegisterMenuScreensEvent event)
     {
         event.register(MenuTypesRegister.VILLAGER_WORKSHOP.get(), VillagerWorkshopRecipeScreen::new);
+        event.register(MenuTypesRegister.VILLAGER_DRAWER.get(), VillagerDrawerScreen::new);
     }
 }
