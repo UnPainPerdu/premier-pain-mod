@@ -4,8 +4,10 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -14,6 +16,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BarrelBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -87,5 +90,15 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
     {
         Containers.dropContentsOnDestroy(pState, pNewState, pLevel, pPos);
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+    }
+
+    @Override
+    protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
+    {
+        BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+        if (blockentity instanceof VillagerDrawerBlockEntity)
+        {
+            ((VillagerDrawerBlockEntity)blockentity).recheckOpen();
+        }
     }
 }

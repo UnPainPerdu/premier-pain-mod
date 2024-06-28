@@ -103,7 +103,6 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
         super.loadAdditional(pTag, pRegistries);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
-        this.setChanged();
     }
 
     @Override
@@ -111,7 +110,6 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
     {
         super.saveAdditional(pTag, pRegistries);
         ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
-        this.setChanged();
     }
 
 
