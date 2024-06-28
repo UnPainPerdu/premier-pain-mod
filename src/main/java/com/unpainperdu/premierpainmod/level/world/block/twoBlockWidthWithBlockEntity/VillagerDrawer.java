@@ -4,6 +4,8 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -71,22 +73,12 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
         }
         else
         {
-            MenuProvider menuprovider = this.getMenuProvider(pState, pLevel, pPos);
-            if (menuprovider != null)
+            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+            if (blockentity instanceof VillagerDrawerBlockEntity)
             {
-                this.openContainer(pLevel, pPos, pPlayer);
+                pPlayer.openMenu((VillagerDrawerBlockEntity)blockentity);
             }
-
             return InteractionResult.CONSUME;
-        }
-    }
-
-    protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer)
-    {
-        BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-        if (blockentity instanceof VillagerDrawerBlockEntity)
-        {
-            pPlayer.openMenu((MenuProvider)blockentity);
         }
     }
 

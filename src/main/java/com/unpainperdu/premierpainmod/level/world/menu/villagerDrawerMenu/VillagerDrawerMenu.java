@@ -16,6 +16,7 @@ public class VillagerDrawerMenu extends AbstractContainerMenu
     private final Container container;
     private final int containerRows;
 
+
     public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
     {
         return new VillagerDrawerMenu(MenuTypesRegister.VILLAGER_DRAWER.get(), pContainerId, pPlayerInventory, 3);
