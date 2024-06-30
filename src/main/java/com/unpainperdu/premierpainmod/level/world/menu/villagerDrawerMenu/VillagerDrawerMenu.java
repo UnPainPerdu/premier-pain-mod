@@ -41,8 +41,7 @@ public class VillagerDrawerMenu extends AbstractContainerMenu
         super(MenuTypesRegister.VILLAGER_DRAWER.get(), pContainerId);
 
         checkContainerSize(pContainer, 9 * 3);
-        this.container = new SimpleContainer(9 * 3);
-
+        this.container = pContainer;
         this.containerRows = pRows;
         this.container.startOpen(pPlayerInventory.player);
         int i = (this.containerRows - 4) * 18;

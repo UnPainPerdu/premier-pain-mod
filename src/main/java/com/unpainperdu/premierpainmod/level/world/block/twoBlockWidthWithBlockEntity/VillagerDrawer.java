@@ -20,6 +20,8 @@ import net.minecraft.world.level.block.entity.BarrelBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -30,11 +32,12 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
 {
     private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
     public static final MapCodec<VillagerDrawer> CODEC = simpleCodec(VillagerDrawer::new);
+    public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     public VillagerDrawer(Properties pProperties)
     {
         super(pProperties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE));
+        this.registerDefaultState(this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE).setValue(OPEN, Boolean.FALSE));
     }
 
     @Override
@@ -51,7 +54,7 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED});
+        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED, OPEN});
     }
 
     @Nullable

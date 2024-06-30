@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.entity.blockEntity;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.menu.villagerDrawerMenu.VillagerDrawerMenu;
 import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
@@ -33,15 +34,17 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter()
     {
         @Override
-        protected void onOpen(Level p_155062_, BlockPos p_155063_, BlockState p_155064_)
+        protected void onOpen(Level pLevel, BlockPos pBlockPos, BlockState pBlockState)
         {
-            VillagerDrawerBlockEntity.this.playSound(p_155064_, SoundEvents.BARREL_OPEN);
+            VillagerDrawerBlockEntity.this.playSound(pBlockState, SoundEvents.BARREL_OPEN, pBlockPos);
+            VillagerDrawerBlockEntity.this.updateBlockState(pBlockState, true);
         }
 
         @Override
-        protected void onClose(Level p_155072_, BlockPos p_155073_, BlockState p_155074_)
+        protected void onClose(Level pLevel, BlockPos pBlockPos, BlockState pBlockState)
         {
-            VillagerDrawerBlockEntity.this.playSound(p_155074_, SoundEvents.BARREL_CLOSE);
+            VillagerDrawerBlockEntity.this.playSound(pBlockState, SoundEvents.BARREL_CLOSE, pBlockPos);
+            VillagerDrawerBlockEntity.this.updateBlockState(pBlockState, false);
         }
 
         @Override
@@ -138,12 +141,15 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
             this.openersCounter.recheckOpeners(this.getLevel(), this.getBlockPos(), this.getBlockState());
         }
     }
-    void playSound(BlockState pState, SoundEvent pSound)
+    void playSound(BlockState pState, SoundEvent pSound, BlockPos pos)
     {
-        Vec3i vec3i = pState.getValue(BarrelBlock.FACING).getNormal();
-        double d0 = (double)this.worldPosition.getX() + 0.5 + (double)vec3i.getX() / 2.0;
-        double d1 = (double)this.worldPosition.getY() + 0.5 + (double)vec3i.getY() / 2.0;
-        double d2 = (double)this.worldPosition.getZ() + 0.5 + (double)vec3i.getZ() / 2.0;
+        double d0 = (double)this.worldPosition.getX() + 0.5 + (double)pos.getX() / 2.0;
+        double d1 = (double)this.worldPosition.getY() + 0.5 + (double)pos.getY() / 2.0;
+        double d2 = (double)this.worldPosition.getZ() + 0.5 + (double)pos.getZ() / 2.0;
         this.level.playSound(null, d0, d1, d2, pSound, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
+    }
+    void updateBlockState(BlockState pState, boolean pOpen)
+    {
+        this.level.setBlock(this.getBlockPos(), pState.setValue(VillagerDrawer.OPEN, Boolean.valueOf(pOpen)), 3);
     }
 }
