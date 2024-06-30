@@ -327,6 +327,49 @@ public class BlockRegister
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR =  blockModRegister("villager_throne_chair","dripstone_block_villager_throne_chair","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_THRONE_CHAIR =  blockModRegister("villager_throne_chair","bedrock_villager_throne_chair","bedrock");
 
+    //drawer
+    public static final DeferredBlock<Block> OAK_VILLAGER_DRAWER = blockModRegister("villager_drawer","oak_villager_drawer","wood");
+    public static final DeferredBlock<Block> BIRCH_VILLAGER_DRAWER = blockModRegister("villager_drawer","birch_villager_drawer","wood");
+    public static final DeferredBlock<Block> SPRUCE_VILLAGER_DRAWER = blockModRegister("villager_drawer","spruce_villager_drawer","wood");
+    public static final DeferredBlock<Block> JUNGLE_VILLAGER_DRAWER = blockModRegister("villager_drawer","jungle_villager_drawer","wood");
+    public static final DeferredBlock<Block> ACACIA_VILLAGER_DRAWER = blockModRegister("villager_drawer","acacia_villager_drawer","wood");
+    public static final DeferredBlock<Block> DARK_OAK_VILLAGER_DRAWER = blockModRegister("villager_drawer","dark_oak_villager_drawer","wood");
+    public static final DeferredBlock<Block> MANGROVE_VILLAGER_DRAWER = blockModRegister("villager_drawer","mangrove_villager_drawer","wood");
+    public static final DeferredBlock<Block> CHERRY_VILLAGER_DRAWER = blockModRegister("villager_drawer","cherry_villager_drawer","cherry");
+    public static final DeferredBlock<Block> BAMBOO_VILLAGER_DRAWER = blockModRegister("villager_drawer","bamboo_villager_drawer","bamboo");
+    public static final DeferredBlock<Block> CRIMSON_VILLAGER_DRAWER = blockModRegister("villager_drawer","crimson_villager_drawer","netherwood");
+    public static final DeferredBlock<Block> WARPED_VILLAGER_DRAWER = blockModRegister("villager_drawer","warped_villager_drawer","netherwood");
+    public static final DeferredBlock<Block> STONE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","stone_villager_drawer","stone");
+    public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","mossy_stone_villager_drawer","stone");
+    public static final DeferredBlock<Block> ANDESITE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","andesite_villager_drawer","stone");
+    public static final DeferredBlock<Block> DIORITE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","diorite_villager_drawer","stone");
+    public static final DeferredBlock<Block> GRANITE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","granite_villager_drawer","stone");
+    public static final DeferredBlock<Block> PRISMARINE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","prismarine_villager_drawer","stone");
+    public static final DeferredBlock<Block> BLACKSTONE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","blackstone_villager_drawer","stone");
+    public static final DeferredBlock<Block> PURPUR_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","purpur_block_villager_drawer","stone");
+    public static final DeferredBlock<Block> DEEPSLATE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","deepslate_villager_drawer","deepslate");
+    public static final DeferredBlock<Block> TUFF_VILLAGER_DRAWER =  blockModRegister("villager_drawer","tuff_villager_drawer","tuff");
+    public static final DeferredBlock<Block> PACKED_MUD_VILLAGER_DRAWER =  blockModRegister("villager_drawer","packed_mud_villager_drawer","mud");
+    public static final DeferredBlock<Block> SANDSTONE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","sandstone_villager_drawer","sandstone");
+    public static final DeferredBlock<Block> RED_SANDSTONE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","red_sandstone_villager_drawer","sandstone");
+    public static final DeferredBlock<Block> QUARTZ_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","quartz_block_villager_drawer","sandstone");
+    public static final DeferredBlock<Block> NETHER_BRICKS_VILLAGER_DRAWER =  blockModRegister("villager_drawer","nether_bricks_villager_drawer","netherbrick");
+    public static final DeferredBlock<Block> BASALT_VILLAGER_DRAWER =  blockModRegister("villager_drawer","basalt_villager_drawer","basalt");
+    public static final DeferredBlock<Block> END_STONE_VILLAGER_DRAWER =  blockModRegister("villager_drawer","end_stone_villager_drawer","endstone");
+    public static final DeferredBlock<Block> COAL_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","coal_block_villager_drawer","mineral_strong");
+    public static final DeferredBlock<Block> IRON_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","iron_block_villager_drawer","metal");
+    public static final DeferredBlock<Block> GOLD_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","gold_block_villager_drawer","metal");
+    public static final DeferredBlock<Block> REDSTONE_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","redstone_block_villager_drawer","metal");
+    public static final DeferredBlock<Block> EMERALD_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","emerald_block_villager_drawer","metal");
+    public static final DeferredBlock<Block> DIAMOND_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","diamond_block_villager_drawer","metal");
+    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","copper_block_villager_drawer","copper");
+    public static final DeferredBlock<Block> LAPIS_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","lapis_block_villager_drawer","mineral_weak");
+    public static final DeferredBlock<Block> NETHERITE_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","netherite_block_villager_drawer","netherite");
+    public static final DeferredBlock<Block> OBSIDIAN_VILLAGER_DRAWER =  blockModRegister("villager_drawer","obsidian_villager_drawer","obsidan");
+    public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","amethyst_block_villager_drawer","amethyst");
+    public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","dripstone_block_villager_drawer","dripstone");
+    public static final DeferredBlock<Block> BEDROCK_VILLAGER_DRAWER =  blockModRegister("villager_drawer","bedrock_villager_drawer","bedrock");
+
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
     {

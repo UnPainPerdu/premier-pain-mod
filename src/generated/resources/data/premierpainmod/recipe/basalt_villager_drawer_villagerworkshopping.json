@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:basalt"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:basalt_villager_drawer"
+  }
+}

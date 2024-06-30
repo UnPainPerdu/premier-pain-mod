@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:redstone_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:redstone_block_villager_drawer"
+  }
+}

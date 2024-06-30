@@ -17,7 +17,8 @@ public class FrenchLanguageProvider extends LanguageProvider
     protected void addTranslations()
     {
         add("itemGroup.premierpainmod", "Mod Premier Pain");
-        add("container."+ PremierPainMod.MODID +"villager_workshop","Atelier du villageois");
+        add("container."+ PremierPainMod.MODID +".villager_workshop","Atelier du villageois");
+        add("container."+ PremierPainMod.MODID +".villager_drawer","Tiroir du villageois");
         //item
         add(ItemRegister.VILLAGER_ICON.get(), "Icone de villageois");
         //block
@@ -75,7 +76,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         tableTranslation(suffix, translationSuffix);
         chairTranslation(suffix, translationSuffix);
         throneChairTranslation(suffix, translationSuffix);
-
+        drawerTranslation(suffix,translationSuffix);
+        shelfTranslation(suffix,translationSuffix);
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "Statue de villageois 'Suffix'"
     private void statueTranslation(String suffix, String translation)
@@ -117,6 +119,18 @@ public class FrenchLanguageProvider extends LanguageProvider
     {
         String pedestal = "_villager_throne_chair";
         String translationPedestal = "Chaise seigneurial en ";
+        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+    }
+    private void drawerTranslation(String suffix, String translation)
+    {
+        String pedestal = "_villager_drawer";
+        String translationPedestal = "Tiroir du villageois en ";
+        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+    }
+    private void shelfTranslation(String suffix, String translation)
+    {
+        String pedestal = "_villager_shelf";
+        String translationPedestal = "Etagère du villageois en ";
         add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
     }
 }

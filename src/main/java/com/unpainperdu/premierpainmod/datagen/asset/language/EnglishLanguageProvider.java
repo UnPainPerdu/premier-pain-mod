@@ -17,7 +17,8 @@ public class EnglishLanguageProvider extends LanguageProvider
     protected void addTranslations()
     {
         add("itemGroup.premierpainmod", "Premier Pain mod");
-        add("container."+ PremierPainMod.MODID +"villager_workshop","Villager workshop");
+        add("container."+ PremierPainMod.MODID +".villager_workshop","Villager workshop");
+        add("container."+ PremierPainMod.MODID +".villager_drawer","Villager drawer");
         //item
         add(ItemRegister.VILLAGER_ICON.get(), "Villager icon");
         //block
@@ -75,6 +76,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         tableTranslation(suffix);
         chairTranslation(suffix);
         throneChairTranslation(suffix);
+        drawerTranslation(suffix);
+        shelfTranslation(suffix);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
@@ -85,6 +88,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         tableTranslation(suffix1, suffix2, isSuffix2Translate);
         chairTranslation(suffix1, suffix2, isSuffix2Translate);
         throneChairTranslation(suffix1, suffix2, isSuffix2Translate);
+        drawerTranslation(suffix1, suffix2, isSuffix2Translate);
+        shelfTranslation(suffix1, suffix2, isSuffix2Translate);
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
     private void statueTranslation(String suffix)
@@ -216,6 +221,50 @@ public class EnglishLanguageProvider extends LanguageProvider
         String translation1 = capitalize(suffix1);
         String table = "_villager_throne_chair";
         String translationTable = " villager throne chair";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
+        }
+    }
+    private void drawerTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String table = "_villager_drawer";
+        String translationTable = " villager drawer";
+        add("block."+PremierPainMod.MODID+"."+ suffix + table,translation + translationTable);
+    }
+
+    private void drawerTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String table = "_villager_drawer";
+        String translationTable = " villager drawer";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
+        }
+    }
+    private void shelfTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String table = "_villager_shelf";
+        String translationTable = " villager self";
+        add("block."+PremierPainMod.MODID+"."+ suffix + table,translation + translationTable);
+    }
+
+    private void shelfTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String table = "_villager_shelf";
+        String translationTable = " villager self";
         if (!isSuffix2Translate)
         {
             add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);

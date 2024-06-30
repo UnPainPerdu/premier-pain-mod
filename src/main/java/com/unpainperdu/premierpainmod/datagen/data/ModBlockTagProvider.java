@@ -21,8 +21,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.@NotNull Provider pProvider) {
-        for (DeferredBlock<Block> Defferedblock : BlockList.ALL_BLOCKS) {
+    protected void addTags(HolderLookup.@NotNull Provider pProvider)
+    {
+        for (DeferredBlock<Block> Defferedblock : BlockList.ALL_BLOCKS)
+        {
             Block block = Defferedblock.get();
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MODID + ":", "");
             //mineable with pickaxe

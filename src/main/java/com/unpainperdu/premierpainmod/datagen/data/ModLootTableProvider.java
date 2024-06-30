@@ -6,6 +6,8 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWo
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerShelf;
 import com.unpainperdu.premierpainmod.util.register.BlockList;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import net.minecraft.core.HolderLookup;
@@ -67,6 +69,12 @@ public class ModLootTableProvider extends LootTableProvider
                     } else if (block instanceof VillagerThroneChairBlock)
                     {
                         villagerThroneChairLootTableGenerator(block);
+                    }else if (block instanceof VillagerDrawer)
+                    {
+                        villagerDrawerLootTableGenerator(block);
+                    }else if (block instanceof VillagerShelf)
+                    {
+                        villagerShelfLootTableGenerator(block);
                     } else
                     {
                         normalBlockLootTableGenerator(block);
@@ -106,6 +114,14 @@ public class ModLootTableProvider extends LootTableProvider
         private void villagerThroneChairLootTableGenerator(Block chair)
         {
             super.add(chair, this.createSinglePropConditionTable(chair, VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER));
+        }
+        private void villagerDrawerLootTableGenerator(Block villagerDrawer)
+        {
+            super.add(villagerDrawer, this.createSinglePropConditionTable(villagerDrawer, VillagerWorkshop.PART, TwoBlockWidthPart.RIGHT));
+        }
+        private void villagerShelfLootTableGenerator(Block villagerShelf)
+        {
+            super.add(villagerShelf, this.createSinglePropConditionTable(villagerShelf, VillagerWorkshop.PART, TwoBlockWidthPart.RIGHT));
         }
     }
 }
