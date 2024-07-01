@@ -36,14 +36,14 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
         @Override
         protected void onOpen(Level pLevel, BlockPos pBlockPos, BlockState pBlockState)
         {
-            VillagerDrawerBlockEntity.this.playSound(pBlockState, SoundEvents.BARREL_OPEN, pBlockPos);
+            VillagerDrawerBlockEntity.this.playSound(pBlockState, SoundEvents.BARREL_OPEN, pBlockPos, pLevel);
             VillagerDrawerBlockEntity.this.updateBlockState(pBlockState, true);
         }
 
         @Override
         protected void onClose(Level pLevel, BlockPos pBlockPos, BlockState pBlockState)
         {
-            VillagerDrawerBlockEntity.this.playSound(pBlockState, SoundEvents.BARREL_CLOSE, pBlockPos);
+            VillagerDrawerBlockEntity.this.playSound(pBlockState, SoundEvents.BARREL_CLOSE, pBlockPos, pLevel);
             VillagerDrawerBlockEntity.this.updateBlockState(pBlockState, false);
         }
 
@@ -141,12 +141,9 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
             this.openersCounter.recheckOpeners(this.getLevel(), this.getBlockPos(), this.getBlockState());
         }
     }
-    void playSound(BlockState pState, SoundEvent pSound, BlockPos pos)
+    void playSound(BlockState pState, SoundEvent pSound, BlockPos pos, Level level)
     {
-        double d0 = (double)this.worldPosition.getX() + 0.5 + (double)pos.getX() / 2.0;
-        double d1 = (double)this.worldPosition.getY() + 0.5 + (double)pos.getY() / 2.0;
-        double d2 = (double)this.worldPosition.getZ() + 0.5 + (double)pos.getZ() / 2.0;
-        this.level.playSound(null, d0, d1, d2, pSound, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
+        level.playSound(null, pos, pSound, SoundSource.BLOCKS, 1.0F, 1.0F);
     }
     void updateBlockState(BlockState pState, boolean pOpen)
     {
