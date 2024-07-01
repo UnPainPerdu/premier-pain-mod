@@ -21,7 +21,7 @@ public class BlockEntityRegister
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, PremierPainMod.MODID);
 
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<PedestalBlockEntity>> PEDESTAL_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("pedestal_block_entity",() -> BlockEntityType.Builder.of(PedestalBlockEntity::new, (listPedestalHelper()).toArray(new Block[0])).build(null));
-    public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerDrawerBlockEntity>> VILLAGER_DRAWER_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("villager_drawer_block_entity",() -> BlockEntityType.Builder.of(VillagerDrawerBlockEntity::new, BlockRegister.TEST_DRAWER.get()).build(null));
+    public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerDrawerBlockEntity>> VILLAGER_DRAWER_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("villager_drawer_block_entity",() -> BlockEntityType.Builder.of(VillagerDrawerBlockEntity::new, (listDrawerHelper()).toArray(new Block[0])).build(null));
 
     public static void register(IEventBus modEventBus)
     {
