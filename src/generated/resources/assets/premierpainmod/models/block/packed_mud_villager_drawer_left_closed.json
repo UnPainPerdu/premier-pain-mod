@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_drawer/villager_drawer_left_closed",
+  "textures": {
+    "0": "premierpainmod:block/multiple_use_texture/packed_mud_villager"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,open=false,villagerworkshoppart=left,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_closed",
+      "y": 270
+    },
+    "facing=east,open=false,villagerworkshoppart=left,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_closed",
+      "y": 270
+    },
+    "facing=east,open=false,villagerworkshoppart=right,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_closed",
+      "y": 270
+    },
+    "facing=east,open=false,villagerworkshoppart=right,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_closed",
+      "y": 270
+    },
+    "facing=east,open=true,villagerworkshoppart=left,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_opened",
+      "y": 270
+    },
+    "facing=east,open=true,villagerworkshoppart=left,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_opened",
+      "y": 270
+    },
+    "facing=east,open=true,villagerworkshoppart=right,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_opened",
+      "y": 270
+    },
+    "facing=east,open=true,villagerworkshoppart=right,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_opened",
+      "y": 270
+    },
+    "facing=north,open=false,villagerworkshoppart=left,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_closed",
+      "y": 180
+    },
+    "facing=north,open=false,villagerworkshoppart=left,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_closed",
+      "y": 180
+    },
+    "facing=north,open=false,villagerworkshoppart=right,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_closed",
+      "y": 180
+    },
+    "facing=north,open=false,villagerworkshoppart=right,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_closed",
+      "y": 180
+    },
+    "facing=north,open=true,villagerworkshoppart=left,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_opened",
+      "y": 180
+    },
+    "facing=north,open=true,villagerworkshoppart=left,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_opened",
+      "y": 180
+    },
+    "facing=north,open=true,villagerworkshoppart=right,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_opened",
+      "y": 180
+    },
+    "facing=north,open=true,villagerworkshoppart=right,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_opened",
+      "y": 180
+    },
+    "facing=south,open=false,villagerworkshoppart=left,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_closed"
+    },
+    "facing=south,open=false,villagerworkshoppart=left,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_closed"
+    },
+    "facing=south,open=false,villagerworkshoppart=right,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_closed"
+    },
+    "facing=south,open=false,villagerworkshoppart=right,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_closed"
+    },
+    "facing=south,open=true,villagerworkshoppart=left,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_opened"
+    },
+    "facing=south,open=true,villagerworkshoppart=left,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_opened"
+    },
+    "facing=south,open=true,villagerworkshoppart=right,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_opened"
+    },
+    "facing=south,open=true,villagerworkshoppart=right,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_opened"
+    },
+    "facing=west,open=false,villagerworkshoppart=left,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_closed",
+      "y": 90
+    },
+    "facing=west,open=false,villagerworkshoppart=left,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_closed",
+      "y": 90
+    },
+    "facing=west,open=false,villagerworkshoppart=right,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_closed",
+      "y": 90
+    },
+    "facing=west,open=false,villagerworkshoppart=right,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_closed",
+      "y": 90
+    },
+    "facing=west,open=true,villagerworkshoppart=left,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_opened",
+      "y": 90
+    },
+    "facing=west,open=true,villagerworkshoppart=left,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_left_opened",
+      "y": 90
+    },
+    "facing=west,open=true,villagerworkshoppart=right,waterlogged=false": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_opened",
+      "y": 90
+    },
+    "facing=west,open=true,villagerworkshoppart=right,waterlogged=true": {
+      "model": "premierpainmod:block/sandstone_villager_drawer_right_opened",
+      "y": 90
+    }
+  }
+}

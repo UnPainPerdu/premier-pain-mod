@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -22,6 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -30,7 +32,18 @@ import org.jetbrains.annotations.Nullable;
 
 public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
 {
-    private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
+    private static final VoxelShape RIGHT_SHAPE_SOUTH = Block.box(2, 0, 2, 16, 16, 16);
+    private static final VoxelShape LEFT_SHAPE_SOUTH = Block.box(0, 0, 2, 14, 16, 16);
+
+    private static final VoxelShape RIGHT_SHAPE_NORTH = Block.box(0, 0, 0, 14, 16, 14);
+    private static final VoxelShape LEFT_SHAPE_NORTH = Block.box(2, 0, 0, 16, 16, 14);
+
+    private static final VoxelShape RIGHT_SHAPE_WEST = Block.box(0, 0, 2, 14, 16, 16);
+    private static final VoxelShape LEFT_SHAPE_WEST = Block.box(0, 0, 0, 14, 16, 14);
+
+    private static final VoxelShape RIGHT_SHAPE_EAST = Block.box(2, 0, 0, 16, 16, 14);
+    private static final VoxelShape LEFT_SHAPE_EAST = Block.box(2, 0, 2, 16, 16, 16);
+
     public static final MapCodec<VillagerDrawer> CODEC = simpleCodec(VillagerDrawer::new);
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
@@ -47,9 +60,44 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
     }
 
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext)
     {
-        return SHAPE;
+        TwoBlockWidthPart twoBlockWidthPart = blockState.getValue(PART);
+        Direction direction = blockState.getValue(FACING);
+
+        if(direction == Direction.SOUTH)
+        {
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
+            {
+                return RIGHT_SHAPE_SOUTH;
+            } else {
+                return LEFT_SHAPE_SOUTH;
+            }
+        } else if (direction == Direction.WEST)
+        {
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
+            {
+                return RIGHT_SHAPE_WEST;
+            } else {
+                return LEFT_SHAPE_WEST;
+            }
+        } else if (direction == Direction.EAST)
+        {
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
+            {
+                return RIGHT_SHAPE_EAST;
+            } else {
+                return LEFT_SHAPE_EAST;
+            }
+        } else
+        {
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
+            {
+                return RIGHT_SHAPE_NORTH;
+            } else {
+                return LEFT_SHAPE_NORTH;
+            }
+        }
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)

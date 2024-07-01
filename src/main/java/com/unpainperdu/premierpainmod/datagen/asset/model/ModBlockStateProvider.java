@@ -10,6 +10,7 @@ import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBloc
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.util.register.BlockList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -47,6 +49,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if(block instanceof VillagerTableBlock) {villagerTableWithItem(block);}
             else if(block instanceof VillagerChairBlock) {villagerChairWithItem(block);}
             else if(block instanceof VillagerThroneChairBlock) {villagerThroneChairWithItem(block);}
+            else if(block instanceof VillagerDrawer) {villagerDrawerWithItem(block);}
         }
     }
     private void simpleBlockWithItem(Block block)
@@ -628,9 +631,56 @@ public class ModBlockStateProvider extends BlockStateProvider
             default: return "_pink";
         }
     }
-
     private ResourceLocation key(Block block)
     {
         return BuiltInRegistries.BLOCK.getKey(block);
+    }
+
+    private void villagerDrawerWithItem(Block villagerDrawer)
+    {
+        String villagerDrawerName = BuiltInRegistries.BLOCK.getKey(villagerDrawer).toString().replace(PremierPainMod.MODID+":","");
+        String material = villagerDrawerName.replace("_drawer","");
+
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerDrawer);
+        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
+        variantBuilder.forAllStates(state ->
+        {
+            if(state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
+            {
+                if(state.getValue(VillagerDrawer.OPEN) == FALSE)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(villagerDrawer).toString() + "_right_closed", "premierpainmod:block/villager_drawer/villager_drawer_right_closed").texture("0","block/multiple_use_texture/" + material))
+                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(villagerDrawer).toString() + "_right_opened", "premierpainmod:block/villager_drawer/villager_drawer_right_opened").texture("0","block/multiple_use_texture/" + material))
+                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                            .build();
+                }
+            }
+            else
+            {
+                if(state.getValue(VillagerDrawer.OPEN) == FALSE)
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(villagerDrawer).toString() + "_left_closed", "premierpainmod:block/villager_drawer/villager_drawer_left_closed").texture("0","block/multiple_use_texture/" + material))
+                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                            .build();
+                }
+                else
+                {
+                    return ConfiguredModel.builder()
+                            .modelFile(models().withExistingParent(key(villagerDrawer).toString() + "_left_opened", "premierpainmod:block/villager_drawer/villager_drawer_left_opened").texture("0","block/multiple_use_texture/" + material))
+                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                            .build();
+                }
+            }
+        });
+        ModelFile villagerWorkshopModel = models().withExistingParent(key(villagerDrawer).toString(),"premierpainmod:block/villager_drawer/villager_drawer_m").texture("0","block/multiple_use_texture/" + material);
+        itemModels().getBuilder(key(villagerDrawer).getPath()).parent(villagerWorkshopModel);
     }
 }
