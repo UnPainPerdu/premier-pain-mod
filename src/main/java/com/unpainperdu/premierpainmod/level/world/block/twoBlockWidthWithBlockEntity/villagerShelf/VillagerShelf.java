@@ -2,7 +2,10 @@ package com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockE
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.AbstractTwoBlockWidthWithBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerShelfBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
@@ -13,25 +16,13 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
 public abstract class VillagerShelf extends AbstractTwoBlockWidthWithBlockEntity
 {
-    public static final List<BooleanProperty> SLOT_OCCUPIED_PROPERTIES = List.of(
-            BlockStateProperties.CHISELED_BOOKSHELF_SLOT_0_OCCUPIED,
-            BlockStateProperties.CHISELED_BOOKSHELF_SLOT_1_OCCUPIED,
-            BlockStateProperties.CHISELED_BOOKSHELF_SLOT_2_OCCUPIED,
-            BlockStateProperties.CHISELED_BOOKSHELF_SLOT_3_OCCUPIED,
-            BlockStateProperties.CHISELED_BOOKSHELF_SLOT_4_OCCUPIED,
-            BlockStateProperties.CHISELED_BOOKSHELF_SLOT_5_OCCUPIED
-    );
 
     public VillagerShelf(BlockBehaviour.Properties pProperties)
     {
@@ -50,7 +41,7 @@ public abstract class VillagerShelf extends AbstractTwoBlockWidthWithBlockEntity
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
     {
-        return null;
+        return new VillagerShelfBlockEntity(pPos, pState);
     }
 
     @Override
@@ -63,8 +54,18 @@ public abstract class VillagerShelf extends AbstractTwoBlockWidthWithBlockEntity
         else
         {
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+            if (blockentity instanceof VillagerShelfBlockEntity)
+            {
+                pPlayer.openMenu((VillagerShelfBlockEntity)blockentity);
+            }
             return InteractionResult.CONSUME;
         }
+    }
+    @Override
+    protected void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving)
+    {
+        Containers.dropContentsOnDestroy(pState, pNewState, pLevel, pPos);
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
     @Override
     protected RenderShape getRenderShape(BlockState pState) {

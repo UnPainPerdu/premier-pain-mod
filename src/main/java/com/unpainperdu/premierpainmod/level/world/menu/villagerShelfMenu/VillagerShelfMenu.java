@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.menu.villagerDrawerMenu;
+package com.unpainperdu.premierpainmod.level.world.menu.villagerShelfMenu;
 
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import net.minecraft.world.Container;
@@ -10,48 +10,50 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
-public class VillagerDrawerMenu extends AbstractContainerMenu
+public class VillagerShelfMenu extends AbstractContainerMenu
 {
-    private static final int SLOTS_PER_ROW = 9;
-    private static final int ROW = 3;
+    private static final int SLOTS_PER_ROW = 3;
+    private static final int ROW = 2;
     private final Container container;
     private final int containerRows;
 
 
-    public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
+    public static VillagerShelfMenu VillagerShelfMenu(int pContainerId, Inventory pPlayerInventory)
     {
-        return new VillagerDrawerMenu(MenuTypesRegister.VILLAGER_DRAWER.get(), pContainerId, pPlayerInventory, ROW);
+        return new VillagerShelfMenu(MenuTypesRegister.VILLAGER_SHELF.get(), pContainerId, pPlayerInventory, ROW);
     }
-    public static VillagerDrawerMenu VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory, Container pContainer)
+    public static VillagerShelfMenu VillagerShelfMenu(int pContainerId, Inventory pPlayerInventory, Container pContainer)
     {
-        return new VillagerDrawerMenu(MenuTypesRegister.VILLAGER_DRAWER.get(), pContainerId, pPlayerInventory, pContainer, ROW);
+        return new VillagerShelfMenu(MenuTypesRegister.VILLAGER_SHELF.get(), pContainerId, pPlayerInventory, pContainer, ROW);
     }
 
-    private VillagerDrawerMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, int pRows)
+    private VillagerShelfMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, int pRows)
     {
         this(pType, pContainerId, pPlayerInventory, new SimpleContainer(SLOTS_PER_ROW * pRows), pRows);
     }
 
-    public VillagerDrawerMenu(int pContainerId, Inventory pPlayerInventory)
+    public VillagerShelfMenu(int pContainerId, Inventory pPlayerInventory)
     {
-        this(MenuTypesRegister.VILLAGER_DRAWER.get(),pContainerId, pPlayerInventory,  new SimpleContainer(SLOTS_PER_ROW * ROW),ROW);
+        this(MenuTypesRegister.VILLAGER_SHELF.get(),pContainerId, pPlayerInventory,  new SimpleContainer(SLOTS_PER_ROW * ROW),ROW);
     }
 
-    public VillagerDrawerMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, Container pContainer, int pRows)
+    public VillagerShelfMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, Container pContainer, int pRows)
     {
-        super(MenuTypesRegister.VILLAGER_DRAWER.get(), pContainerId);
+        super(MenuTypesRegister.VILLAGER_SHELF.get(), pContainerId);
 
         checkContainerSize(pContainer, SLOTS_PER_ROW * ROW);
         this.container = pContainer;
         this.containerRows = pRows;
         this.container.startOpen(pPlayerInventory.player);
-        int i = (this.containerRows - 4) * 18;
+        int i = (3 - 4) * 18;
 
+        //parcours les lignes
         for (int j = 0; j < this.containerRows; j++)
         {
+            //parcours les cases
             for (int k = 0; k < SLOTS_PER_ROW; k++)
             {
-                this.addSlot(new Slot(this.container, k + j * SLOTS_PER_ROW, 8 + k * 18, 18 + j * 18));
+                this.addSlot(new Slot(this.container, k + j * SLOTS_PER_ROW, 8 + (k+3) * 18, 18 + j * 18));
             }
         }
 

@@ -31,10 +31,6 @@ public class StandingVillagerShelf extends VillagerShelf
         super(pProperties);
         BlockState blockstate = this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE);
 
-        for (BooleanProperty booleanproperty : SLOT_OCCUPIED_PROPERTIES)
-        {
-            blockstate = blockstate.setValue(booleanproperty, Boolean.valueOf(false));
-        }
         this.registerDefaultState(blockstate);
     }
 
@@ -53,6 +49,5 @@ public class StandingVillagerShelf extends VillagerShelf
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
         pBuilder.add(new Property[]{FACING, PART, WATERLOGGED});
-        SLOT_OCCUPIED_PROPERTIES.forEach(p_261456_ -> pBuilder.add(p_261456_));
     }
 }

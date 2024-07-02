@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.client;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.client.gui.screen.VillagerShelfScreen.VillagerShelfScreen;
 import com.unpainperdu.premierpainmod.client.gui.screen.villagerWorkshopRecipeScreen.VillagerWorkshopRecipeScreen;
 import com.unpainperdu.premierpainmod.client.gui.screen.VillagerDrawerScreen.VillagerDrawerScreen;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
@@ -18,5 +19,6 @@ public class ScreenRegister
     {
         event.register(MenuTypesRegister.VILLAGER_WORKSHOP.get(), VillagerWorkshopRecipeScreen::new);
         event.register(MenuTypesRegister.VILLAGER_DRAWER.get(), VillagerDrawerScreen::new);
+        event.register(MenuTypesRegister.VILLAGER_SHELF.get(), VillagerShelfScreen::new);
     }
 }
