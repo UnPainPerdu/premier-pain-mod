@@ -6,8 +6,9 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerB
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -27,8 +28,8 @@ public class BlockRegister
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
     //test zone
-    public static final DeferredBlock<Block> TEST_DRAWER = blockModRegister("villager_drawer","test_villager_drawer","bedrock");
-    public static final DeferredBlock<Block> TEST_SHELF = blockModRegister("villager_shelf","test_villager_shelf", "bedrock");
+    public static final DeferredBlock<Block> TEST_STANDING_SHELF = blockModRegister("standing_villager_shelf","test_standing_villager_shelf", "bedrock");
+    public static final DeferredBlock<Block> TEST_WALL_SHELF = blockModRegister("wall_villager_shelf","test_wall_villager_shelf", "bedrock");
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     /*materials :
@@ -540,9 +541,13 @@ public class BlockRegister
             {
                 return (DeferredBlock<T>) registerBlock(name, () -> new VillagerDrawer(properties));
             }
-            case "villager_shelf":
+            case "standing_villager_shelf":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerShelf(properties));
+                return (DeferredBlock<T>) registerBlock(name, () -> new StandingVillagerShelf(properties));
+            }
+            case "wall_villager_shelf":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new WallVillagerShelf(properties));
             }
             default :
             {
