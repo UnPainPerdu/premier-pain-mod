@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:emerald_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:emerald_block_standing_villager_shelf"
+  }
+}

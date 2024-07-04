@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_shelf/wall/wall_villager_shelf_right",
+  "textures": {
+    "0": "premierpainmod:block/multiple_use_texture/end_stone_villager"
+  }
+}

@@ -20,6 +20,12 @@
     "premierpainmod:diamond_block_villager_throne_chair",
     "premierpainmod:gold_block_villager_drawer",
     "premierpainmod:emerald_block_villager_drawer",
-    "premierpainmod:diamond_block_villager_drawer"
+    "premierpainmod:diamond_block_villager_drawer",
+    "premierpainmod:gold_block_standing_villager_shelf",
+    "premierpainmod:emerald_block_standing_villager_shelf",
+    "premierpainmod:diamond_block_standing_villager_shelf",
+    "premierpainmod:gold_block_wall_villager_shelf",
+    "premierpainmod:emerald_block_wall_villager_shelf",
+    "premierpainmod:diamond_block_wall_villager_shelf"
   ]
 }

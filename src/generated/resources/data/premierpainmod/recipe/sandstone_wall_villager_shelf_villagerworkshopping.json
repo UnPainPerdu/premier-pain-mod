@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:sandstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:sandstone_wall_villager_shelf"
+  }
+}

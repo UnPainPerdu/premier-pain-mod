@@ -129,8 +129,12 @@ public class FrenchLanguageProvider extends LanguageProvider
     }
     private void shelfTranslation(String suffix, String translation)
     {
-        String pedestal = "_villager_shelf";
+        String shelfItem = "_villager_shelf";
+        String wallShelf = "_wall_villager_shelf";
+        String standingShelf = "_standing_villager_shelf";
         String translationPedestal = "Etagère du villageois en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+        add("block."+PremierPainMod.MODID+"."+suffix+shelfItem,translationPedestal + translation);
+        add("block."+PremierPainMod.MODID+"."+suffix+wallShelf,translationPedestal + translation);
+        add("block."+PremierPainMod.MODID+"."+suffix+standingShelf,translationPedestal + translation);
     }
 }

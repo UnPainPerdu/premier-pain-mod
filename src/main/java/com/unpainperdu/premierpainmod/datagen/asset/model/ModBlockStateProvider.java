@@ -11,6 +11,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerB
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.util.register.BlockList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -50,6 +51,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if(block instanceof VillagerChairBlock) {villagerChairWithItem(block);}
             else if(block instanceof VillagerThroneChairBlock) {villagerThroneChairWithItem(block);}
             else if(block instanceof VillagerDrawer) {villagerDrawerWithItem(block);}
+            else if(block instanceof WallVillagerShelf) {wallVillagerShelfWithItem(block);}
         }
     }
     private void simpleBlockWithItem(Block block)
@@ -682,5 +684,30 @@ public class ModBlockStateProvider extends BlockStateProvider
         });
         ModelFile villagerWorkshopModel = models().withExistingParent(key(villagerDrawer).toString(),"premierpainmod:block/villager_drawer/villager_drawer_m").texture("0","block/multiple_use_texture/" + material);
         itemModels().getBuilder(key(villagerDrawer).getPath()).parent(villagerWorkshopModel);
+    }
+    private void wallVillagerShelfWithItem(Block villagerWallShelfWithItem)
+    {
+        String villagerDrawerName = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MODID+":","");
+        String material = villagerDrawerName.replace("_wall_villager_shelf","_villager");
+
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWallShelfWithItem);
+        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
+        variantBuilder.forAllStates(state ->
+        {
+            if(state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(villagerWallShelfWithItem).toString() + "_right", "premierpainmod:block/villager_shelf/wall/wall_villager_shelf_right").texture("0","block/multiple_use_texture/" + material))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            else
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(key(villagerWallShelfWithItem).toString() + "_left", "premierpainmod:block/villager_shelf/wall/wall_villager_shelf_left").texture("0","block/multiple_use_texture/" + material))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+        });
     }
 }

@@ -255,23 +255,33 @@ public class EnglishLanguageProvider extends LanguageProvider
     private void shelfTranslation(String suffix)
     {
         String translation = capitalize(suffix);
-        String table = "_villager_shelf";
-        String translationTable = " villager self";
-        add("block."+PremierPainMod.MODID+"."+ suffix + table,translation + translationTable);
+        String shelfItem = "_villager_shelf";
+        String wallShelf = "_wall_villager_shelf";
+        String standingShelf = "_standing_villager_shelf";
+        String translationTable = " villager shelf";
+        add("block."+PremierPainMod.MODID+"."+ suffix + shelfItem,translation + translationTable);
+        add("block."+PremierPainMod.MODID+"."+ suffix + wallShelf,translation + translationTable);
+        add("block."+PremierPainMod.MODID+"."+ suffix + standingShelf,translation + translationTable);
     }
 
     private void shelfTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
     {
         String translation1 = capitalize(suffix1);
-        String table = "_villager_shelf";
-        String translationTable = " villager self";
+        String shelfItem = "_villager_shelf";
+        String wallShelf = "_wall_villager_shelf";
+        String standingShelf = "_standing_villager_shelf";
+        String translationTable = " villager shelf";
         if (!isSuffix2Translate)
         {
-            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + shelfItem, translation1 + translationTable);
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + wallShelf, translation1 + translationTable);
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + standingShelf, translation1 + translationTable);
         }
         else
         {
-            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + shelfItem, translation1 +" "+ suffix2 + translationTable);
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + wallShelf, translation1 +" "+ suffix2 + translationTable);
+            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + standingShelf, translation1 +" "+ suffix2 + translationTable);
         }
     }
 }

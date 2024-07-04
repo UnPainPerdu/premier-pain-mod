@@ -7,7 +7,7 @@ import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBloc
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.util.register.BlockList;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import net.minecraft.core.HolderLookup;
@@ -72,7 +72,7 @@ public class ModLootTableProvider extends LootTableProvider
                     }else if (block instanceof VillagerDrawer)
                     {
                         villagerDrawerLootTableGenerator(block);
-                    }else if (block instanceof StandingVillagerShelf)
+                    }else if (block instanceof VillagerShelf)
                     {
                         villagerShelfLootTableGenerator(block);
                     } else

@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:iron_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:iron_block_standing_villager_shelf"
+  }
+}
