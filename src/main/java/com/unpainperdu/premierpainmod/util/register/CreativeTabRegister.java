@@ -1,14 +1,17 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CreativeTabRegister
@@ -23,11 +26,20 @@ public class CreativeTabRegister
             .icon(() -> ItemRegister.VILLAGER_ICON.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 //Items
+                for(DeferredItem<Item> defferedItem : ItemList.CREATIVE_TAB_ITEMS)
+                {
+                    Item item = defferedItem.get();
+                    output.accept(item);
+                }
                 //Blocks
                     //WorkShop
-                for(DeferredBlock<Block> block : BlockList.ALL_BLOCKS)
+                for(DeferredBlock<Block> defferedBlock : BlockList.ALL_BLOCKS)
                 {
-                    output.accept(block.get());
+                    Block block = defferedBlock.get();
+                    if(!(block instanceof VillagerShelf))
+                    {
+                        output.accept(block);
+                    }
                 }
 
             }).build());

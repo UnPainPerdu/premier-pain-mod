@@ -72,12 +72,18 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
         }
     }
 
+    protected BlockState superUpdateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
+    {
+        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+    }
+
+
     protected @NotNull FluidState getFluidState(BlockState pState)
     {
         return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
     }
 
-    private static Direction getNeighbourDirection(TwoBlockWidthPart pPart, Direction pDirection)
+    protected static Direction getNeighbourDirection(TwoBlockWidthPart pPart, Direction pDirection)
     {
         return pPart == TwoBlockWidthPart.RIGHT ? pDirection : pDirection.getOpposite();
     }

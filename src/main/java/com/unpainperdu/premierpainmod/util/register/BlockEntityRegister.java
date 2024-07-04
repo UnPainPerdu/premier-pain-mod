@@ -24,7 +24,7 @@ public class BlockEntityRegister
 
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<PedestalBlockEntity>> PEDESTAL_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("pedestal_block_entity",() -> BlockEntityType.Builder.of(PedestalBlockEntity::new, (listPedestalHelper()).toArray(new Block[0])).build(null));
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerDrawerBlockEntity>> VILLAGER_DRAWER_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("villager_drawer_block_entity",() -> BlockEntityType.Builder.of(VillagerDrawerBlockEntity::new, (listDrawerHelper()).toArray(new Block[0])).build(null));
-    public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerShelfBlockEntity>> VILLAGER_SHELF_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("villager_shelf_block_entity",() -> BlockEntityType.Builder.of(VillagerShelfBlockEntity::new, BlockRegister.TEST_WALL_SHELF.get(), BlockRegister.TEST_STANDING_SHELF.get()).build(null));
+    public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerShelfBlockEntity>> VILLAGER_SHELF_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("villager_shelf_block_entity",() -> BlockEntityType.Builder.of(VillagerShelfBlockEntity::new, listShelfHelper().toArray(new Block[0])).build(null));
 
 
     public static void register(IEventBus modEventBus)

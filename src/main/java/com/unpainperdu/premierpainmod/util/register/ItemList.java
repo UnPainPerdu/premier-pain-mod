@@ -9,7 +9,8 @@ import java.util.List;
 public class ItemList
 {
     public static List<DeferredItem<Item>> CREATIVE_TAB_ITEMS = Arrays.asList(
-            ItemRegister.TEST_VILLAGER_SHELF
+            // item villager shelf
+            //ItemRegister.OAK_VILLAGER_SHELF
     );
 
 }
