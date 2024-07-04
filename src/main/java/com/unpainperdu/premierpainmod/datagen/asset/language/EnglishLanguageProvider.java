@@ -280,8 +280,6 @@ public class EnglishLanguageProvider extends LanguageProvider
         else
         {
             add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + shelfItem, translation1 +" "+ suffix2 + translationTable);
-            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + wallShelf, translation1 +" "+ suffix2 + translationTable);
-            add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + standingShelf, translation1 +" "+ suffix2 + translationTable);
         }
     }
 }
