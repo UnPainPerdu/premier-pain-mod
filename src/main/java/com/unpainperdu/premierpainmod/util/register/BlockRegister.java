@@ -7,7 +7,6 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerS
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import net.minecraft.world.item.BlockItem;
@@ -464,6 +463,11 @@ public class BlockRegister
         registerBlockItem(name, madeBlock);
         return madeBlock;
     }
+    private static <T extends Block> DeferredBlock<T> registerBlockForShelf(String name, Supplier<T> block)
+    {
+        DeferredBlock<T> madeBlock = BLOCKS.register(name, block);
+        return madeBlock;
+    }
 
     //create the item block of the block
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block)
@@ -629,11 +633,11 @@ public class BlockRegister
             }
             case "standing_villager_shelf":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new StandingVillagerShelf(properties));
+                return (DeferredBlock<T>) registerBlockForShelf(name, () -> new StandingVillagerShelf(properties));
             }
             case "wall_villager_shelf":
             {
-                return (DeferredBlock<T>) registerBlock(name, () -> new WallVillagerShelf(properties));
+                return (DeferredBlock<T>) registerBlockForShelf(name, () -> new WallVillagerShelf(properties));
             }
             default :
             {
