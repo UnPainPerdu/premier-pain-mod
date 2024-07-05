@@ -27,21 +27,21 @@ import org.jetbrains.annotations.Nullable;
 
 public class StandingVillagerShelf extends VillagerShelf
 {
-    private static final BooleanProperty HAS_SHELF_ON_TOP = BooleanProperty.create("has_shelf_on_top");
+    public static final BooleanProperty HAS_SHELF_ON_TOP = BooleanProperty.create("has_shelf_on_top");
 
-    private static final BooleanProperty HAS_SHELF_BELOW = BooleanProperty.create("has_shelf_below");
+    public static final BooleanProperty HAS_SHELF_BELOW = BooleanProperty.create("has_shelf_below");
 
-    private static final VoxelShape RIGHT_SHAPE_SOUTH = Block.box(1, 4, 10, 16, 15, 16);
-    private static final VoxelShape LEFT_SHAPE_SOUTH = Block.box(0, 4, 10, 15, 15, 16);
+    private static final VoxelShape RIGHT_SHAPE_SOUTH = Block.box(1, 0, 4, 16, 16, 16);
+    private static final VoxelShape LEFT_SHAPE_SOUTH = Block.box(0, 0, 4, 15, 16, 16);
 
-    private static final VoxelShape RIGHT_SHAPE_NORTH = Block.box(0, 4, 0, 15, 15, 6);
-    private static final VoxelShape LEFT_SHAPE_NORTH = Block.box(1, 4, 0, 16, 15, 6);
+    private static final VoxelShape RIGHT_SHAPE_NORTH = Block.box(0, 0, 0, 15, 16, 12);
+    private static final VoxelShape LEFT_SHAPE_NORTH = Block.box(1, 0, 0, 16, 16, 12);
 
-    private static final VoxelShape RIGHT_SHAPE_WEST = Block.box(0, 4, 1, 6, 15, 16);
-    private static final VoxelShape LEFT_SHAPE_WEST = Block.box(0, 4, 0, 6, 15, 15);
+    private static final VoxelShape RIGHT_SHAPE_WEST = Block.box(0, 4, 1, 12, 16, 16);
+    private static final VoxelShape LEFT_SHAPE_WEST = Block.box(0, 4, 0, 12, 16, 15);
 
-    private static final VoxelShape RIGHT_SHAPE_EAST = Block.box(10, 4, 0, 16, 15, 15);
-    private static final VoxelShape LEFT_SHAPE_EAST = Block.box(10, 4, 1, 16, 15, 16);
+    private static final VoxelShape RIGHT_SHAPE_EAST = Block.box(4, 0, 0, 16, 16, 15);
+    private static final VoxelShape LEFT_SHAPE_EAST = Block.box(4, 0, 1, 16, 16, 16);
 
     public static final MapCodec<StandingVillagerShelf> CODEC = simpleCodec(StandingVillagerShelf::new);
 

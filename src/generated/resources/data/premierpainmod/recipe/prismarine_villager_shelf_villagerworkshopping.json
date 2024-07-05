@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:prismarine"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:prismarine_villager_shelf"
+  }
+}

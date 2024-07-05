@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/villager_shelf/standing/middle_standing_villager_shelf_left",
+  "textures": {
+    "0": "premierpainmod:block/multiple_use_texture/netherite_block_villager"
+  }
+}
