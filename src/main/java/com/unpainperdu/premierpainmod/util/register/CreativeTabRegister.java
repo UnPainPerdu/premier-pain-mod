@@ -25,14 +25,7 @@ public class CreativeTabRegister
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> ItemRegister.VILLAGER_ICON.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                //Items
-                for(DeferredItem<Item> defferedItem : ItemList.CREATIVE_TAB_ITEMS)
-                {
-                    Item item = defferedItem.get();
-                    output.accept(item);
-                }
                 //Blocks
-                    //WorkShop
                 for(DeferredBlock<Block> defferedBlock : BlockList.ALL_BLOCKS)
                 {
                     Block block = defferedBlock.get();
@@ -40,6 +33,12 @@ public class CreativeTabRegister
                     {
                         output.accept(block);
                     }
+                }
+                //Items
+                for(DeferredItem<Item> defferedItem : ItemList.CREATIVE_TAB_ITEMS)
+                {
+                    Item item = defferedItem.get();
+                    output.accept(item);
                 }
 
             }).build());

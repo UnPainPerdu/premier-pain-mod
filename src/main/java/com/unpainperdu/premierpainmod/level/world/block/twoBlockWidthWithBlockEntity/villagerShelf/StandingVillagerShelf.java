@@ -28,13 +28,27 @@ import org.jetbrains.annotations.Nullable;
 public class StandingVillagerShelf extends VillagerShelf
 {
     private static final BooleanProperty HAS_SHELF_ON_TOP = BooleanProperty.create("has_shelf_on_top");
-    private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
+
+    private static final BooleanProperty HAS_SHELF_BELOW = BooleanProperty.create("has_shelf_below");
+
+    private static final VoxelShape RIGHT_SHAPE_SOUTH = Block.box(1, 4, 10, 16, 15, 16);
+    private static final VoxelShape LEFT_SHAPE_SOUTH = Block.box(0, 4, 10, 15, 15, 16);
+
+    private static final VoxelShape RIGHT_SHAPE_NORTH = Block.box(0, 4, 0, 15, 15, 6);
+    private static final VoxelShape LEFT_SHAPE_NORTH = Block.box(1, 4, 0, 16, 15, 6);
+
+    private static final VoxelShape RIGHT_SHAPE_WEST = Block.box(0, 4, 1, 6, 15, 16);
+    private static final VoxelShape LEFT_SHAPE_WEST = Block.box(0, 4, 0, 6, 15, 15);
+
+    private static final VoxelShape RIGHT_SHAPE_EAST = Block.box(10, 4, 0, 16, 15, 15);
+    private static final VoxelShape LEFT_SHAPE_EAST = Block.box(10, 4, 1, 16, 15, 16);
+
     public static final MapCodec<StandingVillagerShelf> CODEC = simpleCodec(StandingVillagerShelf::new);
 
     public StandingVillagerShelf(Properties pProperties)
     {
         super(pProperties);
-        BlockState blockstate = this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE).setValue(HAS_SHELF_ON_TOP,Boolean.FALSE);
+        BlockState blockstate = this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE).setValue(HAS_SHELF_ON_TOP,Boolean.FALSE).setValue(HAS_SHELF_BELOW,Boolean.FALSE);
 
         this.registerDefaultState(blockstate);
     }
@@ -46,14 +60,49 @@ public class StandingVillagerShelf extends VillagerShelf
     }
 
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext)
     {
-        return SHAPE;
+        TwoBlockWidthPart twoBlockWidthPart = blockState.getValue(PART);
+        Direction direction = blockState.getValue(FACING);
+
+        if(direction == Direction.SOUTH)
+        {
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
+            {
+                return RIGHT_SHAPE_SOUTH;
+            } else {
+                return LEFT_SHAPE_SOUTH;
+            }
+        } else if (direction == Direction.WEST)
+        {
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
+            {
+                return RIGHT_SHAPE_WEST;
+            } else {
+                return LEFT_SHAPE_WEST;
+            }
+        } else if (direction == Direction.EAST)
+        {
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
+            {
+                return RIGHT_SHAPE_EAST;
+            } else {
+                return LEFT_SHAPE_EAST;
+            }
+        } else
+        {
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
+            {
+                return RIGHT_SHAPE_NORTH;
+            } else {
+                return LEFT_SHAPE_NORTH;
+            }
+        }
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED, HAS_SHELF_ON_TOP});
+        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED, HAS_SHELF_ON_TOP, HAS_SHELF_BELOW});
     }
 
     @Override
@@ -76,8 +125,10 @@ public class StandingVillagerShelf extends VillagerShelf
                 if(pFacing == Direction.UP)
                 {
                     return pState.setValue(HAS_SHELF_ON_TOP, this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite()));
-                }
-                else
+                } else if (pFacing == Direction.DOWN)
+                {
+                    return pState.setValue(HAS_SHELF_BELOW, this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite()));
+                } else
                 {
                     return super.superUpdateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
                 }
