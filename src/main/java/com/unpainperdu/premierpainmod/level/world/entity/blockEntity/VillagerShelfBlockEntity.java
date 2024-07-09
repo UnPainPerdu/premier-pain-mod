@@ -1,19 +1,25 @@
 package com.unpainperdu.premierpainmod.level.world.entity.blockEntity;
 
-import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.menu.villagerShelfMenu.VillagerShelfMenu;
 import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 
 public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
 {
@@ -31,9 +37,29 @@ public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
     }
 
     @Override
-    protected NonNullList<ItemStack> getItems()
+    public NonNullList<ItemStack> getItems()
     {
         return this.items;
+    }
+
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries)
+    {
+        CompoundTag compoundtag = new CompoundTag();
+        ContainerHelper.saveAllItems(compoundtag, this.items, true, pRegistries);
+        return compoundtag;
+    }
+
+    public void dowse()
+    {
+        if (this.level != null)
+        {
+            this.markUpdated();
+        }
     }
 
     @Override
@@ -68,4 +94,38 @@ public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
         super.saveAdditional(pTag, pRegistries);
         ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
     }
+
+    private void markUpdated()
+    {
+        this.setChanged();
+        this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+    }
+    @Override
+    public void stopOpen(Player pPlayer)
+    {
+        if (!this.remove && !pPlayer.isSpectator())
+        {
+            System.out.println(this.getItems());
+            this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(pPlayer, this.getBlockState()));
+            this.markUpdated();
+        }
+    }
+
+    @Override
+    protected void applyImplicitComponents(BlockEntity.DataComponentInput pComponentInput) {
+        super.applyImplicitComponents(pComponentInput);
+        pComponentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(this.getItems());
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder pComponents) {
+        super.collectImplicitComponents(pComponents);
+        pComponents.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItems()));
+    }
+
+    @Override
+    public void removeComponentsFromTag(CompoundTag pTag) {
+        pTag.remove("Items");
+    }
+
 }

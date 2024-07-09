@@ -2,20 +2,24 @@ package com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockE
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.AbstractTwoBlockWidthWithBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.PedestalBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerShelfBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -67,8 +71,19 @@ public abstract class VillagerShelf extends AbstractTwoBlockWidthWithBlockEntity
         Containers.dropContentsOnDestroy(pState, pNewState, pLevel, pPos);
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
+
     @Override
     protected RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
+    }
+    public static void dowse(@javax.annotation.Nullable Entity pEntity, LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+
+        BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+        if (blockentity instanceof VillagerShelfBlockEntity)
+        {
+            ((VillagerShelfBlockEntity)blockentity).dowse();
+        }
+
+        pLevel.gameEvent(pEntity, GameEvent.BLOCK_CHANGE, pPos);
     }
 }
