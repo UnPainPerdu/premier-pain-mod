@@ -106,6 +106,12 @@ public class StandingVillagerShelf extends VillagerShelf
     }
 
     @Override
+    public Block getBlockShelf()
+    {
+        return this;
+    }
+
+    @Override
     protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
     {
         if (pState.getValue(WATERLOGGED))

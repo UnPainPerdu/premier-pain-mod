@@ -16,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,16 +25,28 @@ import net.minecraft.world.level.gameevent.GameEvent;
 public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
 {
     private NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
+    private Block BlockShelfBound;
 
     public VillagerShelfBlockEntity(BlockPos pPos, BlockState pBlockState)
     {
         super(BlockEntityRegister.VILLAGER_SHELF_BLOCK_ENTITY.get(), pPos, pBlockState);
     }
 
+    public VillagerShelfBlockEntity(BlockPos pPos, BlockState pBlockState, Block block)
+    {
+        super(BlockEntityRegister.VILLAGER_SHELF_BLOCK_ENTITY.get(), pPos, pBlockState);
+        this.BlockShelfBound = block;
+    }
+
     @Override
     protected Component getDefaultName()
     {
         return Component.empty();
+    }
+
+    public Block getBlockShelfBound()
+    {
+        return this.BlockShelfBound;
     }
 
     @Override
@@ -105,7 +118,6 @@ public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
     {
         if (!this.remove && !pPlayer.isSpectator())
         {
-            System.out.println(this.getItems());
             this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(pPlayer, this.getBlockState()));
             this.markUpdated();
         }

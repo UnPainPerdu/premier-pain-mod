@@ -45,8 +45,10 @@ public abstract class VillagerShelf extends AbstractTwoBlockWidthWithBlockEntity
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
     {
-        return new VillagerShelfBlockEntity(pPos, pState);
+        return new VillagerShelfBlockEntity(pPos, pState, getBlockShelf());
     }
+
+    public abstract Block getBlockShelf();
 
     @Override
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult)

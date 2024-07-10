@@ -89,4 +89,10 @@ public class WallVillagerShelf extends VillagerShelf
     {
         pBuilder.add(new Property[]{FACING, PART, WATERLOGGED});
     }
+
+    @Override
+    public Block getBlockShelf()
+    {
+        return this;
+    }
 }
