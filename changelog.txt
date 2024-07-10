@@ -34,3 +34,14 @@ update neoforge to 21.0.14
 
 remake :
     -How VillagerWorkshop work
+--------------
+1.21-1.6.0
+update neoforge to 21.0.79-beta
+
+add :
+    - Villager Drawer, it's a storage of 3x9 place for each part of this block
+    - Villager shelf, little storage which display his content. Exist in standing and wall form
+
+remake :
+    - Villager pedestal is able to stock 1 item and display it, it works as an item frame
+    - Netherite texture for multiple use
