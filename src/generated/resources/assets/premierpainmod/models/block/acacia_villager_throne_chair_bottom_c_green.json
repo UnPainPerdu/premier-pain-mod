@@ -1,7 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_throne_chair/villager_throne_chair_bottom_carpeted",
   "textures": {
-    "0": "premierpainmod:block/villager_chair/acacia_villager_chair",
+    "0": "premierpainmod:block/multiple_use_texture/acacia_villager",
     "1": "premierpainmod:block/villager_table/carpet/villager_table_carpet_green"
   }
 }

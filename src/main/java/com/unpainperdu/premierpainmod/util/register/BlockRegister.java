@@ -67,13 +67,13 @@ public class BlockRegister
     copper_block
     amethyst_block
     dripstone_block
+    netherite_block
     purpur_block
     coal_block
     redstone_block
     diamond_block
     emerald_block
     lapis_block
-    netherite_block
      */
         //statue
     public static final DeferredBlock<Block> OAK_VILLAGER_STATUE = blockModRegister("villager_statue","oak_villager_statue","wood");

@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/villager_throne_chair/villager_throne_chair_bottom",
   "textures": {
-    "0": "premierpainmod:block/villager_chair/dark_oak_villager_chair"
+    "0": "premierpainmod:block/multiple_use_texture/dark_oak_villager"
   }
 }

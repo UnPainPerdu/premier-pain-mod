@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:item/villager_shelf/oak_villager_shelf"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "premierpainmod:block/villager_chair/villager_chair",
   "textures": {
-    "0": "premierpainmod:block/villager_chair/cherry_villager_chair"
+    "0": "premierpainmod:block/multiple_use_texture/cherry_villager"
   }
 }
