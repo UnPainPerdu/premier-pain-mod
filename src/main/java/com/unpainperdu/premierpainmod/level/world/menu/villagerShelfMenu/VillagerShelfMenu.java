@@ -61,13 +61,13 @@ public class VillagerShelfMenu extends AbstractContainerMenu
         {
             for (int j1 = 0; j1 < 9; j1++)
             {
-                this.addSlot(new Slot(pPlayerInventory, j1 + l * 9 + 9, 8 + j1 * 18, 103 + l * 18 + i));
+                this.addSlot(new Slot(pPlayerInventory, j1 + l * 9 + 9, 8 + j1 * 18, 102 + l * 18 + i));
             }
         }
 
         for (int i1 = 0; i1 < 9; i1++)
         {
-            this.addSlot(new Slot(pPlayerInventory, i1, 8 + i1 * 18, 161 + i));
+            this.addSlot(new Slot(pPlayerInventory, i1, 8 + i1 * 18, 160 + i));
         }
     }
 
