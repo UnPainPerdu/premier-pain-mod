@@ -44,4 +44,4 @@ add :
 
 remake :
     - Villager pedestal is able to stock 1 item and display it, it works as an item frame
-    - Netherite texture for multiple use
+    - Netherite texture for chair / throne chair (other will come later)
