@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_statue/villager_statue_bottom",
   "textures": {
-    "0": "premierpainmod:block/villager_statue/warped_villager_statue_bottom"
+    "0": "premierpainmod:block/multiple_use_texture/warped_villager",
+    "1": "premierpainmod:block/multiple_use_particule/warped_villager"
   }
 }

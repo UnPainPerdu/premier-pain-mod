@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_statue/villager_statue_bottom",
   "textures": {
-    "0": "premierpainmod:block/villager_statue/diorite_villager_statue_bottom"
+    "0": "premierpainmod:block/multiple_use_texture/diorite_villager",
+    "1": "premierpainmod:block/multiple_use_particule/diorite_villager"
   }
 }

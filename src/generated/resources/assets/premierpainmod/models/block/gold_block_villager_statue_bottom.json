@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_statue/villager_statue_bottom",
   "textures": {
-    "0": "premierpainmod:block/villager_statue/gold_block_villager_statue_bottom"
+    "0": "premierpainmod:block/multiple_use_texture/gold_block_villager",
+    "1": "premierpainmod:block/multiple_use_particule/gold_block_villager"
   }
 }
