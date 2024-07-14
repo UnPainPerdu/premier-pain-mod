@@ -1,6 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_pedestal",
+  "parent": "premierpainmod:block/villager_pedestal/villager_pedestal",
   "textures": {
-    "0": "premierpainmod:block/villager_pedestal/oak_villager_pedestal"
+    "0": "premierpainmod:block/multiple_use_texture/oak_villager",
+    "1": "premierpainmod:block/multiple_use_particule/oak_villager"
   }
 }
