@@ -162,7 +162,7 @@ public class VillagerShelfRender implements BlockEntityRenderer<VillagerShelfBlo
                     partTranslationX = -translationToBackOfShelf;
                     partTranslationZ = 0.1f;
                 }
-                zMulti = ModuloA;
+                zMulti = -ModuloA;
                 break;
             }
             case Direction.SOUTH :
@@ -177,7 +177,7 @@ public class VillagerShelfRender implements BlockEntityRenderer<VillagerShelfBlo
                     partTranslationX = 0.1f;
                     partTranslationZ = translationToBackOfShelf;
                 }
-                xMulti = ModuloA;
+                xMulti = -ModuloA;
                 break;
             }
             default :
