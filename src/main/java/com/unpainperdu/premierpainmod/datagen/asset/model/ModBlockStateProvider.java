@@ -131,13 +131,32 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private void villagerBrazierWithItem(Block brazier)
     {
-        String brazierName = BuiltInRegistries.BLOCK.getKey(brazier).toString().replace(PremierPainMod.MODID+":","");
-        // Get a variant block state builder.
+        String name = getName(brazier);
+        String material = name.replace("_villager_brazier","_villager");
+
+        String texture_bottom = "block/multiple_use_texture/" + material;
+        String texture_upper;
+        String particule = "block/multiple_use_particule/" + material;
+
+        if(material.equals("oak_villager")
+            ||material.equals("birch_villager")
+            ||material.equals("spruce_villager")
+            ||material.equals("jungle_villager")
+            ||material.equals("acacia_villager")
+            ||material.equals("dark_oak_villager")
+            ||material.equals("mangrove_villager")
+            ||material.equals("cherry_villager")
+            ||material.equals("bamboo_villager")
+        )
+        {
+            texture_upper = "block/villager_brazier/wood_villager_brazier_upper";
+        }
+        else
+        {
+            texture_upper = texture_bottom;
+        }
+
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(brazier);
-        // Create a partial state and set properties on it.
-        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
-        // Alternatively, forAllStates(Function<BlockState, ConfiguredModel[]>) creates a model for every state.
-        // The passed function will be called once for each possible state.
         variantBuilder.forAllStates(state ->
         {
             if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
@@ -145,7 +164,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 // Return a ConfiguredModel depending on the state's properties.
                 // For example, the following code will rotate the model depending on the horizontal rotation of the block.
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(brazier).toString()+"_bottom","premierpainmod:block/villager_brazier/villager_brazier_bottom").texture("0","block/villager_brazier/" + brazierName + "_bottom"))
+                        .modelFile(models().withExistingParent(getKey(brazier).toString()+"_bottom","premierpainmod:block/villager_brazier/villager_brazier_bottom").texture("0",texture_bottom).texture("1", particule))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }
@@ -154,14 +173,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(state.getValue(BlockStateProperties.LIT ) == TRUE)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_lit", "premierpainmod:block/villager_brazier/villager_brazier_upper_lit").texture("0","block/villager_brazier/" + brazierName + "_upper"))
+                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_lit", "premierpainmod:block/villager_brazier/villager_brazier_upper_lit").texture("0",texture_upper).texture("3", particule))
                             .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_unlit", "premierpainmod:block/villager_brazier/villager_brazier_upper_unlit").texture("0","block/villager_brazier/" + brazierName + "_upper"))
+                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_unlit", "premierpainmod:block/villager_brazier/villager_brazier_upper_unlit").texture("0",texture_upper).texture("3", particule))
                             .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                             .build();
                 }
@@ -169,7 +188,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         });
 
         ModelFile brazierModel = models().withExistingParent(getKey(brazier).toString()+"_m","premierpainmod:block/villager_brazier/villager_brazier_m");
-        itemModels().getBuilder(getKey(brazier).getPath()).parent(brazierModel).texture("3","block/villager_brazier/" + brazierName + "_upper").texture("2","block/villager_brazier/" + brazierName + "_bottom");
+        itemModels().getBuilder(getKey(brazier).getPath()).parent(brazierModel).texture("0", texture_bottom).texture("1", texture_upper);
     }
 
     private void villagerTableWithItem(Block table)

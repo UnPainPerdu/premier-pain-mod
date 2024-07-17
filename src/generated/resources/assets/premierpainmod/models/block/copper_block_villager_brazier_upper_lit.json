@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_lit",
   "textures": {
-    "0": "premierpainmod:block/villager_brazier/copper_block_villager_brazier_upper"
+    "0": "premierpainmod:block/multiple_use_texture/copper_block_villager",
+    "3": "premierpainmod:block/multiple_use_particule/copper_block_villager"
   }
 }

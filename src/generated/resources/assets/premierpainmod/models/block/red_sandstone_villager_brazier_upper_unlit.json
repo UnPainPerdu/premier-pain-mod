@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_unlit",
   "textures": {
-    "0": "premierpainmod:block/villager_brazier/red_sandstone_villager_brazier_upper"
+    "0": "premierpainmod:block/multiple_use_texture/red_sandstone_villager",
+    "3": "premierpainmod:block/multiple_use_particule/red_sandstone_villager"
   }
 }

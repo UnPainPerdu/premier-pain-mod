@@ -1,7 +1,7 @@
 {
   "parent": "premierpainmod:block/basalt_villager_brazier_m",
   "textures": {
-    "2": "premierpainmod:block/villager_brazier/basalt_villager_brazier_bottom",
-    "3": "premierpainmod:block/villager_brazier/basalt_villager_brazier_upper"
+    "0": "premierpainmod:block/multiple_use_texture/basalt_villager",
+    "1": "premierpainmod:block/multiple_use_texture/basalt_villager"
   }
 }

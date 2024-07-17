@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_lit",
   "textures": {
-    "0": "premierpainmod:block/villager_brazier/bamboo_villager_brazier_upper"
+    "0": "premierpainmod:block/villager_brazier/wood_villager_brazier_upper",
+    "3": "premierpainmod:block/multiple_use_particule/bamboo_villager"
   }
 }

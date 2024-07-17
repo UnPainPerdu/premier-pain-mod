@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_bottom",
   "textures": {
-    "0": "premierpainmod:block/villager_brazier/spruce_villager_brazier_bottom"
+    "0": "premierpainmod:block/multiple_use_texture/spruce_villager",
+    "1": "premierpainmod:block/multiple_use_particule/spruce_villager"
   }
 }

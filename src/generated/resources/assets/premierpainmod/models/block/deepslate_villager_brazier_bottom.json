@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_bottom",
   "textures": {
-    "0": "premierpainmod:block/villager_brazier/deepslate_villager_brazier_bottom"
+    "0": "premierpainmod:block/multiple_use_texture/deepslate_villager",
+    "1": "premierpainmod:block/multiple_use_particule/deepslate_villager"
   }
 }
