@@ -45,3 +45,8 @@ add :
 remake :
     - Villager pedestal is able to stock 1 item and display it, it works as an item frame
     - Netherite texture for chair / throne chair (other will come later)
+--------------
+1.21-1.6.1
+fix :
+    - Particules for all village blocks
+    - bad position of displayed items in villager shelf facing south and west
