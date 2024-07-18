@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_lit",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/granite_villager",
-    "3": "premierpainmod:block/multiple_use_particule/granite_villager"
+    "3": "premierpainmod:block/multiple_use_particle/granite_villager"
   }
 }

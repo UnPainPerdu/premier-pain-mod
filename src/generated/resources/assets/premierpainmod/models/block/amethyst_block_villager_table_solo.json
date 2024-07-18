@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_table/villager_table_solo/villager_table_solo",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/amethyst_block_villager",
-    "2": "premierpainmod:block/multiple_use_particule/amethyst_block_villager"
+    "2": "premierpainmod:block/multiple_use_particle/amethyst_block_villager"
   }
 }

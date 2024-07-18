@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_lit",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/nether_bricks_villager",
-    "3": "premierpainmod:block/multiple_use_particule/nether_bricks_villager"
+    "3": "premierpainmod:block/multiple_use_particle/nether_bricks_villager"
   }
 }

@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_bottom",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/stone_villager",
-    "1": "premierpainmod:block/multiple_use_particule/stone_villager"
+    "1": "premierpainmod:block/multiple_use_particle/stone_villager"
   }
 }

@@ -3,6 +3,6 @@
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/bamboo_villager",
     "1": "premierpainmod:block/villager_table/carpet/villager_table_carpet_pink",
-    "2": "premierpainmod:block/multiple_use_particule/bamboo_villager"
+    "2": "premierpainmod:block/multiple_use_particle/bamboo_villager"
   }
 }

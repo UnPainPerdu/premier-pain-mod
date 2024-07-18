@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_lit",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/andesite_villager",
-    "3": "premierpainmod:block/multiple_use_particule/andesite_villager"
+    "3": "premierpainmod:block/multiple_use_particle/andesite_villager"
   }
 }

@@ -3,6 +3,6 @@
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/stone_villager",
     "1": "premierpainmod:block/villager_table/carpet/villager_table_carpet_brown",
-    "2": "premierpainmod:block/multiple_use_particule/stone_villager"
+    "2": "premierpainmod:block/multiple_use_particle/stone_villager"
   }
 }

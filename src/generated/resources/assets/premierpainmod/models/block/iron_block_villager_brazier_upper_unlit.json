@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_unlit",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/iron_block_villager",
-    "3": "premierpainmod:block/multiple_use_particule/iron_block_villager"
+    "3": "premierpainmod:block/multiple_use_particle/iron_block_villager"
   }
 }

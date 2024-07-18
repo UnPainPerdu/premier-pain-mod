@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_lit",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/dripstone_block_villager",
-    "3": "premierpainmod:block/multiple_use_particule/dripstone_block_villager"
+    "3": "premierpainmod:block/multiple_use_particle/dripstone_block_villager"
   }
 }

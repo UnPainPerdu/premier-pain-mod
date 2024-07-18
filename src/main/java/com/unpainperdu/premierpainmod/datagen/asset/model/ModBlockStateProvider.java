@@ -39,10 +39,9 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        //test zone
-        for(DeferredBlock<Block> Defferedblock : BlockList.ALL_BLOCKS)
+        for(DeferredBlock<Block> DeferredBlock : BlockList.ALL_BLOCKS)
         {
-            Block block = Defferedblock.get();
+            Block block = DeferredBlock.get();
             if(block instanceof VillagerWorkshop) {villagerWorkshopWithItem(block);}
             else if(block instanceof VillagerStatue) {villagerStatueWithItem(block);}
             else if(block instanceof VillagerPedestalBlock) {villagerPedestalWithItem(block);}
@@ -53,7 +52,6 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if(block instanceof VillagerDrawer) {villagerDrawerWithItem(block);}
             else if(block instanceof WallVillagerShelf) {wallVillagerShelf(block);}
             else if(block instanceof StandingVillagerShelf) {standingVillagerShelf(block);}
-
         }
     }
     private void simpleBlockWithItem(Block block)
@@ -64,7 +62,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     {
         String name = getName(pedestal);
         String material = name.replace("_villager_pedestal","_villager");
-        ModelFile pedestalModel = models().withExistingParent(getKey(pedestal).toString(),"premierpainmod:block/villager_pedestal/villager_pedestal").texture("0", "block/multiple_use_texture/" + material).texture("1","block/multiple_use_particule/" + material);
+        ModelFile pedestalModel = models().withExistingParent(getKey(pedestal).toString(),"premierpainmod:block/villager_pedestal/villager_pedestal").texture("0", "block/multiple_use_texture/" + material).texture("1","block/multiple_use_particle/" + material);
         simpleBlock(pedestal, pedestalModel);
         itemModels().getBuilder(getKey(pedestal).getPath()).parent(pedestalModel);
     }
@@ -86,14 +84,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                         // Return a ConfiguredModel depending on the state's properties.
                         // For example, the following code will rotate the model depending on the horizontal rotation of the block.
                         return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(getKey(statue).toString()+"_bottom","premierpainmod:block/villager_statue/villager_statue_bottom").texture("0", "block/multiple_use_texture/" + material).texture("1","block/multiple_use_particule/" + material))
+                                .modelFile(models().withExistingParent(getKey(statue).toString()+"_bottom","premierpainmod:block/villager_statue/villager_statue_bottom").texture("0", "block/multiple_use_texture/" + material).texture("1","block/multiple_use_particle/" + material))
                                 .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                                 .build();
                     }
                     else
                     {
                         return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(getKey(statue).toString()+"_upper","premierpainmod:block/villager_statue/villager_statue_upper").texture("0", "block/multiple_use_texture/" + material).texture("1","block/multiple_use_particule/" + material))
+                                .modelFile(models().withExistingParent(getKey(statue).toString()+"_upper","premierpainmod:block/villager_statue/villager_statue_upper").texture("0", "block/multiple_use_texture/" + material).texture("1","block/multiple_use_particle/" + material))
                                 .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                                 .build();
                     }
@@ -136,7 +134,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
         String texture_bottom = "block/multiple_use_texture/" + material;
         String texture_upper;
-        String particule = "block/multiple_use_particule/" + material;
+        String particle = "block/multiple_use_particle/" + material;
 
         if(material.equals("oak_villager")
             ||material.equals("birch_villager")
@@ -164,7 +162,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 // Return a ConfiguredModel depending on the state's properties.
                 // For example, the following code will rotate the model depending on the horizontal rotation of the block.
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(brazier).toString()+"_bottom","premierpainmod:block/villager_brazier/villager_brazier_bottom").texture("0",texture_bottom).texture("1", particule))
+                        .modelFile(models().withExistingParent(getKey(brazier).toString()+"_bottom","premierpainmod:block/villager_brazier/villager_brazier_bottom").texture("0",texture_bottom).texture("1", particle))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }
@@ -173,14 +171,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(state.getValue(BlockStateProperties.LIT ) == TRUE)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_lit", "premierpainmod:block/villager_brazier/villager_brazier_upper_lit").texture("0",texture_upper).texture("3", particule))
+                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_lit", "premierpainmod:block/villager_brazier/villager_brazier_upper_lit").texture("0",texture_upper).texture("3", particle))
                             .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_unlit", "premierpainmod:block/villager_brazier/villager_brazier_upper_unlit").texture("0",texture_upper).texture("3", particule))
+                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_unlit", "premierpainmod:block/villager_brazier/villager_brazier_upper_unlit").texture("0",texture_upper).texture("3", particle))
                             .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                             .build();
                 }
@@ -195,6 +193,8 @@ public class ModBlockStateProvider extends BlockStateProvider
     {
         String name = getName(table);
         String material = name.replace("_villager_table","_villager");
+        String textureTable =  "block/multiple_use_texture/" + material;
+        String textureParticle = "block/multiple_use_particle/" + material;
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(table);
         variantBuilder.forAllStates(state ->
@@ -207,14 +207,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_n", "premierpainmod:block/villager_table/villager_table_duo").texture("0", "block/villager_table/table/" + name))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_n", "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo").texture("0", textureTable).texture("2",textureParticle))
                             .rotationY(270)
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_n_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo_carpeted").texture("0", "block/villager_table/table/" + name).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_n_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo_carpeted").texture("0", textureTable).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)).texture("2", textureParticle))
                             .rotationY(270)
                             .build();
                 }
@@ -225,14 +225,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_w", "premierpainmod:block/villager_table/villager_table_duo").texture("0", "block/villager_table/table/" + name))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_w", "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo").texture("0", textureTable).texture("2",textureParticle))
                             .rotationY(180)
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_w_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo_carpeted").texture("0", "block/villager_table/table/" + name).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_w_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo_carpeted").texture("0", textureTable).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)).texture("2", textureParticle))
                             .rotationY(180)
                             .build();
                 }
@@ -243,14 +243,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_s", "premierpainmod:block/villager_table/villager_table_duo").texture("0", "block/villager_table/table/" + name))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_s", "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo").texture("0", textureTable).texture("2", textureParticle))
                             .rotationY(90)
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_s_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo_carpeted").texture("0", "block/villager_table/table/" + name).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_s_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo_carpeted").texture("0", textureTable).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)).texture("2", textureParticle))
                             .rotationY(90)
                             .build();
                 }
@@ -261,14 +261,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_e", "premierpainmod:block/villager_table/villager_table_duo").texture("0", "block/villager_table/table/" + name))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_e", "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo").texture("0", textureTable).texture("2", textureParticle))
                             .rotationY(0)
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_e_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo_carpeted").texture("0", "block/villager_table/table/" + name).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_e_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo_carpeted").texture("0", textureTable).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)).texture("2", textureParticle))
                             .rotationY(0)
                             .build();
                 }
@@ -479,14 +479,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_solo", "premierpainmod:block/villager_table/villager_table_solo/villager_table_solo").texture("0", "block/multiple_use_texture/" + material).texture("2","block/multiple_use_particule/" + material))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_solo", "premierpainmod:block/villager_table/villager_table_solo/villager_table_solo").texture("0", textureTable).texture("2",textureParticle))
                             .rotationY(0)
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_solo_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_solo/villager_table_solo_carpeted").texture("0", "block/multiple_use_texture/" + material).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)).texture("2","block/multiple_use_particule/" + material))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_solo_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_solo/villager_table_solo_carpeted").texture("0", textureTable).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)).texture("2",textureParticle))
                             .rotationY(0)
                             .build();
                 }

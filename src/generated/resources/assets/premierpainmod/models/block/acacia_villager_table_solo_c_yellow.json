@@ -3,6 +3,6 @@
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/acacia_villager",
     "1": "premierpainmod:block/villager_table/carpet/villager_table_carpet_yellow",
-    "2": "premierpainmod:block/multiple_use_particule/acacia_villager"
+    "2": "premierpainmod:block/multiple_use_particle/acacia_villager"
   }
 }

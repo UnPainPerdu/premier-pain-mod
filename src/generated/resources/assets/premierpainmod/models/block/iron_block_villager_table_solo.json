@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_table/villager_table_solo/villager_table_solo",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/iron_block_villager",
-    "2": "premierpainmod:block/multiple_use_particule/iron_block_villager"
+    "2": "premierpainmod:block/multiple_use_particle/iron_block_villager"
   }
 }

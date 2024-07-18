@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/villager_statue/villager_statue_bottom",
   "textures": {
     "0": "premierpainmod:block/multiple_use_texture/redstone_block_villager",
-    "1": "premierpainmod:block/multiple_use_particule/redstone_block_villager"
+    "1": "premierpainmod:block/multiple_use_particle/redstone_block_villager"
   }
 }

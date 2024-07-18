@@ -1,6 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_duo",
+  "parent": "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo",
   "textures": {
-    "0": "premierpainmod:block/villager_table/table/packed_mud_villager_table"
+    "0": "premierpainmod:block/multiple_use_texture/packed_mud_villager",
+    "2": "premierpainmod:block/multiple_use_particle/packed_mud_villager"
   }
 }
