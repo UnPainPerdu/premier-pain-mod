@@ -1,6 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_trio_angle",
+  "parent": "premierpainmod:block/villager_table/villager_table_trio/angle/villager_table_trio_angle",
   "textures": {
-    "0": "premierpainmod:block/villager_table/table/red_sandstone_villager_table"
+    "0": "premierpainmod:block/multiple_use_texture/red_sandstone_villager",
+    "2": "premierpainmod:block/multiple_use_particle/red_sandstone_villager"
   }
 }

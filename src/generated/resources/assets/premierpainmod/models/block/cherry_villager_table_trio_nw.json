@@ -1,6 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_trio_angle",
+  "parent": "premierpainmod:block/villager_table/villager_table_trio/angle/villager_table_trio_angle",
   "textures": {
-    "0": "premierpainmod:block/villager_table/table/cherry_villager_table"
+    "0": "premierpainmod:block/multiple_use_texture/cherry_villager",
+    "1": "premierpainmod:block/multiple_use_particle/cherry_villager"
   }
 }
