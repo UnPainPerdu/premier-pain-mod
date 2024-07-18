@@ -280,14 +280,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_trio_ns", "premierpainmod:block/villager_table/villager_table_trio_line").texture("0", "block/villager_table/table/" + name))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_trio_ns", "premierpainmod:block/villager_table/villager_table_trio/line/villager_table_trio_line").texture("0", textureTable).texture("2",textureParticle))
                             .rotationY(90)
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_ns_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio_line_carpeted").texture("0", "block/villager_table/table/" + name).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_ns_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio/line/villager_table_trio_line_carpeted").texture("0", textureTable).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)).texture("2",textureParticle))
                             .rotationY(90)
                             .build();
                 }
@@ -298,14 +298,14 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_trio_we", "premierpainmod:block/villager_table/villager_table_trio_line").texture("0", "block/villager_table/table/" + name))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_trio_we", "premierpainmod:block/villager_table/villager_table_trio/line/villager_table_trio_line").texture("0", textureTable).texture("2",textureParticle))
                             .rotationY(0)
                             .build();
                 }
                 else
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_we_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio_line_carpeted").texture("0", "block/villager_table/table/" + name).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_duo_we_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table), "premierpainmod:block/villager_table/villager_table_trio/line/villager_table_trio_line_carpeted").texture("0", textureTable).texture("1",textureTableWithCarpetSelection(state, (VillagerTableBlock) table)).texture("2",textureParticle))
                             .rotationY(0)
                             .build();
                 }

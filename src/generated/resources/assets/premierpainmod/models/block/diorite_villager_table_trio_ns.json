@@ -1,6 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_trio_line",
+  "parent": "premierpainmod:block/villager_table/villager_table_trio/line/villager_table_trio_line",
   "textures": {
-    "0": "premierpainmod:block/villager_table/table/diorite_villager_table"
+    "0": "premierpainmod:block/multiple_use_texture/diorite_villager",
+    "2": "premierpainmod:block/multiple_use_particle/diorite_villager"
   }
 }
