@@ -316,7 +316,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_trio_nw", "premierpainmod:block/villager_table/villager_table_trio/angle/villager_table_trio_angle").texture("0", textureTable).texture("1",textureParticle))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_trio_nw", "premierpainmod:block/villager_table/villager_table_trio/angle/villager_table_trio_angle").texture("0", textureTable).texture("2",textureParticle))
                             .rotationY(180)
                             .build();
                 }
@@ -334,7 +334,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 if(flag)
                 {
                     return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(table).toString() + "_trio_ne", "premierpainmod:block/villager_table/villager_table_trio/angle/villager_table_trio_angle").texture("0", textureTable).texture("1",textureParticle))
+                            .modelFile(models().withExistingParent(getKey(table).toString() + "_trio_ne", "premierpainmod:block/villager_table/villager_table_trio/angle/villager_table_trio_angle").texture("0", textureTable).texture("2",textureParticle))
                             .rotationY(270)
                             .build();
                 }
