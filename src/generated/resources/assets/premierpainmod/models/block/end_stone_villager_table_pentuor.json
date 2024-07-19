@@ -1,6 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_pentuor",
+  "parent": "premierpainmod:block/villager_table/villager_table_pentuor/villager_table_pentuor",
   "textures": {
-    "0": "premierpainmod:block/villager_table/table/end_stone_villager_table"
+    "0": "premierpainmod:block/multiple_use_texture/end_stone_villager",
+    "2": "premierpainmod:block/multiple_use_particle/end_stone_villager"
   }
 }
