@@ -1,6 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_quatuor",
+  "parent": "premierpainmod:block/villager_table/villager_table_quatuor/villager_table_quatuor",
   "textures": {
-    "0": "premierpainmod:block/villager_table/table/stone_villager_table"
+    "0": "premierpainmod:block/multiple_use_texture/stone_villager",
+    "2": "premierpainmod:block/multiple_use_particle/stone_villager"
   }
 }

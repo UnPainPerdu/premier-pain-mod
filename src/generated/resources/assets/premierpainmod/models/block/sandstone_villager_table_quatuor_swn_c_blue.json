@@ -1,7 +1,8 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_quatuor_carpeted",
+  "parent": "premierpainmod:block/villager_table/villager_table_quatuor/villager_table_quatuor_carpeted",
   "textures": {
-    "0": "premierpainmod:block/villager_table/table/sandstone_villager_table",
-    "1": "premierpainmod:block/villager_table/carpet/villager_table_carpet_blue"
+    "0": "premierpainmod:block/multiple_use_texture/sandstone_villager",
+    "1": "premierpainmod:block/villager_table/carpet/villager_table_carpet_blue",
+    "2": "premierpainmod:block/multiple_use_particle/sandstone_villager"
   }
 }
