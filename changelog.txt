@@ -48,5 +48,7 @@ remake :
 --------------
 1.21-1.6.1
 fix :
-    - Particules for all village blocks
+    - Particles for all village blocks
     - bad position of displayed items in villager shelf facing south and west
+remake :
+    - Netherite texture for all villager blocks (which was not already updated)
