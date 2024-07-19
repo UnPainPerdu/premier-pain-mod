@@ -50,8 +50,8 @@ public class ItemList
             ItemRegister.OBSIDIAN_VILLAGER_SHELF,
             ItemRegister.AMETHYST_BLOCK_VILLAGER_SHELF,
             ItemRegister.DRIPSTONE_BLOCK_VILLAGER_SHELF,
-            ItemRegister.BEDROCK_VILLAGER_SHELF,
+            ItemRegister.BEDROCK_VILLAGER_SHELF
             //villager'singing stone
-            ItemRegister.TEST_VILLAGER_SINGING_STONE
+            //ItemRegister.TEST_VILLAGER_SINGING_STONE
     );
 }
