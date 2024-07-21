@@ -3,6 +3,8 @@ package com.unpainperdu.premierpainmod.util.register;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
@@ -59,7 +61,14 @@ public class ItemRegister
     public static final DeferredItem<Item>  DRIPSTONE_BLOCK_VILLAGER_SHELF = ITEMS.register("dripstone_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.DRIPSTONE_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF.get()));
     public static final DeferredItem<Item>  BEDROCK_VILLAGER_SHELF = ITEMS.register("bedrock_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.BEDROCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.BEDROCK_WALL_VILLAGER_SHELF.get()));
     //villager'singing stone
-    public static final DeferredItem<Item>  TEST_VILLAGER_SINGING_STONE = ITEMS.register("test_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties()));
+    //public static final DeferredItem<Item>  TEST_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("test_villager_singing_stone",SoundEventRegister.TEST_SOUND.get());
+    public static final DeferredItem<Item>  TEST_VILLAGER_SINGING_STONE = ITEMS.register("test_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.TEST_SOUND.get(),"test_villager_singing_stone"));
+
+    private static DeferredItem<Item> villagerSingingStoneRegister(String name, SoundEvent soundPlayed)
+    {
+        return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties(), soundPlayed,name));
+    }
+
     public static void register(IEventBus modEventBus)
 {
     ITEMS.register(modEventBus);

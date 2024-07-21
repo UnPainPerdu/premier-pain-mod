@@ -19,16 +19,21 @@ import java.util.List;
 
 public class VillagerSingingStone extends Item
 {
-    public VillagerSingingStone(Properties pProperties)
+    private final SoundEvent soundPlayed;
+    private final String translatableDescriptionId;
+
+    public VillagerSingingStone(Properties pProperties, SoundEvent soundPlayed, String translatableDescriptionId)
     {
         super(pProperties);
+        this.soundPlayed = soundPlayed;
+        this.translatableDescriptionId = translatableDescriptionId;
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
     {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-            MutableComponent mutablecomponent = Component.translatable("villager_singing_stone test");
+            MutableComponent mutablecomponent = Component.translatable(this.translatableDescriptionId+"_description");
             pTooltipComponents.add(mutablecomponent.withStyle(ChatFormatting.GRAY));
     }
 
@@ -37,7 +42,7 @@ public class VillagerSingingStone extends Item
     {
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
         pPlayer.startUsingItem(pUsedHand);
-        play(pLevel, pPlayer, SoundEvents.BLAZE_HURT);
+        play(pLevel, pPlayer, this.soundPlayed);
         pPlayer.getCooldowns().addCooldown(this,200);
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.consume(itemstack);

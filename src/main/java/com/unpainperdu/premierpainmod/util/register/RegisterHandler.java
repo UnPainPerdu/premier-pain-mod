@@ -16,5 +16,6 @@ public class RegisterHandler
         CreativeTabRegister.register(modEventBus);
         RecipeTypeRegister.register(modEventBus);
         MenuTypesRegister.register(modEventBus);
+        SoundEventRegister.register(modEventBus);
     }
 }
