@@ -1,12 +1,12 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.AbstractVillagerSingingStoneEvent;
+import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.LibertyEvent;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -62,11 +62,11 @@ public class ItemRegister
     public static final DeferredItem<Item>  BEDROCK_VILLAGER_SHELF = ITEMS.register("bedrock_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.BEDROCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.BEDROCK_WALL_VILLAGER_SHELF.get()));
     //villager'singing stone
     //public static final DeferredItem<Item>  TEST_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("test_villager_singing_stone",SoundEventRegister.TEST_SOUND.get());
-    public static final DeferredItem<Item>  TEST_VILLAGER_SINGING_STONE = ITEMS.register("test_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.TEST_SOUND.get(),"test_villager_singing_stone"));
+    public static final DeferredItem<Item>  TEST_VILLAGER_SINGING_STONE = ITEMS.register("test_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.TEST_SOUND.get(),"test_villager_singing_stone",new LibertyEvent()));
 
-    private static DeferredItem<Item> villagerSingingStoneRegister(String name, SoundEvent soundPlayed)
+    private static DeferredItem<Item> villagerSingingStoneRegister(String name, SoundEvent soundPlayed, AbstractVillagerSingingStoneEvent event)
     {
-        return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties(), soundPlayed,name));
+        return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties(), soundPlayed, name, event));
     }
 
     public static void register(IEventBus modEventBus)
