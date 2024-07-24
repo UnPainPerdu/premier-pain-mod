@@ -19,7 +19,14 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("itemGroup.premierpainmod", "Premier Pain mod");
         add("container."+ PremierPainMod.MODID +".villager_workshop","Villager workshop");
         add("container."+ PremierPainMod.MODID +".villager_drawer","Villager drawer");
+        //death message
+        deathTranslation("liberty_damage1", "%s was a socialist");
+        deathTranslation("liberty_damage2", "%s wanted a cup of LIBER-TEA");
+        deathTranslation("liberty_damage3", "%s didn't give honor to a Super-Earth flag");
         //item
+            //villagerSingingStone
+        add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(),"Villager singing stone of liberty");
+        add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get()+"_description","Are you a true patriot ?");
         add(ItemRegister.VILLAGER_ICON.get(), "Villager icon");
         //block
             // villager workshop
@@ -274,5 +281,10 @@ public class EnglishLanguageProvider extends LanguageProvider
         {
             add("block." + PremierPainMod.MODID + "." + suffix1 + "_" + suffix2 + "_standing_villager_shelf", translation1 +" "+ suffix2 + translationTable);
         }
+    }
+
+    private void deathTranslation(String id, String translation)
+    {
+        add("death.attack." + PremierPainMod.MODID + ":" + id, translation);
     }
 }

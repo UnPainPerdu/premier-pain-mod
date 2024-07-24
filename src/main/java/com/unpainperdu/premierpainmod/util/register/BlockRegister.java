@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.*;
+import com.unpainperdu.premierpainmod.level.world.block.eventBlock.LibertyBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
@@ -16,6 +17,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -27,9 +30,6 @@ public class BlockRegister
 {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MODID);
 
-    //test zone
-    public static final DeferredBlock<Block> TEST_STANDING_SHELF = blockModRegister("standing_villager_shelf","test_standing_villager_shelf", "bedrock");
-    public static final DeferredBlock<Block> TEST_WALL_SHELF = blockModRegister("wall_villager_shelf","test_wall_villager_shelf", "bedrock");
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     /*materials :
@@ -455,7 +455,14 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_WALL_VILLAGER_SHELF =  blockModRegister("wall_villager_shelf","amethyst_block_wall_villager_shelf","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF =  blockModRegister("wall_villager_shelf","dripstone_block_wall_villager_shelf","dripstone");
     public static final DeferredBlock<Block> BEDROCK_WALL_VILLAGER_SHELF =  blockModRegister("wall_villager_shelf","bedrock_wall_villager_shelf","bedrock");
-
+    //Villager Singing stone event block
+    public static final DeferredBlock<Block> LIBERTY_BLOCK =  registerBlock("liberty_block", () -> new LibertyBlock(
+            BlockBehaviour.Properties.of()
+            .mapColor(MapColor.STONE)
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .strength(0.0F, 0.0F)
+            .noLootTable()
+            ));
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
     {

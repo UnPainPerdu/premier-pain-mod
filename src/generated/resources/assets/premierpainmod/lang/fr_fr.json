@@ -330,6 +330,10 @@
   "block.premierpainmod.warped_villager_throne_chair": "Chaise seigneurial en bois biscornu",
   "container.premierpainmod.villager_drawer": "Tiroir du villageois",
   "container.premierpainmod.villager_workshop": "Atelier du villageois",
+  "death.attack.premierpainmod:liberty_damage1": "%s était un socialiste",
+  "death.attack.premierpainmod:liberty_damage2": "%s voulait une tasse de LIBER-THÉ",
+  "death.attack.premierpainmod:liberty_damage3": "%s n'a pas saluer le drapeau de la Super-Terre",
+  "item.premierpainmod.liberty_villager_singing_stone": "Pierre chantante du villageois de la liberté",
   "item.premierpainmod.villager_icon": "Icone de villageois",
   "itemGroup.premierpainmod": "Mod Premier Pain"
 }

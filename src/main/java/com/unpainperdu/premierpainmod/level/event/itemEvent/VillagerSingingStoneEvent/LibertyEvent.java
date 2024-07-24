@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent;
 
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -17,6 +18,6 @@ public class LibertyEvent extends AbstractVillagerSingingStoneEvent{
     {
         BlockPos pos = player.getBlockPosBelowThatAffectsMyMovement();
         pos = pos.above(10);
-        level.setBlock(pos, Blocks.SAND.defaultBlockState(), 0);
+        level.setBlock(pos, BlockRegister.LIBERTY_BLOCK.get().defaultBlockState(), 0);
     }
 }

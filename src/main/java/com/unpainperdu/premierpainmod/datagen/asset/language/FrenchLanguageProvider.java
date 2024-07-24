@@ -19,7 +19,15 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("itemGroup.premierpainmod", "Mod Premier Pain");
         add("container."+ PremierPainMod.MODID +".villager_workshop","Atelier du villageois");
         add("container."+ PremierPainMod.MODID +".villager_drawer","Tiroir du villageois");
+        //death message
+        //%s to get player name
+        deathTranslation("liberty_damage1", "%s était un socialiste");
+        deathTranslation("liberty_damage2", "%s voulait une tasse de LIBER-THÉ");
+        deathTranslation("liberty_damage3", "%s n'a pas saluer le drapeau de la Super-Terre");
         //item
+            //villagerSingingStone
+        add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(),"Pierre chantante du villageois de la liberté");
+        add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get()+"_description","Est-tu un vrai patriote ?");
         add(ItemRegister.VILLAGER_ICON.get(), "Icone de villageois");
         //block
             // villager workshop
@@ -132,5 +140,9 @@ public class FrenchLanguageProvider extends LanguageProvider
         String standingShelf = "_standing_villager_shelf";
         String translationPedestal = "Etagère du villageois en ";
         add("block."+PremierPainMod.MODID+"."+suffix+standingShelf,translationPedestal + translation);
+    }
+    private void deathTranslation(String id, String translation)
+    {
+        add("death.attack." + PremierPainMod.MODID + ":" + id, translation);
     }
 }
