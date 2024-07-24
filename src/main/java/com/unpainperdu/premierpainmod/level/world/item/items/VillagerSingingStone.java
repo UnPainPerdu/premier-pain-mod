@@ -13,9 +13,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.gameevent.GameEvent;
 
 import java.util.List;
+import java.util.Random;
 
 public class VillagerSingingStone extends Item
 {
@@ -45,16 +45,20 @@ public class VillagerSingingStone extends Item
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
         pPlayer.startUsingItem(pUsedHand);
         play(pLevel, pPlayer, this.soundPlayed);
-        pPlayer.getCooldowns().addCooldown(this, 200);
+        pPlayer.getCooldowns().addCooldown(this, 100);
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        this.getEvent().castEvent(pLevel, pPlayer, pUsedHand);
+        int randomNumber = new Random().nextInt(24);
+        if(randomNumber == 12 || pPlayer.isCreative())
+        {
+            this.getEvent().castEvent(pLevel, pPlayer, pUsedHand);
+        }
         return InteractionResultHolder.consume(itemstack);
     }
 
     @Override
     public int getUseDuration(ItemStack pStack, LivingEntity pEntity)
     {
-        return 200;
+        return 100;
     }
 
     /* !!! fait crash si null
