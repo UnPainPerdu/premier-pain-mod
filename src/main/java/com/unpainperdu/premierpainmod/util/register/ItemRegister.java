@@ -1,12 +1,10 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.AbstractVillagerSingingStoneEvent;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.DiggyEvent;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.LibertyEvent;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -62,8 +60,8 @@ public class ItemRegister
     public static final DeferredItem<Item>  DRIPSTONE_BLOCK_VILLAGER_SHELF = ITEMS.register("dripstone_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.DRIPSTONE_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF.get()));
     public static final DeferredItem<Item>  BEDROCK_VILLAGER_SHELF = ITEMS.register("bedrock_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.BEDROCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.BEDROCK_WALL_VILLAGER_SHELF.get()));
     //villager'singing stone
-    public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = ITEMS.register("liberty_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.TEST_SOUND.get(),"liberty_villager_singing_stone",new LibertyEvent()));
-    public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE = ITEMS.register("diggy_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.TEST_SOUND.get(),"diggy_villager_singing_stone",new DiggyEvent()));
+    public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = ITEMS.register("liberty_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.LIBERTY_SOUND.get(),"liberty_villager_singing_stone",new LibertyEvent()));
+    public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE = ITEMS.register("diggy_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.DIGGY_SOUND.get(),"diggy_villager_singing_stone",new DiggyEvent()));
 
     public static void register(IEventBus modEventBus)
 {

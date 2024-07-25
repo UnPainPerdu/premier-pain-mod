@@ -17,8 +17,11 @@ public class ModSoundProvider extends SoundDefinitionsProvider
     @Override
     public void registerSounds()
     {
-        add(SoundEventRegister.TEST_SOUND, SoundDefinition.definition()
-                .with(sound("premierpainmod:test", SoundDefinition.SoundType.SOUND))
+        add(SoundEventRegister.LIBERTY_SOUND, SoundDefinition.definition()
+                .with(sound("premierpainmod:liberty_sound", SoundDefinition.SoundType.SOUND))
+        );
+        add(SoundEventRegister.DIGGY_SOUND, SoundDefinition.definition()
+                .with(sound("premierpainmod:diggy_sound", SoundDefinition.SoundType.SOUND))
         );
     }
 }

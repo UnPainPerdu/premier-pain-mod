@@ -14,7 +14,8 @@ public class SoundEventRegister
     /*register part
         --> ModSoundProvider needed, need tool conversion for mp3 to ogg
     */
-    public static final DeferredHolder<SoundEvent, SoundEvent> TEST_SOUND = register("test");
+    public static final DeferredHolder<SoundEvent, SoundEvent> LIBERTY_SOUND = register("liberty_sound");
+    public static final DeferredHolder<SoundEvent, SoundEvent> DIGGY_SOUND = register("diggy_sound");
 
     //Method register
     private static DeferredHolder<SoundEvent, SoundEvent> register(String soundPath)

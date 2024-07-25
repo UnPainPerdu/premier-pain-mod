@@ -35,7 +35,7 @@ public class VillagerSingingStone extends Item
     public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
     {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-            MutableComponent mutablecomponent = Component.translatable(this.translatableDescriptionId+"_description");
+            MutableComponent mutablecomponent = Component.translatable("item.description."+this.translatableDescriptionId);
             pTooltipComponents.add(mutablecomponent.withStyle(ChatFormatting.GRAY));
     }
 
@@ -47,8 +47,8 @@ public class VillagerSingingStone extends Item
         play(pLevel, pPlayer, this.soundPlayed);
         pPlayer.getCooldowns().addCooldown(this, 100);
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        int randomNumber = new Random().nextInt(24);
-        if(randomNumber == 12 || pPlayer.isCreative())
+        int randomNumber = new Random().nextInt(37);
+        if(randomNumber == 12 || (pPlayer.getName().getString().equals("Dev") && pPlayer.isCreative()))
         {
             this.getEvent().castEvent(pLevel, pPlayer, pUsedHand);
         }

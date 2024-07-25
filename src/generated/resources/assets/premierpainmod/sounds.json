@@ -1,7 +1,12 @@
 {
-  "test": {
+  "diggy_sound": {
     "sounds": [
-      "premierpainmod:test"
+      "premierpainmod:diggy_sound"
+    ]
+  },
+  "liberty_sound": {
+    "sounds": [
+      "premierpainmod:liberty_sound"
     ]
   }
 }

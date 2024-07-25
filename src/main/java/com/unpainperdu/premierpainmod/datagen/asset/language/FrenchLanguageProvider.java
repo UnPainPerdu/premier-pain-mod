@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -27,9 +28,14 @@ public class FrenchLanguageProvider extends LanguageProvider
         //item
             //villagerSingingStone
         add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(),"Pierre chantante du villageois de la liberté");
-        add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get()+"_description","Est-tu un vrai patriote ?");
+        descriptionMaker(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get().toString(),"Est-tu un vrai patriote ?");
+        add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(),"Pierre chantante du villageois des mines");
+        descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(),"N'ais pas peur des profondeurs");
+            //other
         add(ItemRegister.VILLAGER_ICON.get(), "Icone de villageois");
         //block
+            //blockEvent
+        add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");
             // villager workshop
         villagerWorkshopTranslation();
             // "All material"
@@ -144,5 +150,9 @@ public class FrenchLanguageProvider extends LanguageProvider
     private void deathTranslation(String id, String translation)
     {
         add("death.attack." + PremierPainMod.MODID + ":" + id, translation);
+    }
+    private void descriptionMaker(String idOfItem, String translation)
+    {
+        add("item.description."+idOfItem.replace(PremierPainMod.MODID+":",""),translation);
     }
 }

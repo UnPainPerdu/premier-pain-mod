@@ -191,6 +191,7 @@
   "block.premierpainmod.lapis_block_villager_statue": "Lapis villager statue",
   "block.premierpainmod.lapis_block_villager_table": "Lapis villager table",
   "block.premierpainmod.lapis_block_villager_throne_chair": "Lapis villager throne chair",
+  "block.premierpainmod.liberty_block": "HellPod",
   "block.premierpainmod.mangrove_standing_villager_shelf": "Mangrove villager shelf",
   "block.premierpainmod.mangrove_villager_brazier": "Mangrove villager brazier",
   "block.premierpainmod.mangrove_villager_chair": "Mangrove villager chair",
@@ -333,6 +334,9 @@
   "death.attack.premierpainmod:liberty_damage1": "%s was a socialist",
   "death.attack.premierpainmod:liberty_damage2": "%s wanted a cup of LIBER-TEA",
   "death.attack.premierpainmod:liberty_damage3": "%s didn't give honor to a Super-Earth flag",
+  "item.description.diggy_villager_singing_stone": "Don't fear the depth",
+  "item.description.liberty_villager_singing_stone": "Are you a true patriot ?",
+  "item.premierpainmod.diggy_villager_singing_stone": "Villager singing stone of digging",
   "item.premierpainmod.liberty_villager_singing_stone": "Villager singing stone of liberty",
   "item.premierpainmod.villager_icon": "Villager icon",
   "itemGroup.premierpainmod": "Premier Pain mod"
