@@ -8,5 +8,10 @@
     "sounds": [
       "premierpainmod:liberty_sound"
     ]
+  },
+  "madness_sound": {
+    "sounds": [
+      "premierpainmod:madness_sound"
+    ]
   }
 }

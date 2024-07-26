@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.util.register;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.DiggyEvent;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.LibertyEvent;
+import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.MadnessEvent;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.world.item.Item;
@@ -62,6 +63,7 @@ public class ItemRegister
     //villager'singing stone
     public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = ITEMS.register("liberty_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.LIBERTY_SOUND.get(),"liberty_villager_singing_stone",new LibertyEvent()));
     public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE = ITEMS.register("diggy_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.DIGGY_SOUND.get(),"diggy_villager_singing_stone",new DiggyEvent()));
+    public static final DeferredItem<Item>  MADNESS_VILLAGER_SINGING_STONE = ITEMS.register("madness_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.MADNESS_SOUND.get(),"madness_villager_singing_stone",new MadnessEvent()));
 
     public static void register(IEventBus modEventBus)
 {

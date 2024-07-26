@@ -30,6 +30,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         descriptionMaker(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get().toString(),"Are you a true patriot ?");
         add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(),"Villager singing stone of digging");
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(),"Don't fear the depth");
+        add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(),"Villager singing stone of madness");
+        descriptionMaker(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
             //other
         add(ItemRegister.VILLAGER_ICON.get(), "Villager icon");
         //block

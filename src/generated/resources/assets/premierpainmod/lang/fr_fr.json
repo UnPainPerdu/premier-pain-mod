@@ -336,8 +336,10 @@
   "death.attack.premierpainmod:liberty_damage3": "%s n'a pas saluer le drapeau de la Super-Terre",
   "item.description.diggy_villager_singing_stone": "N'ais pas peur des profondeurs",
   "item.description.liberty_villager_singing_stone": "Est-tu un vrai patriote ?",
+  "item.description.madness_villager_singing_stone": "Assez! J'en ai enduré bien assez...",
   "item.premierpainmod.diggy_villager_singing_stone": "Pierre chantante du villageois des mines",
   "item.premierpainmod.liberty_villager_singing_stone": "Pierre chantante du villageois de la liberté",
+  "item.premierpainmod.madness_villager_singing_stone": "Pierre chantante du villageois foux",
   "item.premierpainmod.villager_icon": "Icone de villageois",
   "itemGroup.premierpainmod": "Mod Premier Pain"
 }

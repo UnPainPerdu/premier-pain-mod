@@ -16,6 +16,7 @@ public class SoundEventRegister
     */
     public static final DeferredHolder<SoundEvent, SoundEvent> LIBERTY_SOUND = register("liberty_sound");
     public static final DeferredHolder<SoundEvent, SoundEvent> DIGGY_SOUND = register("diggy_sound");
+    public static final DeferredHolder<SoundEvent, SoundEvent> MADNESS_SOUND = register("madness_sound");
 
     //Method register
     private static DeferredHolder<SoundEvent, SoundEvent> register(String soundPath)

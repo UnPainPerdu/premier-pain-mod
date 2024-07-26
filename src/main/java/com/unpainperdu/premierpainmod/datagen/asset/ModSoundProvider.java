@@ -23,5 +23,8 @@ public class ModSoundProvider extends SoundDefinitionsProvider
         add(SoundEventRegister.DIGGY_SOUND, SoundDefinition.definition()
                 .with(sound("premierpainmod:diggy_sound", SoundDefinition.SoundType.SOUND))
         );
+        add(SoundEventRegister.MADNESS_SOUND, SoundDefinition.definition()
+                .with(sound("premierpainmod:madness_sound", SoundDefinition.SoundType.SOUND))
+        );
     }
 }
