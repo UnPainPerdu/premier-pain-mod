@@ -22,13 +22,15 @@ public class VillagerSingingStone extends Item
     private final SoundEvent soundPlayed;
     private final String translatableDescriptionId;
     private final AbstractVillagerSingingStoneEvent event;
+    private final int delayInSecond;
 
-    public VillagerSingingStone(Properties pProperties, SoundEvent soundPlayed, String translatableDescriptionId, AbstractVillagerSingingStoneEvent event)
+    public VillagerSingingStone(Properties pProperties, SoundEvent soundPlayed, String translatableDescriptionId, AbstractVillagerSingingStoneEvent event, int delayInSecond)
     {
         super(pProperties);
         this.soundPlayed = soundPlayed;
         this.translatableDescriptionId = translatableDescriptionId;
         this.event = event;
+        this.delayInSecond = delayInSecond;
     }
 
     @Override
@@ -45,10 +47,10 @@ public class VillagerSingingStone extends Item
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
         pPlayer.startUsingItem(pUsedHand);
         play(pLevel, pPlayer, this.soundPlayed);
-        pPlayer.getCooldowns().addCooldown(this, 100);
+        pPlayer.getCooldowns().addCooldown(this, this.delayInSecond*20);
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        int randomNumber = new Random().nextInt(37);
-        if(randomNumber == 12 || (pPlayer.getName().getString().equals("Dev") && pPlayer.isCreative()))
+        int randomNumber = new Random().nextInt(19);
+        if(randomNumber == 10 || (pPlayer.getName().getString().equals("Dev") && pPlayer.isCreative()))
         {
             this.getEvent().castEvent(pLevel, pPlayer, pUsedHand);
         }
@@ -58,7 +60,7 @@ public class VillagerSingingStone extends Item
     @Override
     public int getUseDuration(ItemStack pStack, LivingEntity pEntity)
     {
-        return 100;
+        return this.delayInSecond*20;
     }
 
     /* !!! fait crash si null

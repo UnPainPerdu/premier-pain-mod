@@ -297,6 +297,6 @@ public class EnglishLanguageProvider extends LanguageProvider
     }
     private void descriptionMaker(String idOfItem, String translation)
     {
-        add("item.description."+idOfItem.replace(PremierPainMod.MODID+":",""),translation);
+        add("item.description."+idOfItem.replace(PremierPainMod.MODID+":",""),translation + " !!!Sound in WIP, will be more villager like when i will know how to do");
     }
 }
