@@ -17,7 +17,7 @@ public class LibertyEvent extends AbstractVillagerSingingStoneEvent{
     public void castEvent(Level level, Player player, InteractionHand usedHand)
     {
         BlockPos pos = player.getBlockPosBelowThatAffectsMyMovement();
-        pos = pos.above(10);
+        pos = pos.above(30);
         level.setBlock(pos, BlockRegister.LIBERTY_BLOCK.get().defaultBlockState(), 0);
     }
 }

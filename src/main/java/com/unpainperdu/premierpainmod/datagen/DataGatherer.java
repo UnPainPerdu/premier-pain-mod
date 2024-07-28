@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.datagen.asset.language.ModLanguageProvider
 import com.unpainperdu.premierpainmod.datagen.asset.model.ModBlockStateProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.model.ModItemStateProvider;
 import com.unpainperdu.premierpainmod.datagen.data.ModBlockTagProvider;
+import com.unpainperdu.premierpainmod.datagen.data.ModGlobalLootModifierProvider;
 import com.unpainperdu.premierpainmod.datagen.data.ModLootTableProvider;
 import com.unpainperdu.premierpainmod.datagen.data.ModRecipeProvider;
 import com.unpainperdu.premierpainmod.datagen.data.dataPackRegistries.ModDamageTypeCreator;
@@ -32,6 +33,7 @@ public class DataGatherer
         generator.addProvider(event.includeServer(),new ModBlockStateProvider(packOutput, fileHelper));
         generator.addProvider(event.includeServer(),new ModItemStateProvider(packOutput, fileHelper));
         generator.addProvider(event.includeServer(), new ModSoundProvider(packOutput,fileHelper));
+        generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
         ModDamageTypeCreator.onGatherData(event);
     }
 }

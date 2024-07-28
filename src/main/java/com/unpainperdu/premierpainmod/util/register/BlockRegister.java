@@ -462,6 +462,7 @@ public class BlockRegister
             .instrument(NoteBlockInstrument.BASEDRUM)
             .strength(0.0F, 0.0F)
             .noLootTable()
+            .noOcclusion()
             ));
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)

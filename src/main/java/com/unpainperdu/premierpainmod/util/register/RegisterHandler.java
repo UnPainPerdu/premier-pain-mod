@@ -1,21 +1,20 @@
 package com.unpainperdu.premierpainmod.util.register;
 
+import com.unpainperdu.premierpainmod.util.register.codec.CodecForGLMRegister;
 import net.neoforged.bus.api.IEventBus;
 
 public class RegisterHandler
 {
     public static void globalRegister(IEventBus modEventBus)
     {
-        // Register the Deferred Register to the mod event bus so blocks get registered
         BlockRegister.register(modEventBus);
         BlockEntityRegister.register(modEventBus);
         EntityRegister.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
         ItemRegister.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
         CreativeTabRegister.register(modEventBus);
         RecipeTypeRegister.register(modEventBus);
         MenuTypesRegister.register(modEventBus);
         SoundEventRegister.register(modEventBus);
+        CodecForGLMRegister.register(modEventBus);
     }
 }

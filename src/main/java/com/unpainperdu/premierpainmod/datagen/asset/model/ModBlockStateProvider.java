@@ -14,6 +14,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEn
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.util.register.BlockList;
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -53,10 +54,18 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if(block instanceof WallVillagerShelf) {wallVillagerShelf(block);}
             else if(block instanceof StandingVillagerShelf) {standingVillagerShelf(block);}
         }
+        simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
     private void simpleBlockWithItem(Block block)
     {
         simpleBlockWithItem(block, cubeAll(block));
+    }
+    private void simpleBlockWithItemWithCustomModel(Block block, String modelPath)
+    {
+        String name = getName(block);
+        ModelFile model = models().withExistingParent(getKey(block).toString(),modelPath);
+        simpleBlock(block, model);
+        itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
     private void villagerPedestalWithItem(Block pedestal)
     {

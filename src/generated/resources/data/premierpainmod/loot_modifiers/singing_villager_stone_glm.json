@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "premierpainmod:villager_singing_stone_glm",
+  "conditions": [
+    {
+      "condition": "minecraft:weather_check",
+      "raining": true
+    }
+  ],
+  "field1": "somestring",
+  "field2": 10,
+  "field3": "minecraft:dirt"
+}
