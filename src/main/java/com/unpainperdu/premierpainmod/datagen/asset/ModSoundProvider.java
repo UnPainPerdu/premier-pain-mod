@@ -18,13 +18,13 @@ public class ModSoundProvider extends SoundDefinitionsProvider
     public void registerSounds()
     {
         add(SoundEventRegister.LIBERTY_SOUND, SoundDefinition.definition()
-                .with(sound("premierpainmod:liberty_sound", SoundDefinition.SoundType.SOUND))
+                .with(sound("premierpainmod:item/villager_singing_stone/liberty_sound", SoundDefinition.SoundType.SOUND))
         );
         add(SoundEventRegister.DIGGY_SOUND, SoundDefinition.definition()
-                .with(sound("premierpainmod:diggy_sound", SoundDefinition.SoundType.SOUND))
+                .with(sound("premierpainmod:item/villager_singing_stone/diggy_sound", SoundDefinition.SoundType.SOUND))
         );
         add(SoundEventRegister.MADNESS_SOUND, SoundDefinition.definition()
-                .with(sound("premierpainmod:madness_sound", SoundDefinition.SoundType.SOUND))
+                .with(sound("premierpainmod:item/villager_singing_stone/madness_sound", SoundDefinition.SoundType.SOUND))
         );
     }
 }

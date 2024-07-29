@@ -1,17 +1,17 @@
 {
-  "diggy_sound": {
+  "item/villager_singing_stone/diggy_sound": {
     "sounds": [
-      "premierpainmod:diggy_sound"
+      "premierpainmod:item/villager_singing_stone/diggy_sound"
     ]
   },
-  "liberty_sound": {
+  "item/villager_singing_stone/liberty_sound": {
     "sounds": [
-      "premierpainmod:liberty_sound"
+      "premierpainmod:item/villager_singing_stone/liberty_sound"
     ]
   },
-  "madness_sound": {
+  "item/villager_singing_stone/madness_sound": {
     "sounds": [
-      "premierpainmod:madness_sound"
+      "premierpainmod:item/villager_singing_stone/madness_sound"
     ]
   }
 }
