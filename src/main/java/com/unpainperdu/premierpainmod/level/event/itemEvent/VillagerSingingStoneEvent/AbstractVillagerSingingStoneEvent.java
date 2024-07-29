@@ -22,4 +22,9 @@ public abstract class AbstractVillagerSingingStoneEvent
         this.name = name;
     }
     public abstract void castEvent(Level level, Player player, InteractionHand usedHand);
+
+    protected int secondToTick(int second)
+    {
+        return second * 20;
+    }
 }

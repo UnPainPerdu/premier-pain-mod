@@ -49,8 +49,8 @@ public class VillagerSingingStone extends Item
         play(pLevel, pPlayer, this.soundPlayed);
         pPlayer.getCooldowns().addCooldown(this, this.delayInSecond*20);
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        int randomNumber = new Random().nextInt(19);
-        if(randomNumber == 10 || (pPlayer.getName().getString().equals("Dev") && pPlayer.isCreative()))
+        int randomNumber = new Random().nextInt(10);
+        if(randomNumber == 4 || (pPlayer.getName().getString().equals("Dev") && pPlayer.isCreative()))
         {
             this.getEvent().castEvent(pLevel, pPlayer, pUsedHand);
         }

@@ -30,7 +30,7 @@ public class MadnessEvent extends AbstractVillagerSingingStoneEvent
             double randomZ = ((double) new Random().nextInt(99))/100;
             level.addParticle(ParticleTypes.FLAME,xPos + randomX - 0.5,yPos + randomY,zPos + randomZ - 0.5,0.0,0.0,0.0);
         }
-        player.igniteForSeconds(5.0f);
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,300, 5));
+        player.igniteForSeconds(10.0f);
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,secondToTick(10), 5));
     }
 }

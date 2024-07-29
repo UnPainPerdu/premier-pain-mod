@@ -16,6 +16,6 @@ public class DiggyEvent extends AbstractVillagerSingingStoneEvent
     @Override
     public void castEvent(Level level, Player player, InteractionHand usedHand)
     {
-        player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,12000, 2));
+        player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,secondToTick(60), 2));
     }
 }
