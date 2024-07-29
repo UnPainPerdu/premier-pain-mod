@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:item/villager_singing_stone/liberty_villager_singing_stone"
+  }
+}
