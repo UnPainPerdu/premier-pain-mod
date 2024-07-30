@@ -194,7 +194,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
         this.resultSlot.set(ItemStack.EMPTY);
         if (!pStack.isEmpty())
         {
-            this.recipes = this.level.getRecipeManager().getRecipesFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, new SingleRecipeInput(pStack), this.level);
+            this.recipes = this.level.getRecipeManager().getRecipesFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE.get(), new SingleRecipeInput(pStack), this.level);
         }
     }
 
@@ -268,7 +268,7 @@ public class VillagerWorkshopMenu extends AbstractContainerMenu
                     return ItemStack.EMPTY;
                 }
             }
-            else if (this.level.getRecipeManager().getRecipeFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE, new SingleRecipeInput(itemstack1), this.level).isPresent())
+            else if (this.level.getRecipeManager().getRecipeFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE.get(), new SingleRecipeInput(itemstack1), this.level).isPresent())
             {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false))
                 {
