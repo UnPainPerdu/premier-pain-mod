@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.util.register.codec.CodecForGLMRegister;
+import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import net.neoforged.bus.api.IEventBus;
 
 public class RegisterHandler

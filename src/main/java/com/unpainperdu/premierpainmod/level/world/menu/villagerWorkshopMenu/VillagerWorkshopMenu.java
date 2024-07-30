@@ -6,7 +6,7 @@ import java.util.List;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.VillagerWorkshopRecipe;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
-import com.unpainperdu.premierpainmod.util.register.RecipeTypeRegister;
+import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
