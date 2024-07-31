@@ -13,5 +13,10 @@
     "sounds": [
       "premierpainmod:item/villager_singing_stone/madness_sound"
     ]
+  },
+  "item/villager_singing_stone/premier_pain_sound": {
+    "sounds": [
+      "premierpainmod:item/villager_singing_stone/premier_pain_sound"
+    ]
   }
 }

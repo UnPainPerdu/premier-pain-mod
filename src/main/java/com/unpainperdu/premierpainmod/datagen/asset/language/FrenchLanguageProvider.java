@@ -33,6 +33,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(),"N'ais pas peur des profondeurs");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(),"Pierre chantante du villageois foux");
         descriptionMaker(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Assez! J'en ai enduré bien assez...");
+        add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Pierre chantante du Premier Pain");
+        descriptionMaker(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"De la cuisson du pain au maniement de l'épée, nous venons de si loin!");
             //other
         add(ItemRegister.VILLAGER_ICON.get(), "Icone de villageois");
         //block

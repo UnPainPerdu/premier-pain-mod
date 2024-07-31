@@ -1,6 +1,5 @@
 {
   "type": "premierpainmod:villager_workshopping",
-  "group": "test",
   "ingredient": {
     "item": "minecraft:jungle_planks"
   },

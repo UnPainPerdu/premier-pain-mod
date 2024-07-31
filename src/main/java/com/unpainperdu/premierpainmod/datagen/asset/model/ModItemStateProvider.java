@@ -23,7 +23,7 @@ public class ModItemStateProvider extends ItemModelProvider
     protected void registerModels()
     {
         item(ItemRegister.VILLAGER_ICON.get());
-        for(DeferredItem<Item> deferredItem : ItemList.CREATIVE_TAB_ITEMS)
+        for(DeferredItem<Item> deferredItem : ItemList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
             if(item instanceof VillagerShelfItem) {villagerShelfItem(item);}

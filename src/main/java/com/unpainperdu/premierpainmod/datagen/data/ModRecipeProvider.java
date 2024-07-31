@@ -142,7 +142,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             }
         }
         for(
-                DeferredItem<Item> Deffereditem : ItemList.CREATIVE_TAB_ITEMS)
+                DeferredItem<Item> Deffereditem : ItemList.ALL_ITEMS)
         {
             Item item = Deffereditem.get();
             String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MODID+":","");

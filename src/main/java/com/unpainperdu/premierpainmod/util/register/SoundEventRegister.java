@@ -17,6 +17,7 @@ public class SoundEventRegister
     public static final DeferredHolder<SoundEvent, SoundEvent> LIBERTY_SOUND = register("item/villager_singing_stone/liberty_sound");
     public static final DeferredHolder<SoundEvent, SoundEvent> DIGGY_SOUND = register("item/villager_singing_stone/diggy_sound");
     public static final DeferredHolder<SoundEvent, SoundEvent> MADNESS_SOUND = register("item/villager_singing_stone/madness_sound");
+    public static final DeferredHolder<SoundEvent, SoundEvent> PREMIER_PAIN_SOUND = register("item/villager_singing_stone/premier_pain_sound");
 
     //Method register
     private static DeferredHolder<SoundEvent, SoundEvent> register(String soundPath)

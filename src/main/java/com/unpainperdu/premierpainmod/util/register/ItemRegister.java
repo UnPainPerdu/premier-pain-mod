@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.DiggyEvent;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.LibertyEvent;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.MadnessEvent;
+import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.PremierPainEvent;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.world.item.Item;
@@ -16,7 +17,6 @@ public class ItemRegister
     // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PremierPainMod.MODID);
 
-    // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
     public static final DeferredItem<Item> VILLAGER_ICON = ITEMS.register("villager_icon", () -> new Item(new Item.Properties()));
     //Item Villager Shelf
     public static final DeferredItem<Item>  OAK_VILLAGER_SHELF = ITEMS.register("oak_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.OAK_STANDING_VILLAGER_SHELF.get(),BlockRegister.OAK_WALL_VILLAGER_SHELF.get()));
@@ -64,6 +64,7 @@ public class ItemRegister
     public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = ITEMS.register("liberty_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.LIBERTY_SOUND.get(),"liberty_villager_singing_stone",new LibertyEvent(),10));
     public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE = ITEMS.register("diggy_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.DIGGY_SOUND.get(),"diggy_villager_singing_stone",new DiggyEvent(),10));
     public static final DeferredItem<Item>  MADNESS_VILLAGER_SINGING_STONE = ITEMS.register("madness_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.MADNESS_SOUND.get(),"madness_villager_singing_stone",new MadnessEvent(),20));
+    public static final DeferredItem<Item>  PREMIER_PAIN_VILLAGER_SINGING_STONE = ITEMS.register("premier_pain_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.PREMIER_PAIN_SOUND.get(),"premier_pain_villager_singing_stone",new PremierPainEvent(),10));
 
     public static void register(IEventBus modEventBus)
 {

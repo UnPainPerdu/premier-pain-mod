@@ -337,9 +337,11 @@
   "item.description.diggy_villager_singing_stone": "N'ais pas peur des profondeurs !!!Sound in WIP, will be more villager like when i will know how to do",
   "item.description.liberty_villager_singing_stone": "Est-tu un vrai patriote ? !!!Sound in WIP, will be more villager like when i will know how to do",
   "item.description.madness_villager_singing_stone": "Assez! J'en ai enduré bien assez... !!!Sound in WIP, will be more villager like when i will know how to do",
+  "item.description.premier_pain_villager_singing_stone": "De la cuisson du pain au maniement de l'épée, nous venons de si loin! !!!Sound in WIP, will be more villager like when i will know how to do",
   "item.premierpainmod.diggy_villager_singing_stone": "Pierre chantante du villageois des mines",
   "item.premierpainmod.liberty_villager_singing_stone": "Pierre chantante du villageois de la liberté",
   "item.premierpainmod.madness_villager_singing_stone": "Pierre chantante du villageois foux",
+  "item.premierpainmod.premier_pain_villager_singing_stone": "Pierre chantante du Premier Pain",
   "item.premierpainmod.villager_icon": "Icone de villageois",
   "itemGroup.premierpainmod": "Mod Premier Pain"
 }

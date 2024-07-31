@@ -26,5 +26,8 @@ public class ModSoundProvider extends SoundDefinitionsProvider
         add(SoundEventRegister.MADNESS_SOUND, SoundDefinition.definition()
                 .with(sound("premierpainmod:item/villager_singing_stone/madness_sound", SoundDefinition.SoundType.SOUND))
         );
+        add(SoundEventRegister.PREMIER_PAIN_SOUND, SoundDefinition.definition()
+                .with(sound("premierpainmod:item/villager_singing_stone/premier_pain_sound", SoundDefinition.SoundType.SOUND))
+        );
     }
 }

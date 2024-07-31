@@ -35,7 +35,7 @@ public class CreativeTabRegister
                     }
                 }
                 //Items
-                for(DeferredItem<Item> defferedItem : ItemList.CREATIVE_TAB_ITEMS)
+                for(DeferredItem<Item> defferedItem : ItemList.ALL_ITEMS)
                 {
                     Item item = defferedItem.get();
                     output.accept(item);
