@@ -6,7 +6,6 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEn
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.register.ModList;
-import com.unpainperdu.premierpainmod.util.register.ItemList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
