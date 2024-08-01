@@ -8,9 +8,13 @@ import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStone
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
 
 public class ItemRegister
 {
@@ -19,55 +23,59 @@ public class ItemRegister
 
     public static final DeferredItem<Item> VILLAGER_ICON = ITEMS.register("villager_icon", () -> new Item(new Item.Properties()));
     //Item Villager Shelf
-    public static final DeferredItem<Item>  OAK_VILLAGER_SHELF = ITEMS.register("oak_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.OAK_STANDING_VILLAGER_SHELF.get(),BlockRegister.OAK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  BIRCH_VILLAGER_SHELF = ITEMS.register("birch_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.BIRCH_STANDING_VILLAGER_SHELF.get(),BlockRegister.BIRCH_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  SPRUCE_VILLAGER_SHELF = ITEMS.register("spruce_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.SPRUCE_STANDING_VILLAGER_SHELF.get(),BlockRegister.SPRUCE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  JUNGLE_VILLAGER_SHELF = ITEMS.register("jungle_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.JUNGLE_STANDING_VILLAGER_SHELF.get(),BlockRegister.JUNGLE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  ACACIA_VILLAGER_SHELF = ITEMS.register("acacia_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.ACACIA_STANDING_VILLAGER_SHELF.get(),BlockRegister.ACACIA_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  DARK_OAK_VILLAGER_SHELF = ITEMS.register("dark_oak_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.DARK_OAK_STANDING_VILLAGER_SHELF.get(),BlockRegister.DARK_OAK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  MANGROVE_VILLAGER_SHELF = ITEMS.register("mangrove_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.MANGROVE_STANDING_VILLAGER_SHELF.get(),BlockRegister.MANGROVE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  CHERRY_VILLAGER_SHELF = ITEMS.register("cherry_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.CHERRY_STANDING_VILLAGER_SHELF.get(),BlockRegister.CHERRY_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  BAMBOO_VILLAGER_SHELF = ITEMS.register("bamboo_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.BAMBOO_STANDING_VILLAGER_SHELF.get(),BlockRegister.BAMBOO_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  CRIMSON_VILLAGER_SHELF = ITEMS.register("crimson_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.CRIMSON_STANDING_VILLAGER_SHELF.get(),BlockRegister.CRIMSON_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  WARPED_VILLAGER_SHELF = ITEMS.register("warped_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.WARPED_STANDING_VILLAGER_SHELF.get(),BlockRegister.WARPED_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  STONE_VILLAGER_SHELF = ITEMS.register("stone_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.STONE_STANDING_VILLAGER_SHELF.get(),BlockRegister.STONE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  MOSSY_STONE_VILLAGER_SHELF = ITEMS.register("mossy_stone_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.MOSSY_STONE_STANDING_VILLAGER_SHELF.get(),BlockRegister.MOSSY_STONE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  ANDESITE_VILLAGER_SHELF = ITEMS.register("andesite_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.ANDESITE_STANDING_VILLAGER_SHELF.get(),BlockRegister.ANDESITE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  DIORITE_VILLAGER_SHELF = ITEMS.register("diorite_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.DIORITE_STANDING_VILLAGER_SHELF.get(),BlockRegister.DIORITE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  GRANITE_VILLAGER_SHELF = ITEMS.register("granite_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.GRANITE_STANDING_VILLAGER_SHELF.get(),BlockRegister.GRANITE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  PRISMARINE_VILLAGER_SHELF = ITEMS.register("prismarine_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.PRISMARINE_STANDING_VILLAGER_SHELF.get(),BlockRegister.PRISMARINE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  BLACKSTONE_VILLAGER_SHELF = ITEMS.register("blackstone_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.BLACKSTONE_STANDING_VILLAGER_SHELF.get(),BlockRegister.BLACKSTONE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  PURPUR_BLOCK_VILLAGER_SHELF = ITEMS.register("purpur_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.PURPUR_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.PURPUR_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  DEEPSLATE_VILLAGER_SHELF = ITEMS.register("deepslate_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.DEEPSLATE_STANDING_VILLAGER_SHELF.get(),BlockRegister.DEEPSLATE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  TUFF_VILLAGER_SHELF = ITEMS.register("tuff_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.TUFF_STANDING_VILLAGER_SHELF.get(),BlockRegister.TUFF_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  PACKED_MUD_VILLAGER_SHELF = ITEMS.register("packed_mud_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.PACKED_MUD_STANDING_VILLAGER_SHELF.get(),BlockRegister.PACKED_MUD_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  SANDSTONE_VILLAGER_SHELF = ITEMS.register("sandstone_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.SANDSTONE_STANDING_VILLAGER_SHELF.get(),BlockRegister.SANDSTONE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  RED_SANDSTONE_VILLAGER_SHELF = ITEMS.register("red_sandstone_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.RED_SANDSTONE_STANDING_VILLAGER_SHELF.get(),BlockRegister.RED_SANDSTONE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  QUARTZ_BLOCK_VILLAGER_SHELF = ITEMS.register("quartz_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.QUARTZ_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.QUARTZ_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  NETHER_BRICKS_VILLAGER_SHELF = ITEMS.register("nether_bricks_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.NETHER_BRICKS_STANDING_VILLAGER_SHELF.get(),BlockRegister.NETHER_BRICKS_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  BASALT_VILLAGER_SHELF = ITEMS.register("basalt_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.BASALT_STANDING_VILLAGER_SHELF.get(),BlockRegister.BASALT_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  END_STONE_VILLAGER_SHELF = ITEMS.register("end_stone_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.END_STONE_STANDING_VILLAGER_SHELF.get(),BlockRegister.END_STONE_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  COAL_BLOCK_VILLAGER_SHELF = ITEMS.register("coal_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.COAL_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.COAL_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  IRON_BLOCK_VILLAGER_SHELF = ITEMS.register("iron_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.IRON_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.IRON_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  GOLD_BLOCK_VILLAGER_SHELF = ITEMS.register("gold_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.GOLD_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.GOLD_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  REDSTONE_BLOCK_VILLAGER_SHELF = ITEMS.register("redstone_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.REDSTONE_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.REDSTONE_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  EMERALD_BLOCK_VILLAGER_SHELF = ITEMS.register("emerald_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.EMERALD_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.EMERALD_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  DIAMOND_BLOCK_VILLAGER_SHELF = ITEMS.register("diamond_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.DIAMOND_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.DIAMOND_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  COPPER_BLOCK_VILLAGER_SHELF = ITEMS.register("copper_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.COPPER_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.COPPER_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  LAPIS_BLOCK_VILLAGER_SHELF = ITEMS.register("lapis_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.LAPIS_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.LAPIS_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  NETHERITE_BLOCK_VILLAGER_SHELF = ITEMS.register("netherite_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.NETHERITE_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.NETHERITE_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  OBSIDIAN_VILLAGER_SHELF = ITEMS.register("obsidian_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.OBSIDIAN_STANDING_VILLAGER_SHELF.get(),BlockRegister.OBSIDIAN_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  AMETHYST_BLOCK_VILLAGER_SHELF = ITEMS.register("amethyst_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.AMETHYST_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.AMETHYST_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  DRIPSTONE_BLOCK_VILLAGER_SHELF = ITEMS.register("dripstone_block_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.DRIPSTONE_BLOCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF.get()));
-    public static final DeferredItem<Item>  BEDROCK_VILLAGER_SHELF = ITEMS.register("bedrock_villager_shelf", () -> new VillagerShelfItem(new Item.Properties(),BlockRegister.BEDROCK_STANDING_VILLAGER_SHELF.get(),BlockRegister.BEDROCK_WALL_VILLAGER_SHELF.get()));
+    public static final DeferredItem<Item> OAK_VILLAGER_SHELF = villagerShelfRegister("oak_villager_shelf", () -> BlockRegister.OAK_STANDING_VILLAGER_SHELF,() -> BlockRegister.OAK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  BIRCH_VILLAGER_SHELF = villagerShelfRegister("birch_villager_shelf", () ->BlockRegister.BIRCH_STANDING_VILLAGER_SHELF,() -> BlockRegister.BIRCH_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  SPRUCE_VILLAGER_SHELF = villagerShelfRegister("spruce_villager_shelf", () ->BlockRegister.SPRUCE_STANDING_VILLAGER_SHELF,() -> BlockRegister.SPRUCE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  JUNGLE_VILLAGER_SHELF = villagerShelfRegister("jungle_villager_shelf", () ->BlockRegister.JUNGLE_STANDING_VILLAGER_SHELF,() -> BlockRegister.JUNGLE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  ACACIA_VILLAGER_SHELF = villagerShelfRegister("acacia_villager_shelf", () ->BlockRegister.ACACIA_STANDING_VILLAGER_SHELF,() -> BlockRegister.ACACIA_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  DARK_OAK_VILLAGER_SHELF = villagerShelfRegister("dark_oak_villager_shelf", () ->BlockRegister.DARK_OAK_STANDING_VILLAGER_SHELF,() -> BlockRegister.DARK_OAK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  MANGROVE_VILLAGER_SHELF = villagerShelfRegister("mangrove_villager_shelf", () ->BlockRegister.MANGROVE_STANDING_VILLAGER_SHELF,() -> BlockRegister.MANGROVE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  CHERRY_VILLAGER_SHELF = villagerShelfRegister("cherry_villager_shelf", () ->BlockRegister.CHERRY_STANDING_VILLAGER_SHELF,() -> BlockRegister.CHERRY_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  BAMBOO_VILLAGER_SHELF = villagerShelfRegister("bamboo_villager_shelf", () ->BlockRegister.BAMBOO_STANDING_VILLAGER_SHELF,() -> BlockRegister.BAMBOO_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  CRIMSON_VILLAGER_SHELF = villagerShelfRegister("crimson_villager_shelf", () ->BlockRegister.CRIMSON_STANDING_VILLAGER_SHELF,() -> BlockRegister.CRIMSON_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  WARPED_VILLAGER_SHELF = villagerShelfRegister("warped_villager_shelf", () ->BlockRegister.WARPED_STANDING_VILLAGER_SHELF,() -> BlockRegister.WARPED_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  STONE_VILLAGER_SHELF = villagerShelfRegister("stone_villager_shelf", () ->BlockRegister.STONE_STANDING_VILLAGER_SHELF,() -> BlockRegister.STONE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  MOSSY_STONE_VILLAGER_SHELF = villagerShelfRegister("mossy_stone_villager_shelf", () ->BlockRegister.MOSSY_STONE_STANDING_VILLAGER_SHELF,() -> BlockRegister.MOSSY_STONE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  ANDESITE_VILLAGER_SHELF = villagerShelfRegister("andesite_villager_shelf", () ->BlockRegister.ANDESITE_STANDING_VILLAGER_SHELF,() -> BlockRegister.ANDESITE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  DIORITE_VILLAGER_SHELF = villagerShelfRegister("diorite_villager_shelf", () ->BlockRegister.DIORITE_STANDING_VILLAGER_SHELF,() -> BlockRegister.DIORITE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  GRANITE_VILLAGER_SHELF = villagerShelfRegister("granite_villager_shelf", () ->BlockRegister.GRANITE_STANDING_VILLAGER_SHELF,() -> BlockRegister.GRANITE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  PRISMARINE_VILLAGER_SHELF = villagerShelfRegister("prismarine_villager_shelf", () ->BlockRegister.PRISMARINE_STANDING_VILLAGER_SHELF,() -> BlockRegister.PRISMARINE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  BLACKSTONE_VILLAGER_SHELF = villagerShelfRegister("blackstone_villager_shelf", () ->BlockRegister.BLACKSTONE_STANDING_VILLAGER_SHELF,() -> BlockRegister.BLACKSTONE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  PURPUR_BLOCK_VILLAGER_SHELF = villagerShelfRegister("purpur_block_villager_shelf", () ->BlockRegister.PURPUR_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.PURPUR_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  DEEPSLATE_VILLAGER_SHELF = villagerShelfRegister("deepslate_villager_shelf", () ->BlockRegister.DEEPSLATE_STANDING_VILLAGER_SHELF,() -> BlockRegister.DEEPSLATE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  TUFF_VILLAGER_SHELF = villagerShelfRegister("tuff_villager_shelf", () ->BlockRegister.TUFF_STANDING_VILLAGER_SHELF,() -> BlockRegister.TUFF_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  PACKED_MUD_VILLAGER_SHELF = villagerShelfRegister("packed_mud_villager_shelf", () ->BlockRegister.PACKED_MUD_STANDING_VILLAGER_SHELF,() -> BlockRegister.PACKED_MUD_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  SANDSTONE_VILLAGER_SHELF = villagerShelfRegister("sandstone_villager_shelf", () ->BlockRegister.SANDSTONE_STANDING_VILLAGER_SHELF,() -> BlockRegister.SANDSTONE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  RED_SANDSTONE_VILLAGER_SHELF = villagerShelfRegister("red_sandstone_villager_shelf", () ->BlockRegister.RED_SANDSTONE_STANDING_VILLAGER_SHELF,() -> BlockRegister.RED_SANDSTONE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  QUARTZ_BLOCK_VILLAGER_SHELF = villagerShelfRegister("quartz_block_villager_shelf", () ->BlockRegister.QUARTZ_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.QUARTZ_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  NETHER_BRICKS_VILLAGER_SHELF = villagerShelfRegister("nether_bricks_villager_shelf", () ->BlockRegister.NETHER_BRICKS_STANDING_VILLAGER_SHELF,() -> BlockRegister.NETHER_BRICKS_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  BASALT_VILLAGER_SHELF = villagerShelfRegister("basalt_villager_shelf", () ->BlockRegister.BASALT_STANDING_VILLAGER_SHELF,() -> BlockRegister.BASALT_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  END_STONE_VILLAGER_SHELF = villagerShelfRegister("end_stone_villager_shelf", () ->BlockRegister.END_STONE_STANDING_VILLAGER_SHELF,() -> BlockRegister.END_STONE_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  COAL_BLOCK_VILLAGER_SHELF = villagerShelfRegister("coal_block_villager_shelf", () ->BlockRegister.COAL_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.COAL_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  IRON_BLOCK_VILLAGER_SHELF = villagerShelfRegister("iron_block_villager_shelf", () ->BlockRegister.IRON_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.IRON_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  GOLD_BLOCK_VILLAGER_SHELF = villagerShelfRegister("gold_block_villager_shelf", () ->BlockRegister.GOLD_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.GOLD_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  REDSTONE_BLOCK_VILLAGER_SHELF = villagerShelfRegister("redstone_block_villager_shelf", () ->BlockRegister.REDSTONE_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.REDSTONE_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  EMERALD_BLOCK_VILLAGER_SHELF = villagerShelfRegister("emerald_block_villager_shelf", () ->BlockRegister.EMERALD_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.EMERALD_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  DIAMOND_BLOCK_VILLAGER_SHELF = villagerShelfRegister("diamond_block_villager_shelf", () ->BlockRegister.DIAMOND_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.DIAMOND_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  COPPER_BLOCK_VILLAGER_SHELF = villagerShelfRegister("copper_block_villager_shelf", () ->BlockRegister.COPPER_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.COPPER_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  LAPIS_BLOCK_VILLAGER_SHELF = villagerShelfRegister("lapis_block_villager_shelf", () ->BlockRegister.LAPIS_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.LAPIS_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  NETHERITE_BLOCK_VILLAGER_SHELF = villagerShelfRegister("netherite_block_villager_shelf", () ->BlockRegister.NETHERITE_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.NETHERITE_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  OBSIDIAN_VILLAGER_SHELF = villagerShelfRegister("obsidian_villager_shelf", () ->BlockRegister.OBSIDIAN_STANDING_VILLAGER_SHELF,() -> BlockRegister.OBSIDIAN_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  AMETHYST_BLOCK_VILLAGER_SHELF = villagerShelfRegister("amethyst_block_villager_shelf", () ->BlockRegister.AMETHYST_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.AMETHYST_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  DRIPSTONE_BLOCK_VILLAGER_SHELF = villagerShelfRegister("dripstone_block_villager_shelf", () ->BlockRegister.DRIPSTONE_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  BEDROCK_VILLAGER_SHELF = villagerShelfRegister("bedrock_villager_shelf",() -> BlockRegister.BEDROCK_STANDING_VILLAGER_SHELF,() ->BlockRegister.BEDROCK_WALL_VILLAGER_SHELF);
     //villager'singing stone
     public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = ITEMS.register("liberty_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.LIBERTY_SOUND.get(),"liberty_villager_singing_stone",new LibertyEvent(),10));
     public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE = ITEMS.register("diggy_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.DIGGY_SOUND.get(),"diggy_villager_singing_stone",new DiggyEvent(),10));
     public static final DeferredItem<Item>  MADNESS_VILLAGER_SINGING_STONE = ITEMS.register("madness_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.MADNESS_SOUND.get(),"madness_villager_singing_stone",new MadnessEvent(),20));
     public static final DeferredItem<Item>  PREMIER_PAIN_VILLAGER_SINGING_STONE = ITEMS.register("premier_pain_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.PREMIER_PAIN_SOUND.get(),"premier_pain_villager_singing_stone",new PremierPainEvent(),10));
 
-    public static void register(IEventBus modEventBus)
-{
-    ITEMS.register(modEventBus);
-}
+    private static DeferredItem<Item> villagerShelfRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
+    {
+        return ITEMS.register(name,() -> new VillagerShelfItem(new Item.Properties(),standingBlock.get().get(),wallBlock.get().get()));
+    }
+        public static void register(IEventBus modEventBus)
+    {
+        ITEMS.register(modEventBus);
+    }
 }
