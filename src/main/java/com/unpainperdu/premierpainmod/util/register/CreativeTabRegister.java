@@ -2,6 +2,8 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
+import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,20 +30,32 @@ public class CreativeTabRegister
                 //Blocks
                 for(DeferredBlock<Block> defferedBlock : BlockList.ALL_BLOCKS)
                 {
-                    Block block = defferedBlock.get();
-                    if(!(block instanceof VillagerShelf))
-                    {
-                        output.accept(block);
-                    }
+                    creativeTabBlock(defferedBlock, output);
                 }
                 //Items
                 for(DeferredItem<Item> defferedItem : ItemList.ALL_ITEMS)
                 {
-                    Item item = defferedItem.get();
-                    output.accept(item);
+                    creativeTabItems(defferedItem, output);
                 }
 
             }).build());
+
+    private static void creativeTabBlock(DeferredBlock<Block> deferredBlock, CreativeModeTab.Output output)
+    {
+        Block block = deferredBlock.get();
+        if(!(block instanceof VillagerShelf))
+        {
+            output.accept(block);
+        }
+    }
+    private static void creativeTabItems(DeferredItem<Item> deferredItem, CreativeModeTab.Output output)
+    {
+        Item item = deferredItem.get();
+        if(!(item.getDescriptionId().equals("item.premierpainmod.villager_icon")))
+        {
+            output.accept(item);
+        }
+    }
     public static void register(IEventBus modEventBus)
     {
         CREATIVE_MODE_TABS.register(modEventBus);
