@@ -1,16 +1,15 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.DiggyEvent;
-import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.LibertyEvent;
-import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.MadnessEvent;
-import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.PremierPainEvent;
+import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.*;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -65,14 +64,19 @@ public class ItemRegister
     public static final DeferredItem<Item>  DRIPSTONE_BLOCK_VILLAGER_SHELF = villagerShelfRegister("dripstone_block_villager_shelf", () ->BlockRegister.DRIPSTONE_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  BEDROCK_VILLAGER_SHELF = villagerShelfRegister("bedrock_villager_shelf",() -> BlockRegister.BEDROCK_STANDING_VILLAGER_SHELF,() ->BlockRegister.BEDROCK_WALL_VILLAGER_SHELF);
     //villager'singing stone
-    public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = ITEMS.register("liberty_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.LIBERTY_SOUND.get(),"liberty_villager_singing_stone",new LibertyEvent(),10));
-    public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE = ITEMS.register("diggy_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.DIGGY_SOUND.get(),"diggy_villager_singing_stone",new DiggyEvent(),10));
-    public static final DeferredItem<Item>  MADNESS_VILLAGER_SINGING_STONE = ITEMS.register("madness_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.MADNESS_SOUND.get(),"madness_villager_singing_stone",new MadnessEvent(),20));
-    public static final DeferredItem<Item>  PREMIER_PAIN_VILLAGER_SINGING_STONE = ITEMS.register("premier_pain_villager_singing_stone", () -> new VillagerSingingStone(new Item.Properties(), SoundEventRegister.PREMIER_PAIN_SOUND.get(),"premier_pain_villager_singing_stone",new PremierPainEvent(),10));
+    public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("liberty_villager_singing_stone", 10, () -> SoundEventRegister.LIBERTY_SOUND,new LibertyEvent());
+    public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE =villagerSingingStoneRegister("diggy_villager_singing_stone", 10, () -> SoundEventRegister.DIGGY_SOUND,new DiggyEvent());
+    public static final DeferredItem<Item>  MADNESS_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("madness_villager_singing_stone", 20, () -> SoundEventRegister.MADNESS_SOUND,new MadnessEvent());
+    public static final DeferredItem<Item>  PREMIER_PAIN_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("premier_pain_villager_singing_stone", 10, () -> SoundEventRegister.PREMIER_PAIN_SOUND,new PremierPainEvent());
 
     private static DeferredItem<Item> villagerShelfRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
     {
         return ITEMS.register(name,() -> new VillagerShelfItem(new Item.Properties(),standingBlock.get().get(),wallBlock.get().get()));
+    }
+
+    private static DeferredItem<Item> villagerSingingStoneRegister(String name, int delayInSecond, Supplier<DeferredHolder<SoundEvent, SoundEvent>> soundEvent, AbstractVillagerSingingStoneEvent event)
+    {
+        return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties(), soundEvent.get().get(), name, event, delayInSecond));
     }
         public static void register(IEventBus modEventBus)
     {
