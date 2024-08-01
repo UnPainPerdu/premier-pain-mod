@@ -8,7 +8,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerB
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
-import com.unpainperdu.premierpainmod.util.register.BlockList;
+import com.unpainperdu.premierpainmod.util.register.ModList;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -51,7 +51,7 @@ public class ModLootTableProvider extends LootTableProvider
         @Override
         public void generate()
         {
-            for(DeferredBlock<Block> Defferedblock : BlockList.ALL_BLOCKS)
+            for(DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
             {
                 Block block = Defferedblock.get();
                 String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MODID+":","");

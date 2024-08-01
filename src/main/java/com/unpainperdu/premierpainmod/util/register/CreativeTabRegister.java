@@ -2,8 +2,6 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
-import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,12 +26,12 @@ public class CreativeTabRegister
             .icon(() -> ItemRegister.VILLAGER_ICON.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 //Blocks
-                for(DeferredBlock<Block> defferedBlock : BlockList.ALL_BLOCKS)
+                for(DeferredBlock<Block> defferedBlock : ModList.ALL_BLOCKS)
                 {
                     creativeTabBlock(defferedBlock, output);
                 }
                 //Items
-                for(DeferredItem<Item> defferedItem : ItemList.ALL_ITEMS)
+                for(DeferredItem<Item> defferedItem : ModList.ALL_ITEMS)
                 {
                     creativeTabItems(defferedItem, output);
                 }

@@ -13,7 +13,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerT
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
-import com.unpainperdu.premierpainmod.util.register.BlockList;
+import com.unpainperdu.premierpainmod.util.register.ModList;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -40,7 +40,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        for(DeferredBlock<Block> DeferredBlock : BlockList.ALL_BLOCKS)
+        for(DeferredBlock<Block> DeferredBlock : ModList.ALL_BLOCKS)
         {
             Block block = DeferredBlock.get();
             if(block instanceof VillagerWorkshop) {villagerWorkshopWithItem(block);}

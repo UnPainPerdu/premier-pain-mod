@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.util.register.BlockList;
+import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -23,7 +23,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider)
     {
-        for (DeferredBlock<Block> Defferedblock : BlockList.ALL_BLOCKS)
+        for (DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
         {
             Block block = Defferedblock.get();
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MODID + ":", "");

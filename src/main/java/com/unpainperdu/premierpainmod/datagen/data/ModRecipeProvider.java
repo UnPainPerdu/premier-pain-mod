@@ -5,7 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWo
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
-import com.unpainperdu.premierpainmod.util.register.BlockList;
+import com.unpainperdu.premierpainmod.util.register.ModList;
 import com.unpainperdu.premierpainmod.util.register.ItemList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -39,7 +39,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //item
         //block
-        for(DeferredBlock<Block> Defferedblock : BlockList.ALL_BLOCKS)
+        for(DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
         {
             Block block = Defferedblock.get();
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MODID+":","");
@@ -142,7 +142,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             }
         }
         for(
-                DeferredItem<Item> Deffereditem : ItemList.ALL_ITEMS)
+                DeferredItem<Item> Deffereditem : ModList.ALL_ITEMS)
         {
             Item item = Deffereditem.get();
             String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MODID+":","");

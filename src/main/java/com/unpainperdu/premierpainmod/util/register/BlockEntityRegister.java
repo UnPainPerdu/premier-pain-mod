@@ -35,7 +35,7 @@ public class BlockEntityRegister
     private static List<Block> listPedestalHelper()
     {
         List<Block> listPedestal = new ArrayList<>();
-        for (DeferredBlock<Block> defferedBlock : BlockList.ALL_BLOCKS)
+        for (DeferredBlock<Block> defferedBlock : ModList.ALL_BLOCKS)
         {
             Block block = defferedBlock.get();
             if(block instanceof VillagerPedestalBlock)
@@ -47,7 +47,7 @@ public class BlockEntityRegister
     private static List<Block> listDrawerHelper()
     {
         List<Block> listPedestal = new ArrayList<>();
-        for (DeferredBlock<Block> defferedBlock : BlockList.ALL_BLOCKS)
+        for (DeferredBlock<Block> defferedBlock : ModList.ALL_BLOCKS)
         {
             Block block = defferedBlock.get();
             if(block instanceof VillagerDrawer)
@@ -59,7 +59,7 @@ public class BlockEntityRegister
     private static List<Block> listShelfHelper()
     {
         List<Block> listPedestal = new ArrayList<>();
-        for (DeferredBlock<Block> defferedBlock : BlockList.ALL_BLOCKS)
+        for (DeferredBlock<Block> defferedBlock : ModList.ALL_BLOCKS)
         {
             Block block = defferedBlock.get();
             if(block instanceof VillagerShelf)

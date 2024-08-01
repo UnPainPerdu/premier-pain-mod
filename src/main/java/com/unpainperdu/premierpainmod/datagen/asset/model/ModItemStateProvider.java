@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import com.unpainperdu.premierpainmod.util.register.ItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
@@ -23,7 +24,7 @@ public class ModItemStateProvider extends ItemModelProvider
     protected void registerModels()
     {
         item(ItemRegister.VILLAGER_ICON.get());
-        for(DeferredItem<Item> deferredItem : ItemList.ALL_ITEMS)
+        for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
             if(item instanceof VillagerShelfItem) {villagerShelfItem(item);}
