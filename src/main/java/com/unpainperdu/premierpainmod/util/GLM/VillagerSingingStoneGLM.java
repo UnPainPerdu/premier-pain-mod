@@ -1,6 +1,5 @@
 package com.unpainperdu.premierpainmod.util.GLM;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -16,23 +15,17 @@ public class VillagerSingingStoneGLM extends LootModifier
 {
     public static final MapCodec<VillagerSingingStoneGLM> CODEC = RecordCodecBuilder.mapCodec(inst ->
             // LootModifier#codecStart adds the conditions field.
-            LootModifier.codecStart(inst).and(inst.group(
-                    Codec.STRING.fieldOf("field1").forGetter(e -> e.field1),
-                    Codec.INT.fieldOf("field2").forGetter(e -> e.field2),
-                    BuiltInRegistries.ITEM.byNameCodec().fieldOf("field3").forGetter(e -> e.field3)
-            )).apply(inst, VillagerSingingStoneGLM::new)
+            LootModifier.codecStart(inst).and(
+                    BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(e -> e.item)
+            ).apply(inst, VillagerSingingStoneGLM::new)
     );
 
-    private final String field1;
-    private final int field2;
-    private final Item field3;
+    private final Item item;
 
-    public VillagerSingingStoneGLM(LootItemCondition[] conditions, String field1, int field2, Item field3)
+    public VillagerSingingStoneGLM(LootItemCondition[] conditions, Item item)
     {
         super(conditions);
-        this.field1 = field1;
-        this.field2 = field2;
-        this.field3 = field3;
+        this.item = item;
     }
 
     // This is where the magic happens. Use your extra properties here if needed.
@@ -40,7 +33,15 @@ public class VillagerSingingStoneGLM extends LootModifier
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {
-        // Add your items to generatedLoot here.
+        for(LootItemCondition condition : this.conditions)
+        {
+            if(!condition.test(context))
+            {
+                return generatedLoot;
+            }
+        }
+
+        generatedLoot.add(new ItemStack(this.item));
         return generatedLoot;
     }
 

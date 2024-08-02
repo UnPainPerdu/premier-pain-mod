@@ -1,6 +1,20 @@
 {
   "entries": [
-    "premierpainmod:singing_villager_stone_glm"
+    "premierpainmod:madness_singing_villager_stone_glm_for_desert",
+    "premierpainmod:liberty_singing_villager_stone_glm_for_taiga",
+    "premierpainmod:diggy_singing_villager_stone_glm_for_savanna",
+    "premierpainmod:madness_singing_villager_stone_glm_for_plains",
+    "premierpainmod:liberty_singing_villager_stone_glm_for_savanna",
+    "premierpainmod:diggy_singing_villager_stone_glm_for_taiga",
+    "premierpainmod:liberty_singing_villager_stone_glm_for_plains",
+    "premierpainmod:liberty_singing_villager_stone_glm_for_desert",
+    "premierpainmod:liberty_singing_villager_stone_glm_for_snowy",
+    "premierpainmod:madness_singing_villager_stone_glm_for_snowy",
+    "premierpainmod:diggy_singing_villager_stone_glm_for_snowy",
+    "premierpainmod:diggy_singing_villager_stone_glm_for_desert",
+    "premierpainmod:madness_singing_villager_stone_glm_for_savanna",
+    "premierpainmod:diggy_singing_villager_stone_glm_for_plains",
+    "premierpainmod:madness_singing_villager_stone_glm_for_taiga"
   ],
   "replace": false
 }

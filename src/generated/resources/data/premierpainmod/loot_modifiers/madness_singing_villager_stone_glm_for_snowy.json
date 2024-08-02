@@ -1,0 +1,14 @@
+{
+  "type": "premierpainmod:villager_singing_stone_glm",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_snowy_house"
+    },
+    {
+      "chance": 0.1,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "premierpainmod:madness_villager_singing_stone"
+}
