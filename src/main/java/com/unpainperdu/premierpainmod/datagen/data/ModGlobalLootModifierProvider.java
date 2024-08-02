@@ -36,7 +36,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
 
     private void villagerSingingStoneGLMToVillageHouse(String name, Item item)
     {
-        float chance = 0.10f;
+        float chance = 0.25f;
         name = name + "_singing_villager_stone_glm";
         String namePlains = name +"_for_plains";
         add(
