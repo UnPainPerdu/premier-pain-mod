@@ -9,6 +9,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -50,7 +52,7 @@ public class VillagerSingingStone extends Item
         pPlayer.getCooldowns().addCooldown(this, this.delayInSecond*20);
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
         int randomNumber = new Random().nextInt(10);
-        if(randomNumber == 4 || (pPlayer.getName().getString().equals("Dev") && pPlayer.isCreative()))
+        if((randomNumber == 4 || (pPlayer.getName().getString().equals("Dev") && pPlayer.isCreative())) || ((randomNumber < 8) && (pPlayer.hasEffect(MobEffects.HERO_OF_THE_VILLAGE))))
         {
             this.getEvent().castEvent(pLevel, pPlayer, pUsedHand);
         }
