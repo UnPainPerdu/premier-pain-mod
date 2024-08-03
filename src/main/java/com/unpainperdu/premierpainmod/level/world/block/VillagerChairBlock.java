@@ -33,18 +33,6 @@ public class VillagerChairBlock extends Block implements SimpleWaterloggedBlock
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public static final VoxelShape BASE_SHAPE = Block.box(3, 7, 3, 13, 8, 13);
-
-    public static final VoxelShape FOOT_SHAPE1 = Block.box(3, 0, 3, 5, 8, 5);
-    public static final VoxelShape FOOT_SHAPE2 = Block.box(11, 0, 3, 13, 8, 5);
-    public static final VoxelShape FOOT_SHAPE3 = Block.box(3, 0, 11, 5, 8, 13);
-    public static final VoxelShape FOOT_SHAPE4 = Block.box(11, 0, 11, 13, 8, 13);
-
-    public static final VoxelShape BACK_N = Block.box(3, 8, 3, 13, 16, 5);
-    public static final VoxelShape BACK_S = Block.box(3, 8, 11, 13, 16, 13);
-    public static final VoxelShape BACK_E = Block.box(11, 8, 3, 13, 16, 13);
-    public static final VoxelShape BACK_W = Block.box(3, 8, 3, 5, 16, 13);
-
     public VillagerChairBlock(Properties properties)
     {
         super(properties);
@@ -58,6 +46,18 @@ public class VillagerChairBlock extends Block implements SimpleWaterloggedBlock
     @Override
     public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext)
     {
+        VoxelShape BASE_SHAPE = Block.box(3, 7, 3, 13, 8, 13);
+
+        VoxelShape FOOT_SHAPE1 = Block.box(3, 0, 3, 5, 8, 5);
+        VoxelShape FOOT_SHAPE2 = Block.box(11, 0, 3, 13, 8, 5);
+        VoxelShape FOOT_SHAPE3 = Block.box(3, 0, 11, 5, 8, 13);
+        VoxelShape FOOT_SHAPE4 = Block.box(11, 0, 11, 13, 8, 13);
+
+        VoxelShape BACK_N = Block.box(3, 8, 3, 13, 16, 5);
+        VoxelShape BACK_S = Block.box(3, 8, 11, 13, 16, 13);
+        VoxelShape BACK_E = Block.box(11, 8, 3, 13, 16, 13);
+        VoxelShape BACK_W = Block.box(3, 8, 3, 5, 16, 13);
+
         VoxelShape shape =  Shapes.or(BASE_SHAPE,FOOT_SHAPE1,FOOT_SHAPE2,FOOT_SHAPE3,FOOT_SHAPE4);
         switch (blockState.getValue(FACING))
         {
