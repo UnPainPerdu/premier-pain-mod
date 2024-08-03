@@ -34,8 +34,14 @@ public class SeatHandler
             Level level = event.getLevel();
             BlockPos pos = event.getPos();
             BlockState state = level.getBlockState(pos);
-            Block block = level.getBlockState(pos).getBlock();
-
+            Block block = state.getBlock();
+            if(block instanceof VillagerThroneChairBlock)
+            {
+                if (state.getValue(HALF) == DoubleBlockHalf.UPPER)
+                {
+                    pos = pos.below();
+                }
+            }
             if (isValidBlock(level, pos, state, block) && isPlayerInRange(player, pos) && !SeatUtil.isOccupied(level, pos) && player.getMainHandItem().isEmpty())
             {
                 SeatEntity sit = new SeatEntity(level, pos);
@@ -82,12 +88,6 @@ public class SeatHandler
     private static boolean isValidBlock(Level level, BlockPos pos, BlockState state, Block block)
     {
         boolean isValid = (block instanceof VillagerChairBlock) || (block instanceof VillagerThroneChairBlock);
-
-        if ((block instanceof VillagerThroneChairBlock) && (state.getValue(HALF) == DoubleBlockHalf.UPPER))
-        {
-            isValid = false;
-        }
-
         return isValid;
     }
     /**
