@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,20 +32,57 @@ public class VillagerChairBlock extends Block implements SimpleWaterloggedBlock
     public static final MapCodec<VillagerChairBlock> CODEC = simpleCodec(VillagerChairBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    public static final VoxelShape SHAPE = Block.box(3, 0, 3, 13, 8, 13);
+
+    public static final VoxelShape BASE_SHAPE = Block.box(3, 7, 3, 13, 8, 13);
+
+    public static final VoxelShape FOOT_SHAPE1 = Block.box(3, 0, 3, 5, 8, 5);
+    public static final VoxelShape FOOT_SHAPE2 = Block.box(11, 0, 3, 13, 8, 5);
+    public static final VoxelShape FOOT_SHAPE3 = Block.box(3, 0, 11, 5, 8, 13);
+    public static final VoxelShape FOOT_SHAPE4 = Block.box(11, 0, 11, 13, 8, 13);
+
+    public static final VoxelShape BACK_N = Block.box(3, 8, 3, 13, 16, 5);
+    public static final VoxelShape BACK_S = Block.box(3, 8, 11, 13, 16, 13);
+    public static final VoxelShape BACK_E = Block.box(11, 8, 3, 13, 16, 13);
+    public static final VoxelShape BACK_W = Block.box(3, 8, 3, 5, 16, 13);
+
     public VillagerChairBlock(Properties properties)
     {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, Boolean.FALSE));
     }
-    public MapCodec<VillagerChairBlock> codec() {
+    public MapCodec<VillagerChairBlock> codec()
+    {
         return CODEC;
     }
 
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext)
     {
-        return SHAPE;
+        VoxelShape shape =  Shapes.or(BASE_SHAPE,FOOT_SHAPE1,FOOT_SHAPE2,FOOT_SHAPE3,FOOT_SHAPE4);
+        switch (blockState.getValue(FACING))
+        {
+            case NORTH :
+            {
+                shape = Shapes.or(shape, BACK_N);
+                break;
+            }
+            case EAST :
+            {
+                shape = Shapes.or(shape, BACK_E);
+                break;
+            }
+            case SOUTH :
+            {
+                shape = Shapes.or(shape, BACK_S);
+                break;
+            }
+            default:
+            {
+                shape = Shapes.or(shape, BACK_W);
+                break;
+            }
+        }
+        return shape;
     }
 
     @Nullable
