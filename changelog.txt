@@ -52,3 +52,10 @@ fix :
     - bad position of displayed items in villager shelf facing south and west
 remake :
     - Netherite texture for all villager blocks (which was not already updated)
+--------------
+1.21-1.7.0
+fix :
+    - voxelshape of multiple block
+    - Villager throne chair accept being sat from upper part
+add :
+    - villager singing stone, rumors say that they still have old power which a true Hero of villager could use
