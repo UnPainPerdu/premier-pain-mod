@@ -48,17 +48,16 @@ public class VillagerChairBlock extends Block implements SimpleWaterloggedBlock
     {
         VoxelShape BASE_SHAPE = Block.box(3, 7, 3, 13, 8, 13);
 
-        VoxelShape FOOT_SHAPE1 = Block.box(3, 0, 3, 5, 8, 5);
-        VoxelShape FOOT_SHAPE2 = Block.box(11, 0, 3, 13, 8, 5);
-        VoxelShape FOOT_SHAPE3 = Block.box(3, 0, 11, 5, 8, 13);
-        VoxelShape FOOT_SHAPE4 = Block.box(11, 0, 11, 13, 8, 13);
+        VoxelShape NW_FOOT_SHAPE = Block.box(3, 0, 3, 5, 8, 5);
+        VoxelShape NE_FOOT_SHAPE = Block.box(11, 0, 3, 13, 8, 5);
+        VoxelShape SW_FOOT_SHAPE = Block.box(3, 0, 11, 5, 8, 13);
+        VoxelShape SE_FOOT_SHAPE = Block.box(11, 0, 11, 13, 8, 13);
 
-        VoxelShape BACK_N = Block.box(3, 8, 3, 13, 16, 5);
-        VoxelShape BACK_S = Block.box(3, 8, 11, 13, 16, 13);
-        VoxelShape BACK_E = Block.box(11, 8, 3, 13, 16, 13);
-        VoxelShape BACK_W = Block.box(3, 8, 3, 5, 16, 13);
-
-        VoxelShape shape =  Shapes.or(BASE_SHAPE,FOOT_SHAPE1,FOOT_SHAPE2,FOOT_SHAPE3,FOOT_SHAPE4);
+        VoxelShape BACK_N = Shapes.or(Block.box(4, 11, 4, 12, 16, 5),Block.box(3, 8, 3, 5, 15, 5),Block.box(11, 8, 3, 13, 15, 5));
+        VoxelShape BACK_S = Shapes.or(Block.box(4, 11, 11, 12, 16, 12),Block.box(3, 8, 11, 5, 15, 13),Block.box(11, 8, 11, 13, 15, 13));
+        VoxelShape BACK_W = Shapes.or(Block.box(4, 11, 4, 5, 16, 12),Block.box(3, 8, 11, 5, 15, 13),Block.box(3, 8, 3, 5, 15, 5));
+        VoxelShape BACK_E = Shapes.or(Block.box(11, 11, 4, 12, 16, 12),Block.box(11, 8, 11, 13, 15, 13),Block.box(11, 8, 3, 13, 15, 5));
+        VoxelShape shape =  Shapes.or(BASE_SHAPE,NW_FOOT_SHAPE,NE_FOOT_SHAPE,SW_FOOT_SHAPE,SE_FOOT_SHAPE);
         switch (blockState.getValue(FACING))
         {
             case NORTH :
