@@ -33,7 +33,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper)
     {
-        super(output, PremierPainMod.MODID, existingFileHelper);
+        super(output, PremierPainMod.MOD_ID, existingFileHelper);
     }
 
 
@@ -506,7 +506,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private String textureTableWithCarpetSelection(BlockState state,VillagerTableBlock table)
     {
-        String villagerTableName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MODID+":","");
+        String villagerTableName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MOD_ID +":","");
         switch (state.getValue(VillagerTableBlock.COLOR))
         {
             case WHITE: return "premierpainmod:block/villager_table/carpet/villager_table_carpet_white";
@@ -530,7 +530,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private String nameModelTableWithCarpetSelection(BlockState state,VillagerTableBlock table)
     {
-        String villagerTableName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MODID+":","");
+        String villagerTableName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MOD_ID +":","");
         switch (state.getValue(VillagerTableBlock.COLOR))
         {
             case WHITE: return "_white";
@@ -553,7 +553,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private void villagerChairWithItem(Block chair)
     {
-        String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MODID+":","");
+        String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = chairName.replace("_chair","");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(chair);
         VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
@@ -569,7 +569,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private void villagerThroneChairWithItem(Block throneChair)
     {
-        String throneChairName = BuiltInRegistries.BLOCK.getKey(throneChair).toString().replace(PremierPainMod.MODID+":","");
+        String throneChairName = BuiltInRegistries.BLOCK.getKey(throneChair).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = throneChairName.replace("_throne_chair","");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(throneChair);
         VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
@@ -617,7 +617,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void villagerDrawerWithItem(Block villagerDrawer)
     {
-        String villagerDrawerName = BuiltInRegistries.BLOCK.getKey(villagerDrawer).toString().replace(PremierPainMod.MODID+":","");
+        String villagerDrawerName = BuiltInRegistries.BLOCK.getKey(villagerDrawer).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = villagerDrawerName.replace("_drawer","");
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerDrawer);
@@ -664,7 +664,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private void wallVillagerShelf(Block villagerWallShelfWithItem)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MODID+":","");
+        String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = name.replace("_wall_villager_shelf","_villager");
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWallShelfWithItem);
@@ -689,7 +689,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private void standingVillagerShelf(Block villagerWallShelfWithItem)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MODID+":","");
+        String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = name.replace("_standing_villager_shelf","_villager");
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWallShelfWithItem);
@@ -795,6 +795,6 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private String getName(Block block)
     {
-        return getKey(block).toString().replace(PremierPainMod.MODID+":","");
+        return getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
     }
 }

@@ -6,20 +6,18 @@ import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
-import static org.apache.commons.lang3.StringUtils.capitalize;
-
 public class FrenchLanguageProvider extends LanguageProvider
 {
     public FrenchLanguageProvider(PackOutput packOutput)
     {
-        super(packOutput, PremierPainMod.MODID, "fr_fr");
+        super(packOutput, PremierPainMod.MOD_ID, "fr_fr");
     }
     @Override
     protected void addTranslations()
     {
         add("itemGroup.premierpainmod", "Mod Premier Pain");
-        add("container."+ PremierPainMod.MODID +".villager_workshop","Atelier du villageois");
-        add("container."+ PremierPainMod.MODID +".villager_drawer","Tiroir du villageois");
+        add("container."+ PremierPainMod.MOD_ID +".villager_workshop","Atelier du villageois");
+        add("container."+ PremierPainMod.MOD_ID +".villager_drawer","Tiroir du villageois");
         //death message
         //%s to get player name
         deathTranslation("liberty_damage1", "%s était un socialiste");
@@ -102,61 +100,61 @@ public class FrenchLanguageProvider extends LanguageProvider
     {
         String statue = "_villager_statue";
         String translationStatue = "Statue de villageois en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+statue,translationStatue + translation);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+statue,translationStatue + translation);
     }
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' pedestal"
     private void pedestalTranslation(String suffix, String translation)
     {
         String pedestal = "_villager_pedestal";
         String translationPedestal = "Piédestale en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationPedestal + translation);
     }
     private void brazierTranslation(String suffix, String translation)
     {
         String pedestal = "_villager_brazier";
         String translationPedestal = "Brazero en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationPedestal + translation);
     }
     private void villagerWorkshopTranslation()
     {
-        add("block."+PremierPainMod.MODID+".villager_workshop","Atelier du villageois");
+        add("block."+PremierPainMod.MOD_ID +".villager_workshop","Atelier du villageois");
     }
     private void tableTranslation(String suffix, String translation)
     {
         String pedestal = "_villager_table";
         String translationPedestal = "Table en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationPedestal + translation);
     }
     private void chairTranslation(String suffix, String translation)
     {
         String pedestal = "_villager_chair";
         String translationPedestal = "Chaise en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationPedestal + translation);
     }
     private void throneChairTranslation(String suffix, String translation)
     {
         String pedestal = "_villager_throne_chair";
         String translationPedestal = "Chaise seigneurial en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationPedestal + translation);
     }
     private void drawerTranslation(String suffix, String translation)
     {
         String pedestal = "_villager_drawer";
         String translationPedestal = "Tiroir du villageois en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+pedestal,translationPedestal + translation);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationPedestal + translation);
     }
     private void shelfTranslation(String suffix, String translation)
     {
         String standingShelf = "_standing_villager_shelf";
         String translationPedestal = "Etagère du villageois en ";
-        add("block."+PremierPainMod.MODID+"."+suffix+standingShelf,translationPedestal + translation);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+standingShelf,translationPedestal + translation);
     }
     private void deathTranslation(String id, String translation)
     {
-        add("death.attack." + PremierPainMod.MODID + ":" + id, translation);
+        add("death.attack." + PremierPainMod.MOD_ID + ":" + id, translation);
     }
     private void descriptionMaker(String idOfItem, String translation)
     {
-        add("item.description."+idOfItem.replace(PremierPainMod.MODID+":",""),translation  + " !!!Sound in WIP, will be more villager like when i will know how to do");
+        add("item.description."+idOfItem.replace(PremierPainMod.MOD_ID +":",""),translation  + " !!!Sound in WIP, will be more villager like when i will know how to do");
     }
 }

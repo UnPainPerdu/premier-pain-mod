@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagProvider extends BlockTagsProvider {
     public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper) {
-        super(packOutput, lookupProvider, PremierPainMod.MODID, fileHelper);
+        super(packOutput, lookupProvider, PremierPainMod.MOD_ID, fileHelper);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         for (DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
         {
             Block block = Defferedblock.get();
-            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MODID + ":", "");
+            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
             //mineable with pickaxe
             if ((block instanceof VillagerWorkshop)
                     || (blockName.contains("red_sandstone"))

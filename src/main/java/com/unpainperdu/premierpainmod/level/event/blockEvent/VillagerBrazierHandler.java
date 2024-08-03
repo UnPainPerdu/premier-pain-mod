@@ -22,7 +22,7 @@ import static com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.Ab
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
-@EventBusSubscriber(modid = PremierPainMod.MODID)
+@EventBusSubscriber(modid = PremierPainMod.MOD_ID)
 public class VillagerBrazierHandler
 {
     private VillagerBrazierHandler() {}

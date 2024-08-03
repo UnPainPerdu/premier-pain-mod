@@ -11,7 +11,7 @@ public class ModSoundProvider extends SoundDefinitionsProvider
 {
     public ModSoundProvider(PackOutput output, ExistingFileHelper existingFileHelper)
     {
-        super(output, PremierPainMod.MODID, existingFileHelper);
+        super(output, PremierPainMod.MOD_ID, existingFileHelper);
     }
 
     @Override

@@ -19,7 +19,7 @@ import net.neoforged.neoforge.event.level.BlockEvent.BreakEvent;
 
 import static com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.AbstactTwoBlockHeightBlock.HALF;
 
-@EventBusSubscriber(modid = PremierPainMod.MODID)
+@EventBusSubscriber(modid = PremierPainMod.MOD_ID)
 public class SeatHandler
 {
     private SeatHandler() {}

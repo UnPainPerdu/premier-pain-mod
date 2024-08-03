@@ -2,8 +2,6 @@ package com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockE
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.AbstractTwoBlockWidthWithBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.PedestalBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerShelfBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Containers;

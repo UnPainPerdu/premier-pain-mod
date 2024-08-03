@@ -14,7 +14,6 @@ import net.neoforged.neoforge.common.loot.LootModifier;
 public class VillagerSingingStoneGLM extends LootModifier
 {
     public static final MapCodec<VillagerSingingStoneGLM> CODEC = RecordCodecBuilder.mapCodec(inst ->
-            // LootModifier#codecStart adds the conditions field.
             LootModifier.codecStart(inst).and(
                     BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(e -> e.item)
             ).apply(inst, VillagerSingingStoneGLM::new)
@@ -27,9 +26,6 @@ public class VillagerSingingStoneGLM extends LootModifier
         super(conditions);
         this.item = item;
     }
-
-    // This is where the magic happens. Use your extra properties here if needed.
-    // Parameters are the existing loot, and the loot context.
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context)
     {

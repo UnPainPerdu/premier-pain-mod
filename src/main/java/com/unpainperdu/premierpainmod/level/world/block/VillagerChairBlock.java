@@ -27,6 +27,7 @@ import javax.annotation.Nullable;
 Credit to bl4ckscor3 for everything about sitting with this block
 see Seatentity, SeatUtil, SeatHandler and SeatClient
 */
+
 public class VillagerChairBlock extends Block implements SimpleWaterloggedBlock
 {
     public static final MapCodec<VillagerChairBlock> CODEC = simpleCodec(VillagerChairBlock::new);

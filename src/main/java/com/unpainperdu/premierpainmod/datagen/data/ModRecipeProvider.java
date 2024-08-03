@@ -41,7 +41,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         for(DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
         {
             Block block = Defferedblock.get();
-            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MODID+":","");
+            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
             if(!(block instanceof VillagerShelf))
             {
                 if (block instanceof VillagerWorkshop) {
@@ -144,7 +144,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 DeferredItem<Item> Deffereditem : ModList.ALL_ITEMS)
         {
             Item item = Deffereditem.get();
-            String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MODID+":","");
+            String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");
             if((item instanceof VillagerShelfItem))
             {
                     //oak like
@@ -258,7 +258,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(ModRecipeProvider.recipeOutput);
     }
 
-    //pCategory = RecipeCategory. / pResult = crafted block / pmaterial = ingredient / pRecipeOutput =
     protected static void villagerWorkshopResultFromBase( ItemLike pResult,RecipeCategory pCategory, ItemLike pMaterial)
     {
         villagerWorkshopResultFromBase(pCategory, pResult, pMaterial, 1);

@@ -1,6 +1,5 @@
 package com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent;
 
-import com.unpainperdu.premierpainmod.level.world.block.eventBlock.LibertyBlock;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;

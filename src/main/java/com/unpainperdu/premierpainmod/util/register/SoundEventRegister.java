@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class SoundEventRegister
 {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENT = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, PremierPainMod.MODID);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENT = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, PremierPainMod.MOD_ID);
     /*register part
         --> ModSoundProvider needed, need tool conversion for mp3 to ogg
     */
@@ -27,7 +27,7 @@ public class SoundEventRegister
 
     private static ResourceLocation getSound(String path)
     {
-        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MODID, path);
+        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
     }
 
     public static void register(IEventBus modEventBus)

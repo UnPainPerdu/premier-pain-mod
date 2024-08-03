@@ -24,13 +24,8 @@ public class ModDamageTypeCreator
         event.getGenerator().addProvider(
                 event.includeServer(),
                 (DataProvider.Factory<DatapackBuiltinEntriesProvider>) output -> new DatapackBuiltinEntriesProvider(output, lookupProvider, new RegistrySetBuilder()
-                        // Add a datapack builtin entry provider for damage types. If this lambda becomes longer,
-                        // this should probably be extracted into a separate method for the sake of readability.
                         .add(Registries.DAMAGE_TYPE, bootstrap ->
                         {
-                            // Use new DamageType() to create an in-code representation of a damage type.
-                            // The parameters map to the values of the JSON file, in the order seen above.
-                            // All parameters except for the message id and the exhaustion value are optional.
                             bootstrap.register(DamageTypesRegister.LIBERTY_DAMAGE1, new DamageType(DamageTypesRegister.LIBERTY_DAMAGE1.location().toString(),
                                     DamageScaling.WHEN_CAUSED_BY_LIVING_NON_PLAYER,
                                     0.1f,
@@ -47,7 +42,7 @@ public class ModDamageTypeCreator
                                 DamageEffects.HURT,
                                 DeathMessageType.DEFAULT));
                         }),
-        Set.of(PremierPainMod.MODID))
+        Set.of(PremierPainMod.MOD_ID))
         );
     }
 }

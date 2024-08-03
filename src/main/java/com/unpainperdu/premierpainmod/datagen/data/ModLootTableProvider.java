@@ -54,7 +54,7 @@ public class ModLootTableProvider extends LootTableProvider
             for(DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
             {
                 Block block = Defferedblock.get();
-                String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MODID+":","");
+                String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
                 if(!blockName.contains("bedrock"))
                 {
                     if (block instanceof VillagerStatue)
@@ -86,7 +86,7 @@ public class ModLootTableProvider extends LootTableProvider
         protected @NotNull Iterable<Block> getKnownBlocks()
         {
             return BuiltInRegistries.BLOCK.entrySet().stream()
-                    .filter(e -> e.getKey().location().getNamespace().equals(PremierPainMod.MODID))
+                    .filter(e -> e.getKey().location().getNamespace().equals(PremierPainMod.MOD_ID))
                     .map(Map.Entry::getValue)
                     .collect(Collectors.toList());
         }

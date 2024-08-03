@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 
 public class MenuTypesRegister
 {
-    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(BuiltInRegistries.MENU, PremierPainMod.MODID);
+    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(BuiltInRegistries.MENU, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<MenuType<?>,MenuType<VillagerWorkshopMenu>> VILLAGER_WORKSHOP = register("villager_workshop", () -> new MenuType(VillagerWorkshopMenu::new, FeatureFlags.DEFAULT_FLAGS));
     public static final DeferredHolder<MenuType<?>,MenuType<VillagerDrawerMenu>> VILLAGER_DRAWER = register("villager_drawer", () -> new MenuType(VillagerDrawerMenu::VillagerDrawerMenu, FeatureFlags.DEFAULT_FLAGS));

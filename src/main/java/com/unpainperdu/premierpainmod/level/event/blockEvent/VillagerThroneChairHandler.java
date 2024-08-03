@@ -1,7 +1,6 @@
 package com.unpainperdu.premierpainmod.level.event.blockEvent;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import net.minecraft.core.BlockPos;
@@ -24,7 +23,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 import static java.lang.Boolean.TRUE;
 
-@EventBusSubscriber(modid = PremierPainMod.MODID)
+@EventBusSubscriber(modid = PremierPainMod.MOD_ID)
 public class VillagerThroneChairHandler {
 
     private VillagerThroneChairHandler() {}

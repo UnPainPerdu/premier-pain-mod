@@ -26,7 +26,7 @@ public class VillagerShelfScreen extends AbstractContainerScreen<VillagerShelfMe
 
     private static ResourceLocation loc(String path)
     {
-        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MODID, path);
+        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
     }
 
     protected ResourceLocation getBackgroundTexture()

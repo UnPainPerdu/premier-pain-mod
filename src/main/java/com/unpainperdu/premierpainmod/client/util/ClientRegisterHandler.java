@@ -1,6 +1,5 @@
 package com.unpainperdu.premierpainmod.client.util;
 
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.PedestalBlockEntity;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;

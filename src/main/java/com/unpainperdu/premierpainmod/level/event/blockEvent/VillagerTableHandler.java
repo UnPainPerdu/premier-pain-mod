@@ -20,7 +20,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 import static java.lang.Boolean.TRUE;
 
-@EventBusSubscriber(modid = PremierPainMod.MODID)
+@EventBusSubscriber(modid = PremierPainMod.MOD_ID)
 public class VillagerTableHandler
 {
     private VillagerTableHandler() {}

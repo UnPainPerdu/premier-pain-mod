@@ -16,7 +16,7 @@ public class ModItemStateProvider extends ItemModelProvider
 {
     public ModItemStateProvider(PackOutput output, ExistingFileHelper existingFileHelper)
     {
-        super(output, PremierPainMod.MODID, existingFileHelper);
+        super(output, PremierPainMod.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -55,6 +55,6 @@ public class ModItemStateProvider extends ItemModelProvider
     }
     private String getName(Item item)
     {
-        return BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MODID+":","");
+        return BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");
     }
 }

@@ -17,8 +17,7 @@ import java.util.function.Supplier;
 
 public class ItemRegister
 {
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PremierPainMod.MODID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PremierPainMod.MOD_ID);
 
     public static final DeferredItem<Item> VILLAGER_ICON = ITEMS.register("villager_icon", () -> new Item(new Item.Properties()));
     //Item Villager Shelf
@@ -63,7 +62,7 @@ public class ItemRegister
     public static final DeferredItem<Item>  AMETHYST_BLOCK_VILLAGER_SHELF = villagerShelfRegister("amethyst_block_villager_shelf", () ->BlockRegister.AMETHYST_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.AMETHYST_BLOCK_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  DRIPSTONE_BLOCK_VILLAGER_SHELF = villagerShelfRegister("dripstone_block_villager_shelf", () ->BlockRegister.DRIPSTONE_BLOCK_STANDING_VILLAGER_SHELF,() -> BlockRegister.DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  BEDROCK_VILLAGER_SHELF = villagerShelfRegister("bedrock_villager_shelf",() -> BlockRegister.BEDROCK_STANDING_VILLAGER_SHELF,() ->BlockRegister.BEDROCK_WALL_VILLAGER_SHELF);
-    //villager'singing stone
+    //villager's singing stone
     public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("liberty_villager_singing_stone", 10, () -> SoundEventRegister.LIBERTY_SOUND,new LibertyEvent());
     public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE =villagerSingingStoneRegister("diggy_villager_singing_stone", 10, () -> SoundEventRegister.DIGGY_SOUND,new DiggyEvent());
     public static final DeferredItem<Item>  MADNESS_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("madness_villager_singing_stone", 20, () -> SoundEventRegister.MADNESS_SOUND,new MadnessEvent());

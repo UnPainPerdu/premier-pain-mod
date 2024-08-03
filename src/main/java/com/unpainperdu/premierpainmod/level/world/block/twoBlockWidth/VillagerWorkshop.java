@@ -10,31 +10,24 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
 public class VillagerWorkshop extends AbstractTwoBlockWidth
 {
     public static final MapCodec<VillagerWorkshop> CODEC = simpleCodec(VillagerWorkshop::new);
-    private static final Component CONTAINER_TITLE = Component.translatable("container."+ PremierPainMod.MODID +".villager_workshop");
+    private static final Component CONTAINER_TITLE = Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_workshop");
     private static final VoxelShape SHAPE = Block.box(0, 7, 0, 16, 12, 16);
 
     public VillagerWorkshop(Properties pProperties)

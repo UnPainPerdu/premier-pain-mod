@@ -10,10 +10,9 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
-@EventBusSubscriber(modid = PremierPainMod.MODID, bus = EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
+@EventBusSubscriber(modid = PremierPainMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class ScreenRegister
 {
-    // Event is listened to on the mod event bus
     @SubscribeEvent
     private static void registerScreens(RegisterMenuScreensEvent event)
     {

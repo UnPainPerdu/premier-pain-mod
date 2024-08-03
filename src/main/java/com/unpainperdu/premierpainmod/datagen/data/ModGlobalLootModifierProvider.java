@@ -18,7 +18,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
 {
     public ModGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider)
     {
-        super(output, lookupProvider,PremierPainMod.MODID);
+        super(output, lookupProvider,PremierPainMod.MOD_ID);
     }
 
     @Override

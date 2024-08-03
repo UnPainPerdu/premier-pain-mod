@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 public class CodecForGLMRegister
 {
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> GLOBAL_LOOT_MODIFIER_SERIALIZERS =
-            DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, PremierPainMod.MODID);
+            DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, PremierPainMod.MOD_ID);
 
     public static final Supplier<MapCodec<VillagerSingingStoneGLM>> VILLAGER_SINGING_STONE_GLM =
             GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("villager_singing_stone_glm", () -> VillagerSingingStoneGLM.CODEC);

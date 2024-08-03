@@ -17,6 +17,6 @@ public class DamageTypesRegister
 
     private static ResourceKey<DamageType> damageTypesRegister(String path)
     {
-        return ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MODID, path));
+        return ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path));
     }
 }
