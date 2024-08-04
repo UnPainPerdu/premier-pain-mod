@@ -20,6 +20,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("itemGroup.premierpainmod", "Premier Pain mod");
         add("container."+ PremierPainMod.MOD_ID +".villager_workshop","Villager workshop");
         add("container."+ PremierPainMod.MOD_ID +".villager_drawer","Villager drawer");
+        //potion effect
+        add("effect.minecraft.hero_of_the_village","Hero of villagers");
         //death message
         deathTranslation("liberty_damage1", "%s was a socialist");
         deathTranslation("liberty_damage2", "%s wanted a cup of LIBER-TEA");

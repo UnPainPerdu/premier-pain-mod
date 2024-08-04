@@ -18,6 +18,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("itemGroup.premierpainmod", "Mod Premier Pain");
         add("container."+ PremierPainMod.MOD_ID +".villager_workshop","Atelier du villageois");
         add("container."+ PremierPainMod.MOD_ID +".villager_drawer","Tiroir du villageois");
+        //potion effect
+        add("effect.minecraft.hero_of_the_village","Héro des villageois");
         //death message
         //%s to get player name
         deathTranslation("liberty_damage1", "%s était un socialiste");
