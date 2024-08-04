@@ -1,0 +1,220 @@
+{
+  "values": {
+    "premierpainmod:acacia_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:acacia_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:acacia_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:acacia_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:acacia_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:acacia_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:acacia_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:acacia_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:oak_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:oak_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:oak_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:oak_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:oak_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:oak_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:oak_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:oak_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_throne_chair": {
+      "burn_time": 300
+    }
+  }
+}
