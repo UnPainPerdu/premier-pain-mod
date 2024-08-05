@@ -33,9 +33,9 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(),"Villager singing stone of digging");
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(),"Don't fear the depth");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(),"Villager singing stone of madness");
-        descriptionMaker(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
+        descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Premier Pain singing stone");
-        descriptionMaker(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"From backing bread to rise the sword, we come from so far!");
+        descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"From backing bread to rise the sword, we come from so far!");
             //other
         add(ItemRegister.VILLAGER_ICON.get(), "Villager icon");
         //block
@@ -299,8 +299,12 @@ public class EnglishLanguageProvider extends LanguageProvider
     {
         add("death.attack." + PremierPainMod.MOD_ID + ":" + id, translation);
     }
+    private void descriptionMakerWIP(String idOfItem, String translation)
+    {
+        descriptionMaker(idOfItem,translation + " !!!Sound in WIP, will be more villager like when i will know how to do");
+    }
     private void descriptionMaker(String idOfItem, String translation)
     {
-        add("item.description."+idOfItem.replace(PremierPainMod.MOD_ID +":",""),translation + " !!!Sound in WIP, will be more villager like when i will know how to do");
+        add("item.description."+idOfItem.replace(PremierPainMod.MOD_ID +":",""),translation);
     }
 }

@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class LibertyEvent extends AbstractVillagerSingingStoneEvent
 {
-    private static int heightOfSPawn;
+    private static int heightOfSpawn;
     public LibertyEvent()
     {
         super("LibertyEvent");
@@ -24,17 +24,18 @@ public class LibertyEvent extends AbstractVillagerSingingStoneEvent
     @Override
     public void castEvent(Level level, Player player, InteractionHand usedHand)
     {
-        heightOfSPawn = 30;
+        heightOfSpawn = 90;
         if(IsOnlyAirUpper(level,player))
         {
             BlockPos pos = player.getBlockPosBelowThatAffectsMyMovement();
-            BlockPos posSpawnBlock = pos.above(heightOfSPawn);
+            BlockPos posSpawnBlock = pos.above(heightOfSpawn);
             BlockPos posSpawnItem = posSpawnBlock.above(2);
-            level.setBlock(posSpawnBlock, BlockRegister.LIBERTY_BLOCK.get().defaultBlockState(), 0);
             double setToMiddleOfBLock = 0.5;
             double xPos = posSpawnItem.getX() + setToMiddleOfBLock;
             double yPos = posSpawnItem.getY() + setToMiddleOfBLock;
             double zPos = posSpawnItem.getZ() + setToMiddleOfBLock;
+
+            level.setBlock(posSpawnBlock, BlockRegister.LIBERTY_BLOCK.get().defaultBlockState(), 0);
             ItemEntity itementity = new ItemEntity(level, xPos, yPos, zPos, randomLootGenerator());
             itementity.setDeltaMovement(
                     0.0,
@@ -50,7 +51,7 @@ public class LibertyEvent extends AbstractVillagerSingingStoneEvent
         BlockPos posPlayer = player.getBlockPosBelowThatAffectsMyMovement().above(2);
         boolean flag = true;
         BlockPos tempPos = posPlayer;
-        for(int i = 0; i<= heightOfSPawn; i++)
+        for(int i = 0; i<= heightOfSpawn; i++)
         {
             if(!(level.getBlockState(tempPos).getBlock() instanceof AirBlock))
             {

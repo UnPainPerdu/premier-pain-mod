@@ -32,9 +32,9 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(),"Pierre chantante du villageois des mines");
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(),"N'ais pas peur des profondeurs");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(),"Pierre chantante du villageois foux");
-        descriptionMaker(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Assez! J'en ai enduré bien assez...");
+        descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Assez! J'en ai enduré bien assez...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Pierre chantante du Premier Pain");
-        descriptionMaker(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"De la cuisson du pain au maniement de l'épée, nous venons de si loin!");
+        descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"De la cuisson du pain au maniement de l'épée, nous venons de si loin!");
             //other
         add(ItemRegister.VILLAGER_ICON.get(), "Icone de villageois");
         //block
@@ -155,8 +155,12 @@ public class FrenchLanguageProvider extends LanguageProvider
     {
         add("death.attack." + PremierPainMod.MOD_ID + ":" + id, translation);
     }
+    private void descriptionMakerWIP(String idOfItem, String translation)
+    {
+        descriptionMaker(idOfItem,translation + " !!!Sound in WIP, will be more villager like when i will know how to do");
+    }
     private void descriptionMaker(String idOfItem, String translation)
     {
-        add("item.description."+idOfItem.replace(PremierPainMod.MOD_ID +":",""),translation  + " !!!Sound in WIP, will be more villager like when i will know how to do");
+        add("item.description."+idOfItem.replace(PremierPainMod.MOD_ID +":",""),translation);
     }
 }
