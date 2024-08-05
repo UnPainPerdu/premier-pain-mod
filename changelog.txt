@@ -56,6 +56,7 @@ remake :
 1.21-1.7.0
 fix :
     - voxelshape of multiple block
-    - Villager throne chair accept being sat from upper part
+    - Player can sit on villager throne chair from the upper part
+    - all wood type villager blocks can be use now as fuel for furnace
 add :
-    - villager singing stone, rumors say that they still have old power which a true Hero of villager could use
+    - villager singing stone, rumors say that they still have old power which a true Hero of villagers could use
