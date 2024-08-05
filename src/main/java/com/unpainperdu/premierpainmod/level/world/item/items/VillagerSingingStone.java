@@ -64,14 +64,6 @@ public class VillagerSingingStone extends Item
         return this.delayInSecond*20;
     }
 
-    /* !!! fait crash si null
-    @Override
-    public UseAnim getUseAnimation(ItemStack pStack)
-    {
-        return null;
-    }
-    */
-
     private static void play(Level pLevel, Player pPlayer,SoundEvent soundevent)
     {
         pLevel.playSound(pPlayer, pPlayer, soundevent, SoundSource.RECORDS, 16f, 1.0F);
