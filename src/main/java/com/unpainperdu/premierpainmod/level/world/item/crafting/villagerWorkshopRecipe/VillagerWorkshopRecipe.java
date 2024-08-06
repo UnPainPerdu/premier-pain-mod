@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorksho
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeSerializer;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
@@ -36,5 +37,11 @@ public class VillagerWorkshopRecipe extends SingleItemRecipe
     public boolean isSpecial()
     {
         return true;
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients()
+    {
+        return super.getIngredients();
     }
 }
