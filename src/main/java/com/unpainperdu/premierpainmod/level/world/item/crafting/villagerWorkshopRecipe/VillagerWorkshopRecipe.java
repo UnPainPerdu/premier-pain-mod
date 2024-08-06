@@ -32,4 +32,9 @@ public class VillagerWorkshopRecipe extends SingleItemRecipe
             super(factory);
         }
     }
+    @Override
+    public boolean isSpecial()
+    {
+        return true;
+    }
 }
