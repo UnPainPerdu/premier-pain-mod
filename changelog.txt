@@ -63,4 +63,9 @@ add :
     - villager singing stone, rumors say that they still have old power which a true Hero of villagers could use
        !!! Warning for the madness stone, I just can't record to make it sound more villager!!!
 --------------
+1.21-1.7.1
 update neoforge to 21.0.163
+add :
+    -full integration for jei
+fix :
+    -minor error in log related to craft
