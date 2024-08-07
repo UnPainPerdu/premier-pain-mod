@@ -4,12 +4,14 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModBiomes
 {
@@ -45,7 +47,12 @@ public class ModBiomes
         BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
         //must be in vanilla order
-        globalOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
+        BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
         BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
@@ -64,8 +71,8 @@ public class ModBiomes
                                 .waterFogColor(329011)
                                 .fogColor(12638463)
                                 .skyColor(calculateSkyColor(temperature))
-                                .foliageColorOverride(10387789)
-                                .grassColorOverride(9470285)
+                                .foliageColorOverride(0x00FF00)
+                                .grassColorOverride(0x50bb00)
                                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE))
                                 .build()

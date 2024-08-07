@@ -8,6 +8,6 @@ public class ModTerraBlender
 {
     public static void registerBiomes()
     {
-        Regions.register(new ModOverworldRegion(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID,"overworld"),5));
+        Regions.register(new ModOverworldRegion(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID,"overworld"),20));
     }
 }
