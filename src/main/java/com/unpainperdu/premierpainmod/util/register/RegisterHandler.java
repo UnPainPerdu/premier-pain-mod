@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.util.register;
 
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModTerraBlender;
 import com.unpainperdu.premierpainmod.util.register.codec.CodecForGLMRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import net.neoforged.bus.api.IEventBus;
@@ -17,5 +18,6 @@ public class RegisterHandler
         MenuTypesRegister.register(modEventBus);
         SoundEventRegister.register(modEventBus);
         CodecForGLMRegister.register(modEventBus);
+        ModTerraBlender.registerBiomes();
     }
 }
