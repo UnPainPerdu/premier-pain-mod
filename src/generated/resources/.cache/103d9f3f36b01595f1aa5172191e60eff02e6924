@@ -1,5 +1,7 @@
-// 1.21	2024-08-07T17:02:07.3289691	Registries
+// 1.21	2024-08-11T16:30:59.6208045	Registries
 63d2cd84592b995a3ce73462b559593e7a2a164e data/premierpainmod/damage_type/liberty_damage1.json
 e4c65cca9906f71a9dfd94e94036944699324e30 data/premierpainmod/damage_type/liberty_damage2.json
 8283944b0f92a90b6b18f28a91a729de32298bfd data/premierpainmod/damage_type/liberty_damage3.json
-16b7c8fc27683a1b8fcddb8bfc056a038279c65a data/premierpainmod/worldgen/biome/premier_pain_ruins.json
+0222f6c4b74412dc71a086aec29a8879460ccd01 data/premierpainmod/worldgen/biome/premier_pain_ruins.json
+ed6fa7288591c183f012f500ee6d0eec8a677591 data/premierpainmod/worldgen/configured_feature/villager_statue_ruins.json
+7d664e57cd45f9b26fbf52555864171044f46d84 data/premierpainmod/worldgen/placed_feature/villager_statue_ruins.json

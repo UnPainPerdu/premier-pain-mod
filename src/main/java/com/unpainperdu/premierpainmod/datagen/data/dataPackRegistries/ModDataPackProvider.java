@@ -2,6 +2,8 @@ package com.unpainperdu.premierpainmod.datagen.data.dataPackRegistries;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModMiscOverworldFeatures;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModMiscOverworldPlacements;
 import com.unpainperdu.premierpainmod.util.datapackRegister.DamageTypesRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -48,6 +50,8 @@ public class ModDataPackProvider
                                     DeathMessageType.DEFAULT));
                             })
                             .add(Registries.BIOME, ModBiomes::boostrap)
+                            .add(Registries.PLACED_FEATURE, ModMiscOverworldPlacements::bootstrap)
+                            .add(Registries.CONFIGURED_FEATURE, ModMiscOverworldFeatures::bootstrap)
                         ,
                         Set.of(PremierPainMod.MOD_ID))
         );
