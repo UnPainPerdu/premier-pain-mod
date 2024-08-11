@@ -66,6 +66,15 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
             pos = generateBasicShape(pos, worldIn, rand, direction);
 
             pos = generateNeck(pos, worldIn, rand, direction);
+
+            generateNoise(pos,worldIn,rand,direction);
+            pos = generateBasicShape(pos, worldIn, rand, direction);
+
+            pos = generateEyes(pos, worldIn, rand, direction);
+            generateEyebrow(pos, worldIn, rand, direction);
+
+            pos = generateBasicShape(pos, worldIn, rand, direction);
+            pos = generateBasicShape(pos, worldIn, rand, direction);
         }
     }
 
@@ -163,6 +172,54 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         pos = getFront(pos, direction).above();
 
         return pos;
+    }
+
+    private void generateNoise(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
+    {
+        pos = getFront(pos, direction);
+        generateStoneBricks(pos,worldIn,rand);
+
+        pos = pos.below();
+        generateStoneBricks(pos,worldIn,rand);
+
+        pos = pos.below();
+        generateStoneBricks(pos,worldIn,rand);
+    }
+    private BlockPos generateEyes(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
+    {
+        generateStoneBricks(pos,worldIn,rand);
+
+        generateStoneBricksSlab(getLeft(pos, direction), worldIn, rand, true);
+        pos = getRight(pos,direction);
+        generateStoneBricksSlab(pos, worldIn, rand, true);
+
+        pos = getBehind(pos, direction);
+        generateStoneBricks(pos,worldIn,rand);
+
+        pos = getLeft(pos, direction);
+        generateStoneBricks(pos,worldIn,rand);
+
+        pos = getLeft(pos, direction);
+        generateStoneBricks(pos,worldIn,rand);
+
+        return getFront(getRight(pos, direction), direction).above();
+    }
+
+    private void generateEyebrow(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
+    {
+        pos = getFront(pos, direction);
+        BlockPos posBelow = pos.below();
+        generateStoneBricksSlab(pos,worldIn,rand,false);
+
+        generateStoneBricksSlab(getRight(pos,direction),worldIn,rand, false);
+        pos = getLeft(pos, direction);
+        generateStoneBricksSlab(pos,worldIn,rand, false);
+
+        generateStoneBricksSlab(posBelow,worldIn,rand,true);
+
+        generateStoneBricksSlab(getRight(posBelow,direction),worldIn,rand, true);
+        posBelow = getLeft(posBelow, direction);
+        generateStoneBricksSlab(posBelow,worldIn,rand, true);
     }
 
     private void generateStoneBricks(BlockPos pos, WorldGenLevel worldIn, RandomSource rand)
