@@ -58,7 +58,9 @@ public class ModBiomes
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addLightBambooVegetation(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addPlainVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addSparseJungleTrees(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
 

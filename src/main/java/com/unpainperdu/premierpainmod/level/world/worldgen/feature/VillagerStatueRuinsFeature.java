@@ -15,6 +15,9 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration>
 {
+    private int numberA = 10000;
+    private int countInFlag = 0;
+    private boolean flag = false;
 /*
         b = block
         p = start pos
@@ -40,6 +43,8 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         Direction direction = getDirection(rand);
         int i = 0;
         basicStatueGeneration(worldIn,chunkGenerator,rand,pos,config, direction);
+        this.numberA = 10000;
+        this.flag = false;
         return true;
     }
 
@@ -58,6 +63,7 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
             //start of the statue
             pos = generateBasicShape(pos, worldIn, rand, direction);
 
+            this.numberA = 18;
             pos = generateBasicShape(pos, worldIn, rand, direction);
 
             generateArm(pos, worldIn, rand, direction);
@@ -224,43 +230,104 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
 
     private void generateStoneBricks(BlockPos pos, WorldGenLevel worldIn, RandomSource rand)
     {
-        int random = getRandomPositiveIntInRange(10,rand);
-        if (random<2)
+        boolean inFlag = false;
+        int randomSpawn = getRandomPositiveIntInRange(numberA,rand);
+        if(randomSpawn == 1)
         {
-            worldIn.setBlock(pos,Blocks.STONE_BRICKS.defaultBlockState(),2);
+            inFlag = true;
+            this.countInFlag +=1;
+            if(this.countInFlag > 6)
+            {
+                this.flag = true;
+            }
         }
-        else if (random<6)
+        if(!this.flag && !inFlag)
         {
-            worldIn.setBlock(pos,Blocks.MOSSY_STONE_BRICKS.defaultBlockState(),2);
-        }
-        else
-        {
-            worldIn.setBlock(pos,Blocks.CRACKED_STONE_BRICKS.defaultBlockState(),2);
+            int random = getRandomPositiveIntInRange(10, rand);
+            if (random < 2)
+            {
+                worldIn.setBlock(pos, Blocks.STONE_BRICKS.defaultBlockState(), 2);
+            }
+            else if (random < 6)
+            {
+                worldIn.setBlock(pos, Blocks.MOSSY_STONE_BRICKS.defaultBlockState(), 2);
+            }
+            else
+            {
+                worldIn.setBlock(pos, Blocks.CRACKED_STONE_BRICKS.defaultBlockState(), 2);
+            }
         }
     }
     private void generateStoneBricksSlab(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, boolean isUp)
     {
-        int random = getRandomPositiveIntInRange(10,rand);
-        SlabType type = isUp ? SlabType.TOP : SlabType.BOTTOM;
-        if (random<4)
+        boolean inFlag = false;
+        int randomSpawn = getRandomPositiveIntInRange(numberA,rand);
+        if(randomSpawn == 1)
         {
-            worldIn.setBlock(pos,Blocks.STONE_BRICK_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, type),2);
+            inFlag = true;
+            this.countInFlag +=1;
+            if(this.countInFlag > 6)
+            {
+                this.flag = true;
+            }
         }
-        else
+        if(!this.flag && !inFlag)
         {
-            worldIn.setBlock(pos,Blocks.MOSSY_STONE_BRICK_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, type),2);
+            int random = getRandomPositiveIntInRange(10, rand);
+            SlabType type = isUp ? SlabType.TOP : SlabType.BOTTOM;
+            if (random < 4) {
+                worldIn.setBlock(pos, Blocks.STONE_BRICK_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, type), 2);
+            } else {
+                worldIn.setBlock(pos, Blocks.MOSSY_STONE_BRICK_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, type), 2);
+            }
+        }
+    }
+    private void generateStoneBricksStairWithShape(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
+    {
+        boolean inFlag = false;
+        int randomSpawn = getRandomPositiveIntInRange(numberA,rand);
+        if(randomSpawn == 1)
+        {
+            inFlag = true;
+            this.countInFlag +=1;
+            if(this.countInFlag > 6)
+            {
+                this.flag = true;
+            }
+        }
+        if(!this.flag && !inFlag)
+        {
+            int random = getRandomPositiveIntInRange(10, rand);
+            if (random < 4)
+            {
+                worldIn.setBlock(pos, Blocks.STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, direction).setValue(StairBlock.HALF, Half.TOP), 2);
+            } else
+            {
+                worldIn.setBlock(pos, Blocks.MOSSY_STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, direction).setValue(StairBlock.HALF, Half.TOP), 2);
+            }
         }
     }
     private void generateStoneBricksStair(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
-        int random = getRandomPositiveIntInRange(10,rand);
-        if (random<4)
+        boolean inFlag = false;
+        int randomSpawn = getRandomPositiveIntInRange(numberA,rand);
+        if(randomSpawn == 1)
         {
-            worldIn.setBlock(pos,Blocks.STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, direction),2);
+            inFlag = true;
+            this.countInFlag +=1;
+            if(this.countInFlag > 5)
+            {
+                this.flag = true;
+            }
         }
-        else
+        if(!this.flag && !inFlag)
         {
-            worldIn.setBlock(pos,Blocks.MOSSY_STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, direction),2);
+            int random = getRandomPositiveIntInRange(10, rand);
+            if (random < 4) {
+                worldIn.setBlock(pos, Blocks.STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, direction), 2);
+            } else {
+                worldIn.setBlock(pos, Blocks.MOSSY_STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, direction), 2);
+            }
         }
     }
 
@@ -423,23 +490,7 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
             }
         }
         int random = getRandomPositiveIntInRange(10,rand);
-        if (random<4)
-        {
-            worldIn.setBlock(leftPos,Blocks.STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, directionLeft).setValue(StairBlock.HALF, Half.TOP),2);
-        }
-        else
-        {
-            worldIn.setBlock(leftPos,Blocks.MOSSY_STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, directionLeft).setValue(StairBlock.HALF, Half.TOP),2);
-        }
-
-        random = getRandomPositiveIntInRange(10,rand);
-        if (random<4)
-        {
-            worldIn.setBlock(rightPos,Blocks.STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, directionRight).setValue(StairBlock.HALF, Half.TOP),2);
-        }
-        else
-        {
-            worldIn.setBlock(rightPos,Blocks.MOSSY_STONE_BRICK_STAIRS.defaultBlockState().setValue(StairBlock.FACING, directionRight).setValue(StairBlock.HALF, Half.TOP),2);
-        }
+        generateStoneBricksStairWithShape(rightPos, worldIn, rand, directionRight);
+        generateStoneBricksStairWithShape(leftPos, worldIn, rand, directionLeft);
     }
 }
