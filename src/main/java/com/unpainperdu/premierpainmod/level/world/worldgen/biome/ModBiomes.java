@@ -55,6 +55,7 @@ public class ModBiomes
         BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
         BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
         addVillagerStatue(biomegenerationsettings$builder);
+        addBushAndStoneFeature(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
@@ -88,5 +89,9 @@ public class ModBiomes
     public static void addVillagerStatue(BiomeGenerationSettings.Builder pBuilder)
     {
         pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_STATUE_RUINS);
+    }
+    public static void addBushAndStoneFeature(BiomeGenerationSettings.Builder pBuilder)
+    {
+        pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.BUSH_AND_STONE);
     }
 }

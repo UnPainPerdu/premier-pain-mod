@@ -16,14 +16,17 @@ import java.util.List;
 public class ModMiscOverworldPlacements
 {
     public static final ResourceKey<PlacedFeature> VILLAGER_STATUE_RUINS = createKey("villager_statue_ruins");
+    public static final ResourceKey<PlacedFeature> BUSH_AND_STONE = createKey("bush_and_stone");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
         HolderGetter<ConfiguredFeature<?, ?>> holdergetter = pContext.lookup(Registries.CONFIGURED_FEATURE);
 
         final Holder<ConfiguredFeature<?, ?>> VILLAGER_STATUE_RUINS_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.VILLAGER_STATUE_RUINS);
+        final Holder<ConfiguredFeature<?, ?>> BUSH_AND_STONE_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.BUSH_AND_STONE);
 
         register(pContext, VILLAGER_STATUE_RUINS, VILLAGER_STATUE_RUINS_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(pContext, BUSH_AND_STONE, BUSH_AND_STONE_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }
     protected static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedFeatureKey, Holder<ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... modifiers)
     {
