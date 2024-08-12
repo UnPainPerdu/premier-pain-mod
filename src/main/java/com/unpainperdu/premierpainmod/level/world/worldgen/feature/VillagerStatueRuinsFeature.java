@@ -6,12 +6,17 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration>
 {
@@ -89,22 +94,22 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
      */
     private BlockPos generateBasicShape(BlockPos pos, WorldGenLevel worldIn, RandomSource rand,Direction direction)
     {
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getLeft(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getBehind(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getRight(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getRight(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getFront(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         return getLeft(pos, direction).above();
     }
@@ -112,37 +117,37 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
     private void generateArm(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
         pos = getFront(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         BlockPos rightPos = getRight(pos,direction);
-        generateStoneBricks(rightPos,worldIn,rand);
+        generateStoneBricks(rightPos,worldIn,rand,direction);
 
         rightPos = getRight(rightPos,direction);
         generateStoneBricksStair(rightPos,worldIn,rand,direction);
 
         rightPos = getBehind(rightPos,direction);
-        generateStoneBricks(rightPos,worldIn,rand);
+        generateStoneBricks(rightPos,worldIn,rand,direction);
 
         rightPos = rightPos.above();
         generateStoneBricksStair(rightPos,worldIn,rand,direction);
 
         rightPos = getBehind(rightPos,direction);
-        generateStoneBricks(rightPos,worldIn,rand);
+        generateStoneBricks(rightPos,worldIn,rand,direction);
 
         pos = getLeft(pos,direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getLeft(pos,direction);
         generateStoneBricksStair(pos,worldIn,rand,direction);
 
         pos = getBehind(pos,direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = pos.above();
         generateStoneBricksStair(pos,worldIn,rand,direction);
 
         pos = getBehind(pos,direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
     }
 
     private BlockPos generateNeck(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
@@ -154,13 +159,13 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         generateStoneBricksSlab(pos, worldIn, rand, true);
 
         pos = getBehind(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getLeft(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getLeft(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getFront(pos, direction);
         generateStoneBricksSlab(pos, worldIn, rand, true);
@@ -171,9 +176,9 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         generateMouth(pos,worldIn,rand,direction);
 
         pos = getBehind(pos,direction);
-        generateStoneBricks(pos,worldIn,rand);
-        generateStoneBricks(getLeft(pos,direction),worldIn,rand);
-        generateStoneBricks(getRight(pos,direction),worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
+        generateStoneBricks(getLeft(pos,direction),worldIn,rand, direction);
+        generateStoneBricks(getRight(pos,direction),worldIn,rand, direction);
 
         pos = getFront(pos, direction).above();
 
@@ -183,30 +188,30 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
     private void generateNoise(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
         pos = getFront(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = pos.below();
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = pos.below();
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
     }
     private BlockPos generateEyes(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         generateStoneBricksSlab(getLeft(pos, direction), worldIn, rand, true);
         pos = getRight(pos,direction);
         generateStoneBricksSlab(pos, worldIn, rand, true);
 
         pos = getBehind(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getLeft(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         pos = getLeft(pos, direction);
-        generateStoneBricks(pos,worldIn,rand);
+        generateStoneBricks(pos,worldIn,rand, direction);
 
         return getFront(getRight(pos, direction), direction).above();
     }
@@ -228,7 +233,7 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         generateStoneBricksSlab(posBelow,worldIn,rand, true);
     }
 
-    private void generateStoneBricks(BlockPos pos, WorldGenLevel worldIn, RandomSource rand)
+    private void generateStoneBricks(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
         boolean inFlag = false;
         int randomSpawn = getRandomPositiveIntInRange(numberA,rand);
@@ -255,6 +260,35 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
             else
             {
                 worldIn.setBlock(pos, Blocks.CRACKED_STONE_BRICKS.defaultBlockState(), 2);
+            }
+            BlockPos leftPos = getLeft(pos, direction);
+            BlockPos rightPos = getRight(pos, direction);
+            BlockPos frontPos = getFront(pos, direction);
+            BlockPos behindPos = getBehind(pos, direction);
+            Block leftBlock = worldIn.getBlockState(leftPos).getBlock();
+            Block rightBlock = worldIn.getBlockState(rightPos).getBlock();
+            Block frontBlock = worldIn.getBlockState(frontPos).getBlock();
+            Block behindBlock = worldIn.getBlockState(behindPos).getBlock();
+
+            int random2 = getRandomPositiveIntInRange(10, rand);
+            if (random2 == 1 && leftBlock instanceof AirBlock)
+            {
+                generateVine(leftPos,worldIn, rand, direction);
+            }
+            random2 = getRandomPositiveIntInRange(10, rand);
+            if (random2 == 1 && rightBlock instanceof AirBlock)
+            {
+                generateVine(rightPos,worldIn, rand, direction);
+            }
+            random2 = getRandomPositiveIntInRange(10, rand);
+            if (random2 == 1 && frontBlock instanceof AirBlock)
+            {
+                generateVine(behindPos,worldIn, rand, direction);
+            }
+            random2 = getRandomPositiveIntInRange(10, rand);
+            if (random2 == 1 && behindBlock instanceof AirBlock)
+            {
+                generateVine(frontPos,worldIn, rand, direction);
             }
         }
     }
@@ -492,5 +526,73 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         int random = getRandomPositiveIntInRange(10,rand);
         generateStoneBricksStairWithShape(rightPos, worldIn, rand, directionRight);
         generateStoneBricksStairWithShape(leftPos, worldIn, rand, directionLeft);
+    }
+
+    private void generateVine(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
+    {
+        int i = 0;
+        List<BlockPos> posList =  Arrays.asList(getLeft(pos, direction), getRight(pos, direction), getFront(pos, direction), getBehind(pos, direction));
+        List<Block> blockList = new ArrayList<>();
+        List<Direction> directionList = new ArrayList<>();
+        for(BlockPos posFor : posList)
+        {
+            blockList.add(worldIn.getBlockState(posFor).getBlock());
+            directionList.add(Direction.fromDelta((pos.getX()-posList.get(i).getX()),pos.getY()-posList.get(i).getY(),pos.getZ()-posList.get(i).getZ()));
+            i ++;
+        }
+
+        i = 0;
+        BlockState blockState = Blocks.VINE.defaultBlockState();
+
+        for(Block block : blockList)
+        {
+            if(!(block instanceof AirBlock) && !(block instanceof VineBlock) && !(block instanceof BushBlock))
+            {
+                switch (directionList.get(i))
+                {
+                    case NORTH :
+                    {
+                        blockState = blockState.setValue(VineBlock.SOUTH, true);
+                        break;
+                    }
+                    case EAST :
+                    {
+                        blockState = blockState.setValue(VineBlock.WEST, true);
+                        break;
+                    }
+                    case SOUTH :
+                    {
+                        blockState = blockState.setValue(VineBlock.NORTH, true);
+                        break;
+                    }
+                    default :
+                    {
+                        blockState = blockState.setValue(VineBlock.EAST, true);
+                        break;
+                    }
+                }
+            }
+            i++;
+        }
+
+        worldIn.setBlock(pos, blockState,1 & 2);
+
+        int randomLength = getRandomPositiveIntInRange(4, rand);
+        boolean flagLengthVine = false;
+        BlockPos posModif = pos;
+
+        for (int j = 0; j < randomLength; j++)
+        {
+            posModif = posModif.below();
+            Block blockModif = worldIn.getBlockState(posModif).getBlock();
+            if(!flagLengthVine && blockModif instanceof AirBlock)
+            {
+                worldIn.setBlock(posModif, blockState,1 & 2);
+            }
+            else
+            {
+                flagLengthVine = true;
+            }
+        }
     }
 }

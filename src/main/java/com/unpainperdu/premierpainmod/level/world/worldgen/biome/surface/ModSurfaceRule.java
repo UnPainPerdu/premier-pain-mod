@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.biome.surface;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.Noises;
 
 public class ModSurfaceRule
 {
@@ -23,5 +24,10 @@ public class ModSurfaceRule
     private static SurfaceRules.RuleSource makeStateRule(Block block)
     {
         return SurfaceRules.state(block.defaultBlockState());
+    }
+
+    private static SurfaceRules.ConditionSource surfaceNoiseAbove(double p_194809_)
+    {
+        return SurfaceRules.noiseCondition(Noises.SURFACE, p_194809_ / 8.25D, Double.MAX_VALUE);
     }
 }
