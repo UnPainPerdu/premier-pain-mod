@@ -3,13 +3,13 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.feature;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.block.Block;
 
-public class FeatureUtils
+import java.util.ArrayList;
+
+public class ModFeatureUtils
 {
-    public FeatureUtils()
-    {
 
-    }
     public static BlockPos getRandomHeight(BlockPos pos, RandomSource rand)
     {
         int randomInt = getRandomPositiveIntInRange(12, rand);
@@ -130,5 +130,18 @@ public class FeatureUtils
                 return Direction.WEST;
             }
         }
+    }
+    public static boolean isPosInList(BlockPos pos, ArrayList<BlockPos> posList)
+    {
+        boolean flag = false;
+        for(BlockPos pos1 : posList)
+        {
+            if (pos1 == pos)
+            {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
     }
 }
