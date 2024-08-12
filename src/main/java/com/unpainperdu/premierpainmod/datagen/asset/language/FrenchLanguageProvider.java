@@ -42,6 +42,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");
             // villager workshop
         villagerWorkshopTranslation();
+            //1 block flower
+        add(BlockRegister.RUINS_FLOWER.get(), "Fleure de ruines");
             // "All material"
         globalAllMaterialTranslation("oak", "chêne");
         globalAllMaterialTranslation("birch","bouleau");

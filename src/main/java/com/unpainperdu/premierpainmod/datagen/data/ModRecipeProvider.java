@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWo
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -38,6 +39,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //item
         //block
+            //flower to colorant
+            oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE);
+            //all materials recipes
         for(DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
         {
             Block block = Defferedblock.get();
@@ -268,5 +272,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         VillagerWorkshopRecipeBuilder.villagerWorkshoping(Ingredient.of(pMaterial), pCategory, pResult, pResultCount)
                 .unlockedBy(getHasName(pMaterial), has(pMaterial))
                 .save(ModRecipeProvider.recipeOutput, BuiltInRegistries.ITEM.getKey(pResult.asItem())+"_villagerworkshopping");
+    }
+
+    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result)
+    {
+        String resultName = BuiltInRegistries.BLOCK.getKey((Block) ((DeferredBlock<Block>) resource).get()).toString().replace(PremierPainMod.MOD_ID +":","");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result).requires(resource).unlockedBy("has_" + resultName, has(resource)).save(ModRecipeProvider.recipeOutput);
     }
 }

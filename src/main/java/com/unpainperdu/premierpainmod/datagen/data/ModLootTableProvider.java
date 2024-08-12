@@ -2,12 +2,16 @@ package com.unpainperdu.premierpainmod.datagen.data;
 
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
 import net.minecraft.core.HolderLookup;
@@ -16,6 +20,8 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -75,12 +81,18 @@ public class ModLootTableProvider extends LootTableProvider
                     }else if (block instanceof VillagerShelf)
                     {
                         villagerShelfLootTableGenerator(block);
-                    } else
+                    }
+                    else if(block instanceof VillagerPedestalBlock
+                            || block instanceof VillagerTableBlock
+                            || block instanceof VillagerChairBlock
+                            || block instanceof FlowerBlock
+                    )
                     {
                         normalBlockLootTableGenerator(block);
                     }
                 }
             }
+            pottedFlowerLootTableGenerator(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
@@ -94,6 +106,10 @@ public class ModLootTableProvider extends LootTableProvider
         private void normalBlockLootTableGenerator(Block block)
         {
             super.add(block, this.createSingleItemTable(block));
+        }
+        private void pottedFlowerLootTableGenerator(Block flowerPot, Block flowerBlock)
+        {
+            super.add(flowerPot, this.createPotFlowerItemTable(flowerBlock));
         }
 
         private void villagerStatueLootTableGenerator(Block statue)

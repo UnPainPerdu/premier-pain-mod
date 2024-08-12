@@ -8,6 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -25,14 +26,14 @@ public class CreativeTabRegister
             .displayItems((parameters, output) ->
             {
                 //Blocks
-                for(DeferredBlock<Block> defferedBlock : ModList.ALL_BLOCKS)
+                for(DeferredBlock<Block> deferedBlock : ModList.ALL_BLOCKS)
                 {
-                    creativeTabBlock(defferedBlock, output);
+                    creativeTabBlock(deferedBlock, output);
                 }
                 //Items
-                for(DeferredItem<Item> defferedItem : ModList.ALL_ITEMS)
+                for(DeferredItem<Item> deferedItem : ModList.ALL_ITEMS)
                 {
-                    creativeTabItems(defferedItem, output);
+                    creativeTabItems(deferedItem, output);
                 }
 
             }).build());
@@ -40,7 +41,9 @@ public class CreativeTabRegister
     private static void creativeTabBlock(DeferredBlock<Block> deferredBlock, CreativeModeTab.Output output)
     {
         Block block = deferredBlock.get();
-        if(!(block instanceof VillagerShelf))
+        if(!(block instanceof VillagerShelf)
+            && !(block instanceof  FlowerPotBlock)
+        )
         {
             output.accept(block);
         }

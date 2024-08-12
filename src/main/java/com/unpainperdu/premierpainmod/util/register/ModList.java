@@ -391,7 +391,10 @@ public class ModList
             BlockRegister.OBSIDIAN_WALL_VILLAGER_SHELF,
             BlockRegister.AMETHYST_BLOCK_WALL_VILLAGER_SHELF,
             BlockRegister.DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF,
-            BlockRegister.BEDROCK_WALL_VILLAGER_SHELF
+            BlockRegister.BEDROCK_WALL_VILLAGER_SHELF,
+            //flower and pot
+            BlockRegister.RUINS_FLOWER,
+            BlockRegister.POTTED_RUINS_FLOWER
     );
 
     public static List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(

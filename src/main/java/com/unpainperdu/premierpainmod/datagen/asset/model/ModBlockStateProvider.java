@@ -19,12 +19,16 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.time.format.ResolverStyle;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
@@ -53,7 +57,9 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if(block instanceof VillagerDrawer) {villagerDrawerWithItem(block);}
             else if(block instanceof WallVillagerShelf) {wallVillagerShelf(block);}
             else if(block instanceof StandingVillagerShelf) {standingVillagerShelf(block);}
+            else if (block instanceof FlowerBlock) {flowerBlockWithItem(block);}
         }
+        flowerPotBlock(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
     private void simpleBlockWithItem(Block block)
@@ -788,6 +794,28 @@ public class ModBlockStateProvider extends BlockStateProvider
             default: return "_pink";
         }
     }
+
+    private void flowerBlockWithItem(Block block)
+    {
+        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+
+        ModelFile modelFile = models().withExistingParent(name, "block/cross").texture("cross", "block/flower_block/one_block_flower/" + name).renderType("cutout");
+        ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated").texture("layer0", "block/flower_block/one_block_flower/" + name);
+
+        simpleBlock(block, modelFile);
+        itemModels().getBuilder(getKey(block).getPath()).parent(itemModelFile);
+    }
+
+    private void flowerPotBlock(Block flowerPotBlock, Block flowerBlock)
+    {
+        String name = BuiltInRegistries.BLOCK.getKey(flowerPotBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+        String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+
+
+        ModelFile modelFile = models().withExistingParent(name, ResourceLocation.withDefaultNamespace("flower_pot_cross")).texture("plant", "block/flower_block/one_block_flower/" + nameFlower).renderType("cutout");
+        simpleBlock(flowerPotBlock, modelFile);
+    }
+
     private ResourceLocation getKey(Block block)
     {
         return BuiltInRegistries.BLOCK.getKey(block);

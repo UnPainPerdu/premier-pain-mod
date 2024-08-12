@@ -43,6 +43,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");
             // villager workshop
         villagerWorkshopTranslation();
+            //1 block flower
+        add(BlockRegister.RUINS_FLOWER.get(), "Ruins flower");
             // "All material"
         globalAllMaterialTranslation("oak");
         globalAllMaterialTranslation("birch");

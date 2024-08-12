@@ -76,6 +76,7 @@ note :
     - It should be compat between 1.21 and 1.21.1
 add :
     - Premier Pain ruins biome
+    - Ruins flower
 fix :
     - Villager singing stone can now stack to 1 max
 
