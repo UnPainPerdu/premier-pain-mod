@@ -75,7 +75,7 @@ public class ItemRegister
 
     private static DeferredItem<Item> villagerSingingStoneRegister(String name, int delayInSecond, Supplier<DeferredHolder<SoundEvent, SoundEvent>> soundEvent, AbstractVillagerSingingStoneEvent event)
     {
-        return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties(), soundEvent.get().get(), name, event, delayInSecond));
+        return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties().stacksTo(1), soundEvent.get().get(), name, event, delayInSecond));
     }
         public static void register(IEventBus modEventBus)
     {
