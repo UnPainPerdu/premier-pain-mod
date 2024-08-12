@@ -69,3 +69,13 @@ add :
     -full integration for jei
 fix :
     -minor error in log related to craft
+--------------
+1.21.x-1.8.0
+update neoforge to 21.1.6
+note :
+    - It should be compat between 1.21 and 1.21.1
+add :
+    - Premier Pain ruins biome
+fix :
+    - Villager singing stone can now stack to 1 max
+
