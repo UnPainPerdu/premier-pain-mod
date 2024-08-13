@@ -13,10 +13,13 @@ public class ModMiscOverworldFeatures
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUSH_AND_STONE = ModFeatureUtil.createKey("bush_and_stone");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HOUSE_FOUNDATION_RUINS = ModFeatureUtil.createKey("house_foundation_ruins");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> pContext)
     {
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.VILLAGER_STATUE_RUINS, FeatureRegister.VILLAGER_STATUE_RUINS.get(), NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.BUSH_AND_STONE, FeatureRegister.BUSH_AND_STONE.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModMiscOverworldFeatures.HOUSE_FOUNDATION_RUINS, FeatureRegister.HOUSE_FOUNDATION_RUINS.get(), NoneFeatureConfiguration.INSTANCE);
     }
 
 

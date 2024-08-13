@@ -6,6 +6,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.GrassBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 
 import java.util.ArrayList;
 
@@ -210,5 +211,17 @@ public class ModFeatureUtils
             }
         }
         return tempList;
+    }
+
+    public static boolean isFlying(BlockPos pos, WorldGenLevel worldIn)
+    {
+        if(worldIn.getBlockState(pos.below()).getBlock() instanceof AirBlock || worldIn.getBlockState(pos.below()).getBlock() instanceof LiquidBlock)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

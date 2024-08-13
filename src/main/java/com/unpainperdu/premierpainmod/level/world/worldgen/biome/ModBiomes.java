@@ -58,6 +58,7 @@ public class ModBiomes
         BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
         BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
         addVillagerStatue(biomegenerationsettings$builder);
+        addHouseFoundationRuins(biomegenerationsettings$builder);
         addBushAndStoneFeature(biomegenerationsettings$builder);
         addRuinsFlowers(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
@@ -102,5 +103,10 @@ public class ModBiomes
     public static void addRuinsFlowers(BiomeGenerationSettings.Builder pBuilder)
     {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_RUINS_FLOWER);
+    }
+
+    public static void addHouseFoundationRuins(BiomeGenerationSettings.Builder pBuilder)
+    {
+        pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.HOUSE_FOUNDATION_RUINS);
     }
 }
