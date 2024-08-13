@@ -81,6 +81,7 @@
     ],
     [
       "minecraft:glow_lichen",
+      "premierpainmod:patch_ruins_flower",
       "minecraft:patch_tall_grass_2",
       "minecraft:bamboo_light",
       "minecraft:trees_plains",

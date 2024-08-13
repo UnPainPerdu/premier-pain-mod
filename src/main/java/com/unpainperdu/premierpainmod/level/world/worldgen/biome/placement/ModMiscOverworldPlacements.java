@@ -1,13 +1,12 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement;
 
-import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModMiscOverworldFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -15,8 +14,8 @@ import java.util.List;
 
 public class ModMiscOverworldPlacements
 {
-    public static final ResourceKey<PlacedFeature> VILLAGER_STATUE_RUINS = createKey("villager_statue_ruins");
-    public static final ResourceKey<PlacedFeature> BUSH_AND_STONE = createKey("bush_and_stone");
+    public static final ResourceKey<PlacedFeature> VILLAGER_STATUE_RUINS = ModPlacementUtil.createKey("villager_statue_ruins");
+    public static final ResourceKey<PlacedFeature> BUSH_AND_STONE = ModPlacementUtil.createKey("bush_and_stone");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
@@ -36,10 +35,5 @@ public class ModMiscOverworldPlacements
     protected static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedFeatureKey, Holder<ConfiguredFeature<?, ?>> configuredFeature, List<PlacementModifier> modifiers)
     {
         context.register(placedFeatureKey, new PlacedFeature(configuredFeature, modifiers));
-    }
-
-    public static ResourceKey<PlacedFeature> createKey(String name)
-    {
-        return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, name));
     }
 }

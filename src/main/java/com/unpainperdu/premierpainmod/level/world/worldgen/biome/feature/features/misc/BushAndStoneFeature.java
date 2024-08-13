@@ -1,6 +1,7 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.feature;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc;
 
 import com.mojang.serialization.Codec;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;

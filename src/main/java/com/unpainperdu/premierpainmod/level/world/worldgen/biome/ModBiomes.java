@@ -1,10 +1,13 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement.ModMiscOverworldPlacements;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement.ModVegetationPlacement;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Musics;
@@ -56,6 +59,7 @@ public class ModBiomes
         BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
         addVillagerStatue(biomegenerationsettings$builder);
         addBushAndStoneFeature(biomegenerationsettings$builder);
+        addRuinsFlowers(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
@@ -90,8 +94,14 @@ public class ModBiomes
     {
         pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_STATUE_RUINS);
     }
+
     public static void addBushAndStoneFeature(BiomeGenerationSettings.Builder pBuilder)
     {
         pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.BUSH_AND_STONE);
+    }
+
+    public static void addRuinsFlowers(BiomeGenerationSettings.Builder pBuilder)
+    {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_RUINS_FLOWER);
     }
 }

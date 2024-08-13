@@ -1,9 +1,11 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.feature;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.AirBlock;
+import net.minecraft.world.level.block.GrassBlock;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,12 @@ public class ModFeatureUtils
     {
         return (Math.abs(rand.nextInt()))%modulo;
     }
+
+    public static int getRandomIntInRange(int modulo, RandomSource rand)
+    {
+        return (rand.nextInt())%modulo;
+    }
+
     public static BlockPos getLeft(BlockPos pos, Direction direction)
     {
         switch (direction)
@@ -143,5 +151,64 @@ public class ModFeatureUtils
             }
         }
         return flag;
+    }
+
+    /**
+     * spread = max value in x and z that pos is far
+     * */
+    public static ArrayList<BlockPos> getRandomPosWithSameY (BlockPos pos,int minNumberOfPos, int maxNumberOfPos,int spread, RandomSource rand)
+    {
+        int random = getRandomPositiveIntInRange(maxNumberOfPos - minNumberOfPos, rand) + minNumberOfPos;
+        ArrayList<BlockPos> list = new ArrayList<>();
+        list.add(pos);
+
+        for (int i = 0; i < random; i++)
+        {
+            int previousPosX = pos.getX();
+            int previousPosY = pos.getY();
+            int previousPosZ = pos.getZ();
+
+            int newPosX = previousPosX + getRandomIntInRange(spread, rand);
+            int newPosZ = previousPosZ + getRandomIntInRange(spread, rand);
+
+            BlockPos tempPos = new BlockPos(newPosX, previousPosY, newPosZ);
+
+            if(!(isPosInList(tempPos, list)))
+            {
+                list.add(tempPos);
+
+                pos = tempPos;
+            }
+        }
+        return list;
+    }
+
+    public static ArrayList<BlockPos> setAllPosToTheGround(ArrayList<BlockPos> list, WorldGenLevel worldIn)
+    {
+        ArrayList<BlockPos> tempList = new ArrayList<>();
+        for(BlockPos pos1 : list)
+        {
+            int i = 0;
+            boolean flag = false;
+            while (!flag)
+            {
+                BlockPos belowPos = pos1.below();
+                if(!(worldIn.getBlockState(belowPos).getBlock() instanceof AirBlock))
+                {
+                    flag = true;
+                    tempList.add(pos1);
+                }
+                else
+                {
+                    pos1 = belowPos;
+                }
+                if (i > 10)
+                {
+                    flag = true;
+                }
+                i ++;
+            }
+        }
+        return tempList;
     }
 }
