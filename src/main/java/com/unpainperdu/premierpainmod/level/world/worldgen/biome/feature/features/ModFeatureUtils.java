@@ -5,7 +5,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.AirBlock;
-import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 
 import java.util.ArrayList;
@@ -32,91 +31,136 @@ public class ModFeatureUtils
 
     public static BlockPos getLeft(BlockPos pos, Direction direction)
     {
-        switch (direction)
+        return getLeft(pos, direction, 1);
+    }
+
+    public static BlockPos getLeft(BlockPos pos, Direction direction, int howMuch)
+    {
+        for (int i = 0; i < howMuch; i++)
         {
-            case Direction.NORTH:
+            switch (direction)
             {
-                return pos.west();
-            }
-            case Direction.EAST:
-            {
-                return pos.north();
-            }
-            case Direction.SOUTH:
-            {
-                return pos.east();
-            }
-            default :
-            {
-                return pos.south();
+                case Direction.NORTH:
+                {
+                    pos = pos.west();
+                    break;
+                }
+                case Direction.EAST:
+                {
+                    pos = pos.north();
+                    break;
+                }
+                case Direction.SOUTH:
+                {
+                    pos = pos.east();
+                    break;
+                }
+                default:
+                {
+                    pos = pos.south();
+                }
             }
         }
+        return pos;
     }
     public static BlockPos getRight(BlockPos pos, Direction direction)
     {
-        switch (direction)
+        return getRight(pos, direction, 1);
+    }
+    public static BlockPos getRight(BlockPos pos, Direction direction, int howMuch)
+    {
+        for (int i = 0; i < howMuch; i++)
         {
-            case Direction.NORTH:
+            switch (direction)
             {
-                return pos.east();
-            }
-            case Direction.EAST:
-            {
-                return pos.south();
-            }
-            case Direction.SOUTH:
-            {
-                return pos.west();
-            }
-            default :
-            {
-                return pos.north();
+                case Direction.NORTH:
+                {
+                    pos = pos.east();
+                    break;
+                }
+                case Direction.EAST:
+                {
+                    pos = pos.south();
+                    break;
+                }
+                case Direction.SOUTH:
+                {
+                    pos = pos.west();
+                    break;
+                }
+                default:
+                {
+                    pos = pos.north();
+                }
             }
         }
+        return pos;
     }
     public static BlockPos getBehind(BlockPos pos, Direction direction)
     {
-        switch (direction)
+        return getBehind(pos, direction, 1);
+    }
+    public static BlockPos getBehind(BlockPos pos, Direction direction, int howMuch)
+    {
+        for (int i = 0; i < howMuch; i++)
         {
-            case Direction.NORTH:
+            switch (direction)
             {
-                return pos.north();
-            }
-            case Direction.EAST:
-            {
-                return pos.east();
-            }
-            case Direction.SOUTH:
-            {
-                return pos.south();
-            }
-            default :
-            {
-                return pos.west();
+                case Direction.NORTH:
+                {
+                    pos = pos.north();
+                    break;
+                }
+                case Direction.EAST:
+                {
+                    pos = pos.east();
+                    break;
+                }
+                case Direction.SOUTH:
+                {
+                    pos = pos.south();
+                    break;
+                }
+                default:
+                {
+                    pos = pos.west();
+                }
             }
         }
+        return pos;
     }
     public static BlockPos getFront(BlockPos pos, Direction direction)
     {
-        switch (direction)
+        return getFront(pos, direction, 1);
+    }
+    public static BlockPos getFront(BlockPos pos, Direction direction, int howMuch)
+    {
+        for (int i = 0; i < howMuch; i++)
         {
-            case Direction.NORTH:
+            switch (direction)
             {
-                return pos.south();
-            }
-            case Direction.EAST:
-            {
-                return pos.west();
-            }
-            case Direction.SOUTH:
-            {
-                return pos.north();
-            }
-            default :
-            {
-                return pos.east();
+                case Direction.NORTH:
+                {
+                    pos = pos.south();
+                    break;
+                }
+                case Direction.EAST:
+                {
+                    pos = pos.west();
+                    break;
+                }
+                case Direction.SOUTH:
+                {
+                    pos = pos.north();
+                    break;
+                }
+                default:
+                {
+                    pos = pos.east();
+                }
             }
         }
+        return pos;
     }
     public static Direction getDirection(RandomSource rand)
     {
@@ -223,5 +267,15 @@ public class ModFeatureUtils
         {
             return false;
         }
+    }
+
+    public static ArrayList<BlockPos> upTo (ArrayList<BlockPos> list, int howMuch)
+    {
+        ArrayList<BlockPos> tempList = new ArrayList<>();
+        for (BlockPos pos1 : list)
+        {
+            tempList.add(pos1.above(howMuch));
+        }
+        return tempList;
     }
 }

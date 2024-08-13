@@ -410,13 +410,19 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         List<BlockPos> posList =  Arrays.asList(ModFeatureUtils.getLeft(pos, direction), ModFeatureUtils.getRight(pos, direction), ModFeatureUtils.getFront(pos, direction), ModFeatureUtils.getBehind(pos, direction));
         List<Block> blockList = new ArrayList<>();
         List<Direction> directionList = new ArrayList<>();
+
         for(BlockPos posFor : posList)
         {
             blockList.add(worldIn.getBlockState(posFor).getBlock());
-            directionList.add(Direction.fromDelta((pos.getX()-posList.get(i).getX()),pos.getY()-posList.get(i).getY(),pos.getZ()-posList.get(i).getZ()));
+            int basePoseX = pos.getX();
+            int basePoseY = pos.getY();
+            int basePoseZ = pos.getZ();
+            int poseX = posList.get(i).getX();
+            int poseY = posList.get(i).getY();
+            int poseZ = posList.get(i).getZ();
+            directionList.add(Direction.fromDelta(basePoseX - poseX,basePoseY - poseY,basePoseZ - poseZ));
             i ++;
         }
-
         i = 0;
         BlockState blockState = Blocks.VINE.defaultBlockState();
 
