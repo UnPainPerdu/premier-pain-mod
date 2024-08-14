@@ -25,16 +25,6 @@ public class ModBiomes
         context.register(PREMIER_PAIN_RUINS, premierPainRuins(context));
     }
 
-    private static void globalOverworldGeneration(BiomeGenerationSettings.Builder pGenerationSettings)
-    {
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(pGenerationSettings);
-        BiomeDefaultFeatures.addDefaultCrystalFormations(pGenerationSettings);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(pGenerationSettings);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(pGenerationSettings);
-        BiomeDefaultFeatures.addDefaultSprings(pGenerationSettings);
-        BiomeDefaultFeatures.addSurfaceFreezing(pGenerationSettings);
-    }
-
     protected static int calculateSkyColor(float pTemperature)
     {
         float $$1 = pTemperature / 3.0F;
