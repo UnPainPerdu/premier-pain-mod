@@ -5,6 +5,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.AirBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 
 import java.util.ArrayList;
@@ -19,6 +21,9 @@ public class ModFeatureUtils
         return pos.below(randomInt + 3);
     }
 
+    /**
+     * modulo must be >= 2 or it's useless
+     */
     public static int getRandomPositiveIntInRange(int modulo, RandomSource rand)
     {
         return (Math.abs(rand.nextInt()))%modulo;
@@ -189,7 +194,7 @@ public class ModFeatureUtils
         boolean flag = false;
         for(BlockPos pos1 : posList)
         {
-            if (pos1 == pos)
+            if (pos1.equals(pos))
             {
                 flag = true;
                 break;
@@ -238,7 +243,8 @@ public class ModFeatureUtils
             while (!flag)
             {
                 BlockPos belowPos = pos1.below();
-                if(!(worldIn.getBlockState(belowPos).getBlock() instanceof AirBlock))
+                Block block = worldIn.getBlockState(belowPos).getBlock();
+                if(!(block instanceof AirBlock) && !(block instanceof LiquidBlock) && !(block instanceof LeavesBlock))
                 {
                     flag = true;
                     tempList.add(pos1);
@@ -259,7 +265,8 @@ public class ModFeatureUtils
 
     public static boolean isFlying(BlockPos pos, WorldGenLevel worldIn)
     {
-        if(worldIn.getBlockState(pos.below()).getBlock() instanceof AirBlock || worldIn.getBlockState(pos.below()).getBlock() instanceof LiquidBlock)
+        Block block = worldIn.getBlockState(pos.below()).getBlock();
+        if(block instanceof AirBlock || block instanceof LiquidBlock || block instanceof LeavesBlock)
         {
             return true;
         }

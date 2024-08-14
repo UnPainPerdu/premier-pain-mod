@@ -296,7 +296,7 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
     private void generateStoneBricksSlab(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, boolean isUp)
     {
         boolean inFlag = false;
-        int randomSpawn = ModFeatureUtils.getRandomPositiveIntInRange(numberA,rand);
+        int randomSpawn = ModFeatureUtils.getRandomPositiveIntInRange(this.numberA,rand);
         if(randomSpawn == 1)
         {
             inFlag = true;
@@ -320,7 +320,7 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
     private void generateStoneBricksStairWithShape(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
         boolean inFlag = false;
-        int randomSpawn = ModFeatureUtils.getRandomPositiveIntInRange(numberA,rand);
+        int randomSpawn = ModFeatureUtils.getRandomPositiveIntInRange(this.numberA,rand);
         if(randomSpawn == 1)
         {
             inFlag = true;
@@ -345,7 +345,7 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
     private void generateStoneBricksStair(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
         boolean inFlag = false;
-        int randomSpawn = ModFeatureUtils.getRandomPositiveIntInRange(numberA,rand);
+        int randomSpawn = ModFeatureUtils.getRandomPositiveIntInRange(this.numberA,rand);
         if(randomSpawn == 1)
         {
             inFlag = true;
