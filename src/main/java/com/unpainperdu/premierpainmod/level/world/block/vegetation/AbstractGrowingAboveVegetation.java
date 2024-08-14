@@ -71,7 +71,6 @@ public abstract class AbstractGrowingAboveVegetation extends Block
                     {
                         pLevel.setBlockAndUpdate(pPos.above(), this.defaultBlockState().setValue(MAX_HEIGHT, maxHeight));
                         net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(pLevel, pPos.above(), this.defaultBlockState());
-                        System.out.println("modif");
                         pLevel.setBlock(pPos, pState.setValue(AGE, 0).setValue(MAX_HEIGHT, getRandomMaxHeight(getSeedFromPos(pPos))), 4);
                     }
                     else
