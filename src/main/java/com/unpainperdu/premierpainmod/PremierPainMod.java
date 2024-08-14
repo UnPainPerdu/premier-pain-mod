@@ -34,5 +34,4 @@ public class PremierPainMod
         event.enqueueWork(() -> ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegister.RUINS_FLOWER.getId(),BlockRegister.POTTED_RUINS_FLOWER));
         event.enqueueWork(() -> ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegister.CIVILIZATIONS_FLOWER.getId(),BlockRegister.POTTED_CIVILIZATIONS_FLOWER));
     }
-
 }
