@@ -1,48 +1,37 @@
-package com.unpainperdu.premierpainmod.datagen.data;
+package com.unpainperdu.premierpainmod.datagen.data.datamap;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.util.register.ModList;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
-import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 
-import java.util.concurrent.CompletableFuture;
-
-public class ModBurnTimeProvider extends DataMapProvider
+public class ModBurnTimeProvider
 {
-    public ModBurnTimeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider)
+    protected static void gather(DataMapProvider.Builder<FurnaceFuel, Item> burnableBuilder)
     {
-        super(packOutput, lookupProvider);
-    }
-
-    @Override
-    protected void gather()
-    {
-        Builder<FurnaceFuel, Item> builder = builder(NeoForgeDataMaps.FURNACE_FUELS);
-        builder.replace(false);
+        burnableBuilder.replace(false);
         for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
-            setBlockBurnableByFurnace(deferredBlock.get(), builder);
+            setBlockBurnableByFurnace(deferredBlock.get(), burnableBuilder);
         }
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
-            setBlockBurnableByFurnace(deferredItem.get(), builder);
+            setBlockBurnableByFurnace(deferredItem.get(), burnableBuilder);
         }
     }
 
-    private void setBlockBurnableByFurnace(Block block, Builder<FurnaceFuel, Item> builder)
+    protected static void setBlockBurnableByFurnace(Block block, DataMapProvider.Builder<FurnaceFuel, Item> burnableBuilder)
     {
-        setBlockBurnableByFurnace(block.asItem(), builder);
+        setBlockBurnableByFurnace(block.asItem(), burnableBuilder);
     }
 
-    private void setBlockBurnableByFurnace(Item item, Builder<FurnaceFuel, Item> builder)
+    protected static void setBlockBurnableByFurnace(Item item, DataMapProvider.Builder<FurnaceFuel, Item> burnableBuilder)
     {
         String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
 
@@ -57,7 +46,7 @@ public class ModBurnTimeProvider extends DataMapProvider
                 || (itemName.contains("bamboo"))
         )
         {
-            builder.add(item.getDefaultInstance().getItemHolder() ,new FurnaceFuel(300),false);
+            burnableBuilder.add(item.getDefaultInstance().getItemHolder(), new FurnaceFuel(300), false);
         }
     }
 }

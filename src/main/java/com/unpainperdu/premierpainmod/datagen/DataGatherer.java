@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.datagen.asset.model.ModBlockStateProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.model.ModItemStateProvider;
 import com.unpainperdu.premierpainmod.datagen.data.*;
 import com.unpainperdu.premierpainmod.datagen.data.dataPackRegistries.ModDataPackProvider;
+import com.unpainperdu.premierpainmod.datagen.data.datamap.ModDataMap;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -30,7 +31,9 @@ public class DataGatherer
         generator.addProvider(event.includeServer(),new ModItemStateProvider(packOutput, fileHelper));
         generator.addProvider(event.includeServer(), new ModSoundProvider(packOutput,fileHelper));
         generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
-        generator.addProvider(event.includeServer(), new ModBurnTimeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModDataMap(packOutput, lookupProvider));
+
+
         ModDataPackProvider.onGatherData(event);
     }
 }

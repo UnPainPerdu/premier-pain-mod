@@ -1,0 +1,10 @@
+{
+  "values": {
+    "premierpainmod:civilizations_flower": {
+      "chance": 0.5
+    },
+    "premierpainmod:ruins_flower": {
+      "chance": 0.65
+    }
+  }
+}
