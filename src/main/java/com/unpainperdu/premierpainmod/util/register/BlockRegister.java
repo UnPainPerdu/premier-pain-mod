@@ -10,6 +10,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEn
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.CivilizationsFlowerBlock;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -470,6 +471,9 @@ public class BlockRegister
      */
     public static final DeferredBlock<Block> RUINS_FLOWER =  registerBlock("ruins_flower", () -> new FlowerBlock(MobEffects.WITHER,5,BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_RUINS_FLOWER = registerFlowerPot("potted_ruins_flower",() -> RUINS_FLOWER);
+    public static final DeferredBlock<Block> CIVILIZATIONS_FLOWER =  registerBlock("civilizations_flower", () -> new CivilizationsFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> POTTED_CIVILIZATIONS_FLOWER = registerFlowerPot("potted_civilizations_flower",() -> CIVILIZATIONS_FLOWER);
+
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
