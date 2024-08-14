@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -41,14 +42,28 @@ public class HouseFoundationRuinsFeature extends Feature<NoneFeatureConfiguratio
         {
             return false;
         }
-        generateHouseFoundationRuins(worldIn, rand, pos, direction);
+        int randomChanceShape = ModFeatureUtils.getRandomPositiveIntInRange(10, rand);
+        if (randomChanceShape < 5)
+        {
+            generate5x5SquareHouseFoundationRuins(worldIn, rand, pos, direction);
+
+        }
+        else if (randomChanceShape < 8)
+        {
+            generate5BlockCircleHouseFoundationRuins(worldIn, rand, pos, direction);
+        }
+        else
+        {
+            generateLHouseFoundationRuins(worldIn, rand, pos, direction);
+        }
+
         this.numberA = 1000;
         this.countInFlag = 0;
         this.flag = false;
         return true;
     }
 
-    private void generateHouseFoundationRuins(WorldGenLevel worldIn, RandomSource rand, BlockPos pos, Direction direction)
+    private void generate5x5SquareHouseFoundationRuins(WorldGenLevel worldIn, RandomSource rand, BlockPos pos, Direction direction)
     {
         ArrayList<BlockPos> floorList = getPosListSquareFoundation(pos, worldIn, direction);
         ArrayList<BlockPos> wallFirstLevelList = ModFeatureUtils.upTo(getSidePos(floorList), 1);
@@ -64,6 +79,53 @@ public class HouseFoundationRuinsFeature extends Feature<NoneFeatureConfiguratio
         {
             generateStoneBricks(pos2, worldIn, rand, direction);
         }
+        this.numberA = 2;
+        wallSecondLevelList = ModFeatureUtils.setAllPosToTheGround(wallSecondLevelList, worldIn);
+        for (BlockPos pos3 : wallSecondLevelList)
+        {
+            generateStoneBricks(pos3, worldIn, rand, direction);
+        }
+    }
+    private void generate5BlockCircleHouseFoundationRuins(WorldGenLevel worldIn, RandomSource rand, BlockPos pos, Direction direction)
+    {
+        ArrayList<BlockPos> floorList = getPosListCircleFoundation(pos, worldIn, direction);
+        ArrayList<BlockPos> wallFirstLevelList = ModFeatureUtils.upTo(getSidePos(floorList), 1);
+        ArrayList<BlockPos> wallSecondLevelList = ModFeatureUtils.upTo(getSidePos(floorList), 2);
+        floorList = ModFeatureUtils.setAllPosToTheGround(floorList, worldIn);
+        for (BlockPos pos1 : floorList)
+        {
+            generateStoneBricks(pos1, worldIn, rand, direction);
+        }
+        this.numberA = 2;
+        wallFirstLevelList = ModFeatureUtils.setAllPosToTheGround(wallFirstLevelList, worldIn);
+        for (BlockPos pos2 : wallFirstLevelList)
+        {
+            generateStoneBricks(pos2, worldIn, rand, direction);
+        }
+        wallSecondLevelList = ModFeatureUtils.setAllPosToTheGround(wallSecondLevelList, worldIn);
+        for (BlockPos pos3 : wallSecondLevelList)
+        {
+            generateStoneBricks(pos3, worldIn, rand, direction);
+        }
+    }
+    private void generateLHouseFoundationRuins(WorldGenLevel worldIn, RandomSource rand, BlockPos pos, Direction direction)
+    {
+        ArrayList<BlockPos> floorList = getPosListLFoundation(pos, worldIn, direction);
+        ArrayList<BlockPos> wallFirstLevelList = ModFeatureUtils.upTo(getSidePos(floorList), 1);
+        ArrayList<BlockPos> wallSecondLevelList = ModFeatureUtils.upTo(getSidePos(floorList), 2);
+        floorList = ModFeatureUtils.setAllPosToTheGround(floorList, worldIn);
+        for (BlockPos pos1 : floorList)
+        {
+            generateStoneBricks(pos1, worldIn, rand, direction);
+        }
+
+        this.numberA = 4;
+        wallFirstLevelList = ModFeatureUtils.setAllPosToTheGround(wallFirstLevelList, worldIn);
+        for (BlockPos pos2 : wallFirstLevelList)
+        {
+            generateStoneBricks(pos2, worldIn, rand, direction);
+        }
+
         this.numberA = 2;
         wallSecondLevelList = ModFeatureUtils.setAllPosToTheGround(wallSecondLevelList, worldIn);
         for (BlockPos pos3 : wallSecondLevelList)
@@ -115,6 +177,43 @@ public class HouseFoundationRuinsFeature extends Feature<NoneFeatureConfiguratio
         list.add(posTempRight);
         list.add(ModFeatureUtils.getBehind(posTempRight,direction));
         list.add(ModFeatureUtils.getFront(posTempRight,direction));
+
+        return list;
+    }
+    private ArrayList<BlockPos> getPosListCircleFoundation(BlockPos pos, WorldGenLevel worldIn, Direction direction)
+    {
+        ArrayList<BlockPos> list = new ArrayList<>();
+
+        list.add(pos); //center of circle
+
+        // 3x3
+        BlockPos posTempFront = ModFeatureUtils.getFront(pos, direction);
+        BlockPos posTempBehind = ModFeatureUtils.getBehind(pos, direction);
+        list.add(posTempFront);
+        list.add(ModFeatureUtils.getLeft(posTempFront,direction));
+        list.add(ModFeatureUtils.getRight(posTempFront,direction));
+        list.add(ModFeatureUtils.getBehind(ModFeatureUtils.getLeft(posTempFront,direction), direction));
+        list.add(ModFeatureUtils.getBehind(ModFeatureUtils.getRight(posTempFront,direction), direction));
+        list.add(posTempBehind);
+        list.add(ModFeatureUtils.getLeft(posTempBehind,direction));
+        list.add(ModFeatureUtils.getRight(posTempBehind,direction));
+
+        list.add(ModFeatureUtils.getFront(pos, direction, 2));
+        list.add(ModFeatureUtils.getBehind(pos, direction, 2));
+        list.add(ModFeatureUtils.getLeft(pos, direction, 2));
+        list.add(ModFeatureUtils.getRight(pos, direction, 2));
+
+        return list ;
+    }
+    private ArrayList<BlockPos> getPosListLFoundation(BlockPos pos, WorldGenLevel worldIn, Direction direction)
+    {
+        ArrayList<BlockPos> list = new ArrayList<>();
+        ArrayList<BlockPos> tempListA = getPosListSquareFoundation(pos, worldIn, direction);
+        ArrayList<BlockPos> tempListB = getPosListSquareFoundation(ModFeatureUtils.getRight(pos, direction, 5), worldIn, direction);
+        ArrayList<BlockPos> tempListC = getPosListSquareFoundation(ModFeatureUtils.getFront(pos, direction, 5), worldIn, direction);
+        list.addAll(tempListA);
+        list.addAll(tempListB);
+        list.addAll(tempListC);
 
         return list;
     }
