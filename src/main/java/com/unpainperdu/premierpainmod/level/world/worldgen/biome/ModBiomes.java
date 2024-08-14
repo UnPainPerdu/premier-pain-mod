@@ -51,6 +51,7 @@ public class ModBiomes
         addHouseFoundationRuins(biomegenerationsettings$builder);
         addBushAndStoneFeature(biomegenerationsettings$builder);
         addRuinsFlowers(biomegenerationsettings$builder);
+        addCivilizationsFlowers(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
@@ -93,6 +94,11 @@ public class ModBiomes
     public static void addRuinsFlowers(BiomeGenerationSettings.Builder pBuilder)
     {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_RUINS_FLOWER);
+    }
+
+    public static void addCivilizationsFlowers(BiomeGenerationSettings.Builder pBuilder)
+    {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_CIVILIZATIONS_FLOWER);
     }
 
     public static void addHouseFoundationRuins(BiomeGenerationSettings.Builder pBuilder)

@@ -17,14 +17,19 @@ import java.util.List;
 public class ModVegetationPlacement
 {
     public static final ResourceKey<PlacedFeature> PATCH_RUINS_FLOWER = ModPlacementUtil.createKey("patch_ruins_flower");
+    public static final ResourceKey<PlacedFeature> PATCH_CIVILIZATIONS_FLOWER = ModPlacementUtil.createKey("patch_civilizations_flower");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureGetter = pContext.lookup(Registries.CONFIGURED_FEATURE);
 
         final Holder<ConfiguredFeature<?, ?>> PATCH_RUINS_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_RUINS_FLOWER);
-
         register(pContext, ModVegetationPlacement.PATCH_RUINS_FLOWER, PATCH_RUINS_FLOWER_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
+        final Holder<ConfiguredFeature<?, ?>> PATCH_CIVILIZATIONS_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_CIVILIZATIONS_FLOWER);
+        register(pContext, ModVegetationPlacement.PATCH_CIVILIZATIONS_FLOWER, PATCH_CIVILIZATIONS_FLOWER_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
+
     }
 
     protected static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedFeatureKey, Holder<ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... modifiers)
