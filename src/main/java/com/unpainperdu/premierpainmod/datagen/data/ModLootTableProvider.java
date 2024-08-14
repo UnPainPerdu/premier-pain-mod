@@ -11,6 +11,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerB
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
@@ -86,6 +87,7 @@ public class ModLootTableProvider extends LootTableProvider
                             || block instanceof VillagerTableBlock
                             || block instanceof VillagerChairBlock
                             || block instanceof FlowerBlock
+                            || block instanceof CivilizationsFlowerBlock
                     )
                     {
                         normalBlockLootTableGenerator(block);
@@ -93,6 +95,7 @@ public class ModLootTableProvider extends LootTableProvider
                 }
             }
             pottedFlowerLootTableGenerator(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
+            pottedFlowerLootTableGenerator(BlockRegister.POTTED_CIVILIZATIONS_FLOWER.get(), BlockRegister.CIVILIZATIONS_FLOWER.get());
         }
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks()
