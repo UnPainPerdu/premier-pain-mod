@@ -20,5 +20,6 @@ public class RegisterHandler
         CodecForGLMRegister.register(modEventBus);
         ModTerraBlender.registerBiomes();
         FeatureRegister.register(modEventBus);
+        StructureRegister.register(modEventBus);
     }
 }

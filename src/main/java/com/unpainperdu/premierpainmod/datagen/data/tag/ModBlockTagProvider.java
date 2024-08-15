@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.datagen.data;
+package com.unpainperdu.premierpainmod.datagen.data.tag;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
