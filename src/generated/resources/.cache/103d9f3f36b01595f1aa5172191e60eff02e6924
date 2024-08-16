@@ -1,8 +1,8 @@
-// 1.21.1	2024-08-15T00:20:44.8873803	Registries
+// 1.21.1	2024-08-16T23:43:40.0898279	Registries
 63d2cd84592b995a3ce73462b559593e7a2a164e data/premierpainmod/damage_type/liberty_damage1.json
 e4c65cca9906f71a9dfd94e94036944699324e30 data/premierpainmod/damage_type/liberty_damage2.json
 8283944b0f92a90b6b18f28a91a729de32298bfd data/premierpainmod/damage_type/liberty_damage3.json
-ab5235f1876e4cb52b0516a35924f79425d156ce data/premierpainmod/worldgen/biome/premier_pain_ruins.json
+c05ce227ef2900b21cc8aa8bd258446d5a695fe8 data/premierpainmod/worldgen/biome/premier_pain_ruins.json
 660e6f9f0daa51785792e38200834ee2e9c584b8 data/premierpainmod/worldgen/configured_feature/bush_and_stone.json
 35b1ea214dfe0cc7ff4f12965190a24e961a7e30 data/premierpainmod/worldgen/configured_feature/house_foundation_ruins.json
 699b8e9824b78816cac6d48d607cd30e60167681 data/premierpainmod/worldgen/configured_feature/patch_civilizations_flower.json

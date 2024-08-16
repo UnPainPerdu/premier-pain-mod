@@ -73,7 +73,7 @@ public class ModBiomes
                                 .foliageColorOverride(0x00FF00)
                                 .grassColorOverride(0x50bb00)
                                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE))
+                                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
                                 .build()
                 )
                 .mobSpawnSettings(mobspawnsettings$builder.build())

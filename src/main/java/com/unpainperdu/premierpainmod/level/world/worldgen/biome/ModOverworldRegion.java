@@ -15,6 +15,14 @@ import java.util.function.Consumer;
 
 public class ModOverworldRegion extends Region
 {
+    protected final Climate.Parameter mushroomFields = Climate.Parameter.span(-1.2F, -1.05F);
+    protected final Climate.Parameter deepOcean = Climate.Parameter.span(-1.05F, -0.455F);
+    protected final Climate.Parameter ocean = Climate.Parameter.span(-0.455F, -0.19F);
+    protected final Climate.Parameter coast = Climate.Parameter.span(-0.19F, -0.11F);
+    protected final Climate.Parameter inland = Climate.Parameter.span(-0.11F, 0.55F);
+    protected final Climate.Parameter nearInland = Climate.Parameter.span(-0.11F, 0.03F);
+    protected final Climate.Parameter midInland = Climate.Parameter.span(0.03F, 0.3F);
+    protected final Climate.Parameter farInland = Climate.Parameter.span(0.3F, 1.0F);
 
     public ModOverworldRegion(ResourceLocation name, int weight)
     {
@@ -30,8 +38,8 @@ public class ModOverworldRegion extends Region
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.HOT))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
-                .continentalness(ParameterUtils.Continentalness.span(ParameterUtils.Continentalness.NEAR_INLAND, ParameterUtils.Continentalness.FAR_INLAND))
-                .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
+                .continentalness(Climate.Parameter.span(midInland, farInland))
+                .erosion(ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, ModBiomes.PREMIER_PAIN_RUINS));
