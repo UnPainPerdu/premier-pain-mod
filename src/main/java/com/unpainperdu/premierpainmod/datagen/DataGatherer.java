@@ -7,6 +7,7 @@ import com.unpainperdu.premierpainmod.datagen.asset.model.ModItemStateProvider;
 import com.unpainperdu.premierpainmod.datagen.data.*;
 import com.unpainperdu.premierpainmod.datagen.data.dataPackRegistries.ModDataPackProvider;
 import com.unpainperdu.premierpainmod.datagen.data.datamap.ModDataMap;
+import com.unpainperdu.premierpainmod.datagen.data.lootTable.ModLootTableProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModBiomeTagProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModBlockTagProvider;
 import net.minecraft.core.HolderLookup;
