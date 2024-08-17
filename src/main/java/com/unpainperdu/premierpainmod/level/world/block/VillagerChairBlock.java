@@ -8,6 +8,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -110,5 +111,10 @@ public class VillagerChairBlock extends Block implements SimpleWaterloggedBlock
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
         pBuilder.add( FACING, WATERLOGGED);
+    }
+    @Override
+    protected BlockState rotate(BlockState pState, Rotation pRot)
+    {
+        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
     }
 }

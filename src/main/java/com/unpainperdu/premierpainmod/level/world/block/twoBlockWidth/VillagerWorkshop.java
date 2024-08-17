@@ -96,4 +96,9 @@ public class VillagerWorkshop extends AbstractTwoBlockWidth
     {
         return new SimpleMenuProvider((pContainerId, pPlayerInventory, pAccess) -> new VillagerWorkshopMenu(pContainerId, pPlayerInventory, ContainerLevelAccess.create(pLevel, pPos)), CONTAINER_TITLE);
     }
+    @Override
+    protected BlockState rotate(BlockState pState, Rotation pRot)
+    {
+        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+    }
 }

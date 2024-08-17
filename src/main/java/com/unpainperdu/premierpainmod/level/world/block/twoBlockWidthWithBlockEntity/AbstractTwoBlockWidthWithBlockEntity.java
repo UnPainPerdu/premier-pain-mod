@@ -39,6 +39,7 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
         this.registerDefaultState(this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE));
     }
 
+    @Override
     protected BlockState rotate(BlockState pState, Rotation pRot)
     {
         return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
@@ -195,6 +196,5 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
         }
-
     }
 }

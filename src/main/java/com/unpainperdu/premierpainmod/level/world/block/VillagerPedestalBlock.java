@@ -136,4 +136,9 @@ public class VillagerPedestalBlock extends BaseEntityBlock implements SimpleWate
 
         pLevel.gameEvent(pEntity, GameEvent.BLOCK_CHANGE, pPos);
     }
+    @Override
+    protected BlockState rotate(BlockState pState, Rotation pRot)
+    {
+        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+    }
 }

@@ -55,6 +55,7 @@ public class PremierPainTempleStructures extends Structure
                                           DimensionPadding dimensionPadding,
                                           LiquidSettings liquidSettings)
     {
+        //gather param from the json structure
         super(config);
         this.startPool = startPool;
         this.startJigsawName = startJigsawName;
@@ -106,7 +107,7 @@ public class PremierPainTempleStructures extends Structure
                 chunkpos.getMinBlockZ(),
                 Heightmap.Types.WORLD_SURFACE_WG,
                 context.heightAccessor(),
-                context.randomState()) < 150;
+                context.randomState()) > 63;
 
         return flag;
     }
