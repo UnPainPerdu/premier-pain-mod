@@ -22,7 +22,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
 {
     public HolderLookup.Provider registries;
 
-    public static ResourceKey<LootTable> PREMIER_PAIN_TEMPLE_CHEST = createKey("premier_pain_temple");
+    public static ResourceKey<LootTable> PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","premier_pain_temple");
 
     public ModChestLootTableSubProvider(HolderLookup.Provider lookupProvider)
     {
@@ -34,9 +34,9 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
         premierPainTempleChestLootTableGenerator(pOutput);
     }
 
-    public static ResourceKey<LootTable> createKey(String name)
+    public static ResourceKey<LootTable> createKey(String directory, String name)
     {
-        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "chests/"+name));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, directory + "/"+name));
     }
 
     private static void premierPainTempleChestLootTableGenerator(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder)
