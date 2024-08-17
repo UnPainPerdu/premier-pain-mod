@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.datagen.data.lootTable;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
@@ -19,6 +21,9 @@ import java.util.function.BiConsumer;
 public class ModChestLootTableSubProvider implements LootTableSubProvider
 {
     public HolderLookup.Provider registries;
+
+    public static ResourceKey<LootTable> PREMIER_PAIN_TEMPLE_CHEST = createKey("premier_pain_temple");
+
     public ModChestLootTableSubProvider(HolderLookup.Provider lookupProvider)
     {
         this.registries = lookupProvider;
@@ -26,25 +31,43 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
     @Override
     public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> pOutput)
     {
-        // LootTable.lootTable() returns a loot table builder we can add loot tables to.
-        pOutput.accept(createKey("example_loot_table"), LootTable.lootTable()
-                // Add a loot table-level loot function. This example uses a number provider (see below).
-                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5)))
-                // Add a loot pool.
-                .withPool(LootPool.lootPool()
-                        // Add a loot pool-level function, similar to above.
-            // Set the amount of rolls and bonus rolls, respectively.
-            // Both of these methods utilize a number provider.
-            .setRolls(UniformGenerator.between(5, 9))
-            .setBonusRolls(ConstantValue.exactly(1))
-            // Add a loot entry. This example returns an item loot entry. See below for more loot entries.
-            .add(LootItem.lootTableItem(Items.DIRT))
-                )
-        );
+        premierPainTempleChestLootTableGenerator(pOutput);
     }
 
     public static ResourceKey<LootTable> createKey(String name)
     {
-        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, name));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "chests/"+name));
+    }
+
+    private static void premierPainTempleChestLootTableGenerator(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder)
+    {
+        // LootTable.lootTable() returns a loot table builder we can add loot tables to.
+        builder.accept(PREMIER_PAIN_TEMPLE_CHEST, LootTable.lootTable()
+                // Add a loot table-level loot function. This example uses a number provider (see below).
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2))) // lié au nombre d'items par slot et slot occupés
+                // Add a loot pool.
+                .withPool(LootPool.lootPool()
+                        // Add a loot pool-level function, similar to above.
+                        // Set the amount of rolls and bonus rolls, respectively.
+                        // Both of these methods utilize a number provider.
+                        .setRolls(UniformGenerator.between(8, 15)) // lié aussi au nombre d'items par slot et slot occupés
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // .add(LootItem.lootTableItem(ItemLikes).setWeight(int nullable).setQuality(int nullable))
+                        // weight -> weight / (tous les weight) chances de spawn
+                        // quality -> extra weight si potion luck
+                        .add(LootItem.lootTableItem(BlockRegister.CIVILIZATIONS_FLOWER).setWeight(75))
+                        .add(LootItem.lootTableItem(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE).setWeight(25))
+                        .add(LootItem.lootTableItem(ItemRegister.DIGGY_VILLAGER_SINGING_STONE).setWeight(25))
+                        .add(LootItem.lootTableItem(ItemRegister.MADNESS_VILLAGER_SINGING_STONE).setWeight(25))
+                        .add(LootItem.lootTableItem(Items.EMERALD).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.BREAD).setWeight(250))
+                        .add(LootItem.lootTableItem(Items.OAK_LOG).setWeight(150))
+                        .add(LootItem.lootTableItem(Items.OAK_SAPLING).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.STICK).setWeight(100))
+                        .add(LootItem.lootTableItem(Items.APPLE).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.WHEAT).setWeight(100))
+                        .add(LootItem.lootTableItem(Items.WHEAT_SEEDS).setWeight(100))
+                )//total weight = 1000
+        );
     }
 }
