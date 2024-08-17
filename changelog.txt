@@ -73,10 +73,12 @@ fix :
 1.21.x-1.8.0
 update neoforge to 21.1.6
 note :
-    - It should be compat between 1.21 and 1.21.1
+    - It should be compatibility between 1.21 and 1.21.1
 add :
     - Premier Pain ruins biome
-    - Ruins flower
+    - Ruins flower which spawn in Premier Pain ruins
+    - Civilizations flower which spawn in Premier Pain ruins
+    - Premier pain temple structure which spawn in Premier Pain ruins
 fix :
     - Villager singing stone can now stack to 1 max
 
