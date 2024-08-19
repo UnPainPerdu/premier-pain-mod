@@ -18,11 +18,13 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModBiomes
 {
-    public static  final ResourceKey<Biome> PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "premier_pain_ruins"));
+    public static  final ResourceKey<Biome> PREMIER_PAIN_RUINS_FOREST = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "premier_pain_ruins_forest"));
+    public static  final ResourceKey<Biome> PREMIER_PAIN_RUINS_SAND_DESERT = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "premier_pain_ruins_sand_desert"));
 
     public static void boostrap(BootstrapContext<Biome> context)
     {
-        context.register(PREMIER_PAIN_RUINS, premierPainRuins(context));
+        context.register(PREMIER_PAIN_RUINS_FOREST, premierPainRuinsForest(context));
+        context.register(PREMIER_PAIN_RUINS_SAND_DESERT, premierPainRuinsSandDesert(context));
     }
 
     protected static int calculateSkyColor(float pTemperature)
@@ -32,9 +34,10 @@ public class ModBiomes
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
-    private static Biome premierPainRuins(BootstrapContext<Biome> context)
+    private static Biome premierPainRuinsForest(BootstrapContext<Biome> context)
     {
         float temperature = 0.8F;
+        float downfall = 0.4f;
 
         MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
@@ -63,7 +66,7 @@ public class ModBiomes
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .temperature(temperature)
-                .downfall(0.4F)
+                .downfall(downfall)
                 .specialEffects(
                         new BiomeSpecialEffects.Builder()
                                 .waterColor(4159204)
@@ -74,6 +77,52 @@ public class ModBiomes
                                 .grassColorOverride(0x50bb00)
                                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+                                .build()
+                )
+                .mobSpawnSettings(mobspawnsettings$builder.build())
+                .generationSettings(biomegenerationsettings$builder.build())
+                .build();
+    }
+
+    private static Biome premierPainRuinsSandDesert(BootstrapContext<Biome> context)
+    {
+        float temperature = 2.0F;
+        float downfall = 0.0f;
+
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        //must be in vanilla order
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
+        BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.desertSpawns(mobspawnsettings$builder);
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultGrass(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDesertVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDesertExtraDecoration(biomegenerationsettings$builder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(temperature)
+                .downfall(downfall)
+                .specialEffects(
+                        new BiomeSpecialEffects.Builder()
+                                .waterColor(4159204)
+                                .waterFogColor(329011)
+                                .fogColor(12638463)
+                                .skyColor(calculateSkyColor(temperature))
+                                .foliageColorOverride(0x00FF00)
+                                .grassColorOverride(0x50bb00)
+                                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
                                 .build()
                 )
                 .mobSpawnSettings(mobspawnsettings$builder.build())

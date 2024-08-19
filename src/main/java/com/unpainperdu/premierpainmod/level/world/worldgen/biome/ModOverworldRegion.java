@@ -42,7 +42,16 @@ public class ModOverworldRegion extends Region
                 .erosion(ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.PREMIER_PAIN_RUINS));
+                .build().forEach(point -> builder.add(point, ModBiomes.PREMIER_PAIN_RUINS_FOREST));
+
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.HOT)
+                .humidity(ParameterUtils.Humidity.ARID)
+                .continentalness(Climate.Parameter.span(midInland, farInland))
+                .erosion(ParameterUtils.Erosion.EROSION_1)
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                .build().forEach(point -> builder.add(point, ModBiomes.PREMIER_PAIN_RUINS_SAND_DESERT));
 
         // Add our points to the mapper
         builder.build().forEach(mapper);

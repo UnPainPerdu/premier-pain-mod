@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.surface;
 
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.Noises;
 
 public class ModSurfaceRule
 {
@@ -12,12 +12,17 @@ public class ModSurfaceRule
 
     public static SurfaceRules.RuleSource makeRules()
     {
+
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
-        SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
+        SurfaceRules.RuleSource defaultGrassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
+
+        SurfaceRules.RuleSource sandSurface = makeSurfaceSurfaceRules(Blocks.SAND, Blocks.SAND,Blocks.SANDSTONE);
 
         return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.PREMIER_PAIN_RUINS_SAND_DESERT),
+                        sandSurface),
                 // Default to a grass and dirt surface
-                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, defaultGrassSurface))
         );
     }
 
@@ -26,8 +31,21 @@ public class ModSurfaceRule
         return SurfaceRules.state(block.defaultBlockState());
     }
 
-    private static SurfaceRules.ConditionSource surfaceNoiseAbove(double p_194809_)
+    private static SurfaceRules.RuleSource makeSurfaceSurfaceRules(Block grassLike, Block dirtLike)
     {
-        return SurfaceRules.noiseCondition(Noises.SURFACE, p_194809_ / 8.25D, Double.MAX_VALUE);
+        return SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, makeStateRule(grassLike)),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, makeStateRule(dirtLike)))
+        );
+    }
+    private static SurfaceRules.RuleSource makeSurfaceSurfaceRules(Block grassLike, Block dirtLike, Block deeperThanDirt)
+    {
+        return SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                SurfaceRules.sequence(
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, makeStateRule(grassLike)),
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, makeStateRule(dirtLike)),
+                    SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, makeStateRule(deeperThanDirt))
+                )
+        );
     }
 }
