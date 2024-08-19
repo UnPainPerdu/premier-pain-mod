@@ -18,13 +18,13 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModBiomes
 {
-    public static  final ResourceKey<Biome> PREMIER_PAIN_RUINS_FOREST = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "premier_pain_ruins_forest"));
-    public static  final ResourceKey<Biome> PREMIER_PAIN_RUINS_SAND_DESERT = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "premier_pain_ruins_sand_desert"));
+    public static  final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "forest_premier_pain_ruins"));
+    public static  final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "sand_desert_premier_pain_ruins"));
 
     public static void boostrap(BootstrapContext<Biome> context)
     {
-        context.register(PREMIER_PAIN_RUINS_FOREST, premierPainRuinsForest(context));
-        context.register(PREMIER_PAIN_RUINS_SAND_DESERT, premierPainRuinsSandDesert(context));
+        context.register(FOREST_PREMIER_PAIN_RUINS, forestPremierPainRuins(context));
+        context.register(SAND_DESERT_PREMIER_PAIN_RUINS, sandDesertPremierPainRuins(context));
     }
 
     protected static int calculateSkyColor(float pTemperature)
@@ -34,7 +34,7 @@ public class ModBiomes
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
-    private static Biome premierPainRuinsForest(BootstrapContext<Biome> context)
+    private static Biome forestPremierPainRuins(BootstrapContext<Biome> context)
     {
         float temperature = 0.8F;
         float downfall = 0.4f;
@@ -84,7 +84,7 @@ public class ModBiomes
                 .build();
     }
 
-    private static Biome premierPainRuinsSandDesert(BootstrapContext<Biome> context)
+    private static Biome sandDesertPremierPainRuins(BootstrapContext<Biome> context)
     {
         float temperature = 2.0F;
         float downfall = 0.0f;

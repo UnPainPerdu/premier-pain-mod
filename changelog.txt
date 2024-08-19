@@ -81,4 +81,10 @@ add :
     - Premier pain temple structure which spawn in Premier Pain ruins
 fix :
     - Villager singing stone can now stack to 1 max
+--------------
+1.21.x-1.9.0
 
+## change :
+    - Premier Pain ruins is now forest Premier Pain ruins
+## fix :
+    - Grass in forest Premier Pain ruins stop spawning underground

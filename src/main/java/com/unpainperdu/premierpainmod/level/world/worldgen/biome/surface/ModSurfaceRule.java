@@ -19,7 +19,7 @@ public class ModSurfaceRule
         SurfaceRules.RuleSource sandSurface = makeSurfaceSurfaceRules(Blocks.SAND, Blocks.SAND,Blocks.SANDSTONE);
 
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.PREMIER_PAIN_RUINS_SAND_DESERT),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS),
                         sandSurface),
                 // Default to a grass and dirt surface
                 SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, defaultGrassSurface))

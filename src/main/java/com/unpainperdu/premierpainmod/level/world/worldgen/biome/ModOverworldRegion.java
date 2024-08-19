@@ -42,7 +42,7 @@ public class ModOverworldRegion extends Region
                 .erosion(ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.PREMIER_PAIN_RUINS_FOREST));
+                .build().forEach(point -> builder.add(point, ModBiomes.FOREST_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
@@ -51,7 +51,7 @@ public class ModOverworldRegion extends Region
                 .erosion(ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.PREMIER_PAIN_RUINS_SAND_DESERT));
+                .build().forEach(point -> builder.add(point, ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS));
 
         // Add our points to the mapper
         builder.build().forEach(mapper);
