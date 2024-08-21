@@ -17,6 +17,7 @@ public class ModMiscOverworldPlacements
     public static final ResourceKey<PlacedFeature> VILLAGER_STATUE_RUINS = ModPlacementUtil.createKey("villager_statue_ruins");
     public static final ResourceKey<PlacedFeature> BUSH_AND_STONE = ModPlacementUtil.createKey("bush_and_stone");
     public static final ResourceKey<PlacedFeature> HOUSE_FOUNDATION_RUINS = ModPlacementUtil.createKey("house_foundation_ruins");
+    public static final ResourceKey<PlacedFeature> VILLAGER_PILLAR_RUINS_DESERT = ModPlacementUtil.createKey("villager_pillar_ruins_desert");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
@@ -30,7 +31,11 @@ public class ModMiscOverworldPlacements
 
         final Holder<ConfiguredFeature<?, ?>> HOUSE_FOUNDATION_RUINS_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.HOUSE_FOUNDATION_RUINS);
         register(pContext, HOUSE_FOUNDATION_RUINS, HOUSE_FOUNDATION_RUINS_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
+        final Holder<ConfiguredFeature<?, ?>> VILLAGER_PILLAR_RUINS_DESERT_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.VILLAGER_PILLAR_RUINS_DESERT);
+        register(pContext, VILLAGER_PILLAR_RUINS_DESERT, VILLAGER_PILLAR_RUINS_DESERT_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }
+
     protected static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedFeatureKey, Holder<ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... modifiers)
     {
         register(context, placedFeatureKey, configuredFeature, List.of(modifiers));

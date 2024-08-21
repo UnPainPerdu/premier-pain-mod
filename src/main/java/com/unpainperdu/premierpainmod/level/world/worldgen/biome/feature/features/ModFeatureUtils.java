@@ -14,18 +14,22 @@ import java.util.ArrayList;
 public class ModFeatureUtils
 {
 
-    public static BlockPos getRandomHeight(BlockPos pos, RandomSource rand)
+    public static BlockPos getRandomHeight(BlockPos pos, RandomSource rand,int minDepth, int maxDepth)
     {
-        int randomInt = getRandomPositiveIntInRange(12, rand);
+        int randomInt = getRandomPositiveIntInRange(maxDepth - minDepth + 1, rand);
 
-        return pos.below(randomInt + 3);
+        return pos.below(randomInt + minDepth);
     }
 
     /**
-     * modulo must be >= 2 or it's useless
+     * modulo must be >= 2 or it will be set to 2
      */
     public static int getRandomPositiveIntInRange(int modulo, RandomSource rand)
     {
+        if (modulo<2)
+        {
+            modulo = 2;
+        }
         return (Math.abs(rand.nextInt()))%modulo;
     }
 
@@ -284,5 +288,40 @@ public class ModFeatureUtils
             tempList.add(pos1.above(howMuch));
         }
         return tempList;
+    }
+
+    public static Direction getNextDirection_NESW(Direction direction)
+    {
+        return getNextDirection_NESW(direction, 1);
+    }
+
+    public static Direction getNextDirection_NESW(Direction direction, int howMuch)
+    {
+        for (int i = 0; i < howMuch; i++)
+        {
+            switch (direction)
+            {
+                case Direction.NORTH:
+                {
+                    direction = Direction.EAST;
+                    break;
+                }
+                case Direction.EAST:
+                {
+                    direction = Direction.SOUTH;
+                    break;
+                }
+                case Direction.SOUTH:
+                {
+                    direction = Direction.WEST;
+                    break;
+                }
+                default:
+                {
+                    direction = Direction.NORTH;
+                }
+            }
+        }
+        return direction;
     }
 }

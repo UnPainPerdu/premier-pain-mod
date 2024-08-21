@@ -59,7 +59,7 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         Block block = worldIn.getBlockState(pos.below()).getBlock();
         if(block instanceof GrassBlock)
         {
-            pos = ModFeatureUtils.getRandomHeight(pos, rand);
+            pos = ModFeatureUtils.getRandomHeight(pos, rand, 3, 12);
             //base (all time buried)
             pos = generateBasicShape(pos, worldIn, rand, direction);
 

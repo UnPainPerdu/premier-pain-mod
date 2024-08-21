@@ -34,7 +34,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "premierpainmod:villager_pillar_ruins_desert"
     ],
     [
       "minecraft:monster_room",
