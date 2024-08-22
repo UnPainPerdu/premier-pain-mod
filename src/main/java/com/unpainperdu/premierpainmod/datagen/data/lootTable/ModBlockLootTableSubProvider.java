@@ -17,9 +17,15 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.NotNull;
 
@@ -56,10 +62,16 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 {
                     normalBlockLootTableGenerator(block);
                 }
+                else if(block instanceof DeadBushBlock)
+                {
+                    deadBushLootTableProvider(block);
+                }
             }
         }
+        //potted thing
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_CIVILIZATIONS_FLOWER.get(), BlockRegister.CIVILIZATIONS_FLOWER.get());
+        pottedFlowerLootTableGenerator(BlockRegister.POTTED_DEAD_RUINS_FLOWER.get(), BlockRegister.DEAD_RUINS_FLOWER.get());
     }
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks()
@@ -88,6 +100,12 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     private void pottedFlowerLootTableGenerator(Block flowerPot, Block flowerBlock)
     {
         super.add(flowerPot, this.createPotFlowerItemTable(flowerBlock));
+    }
+
+    private void deadBushLootTableProvider(Block deadBush)
+    {
+        super.add(deadBush, this.createShearsDispatchTable(deadBush,
+                ((LootPoolSingletonContainer.Builder) this.applyExplosionCondition(deadBush, LootItem.lootTableItem(Items.STICK)))));
     }
 
     private boolean isNormalLoot(Block block)

@@ -48,6 +48,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(BlockRegister.RUINS_FLOWER.get(), "Ruins flower");
                 //growing flower
         add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Civilizations flower");
+                //dead bush
+        add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Dead ruins flower");
             // "All material"
         globalAllMaterialTranslation("oak");
         globalAllMaterialTranslation("birch");

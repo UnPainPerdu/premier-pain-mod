@@ -47,6 +47,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(BlockRegister.RUINS_FLOWER.get(), "Fleure de ruines");
                 //growing flower
         add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Fleure des civilisations");
+                //dead bush
+        add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Fleure de ruines mortes");
             // "All material"
         globalAllMaterialTranslation("oak", "chêne");
         globalAllMaterialTranslation("birch","bouleau");

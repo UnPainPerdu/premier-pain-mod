@@ -396,7 +396,10 @@ public class ModList
             BlockRegister.RUINS_FLOWER,
             BlockRegister.POTTED_RUINS_FLOWER,
             BlockRegister.CIVILIZATIONS_FLOWER,
-            BlockRegister.POTTED_CIVILIZATIONS_FLOWER
+            BlockRegister.POTTED_CIVILIZATIONS_FLOWER,
+            //dead bush and pot
+            BlockRegister.DEAD_RUINS_FLOWER,
+            BlockRegister.POTTED_DEAD_RUINS_FLOWER
     );
 
     public static List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(

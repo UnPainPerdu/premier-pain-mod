@@ -33,5 +33,7 @@ public class PremierPainMod
         event.enqueueWork(() -> SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRule.makeRules()));
         event.enqueueWork(() -> ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegister.RUINS_FLOWER.getId(),BlockRegister.POTTED_RUINS_FLOWER));
         event.enqueueWork(() -> ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegister.CIVILIZATIONS_FLOWER.getId(),BlockRegister.POTTED_CIVILIZATIONS_FLOWER));
+        event.enqueueWork(() -> ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockRegister.DEAD_RUINS_FLOWER.getId(),BlockRegister.POTTED_DEAD_RUINS_FLOWER));
+
     }
 }

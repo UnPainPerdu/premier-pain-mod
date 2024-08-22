@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "premierpainmod:block/flower_block/dead_bush/dead_ruins_flower"
+  }
+}

@@ -11,14 +11,10 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEn
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.CivilizationsFlowerBlock;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -462,7 +458,6 @@ public class BlockRegister
     public static final DeferredBlock<Block> BEDROCK_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","bedrock_wall_villager_shelf","bedrock");
     //Villager Singing stone event block
     public static final DeferredBlock<Block> LIBERTY_BLOCK =  registerBlock("liberty_block", () -> new LibertyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.0F, 0.0F).noLootTable().noOcclusion()));
-
     /*
     1 block flower
     -->
@@ -473,7 +468,9 @@ public class BlockRegister
     public static final DeferredBlock<Block> POTTED_RUINS_FLOWER = registerFlowerPot("potted_ruins_flower",() -> RUINS_FLOWER);
     public static final DeferredBlock<Block> CIVILIZATIONS_FLOWER =  registerBlock("civilizations_flower", () -> new CivilizationsFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_CIVILIZATIONS_FLOWER = registerFlowerPot("potted_civilizations_flower",() -> CIVILIZATIONS_FLOWER);
-
+    //dead bush block (like flower)
+    public static final DeferredBlock<Block> DEAD_RUINS_FLOWER =  registerBlock("dead_ruins_flower", () -> new DeadBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEAD_BUSH).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> POTTED_DEAD_RUINS_FLOWER = registerFlowerPot("potted_dead_ruins_flower",() -> RUINS_FLOWER);
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
