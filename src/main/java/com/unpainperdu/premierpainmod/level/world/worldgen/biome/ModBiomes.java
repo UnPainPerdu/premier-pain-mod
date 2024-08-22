@@ -101,6 +101,7 @@ public class ModBiomes
         BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
         BiomeDefaultFeatures.desertSpawns(mobspawnsettings$builder);
         addVillagerPillarRuinsDesert(biomegenerationsettings$builder);
+        addDeadRuinsFlower(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
@@ -157,5 +158,10 @@ public class ModBiomes
     public static void addVillagerPillarRuinsDesert(BiomeGenerationSettings.Builder pBuilder)
     {
         pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_PILLAR_RUINS_DESERT);
+    }
+
+    public static void addDeadRuinsFlower(BiomeGenerationSettings.Builder pBuilder)
+    {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER);
     }
 }

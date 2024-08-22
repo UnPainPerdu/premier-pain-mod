@@ -5,8 +5,9 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.feature
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.HouseFoundationRuinsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.VillagerPillarRuinsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.VillagerStatueRuinsFeature;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.CivilizationsFlowerPatchFeature;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.RuinsFlowerPatchFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.dead_bush_patch.DeadRuinsFlowerPatchFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.CivilizationsFlowerPatchFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.RuinsFlowerPatchFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -23,8 +24,11 @@ public class FeatureRegister
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> HOUSE_FOUNDATION_RUINS = FEATURES.register("house_foundation_ruins",() -> new HouseFoundationRuinsFeature(NoneFeatureConfiguration.CODEC));
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> VILLAGER_PILLAR_RUINS_DESERT = FEATURES.register("villager_pillar_ruins_desert",() -> new VillagerPillarRuinsFeature(NoneFeatureConfiguration.CODEC));
     //vegetation
+        //flower
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_RUINS_FLOWER = FEATURES.register("patch_ruins_flower",() -> new RuinsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_CIVILIZATIONS_FLOWER = FEATURES.register("patch_civilizations_flower",() -> new CivilizationsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
+        //dead bush
+    public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_DEAD_RUINS_FLOWER = FEATURES.register("patch_dead_ruins_flower",() -> new DeadRuinsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus modEventBus)
     {

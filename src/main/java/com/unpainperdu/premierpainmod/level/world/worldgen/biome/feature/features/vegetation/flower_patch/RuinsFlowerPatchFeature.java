@@ -1,7 +1,6 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch;
 
 import com.mojang.serialization.Codec;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.AbstractFlowerPatch;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

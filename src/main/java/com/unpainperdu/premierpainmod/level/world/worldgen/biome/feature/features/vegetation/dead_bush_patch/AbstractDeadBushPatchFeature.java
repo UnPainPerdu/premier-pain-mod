@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.dead_bush_patch;
 
 import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
@@ -9,7 +9,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GrassBlock;
+import net.minecraft.world.level.block.ColoredFallingBlock;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -17,12 +17,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 import java.util.ArrayList;
 
-public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfiguration>
+public abstract class AbstractDeadBushPatchFeature extends Feature<NoneFeatureConfiguration>
 {
     protected int minNumberOfPos;
     protected int maxNumberOfPos;
     protected int spread;
-    public AbstractFlowerPatch(Codec<NoneFeatureConfiguration> pCodec, int minNumberOfPos, int maxNumberOfPos, int spread)
+    public AbstractDeadBushPatchFeature(Codec<NoneFeatureConfiguration> pCodec, int minNumberOfPos, int maxNumberOfPos, int spread)
     {
         super(pCodec);
         this.minNumberOfPos = minNumberOfPos;
@@ -64,7 +64,7 @@ public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfigurati
         Block block = levelAccessor.getBlockState(pos).getBlock();
         Block blockBelow = levelAccessor.getBlockState(pos.below()).getBlock();
 
-        if ((block instanceof AirBlock) && (blockBelow instanceof GrassBlock))
+        if ((block instanceof AirBlock) && (blockBelow instanceof ColoredFallingBlock))
         {
             return true;
         }
