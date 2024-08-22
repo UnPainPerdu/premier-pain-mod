@@ -47,10 +47,10 @@ public class VillagerStatueRuinsFeature extends Feature<NoneFeatureConfiguration
         BlockPos pos = pContext.origin();
         NoneFeatureConfiguration config = pContext.config();
         Direction direction = ModFeatureUtils.getDirection(rand);
-        int i = 0;
         basicStatueGeneration(worldIn,chunkGenerator,rand,pos,config, direction);
         this.numberA = 10000;
         this.flag = false;
+        this.countInFlag = 0;
         return true;
     }
 

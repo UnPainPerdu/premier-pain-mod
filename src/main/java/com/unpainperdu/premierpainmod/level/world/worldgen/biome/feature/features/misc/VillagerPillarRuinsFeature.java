@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColoredFallingBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.StairsShape;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -18,6 +19,10 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 public class VillagerPillarRuinsFeature extends Feature<NoneFeatureConfiguration>
 {
+    private int maxChance = 100;     // howMuchChance % of maxChance
+    private int howMuchChance = 10;   //
+    private int countInFlag = 0;
+    private boolean flag = false;
 
     public VillagerPillarRuinsFeature(Codec<NoneFeatureConfiguration> pCodec)
     {
@@ -36,13 +41,18 @@ public class VillagerPillarRuinsFeature extends Feature<NoneFeatureConfiguration
 
         Block block = worldIn.getBlockState(pos.below()).getBlock();
 
-        int chanceSpawn = ModFeatureUtils.getRandomPositiveIntInRange(10, rand);
-        if (chanceSpawn<7 || !(block instanceof ColoredFallingBlock))
+        int chanceSpawn = ModFeatureUtils.getRandomPositiveIntInRange(101, rand);
+        if (chanceSpawn<82 || !(block instanceof ColoredFallingBlock))
         {
             return false;
         }
 
         basicPillarGeneration(worldIn, chunkGenerator, rand, pos, config, direction);
+
+        this.maxChance = 100;
+        this.howMuchChance = 10;
+        this.flag = false;
+        this.countInFlag = 0;
 
         return true;
     }
@@ -53,10 +63,19 @@ public class VillagerPillarRuinsFeature extends Feature<NoneFeatureConfiguration
 
         generateFoot(worldIn, rand, pos, direction);
 
-        pos = pos.above(2);
+        pos = pos.above(3);
+        pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
+        this.howMuchChance = 15;
+        pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
+        pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CHISELED_SANDSTONE);
+        this.howMuchChance = 25;
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
+        this.howMuchChance = 30;
+        pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
+        this.howMuchChance = 50;
+        pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CHISELED_SANDSTONE);
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
     }
@@ -171,11 +190,31 @@ public class VillagerPillarRuinsFeature extends Feature<NoneFeatureConfiguration
         --
         x-
         */
-        worldIn.setBlock(pos, block.defaultBlockState(), 2);
-        worldIn.setBlock(ModFeatureUtils.getRight(pos, direction), block.defaultBlockState(), 2);
-        worldIn.setBlock(ModFeatureUtils.getBehind(pos, direction), block.defaultBlockState(), 2);
-        worldIn.setBlock(ModFeatureUtils.getBehind(ModFeatureUtils.getRight(pos, direction), direction), block.defaultBlockState(), 2);
+        BlockState state = block.defaultBlockState();
+        generateBlock(worldIn, rand, pos , state);
+        generateBlock(worldIn, rand, ModFeatureUtils.getRight(pos, direction) , state);
+        generateBlock(worldIn, rand, ModFeatureUtils.getBehind(pos, direction) , state);
+        generateBlock(worldIn, rand, ModFeatureUtils.getBehind(ModFeatureUtils.getRight(pos, direction), direction) , state);
 
         return pos.above();
+    }
+
+    private void generateBlock(WorldGenLevel worldIn, RandomSource rand, BlockPos pos, BlockState state)
+    {
+        boolean inFlag = false;
+        int randomSpawn = ModFeatureUtils.getRandomPositiveIntInRange(this.maxChance + 1,rand);
+        if(randomSpawn < this.howMuchChance)
+        {
+            inFlag = true;
+            this.countInFlag +=1;
+            if(this.countInFlag > 4)
+            {
+                this.flag = true;
+            }
+        }
+        if(!this.flag && !inFlag)
+        {
+            worldIn.setBlock(pos, state, 2);
+        }
     }
 }
