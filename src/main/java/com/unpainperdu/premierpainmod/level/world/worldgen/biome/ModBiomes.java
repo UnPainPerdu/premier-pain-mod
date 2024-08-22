@@ -111,7 +111,7 @@ public class ModBiomes
         BiomeDefaultFeatures.addDesertExtraDecoration(biomegenerationsettings$builder);
 
         return new Biome.BiomeBuilder()
-                .hasPrecipitation(true)
+                .hasPrecipitation(false)
                 .temperature(temperature)
                 .downfall(downfall)
                 .specialEffects(
@@ -120,8 +120,6 @@ public class ModBiomes
                                 .waterFogColor(329011)
                                 .fogColor(12638463)
                                 .skyColor(calculateSkyColor(temperature))
-                                .foliageColorOverride(0x00FF00)
-                                .grassColorOverride(0x50bb00)
                                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
                                 .build()
