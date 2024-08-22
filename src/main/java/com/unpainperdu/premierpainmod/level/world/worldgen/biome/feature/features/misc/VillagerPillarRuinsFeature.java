@@ -17,6 +17,10 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class VillagerPillarRuinsFeature extends Feature<NoneFeatureConfiguration>
 {
     private int maxChance = 100;     // howMuchChance % of maxChance
@@ -42,12 +46,19 @@ public class VillagerPillarRuinsFeature extends Feature<NoneFeatureConfiguration
         Block block = worldIn.getBlockState(pos.below()).getBlock();
 
         int chanceSpawn = ModFeatureUtils.getRandomPositiveIntInRange(101, rand);
-        if (chanceSpawn<82 || !(block instanceof ColoredFallingBlock))
+        if (chanceSpawn<75 || !(block instanceof ColoredFallingBlock))
         {
             return false;
         }
-
-        basicPillarGeneration(worldIn, chunkGenerator, rand, pos, config, direction);
+        int randomSwitch = ModFeatureUtils.getRandomPositiveIntInRange(2, rand);
+        if (randomSwitch ==0)
+        {
+            basicPillarGeneration(worldIn, chunkGenerator, rand, pos, config, direction);
+        }
+        else
+        {
+            groundPillarGeneration(worldIn, chunkGenerator, rand, pos, config, direction);
+        }
 
         this.maxChance = 100;
         this.howMuchChance = 10;
@@ -62,8 +73,8 @@ public class VillagerPillarRuinsFeature extends Feature<NoneFeatureConfiguration
         pos = ModFeatureUtils.getRandomHeight(pos, rand, 1, 2);
 
         generateFoot(worldIn, rand, pos, direction);
-
         pos = pos.above(3);
+
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
         this.howMuchChance = 15;
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
@@ -78,6 +89,72 @@ public class VillagerPillarRuinsFeature extends Feature<NoneFeatureConfiguration
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CHISELED_SANDSTONE);
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
         pos = generate2x2LevelWithBlock(worldIn, rand,pos,direction, Blocks.CUT_SANDSTONE);
+    }
+
+    private void groundPillarGeneration(WorldGenLevel worldIn, ChunkGenerator chunkGenerator, RandomSource rand, BlockPos pos, NoneFeatureConfiguration config, Direction direction)
+    {
+        BlockPos footPos = ModFeatureUtils.getRandomHeight(pos, rand, 1, 2);
+
+        generateFoot(worldIn, rand, footPos, direction);
+        footPos = footPos.above(3);
+        footPos = generate2x2LevelWithBlock(worldIn, rand,footPos,direction, Blocks.CUT_SANDSTONE);
+        this.howMuchChance = 50;
+        footPos = generate2x2LevelWithBlock(worldIn, rand,footPos,direction, Blocks.CUT_SANDSTONE);
+
+        this.howMuchChance = 25;
+        BlockPos pos1 = ModFeatureUtils.getFront(pos.above(5), direction, 3);
+        pos1 = ModFeatureUtils.getRight(pos1, direction);
+        BlockPos pos2 = ModFeatureUtils.getFront(pos1, direction);
+        BlockPos pos3 = ModFeatureUtils.getFront(pos2, direction);
+        BlockPos pos4 = ModFeatureUtils.getFront(pos3, direction);
+        BlockPos pos5 = ModFeatureUtils.getFront(pos4, direction);
+        BlockPos pos6 = ModFeatureUtils.getFront(pos5, direction);
+        BlockPos pos7 = ModFeatureUtils.getFront(pos6, direction);
+        BlockPos pos8 = ModFeatureUtils.getFront(pos7, direction);
+
+        this.countInFlag = -550000;
+        ArrayList<BlockPos> posListBelow = new ArrayList<>(
+                Arrays.asList(
+                pos1, ModFeatureUtils.getLeft(pos1, direction),
+                pos2, ModFeatureUtils.getLeft(pos2, direction),
+                pos3, ModFeatureUtils.getLeft(pos3, direction),
+                pos4, ModFeatureUtils.getLeft(pos4, direction),
+                pos5, ModFeatureUtils.getLeft(pos5, direction),
+                pos6, ModFeatureUtils.getLeft(pos6, direction),
+                pos7, ModFeatureUtils.getLeft(pos7, direction),
+                pos8, ModFeatureUtils.getLeft(pos8, direction)
+                ));
+
+        int i = 0;
+        posListBelow = ModFeatureUtils.setAllPosToTheGround(posListBelow, worldIn);
+        for (BlockPos posFor : posListBelow)
+        {
+            if (i <= 1 || (i >=10 && i <= 11))
+            {
+                generateBlock(worldIn, rand, posFor, Blocks.CHISELED_SANDSTONE.defaultBlockState());
+            }
+            else
+            {
+                generateBlock(worldIn, rand, posFor, Blocks.CUT_SANDSTONE.defaultBlockState());
+            }
+            i ++;
+        }
+
+        int j = 0;
+
+        ArrayList<BlockPos> posListAbove = ModFeatureUtils.upTo(posListBelow, 1);
+        for (BlockPos posFor : posListAbove)
+        {
+            if (j <= 1 || (j >=10 && j <= 11))
+            {
+                generateBlock(worldIn, rand, posFor, Blocks.CHISELED_SANDSTONE.defaultBlockState());
+            }
+            else
+            {
+                generateBlock(worldIn, rand, posFor, Blocks.CUT_SANDSTONE.defaultBlockState());
+            }
+            j ++;
+        }
     }
 
     private void generateFoot(WorldGenLevel worldIn, RandomSource rand, BlockPos pos, Direction direction)

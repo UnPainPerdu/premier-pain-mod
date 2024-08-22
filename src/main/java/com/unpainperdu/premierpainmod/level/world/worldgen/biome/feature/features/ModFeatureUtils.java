@@ -22,15 +22,15 @@ public class ModFeatureUtils
     }
 
     /**
-     * modulo must be >= 2 or it will be set to 2
+     * maxExcludedBorn must be >= 2, or it will be set to 2
      */
-    public static int getRandomPositiveIntInRange(int modulo, RandomSource rand)
+    public static int getRandomPositiveIntInRange(int maxExcludedBorn, RandomSource rand)
     {
-        if (modulo<2)
+        if (maxExcludedBorn<2)
         {
-            modulo = 2;
+            maxExcludedBorn = 2;
         }
-        return (Math.abs(rand.nextInt()))%modulo;
+        return (Math.abs(rand.nextInt()))%maxExcludedBorn;
     }
 
     public static int getRandomIntInRange(int modulo, RandomSource rand)
