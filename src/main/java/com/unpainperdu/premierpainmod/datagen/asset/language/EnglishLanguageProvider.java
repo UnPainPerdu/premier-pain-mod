@@ -46,6 +46,7 @@ public class EnglishLanguageProvider extends LanguageProvider
             //flower
                 //1 block flower
         add(BlockRegister.RUINS_FLOWER.get(), "Ruins flower");
+        add(BlockRegister.CURIOSITY_FLOWER.get(), "Curiosity flower");
                 //growing flower
         add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Civilizations flower");
                 //dead bush

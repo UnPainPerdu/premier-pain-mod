@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block.vegetation;
+package com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:block/flower_block/one_block_flower/curiosity_flower"
+  }
+}

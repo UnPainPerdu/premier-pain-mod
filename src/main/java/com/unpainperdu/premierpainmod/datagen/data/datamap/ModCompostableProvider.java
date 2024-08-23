@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.data.datamap;
 
-import com.unpainperdu.premierpainmod.level.world.block.vegetation.AbstractGrowingAboveVegetation;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

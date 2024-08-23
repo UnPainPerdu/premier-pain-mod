@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "premierpainmod:block/flower_block/one_block_flower/curiosity_flower"
+  }
+}

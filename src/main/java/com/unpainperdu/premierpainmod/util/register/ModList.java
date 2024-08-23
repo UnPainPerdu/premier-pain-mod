@@ -397,6 +397,8 @@ public class ModList
             BlockRegister.POTTED_RUINS_FLOWER,
             BlockRegister.CIVILIZATIONS_FLOWER,
             BlockRegister.POTTED_CIVILIZATIONS_FLOWER,
+            BlockRegister.CURIOSITY_FLOWER,
+            BlockRegister.POTTED_CURIOSITY_FLOWER,
             //dead bush and pot
             BlockRegister.DEAD_RUINS_FLOWER,
             BlockRegister.POTTED_DEAD_RUINS_FLOWER

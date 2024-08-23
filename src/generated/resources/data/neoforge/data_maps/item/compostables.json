@@ -3,6 +3,9 @@
     "premierpainmod:civilizations_flower": {
       "chance": 0.5
     },
+    "premierpainmod:curiosity_flower": {
+      "chance": 0.65
+    },
     "premierpainmod:ruins_flower": {
       "chance": 0.65
     }

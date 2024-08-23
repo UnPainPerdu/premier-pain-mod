@@ -1,7 +1,9 @@
-// 1.21.1	2024-08-14T22:41:27.8446539	Recipes
+// 1.21.1	2024-08-23T13:34:07.3744483	Recipes
 a071dd91c763516a1c009bd56db8d3df0b53261b data/minecraft/advancement/recipes/misc/brown_dye.json
+df14eec925d4e2c2e266ecb277428ab420b1f443 data/minecraft/advancement/recipes/misc/magenta_dye.json
 3dfc6abd734304783e8c1046f2bf6680aaae0c1b data/minecraft/advancement/recipes/misc/orange_dye.json
 96db760c4002d9ae6c5550b8b3bb9e483f940b42 data/minecraft/recipe/brown_dye.json
+f30660bc7b5a938a3fe6013d688d29ab37f0b1fe data/minecraft/recipe/magenta_dye.json
 c9ecf2cb60e4a3107f864701cb949c01ff30446e data/minecraft/recipe/orange_dye.json
 7c57d878c92fedbd3621abed38d8fa1e3e94afaf data/premierpainmod/advancement/recipes/building_blocks/acacia_villager_brazier_villagerworkshopping.json
 60f32a508efcd6ccd85a40aba34916446a3f0c8d data/premierpainmod/advancement/recipes/building_blocks/acacia_villager_chair_villagerworkshopping.json
