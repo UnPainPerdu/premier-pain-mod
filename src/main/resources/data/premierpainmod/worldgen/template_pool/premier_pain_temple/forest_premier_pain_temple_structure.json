@@ -1,5 +1,5 @@
 {
-  "name": "premierpainmod:premier_pain_temple_structure/start_pool",
+  "name": "premierpainmod:premier_pain_temple/forest_premier_pain_temple_structure/start_pool",
 
   "fallback": "minecraft:empty",
 
@@ -8,7 +8,7 @@
       "weight": 1,
       "element":
       {
-        "location": "premierpainmod:premier_pain_temple_structure",
+        "location": "premierpainmod:premier_pain_temple/forest_premier_pain_temple_structure",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
