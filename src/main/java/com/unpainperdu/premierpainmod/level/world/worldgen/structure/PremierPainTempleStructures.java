@@ -109,7 +109,8 @@ public class PremierPainTempleStructures extends Structure
                 context.heightAccessor(),
                 context.randomState()) > 63;
 
-        return flag;
+        //return flag;
+        return true;
     }
 
     @Override
