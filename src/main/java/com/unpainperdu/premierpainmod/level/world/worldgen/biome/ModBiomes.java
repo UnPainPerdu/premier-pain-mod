@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement.ModVe
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
@@ -13,6 +14,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
@@ -20,11 +23,13 @@ public class ModBiomes
 {
     public static  final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "forest_premier_pain_ruins"));
     public static  final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "sand_desert_premier_pain_ruins"));
+    public static  final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "swamp_premier_pain_ruins"));
 
     public static void boostrap(BootstrapContext<Biome> context)
     {
         context.register(FOREST_PREMIER_PAIN_RUINS, forestPremierPainRuins(context));
         context.register(SAND_DESERT_PREMIER_PAIN_RUINS, sandDesertPremierPainRuins(context));
+        context.register(SWAMP_PREMIER_PAIN_RUINS, swampPremierPainRuins(context));
     }
 
     protected static int calculateSkyColor(float pTemperature)
@@ -84,6 +89,51 @@ public class ModBiomes
                 .build();
     }
 
+    private static Biome swampPremierPainRuins(BootstrapContext<Biome> context)
+    {
+        float temperature = 0.8F;
+        float downfall = 0.9f;
+        //must be in vanilla order
+
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        //mob spawn
+        BiomeDefaultFeatures.commonSpawns(mobspawnsettings$builder, 70);
+        mobspawnsettings$builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1));
+        mobspawnsettings$builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.BOGGED, 30, 4, 4));
+        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 10, 2, 5));
+        mobspawnsettings$builder.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8));
+
+        //block spawn
+        BiomeDefaultFeatures.addFossilDecoration(biomegenerationsettings$builder);
+        globalOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addMangroveSwampDisks(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addMangroveSwampVegetation(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(temperature)
+                .downfall(downfall)
+                .specialEffects(
+                        new BiomeSpecialEffects.Builder()
+                                .waterColor(3832426)
+                                .waterFogColor(5077600)
+                                .fogColor(12638463)
+                                .skyColor(calculateSkyColor(temperature))
+                                .foliageColorOverride(9285927)
+                                .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.SWAMP)
+                                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP))
+                                .build()
+                )
+                .mobSpawnSettings(mobspawnsettings$builder.build())
+                .generationSettings(biomegenerationsettings$builder.build())
+                .build();
+    }
+
     private static Biome sandDesertPremierPainRuins(BootstrapContext<Biome> context)
     {
         float temperature = 2.0F;
@@ -92,7 +142,6 @@ public class ModBiomes
         MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
-        //must be in vanilla order
         BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
@@ -163,5 +212,14 @@ public class ModBiomes
     public static void addDeadRuinsFlower(BiomeGenerationSettings.Builder pBuilder)
     {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER);
+    }
+
+    private static void globalOverworldGeneration(BiomeGenerationSettings.Builder pGenerationSettings) {
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(pGenerationSettings);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(pGenerationSettings);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(pGenerationSettings);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(pGenerationSettings);
+        BiomeDefaultFeatures.addDefaultSprings(pGenerationSettings);
+        BiomeDefaultFeatures.addSurfaceFreezing(pGenerationSettings);
     }
 }
