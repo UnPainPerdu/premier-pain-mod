@@ -108,7 +108,7 @@ public class ModBiomes
         BiomeDefaultFeatures.addDefaultGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDesertVegetation(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDesertExtraVegetation(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDesertExtraDecoration(biomegenerationsettings$builder);
 
         return new Biome.BiomeBuilder()
