@@ -17,10 +17,13 @@ public class ModSurfaceRule
         SurfaceRules.RuleSource defaultGrassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
 
         SurfaceRules.RuleSource sandSurface = makeSurfaceSurfaceRules(Blocks.SAND, Blocks.SAND,Blocks.SANDSTONE);
+        SurfaceRules.RuleSource mudSurface = makeSurfaceSurfaceRules(Blocks.MUD, Blocks.MUD,Blocks.DIRT);
 
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS),
                         sandSurface),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SWAMP_PREMIER_PAIN_RUINS),
+                        SurfaceRules.ifTrue(isAtOrAboveWaterLevel, mudSurface)),
                 // Default to a grass and dirt surface
                 SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, defaultGrassSurface))
         );

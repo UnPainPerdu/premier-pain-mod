@@ -81,8 +81,9 @@
     ],
     [
       "minecraft:glow_lichen",
-      "premierpainmod:tree_mangrove",
       "premierpainmod:tree_oak_swamp",
+      "premierpainmod:tree_mangrove",
+      "premierpainmod:patch_curiosity_flower",
       "minecraft:patch_grass_normal",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",

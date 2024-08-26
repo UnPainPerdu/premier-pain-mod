@@ -10,6 +10,7 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GrassBlock;
+import net.minecraft.world.level.block.MudBlock;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -64,7 +65,7 @@ public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfigurati
         Block block = levelAccessor.getBlockState(pos).getBlock();
         Block blockBelow = levelAccessor.getBlockState(pos.below()).getBlock();
 
-        if ((block instanceof AirBlock) && (blockBelow instanceof GrassBlock))
+        if ((block instanceof AirBlock) && (blockBelow instanceof GrassBlock || blockBelow instanceof MudBlock))
         {
             return true;
         }
