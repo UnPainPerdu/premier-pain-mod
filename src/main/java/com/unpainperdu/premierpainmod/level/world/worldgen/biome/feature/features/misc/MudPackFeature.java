@@ -32,9 +32,12 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
         BlockPos pos = pContext.origin();
         NoneFeatureConfiguration config = pContext.config();
         Direction direction = ModFeatureUtils.getDirection(rand);
+        if (ModFeatureUtils.isSpawning(100,20, rand))
+        {
+            return false;
+        }
 
         mudPackGenerator(worldIn,chunkGenerator,rand,pos,config, direction);
-
         return true;
     }
 
@@ -45,28 +48,37 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
         {
             return;
         }
-        ArrayList<BlockPos> posList = ModFeatureUtils.getRandomPosWithSameY(pos, 7,12, 1, rand);
-        posList = ModFeatureUtils.setAllPosToTheGround(posList, worldIn);
+        ArrayList<BlockPos> allPosList = new ArrayList<>();
+        ArrayList<BlockPos> posListLayer1 = ModFeatureUtils.getRandomPosWithSameY(pos, 7,12, 1, rand);
+        posListLayer1 = ModFeatureUtils.setAllPosToTheGround(posListLayer1, worldIn);
 
-        for(BlockPos pos1 : posList)
+        for(BlockPos pos1 : posListLayer1)
         {
             ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()));
+            allPosList.add(pos1);
         }
 
-        posList = ModFeatureUtils.getRandomPosWithSameY(pos.above(), 3,7, 1, rand);
-        posList = ModFeatureUtils.setAllPosToTheGround(posList, worldIn);
+        ArrayList<BlockPos> posListLayer2 = ModFeatureUtils.getRandomPosWithSameY(pos.above(), 3,7, 1, rand);
+        posListLayer2 = ModFeatureUtils.setAllPosToTheGround(posListLayer2, worldIn);
 
-        for(BlockPos pos1 : posList)
+        for(BlockPos pos1 : posListLayer2)
         {
             ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()));
+            allPosList.add(pos1);
         }
 
-        posList = ModFeatureUtils.getRandomPosWithSameY(pos.above(), 1,2, 1, rand);
-        posList = ModFeatureUtils.setAllPosToTheGround(posList, worldIn);
+        ArrayList<BlockPos> posListLayer3 = ModFeatureUtils.getRandomPosWithSameY(pos.above(), 1,2, 1, rand);
+        posListLayer3 = ModFeatureUtils.setAllPosToTheGround(posListLayer3, worldIn);
 
-        for(BlockPos pos1 : posList)
+        for(BlockPos pos1 : posListLayer3)
         {
             ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()));
+            allPosList.add(pos1);
+        }
+
+        for(BlockPos pos1 : allPosList)
+        {
+            ModFeatureUtils.placeBlockAroundOne(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()));
         }
     }
 }

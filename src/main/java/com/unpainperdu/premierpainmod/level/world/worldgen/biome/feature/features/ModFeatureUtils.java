@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ModFeatureUtils
@@ -347,5 +348,28 @@ public class ModFeatureUtils
         {
             System.out.println("Warning : failed to generated block at " + pos);
         }
+    }
+
+    public static void placeBlockAroundOne(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, List<BlockState> randomizedBlocks)
+    {
+        ArrayList<BlockPos> posAround = new ArrayList<>(Arrays.asList(pos.above(), pos.north(), pos.east(), pos.south(), pos.west()));
+        setAllPosToTheGround( posAround, worldIn);
+
+        for(BlockPos pos1 : posAround)
+        {
+           if(worldIn.getBlockState(pos1).getBlock() instanceof AirBlock)
+           {
+               generateBlock(worldIn, pos1, rand, randomizedBlocks);
+           }
+        }
+    }
+
+    /**
+     * return true if a randomInt in range [0,maxChance]  < chance
+     */
+    public static boolean isSpawning(int maxChance, int chance, RandomSource rand)
+    {
+        int randomInt = getRandomPositiveIntInRange(maxChance, rand);
+        return randomInt < chance;
     }
 }
