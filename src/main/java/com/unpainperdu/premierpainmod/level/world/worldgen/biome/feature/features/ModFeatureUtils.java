@@ -8,8 +8,10 @@ import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ModFeatureUtils
 {
@@ -33,9 +35,13 @@ public class ModFeatureUtils
         return (Math.abs(rand.nextInt()))%maxExcludedBorn;
     }
 
-    public static int getRandomIntInRange(int modulo, RandomSource rand)
+    public static int getRandomIntInRange(int maxExcludedBorn, RandomSource rand)
     {
-        return (rand.nextInt())%modulo;
+        if (maxExcludedBorn<2)
+        {
+            maxExcludedBorn = 2;
+        }
+        return (rand.nextInt())%maxExcludedBorn;
     }
 
     public static BlockPos getLeft(BlockPos pos, Direction direction)
@@ -323,5 +329,23 @@ public class ModFeatureUtils
             }
         }
         return direction;
+    }
+
+    public static void generateBlock(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, List<BlockState> randomizedBlocks)
+    {
+        int listSize = randomizedBlocks.size();
+        if (listSize == 1)
+        {
+            worldIn.setBlock(pos, randomizedBlocks.getFirst(), 2);
+        }
+        else if (listSize > 1)
+        {
+            int randomInt = getRandomPositiveIntInRange(randomizedBlocks.size(), rand);
+            worldIn.setBlock(pos, randomizedBlocks.get(randomInt), 2);
+        }
+        else
+        {
+            System.out.println("Warning : failed to generated block at " + pos);
+        }
     }
 }

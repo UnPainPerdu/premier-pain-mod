@@ -34,7 +34,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "premierpainmod:mud_pack"
     ],
     [
       "minecraft:fossil_upper",
