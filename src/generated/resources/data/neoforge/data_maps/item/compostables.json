@@ -1,9 +1,15 @@
 {
   "values": {
+    "premierpainmod:cactus_flower_block": {
+      "chance": 0.65
+    },
     "premierpainmod:civilizations_flower": {
       "chance": 0.5
     },
     "premierpainmod:curiosity_flower": {
+      "chance": 0.65
+    },
+    "premierpainmod:flowered_cactus_block": {
       "chance": 0.65
     },
     "premierpainmod:ruins_flower": {

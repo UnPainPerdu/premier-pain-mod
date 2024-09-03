@@ -13,7 +13,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEn
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.basicFlower.CuriosityFlower;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
-import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFloweredBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -463,8 +464,9 @@ public class BlockRegister
     public static final DeferredBlock<Block> LIBERTY_BLOCK =  registerBlock("liberty_block", () -> new LibertyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.0F, 0.0F).noLootTable().noOcclusion()));
     //vegetation
         //misc
-    public static final DeferredBlock<Block> CACTUS_FLOWERED_BLOCK =  registerBlock("cactus_flowered_block", () -> new CactusFloweredBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CACTUS).noOcclusion()));
-    public static final DeferredBlock<Block> CACTUS_FLOWER_BLOCK =  registerBlock("cactus_flower_block", () -> new CactusFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> FLOWERED_CACTUS_BLOCK =  registerBlock("flowered_cactus_block", () -> new FloweredCactusBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CACTUS).noOcclusion()));
+    public static final DeferredBlock<Block> CACTUS_FLOWER_BLOCK =  registerBlock("cactus_flower_block", () -> new CactusFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> POTTED_CACTUS_FLOWER_BLOCK =  registerFlowerPot("potted_cactus_flower_block", () -> CACTUS_FLOWER_BLOCK);
     /*
         1 block flower
         -->
@@ -479,7 +481,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> POTTED_CURIOSITY_FLOWER = registerFlowerPot("potted_curiosity_flower",() -> CURIOSITY_FLOWER);
         //dead bush block (like flower)
     public static final DeferredBlock<Block> DEAD_RUINS_FLOWER =  registerBlock("dead_ruins_flower", () -> new DeadBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEAD_BUSH).noOcclusion().noCollission()));
-    public static final DeferredBlock<Block> POTTED_DEAD_RUINS_FLOWER = registerFlowerPot("potted_dead_ruins_flower",() -> RUINS_FLOWER);
+    public static final DeferredBlock<Block> POTTED_DEAD_RUINS_FLOWER = registerFlowerPot("potted_dead_ruins_flower",() -> DEAD_RUINS_FLOWER);
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)

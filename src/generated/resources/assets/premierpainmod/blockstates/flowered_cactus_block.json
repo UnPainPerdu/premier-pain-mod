@@ -1,0 +1,1924 @@
+{
+  "variants": {
+    "can_grow=false,facing=east,grow_stage=0,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=0,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=0,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=0,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=1,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=1,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=1,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=1,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=10,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=10,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=10,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=10,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=11,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=11,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=11,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=11,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=12,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=12,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=12,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=12,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=13,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=13,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=13,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=13,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=14,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=14,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=14,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=14,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=15,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=15,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=15,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=15,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=2,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=2,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=2,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=2,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=3,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=3,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=3,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=3,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=4,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=4,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=4,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=4,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=5,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=5,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=5,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=5,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=6,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=6,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=6,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=6,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=7,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=7,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=7,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=7,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=8,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=8,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=8,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=8,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=9,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=9,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=9,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=false,facing=east,grow_stage=9,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=false,facing=north,grow_stage=0,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=0,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=0,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=0,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=1,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=1,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=1,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=1,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=10,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=10,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=10,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=10,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=11,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=11,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=11,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=11,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=12,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=12,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=12,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=12,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=13,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=13,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=13,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=13,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=14,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=14,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=14,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=14,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=15,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=15,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=15,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=15,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=2,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=2,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=2,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=2,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=3,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=3,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=3,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=3,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=4,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=4,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=4,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=4,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=5,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=5,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=5,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=5,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=6,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=6,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=6,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=6,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=7,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=7,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=7,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=7,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=8,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=8,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=8,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=8,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=9,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=9,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=9,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=false,facing=north,grow_stage=9,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=false,facing=south,grow_stage=0,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=0,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=0,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=0,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=1,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=1,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=1,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=1,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=10,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=10,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=10,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=10,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=11,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=11,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=11,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=11,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=12,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=12,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=12,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=12,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=13,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=13,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=13,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=13,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=14,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=14,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=14,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=14,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=15,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=15,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=15,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=15,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=2,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=2,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=2,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=2,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=3,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=3,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=3,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=3,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=4,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=4,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=4,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=4,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=5,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=5,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=5,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=5,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=6,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=6,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=6,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=6,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=7,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=7,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=7,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=7,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=8,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=8,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=8,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=8,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=south,grow_stage=9,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=false,facing=south,grow_stage=9,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=false,facing=south,grow_stage=9,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=false,facing=south,grow_stage=9,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=false,facing=west,grow_stage=0,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=0,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=0,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=0,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=1,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=1,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=1,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=1,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=10,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=10,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=10,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=10,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=11,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=11,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=11,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=11,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=12,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=12,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=12,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=12,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=13,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=13,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=13,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=13,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=14,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=14,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=14,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=14,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=15,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=15,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=15,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=15,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=2,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=2,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=2,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=2,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=3,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=3,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=3,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=3,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=4,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=4,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=4,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=4,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=5,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=5,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=5,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=5,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=6,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=6,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=6,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=6,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=7,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=7,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=7,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=7,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=8,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=8,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=8,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=8,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=9,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=9,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=9,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=false,facing=west,grow_stage=9,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=east,grow_stage=0,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=0,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=0,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=0,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=1,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=1,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=1,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=1,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=10,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=10,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=10,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=10,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=11,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=11,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=11,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=11,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=12,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=12,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=12,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=12,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=13,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=13,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=13,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=13,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=14,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=14,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=14,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=14,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=15,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=15,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=15,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=15,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=2,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=2,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=2,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=2,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=3,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=3,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=3,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=3,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=4,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=4,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=4,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=4,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=5,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=5,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=5,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=5,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=6,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=6,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=6,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=6,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=7,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=7,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=7,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=7,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=8,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=8,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=8,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=8,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=9,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=9,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=9,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 270
+    },
+    "can_grow=true,facing=east,grow_stage=9,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 270
+    },
+    "can_grow=true,facing=north,grow_stage=0,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=0,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=0,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=0,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=1,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=1,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=1,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=1,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=10,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=10,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=10,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=10,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=11,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=11,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=11,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=11,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=12,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=12,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=12,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=12,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=13,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=13,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=13,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=13,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=14,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=14,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=14,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=14,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=15,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=15,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=15,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=15,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=2,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=2,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=2,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=2,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=3,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=3,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=3,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=3,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=4,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=4,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=4,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=4,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=5,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=5,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=5,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=5,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=6,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=6,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=6,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=6,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=7,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=7,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=7,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=7,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=8,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=8,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=8,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=8,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=9,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=9,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=9,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 180
+    },
+    "can_grow=true,facing=north,grow_stage=9,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 180
+    },
+    "can_grow=true,facing=south,grow_stage=0,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=0,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=0,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=0,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=1,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=1,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=1,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=1,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=10,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=10,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=10,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=10,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=11,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=11,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=11,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=11,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=12,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=12,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=12,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=12,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=13,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=13,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=13,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=13,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=14,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=14,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=14,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=14,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=15,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=15,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=15,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=15,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=2,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=2,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=2,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=2,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=3,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=3,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=3,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=3,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=4,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=4,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=4,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=4,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=5,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=5,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=5,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=5,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=6,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=6,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=6,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=6,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=7,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=7,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=7,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=7,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=8,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=8,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=8,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=8,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=south,grow_stage=9,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0"
+    },
+    "can_grow=true,facing=south,grow_stage=9,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1"
+    },
+    "can_grow=true,facing=south,grow_stage=9,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2"
+    },
+    "can_grow=true,facing=south,grow_stage=9,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3"
+    },
+    "can_grow=true,facing=west,grow_stage=0,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=0,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=0,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=0,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=1,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=1,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=1,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=1,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=10,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=10,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=10,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=10,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=11,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=11,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=11,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=11,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=12,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=12,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=12,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=12,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=13,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=13,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=13,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=13,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=14,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=14,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=14,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=14,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=15,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=15,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=15,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=15,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=2,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=2,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=2,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=2,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=3,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=3,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=3,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=3,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=4,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=4,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=4,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=4,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=5,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=5,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=5,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=5,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=6,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=6,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=6,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=6,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=7,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=7,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=7,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=7,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=8,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=8,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=8,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=8,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=9,part_num=0": {
+      "model": "premierpainmod:block/flowered_cactus_block_0",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=9,part_num=1": {
+      "model": "premierpainmod:block/flowered_cactus_block_1",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=9,part_num=2": {
+      "model": "premierpainmod:block/flowered_cactus_block_2",
+      "y": 90
+    },
+    "can_grow=true,facing=west,grow_stage=9,part_num=3": {
+      "model": "premierpainmod:block/flowered_cactus_block_3",
+      "y": 90
+    }
+  }
+}

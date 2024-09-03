@@ -42,6 +42,10 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");
             // villager workshop
         villagerWorkshopTranslation();
+            //vegetation
+                //misc
+        add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Cactus fleuri");
+        add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Fleure de cactus");
             //flower
                 //1 block flower
         add(BlockRegister.RUINS_FLOWER.get(), "Fleure de ruines");

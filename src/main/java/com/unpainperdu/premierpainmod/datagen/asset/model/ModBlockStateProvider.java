@@ -14,6 +14,7 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEn
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.data.PackOutput;
@@ -59,6 +60,8 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if (block instanceof FlowerBlock) {flowerBlockWithItem(block);}
             else if (block instanceof AbstractGrowingAboveVegetation) {growingVegetationWithItem(block);}
             else if (block instanceof DeadBushBlock) {deadBushWithItem(block);}
+            else if (block instanceof FloweredCactusBlock) {floweredCactusBlockWithItem(block);}
+
         }
         //potted thing
             //flower
@@ -70,6 +73,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         //else
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
+
     private void simpleBlockWithItem(Block block)
     {
         simpleBlockWithItem(block, cubeAll(block));
@@ -863,6 +867,45 @@ public class ModBlockStateProvider extends BlockStateProvider
 
         ModelFile modelFile = models().withExistingParent(name, ResourceLocation.withDefaultNamespace("flower_pot_cross")).texture("plant", "block/flower_block/growing_block_flower/" + nameFlower).renderType("cutout");
         simpleBlock(flowerPotBlock, modelFile);
+    }
+
+    private void floweredCactusBlockWithItem(Block block)
+    {
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            if(state.getValue(FloweredCactusBlock.PART_NUM ) == 1)
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(getKey(block).toString()+"_1","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            else if (state.getValue(FloweredCactusBlock.PART_NUM ) == 2)
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(getKey(block).toString()+"_2","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            else if (state.getValue(FloweredCactusBlock.PART_NUM ) == 3)
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(getKey(block).toString()+"_3","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+            else
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(getKey(block).toString()+"_0","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0"))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            }
+        });
+        ModelFile model;
+        model = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0");
+        itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
 
     private ResourceLocation getKey(Block block)

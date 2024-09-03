@@ -401,7 +401,11 @@ public class ModList
             BlockRegister.POTTED_CURIOSITY_FLOWER,
             //dead bush and pot
             BlockRegister.DEAD_RUINS_FLOWER,
-            BlockRegister.POTTED_DEAD_RUINS_FLOWER
+            BlockRegister.POTTED_DEAD_RUINS_FLOWER,
+            //vegetation
+                //misc
+            BlockRegister.FLOWERED_CACTUS_BLOCK,
+            BlockRegister.CACTUS_FLOWER_BLOCK
     );
 
     public static List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(

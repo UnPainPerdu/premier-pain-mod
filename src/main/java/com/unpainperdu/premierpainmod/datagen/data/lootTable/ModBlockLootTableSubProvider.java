@@ -11,6 +11,8 @@ import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.AbstractTw
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.AbstractTwoBlockWidthWithBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.HolderLookup;
@@ -73,6 +75,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_CURIOSITY_FLOWER.get(), BlockRegister.CURIOSITY_FLOWER.get());
             //dead bush
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_DEAD_RUINS_FLOWER.get(), BlockRegister.DEAD_RUINS_FLOWER.get());
+            //misc
+        pottedFlowerLootTableGenerator(BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get(), BlockRegister.CACTUS_FLOWER_BLOCK.get());
     }
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks()
@@ -105,8 +109,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private void deadBushLootTableProvider(Block deadBush)
     {
-        super.add(deadBush, this.createShearsDispatchTable(deadBush,
-                ((LootPoolSingletonContainer.Builder) this.applyExplosionCondition(deadBush, LootItem.lootTableItem(Items.STICK)))));
+        super.add(deadBush, this.createShearsDispatchTable(deadBush, (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(deadBush, LootItem.lootTableItem(Items.STICK))));
     }
 
     private boolean isNormalLoot(Block block)
@@ -115,7 +118,9 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 || block instanceof VillagerTableBlock
                 || block instanceof VillagerChairBlock
                 || block instanceof FlowerBlock
-                || block instanceof CivilizationsFlowerBlock;
+                || block instanceof CivilizationsFlowerBlock
+                || block instanceof FloweredCactusBlock
+                || block instanceof CactusFlowerBlock;
     }
 
     private boolean is2HeightBlockLoot(Block block)

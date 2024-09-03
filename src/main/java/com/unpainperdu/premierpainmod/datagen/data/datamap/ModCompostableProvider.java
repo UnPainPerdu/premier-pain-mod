@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.datagen.data.datamap;
 
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -32,7 +34,10 @@ public class ModCompostableProvider
     private static void setBlockCompostable(Item item, DataMapProvider.Builder<Compostable, Item> compostableBuilder)
     {
         Block block = Block.byItem(item);
-        if(block instanceof FlowerBlock)
+        if(block instanceof FlowerBlock
+            || block instanceof CactusFlowerBlock
+            || block instanceof FloweredCactusBlock
+        )
         {
             compostableBuilder.add(item.getDefaultInstance().getItemHolder() ,new Compostable(0.65f),false);
         }

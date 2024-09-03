@@ -39,6 +39,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //item
         //block
+            //misc
+        oneItemToAnotherOneRecipeInFurnaceBuilder(BlockRegister.FLOWERED_CACTUS_BLOCK, Items.GREEN_DYE, RecipeCategory.MISC, 0.2f, 300);
             //flower to colorant
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CIVILIZATIONS_FLOWER, Items.ORANGE_DYE);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE);
@@ -281,5 +283,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         String resultName = BuiltInRegistries.BLOCK.getKey((Block) ((DeferredBlock<Block>) resource).get()).toString().replace(PremierPainMod.MOD_ID +":","");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result).requires(resource).unlockedBy("has_" + resultName, has(resource)).save(ModRecipeProvider.recipeOutput);
+    }
+
+    /*
+    for example cactus is 0.2 exp
+    time in tick
+    */
+    private void oneItemToAnotherOneRecipeInFurnaceBuilder(ItemLike resource, ItemLike result,RecipeCategory recipeCategory , float exp, int cookingTime)
+    {
+        String resultName = BuiltInRegistries.BLOCK.getKey((Block) ((DeferredBlock<Block>) resource).get()).toString().replace(PremierPainMod.MOD_ID +":","");
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(resource), recipeCategory, result, exp, cookingTime)
+                .unlockedBy("has_" + resultName, has(resource))
+                .save(ModRecipeProvider.recipeOutput);
     }
 }

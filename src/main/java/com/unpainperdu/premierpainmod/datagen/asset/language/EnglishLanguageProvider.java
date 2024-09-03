@@ -43,6 +43,10 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");
             // villager workshop
         villagerWorkshopTranslation();
+            //vegetation
+                //misc
+        add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Flowered cactus");
+        add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Cactus Flower");
             //flower
                 //1 block flower
         add(BlockRegister.RUINS_FLOWER.get(), "Ruins flower");

@@ -11,6 +11,8 @@ public class CommonSetupEventPottedThing
 {
     public static void setupEventPottedThing(final FMLCommonSetupEvent event)
     {
+        //misc
+        setPottedThing(event, BlockRegister.CACTUS_FLOWER_BLOCK, BlockRegister.POTTED_CACTUS_FLOWER_BLOCK);
         //flower
         setPottedThing(event, BlockRegister.RUINS_FLOWER, BlockRegister.POTTED_RUINS_FLOWER);
         setPottedThing(event, BlockRegister.CIVILIZATIONS_FLOWER, BlockRegister.POTTED_CIVILIZATIONS_FLOWER);

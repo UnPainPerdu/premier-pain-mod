@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "premierpainmod:flowered_cactus_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:green_dye"
+  }
+}
