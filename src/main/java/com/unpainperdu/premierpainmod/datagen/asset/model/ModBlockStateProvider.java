@@ -877,21 +877,21 @@ public class ModBlockStateProvider extends BlockStateProvider
             if(state.getValue(FloweredCactusBlock.PART_NUM ) == 1)
             {
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(block).toString()+"_1","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0"))
+                        .modelFile(models().withExistingParent(getKey(block).toString()+"_1","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_1"))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }
             else if (state.getValue(FloweredCactusBlock.PART_NUM ) == 2)
             {
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(block).toString()+"_2","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0"))
+                        .modelFile(models().withExistingParent(getKey(block).toString()+"_2","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_2"))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }
             else if (state.getValue(FloweredCactusBlock.PART_NUM ) == 3)
             {
                 return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(block).toString()+"_3","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0"))
+                        .modelFile(models().withExistingParent(getKey(block).toString()+"_3","premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_3"))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build();
             }

@@ -96,7 +96,7 @@ public class FloweredCactusBlock extends Block
                 {
                     if(actualAmountOfCactusBelow < MAX_HEIGHT && level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
                     {
-                        level.setBlock(pos.above(), state.setValue(PART_NUM, BASE_PART), 2);
+                        level.setBlock(pos.above(), state.setValue(PART_NUM, BASE_PART).setValue(GROW_STAGE, 0), 2);
                     }
                     else if (getNumberOfArm(state, level, pos)<=1 && randomInt < 7)
                     {
@@ -136,8 +136,8 @@ public class FloweredCactusBlock extends Block
                 {
                     if(level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
                     {
-                        level.setBlock(pos.above(), state.setValue(PART_NUM, ARM_TOP_PART), 2);
-                        level.setBlock(pos, state.setValue(CAN_GROW, false).setValue(PART_NUM, ARM_WITH_ARM_TOP_ABOVE_PART), 4);
+                        level.setBlock(pos.above(), state.setValue(PART_NUM, ARM_TOP_PART).setValue(GROW_STAGE, 0), 2);
+                        level.setBlock(pos, state.setValue(CAN_GROW, false).setValue(PART_NUM, ARM_WITH_ARM_TOP_ABOVE_PART), 2);
                     }
                     else
                     {
@@ -316,7 +316,7 @@ public class FloweredCactusBlock extends Block
         BlockPos newPos = pos.relative(direction);
         if (level.getBlockState(newPos).getBlock() instanceof AirBlock)
         {
-            level.setBlock(newPos, state.setValue(PART_NUM, 2), 2);
+            level.setBlock(newPos, state.setValue(PART_NUM, 2).setValue(FACING, direction.getOpposite()).setValue(GROW_STAGE, 0), 2);
         }
     }
 }
