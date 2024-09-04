@@ -1,0 +1,90 @@
+{
+	"credit": "Made with Blockbench",
+	"render_type": "cutout",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower",
+		"particle": "premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 6],
+			"to": [10, 2, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 0, 6]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 1], "texture": "#0"},
+				"east": {"uv": [8, 0, 10, 1], "texture": "#0"},
+				"south": {"uv": [8, 0, 10, 1], "texture": "#0"},
+				"west": {"uv": [8, 0, 10, 1], "texture": "#0"},
+				"up": {"uv": [10, 3, 8, 1], "texture": "#0"},
+				"down": {"uv": [10, 1, 8, 3], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7, 2, 7],
+			"to": [9, 3, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 2, 6]},
+			"faces": {
+				"north": {"uv": [8, 4, 9, 4.5], "texture": "#0"},
+				"east": {"uv": [8, 4.5, 9, 5], "texture": "#0"},
+				"south": {"uv": [9, 4, 10, 4.5], "texture": "#0"},
+				"west": {"uv": [9, 4.5, 10, 5], "texture": "#0"},
+				"up": {"uv": [9, 4, 8, 3], "texture": "#0"},
+				"down": {"uv": [10, 3, 9, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 0, 0],
+			"to": [8, 10, 16],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 5], "texture": "#0"},
+				"east": {"uv": [0, 0, 8, 5], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 5], "texture": "#0"},
+				"west": {"uv": [0, 0, 8, 5], "texture": "#0"},
+				"up": {"uv": [0, 8, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 8], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 0, 8],
+			"to": [16, 10, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 5], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 5], "texture": "#0"},
+				"south": {"uv": [0, 0, 8, 5], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 5], "texture": "#0"},
+				"up": {"uv": [8, 0, 0, 0], "texture": "#0"},
+				"down": {"uv": [8, 0, 0, 0], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 2, 1.75],
+			"scale": [0.25, 0.25, 0.25]
+		}
+	},
+	"groups": [
+		{
+			"name": "cactus_flower",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "fruit",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [0, 1]
+				},
+				{
+					"name": "flower",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [2, 3]
+				}
+			]
+		}
+	]
+}

@@ -60,9 +60,11 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if (block instanceof FlowerBlock) {flowerBlockWithItem(block);}
             else if (block instanceof AbstractGrowingAboveVegetation) {growingVegetationWithItem(block);}
             else if (block instanceof DeadBushBlock) {deadBushWithItem(block);}
-            else if (block instanceof FloweredCactusBlock) {floweredCactusBlockWithItem(block);}
-
         }
+        //manual
+        cactusFlowerBlockWithItem();
+        floweredCactusBlockWithItem();
+        pottedFloweredCactus();
         //potted thing
             //flower
         flowerPotBlock(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
@@ -869,8 +871,9 @@ public class ModBlockStateProvider extends BlockStateProvider
         simpleBlock(flowerPotBlock, modelFile);
     }
 
-    private void floweredCactusBlockWithItem(Block block)
+    private void floweredCactusBlockWithItem()
     {
+        Block block = BlockRegister.FLOWERED_CACTUS_BLOCK.get();
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
         variantBuilder.forAllStates(state ->
         {
@@ -906,6 +909,28 @@ public class ModBlockStateProvider extends BlockStateProvider
         ModelFile model;
         model = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0");
         itemModels().getBuilder(getKey(block).getPath()).parent(model);
+    }
+
+    private void cactusFlowerBlockWithItem()
+    {
+        Block block = BlockRegister.CACTUS_FLOWER_BLOCK.get();
+        String name = getName(block);
+        ModelFile pedestalModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower");
+        simpleBlock(block, pedestalModel);
+        itemModels().getBuilder(getKey(block).getPath()).parent(models()
+                .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0","block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
+    }
+
+    private void pottedFloweredCactus()
+    {
+        Block flowerPotBlock = BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get();
+        Block blockToPot = BlockRegister.CACTUS_FLOWER_BLOCK.get();
+
+        String nameFlowerPotBlock = BuiltInRegistries.BLOCK.getKey(flowerPotBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+
+        ModelFile modelFile = models().withExistingParent(nameFlowerPotBlock, ResourceLocation.withDefaultNamespace("flower_pot_cross")).texture("plant", "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item").renderType("cutout");
+        simpleBlock(flowerPotBlock, modelFile);
     }
 
     private ResourceLocation getKey(Block block)

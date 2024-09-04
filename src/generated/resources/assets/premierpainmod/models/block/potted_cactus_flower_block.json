@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "plant": "premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item"
+  }
+}
