@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
@@ -46,8 +47,8 @@ public class FloweredCactusBlock extends Block
     public static final IntegerProperty GROW_STAGE = IntegerProperty.create("grow_stage", 0, 15);
     public static final BooleanProperty CAN_GROW = BooleanProperty.create("can_grow");
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    protected static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
-    protected static final VoxelShape COLLISION_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+    //all collision shape
+
     public static final MapCodec<FloweredCactusBlock> CODEC = simpleCodec(FloweredCactusBlock::new);
     private static final int MAX_HEIGHT = 4;
 
@@ -60,13 +61,75 @@ public class FloweredCactusBlock extends Block
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        return SHAPE;
+        int part_num = state.getValue(PART_NUM);
+        Direction direction = state.getValue(FACING);
+
+        VoxelShape finalShape = Block.box(1.0, 0, 1.0, 15, 16, 15); // default -> 0
+        if(part_num == ARM_TOP_PART)
+        {
+            finalShape = Block.box(5.0, 0, 5.0, 11, 16, 11);
+        }
+        else if (part_num > 1)
+        {
+            if (direction == Direction.NORTH)
+            {
+                finalShape = Block.box(5.0, 5.0, 0.0, 11, 11, 11);
+            }
+            else if (direction == Direction.EAST)
+            {
+                finalShape = Block.box(5.0, 5.0, 5.0, 16, 11, 11);
+            }
+            else if (direction == Direction.WEST)
+            {
+                finalShape = Block.box(0.0, 5.0, 5.0, 11, 11, 11);
+            }
+            else
+            {
+                finalShape = Block.box(5.0, 5.0, 5.0, 11, 11, 16);
+            }
+            if (part_num == ARM_WITH_ARM_TOP_ABOVE_PART)
+            {
+                finalShape = Shapes.or(finalShape, Block.box(5.0, 11, 5.0, 11, 16, 11));
+            }
+        }
+        return finalShape;
     }
 
     @Override
-    protected VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext)
+    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        return COLLISION_SHAPE;
+        int part_num = state.getValue(PART_NUM);
+        Direction direction = state.getValue(FACING);
+
+        VoxelShape finalCollisionShape = Block.box(1.0, 0, 1.0, 15, 15, 15); // default -> 0
+        if(part_num == ARM_TOP_PART)
+        {
+            finalCollisionShape = Block.box(5.0, 0, 5.0, 11, 15, 11);
+        }
+        else if (part_num > 1)
+        {
+            if (direction == Direction.NORTH)
+            {
+                finalCollisionShape = Block.box(5.0, 5.0, 0.0, 11, 10, 11);
+            }
+            else if (direction == Direction.EAST)
+            {
+                finalCollisionShape = Block.box(5.0, 5.0, 5.0, 16, 10, 11);
+            }
+            else if (direction == Direction.WEST)
+            {
+                finalCollisionShape = Block.box(0.0, 5.0, 5.0, 11, 10, 11);
+            }
+            else
+            {
+                finalCollisionShape = Block.box(5.0, 5.0, 5.0, 11, 10, 16);
+            }
+            if (part_num == ARM_WITH_ARM_TOP_ABOVE_PART)
+            {
+                finalCollisionShape = Shapes.or(finalCollisionShape, Block.box(5.0, 11, 5.0, 11, 15, 11));
+            }
+        }
+        return finalCollisionShape;
     }
 
     @Override
