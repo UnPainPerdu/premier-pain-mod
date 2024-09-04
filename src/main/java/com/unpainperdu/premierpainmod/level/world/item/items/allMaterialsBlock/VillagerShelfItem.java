@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.item.items;
+package com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock;
 
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;

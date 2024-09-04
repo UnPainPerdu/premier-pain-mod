@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.entity.blockEntity;
+package com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock;
 
 import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;

@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block;
+package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;

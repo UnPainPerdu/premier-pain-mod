@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.menu.villagerDrawerMenu.VillagerDrawerMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.villagerShelfMenu.VillagerShelfMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.villagerWorkshopMenu.VillagerWorkshopMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.villagerDrawerMenu.VillagerDrawerMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.villagerShelfMenu.VillagerShelfMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.villagerWorkshopMenu.VillagerWorkshopMenu;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.AbstractContainerMenu;

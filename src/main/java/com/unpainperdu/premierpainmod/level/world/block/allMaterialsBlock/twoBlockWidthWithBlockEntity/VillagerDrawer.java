@@ -1,8 +1,9 @@
-package com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity;
+package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockWidthWithBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.VillagerDrawerBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerDrawerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

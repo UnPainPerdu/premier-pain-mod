@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.*;
-import com.unpainperdu.premierpainmod.level.world.item.items.VillagerShelfItem;
+import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;

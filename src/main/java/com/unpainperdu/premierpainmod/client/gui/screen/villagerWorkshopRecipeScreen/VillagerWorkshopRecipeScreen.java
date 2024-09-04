@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.client.gui.screen.villagerWorkshopRecipeS
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.VillagerWorkshopRecipe;
-import com.unpainperdu.premierpainmod.level.world.menu.villagerWorkshopMenu.VillagerWorkshopMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.villagerWorkshopMenu.VillagerWorkshopMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;

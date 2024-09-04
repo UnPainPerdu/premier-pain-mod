@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity;
+package com.unpainperdu.premierpainmod.level.world.block.abstractBlock;
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -24,33 +23,20 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-
 import javax.annotation.Nullable;
 
-public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlock implements SimpleWaterloggedBlock
+public abstract class AbstractTwoBlockWidth extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock
 {
     public static final EnumProperty<TwoBlockWidthPart> PART;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public AbstractTwoBlockWidthWithBlockEntity(Properties pProperties)
+    public AbstractTwoBlockWidth(Properties pProperties)
     {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE));
     }
-
     @Override
-    protected BlockState rotate(BlockState pState, Rotation pRot)
-    {
-        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
-    }
-
-    protected BlockState mirror(BlockState pState, Mirror pMirror)
-    {
-        return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
-    }
-
-    protected abstract MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec();
+    protected abstract MapCodec<? extends HorizontalDirectionalBlock> codec();
 
     protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
     {
@@ -72,19 +58,13 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
                     : Blocks.AIR.defaultBlockState();
         }
     }
-
-    protected BlockState superUpdateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
-    {
-        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
-    }
-
-
+    @Override
     protected @NotNull FluidState getFluidState(BlockState pState)
     {
         return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
     }
 
-    protected static Direction getNeighbourDirection(TwoBlockWidthPart pPart, Direction pDirection)
+    private static Direction getNeighbourDirection(TwoBlockWidthPart pPart, Direction pDirection)
     {
         return pPart == TwoBlockWidthPart.RIGHT ? pDirection : pDirection.getOpposite();
     }
@@ -196,5 +176,10 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
         }
+    }
+    @Override
+    protected BlockState rotate(BlockState pState, Rotation pRot)
+    {
+        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
     }
 }

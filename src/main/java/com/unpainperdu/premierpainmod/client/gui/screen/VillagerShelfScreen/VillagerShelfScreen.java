@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.client.gui.screen.VillagerShelfScreen;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.menu.villagerShelfMenu.VillagerShelfMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.villagerShelfMenu.VillagerShelfMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;

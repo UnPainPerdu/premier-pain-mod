@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight;
+package com.unpainperdu.premierpainmod.level.world.block.abstractBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,13 +21,13 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public abstract class AbstactTwoBlockHeightBlock extends Block implements SimpleWaterloggedBlock
+public abstract class AbstractTwoBlockHeightBlock extends Block implements SimpleWaterloggedBlock
 {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    public AbstactTwoBlockHeightBlock(Properties pProperties)
+    public AbstractTwoBlockHeightBlock(Properties pProperties)
     {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.FALSE));

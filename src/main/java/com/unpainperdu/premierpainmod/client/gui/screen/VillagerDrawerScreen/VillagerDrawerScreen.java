@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.client.gui.screen.VillagerDrawerScreen;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.menu.villagerDrawerMenu.VillagerDrawerMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.villagerDrawerMenu.VillagerDrawerMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;

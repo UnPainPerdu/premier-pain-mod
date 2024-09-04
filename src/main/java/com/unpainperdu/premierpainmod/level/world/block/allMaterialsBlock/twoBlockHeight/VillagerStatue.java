@@ -1,6 +1,7 @@
-package com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight;
+package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockHeightBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -10,7 +11,7 @@ import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class VillagerStatue extends AbstactTwoBlockHeightBlock
+public class VillagerStatue extends AbstractTwoBlockHeightBlock
 {
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
 

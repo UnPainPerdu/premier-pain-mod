@@ -1,15 +1,15 @@
 package com.unpainperdu.premierpainmod.datagen.data.lootTable;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.AbstactTwoBlockHeightBlock;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.AbstractTwoBlockWidth;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidth.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.block.twoBlockWidthWithBlockEntity.AbstractTwoBlockWidthWithBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockHeightBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockWidth;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockWidthWithBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
@@ -125,7 +125,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private boolean is2HeightBlockLoot(Block block)
     {
-        return block instanceof AbstactTwoBlockHeightBlock;
+        return block instanceof AbstractTwoBlockHeightBlock;
     }
     private boolean is2WidthBlockLoot(Block block)
     {

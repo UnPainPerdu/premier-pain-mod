@@ -1,8 +1,9 @@
-package com.unpainperdu.premierpainmod.level.world.block.twoBlockHeight;
+package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockHeightBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -34,7 +35,7 @@ import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 import static net.minecraft.world.level.material.Fluids.WATER;
 
-public class VillagerBrazier extends AbstactTwoBlockHeightBlock
+public class VillagerBrazier extends AbstractTwoBlockHeightBlock
 {
     public static final MapCodec<VillagerBrazier> CODEC = RecordCodecBuilder.mapCodec(
             p_308808_ -> p_308808_.group(
