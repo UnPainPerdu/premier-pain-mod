@@ -382,4 +382,9 @@ public class FloweredCactusBlock extends Block
             level.setBlock(newPos, state.setValue(PART_NUM, 2).setValue(FACING, direction.getOpposite()).setValue(GROW_STAGE, 0), 2);
         }
     }
+
+    public static int getMaxHeight()
+    {
+        return MAX_HEIGHT;
+    }
 }

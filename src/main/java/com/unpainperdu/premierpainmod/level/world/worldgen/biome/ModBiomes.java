@@ -157,6 +157,7 @@ public class ModBiomes
         BiomeDefaultFeatures.desertSpawns(mobspawnsettings$builder);
         addVillagerPillarRuinsDesert(biomegenerationsettings$builder);
         addDeadRuinsFlower(biomegenerationsettings$builder);
+        addFloweredCactus(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
@@ -220,7 +221,8 @@ public class ModBiomes
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER);
     }
 
-    private static void globalOverworldGeneration(BiomeGenerationSettings.Builder pGenerationSettings) {
+    private static void globalOverworldGeneration(BiomeGenerationSettings.Builder pGenerationSettings)
+    {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(pGenerationSettings);
         BiomeDefaultFeatures.addDefaultCrystalFormations(pGenerationSettings);
         BiomeDefaultFeatures.addDefaultMonsterRoom(pGenerationSettings);
@@ -237,5 +239,10 @@ public class ModBiomes
     public static void addMudPack(BiomeGenerationSettings.Builder pBuilder)
     {
         pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.MUD_PACK);
+    }
+
+    public static void addFloweredCactus(BiomeGenerationSettings.Builder pBuilder)
+    {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.FLOWERED_CACTUS);
     }
 }

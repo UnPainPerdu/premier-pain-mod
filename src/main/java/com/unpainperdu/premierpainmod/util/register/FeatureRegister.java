@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.feature
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.CivilizationsFlowerPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.CuriosityFlowerPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.RuinsFlowerPatchFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.misc.FloweredCactusFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
@@ -31,6 +32,8 @@ public class FeatureRegister
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_CURIOSITY_FLOWER = FEATURES.register("patch_curiosity_flower",() -> new CuriosityFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
         //dead bush
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_DEAD_RUINS_FLOWER = FEATURES.register("patch_dead_ruins_flower",() -> new DeadRuinsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
+        //misc
+    public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> FLOWERED_CACTUS = FEATURES.register("flowered_cactus",() -> new FloweredCactusFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus modEventBus)
     {

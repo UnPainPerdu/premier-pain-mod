@@ -25,6 +25,8 @@ public class ModVegetationPlacement
     //tree
     public static final ResourceKey<PlacedFeature> TREE_MANGROVE = ModPlacementUtil.createKey("tree_mangrove");
     public static final ResourceKey<PlacedFeature> TREE_OAK_SWAMP = ModPlacementUtil.createKey("tree_oak_swamp");
+    //misc
+    public static final ResourceKey<PlacedFeature> FLOWERED_CACTUS = ModPlacementUtil.createKey("flowered_cactus");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
@@ -45,6 +47,10 @@ public class ModVegetationPlacement
         register(pContext, ModVegetationPlacement.TREE_MANGROVE, TREE_MANGROVE_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> TREE_OAK_SWAMP_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.TREE_OAK_SWAMP);
         register(pContext, ModVegetationPlacement.TREE_OAK_SWAMP, TREE_OAK_SWAMP_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        //misc
+        final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
+        register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
     }
 
     protected static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedFeatureKey, Holder<ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... modifiers)

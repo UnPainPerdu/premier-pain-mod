@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ModFeatureUtils
@@ -332,17 +333,27 @@ public class ModFeatureUtils
         return direction;
     }
 
-    public static void generateBlock(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, List<BlockState> randomizedBlocks)
+    public static void generateBlock(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, BlockState block, boolean isReplacing)
+    {
+        generateBlock(worldIn, pos, rand, Collections.singletonList(block), isReplacing);
+    }
+    public static void generateBlock(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, List<BlockState> randomizedBlocks, boolean isReplacing)
     {
         int listSize = randomizedBlocks.size();
         if (listSize == 1)
         {
-            worldIn.setBlock(pos, randomizedBlocks.getFirst(), 2);
+            if (isReplacing || worldIn.getBlockState(pos).getBlock() instanceof AirBlock)
+            {
+                worldIn.setBlock(pos, randomizedBlocks.getFirst(), 2);
+            }
         }
         else if (listSize > 1)
         {
-            int randomInt = getRandomPositiveIntInRange(randomizedBlocks.size(), rand);
-            worldIn.setBlock(pos, randomizedBlocks.get(randomInt), 2);
+            if (isReplacing || worldIn.getBlockState(pos).getBlock() instanceof AirBlock)
+            {
+                int randomInt = getRandomPositiveIntInRange(randomizedBlocks.size(), rand);
+                worldIn.setBlock(pos, randomizedBlocks.get(randomInt), 2);
+            }
         }
         else
         {
@@ -350,7 +361,7 @@ public class ModFeatureUtils
         }
     }
 
-    public static void placeBlockAroundOne(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, List<BlockState> randomizedBlocks)
+    public static void placeBlockAroundOne(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, List<BlockState> randomizedBlocks, boolean isReplacing)
     {
         ArrayList<BlockPos> posAround = new ArrayList<>(Arrays.asList(pos.above(), pos.north(), pos.east(), pos.south(), pos.west()));
         setAllPosToTheGround( posAround, worldIn);
@@ -359,7 +370,7 @@ public class ModFeatureUtils
         {
            if(worldIn.getBlockState(pos1).getBlock() instanceof AirBlock)
            {
-               generateBlock(worldIn, pos1, rand, randomizedBlocks);
+               generateBlock(worldIn, pos1, rand, randomizedBlocks, isReplacing);
            }
         }
     }

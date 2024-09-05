@@ -54,7 +54,7 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
 
         for(BlockPos pos1 : posListLayer1)
         {
-            ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()));
+            ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()),true);
             allPosList.add(pos1);
         }
 
@@ -63,7 +63,7 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
 
         for(BlockPos pos1 : posListLayer2)
         {
-            ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()));
+            ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()),true);
             allPosList.add(pos1);
         }
 
@@ -72,13 +72,13 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
 
         for(BlockPos pos1 : posListLayer3)
         {
-            ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()));
+            ModFeatureUtils.generateBlock(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()),true);
             allPosList.add(pos1);
         }
 
         for(BlockPos pos1 : allPosList)
         {
-            ModFeatureUtils.placeBlockAroundOne(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()));
+            ModFeatureUtils.placeBlockAroundOne(worldIn, pos1, rand, Arrays.asList(Blocks.PACKED_MUD.defaultBlockState(), Blocks.MUD_BRICKS.defaultBlockState()), true);
         }
     }
 }
