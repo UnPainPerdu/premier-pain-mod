@@ -75,7 +75,7 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
             if (i > 1)
             {
                 int numberArm = ModFeatureUtils.getRandomIntInRange(10, rand);
-                if (numberArm < 3)
+                if (numberArm < 4)
                 {
                     generateNewArm(defaultFloweredCactusState, worldIn, pos1, rand);
                 }
@@ -119,7 +119,7 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
                         .setValue(FloweredCactusBlock.GROW_STAGE,0), false);
 
         randomInt = ModFeatureUtils.getRandomPositiveIntInRange(10, rand);
-        if (randomInt < 7 && level.getBlockState(newPos).getBlock() instanceof FloweredCactusBlock)
+        if (randomInt < 9 && level.getBlockState(newPos).getBlock() instanceof FloweredCactusBlock)
         {
             if(level.getBlockState(newPos).getValue(FloweredCactusBlock.PART_NUM) == 2 && level.getBlockState(newPos.above()).getBlock() instanceof AirBlock)
             {
