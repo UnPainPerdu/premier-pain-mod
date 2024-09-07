@@ -100,31 +100,32 @@ public class ModBlockStateProvider extends BlockStateProvider
         String name = getName(statue);
         String material = name.replace("_villager_statue","_villager");
 
-        // Get a variant block state builder.
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(statue);
-        // Create a partial state and set properties on it.
         VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
-        // Alternatively, forAllStates(Function<BlockState, ConfiguredModel[]>) creates a model for every state.
-        // The passed function will be called once for each possible state.
         variantBuilder.forAllStates(state ->
-        {
-                    if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
+            {
+                String modelName = getKey(statue).toString();
+                String modelPath = "premierpainmod:block/all_materials_block/villager_statue/";
+                String texturePath = "block/all_materials_block/multiple_use_texture/" + material;
+                String particlePath = "block/all_materials_block/multiple_use_particle/" + material;
+                if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
                     {
-                        // Return a ConfiguredModel depending on the state's properties.
-                        // For example, the following code will rotate the model depending on the horizontal rotation of the block.
-                        return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(getKey(statue).toString()+"_bottom","premierpainmod:block/all_materials_block/villager_statue/villager_statue_bottom").texture("0", "block/all_materials_block/multiple_use_texture/" + material).texture("1","block/all_materials_block/multiple_use_particle/" + material))
-                                .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                                .build();
+                        modelName += "_bottom";
+                        modelPath += "villager_statue_bottom";
                     }
                     else
                     {
-                        return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(getKey(statue).toString()+"_upper","premierpainmod:block/all_materials_block/villager_statue/villager_statue_upper").texture("0", "block/all_materials_block/multiple_use_texture/" + material).texture("1","block/all_materials_block/multiple_use_particle/" + material))
-                                .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                                .build();
+                        modelName += "_upper";
+                        modelPath += "villager_statue_upper";
                     }
-        });
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(modelName,modelPath)
+                                .texture("0", texturePath)
+                                .texture("1",particlePath))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build();
+            });
+
         itemModels().getBuilder((getKey(statue).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
@@ -136,21 +137,21 @@ public class ModBlockStateProvider extends BlockStateProvider
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWorkshop);
         variantBuilder.forAllStates(state ->
         {
-            String name = getKey(villagerWorkshop).toString();
+            String modelName = getKey(villagerWorkshop).toString();
             String modelPath;
             if(state.getValue(VillagerWorkshop.PART) == TwoBlockWidthPart.RIGHT)
             {
-                name += "_right";
+                modelName += "_right";
                 modelPath = "premierpainmod:block/functional_block/villager_workshop/villager_workshop_right_m";
             }
             else
             {
-                name += "_left";
+                modelName += "_left";
                 modelPath = "premierpainmod:block/functional_block/villager_workshop/villager_workshop_left_m";
             }
 
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(name,modelPath))
+                    .modelFile(models().withExistingParent(modelName,modelPath))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
