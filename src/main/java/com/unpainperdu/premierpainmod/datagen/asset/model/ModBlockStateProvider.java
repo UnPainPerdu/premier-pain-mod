@@ -533,7 +533,6 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private String textureTableWithCarpetSelection(BlockState state,VillagerTableBlock table)
     {
-        String villagerTableName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MOD_ID +":","");
         switch (state.getValue(VillagerTableBlock.COLOR))
         {
             case WHITE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_white";
@@ -557,7 +556,6 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private String nameModelTableWithCarpetSelection(BlockState state,VillagerTableBlock table)
     {
-        String villagerTableName = BuiltInRegistries.BLOCK.getKey(table).toString().replace(PremierPainMod.MOD_ID +":","");
         switch (state.getValue(VillagerTableBlock.COLOR))
         {
             case WHITE: return "_white";
@@ -583,7 +581,6 @@ public class ModBlockStateProvider extends BlockStateProvider
         String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = chairName.replace("_chair","");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(chair);
-        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
         variantBuilder.forAllStates(state ->
         {
             return ConfiguredModel.builder()
@@ -652,46 +649,50 @@ public class ModBlockStateProvider extends BlockStateProvider
         String villagerDrawerName = BuiltInRegistries.BLOCK.getKey(villagerDrawer).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = villagerDrawerName.replace("_drawer","");
 
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerDrawer);
-        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
         variantBuilder.forAllStates(state ->
         {
+            String modelName = getKey(villagerDrawer).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_drawer/" ;
+
             if(state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
             {
                 if(state.getValue(VillagerDrawer.OPEN) == FALSE)
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerDrawer).toString() + "_right_closed", "premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_right_closed").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_right_closed";
+                    modelPath += "villager_drawer_right_closed";
                 }
                 else
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerDrawer).toString() + "_right_opened", "premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_right_opened").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_right_opened";
+                    modelPath += "villager_drawer_right_opened";
                 }
             }
             else
             {
                 if(state.getValue(VillagerDrawer.OPEN) == FALSE)
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerDrawer).toString() + "_left_closed", "premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_left_closed").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_left_closed";
+                    modelPath += "villager_drawer_left_closed";
                 }
                 else
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerDrawer).toString() + "_left_opened", "premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_left_opened").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_left_opened";
+                    modelPath += "villager_drawer_left_opened";
                 }
             }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("0",texture)
+                            .texture("1", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
         });
-        ModelFile villagerWorkshopModel = models().withExistingParent(getKey(villagerDrawer).toString(),"premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_m").texture("0","block/all_materials_block/multiple_use_texture/" + material);
+        ModelFile villagerWorkshopModel = models().withExistingParent(getKey(villagerDrawer).toString(),"premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_m")
+                .texture("0",texture);
         itemModels().getBuilder(getKey(villagerDrawer).getPath()).parent(villagerWorkshopModel);
     }
     private void wallVillagerShelf(Block villagerWallShelfWithItem)

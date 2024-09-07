@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_left_closed",
   "textures": {
-    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/basalt_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/basalt_villager",
+    "1": "premierpainmod:block/all_materials_block/multiple_use_particle/basalt_villager"
   }
 }
