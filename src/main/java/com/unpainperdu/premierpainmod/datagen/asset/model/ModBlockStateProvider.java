@@ -587,7 +587,9 @@ public class ModBlockStateProvider extends BlockStateProvider
         variantBuilder.forAllStates(state ->
         {
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(getKey(chair).toString(),"premierpainmod:block/all_materials_block/villager_chair/villager_chair").texture("0","block/all_materials_block/multiple_use_texture/" + material))
+                    .modelFile(models().withExistingParent(getKey(chair).toString(),"premierpainmod:block/all_materials_block/villager_chair/villager_chair")
+                            .texture("0","block/all_materials_block/multiple_use_texture/" + material)
+                            .texture("1", "block/all_materials_block/multiple_use_particle/" + material))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
@@ -596,47 +598,50 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private void villagerThroneChairWithItem(Block throneChair)
     {
-        String throneChairName = BuiltInRegistries.BLOCK.getKey(throneChair).toString().replace(PremierPainMod.MOD_ID +":","");
+        String throneChairName = getName(throneChair);
         String material = throneChairName.replace("_throne_chair","");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(throneChair);
-        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
         variantBuilder.forAllStates(state ->
         {
+            String modelName = getKey(throneChair).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_throne_chair/";
+            String texture0 = "block/all_materials_block/multiple_use_texture/" + material;
+            String texture1 = textureThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);;
+            String particle = "block/all_materials_block/multiple_use_particle/" + material;
             boolean flag = (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerTableCarpetColor.NONE);
             if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
             {
                 if(flag)
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(throneChair).toString() + "_bottom", "premierpainmod:block/all_materials_block/villager_throne_chair/wo_carpet/villager_throne_chair_bottom").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_bottom";
+                    modelPath += "wo_carpet/villager_throne_chair_bottom";
                 }
                 else
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(throneChair).toString() + "_bottom_c" + nameModelThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair), "premierpainmod:block/all_materials_block/villager_throne_chair/w_carpet/villager_throne_chair_bottom_carpeted").texture("0","block/all_materials_block/multiple_use_texture/" + material).texture("1",textureThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair)))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_bottom_c" + nameModelThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);
+                    modelPath += "w_carpet/villager_throne_chair_bottom_carpeted";
                 }
             }
             else
             {
                 if(flag)
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(throneChair).toString() + "_upper", "premierpainmod:block/all_materials_block/villager_throne_chair/wo_carpet/villager_throne_chair_upper").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_upper";
+                    modelPath += "wo_carpet/villager_throne_chair_upper";
                 }
                 else
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(throneChair).toString() + "_upper_c" + nameModelThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair), "premierpainmod:block/all_materials_block/villager_throne_chair/w_carpet/villager_throne_chair_upper_carpeted").texture("0","block/all_materials_block/multiple_use_texture/" + material).texture("1",textureThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair)))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_upper_c" + nameModelThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);
+                    modelPath += "w_carpet/villager_throne_chair_upper_carpeted";
                 }
             }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName , modelPath)
+                            .texture("0",texture0)
+                            .texture("1",texture1)
+                            .texture("2", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
         });
         ModelFile villagerChairModel = models().withExistingParent(getKey(throneChair).toString(),"premierpainmod:block/all_materials_block/villager_throne_chair/wo_carpet/villager_throne_chair_m").texture("0","block/all_materials_block/multiple_use_texture/" + material);
         itemModels().getBuilder(getKey(throneChair).getPath()).parent(villagerChairModel);
