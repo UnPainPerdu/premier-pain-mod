@@ -405,8 +405,10 @@ public class ModList
             //vegetation
                 //misc
             BlockRegister.FLOWERED_CACTUS_BLOCK,
-            BlockRegister.CACTUS_FLOWER_BLOCK
-    );
+            BlockRegister.CACTUS_FLOWER_BLOCK,
+            BlockRegister.SKY_SPEARS,
+            BlockRegister.DEAD_TALL_BUSH
+            );
 
     public static List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(
             //creative tab icon item

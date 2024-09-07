@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.lootTable;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
@@ -20,6 +21,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
@@ -64,7 +66,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 }
                 else if(block instanceof DeadBushBlock)
                 {
-                    deadBushLootTableProvider(block);
+                    itemOr2ndItemIfShearLootTableProvider(block, Items.STICK);
                 }
             }
         }
@@ -107,9 +109,9 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         super.add(flowerPot, this.createPotFlowerItemTable(flowerBlock));
     }
 
-    private void deadBushLootTableProvider(Block deadBush)
+    private void itemOr2ndItemIfShearLootTableProvider(Block deadBush, ItemLike resultIfNotShear)
     {
-        super.add(deadBush, this.createShearsDispatchTable(deadBush, (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(deadBush, LootItem.lootTableItem(Items.STICK))));
+        super.add(deadBush, this.createShearsDispatchTable(deadBush, (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(deadBush, LootItem.lootTableItem(resultIfNotShear))));
     }
 
     private boolean isNormalLoot(Block block)
@@ -125,7 +127,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private boolean is2HeightBlockLoot(Block block)
     {
-        return block instanceof AbstractTwoBlockHeightBlock;
+        return block instanceof AbstractTwoBlockHeightBlock
+                ||block instanceof AbstractTallGrass;
     }
     private boolean is2WidthBlockLoot(Block block)
     {

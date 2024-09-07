@@ -16,6 +16,8 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.basicFlower.C
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.BasicTallGrassBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.DeadTallGrass;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -469,6 +471,8 @@ public class BlockRegister
     public static final DeferredBlock<Block> FLOWERED_CACTUS_BLOCK =  registerBlock("flowered_cactus_block", () -> new FloweredCactusBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CACTUS).noOcclusion()));
     public static final DeferredBlock<Block> CACTUS_FLOWER_BLOCK =  registerBlock("cactus_flower_block", () -> new CactusFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_CACTUS_FLOWER_BLOCK =  registerFlowerPot("potted_cactus_flower_block", () -> CACTUS_FLOWER_BLOCK);
+    public static final DeferredBlock<Block> SKY_SPEARS =  registerBlock("sky_spears", () -> new BasicTallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> DEAD_TALL_BUSH =  registerBlock("dead_tall_bush", () -> new DeadTallGrass(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     /*
         1 block flower
         -->

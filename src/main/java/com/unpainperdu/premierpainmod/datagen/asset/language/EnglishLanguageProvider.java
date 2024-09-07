@@ -47,6 +47,8 @@ public class EnglishLanguageProvider extends LanguageProvider
                 //misc
         add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Flowered cactus");
         add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Cactus Flower");
+        add(BlockRegister.SKY_SPEARS.get(), "Sky spears");
+        add(BlockRegister.DEAD_TALL_BUSH.get(), "Dry bush");
             //flower
                 //1 block flower
         add(BlockRegister.RUINS_FLOWER.get(), "Ruins flower");
