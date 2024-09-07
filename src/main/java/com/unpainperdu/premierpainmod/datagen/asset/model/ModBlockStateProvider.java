@@ -189,32 +189,36 @@ public class ModBlockStateProvider extends BlockStateProvider
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(brazier);
         variantBuilder.forAllStates(state ->
         {
+            String texture;
+            String modelName = getKey(brazier).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_brazier/";
             if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
             {
-                // Return a ConfiguredModel depending on the state's properties.
-                // For example, the following code will rotate the model depending on the horizontal rotation of the block.
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(brazier).toString()+"_bottom","premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_bottom").texture("0",texture_bottom).texture("1", particle))
-                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                        .build();
+                modelName += "_bottom";
+                modelPath += "villager_brazier_bottom";
+                texture = texture_bottom;
             }
             else
             {
                 if(state.getValue(BlockStateProperties.LIT ) == TRUE)
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_lit", "premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_upper_lit").texture("0",texture_upper).texture("3", particle))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_upper_lit";
+                    modelPath += "villager_brazier_upper_lit";
+                    texture = texture_upper;
                 }
                 else
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(brazier).toString() + "_upper_unlit", "premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_upper_unlit").texture("0",texture_upper).texture("3", particle))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_upper_unlit";
+                    modelPath += "villager_brazier_upper_unlit";
+                    texture = texture_upper;
                 }
             }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("0",texture)
+                            .texture("3", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
         });
 
         ModelFile brazierModel = models().withExistingParent(getKey(brazier).toString()+"_m","premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_m");
