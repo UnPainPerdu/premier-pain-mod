@@ -1,8 +1,8 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_pentuor/villager_table_pentuor_carpeted",
+  "parent": "premierpainmod:block/all_materials_block/villager_table/villager_table_pentuor/villager_table_pentuor_carpeted",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/amethyst_block_villager",
-    "1": "premierpainmod:block/villager_table/carpet/villager_table_carpet_light_blue",
-    "2": "premierpainmod:block/multiple_use_particle/amethyst_block_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/amethyst_block_villager",
+    "1": "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_light_blue",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/amethyst_block_villager"
   }
 }

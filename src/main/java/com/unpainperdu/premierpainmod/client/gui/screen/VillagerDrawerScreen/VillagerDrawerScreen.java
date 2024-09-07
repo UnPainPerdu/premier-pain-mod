@@ -31,7 +31,7 @@ public class VillagerDrawerScreen extends AbstractContainerScreen<VillagerDrawer
 
     protected ResourceLocation getBackgroundTexture()
     {
-        return loc("textures/gui/container/villager_drawer/villager_drawer.png");
+        return loc("textures/gui/container/all_materials_block/villager_drawer/villager_drawer.png");
     }
 
     @Override

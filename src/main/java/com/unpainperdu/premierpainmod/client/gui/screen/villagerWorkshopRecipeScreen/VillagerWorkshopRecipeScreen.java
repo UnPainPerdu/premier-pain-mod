@@ -209,26 +209,26 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
     }
 
     protected ResourceLocation getBackgroundTexture() {
-        return loc("textures/gui/container/villager_workshop.png");
+        return loc("textures/gui/container/functional_block/villager_workshop.png");
     }
 
     protected ResourceLocation getScrollerSprite() {
-        return loc("container/villager_workshop/scroller");
+        return loc("container/functional_block/villager_workshop/scroller");
     }
 
     protected ResourceLocation getScrollerDisabledSprite() {
-        return loc("container/villager_workshop/scroller_disabled");
+        return loc("container/functional_block/villager_workshop/scroller_disabled");
     }
 
     protected ResourceLocation getRecipeSprite() {
-        return loc("container/villager_workshop/recipe");
+        return loc("container/functional_block/villager_workshop/recipe");
     }
 
     protected ResourceLocation getRecipeSelectedSprite() {
-        return loc("container/villager_workshop/recipe_selected");
+        return loc("container/functional_block/villager_workshop/recipe_selected");
     }
 
     protected ResourceLocation getRecipeHighlightedSprite() {
-        return loc("container/villager_workshop/recipe_highlighted");
+        return loc("container/functional_block/villager_workshop/recipe_highlighted");
     }
 }

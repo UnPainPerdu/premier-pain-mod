@@ -2,6 +2,6 @@
   "parent": "minecraft:block/flower_pot_cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "plant": "premierpainmod:block/flower_block/growing_block_flower/civilizations_flower"
+    "plant": "premierpainmod:block/vegetation/flower_block/growing_block_flower/civilizations_flower"
   }
 }

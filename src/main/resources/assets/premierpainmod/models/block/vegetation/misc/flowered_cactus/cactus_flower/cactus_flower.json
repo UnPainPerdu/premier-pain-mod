@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
-	"render_type": "cutout",
 	"texture_size": [32, 32],
+	"render_type": "cutout",
 	"textures": {
 		"0": "premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower",
 		"particle": "premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower"

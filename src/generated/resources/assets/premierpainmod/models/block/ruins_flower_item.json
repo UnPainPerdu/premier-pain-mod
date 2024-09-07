@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:block/flower_block/one_block_flower/ruins_flower"
+    "layer0": "premierpainmod:block/vegetation/flower_block/one_block_flower/ruins_flower"
   }
 }

@@ -1,7 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_duo/villager_table_duo",
+  "parent": "premierpainmod:block/all_materials_block/villager_table/villager_table_duo/villager_table_duo",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/copper_block_villager",
-    "2": "premierpainmod:block/multiple_use_particle/copper_block_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/copper_block_villager",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/copper_block_villager"
   }
 }

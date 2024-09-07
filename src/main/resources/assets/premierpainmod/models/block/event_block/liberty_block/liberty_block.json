@@ -1,10 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
-	"textures": {
-		"0": "premierpainmod:block/event_block/liberty_block/liberty_block",
-		"particle": "premierpainmod:block/event_block/liberty_block/liberty_block"
-	},
+	"textures": {"particle": "#0"},
 	"elements": [
 		{
 			"from": [6, 0, 2],

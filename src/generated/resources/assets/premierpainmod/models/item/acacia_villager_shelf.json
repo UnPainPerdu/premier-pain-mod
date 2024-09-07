@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/villager_shelf/acacia_villager_shelf"
+    "layer0": "premierpainmod:item/all_materials_block_item/villager_shelf/acacia_villager_shelf"
   }
 }

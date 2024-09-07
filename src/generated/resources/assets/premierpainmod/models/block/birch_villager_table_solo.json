@@ -1,7 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_solo/villager_table_solo",
+  "parent": "premierpainmod:block/all_materials_block/villager_table/villager_table_solo/villager_table_solo",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/birch_villager",
-    "2": "premierpainmod:block/multiple_use_particle/birch_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/birch_villager",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/birch_villager"
   }
 }

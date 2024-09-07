@@ -1,7 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_pentuor/villager_table_pentuor",
+  "parent": "premierpainmod:block/all_materials_block/villager_table/villager_table_pentuor/villager_table_pentuor",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/warped_villager",
-    "2": "premierpainmod:block/multiple_use_particle/warped_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/warped_villager",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/warped_villager"
   }
 }

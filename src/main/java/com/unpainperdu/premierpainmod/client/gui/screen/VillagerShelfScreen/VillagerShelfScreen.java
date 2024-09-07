@@ -31,7 +31,7 @@ public class VillagerShelfScreen extends AbstractContainerScreen<VillagerShelfMe
 
     protected ResourceLocation getBackgroundTexture()
     {
-        return loc("textures/gui/container/villager_shelf/villager_shelf.png");
+        return loc("textures/gui/container/all_materials_block/villager_shelf/villager_shelf.png");
     }
 
     @Override

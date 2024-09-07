@@ -1,7 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_lit",
+  "parent": "premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_upper_lit",
   "textures": {
-    "0": "premierpainmod:block/villager_brazier/wood_villager_brazier_upper",
-    "3": "premierpainmod:block/multiple_use_particle/dark_oak_villager"
+    "0": "premierpainmod:block/all_materials_block/villager_brazier/wood_villager_brazier_upper",
+    "3": "premierpainmod:block/all_materials_block/multiple_use_particle/dark_oak_villager"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/villager_statue/netherite_block_villager_statue"
+    "layer0": "premierpainmod:item/all_materials_block_item/villager_statue/netherite_block_villager_statue"
   }
 }

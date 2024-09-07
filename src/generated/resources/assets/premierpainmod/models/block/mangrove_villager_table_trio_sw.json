@@ -1,7 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_table/villager_table_trio/angle/villager_table_trio_angle",
+  "parent": "premierpainmod:block/all_materials_block/villager_table/villager_table_trio/angle/villager_table_trio_angle",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/mangrove_villager",
-    "2": "premierpainmod:block/multiple_use_particle/mangrove_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/mangrove_villager",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/mangrove_villager"
   }
 }

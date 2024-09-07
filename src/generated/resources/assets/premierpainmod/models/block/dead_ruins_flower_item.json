@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:block/flower_block/dead_bush/dead_ruins_flower"
+    "layer0": "premierpainmod:block/vegetation/dead_bush/dead_ruins_flower"
   }
 }

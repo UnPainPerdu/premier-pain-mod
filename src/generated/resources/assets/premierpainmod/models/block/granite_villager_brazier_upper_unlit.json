@@ -1,7 +1,7 @@
 {
-  "parent": "premierpainmod:block/villager_brazier/villager_brazier_upper_unlit",
+  "parent": "premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_upper_unlit",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/granite_villager",
-    "3": "premierpainmod:block/multiple_use_particle/granite_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/granite_villager",
+    "3": "premierpainmod:block/all_materials_block/multiple_use_particle/granite_villager"
   }
 }

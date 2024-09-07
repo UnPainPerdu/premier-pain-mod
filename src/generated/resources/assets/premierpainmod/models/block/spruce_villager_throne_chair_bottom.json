@@ -1,6 +1,6 @@
 {
-  "parent": "premierpainmod:block/villager_throne_chair/villager_throne_chair_bottom",
+  "parent": "premierpainmod:block/all_materials_block/villager_throne_chair/wo_carpet/villager_throne_chair_bottom",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/spruce_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/spruce_villager"
   }
 }

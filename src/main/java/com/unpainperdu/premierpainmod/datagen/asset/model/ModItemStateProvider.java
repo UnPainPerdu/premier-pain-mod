@@ -22,7 +22,7 @@ public class ModItemStateProvider extends ItemModelProvider
     @Override
     protected void registerModels()
     {
-        item(ItemRegister.VILLAGER_ICON.get());
+        item(ItemRegister.VILLAGER_ICON.get(), "misc/");
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
@@ -30,12 +30,12 @@ public class ModItemStateProvider extends ItemModelProvider
             if(item instanceof VillagerSingingStone){villagerSingingStone(item);}
         }
     }
-    private void item(Item item)
+    private void item(Item item, String folder)
     {
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/" + name);
+                .texture("layer0","item/"+ folder + name);
     }
 
     private void villagerShelfItem(Item item)
@@ -43,7 +43,7 @@ public class ModItemStateProvider extends ItemModelProvider
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/villager_shelf/" + name);
+                .texture("layer0","item/all_materials_block_item/villager_shelf/" + name);
     }
 
     private void villagerSingingStone(Item item)

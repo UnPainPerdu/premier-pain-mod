@@ -1,6 +1,6 @@
 {
-  "parent": "premierpainmod:block/villager_shelf/standing/middle_standing_villager_shelf_left",
+  "parent": "premierpainmod:block/all_materials_block/villager_shelf/standing/middle_standing_villager_shelf_left",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/warped_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/warped_villager"
   }
 }

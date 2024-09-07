@@ -1,6 +1,6 @@
 {
-  "parent": "premierpainmod:block/villager_shelf/wall/wall_villager_shelf_left",
+  "parent": "premierpainmod:block/all_materials_block/villager_shelf/wall/wall_villager_shelf_left",
   "textures": {
-    "0": "premierpainmod:block/multiple_use_texture/amethyst_block_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/amethyst_block_villager"
   }
 }
