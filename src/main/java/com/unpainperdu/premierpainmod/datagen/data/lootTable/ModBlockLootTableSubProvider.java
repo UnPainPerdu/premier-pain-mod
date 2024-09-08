@@ -16,9 +16,11 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegeta
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -26,8 +28,14 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.NotNull;
 
@@ -59,7 +67,6 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 {
                     twoBlockWidthLootTableGenerator(block);
                 }
-
                 else if(isNormalLoot(block))
                 {
                     normalBlockLootTableGenerator(block);
@@ -70,6 +77,11 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 }
             }
         }
+    //manual thing
+        //vegetation
+            //tall grass
+        itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.SKY_SPEARS.get(), Items.STICK);
+        itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.DEAD_TALL_BUSH.get(), Items.STICK);
         //potted thing
             //flower
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
@@ -114,6 +126,25 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         super.add(deadBush, this.createShearsDispatchTable(deadBush, (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(deadBush, LootItem.lootTableItem(resultIfNotShear))));
     }
 
+    private void itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(Block block, ItemLike resultIfNotShear)
+    {
+        super.add(block, this.createTallGrassDispatchTable(block, AbstractTallGrass.HALF, DoubleBlockHalf.LOWER, resultIfNotShear));
+    }
+
+    private <T extends Comparable<T> & StringRepresentable> LootTable.Builder createTallGrassDispatchTable(Block block, Property<T> property, T valueOfProperty, ItemLike resultIfNotShear)
+    {
+        LootPoolEntryContainer.Builder<?> builder = (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(block, LootItem.lootTableItem(resultIfNotShear)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)));
+        return LootTable.lootTable()
+                .withPool(
+                        this.applyExplosionCondition(
+                            block
+                            ,LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(block).when(HAS_SHEARS).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty))).otherwise(builder))));
+    }
+
     private boolean isNormalLoot(Block block)
     {
         return block instanceof VillagerPedestalBlock
@@ -127,8 +158,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private boolean is2HeightBlockLoot(Block block)
     {
-        return block instanceof AbstractTwoBlockHeightBlock
-                ||block instanceof AbstractTallGrass;
+        return block instanceof AbstractTwoBlockHeightBlock;
     }
     private boolean is2WidthBlockLoot(Block block)
     {
