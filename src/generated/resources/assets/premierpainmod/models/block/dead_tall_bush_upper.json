@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "premierpainmod:block/vegetation/tall_grass/dead_tall_bush/dead_tall_bush_upper"
+  }
+}

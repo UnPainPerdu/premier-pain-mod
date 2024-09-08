@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:block/vegetation/tall_grass/dead_tall_bush/dead_tall_bush_upper"
+  }
+}

@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.asset.model;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
@@ -60,29 +61,31 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if (block instanceof FlowerBlock) {flowerBlockWithItem(block);}
             else if (block instanceof AbstractGrowingAboveVegetation) {growingVegetationWithItem(block);}
             else if (block instanceof DeadBushBlock) {deadBushWithItem(block);}
+            else if (block instanceof AbstractTallGrass) {tallGrassWithItem(block);}
         }
-        //manual
+    //manual
+        //vegetation
+            //misc
         cactusFlowerBlockWithItem();
         floweredCactusBlockWithItem();
-        pottedFloweredCactus();
-        //potted thing
-            //flower
+            //potted thing
+                //flower
         flowerPotBlock(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
         flowerPotBlockForGrowingVegetation(BlockRegister.POTTED_CIVILIZATIONS_FLOWER.get(), BlockRegister.CIVILIZATIONS_FLOWER.get());
         flowerPotBlock(BlockRegister.POTTED_CURIOSITY_FLOWER.get(), BlockRegister.CURIOSITY_FLOWER.get());
-            //dead bush
+                //dead bush
         deadBushPotBlock(BlockRegister.POTTED_DEAD_RUINS_FLOWER.get(), BlockRegister.DEAD_RUINS_FLOWER.get());
-        //else
+                //misc
+        pottedFloweredCactus();
+        //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
-
     private void simpleBlockWithItem(Block block)
     {
         simpleBlockWithItem(block, cubeAll(block));
     }
     private void simpleBlockWithItemWithCustomModel(Block block, String modelPath)
     {
-        String name = getName(block);
         ModelFile model = models().withExistingParent(getKey(block).toString(),modelPath);
         simpleBlock(block, model);
         itemModels().getBuilder(getKey(block).getPath()).parent(model);
@@ -101,7 +104,6 @@ public class ModBlockStateProvider extends BlockStateProvider
         String material = name.replace("_villager_statue","_villager");
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(statue);
-        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
         variantBuilder.forAllStates(state ->
             {
                 String modelName = getKey(statue).toString();
@@ -200,17 +202,16 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             else
             {
+                texture = texture_upper;
                 if(state.getValue(BlockStateProperties.LIT ) == TRUE)
                 {
                     modelName += "_upper_lit";
                     modelPath += "villager_brazier_upper_lit";
-                    texture = texture_upper;
                 }
                 else
                 {
                     modelName += "_upper_unlit";
                     modelPath += "villager_brazier_upper_unlit";
-                    texture = texture_upper;
                 }
             }
             return ConfiguredModel.builder()
@@ -582,7 +583,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             String modelName = getKey(throneChair).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_throne_chair/";
             String texture0 = "block/all_materials_block/multiple_use_texture/" + material;
-            String texture1 = textureThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);;
+            String texture1 = textureThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);
             String particle = "block/all_materials_block/multiple_use_particle/" + material;
             boolean flag = (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerTableCarpetColor.NONE);
             if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
@@ -923,6 +924,39 @@ public class ModBlockStateProvider extends BlockStateProvider
                 .renderType("cutout");
         simpleBlock(pottedBlock, modelFile);
     }
+
+    private void tallGrassWithItem(Block block)
+    {
+        String name = getName(block);
+
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            String modelName = getKey(block).toString();
+            String texturePath = "block/vegetation/tall_grass/"+ name + "/";
+            if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
+            {
+                modelName += "_lower";
+                texturePath += name + "_lower";
+            }
+            else
+            {
+                modelName += "_upper";
+                texturePath += name + "_upper";
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName,"block/cross")
+                            .texture("cross", texturePath)
+                            .renderType("cutout"))
+                    .build();
+        });
+
+        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0","block/vegetation/tall_grass/"+ name + "/" + name + "_upper");
+    }
+
 
     private ResourceLocation getKey(Block block)
     {

@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.data.datamap;
 
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
@@ -37,6 +38,7 @@ public class ModCompostableProvider
         if(block instanceof FlowerBlock
             || block instanceof CactusFlowerBlock
             || block instanceof FloweredCactusBlock
+            || block instanceof AbstractTallGrass
         )
         {
             compostableBuilder.add(item.getDefaultInstance().getItemHolder() ,new Compostable(0.65f),false);

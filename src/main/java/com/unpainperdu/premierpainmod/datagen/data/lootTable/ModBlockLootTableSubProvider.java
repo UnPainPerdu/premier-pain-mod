@@ -133,7 +133,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private <T extends Comparable<T> & StringRepresentable> LootTable.Builder createTallGrassDispatchTable(Block block, Property<T> property, T valueOfProperty, ItemLike resultIfNotShear)
     {
-        LootPoolEntryContainer.Builder<?> builder = (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(block, LootItem.lootTableItem(resultIfNotShear)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+        LootPoolEntryContainer.Builder<?> builder = (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(block, LootItem.lootTableItem(resultIfNotShear))
+                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)));
         return LootTable.lootTable()
                 .withPool(
@@ -141,8 +142,30 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                             block
                             ,LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(block).when(HAS_SHEARS).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty))).otherwise(builder))));
+                                .add(LootItem.lootTableItem(block)
+                                        .when(HAS_SHEARS)
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
+                                        .otherwise(builder))));
+    }
+
+    private <T extends Comparable<T> & StringRepresentable> LootTable.Builder TEMPcreateTallGrassDispatchTable(Block block, Property<T> property, T valueOfProperty, ItemLike resultIfNotShear)
+    {
+        LootPoolEntryContainer.Builder<?> builder = (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(block, LootItem.lootTableItem(resultIfNotShear))
+                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)));
+
+        return LootTable.lootTable()
+                .withPool(
+                        this.applyExplosionCondition(
+                                block
+                                ,LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(block)
+                                                .when(HAS_SHEARS)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
+                                                .otherwise(builder))));
     }
 
     private boolean isNormalLoot(Block block)

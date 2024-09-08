@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "premierpainmod:block/sky_spears_lower"
+    },
+    "half=upper": {
+      "model": "premierpainmod:block/sky_spears_upper"
+    }
+  }
+}

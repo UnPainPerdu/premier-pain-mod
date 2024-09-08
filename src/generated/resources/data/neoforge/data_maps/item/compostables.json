@@ -9,10 +9,16 @@
     "premierpainmod:curiosity_flower": {
       "chance": 0.65
     },
+    "premierpainmod:dead_tall_bush": {
+      "chance": 0.65
+    },
     "premierpainmod:flowered_cactus_block": {
       "chance": 0.65
     },
     "premierpainmod:ruins_flower": {
+      "chance": 0.65
+    },
+    "premierpainmod:sky_spears": {
       "chance": 0.65
     }
   }

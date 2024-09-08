@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "premierpainmod:block/dead_tall_bush_lower"
+    },
+    "half=upper": {
+      "model": "premierpainmod:block/dead_tall_bush_upper"
+    }
+  }
+}
