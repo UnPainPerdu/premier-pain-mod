@@ -1,6 +1,7 @@
 {
   "parent": "premierpainmod:block/all_materials_block/villager_shelf/standing/top_standing_villager_shelf_left",
   "textures": {
-    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/purpur_block_villager"
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/purpur_block_villager",
+    "1": "premierpainmod:block/all_materials_block/multiple_use_particle/purpur_block_villager"
   }
 }

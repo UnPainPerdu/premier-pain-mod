@@ -700,24 +700,30 @@ public class ModBlockStateProvider extends BlockStateProvider
         String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = name.replace("_wall_villager_shelf","_villager");
 
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWallShelfWithItem);
-        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
         variantBuilder.forAllStates(state ->
         {
+            String modelName = getKey(villagerWallShelfWithItem).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_shelf/wall/";
             if(state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(villagerWallShelfWithItem).toString() + "_right", "premierpainmod:block/all_materials_block/villager_shelf/wall/wall_villager_shelf_right").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                        .build();
+                modelName += "_right";
+                modelPath += "wall_villager_shelf_right";
             }
             else
             {
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(villagerWallShelfWithItem).toString() + "_left", "premierpainmod:block/all_materials_block/villager_shelf/wall/wall_villager_shelf_left").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                        .build();
+                modelName += "_left";
+                modelPath += "wall_villager_shelf_left";
             }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("0",texture)
+                            .texture("1", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
         });
     }
     private void standingVillagerShelf(Block villagerWallShelfWithItem)
@@ -725,54 +731,56 @@ public class ModBlockStateProvider extends BlockStateProvider
         String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID +":","");
         String material = name.replace("_standing_villager_shelf","_villager");
 
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWallShelfWithItem);
-        VariantBlockStateBuilder.PartialBlockstate partialState = variantBuilder.partialState();
         variantBuilder.forAllStates(state ->
         {
+            String modelName = getKey(villagerWallShelfWithItem).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_shelf/standing/";
+
             if(state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
             {
                 if((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && (state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerWallShelfWithItem).toString() + "_right_middle", "premierpainmod:block/all_materials_block/villager_shelf/standing/middle_standing_villager_shelf_right").texture("0", "block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
-                } else if ((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && !(state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
+                    modelName += "_right_middle";
+                    modelPath += "middle_standing_villager_shelf_right";
+                }
+                else if ((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && !(state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerWallShelfWithItem).toString() + "_right_top", "premierpainmod:block/all_materials_block/villager_shelf/standing/top_standing_villager_shelf_right").texture("0", "block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
-                }else
+                    modelName += "_right_top";
+                    modelPath += "top_standing_villager_shelf_right";
+                }
+                else
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerWallShelfWithItem).toString() + "_right_base", "premierpainmod:block/all_materials_block/villager_shelf/standing/base_standing_villager_shelf_right").texture("0", "block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_right_base";
+                    modelPath += "base_standing_villager_shelf_right";
                 }
             }
             else
             {
                 if((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && (state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerWallShelfWithItem).toString() + "_left_middle", "premierpainmod:block/all_materials_block/villager_shelf/standing/middle_standing_villager_shelf_left").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
-                } else if ((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && !(state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
+                    modelName += "_left_middle";
+                    modelPath += "middle_standing_villager_shelf_left";
+                }
+                else if ((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && !(state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerWallShelfWithItem).toString() + "_left_top", "premierpainmod:block/all_materials_block/villager_shelf/standing/top_standing_villager_shelf_left").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_left_top";
+                    modelPath += "top_standing_villager_shelf_left";
                 }else
                 {
-                    return ConfiguredModel.builder()
-                            .modelFile(models().withExistingParent(getKey(villagerWallShelfWithItem).toString() + "_left_base", "premierpainmod:block/all_materials_block/villager_shelf/standing/base_standing_villager_shelf_left").texture("0","block/all_materials_block/multiple_use_texture/" + material))
-                            .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                            .build();
+                    modelName += "_left_base";
+                    modelPath += "base_standing_villager_shelf_left";
                 }
             }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("0",texture)
+                            .texture("1", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
         });
     }
 
