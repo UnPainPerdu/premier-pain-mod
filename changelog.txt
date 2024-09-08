@@ -85,11 +85,14 @@ fix :
 1.21.x-1.9.0
 update neoforge to 21.1.23
 ## add :
-    - sand desert Premier Pain ruins
-    - sand desert Premier Pain temple which spawn in sand desert Premier Pain ruins
+    - Sand desert Premier Pain ruins
+    - Sand desert Premier Pain temple which spawn in sand desert Premier Pain ruins
     - Dead ruins flower which spawn in sand desert Premier Pain ruins
-    - Curiosity flower which spawn in no biome for now
+    - Flowered cactus which spawn in sand desert Premier Pain ruins
+    - Swamp Premier Pain ruins
+    - Curiosity flower which spawn in swamp Premier Pain ruins
 ## change :
     - Premier Pain ruins is now forest Premier Pain ruins
 ## fix :
     - Grass in forest Premier Pain ruins stop spawning underground
+    - Particle of some blocks
