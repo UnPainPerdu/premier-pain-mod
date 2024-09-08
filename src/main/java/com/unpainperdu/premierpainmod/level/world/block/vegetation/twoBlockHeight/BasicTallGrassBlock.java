@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeig
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,7 +16,7 @@ public class BasicTallGrassBlock extends AbstractTallGrass
 
     public BasicTallGrassBlock(Properties properties)
     {
-        super(properties);
+        super(properties, BlockTags.DIRT);
     }
 
     @Override
