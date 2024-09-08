@@ -822,21 +822,13 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void flowerPotBlock(Block flowerPotBlock, Block flowerBlock)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(flowerPotBlock).toString().replace(PremierPainMod.MOD_ID +":","");
         String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-
-
-        ModelFile modelFile = models().withExistingParent(name, ResourceLocation.withDefaultNamespace("flower_pot_cross")).texture("plant", "block/vegetation/flower_block/one_block_flower/" + nameFlower).renderType("cutout");
-        simpleBlock(flowerPotBlock, modelFile);
+        universalPottedBlock(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/one_block_flower/" + nameFlower);
     }
     private void deadBushPotBlock(Block deadBushPotBlock, Block deadBushBlock)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(deadBushPotBlock).toString().replace(PremierPainMod.MOD_ID +":","");
         String nameFlower = BuiltInRegistries.BLOCK.getKey(deadBushBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-
-
-        ModelFile modelFile = models().withExistingParent(name, ResourceLocation.withDefaultNamespace("flower_pot_cross")).texture("plant", "block/vegetation/dead_bush/" + nameFlower).renderType("cutout");
-        simpleBlock(deadBushPotBlock, modelFile);
+        universalPottedBlock(deadBushPotBlock, deadBushBlock, "block/vegetation/dead_bush/" + nameFlower);
     }
 
     private void growingVegetationWithItem(Block block)
@@ -863,12 +855,8 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void flowerPotBlockForGrowingVegetation(Block flowerPotBlock, Block flowerBlock)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(flowerPotBlock).toString().replace(PremierPainMod.MOD_ID +":","");
         String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-
-
-        ModelFile modelFile = models().withExistingParent(name, ResourceLocation.withDefaultNamespace("flower_pot_cross")).texture("plant", "block/vegetation/flower_block/growing_block_flower/" + nameFlower).renderType("cutout");
-        simpleBlock(flowerPotBlock, modelFile);
+        universalPottedBlock(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/growing_block_flower/" + nameFlower);
     }
 
     private void floweredCactusBlockWithItem()
@@ -912,7 +900,6 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void cactusFlowerBlockWithItem()
     {
         Block block = BlockRegister.CACTUS_FLOWER_BLOCK.get();
-        String name = getName(block);
         ModelFile pedestalModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower");
         simpleBlock(block, pedestalModel);
         itemModels().getBuilder(getKey(block).getPath()).parent(models()
@@ -924,11 +911,17 @@ public class ModBlockStateProvider extends BlockStateProvider
     {
         Block flowerPotBlock = BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get();
         Block blockToPot = BlockRegister.CACTUS_FLOWER_BLOCK.get();
+        universalPottedBlock(flowerPotBlock, blockToPot, "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
+    }
 
-        String nameFlowerPotBlock = BuiltInRegistries.BLOCK.getKey(flowerPotBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+    private void universalPottedBlock(Block pottedBlock, Block blockToPot, String folderOfPng)
+    {
+        String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID +":","");
 
-        ModelFile modelFile = models().withExistingParent(nameFlowerPotBlock, ResourceLocation.withDefaultNamespace("flower_pot_cross")).texture("plant", "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item").renderType("cutout");
-        simpleBlock(flowerPotBlock, modelFile);
+        ModelFile modelFile = models().withExistingParent(namePottedBlock, ResourceLocation.withDefaultNamespace("flower_pot_cross"))
+                .texture("plant", folderOfPng)
+                .renderType("cutout");
+        simpleBlock(pottedBlock, modelFile);
     }
 
     private ResourceLocation getKey(Block block)
