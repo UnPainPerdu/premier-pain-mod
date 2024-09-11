@@ -33,11 +33,4 @@ public class DeadTallGrass extends AbstractTallGrass
     {
         return CODEC;
     }
-
-    @Override
-    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity)
-    {
-        Vec3 vec3 = new Vec3(0.85, 0.85, 0.85);
-        entity.makeStuckInBlock(state, vec3);
-    }
 }

@@ -110,10 +110,11 @@ public class ModBiomes
         globalOverworldGeneration(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addMangroveSwampDisks(biomegenerationsettings$builder);
-        addMudPack(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.MUD_PACK);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.TREE_OAK_SWAMP);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.TREE_MANGROVE);
-        addCuriosityFlower(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_CURIOSITY_FLOWER);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_SKY_SPEARS);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
@@ -155,9 +156,10 @@ public class ModBiomes
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
         BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
         BiomeDefaultFeatures.desertSpawns(mobspawnsettings$builder);
-        addVillagerPillarRuinsDesert(biomegenerationsettings$builder);
-        addDeadRuinsFlower(biomegenerationsettings$builder);
-        addFloweredCactus(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_PILLAR_RUINS_DESERT);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.FLOWERED_CACTUS);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_TALL_BUSH);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
@@ -211,16 +213,6 @@ public class ModBiomes
         pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.HOUSE_FOUNDATION_RUINS);
     }
 
-    public static void addVillagerPillarRuinsDesert(BiomeGenerationSettings.Builder pBuilder)
-    {
-        pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_PILLAR_RUINS_DESERT);
-    }
-
-    public static void addDeadRuinsFlower(BiomeGenerationSettings.Builder pBuilder)
-    {
-        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER);
-    }
-
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder pGenerationSettings)
     {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(pGenerationSettings);
@@ -229,20 +221,5 @@ public class ModBiomes
         BiomeDefaultFeatures.addDefaultUndergroundVariety(pGenerationSettings);
         BiomeDefaultFeatures.addDefaultSprings(pGenerationSettings);
         BiomeDefaultFeatures.addSurfaceFreezing(pGenerationSettings);
-    }
-
-    public static void addCuriosityFlower(BiomeGenerationSettings.Builder pBuilder)
-    {
-        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_CURIOSITY_FLOWER);
-    }
-
-    public static void addMudPack(BiomeGenerationSettings.Builder pBuilder)
-    {
-        pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.MUD_PACK);
-    }
-
-    public static void addFloweredCactus(BiomeGenerationSettings.Builder pBuilder)
-    {
-        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.FLOWERED_CACTUS);
     }
 }

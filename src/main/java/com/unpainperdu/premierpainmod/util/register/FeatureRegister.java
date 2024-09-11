@@ -6,12 +6,12 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.feature
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.CivilizationsFlowerPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.CuriosityFlowerPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.RuinsFlowerPatchFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.tallGrass.DeadTallBushFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.tallGrass.SkySpearsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.misc.FloweredCactusFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -34,6 +34,9 @@ public class FeatureRegister
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_DEAD_RUINS_FLOWER = FEATURES.register("patch_dead_ruins_flower",() -> new DeadRuinsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
         //misc
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> FLOWERED_CACTUS = FEATURES.register("flowered_cactus",() -> new FloweredCactusFeature(NoneFeatureConfiguration.CODEC));
+        //tall grass
+    public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> SKY_SPEARS = FEATURES.register("sky_spears",() -> new SkySpearsFeature(NoneFeatureConfiguration.CODEC));
+    public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> DEAD_TALL_BUSH = FEATURES.register("dead_tall_bush",() -> new DeadTallBushFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus modEventBus)
     {

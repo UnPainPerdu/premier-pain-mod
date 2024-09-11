@@ -27,6 +27,9 @@ public class ModVegetationPlacement
     public static final ResourceKey<PlacedFeature> TREE_OAK_SWAMP = ModPlacementUtil.createKey("tree_oak_swamp");
     //misc
     public static final ResourceKey<PlacedFeature> FLOWERED_CACTUS = ModPlacementUtil.createKey("flowered_cactus");
+    //tall grass
+    public static final ResourceKey<PlacedFeature> PATCH_SKY_SPEARS = ModPlacementUtil.createKey("patch_sky_spears");
+    public static final ResourceKey<PlacedFeature> PATCH_DEAD_TALL_BUSH = ModPlacementUtil.createKey("patch_dead_tall_bush");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
@@ -50,6 +53,12 @@ public class ModVegetationPlacement
         //misc
         final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
         register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        //tall grass
+        final Holder<ConfiguredFeature<?, ?>> SKY_SPEARS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.SKY_SPEARS);
+        register(pContext, ModVegetationPlacement.PATCH_SKY_SPEARS, SKY_SPEARS_HOLDER, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        final Holder<ConfiguredFeature<?, ?>> DEAD_TALL_BUSH_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.DEAD_TALL_BUSH);
+        register(pContext, ModVegetationPlacement.PATCH_DEAD_TALL_BUSH, DEAD_TALL_BUSH_HOLDER, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
 
     }
 

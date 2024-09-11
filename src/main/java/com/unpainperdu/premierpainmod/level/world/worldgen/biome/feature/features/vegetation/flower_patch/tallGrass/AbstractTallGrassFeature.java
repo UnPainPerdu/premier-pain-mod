@@ -1,17 +1,18 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.tallGrass;
 
 import com.mojang.serialization.Codec;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GrassBlock;
-import net.minecraft.world.level.block.MudBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -19,17 +20,32 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 import java.util.ArrayList;
 
-public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfiguration>
+
+public abstract class AbstractTallGrassFeature extends Feature<NoneFeatureConfiguration>
 {
     protected int minNumberOfPos;
     protected int maxNumberOfPos;
     protected int spread;
-    public AbstractFlowerPatch(Codec<NoneFeatureConfiguration> pCodec, int minNumberOfPos, int maxNumberOfPos, int spread)
+    protected final Block tallGrass;
+    protected final TagKey<Block> ground;
+
+    public AbstractTallGrassFeature(Codec<NoneFeatureConfiguration> pCodec, int minNumberOfPos, int maxNumberOfPos, int spread, Block tallGrass, TagKey<Block> blockTagToPutOntPatch)
     {
         super(pCodec);
         this.minNumberOfPos = minNumberOfPos;
         this.maxNumberOfPos = maxNumberOfPos;
         this.spread = spread;
+        this.tallGrass = tallGrass;
+        this.ground = blockTagToPutOntPatch;
+    }
+
+    protected void generateFlower(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
+    {
+        BlockState state = this.tallGrass.defaultBlockState().setValue(AbstractTallGrass.HALF, DoubleBlockHalf.LOWER);
+        ModFeatureUtils.generateBlock(worldIn, pos, rand, state,false);
+
+        state = state.setValue(AbstractTallGrass.HALF, DoubleBlockHalf.UPPER);
+        ModFeatureUtils.generateBlock(worldIn, pos.above(), rand, state,false);
     }
 
     @Override
@@ -61,12 +77,12 @@ public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfigurati
             return true;
         }
     }
-    private static boolean isValidPlacementLocation(LevelAccessor levelAccessor, BlockPos pos)
+    private boolean isValidPlacementLocation(LevelAccessor levelAccessor, BlockPos pos)
     {
         Block block = levelAccessor.getBlockState(pos).getBlock();
         Block blockBelow = levelAccessor.getBlockState(pos.below()).getBlock();
 
-    if((block instanceof AirBlock) && (blockBelow.defaultBlockState().is(BlockTags.DIRT)))
+        if((block instanceof AirBlock) && (blockBelow.defaultBlockState().is(this.ground)))
         {
             return true;
         }
@@ -75,5 +91,4 @@ public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfigurati
             return false;
         }
     }
-    protected abstract void generateFlower(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction) ;
 }

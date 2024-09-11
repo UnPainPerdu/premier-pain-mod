@@ -42,6 +42,9 @@ public class ModVegetationFeature
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_OAK_SWAMP = ModFeatureUtil.createKey("tree_oak_swamp");
     //misc
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERED_CACTUS = ModFeatureUtil.createKey("flowered_cactus");
+    //tall grass
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SKY_SPEARS = ModFeatureUtil.createKey("sky_spears");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_TALL_BUSH = ModFeatureUtil.createKey("dead_tall_bush");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> pContext)
     {
@@ -60,6 +63,9 @@ public class ModVegetationFeature
         FeatureUtils.register(pContext, TREE_OAK_SWAMP, Feature.TREE, createStraightBlobTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES, 5, 3, 0, 3).decorators(ImmutableList.of(new LeaveVineDecorator(0.25F))).build());
         //misc
         FeatureUtils.register(pContext, ModVegetationFeature.FLOWERED_CACTUS, FeatureRegister.FLOWERED_CACTUS.get(), NoneFeatureConfiguration.INSTANCE);
+        //tall grass
+        FeatureUtils.register(pContext, ModVegetationFeature.SKY_SPEARS, FeatureRegister.SKY_SPEARS.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModVegetationFeature.DEAD_TALL_BUSH, FeatureRegister.DEAD_TALL_BUSH.get(), NoneFeatureConfiguration.INSTANCE);
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(
