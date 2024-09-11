@@ -89,7 +89,9 @@ update neoforge to 21.1.23
     - Sand desert Premier Pain temple which spawn in sand desert Premier Pain ruins
     - Dead ruins flower which spawn in sand desert Premier Pain ruins
     - Flowered cactus which spawn in sand desert Premier Pain ruins
+    - Dead tall bush which spawn in sand desert Premier Pain ruins
     - Swamp Premier Pain ruins
+    - Sky spears which spawn in swamp Premier Pain ruins
     - Curiosity flower which spawn in swamp Premier Pain ruins
 ## change :
     - Premier Pain ruins is now forest Premier Pain ruins
