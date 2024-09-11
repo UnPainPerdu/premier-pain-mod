@@ -95,6 +95,7 @@ update neoforge to 21.1.23
     - Curiosity flower which spawn in swamp Premier Pain ruins
 ## change :
     - Premier Pain ruins is now forest Premier Pain ruins
+    - change how creative tab is sorted
 ## fix :
     - Grass in forest Premier Pain ruins stop spawning underground
     - Particle of some blocks
