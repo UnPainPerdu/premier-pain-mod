@@ -1,1022 +1,1022 @@
 {
   "variants": {
-    "facing=east,half=lower,villagertablecarpetcolor=black,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=black,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_black",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=black,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=black,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_black",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=blue,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_blue",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=blue,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_blue",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=brown,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=brown,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_brown",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=brown,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=brown,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_brown",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=cyan,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=cyan,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_cyan",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=cyan,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=cyan,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_cyan",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=gray,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_gray",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=gray,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_gray",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=green,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=green,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_green",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=green,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=green,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_green",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=light_blue,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=light_blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_blue",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=light_blue,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=light_blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_blue",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=light_gray,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=light_gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_gray",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=light_gray,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=light_gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_gray",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=lime,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=lime,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_lime",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=lime,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=lime,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_lime",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=magenta,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=magenta,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_magenta",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=magenta,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=magenta,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_magenta",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=none,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=none,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=none,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=none,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=orange,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=orange,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_orange",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=orange,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=orange,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_orange",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=pink,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=pink,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_pink",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=pink,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=pink,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_pink",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=purple,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=purple,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_purple",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=purple,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=purple,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_purple",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=red,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=red,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_red",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=red,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=red,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_red",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=white,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=white,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_white",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=white,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=white,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_white",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=yellow,waterlogged=false": {
+    "facing=east,half=lower,villager_carpet_color=yellow,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_yellow",
       "y": 270
     },
-    "facing=east,half=lower,villagertablecarpetcolor=yellow,waterlogged=true": {
+    "facing=east,half=lower,villager_carpet_color=yellow,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_yellow",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=black,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=black,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_black",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=black,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=black,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_black",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=blue,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_blue",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=blue,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_blue",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=brown,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=brown,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_brown",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=brown,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=brown,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_brown",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=cyan,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=cyan,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_cyan",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=cyan,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=cyan,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_cyan",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=gray,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_gray",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=gray,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_gray",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=green,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=green,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_green",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=green,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=green,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_green",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=light_blue,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=light_blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_blue",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=light_blue,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=light_blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_blue",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=light_gray,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=light_gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_gray",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=light_gray,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=light_gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_gray",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=lime,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=lime,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_lime",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=lime,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=lime,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_lime",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=magenta,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=magenta,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_magenta",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=magenta,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=magenta,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_magenta",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=none,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=none,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=none,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=none,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=orange,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=orange,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_orange",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=orange,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=orange,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_orange",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=pink,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=pink,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_pink",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=pink,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=pink,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_pink",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=purple,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=purple,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_purple",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=purple,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=purple,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_purple",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=red,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=red,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_red",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=red,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=red,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_red",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=white,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=white,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_white",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=white,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=white,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_white",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=yellow,waterlogged=false": {
+    "facing=east,half=upper,villager_carpet_color=yellow,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_yellow",
       "y": 270
     },
-    "facing=east,half=upper,villagertablecarpetcolor=yellow,waterlogged=true": {
+    "facing=east,half=upper,villager_carpet_color=yellow,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_yellow",
       "y": 270
     },
-    "facing=north,half=lower,villagertablecarpetcolor=black,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=black,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_black",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=black,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=black,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_black",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=blue,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_blue",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=blue,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_blue",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=brown,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=brown,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_brown",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=brown,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=brown,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_brown",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=cyan,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=cyan,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_cyan",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=cyan,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=cyan,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_cyan",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=gray,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_gray",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=gray,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_gray",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=green,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=green,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_green",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=green,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=green,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_green",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=light_blue,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=light_blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_blue",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=light_blue,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=light_blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_blue",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=light_gray,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=light_gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_gray",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=light_gray,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=light_gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_gray",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=lime,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=lime,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_lime",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=lime,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=lime,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_lime",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=magenta,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=magenta,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_magenta",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=magenta,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=magenta,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_magenta",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=none,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=none,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=none,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=none,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=orange,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=orange,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_orange",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=orange,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=orange,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_orange",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=pink,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=pink,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_pink",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=pink,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=pink,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_pink",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=purple,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=purple,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_purple",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=purple,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=purple,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_purple",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=red,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=red,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_red",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=red,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=red,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_red",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=white,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=white,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_white",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=white,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=white,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_white",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=yellow,waterlogged=false": {
+    "facing=north,half=lower,villager_carpet_color=yellow,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_yellow",
       "y": 180
     },
-    "facing=north,half=lower,villagertablecarpetcolor=yellow,waterlogged=true": {
+    "facing=north,half=lower,villager_carpet_color=yellow,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_yellow",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=black,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=black,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_black",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=black,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=black,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_black",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=blue,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_blue",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=blue,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_blue",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=brown,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=brown,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_brown",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=brown,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=brown,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_brown",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=cyan,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=cyan,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_cyan",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=cyan,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=cyan,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_cyan",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=gray,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_gray",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=gray,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_gray",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=green,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=green,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_green",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=green,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=green,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_green",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=light_blue,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=light_blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_blue",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=light_blue,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=light_blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_blue",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=light_gray,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=light_gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_gray",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=light_gray,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=light_gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_gray",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=lime,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=lime,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_lime",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=lime,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=lime,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_lime",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=magenta,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=magenta,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_magenta",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=magenta,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=magenta,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_magenta",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=none,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=none,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=none,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=none,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=orange,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=orange,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_orange",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=orange,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=orange,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_orange",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=pink,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=pink,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_pink",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=pink,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=pink,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_pink",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=purple,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=purple,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_purple",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=purple,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=purple,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_purple",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=red,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=red,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_red",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=red,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=red,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_red",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=white,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=white,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_white",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=white,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=white,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_white",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=yellow,waterlogged=false": {
+    "facing=north,half=upper,villager_carpet_color=yellow,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_yellow",
       "y": 180
     },
-    "facing=north,half=upper,villagertablecarpetcolor=yellow,waterlogged=true": {
+    "facing=north,half=upper,villager_carpet_color=yellow,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_yellow",
       "y": 180
     },
-    "facing=south,half=lower,villagertablecarpetcolor=black,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=black,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_black"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=black,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=black,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_black"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=blue,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_blue"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=blue,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_blue"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=brown,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=brown,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_brown"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=brown,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=brown,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_brown"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=cyan,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=cyan,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_cyan"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=cyan,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=cyan,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_cyan"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=gray,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_gray"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=gray,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_gray"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=green,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=green,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_green"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=green,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=green,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_green"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=light_blue,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=light_blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_blue"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=light_blue,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=light_blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_blue"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=light_gray,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=light_gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_gray"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=light_gray,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=light_gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_gray"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=lime,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=lime,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_lime"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=lime,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=lime,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_lime"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=magenta,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=magenta,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_magenta"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=magenta,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=magenta,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_magenta"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=none,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=none,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=none,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=none,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=orange,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=orange,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_orange"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=orange,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=orange,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_orange"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=pink,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=pink,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_pink"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=pink,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=pink,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_pink"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=purple,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=purple,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_purple"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=purple,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=purple,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_purple"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=red,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=red,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_red"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=red,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=red,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_red"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=white,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=white,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_white"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=white,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=white,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_white"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=yellow,waterlogged=false": {
+    "facing=south,half=lower,villager_carpet_color=yellow,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_yellow"
     },
-    "facing=south,half=lower,villagertablecarpetcolor=yellow,waterlogged=true": {
+    "facing=south,half=lower,villager_carpet_color=yellow,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_yellow"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=black,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=black,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_black"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=black,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=black,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_black"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=blue,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_blue"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=blue,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_blue"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=brown,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=brown,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_brown"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=brown,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=brown,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_brown"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=cyan,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=cyan,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_cyan"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=cyan,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=cyan,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_cyan"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=gray,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_gray"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=gray,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_gray"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=green,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=green,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_green"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=green,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=green,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_green"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=light_blue,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=light_blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_blue"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=light_blue,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=light_blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_blue"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=light_gray,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=light_gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_gray"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=light_gray,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=light_gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_gray"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=lime,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=lime,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_lime"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=lime,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=lime,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_lime"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=magenta,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=magenta,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_magenta"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=magenta,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=magenta,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_magenta"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=none,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=none,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=none,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=none,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=orange,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=orange,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_orange"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=orange,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=orange,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_orange"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=pink,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=pink,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_pink"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=pink,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=pink,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_pink"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=purple,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=purple,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_purple"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=purple,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=purple,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_purple"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=red,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=red,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_red"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=red,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=red,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_red"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=white,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=white,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_white"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=white,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=white,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_white"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=yellow,waterlogged=false": {
+    "facing=south,half=upper,villager_carpet_color=yellow,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_yellow"
     },
-    "facing=south,half=upper,villagertablecarpetcolor=yellow,waterlogged=true": {
+    "facing=south,half=upper,villager_carpet_color=yellow,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_yellow"
     },
-    "facing=west,half=lower,villagertablecarpetcolor=black,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=black,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_black",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=black,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=black,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_black",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=blue,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_blue",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=blue,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_blue",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=brown,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=brown,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_brown",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=brown,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=brown,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_brown",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=cyan,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=cyan,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_cyan",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=cyan,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=cyan,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_cyan",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=gray,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_gray",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=gray,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_gray",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=green,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=green,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_green",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=green,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=green,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_green",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=light_blue,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=light_blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_blue",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=light_blue,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=light_blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_blue",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=light_gray,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=light_gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_gray",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=light_gray,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=light_gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_light_gray",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=lime,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=lime,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_lime",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=lime,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=lime,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_lime",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=magenta,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=magenta,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_magenta",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=magenta,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=magenta,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_magenta",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=none,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=none,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=none,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=none,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=orange,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=orange,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_orange",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=orange,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=orange,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_orange",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=pink,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=pink,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_pink",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=pink,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=pink,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_pink",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=purple,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=purple,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_purple",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=purple,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=purple,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_purple",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=red,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=red,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_red",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=red,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=red,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_red",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=white,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=white,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_white",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=white,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=white,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_white",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=yellow,waterlogged=false": {
+    "facing=west,half=lower,villager_carpet_color=yellow,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_yellow",
       "y": 90
     },
-    "facing=west,half=lower,villagertablecarpetcolor=yellow,waterlogged=true": {
+    "facing=west,half=lower,villager_carpet_color=yellow,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_bottom_c_yellow",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=black,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=black,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_black",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=black,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=black,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_black",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=blue,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_blue",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=blue,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_blue",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=brown,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=brown,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_brown",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=brown,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=brown,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_brown",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=cyan,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=cyan,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_cyan",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=cyan,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=cyan,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_cyan",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=gray,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_gray",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=gray,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_gray",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=green,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=green,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_green",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=green,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=green,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_green",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=light_blue,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=light_blue,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_blue",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=light_blue,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=light_blue,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_blue",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=light_gray,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=light_gray,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_gray",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=light_gray,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=light_gray,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_light_gray",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=lime,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=lime,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_lime",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=lime,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=lime,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_lime",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=magenta,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=magenta,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_magenta",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=magenta,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=magenta,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_magenta",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=none,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=none,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=none,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=none,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=orange,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=orange,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_orange",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=orange,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=orange,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_orange",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=pink,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=pink,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_pink",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=pink,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=pink,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_pink",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=purple,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=purple,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_purple",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=purple,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=purple,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_purple",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=red,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=red,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_red",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=red,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=red,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_red",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=white,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=white,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_white",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=white,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=white,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_white",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=yellow,waterlogged=false": {
+    "facing=west,half=upper,villager_carpet_color=yellow,waterlogged=false": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_yellow",
       "y": 90
     },
-    "facing=west,half=upper,villagertablecarpetcolor=yellow,waterlogged=true": {
+    "facing=west,half=upper,villager_carpet_color=yellow,waterlogged=true": {
       "model": "premierpainmod:block/lapis_block_villager_throne_chair_upper_c_yellow",
       "y": 90
     }

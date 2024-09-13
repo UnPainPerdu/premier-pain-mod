@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBl
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockHeightBlock;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -18,7 +19,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock
 {
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
-    public static final EnumProperty<VillagerCarpetColor> COLOR;
+    public static final EnumProperty<VillagerCarpetColor> COLOR = ModBlockStateProperties.VILLAGER_CARPET_COLOR;
 
     public VillagerThroneChairBlock(Properties pProperties)
     {
@@ -117,9 +118,5 @@ public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock
                 }
             }
         }
-    }
-    static
-    {
-        COLOR = EnumProperty.create("villagertablecarpetcolor", VillagerCarpetColor.class);
     }
 }

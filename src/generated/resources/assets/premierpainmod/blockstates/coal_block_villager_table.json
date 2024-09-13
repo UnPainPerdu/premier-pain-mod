@@ -1,1975 +1,1975 @@
 {
   "variants": {
-    "east=false,north=false,south=false,villagertablecarpetcolor=black,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=black,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_black"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=black,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=black,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_black",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=black,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=black,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_black"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=black,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=black,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_black",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=blue,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_blue"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=blue,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_blue",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=blue,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_blue"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=blue,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_blue",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=brown,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=brown,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_brown"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=brown,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=brown,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_brown",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=brown,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=brown,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_brown"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=brown,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=brown,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_brown",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=cyan,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=cyan,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_cyan"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=cyan,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=cyan,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_cyan",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=cyan,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=cyan,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_cyan"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=cyan,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=cyan,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_cyan",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=gray,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_gray"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=gray,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_gray",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=gray,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_gray"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=gray,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_gray",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=green,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=green,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_green"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=green,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=green,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_green",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=green,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=green,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_green"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=green,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=green,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_green",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=light_blue,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=light_blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_light_blue"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=light_blue,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=light_blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_light_blue",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=light_blue,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=light_blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_light_blue"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=light_blue,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=light_blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_light_blue",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=light_gray,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=light_gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_light_gray"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=light_gray,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=light_gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_light_gray",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=light_gray,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=light_gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_light_gray"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=light_gray,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=light_gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_light_gray",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=lime,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=lime,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_lime"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=lime,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=lime,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_lime",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=lime,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=lime,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_lime"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=lime,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=lime,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_lime",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=magenta,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=magenta,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_magenta"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=magenta,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=magenta,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_magenta",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=magenta,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=magenta,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_magenta"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=magenta,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=magenta,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_magenta",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=none,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=none,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=none,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=none,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=none,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=none,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=none,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=none,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=orange,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=orange,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_orange"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=orange,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=orange,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_orange",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=orange,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=orange,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_orange"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=orange,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=orange,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_orange",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=pink,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=pink,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_pink"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=pink,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=pink,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_pink",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=pink,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=pink,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_pink"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=pink,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=pink,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_pink",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=purple,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=purple,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_purple"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=purple,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=purple,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_purple",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=purple,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=purple,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_purple"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=purple,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=purple,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_purple",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=red,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=red,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_red"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=red,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=red,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_red",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=red,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=red,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_red"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=red,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=red,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_red",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=white,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=white,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_white"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=white,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=white,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_white",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=white,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=white,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_white"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=white,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=white,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_white",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=yellow,waterlogged=false,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=yellow,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_yellow"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=yellow,waterlogged=false,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=yellow,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_yellow",
       "y": 180
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=yellow,waterlogged=true,west=false": {
+    "east=false,north=false,south=false,villager_carpet_color=yellow,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_solo_c_yellow"
     },
-    "east=false,north=false,south=false,villagertablecarpetcolor=yellow,waterlogged=true,west=true": {
+    "east=false,north=false,south=false,villager_carpet_color=yellow,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_w_c_yellow",
       "y": 180
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=black,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=black,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_black",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=black,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=black,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_black",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=black,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=black,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_black",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=black,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=black,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_black",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=blue,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_blue",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=blue,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_blue",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=blue,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_blue",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=blue,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_blue",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=brown,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=brown,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_brown",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=brown,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=brown,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_brown",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=brown,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=brown,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_brown",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=brown,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=brown,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_brown",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=cyan,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=cyan,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_cyan",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=cyan,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=cyan,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_cyan",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=cyan,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=cyan,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_cyan",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=cyan,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=cyan,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_cyan",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=gray,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_gray",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=gray,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_gray",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=gray,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_gray",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=gray,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_gray",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=green,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=green,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_green",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=green,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=green,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_green",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=green,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=green,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_green",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=green,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=green,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_green",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=light_blue,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=light_blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_light_blue",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=light_blue,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=light_blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_light_blue",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=light_blue,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=light_blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_light_blue",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=light_blue,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=light_blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_light_blue",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=light_gray,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=light_gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_light_gray",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=light_gray,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=light_gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_light_gray",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=light_gray,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=light_gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_light_gray",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=light_gray,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=light_gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_light_gray",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=lime,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=lime,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_lime",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=lime,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=lime,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_lime",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=lime,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=lime,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_lime",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=lime,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=lime,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_lime",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=magenta,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=magenta,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_magenta",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=magenta,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=magenta,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_magenta",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=magenta,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=magenta,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_magenta",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=magenta,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=magenta,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_magenta",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=none,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=none,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=none,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=none,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=none,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=none,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=none,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=none,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=orange,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=orange,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_orange",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=orange,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=orange,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_orange",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=orange,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=orange,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_orange",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=orange,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=orange,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_orange",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=pink,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=pink,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_pink",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=pink,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=pink,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_pink",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=pink,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=pink,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_pink",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=pink,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=pink,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_pink",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=purple,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=purple,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_purple",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=purple,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=purple,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_purple",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=purple,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=purple,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_purple",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=purple,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=purple,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_purple",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=red,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=red,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_red",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=red,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=red,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_red",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=red,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=red,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_red",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=red,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=red,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_red",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=white,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=white,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_white",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=white,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=white,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_white",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=white,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=white,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_white",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=white,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=white,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_white",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=yellow,waterlogged=false,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=yellow,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_yellow",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=yellow,waterlogged=false,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=yellow,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_yellow",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=yellow,waterlogged=true,west=false": {
+    "east=false,north=false,south=true,villager_carpet_color=yellow,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_s_c_yellow",
       "y": 90
     },
-    "east=false,north=false,south=true,villagertablecarpetcolor=yellow,waterlogged=true,west=true": {
+    "east=false,north=false,south=true,villager_carpet_color=yellow,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_sw_c_yellow",
       "y": 90
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=black,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=black,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_black",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=black,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=black,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_black",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=black,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=black,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_black",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=black,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=black,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_black",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=blue,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_blue",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=blue,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_blue",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=blue,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_blue",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=blue,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_blue",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=brown,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=brown,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_brown",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=brown,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=brown,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_brown",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=brown,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=brown,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_brown",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=brown,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=brown,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_brown",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=cyan,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=cyan,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_cyan",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=cyan,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=cyan,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_cyan",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=cyan,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=cyan,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_cyan",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=cyan,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=cyan,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_cyan",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=gray,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_gray",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=gray,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_gray",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=gray,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_gray",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=gray,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_gray",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=green,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=green,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_green",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=green,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=green,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_green",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=green,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=green,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_green",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=green,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=green,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_green",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=light_blue,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=light_blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_light_blue",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=light_blue,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=light_blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_light_blue",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=light_blue,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=light_blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_light_blue",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=light_blue,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=light_blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_light_blue",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=light_gray,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=light_gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_light_gray",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=light_gray,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=light_gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_light_gray",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=light_gray,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=light_gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_light_gray",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=light_gray,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=light_gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_light_gray",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=lime,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=lime,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_lime",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=lime,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=lime,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_lime",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=lime,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=lime,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_lime",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=lime,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=lime,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_lime",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=magenta,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=magenta,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_magenta",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=magenta,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=magenta,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_magenta",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=magenta,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=magenta,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_magenta",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=magenta,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=magenta,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_magenta",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=none,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=none,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=none,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=none,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=none,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=none,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=none,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=none,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=orange,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=orange,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_orange",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=orange,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=orange,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_orange",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=orange,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=orange,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_orange",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=orange,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=orange,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_orange",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=pink,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=pink,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_pink",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=pink,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=pink,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_pink",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=pink,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=pink,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_pink",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=pink,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=pink,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_pink",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=purple,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=purple,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_purple",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=purple,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=purple,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_purple",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=purple,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=purple,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_purple",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=purple,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=purple,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_purple",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=red,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=red,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_red",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=red,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=red,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_red",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=red,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=red,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_red",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=red,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=red,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_red",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=white,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=white,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_white",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=white,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=white,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_white",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=white,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=white,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_white",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=white,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=white,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_white",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=yellow,waterlogged=false,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=yellow,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_yellow",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=yellow,waterlogged=false,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=yellow,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_yellow",
       "y": 180
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=yellow,waterlogged=true,west=false": {
+    "east=false,north=true,south=false,villager_carpet_color=yellow,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_n_c_yellow",
       "y": 270
     },
-    "east=false,north=true,south=false,villagertablecarpetcolor=yellow,waterlogged=true,west=true": {
+    "east=false,north=true,south=false,villager_carpet_color=yellow,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_nw_c_yellow",
       "y": 180
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=black,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=black,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_black",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=black,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=black,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_black",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=black,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=black,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_black",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=black,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=black,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_black",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=blue,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_blue",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=blue,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_blue",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=blue,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_blue",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=blue,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_blue",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=brown,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=brown,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_brown",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=brown,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=brown,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_brown",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=brown,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=brown,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_brown",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=brown,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=brown,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_brown",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=cyan,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=cyan,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_cyan",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=cyan,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=cyan,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_cyan",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=cyan,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=cyan,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_cyan",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=cyan,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=cyan,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_cyan",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=gray,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_gray",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=gray,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_gray",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=gray,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_gray",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=gray,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_gray",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=green,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=green,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_green",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=green,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=green,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_green",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=green,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=green,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_green",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=green,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=green,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_green",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=light_blue,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=light_blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_light_blue",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=light_blue,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=light_blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_light_blue",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=light_blue,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=light_blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_light_blue",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=light_blue,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=light_blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_light_blue",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=light_gray,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=light_gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_light_gray",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=light_gray,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=light_gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_light_gray",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=light_gray,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=light_gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_light_gray",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=light_gray,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=light_gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_light_gray",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=lime,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=lime,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_lime",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=lime,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=lime,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_lime",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=lime,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=lime,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_lime",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=lime,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=lime,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_lime",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=magenta,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=magenta,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_magenta",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=magenta,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=magenta,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_magenta",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=magenta,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=magenta,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_magenta",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=magenta,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=magenta,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_magenta",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=none,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=none,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=none,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=none,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=none,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=none,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=none,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=none,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=orange,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=orange,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_orange",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=orange,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=orange,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_orange",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=orange,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=orange,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_orange",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=orange,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=orange,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_orange",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=pink,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=pink,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_pink",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=pink,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=pink,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_pink",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=pink,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=pink,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_pink",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=pink,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=pink,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_pink",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=purple,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=purple,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_purple",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=purple,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=purple,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_purple",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=purple,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=purple,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_purple",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=purple,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=purple,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_purple",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=red,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=red,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_red",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=red,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=red,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_red",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=red,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=red,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_red",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=red,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=red,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_red",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=white,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=white,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_white",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=white,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=white,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_white",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=white,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=white,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_white",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=white,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=white,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_white",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=yellow,waterlogged=false,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=yellow,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_yellow",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=yellow,waterlogged=false,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=yellow,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_yellow",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=yellow,waterlogged=true,west=false": {
+    "east=false,north=true,south=true,villager_carpet_color=yellow,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ns_c_yellow",
       "y": 90
     },
-    "east=false,north=true,south=true,villagertablecarpetcolor=yellow,waterlogged=true,west=true": {
+    "east=false,north=true,south=true,villager_carpet_color=yellow,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_swn_c_yellow",
       "y": 90
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=black,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=black,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_black"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=black,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=black,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_black"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=black,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=black,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_black"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=black,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=black,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_black"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=blue,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_blue"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=blue,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_blue"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=blue,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_blue"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=blue,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_blue"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=brown,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=brown,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_brown"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=brown,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=brown,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_brown"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=brown,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=brown,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_brown"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=brown,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=brown,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_brown"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=cyan,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=cyan,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_cyan"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=cyan,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=cyan,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_cyan"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=cyan,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=cyan,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_cyan"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=cyan,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=cyan,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_cyan"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=gray,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_gray"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=gray,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_gray"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=gray,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_gray"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=gray,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_gray"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=green,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=green,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_green"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=green,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=green,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_green"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=green,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=green,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_green"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=green,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=green,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_green"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=light_blue,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=light_blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_light_blue"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=light_blue,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=light_blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_light_blue"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=light_blue,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=light_blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_light_blue"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=light_blue,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=light_blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_light_blue"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=light_gray,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=light_gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_light_gray"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=light_gray,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=light_gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_light_gray"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=light_gray,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=light_gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_light_gray"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=light_gray,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=light_gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_light_gray"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=lime,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=lime,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_lime"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=lime,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=lime,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_lime"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=lime,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=lime,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_lime"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=lime,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=lime,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_lime"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=magenta,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=magenta,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_magenta"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=magenta,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=magenta,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_magenta"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=magenta,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=magenta,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_magenta"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=magenta,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=magenta,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_magenta"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=none,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=none,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=none,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=none,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=none,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=none,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=none,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=none,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=orange,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=orange,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_orange"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=orange,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=orange,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_orange"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=orange,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=orange,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_orange"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=orange,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=orange,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_orange"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=pink,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=pink,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_pink"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=pink,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=pink,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_pink"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=pink,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=pink,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_pink"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=pink,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=pink,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_pink"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=purple,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=purple,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_purple"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=purple,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=purple,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_purple"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=purple,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=purple,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_purple"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=purple,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=purple,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_purple"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=red,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=red,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_red"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=red,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=red,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_red"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=red,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=red,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_red"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=red,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=red,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_red"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=white,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=white,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_white"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=white,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=white,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_white"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=white,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=white,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_white"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=white,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=white,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_white"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=yellow,waterlogged=false,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=yellow,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_yellow"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=yellow,waterlogged=false,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=yellow,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_yellow"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=yellow,waterlogged=true,west=false": {
+    "east=true,north=false,south=false,villager_carpet_color=yellow,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_duo_e_c_yellow"
     },
-    "east=true,north=false,south=false,villagertablecarpetcolor=yellow,waterlogged=true,west=true": {
+    "east=true,north=false,south=false,villager_carpet_color=yellow,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_we_c_yellow"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=black,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=black,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_black"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=black,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=black,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_black"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=black,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=black,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_black"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=black,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=black,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_black"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=blue,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_blue"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=blue,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_blue"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=blue,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_blue"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=blue,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_blue"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=brown,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=brown,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_brown"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=brown,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=brown,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_brown"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=brown,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=brown,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_brown"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=brown,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=brown,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_brown"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=cyan,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=cyan,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_cyan"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=cyan,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=cyan,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_cyan"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=cyan,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=cyan,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_cyan"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=cyan,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=cyan,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_cyan"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=gray,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_gray"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=gray,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_gray"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=gray,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_gray"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=gray,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_gray"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=green,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=green,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_green"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=green,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=green,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_green"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=green,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=green,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_green"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=green,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=green,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_green"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=light_blue,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=light_blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_light_blue"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=light_blue,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=light_blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_light_blue"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=light_blue,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=light_blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_light_blue"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=light_blue,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=light_blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_light_blue"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=light_gray,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=light_gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_light_gray"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=light_gray,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=light_gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_light_gray"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=light_gray,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=light_gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_light_gray"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=light_gray,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=light_gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_light_gray"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=lime,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=lime,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_lime"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=lime,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=lime,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_lime"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=lime,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=lime,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_lime"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=lime,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=lime,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_lime"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=magenta,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=magenta,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_magenta"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=magenta,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=magenta,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_magenta"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=magenta,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=magenta,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_magenta"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=magenta,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=magenta,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_magenta"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=none,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=none,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=none,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=none,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=none,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=none,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=none,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=none,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=orange,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=orange,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_orange"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=orange,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=orange,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_orange"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=orange,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=orange,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_orange"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=orange,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=orange,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_orange"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=pink,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=pink,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_pink"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=pink,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=pink,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_pink"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=pink,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=pink,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_pink"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=pink,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=pink,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_pink"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=purple,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=purple,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_purple"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=purple,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=purple,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_purple"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=purple,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=purple,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_purple"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=purple,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=purple,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_purple"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=red,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=red,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_red"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=red,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=red,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_red"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=red,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=red,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_red"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=red,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=red,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_red"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=white,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=white,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_white"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=white,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=white,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_white"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=white,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=white,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_white"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=white,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=white,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_white"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=yellow,waterlogged=false,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=yellow,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_yellow"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=yellow,waterlogged=false,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=yellow,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_yellow"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=yellow,waterlogged=true,west=false": {
+    "east=true,north=false,south=true,villager_carpet_color=yellow,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_se_c_yellow"
     },
-    "east=true,north=false,south=true,villagertablecarpetcolor=yellow,waterlogged=true,west=true": {
+    "east=true,north=false,south=true,villager_carpet_color=yellow,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_esw_c_yellow"
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=black,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=black,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_black",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=black,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=black,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_black",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=black,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=black,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_black",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=black,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=black,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_black",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=blue,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_blue",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=blue,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_blue",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=blue,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_blue",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=blue,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_blue",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=brown,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=brown,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_brown",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=brown,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=brown,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_brown",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=brown,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=brown,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_brown",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=brown,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=brown,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_brown",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=cyan,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=cyan,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_cyan",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=cyan,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=cyan,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_cyan",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=cyan,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=cyan,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_cyan",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=cyan,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=cyan,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_cyan",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=gray,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_gray",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=gray,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_gray",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=gray,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_gray",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=gray,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_gray",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=green,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=green,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_green",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=green,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=green,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_green",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=green,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=green,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_green",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=green,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=green,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_green",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=light_blue,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=light_blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_light_blue",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=light_blue,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=light_blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_light_blue",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=light_blue,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=light_blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_light_blue",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=light_blue,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=light_blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_light_blue",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=light_gray,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=light_gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_light_gray",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=light_gray,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=light_gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_light_gray",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=light_gray,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=light_gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_light_gray",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=light_gray,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=light_gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_light_gray",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=lime,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=lime,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_lime",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=lime,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=lime,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_lime",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=lime,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=lime,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_lime",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=lime,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=lime,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_lime",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=magenta,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=magenta,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_magenta",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=magenta,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=magenta,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_magenta",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=magenta,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=magenta,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_magenta",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=magenta,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=magenta,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_magenta",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=none,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=none,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=none,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=none,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=none,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=none,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=none,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=none,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=orange,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=orange,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_orange",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=orange,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=orange,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_orange",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=orange,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=orange,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_orange",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=orange,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=orange,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_orange",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=pink,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=pink,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_pink",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=pink,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=pink,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_pink",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=pink,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=pink,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_pink",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=pink,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=pink,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_pink",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=purple,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=purple,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_purple",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=purple,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=purple,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_purple",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=purple,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=purple,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_purple",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=purple,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=purple,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_purple",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=red,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=red,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_red",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=red,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=red,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_red",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=red,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=red,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_red",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=red,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=red,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_red",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=white,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=white,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_white",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=white,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=white,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_white",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=white,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=white,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_white",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=white,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=white,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_white",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=yellow,waterlogged=false,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=yellow,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_yellow",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=yellow,waterlogged=false,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=yellow,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_yellow",
       "y": 180
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=yellow,waterlogged=true,west=false": {
+    "east=true,north=true,south=false,villager_carpet_color=yellow,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_trio_ne_c_yellow",
       "y": 270
     },
-    "east=true,north=true,south=false,villagertablecarpetcolor=yellow,waterlogged=true,west=true": {
+    "east=true,north=true,south=false,villager_carpet_color=yellow,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_wne_c_yellow",
       "y": 180
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=black,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=black,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_black",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=black,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=black,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_black"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=black,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=black,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_black",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=black,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=black,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_black"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=blue,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_blue",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=blue,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_blue"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=blue,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_blue",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=blue,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_blue"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=brown,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=brown,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_brown",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=brown,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=brown,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_brown"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=brown,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=brown,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_brown",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=brown,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=brown,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_brown"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=cyan,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=cyan,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_cyan",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=cyan,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=cyan,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_cyan"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=cyan,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=cyan,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_cyan",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=cyan,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=cyan,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_cyan"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=gray,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_gray",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=gray,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_gray"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=gray,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_gray",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=gray,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_gray"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=green,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=green,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_green",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=green,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=green,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_green"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=green,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=green,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_green",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=green,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=green,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_green"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=light_blue,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=light_blue,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_light_blue",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=light_blue,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=light_blue,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_light_blue"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=light_blue,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=light_blue,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_light_blue",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=light_blue,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=light_blue,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_light_blue"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=light_gray,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=light_gray,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_light_gray",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=light_gray,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=light_gray,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_light_gray"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=light_gray,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=light_gray,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_light_gray",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=light_gray,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=light_gray,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_light_gray"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=lime,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=lime,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_lime",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=lime,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=lime,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_lime"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=lime,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=lime,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_lime",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=lime,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=lime,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_lime"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=magenta,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=magenta,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_magenta",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=magenta,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=magenta,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_magenta"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=magenta,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=magenta,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_magenta",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=magenta,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=magenta,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_magenta"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=none,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=none,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=none,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=none,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=none,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=none,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=none,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=none,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=orange,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=orange,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_orange",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=orange,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=orange,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_orange"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=orange,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=orange,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_orange",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=orange,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=orange,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_orange"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=pink,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=pink,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_pink",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=pink,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=pink,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_pink"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=pink,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=pink,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_pink",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=pink,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=pink,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_pink"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=purple,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=purple,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_purple",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=purple,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=purple,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_purple"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=purple,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=purple,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_purple",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=purple,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=purple,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_purple"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=red,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=red,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_red",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=red,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=red,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_red"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=red,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=red,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_red",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=red,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=red,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_red"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=white,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=white,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_white",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=white,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=white,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_white"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=white,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=white,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_white",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=white,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=white,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_white"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=yellow,waterlogged=false,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=yellow,waterlogged=false,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_yellow",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=yellow,waterlogged=false,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=yellow,waterlogged=false,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_yellow"
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=yellow,waterlogged=true,west=false": {
+    "east=true,north=true,south=true,villager_carpet_color=yellow,waterlogged=true,west=false": {
       "model": "premierpainmod:block/coal_block_villager_table_quatuor_nes_c_yellow",
       "y": 270
     },
-    "east=true,north=true,south=true,villagertablecarpetcolor=yellow,waterlogged=true,west=true": {
+    "east=true,north=true,south=true,villager_carpet_color=yellow,waterlogged=true,west=true": {
       "model": "premierpainmod:block/coal_block_villager_table_pentuor_c_yellow"
     }
   }

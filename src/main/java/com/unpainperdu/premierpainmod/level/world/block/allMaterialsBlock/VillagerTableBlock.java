@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -32,7 +33,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
     public static final BooleanProperty SOUTH = PipeBlock.SOUTH;
     public static final BooleanProperty WEST = PipeBlock.WEST;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final EnumProperty<VillagerCarpetColor> COLOR;
+    public static final EnumProperty<VillagerCarpetColor> COLOR = ModBlockStateProperties.VILLAGER_CARPET_COLOR;
     protected static final Map<Direction, BooleanProperty> PROPERTY_BY_DIRECTION = PipeBlock.PROPERTY_BY_DIRECTION;
     private static final VoxelShape SHAPE = Block.box(1, 12, 1, 15, 15, 15);
 
@@ -112,9 +113,5 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
                 this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite())
         )
                 : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
-    }
-    static
-    {
-        COLOR = EnumProperty.create("villagertablecarpetcolor", VillagerCarpetColor.class);
     }
 }
