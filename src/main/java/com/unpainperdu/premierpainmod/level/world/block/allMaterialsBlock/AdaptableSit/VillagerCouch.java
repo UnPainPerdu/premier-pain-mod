@@ -27,7 +27,7 @@ public class VillagerCouch extends AbstractAdaptableSit
                         .setValue(FACING, Direction.NORTH)
                         .setValue(ADAPTABLE_SIT, AdaptableSitShape.ALONE)
                         .setValue(WATERLOGGED, Boolean.FALSE)
-                        .setValue(CARPET_COLOR, VillagerCarpetColor.NONE)
+                        .setValue(CARPET_COLOR, VillagerCarpetColor.WHITE)
         );
     }
 
