@@ -1,7 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.block.abstractBlock;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,7 +30,7 @@ import javax.annotation.Nullable;
 
 public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlock implements SimpleWaterloggedBlock
 {
-    public static final EnumProperty<TwoBlockWidthPart> PART;
+    public static final EnumProperty<TwoBlockWidthPart> PART = ModBlockStateProperties.TWO_BLOCK_WIDTH_PART;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
@@ -175,10 +176,6 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
                 return Direction.EAST;
             }
         }
-    }
-    static
-    {
-        PART = EnumProperty.create("villagerworkshoppart", TwoBlockWidthPart.class);
     }
 
     protected abstract void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder);

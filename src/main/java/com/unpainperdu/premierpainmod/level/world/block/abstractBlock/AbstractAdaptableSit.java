@@ -2,9 +2,8 @@ package com.unpainperdu.premierpainmod.level.world.block.abstractBlock;
 
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.AdaptableSitShape;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.ModBlockStateProperties;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.util.toolKit.DirectionHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

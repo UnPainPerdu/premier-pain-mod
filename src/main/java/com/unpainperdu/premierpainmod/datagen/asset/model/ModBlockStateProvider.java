@@ -6,8 +6,8 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.Villag
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerCarpetColor;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerThroneChairBlock;

@@ -1,242 +1,242 @@
 {
   "variants": {
-    "facing=east,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=false": {
+    "facing=east,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 270
     },
-    "facing=east,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=true": {
+    "facing=east,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 270
     },
-    "facing=east,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=false": {
+    "facing=east,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 270
     },
-    "facing=east,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=true": {
+    "facing=east,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 270
     },
-    "facing=east,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=false": {
+    "facing=east,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 270
     },
-    "facing=east,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=true": {
+    "facing=east,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 270
     },
-    "facing=east,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=false": {
+    "facing=east,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 270
     },
-    "facing=east,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=true": {
+    "facing=east,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 270
     },
-    "facing=east,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=false": {
+    "facing=east,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_top",
       "y": 270
     },
-    "facing=east,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=true": {
+    "facing=east,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_top",
       "y": 270
     },
-    "facing=east,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=false": {
+    "facing=east,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_top",
       "y": 270
     },
-    "facing=east,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=true": {
+    "facing=east,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_top",
       "y": 270
     },
-    "facing=east,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=false": {
+    "facing=east,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_middle",
       "y": 270
     },
-    "facing=east,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=true": {
+    "facing=east,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_middle",
       "y": 270
     },
-    "facing=east,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=false": {
+    "facing=east,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_middle",
       "y": 270
     },
-    "facing=east,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=true": {
+    "facing=east,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_middle",
       "y": 270
     },
-    "facing=north,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=false": {
+    "facing=north,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 180
     },
-    "facing=north,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=true": {
+    "facing=north,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 180
     },
-    "facing=north,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=false": {
+    "facing=north,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 180
     },
-    "facing=north,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=true": {
+    "facing=north,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 180
     },
-    "facing=north,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=false": {
+    "facing=north,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 180
     },
-    "facing=north,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=true": {
+    "facing=north,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 180
     },
-    "facing=north,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=false": {
+    "facing=north,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 180
     },
-    "facing=north,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=true": {
+    "facing=north,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 180
     },
-    "facing=north,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=false": {
+    "facing=north,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_top",
       "y": 180
     },
-    "facing=north,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=true": {
+    "facing=north,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_top",
       "y": 180
     },
-    "facing=north,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=false": {
+    "facing=north,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_top",
       "y": 180
     },
-    "facing=north,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=true": {
+    "facing=north,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_top",
       "y": 180
     },
-    "facing=north,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=false": {
+    "facing=north,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_middle",
       "y": 180
     },
-    "facing=north,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=true": {
+    "facing=north,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_middle",
       "y": 180
     },
-    "facing=north,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=false": {
+    "facing=north,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_middle",
       "y": 180
     },
-    "facing=north,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=true": {
+    "facing=north,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_middle",
       "y": 180
     },
-    "facing=south,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=false": {
+    "facing=south,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base"
     },
-    "facing=south,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=true": {
+    "facing=south,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base"
     },
-    "facing=south,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=false": {
+    "facing=south,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base"
     },
-    "facing=south,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=true": {
+    "facing=south,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base"
     },
-    "facing=south,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=false": {
+    "facing=south,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base"
     },
-    "facing=south,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=true": {
+    "facing=south,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base"
     },
-    "facing=south,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=false": {
+    "facing=south,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base"
     },
-    "facing=south,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=true": {
+    "facing=south,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base"
     },
-    "facing=south,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=false": {
+    "facing=south,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_top"
     },
-    "facing=south,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=true": {
+    "facing=south,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_top"
     },
-    "facing=south,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=false": {
+    "facing=south,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_top"
     },
-    "facing=south,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=true": {
+    "facing=south,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_top"
     },
-    "facing=south,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=false": {
+    "facing=south,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_middle"
     },
-    "facing=south,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=true": {
+    "facing=south,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_middle"
     },
-    "facing=south,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=false": {
+    "facing=south,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_middle"
     },
-    "facing=south,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=true": {
+    "facing=south,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_middle"
     },
-    "facing=west,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=false": {
+    "facing=west,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 90
     },
-    "facing=west,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=true": {
+    "facing=west,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 90
     },
-    "facing=west,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=false": {
+    "facing=west,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 90
     },
-    "facing=west,has_shelf_below=false,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=true": {
+    "facing=west,has_shelf_below=false,has_shelf_on_top=false,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 90
     },
-    "facing=west,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=false": {
+    "facing=west,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 90
     },
-    "facing=west,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=true": {
+    "facing=west,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_base",
       "y": 90
     },
-    "facing=west,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=false": {
+    "facing=west,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 90
     },
-    "facing=west,has_shelf_below=false,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=true": {
+    "facing=west,has_shelf_below=false,has_shelf_on_top=true,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_base",
       "y": 90
     },
-    "facing=west,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=false": {
+    "facing=west,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_top",
       "y": 90
     },
-    "facing=west,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=left,waterlogged=true": {
+    "facing=west,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_top",
       "y": 90
     },
-    "facing=west,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=false": {
+    "facing=west,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_top",
       "y": 90
     },
-    "facing=west,has_shelf_below=true,has_shelf_on_top=false,villagerworkshoppart=right,waterlogged=true": {
+    "facing=west,has_shelf_below=true,has_shelf_on_top=false,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_top",
       "y": 90
     },
-    "facing=west,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=false": {
+    "facing=west,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=left,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_middle",
       "y": 90
     },
-    "facing=west,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=left,waterlogged=true": {
+    "facing=west,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=left,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_left_middle",
       "y": 90
     },
-    "facing=west,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=false": {
+    "facing=west,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=right,waterlogged=false": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_middle",
       "y": 90
     },
-    "facing=west,has_shelf_below=true,has_shelf_on_top=true,villagerworkshoppart=right,waterlogged=true": {
+    "facing=west,has_shelf_below=true,has_shelf_on_top=true,two_block_width_part=right,waterlogged=true": {
       "model": "premierpainmod:block/deepslate_standing_villager_shelf_right_middle",
       "y": 90
     }

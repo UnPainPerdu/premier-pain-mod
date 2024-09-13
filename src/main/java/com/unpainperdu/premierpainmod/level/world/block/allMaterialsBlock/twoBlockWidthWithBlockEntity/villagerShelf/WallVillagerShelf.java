@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockWidthWithBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

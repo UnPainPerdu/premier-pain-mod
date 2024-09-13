@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBl
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockWidthWithBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerDrawerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

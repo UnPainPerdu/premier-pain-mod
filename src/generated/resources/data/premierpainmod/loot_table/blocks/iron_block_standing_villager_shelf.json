@@ -16,7 +16,7 @@
               "block": "premierpainmod:iron_block_standing_villager_shelf",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "villagerworkshoppart": "right"
+                "two_block_width_part": "right"
               }
             }
           ],

@@ -16,7 +16,7 @@
               "block": "premierpainmod:gold_block_villager_drawer",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "villagerworkshoppart": "right"
+                "two_block_width_part": "right"
               }
             }
           ],

@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block.state.properties;
+package com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties;
 
 import net.minecraft.util.StringRepresentable;
 

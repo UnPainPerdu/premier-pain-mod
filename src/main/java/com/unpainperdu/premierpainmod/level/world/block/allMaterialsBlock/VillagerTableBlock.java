@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerCarpetColor;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
