@@ -33,13 +33,6 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     public AbstractAdaptableSit(Properties properties)
     {
         super(properties);
-        this.registerDefaultState(
-                this.stateDefinition
-                        .any()
-                        .setValue(FACING, Direction.NORTH)
-                        .setValue(ADAPTABLE_SIT, AdaptableSitShape.ALONE)
-                        .setValue(WATERLOGGED, Boolean.FALSE)
-        );
     }
 
     @Nullable
@@ -182,14 +175,5 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     @Override
     public abstract MapCodec<? extends AbstractAdaptableSit> codec();
 
-    protected Boolean isWithSameDirection(LevelAccessor level, BlockPos pos, Direction directionWanted)
-    {
-        boolean flag = false;
-        BlockState stateChecked = level.getBlockState(pos);
-        if(stateChecked.getBlock() instanceof AbstractAdaptableSit)
-        {
-            flag = stateChecked.getValue(FACING) == directionWanted;
-        }
-        return flag;
-    }
+    protected abstract Boolean isWithSameDirection(LevelAccessor level, BlockPos pos, Direction directionWanted);
 }
