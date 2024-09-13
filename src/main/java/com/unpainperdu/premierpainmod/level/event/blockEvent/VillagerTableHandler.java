@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.level.event.blockEvent;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -42,16 +42,16 @@ public class VillagerTableHandler
                 ItemStack itemStack =player.getMainHandItem();
                 Item item = itemStack.getItem();
                 Block carpetBlock = Block.byItem(item);
-                if((carpetBlock instanceof WoolCarpetBlock) && (state.getValue(VillagerTableBlock.COLOR) == VillagerTableCarpetColor.NONE))
+                if((carpetBlock instanceof WoolCarpetBlock) && (state.getValue(VillagerTableBlock.COLOR) == VillagerCarpetColor.NONE))
                 {
                     level.setBlock(pos, state.setValue(VillagerTableBlock.COLOR, colorDedection((WoolCarpetBlock) carpetBlock)), 3);
                     level.playSound(null, pos, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
                     event.setCanceled(TRUE);
                 }
 
-                if ((item instanceof ShearsItem) && (state.getValue(VillagerTableBlock.COLOR) != VillagerTableCarpetColor.NONE))
+                if ((item instanceof ShearsItem) && (state.getValue(VillagerTableBlock.COLOR) != VillagerCarpetColor.NONE))
                 {
-                    level.setBlock(pos, state.setValue(VillagerTableBlock.COLOR, VillagerTableCarpetColor.NONE), 3);
+                    level.setBlock(pos, state.setValue(VillagerTableBlock.COLOR, VillagerCarpetColor.NONE), 3);
                     level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
                     player.getMainHandItem().hurtAndBreak(1, player, LivingEntity.getSlotForHand(event.getHand()));
                 }
@@ -71,27 +71,27 @@ public class VillagerTableHandler
         playerPos = BlockPos.containing(playerPos.getX() + 0.5D, playerPos.getY() + 0.5D, playerPos.getZ() + 0.5D);
         return range.minX <= playerPos.getX() && range.minY <= playerPos.getY() && range.minZ <= playerPos.getZ() && range.maxX >= playerPos.getX() && range.maxY >= playerPos.getY() && range.maxZ >= playerPos.getZ();
     }
-    private static VillagerTableCarpetColor colorDedection(WoolCarpetBlock carpetBlock)
+    private static VillagerCarpetColor colorDedection(WoolCarpetBlock carpetBlock)
     {
         switch (carpetBlock.getColor())
         {
-            case WHITE : return VillagerTableCarpetColor.WHITE;
-            case LIGHT_GRAY : return VillagerTableCarpetColor.LIGHT_GRAY;
-            case GRAY : return VillagerTableCarpetColor.GRAY;
-            case BLACK : return VillagerTableCarpetColor.BLACK;
-            case BROWN : return VillagerTableCarpetColor.BROWN;
-            case RED : return VillagerTableCarpetColor.RED;
-            case ORANGE : return VillagerTableCarpetColor.ORANGE;
-            case YELLOW : return VillagerTableCarpetColor.YELLOW;
-            case LIME : return VillagerTableCarpetColor.LIME;
-            case GREEN : return VillagerTableCarpetColor.GREEN;
-            case CYAN : return VillagerTableCarpetColor.CYAN;
-            case LIGHT_BLUE : return VillagerTableCarpetColor.LIGHT_BLUE;
-            case BLUE : return VillagerTableCarpetColor.BLUE;
-            case PURPLE : return VillagerTableCarpetColor.PURPLE;
-            case MAGENTA : return VillagerTableCarpetColor.MAGENTA;
-            case PINK : return VillagerTableCarpetColor.PINK;
-            default: return VillagerTableCarpetColor.NONE;
+            case WHITE : return VillagerCarpetColor.WHITE;
+            case LIGHT_GRAY : return VillagerCarpetColor.LIGHT_GRAY;
+            case GRAY : return VillagerCarpetColor.GRAY;
+            case BLACK : return VillagerCarpetColor.BLACK;
+            case BROWN : return VillagerCarpetColor.BROWN;
+            case RED : return VillagerCarpetColor.RED;
+            case ORANGE : return VillagerCarpetColor.ORANGE;
+            case YELLOW : return VillagerCarpetColor.YELLOW;
+            case LIME : return VillagerCarpetColor.LIME;
+            case GREEN : return VillagerCarpetColor.GREEN;
+            case CYAN : return VillagerCarpetColor.CYAN;
+            case LIGHT_BLUE : return VillagerCarpetColor.LIGHT_BLUE;
+            case BLUE : return VillagerCarpetColor.BLUE;
+            case PURPLE : return VillagerCarpetColor.PURPLE;
+            case MAGENTA : return VillagerCarpetColor.MAGENTA;
+            case PINK : return VillagerCarpetColor.PINK;
+            default: return VillagerCarpetColor.NONE;
         }
     }
 }

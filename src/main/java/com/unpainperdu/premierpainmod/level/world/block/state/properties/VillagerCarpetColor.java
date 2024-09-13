@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.level.world.block.state.properties;
 
 import net.minecraft.util.StringRepresentable;
 
-public enum VillagerTableCarpetColor implements StringRepresentable
+public enum VillagerCarpetColor implements StringRepresentable
 {
     NONE("none"),
     WHITE("white"),
@@ -24,7 +24,7 @@ public enum VillagerTableCarpetColor implements StringRepresentable
 
     private final String name;
 
-    private VillagerTableCarpetColor(String pName)
+    private VillagerCarpetColor(String pName)
     {
         this.name = pName;
     }

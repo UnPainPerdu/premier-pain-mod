@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.event.blockEvent;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerThroneChairBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -50,7 +50,7 @@ public class VillagerThroneChairHandler {
                 if(state.getValue(VillagerThroneChairBlock.HALF) == DoubleBlockHalf.LOWER)
                 {
 
-                    if ((carpetBlock instanceof WoolCarpetBlock) && (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerTableCarpetColor.NONE))
+                    if ((carpetBlock instanceof WoolCarpetBlock) && (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerCarpetColor.NONE))
                     {
                         level.setBlock(pos, state.setValue(VillagerThroneChairBlock.COLOR, colorDedection((WoolCarpetBlock) carpetBlock)).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER), 3);
                         level.setBlock(posAbove, state.setValue(VillagerThroneChairBlock.COLOR, colorDedection((WoolCarpetBlock) carpetBlock)).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.UPPER), 3);
@@ -58,17 +58,17 @@ public class VillagerThroneChairHandler {
                         event.setCanceled(TRUE);
                     }
 
-                    if ((item instanceof ShearsItem) && (state.getValue(VillagerThroneChairBlock.COLOR) != VillagerTableCarpetColor.NONE))
+                    if ((item instanceof ShearsItem) && (state.getValue(VillagerThroneChairBlock.COLOR) != VillagerCarpetColor.NONE))
                     {
-                        level.setBlock(pos, state.setValue(VillagerThroneChairBlock.COLOR, VillagerTableCarpetColor.NONE).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER), 3);
-                        level.setBlock(posAbove, state.setValue(VillagerThroneChairBlock.COLOR, VillagerTableCarpetColor.NONE).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                        level.setBlock(pos, state.setValue(VillagerThroneChairBlock.COLOR, VillagerCarpetColor.NONE).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER), 3);
+                        level.setBlock(posAbove, state.setValue(VillagerThroneChairBlock.COLOR, VillagerCarpetColor.NONE).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.UPPER), 3);
                         level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
                         player.getMainHandItem().hurtAndBreak(1, player, LivingEntity.getSlotForHand(event.getHand()));
                     }
                 }
                 if(state.getValue(VillagerThroneChairBlock.HALF) == DoubleBlockHalf.UPPER)
                 {
-                    if ((carpetBlock instanceof WoolCarpetBlock) && (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerTableCarpetColor.NONE))
+                    if ((carpetBlock instanceof WoolCarpetBlock) && (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerCarpetColor.NONE))
                     {
                         level.setBlock(pos, state.setValue(VillagerThroneChairBlock.COLOR, colorDedection((WoolCarpetBlock) carpetBlock)).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.UPPER), 3);
                         level.setBlock(posBelow, state.setValue(VillagerThroneChairBlock.COLOR, colorDedection((WoolCarpetBlock) carpetBlock)).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER), 3);
@@ -76,10 +76,10 @@ public class VillagerThroneChairHandler {
                         event.setCanceled(TRUE);
                     }
 
-                    if ((item instanceof ShearsItem) && (state.getValue(VillagerThroneChairBlock.COLOR) != VillagerTableCarpetColor.NONE))
+                    if ((item instanceof ShearsItem) && (state.getValue(VillagerThroneChairBlock.COLOR) != VillagerCarpetColor.NONE))
                     {
-                        level.setBlock(pos, state.setValue(VillagerThroneChairBlock.COLOR, VillagerTableCarpetColor.NONE).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.UPPER), 3);
-                        level.setBlock(posBelow, state.setValue(VillagerThroneChairBlock.COLOR, VillagerTableCarpetColor.NONE).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER), 3);
+                        level.setBlock(pos, state.setValue(VillagerThroneChairBlock.COLOR, VillagerCarpetColor.NONE).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                        level.setBlock(posBelow, state.setValue(VillagerThroneChairBlock.COLOR, VillagerCarpetColor.NONE).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER), 3);
                         level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
                         player.getMainHandItem().hurtAndBreak(1, player, LivingEntity.getSlotForHand(event.getHand()));
                     }
@@ -101,44 +101,44 @@ public class VillagerThroneChairHandler {
         return range.minX <= playerPos.getX() && range.minY <= playerPos.getY() && range.minZ <= playerPos.getZ() && range.maxX >= playerPos.getX() && range.maxY >= playerPos.getY() && range.maxZ >= playerPos.getZ();
     }
 
-    private static VillagerTableCarpetColor colorDedection(WoolCarpetBlock carpetBlock)
+    private static VillagerCarpetColor colorDedection(WoolCarpetBlock carpetBlock)
     {
         switch (carpetBlock.getColor())
         {
             case WHITE:
-                return VillagerTableCarpetColor.WHITE;
+                return VillagerCarpetColor.WHITE;
             case LIGHT_GRAY:
-                return VillagerTableCarpetColor.LIGHT_GRAY;
+                return VillagerCarpetColor.LIGHT_GRAY;
             case GRAY:
-                return VillagerTableCarpetColor.GRAY;
+                return VillagerCarpetColor.GRAY;
             case BLACK:
-                return VillagerTableCarpetColor.BLACK;
+                return VillagerCarpetColor.BLACK;
             case BROWN:
-                return VillagerTableCarpetColor.BROWN;
+                return VillagerCarpetColor.BROWN;
             case RED:
-                return VillagerTableCarpetColor.RED;
+                return VillagerCarpetColor.RED;
             case ORANGE:
-                return VillagerTableCarpetColor.ORANGE;
+                return VillagerCarpetColor.ORANGE;
             case YELLOW:
-                return VillagerTableCarpetColor.YELLOW;
+                return VillagerCarpetColor.YELLOW;
             case LIME:
-                return VillagerTableCarpetColor.LIME;
+                return VillagerCarpetColor.LIME;
             case GREEN:
-                return VillagerTableCarpetColor.GREEN;
+                return VillagerCarpetColor.GREEN;
             case CYAN:
-                return VillagerTableCarpetColor.CYAN;
+                return VillagerCarpetColor.CYAN;
             case LIGHT_BLUE:
-                return VillagerTableCarpetColor.LIGHT_BLUE;
+                return VillagerCarpetColor.LIGHT_BLUE;
             case BLUE:
-                return VillagerTableCarpetColor.BLUE;
+                return VillagerCarpetColor.BLUE;
             case PURPLE:
-                return VillagerTableCarpetColor.PURPLE;
+                return VillagerCarpetColor.PURPLE;
             case MAGENTA:
-                return VillagerTableCarpetColor.MAGENTA;
+                return VillagerCarpetColor.MAGENTA;
             case PINK:
-                return VillagerTableCarpetColor.PINK;
+                return VillagerCarpetColor.PINK;
             default:
-                return VillagerTableCarpetColor.NONE;
+                return VillagerCarpetColor.NONE;
         }
     }
 }

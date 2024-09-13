@@ -6,7 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.Villag
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerTableCarpetColor;
+import com.unpainperdu.premierpainmod.level.world.block.state.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.state.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
@@ -240,7 +240,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             String modelName = getKey(table).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_table/";
             int rotation;
-            boolean flag = (state.getValue(VillagerTableBlock.COLOR) == VillagerTableCarpetColor.NONE);
+            boolean flag = (state.getValue(VillagerTableBlock.COLOR) == VillagerCarpetColor.NONE);
             //Duo part
                 //North only
             if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
@@ -585,7 +585,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             String texture0 = "block/all_materials_block/multiple_use_texture/" + material;
             String texture1 = textureThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);
             String particle = "block/all_materials_block/multiple_use_particle/" + material;
-            boolean flag = (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerTableCarpetColor.NONE);
+            boolean flag = (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerCarpetColor.NONE);
             if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
             {
                 if(flag)
