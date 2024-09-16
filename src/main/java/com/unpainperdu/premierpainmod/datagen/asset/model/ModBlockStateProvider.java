@@ -2,10 +2,12 @@ package com.unpainperdu.premierpainmod.datagen.asset.model;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerBrazier;
@@ -62,6 +64,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if (block instanceof AbstractGrowingAboveVegetation) {growingVegetationWithItem(block);}
             else if (block instanceof DeadBushBlock) {deadBushWithItem(block);}
             else if (block instanceof AbstractTallGrass) {tallGrassWithItem(block);}
+            else if (block instanceof VillagerBench) {villagerBenchWithItem(block);}
         }
     //manual
         //vegetation
@@ -80,6 +83,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
+
     private void simpleBlockWithItem(Block block)
     {
         simpleBlockWithItem(block, cubeAll(block));
@@ -955,6 +959,50 @@ public class ModBlockStateProvider extends BlockStateProvider
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
                 .texture("layer0","block/vegetation/tall_grass/"+ name + "/" + name + "_upper");
+    }
+
+    private void villagerBenchWithItem(Block block)
+    {
+        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+        String material = name.replace("_villager_bench","_villager");
+
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            String modelName = getKey(block).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_bench/";
+            if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.ALONE)
+            {
+                modelName += "_alone";
+                modelPath += "villager_bench_alone";
+            }
+            else if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT_AND_RIGHT)
+            {
+                modelName += "_with_left_and_right";
+                modelPath += "villager_bench_with_left_and_right";
+            }
+            else if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT)
+            {
+                modelName += "_with_right";
+                modelPath += "villager_bench_with_right";
+            }
+            else
+            {
+                modelName += "_with_left";
+                modelPath += "villager_bench_with_left";
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("0",texture)
+                            .texture("1", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
+        });
+        ModelFile villagerBenchModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_bench/villager_bench_alone").texture("0","block/all_materials_block/multiple_use_texture/" + material);
+        itemModels().getBuilder(getKey(block).getPath()).parent(villagerBenchModel);
     }
 
 

@@ -26,6 +26,9 @@
     "premierpainmod:diamond_block_standing_villager_shelf",
     "premierpainmod:gold_block_wall_villager_shelf",
     "premierpainmod:emerald_block_wall_villager_shelf",
-    "premierpainmod:diamond_block_wall_villager_shelf"
+    "premierpainmod:diamond_block_wall_villager_shelf",
+    "premierpainmod:gold_block_villager_bench",
+    "premierpainmod:emerald_block_villager_bench",
+    "premierpainmod:diamond_block_villager_bench"
   ]
 }

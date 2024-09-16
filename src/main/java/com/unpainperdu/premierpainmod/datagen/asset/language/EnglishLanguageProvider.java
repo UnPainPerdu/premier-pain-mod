@@ -111,6 +111,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         throneChairTranslation(suffix);
         drawerTranslation(suffix);
         shelfTranslation(suffix);
+        benchTranslation(suffix);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
@@ -123,7 +124,9 @@ public class EnglishLanguageProvider extends LanguageProvider
         throneChairTranslation(suffix1, suffix2, isSuffix2Translate);
         drawerTranslation(suffix1, suffix2, isSuffix2Translate);
         shelfTranslation(suffix1, suffix2, isSuffix2Translate);
+        benchTranslation(suffix1, suffix2, isSuffix2Translate);
     }
+
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
     private void statueTranslation(String suffix)
     {
@@ -306,6 +309,29 @@ public class EnglishLanguageProvider extends LanguageProvider
         else
         {
             add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + "_standing_villager_shelf", translation1 +" "+ suffix2 + translationTable);
+        }
+    }
+
+    private void benchTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String bench = "_villager_bench";
+        String translationTable = " villager bench";
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translation + translationTable);
+    }
+
+    private void benchTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String table = "_villager_bench";
+        String translationTable = " villager bench";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
         }
     }
 

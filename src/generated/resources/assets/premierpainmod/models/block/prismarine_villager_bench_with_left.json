@@ -1,0 +1,7 @@
+{
+  "parent": "premierpainmod:block/all_materials_block/villager_bench/villager_bench_with_left",
+  "textures": {
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/prismarine_villager",
+    "1": "premierpainmod:block/all_materials_block/multiple_use_particle/prismarine_villager"
+  }
+}

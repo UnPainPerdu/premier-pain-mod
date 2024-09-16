@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:bedrock"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:bedrock_villager_bench"
+  }
+}

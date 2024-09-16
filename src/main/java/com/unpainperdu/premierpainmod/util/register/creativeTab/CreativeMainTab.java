@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register.creativeTab;
 
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
@@ -65,6 +66,7 @@ public class CreativeMainTab
                     || block instanceof VillagerChairBlock
                     || block instanceof VillagerThroneChairBlock
                     || block instanceof VillagerDrawer
+                    || block instanceof VillagerBench
             )
             {
                 output.accept(block);

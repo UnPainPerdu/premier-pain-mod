@@ -42,8 +42,7 @@ public class BlockRegister
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MOD_ID);
 
     //test
-    public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBench(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
-    public static final DeferredBlock<Block> TEST2_BLOCK = registerBlock("test2_block", () -> new VillagerCouch(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
+    public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerCouch(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
 
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
@@ -470,6 +469,49 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","amethyst_block_wall_villager_shelf","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","dripstone_block_wall_villager_shelf","dripstone");
     public static final DeferredBlock<Block> BEDROCK_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","bedrock_wall_villager_shelf","bedrock");
+    //Villager bench
+    public static final DeferredBlock<Block> OAK_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","oak_villager_bench","wood");
+    public static final DeferredBlock<Block> BIRCH_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","birch_villager_bench","wood");
+    public static final DeferredBlock<Block> SPRUCE_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","spruce_villager_bench","wood");
+    public static final DeferredBlock<Block> JUNGLE_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","jungle_villager_bench","wood");
+    public static final DeferredBlock<Block> ACACIA_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","acacia_villager_bench","wood");
+    public static final DeferredBlock<Block> DARK_OAK_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","dark_oak_villager_bench","wood");
+    public static final DeferredBlock<Block> MANGROVE_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","mangrove_villager_bench","wood");
+    public static final DeferredBlock<Block> CHERRY_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","cherry_villager_bench","cherry");
+    public static final DeferredBlock<Block> BAMBOO_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","bamboo_villager_bench","bamboo");
+    public static final DeferredBlock<Block> CRIMSON_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","crimson_villager_bench","netherwood");
+    public static final DeferredBlock<Block> WARPED_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","warped_villager_bench","netherwood");
+    public static final DeferredBlock<Block> STONE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","stone_villager_bench","stone");
+    public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","mossy_stone_villager_bench","stone");
+    public static final DeferredBlock<Block> ANDESITE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","andesite_villager_bench","stone");
+    public static final DeferredBlock<Block> DIORITE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","diorite_villager_bench","stone");
+    public static final DeferredBlock<Block> GRANITE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","granite_villager_bench","stone");
+    public static final DeferredBlock<Block> PRISMARINE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","prismarine_villager_bench","stone");
+    public static final DeferredBlock<Block> BLACKSTONE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","blackstone_villager_bench","stone");
+    public static final DeferredBlock<Block> PURPUR_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","purpur_block_villager_bench","stone");
+    public static final DeferredBlock<Block> DEEPSLATE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","deepslate_villager_bench","deepslate");
+    public static final DeferredBlock<Block> TUFF_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","tuff_villager_bench","tuff");
+    public static final DeferredBlock<Block> PACKED_MUD_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","packed_mud_villager_bench","mud");
+    public static final DeferredBlock<Block> SANDSTONE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","sandstone_villager_bench","sandstone");
+    public static final DeferredBlock<Block> RED_SANDSTONE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","red_sandstone_villager_bench","sandstone");
+    public static final DeferredBlock<Block> QUARTZ_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","quartz_block_villager_bench","sandstone");
+    public static final DeferredBlock<Block> NETHER_BRICKS_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","nether_bricks_villager_bench","netherbrick");
+    public static final DeferredBlock<Block> BASALT_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","basalt_villager_bench","basalt");
+    public static final DeferredBlock<Block> END_STONE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","end_stone_villager_bench","endstone");
+    public static final DeferredBlock<Block> COAL_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","coal_block_villager_bench","mineral_strong");
+    public static final DeferredBlock<Block> IRON_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","iron_block_villager_bench","metal");
+    public static final DeferredBlock<Block> GOLD_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","gold_block_villager_bench","metal");
+    public static final DeferredBlock<Block> REDSTONE_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","redstone_block_villager_bench","metal");
+    public static final DeferredBlock<Block> EMERALD_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","emerald_block_villager_bench","metal");
+    public static final DeferredBlock<Block> DIAMOND_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","diamond_block_villager_bench","metal");
+    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","copper_block_villager_bench","copper");
+    public static final DeferredBlock<Block> LAPIS_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","lapis_block_villager_bench","mineral_weak");
+    public static final DeferredBlock<Block> NETHERITE_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","netherite_block_villager_bench","netherite");
+    public static final DeferredBlock<Block> OBSIDIAN_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","obsidian_villager_bench","obsidan");
+    public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","amethyst_block_villager_bench","amethyst");
+    public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","dripstone_block_villager_bench","dripstone");
+    public static final DeferredBlock<Block> BEDROCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","bedrock_villager_bench","bedrock");
+
     //Villager Singing stone event block
     public static final DeferredBlock<Block> LIBERTY_BLOCK =  registerBlock("liberty_block", () -> new LibertyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.0F, 0.0F).noLootTable().noOcclusion()));
     //vegetation
@@ -677,6 +719,10 @@ public class BlockRegister
             case "wall_villager_shelf":
             {
                 return (DeferredBlock<T>) registerBlockForShelf(name, () -> new WallVillagerShelf(properties));
+            }
+            case "villager_bench":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBench(properties));
             }
             default :
             {

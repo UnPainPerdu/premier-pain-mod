@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "adaptable_sit_shape=middle_alone,facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_alone",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_alone",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_alone",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_alone",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_alone"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_alone"
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_alone",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_alone",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_right",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_right",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_right",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_right",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_right"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_right"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_right",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_right",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left_and_right",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left_and_right",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left_and_right",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left_and_right",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left_and_right"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left_and_right"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left_and_right",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left_and_right",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/cherry_villager_bench_with_left",
+      "y": 90
+    }
+  }
+}

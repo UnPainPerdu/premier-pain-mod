@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/all_materials_block/villager_bench/villager_bench_alone",
+  "textures": {
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/bedrock_villager"
+  }
+}

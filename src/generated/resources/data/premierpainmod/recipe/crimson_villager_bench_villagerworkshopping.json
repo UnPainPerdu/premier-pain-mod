@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:crimson_planks"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:crimson_villager_bench"
+  }
+}
