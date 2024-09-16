@@ -7,11 +7,13 @@ import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properti
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class VillagerCouch extends AbstractAdaptableSit
 {
@@ -32,6 +34,12 @@ public class VillagerCouch extends AbstractAdaptableSit
     }
 
     @Override
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context)
+    {
+        return Block.box(0, 0, 0, 16, 8, 16);
+    }
+
+    @Override
     public MapCodec<? extends AbstractAdaptableSit> codec()
     {
         return CODEC;
@@ -40,16 +48,5 @@ public class VillagerCouch extends AbstractAdaptableSit
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
         pBuilder.add(ADAPTABLE_SIT, FACING, WATERLOGGED, CARPET_COLOR);
-    }
-
-    protected Boolean isWithSameDirection(LevelAccessor level, BlockPos pos, Direction directionWanted)
-    {
-        boolean flag = false;
-        BlockState stateChecked = level.getBlockState(pos);
-        if(stateChecked.getBlock() instanceof VillagerCouch)
-        {
-            flag = stateChecked.getValue(FACING) == directionWanted;
-        }
-        return flag;
     }
 }

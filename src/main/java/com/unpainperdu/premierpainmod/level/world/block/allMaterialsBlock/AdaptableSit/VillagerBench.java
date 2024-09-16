@@ -5,8 +5,12 @@ import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractAd
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class VillagerBench extends AbstractAdaptableSit
 {
@@ -24,19 +28,31 @@ public class VillagerBench extends AbstractAdaptableSit
     }
 
     @Override
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context)
+    {
+        VoxelShape shape;
+        if(state.getValue(FACING) == Direction.NORTH)
+        {
+            shape = Shapes.or(Block.box(0, 4, 1, 16, 7, 14), Block.box(0, 7, 1, 16, 16, 3));
+        }
+        else if (state.getValue(FACING) == Direction.EAST)
+        {
+            shape = Shapes.or(Block.box(2, 4, 0, 15, 7, 16), Block.box(13, 7, 0, 15, 16, 16));
+        }
+        else if (state.getValue(FACING) == Direction.WEST)
+        {
+            shape = Shapes.or(Block.box(1, 4, 0, 14, 7, 16), Block.box(1, 7, 0, 3, 16, 16));
+        }
+        else
+        {
+            shape = Shapes.or(Block.box(0, 4, 2, 16, 7, 15), Block.box(0, 7, 13, 16, 16, 15));
+        }
+        return shape;
+    }
+
+    @Override
     public MapCodec<? extends AbstractAdaptableSit> codec()
     {
         return CODEC;
-    }
-
-    protected Boolean isWithSameDirection(LevelAccessor level, BlockPos pos, Direction directionWanted)
-    {
-        boolean flag = false;
-        BlockState stateChecked = level.getBlockState(pos);
-        if(stateChecked.getBlock() instanceof VillagerBench)
-        {
-            flag = stateChecked.getValue(FACING) == directionWanted;
-        }
-        return flag;
     }
 }

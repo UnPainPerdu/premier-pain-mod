@@ -28,7 +28,6 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final EnumProperty<AdaptableSitShape> ADAPTABLE_SIT = ModBlockStateProperties.ADAPTABLE_SIT_SHAPE;
-    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 8, 16);
 
     public AbstractAdaptableSit(Properties properties)
     {
@@ -150,10 +149,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     }
 
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
-    {
-        return SHAPE;
-    }
+    public abstract VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context);
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
@@ -175,5 +171,14 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     @Override
     public abstract MapCodec<? extends AbstractAdaptableSit> codec();
 
-    protected abstract Boolean isWithSameDirection(LevelAccessor level, BlockPos pos, Direction directionWanted);
+    protected Boolean isWithSameDirection(LevelAccessor level, BlockPos pos, Direction directionWanted)
+    {
+        boolean flag = false;
+        BlockState stateChecked = level.getBlockState(pos);
+        if(stateChecked.is(this))
+        {
+            flag = stateChecked.getValue(FACING) == directionWanted;
+        }
+        return flag;
+    }
 }
