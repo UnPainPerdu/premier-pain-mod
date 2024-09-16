@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.event.blockEvent;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractAdaptableSit;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.SeatEntity;
@@ -87,7 +88,10 @@ public class SeatHandler
      */
     private static boolean isValidBlock(Level level, BlockPos pos, BlockState state, Block block)
     {
-        boolean isValid = (block instanceof VillagerChairBlock) || (block instanceof VillagerThroneChairBlock);
+        boolean isValid = (block instanceof VillagerChairBlock)
+                        || (block instanceof VillagerThroneChairBlock)
+                        || (block instanceof AbstractAdaptableSit)
+                ;
         return isValid;
     }
     /**
