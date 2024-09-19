@@ -1,0 +1,8 @@
+{
+  "parent": "premierpainmod:block/all_materials_block/villager_couch/villager_couch_with_left_and_right",
+  "textures": {
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/granite_villager",
+    "1": "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_light_blue",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/granite_villager"
+  }
+}

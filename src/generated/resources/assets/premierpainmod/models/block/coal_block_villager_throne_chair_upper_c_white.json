@@ -2,7 +2,7 @@
   "parent": "premierpainmod:block/all_materials_block/villager_throne_chair/w_carpet/villager_throne_chair_upper_carpeted",
   "textures": {
     "0": "premierpainmod:block/all_materials_block/multiple_use_texture/coal_block_villager",
-    "1": "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_white",
+    "1": "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_white",
     "2": "premierpainmod:block/all_materials_block/multiple_use_particle/coal_block_villager"
   }
 }

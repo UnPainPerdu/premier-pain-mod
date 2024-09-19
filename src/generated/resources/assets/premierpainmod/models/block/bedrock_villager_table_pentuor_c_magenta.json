@@ -2,7 +2,7 @@
   "parent": "premierpainmod:block/all_materials_block/villager_table/villager_table_pentuor/villager_table_pentuor_carpeted",
   "textures": {
     "0": "premierpainmod:block/all_materials_block/multiple_use_texture/bedrock_villager",
-    "1": "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_magenta",
+    "1": "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_magenta",
     "2": "premierpainmod:block/all_materials_block/multiple_use_particle/bedrock_villager"
   }
 }

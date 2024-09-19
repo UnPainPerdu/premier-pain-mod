@@ -112,6 +112,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         drawerTranslation(suffix);
         shelfTranslation(suffix);
         benchTranslation(suffix);
+        couchTranslation(suffix);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
@@ -125,6 +126,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         drawerTranslation(suffix1, suffix2, isSuffix2Translate);
         shelfTranslation(suffix1, suffix2, isSuffix2Translate);
         benchTranslation(suffix1, suffix2, isSuffix2Translate);
+        couchTranslation(suffix1, suffix2, isSuffix2Translate);
     }
 
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
@@ -325,6 +327,28 @@ public class EnglishLanguageProvider extends LanguageProvider
         String translation1 = capitalize(suffix1);
         String table = "_villager_bench";
         String translationTable = " villager bench";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
+        }
+    }
+    private void couchTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String bench = "_villager_couch";
+        String translationTable = " villager couch";
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translation + translationTable);
+    }
+
+    private void couchTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String table = "_villager_couch";
+        String translationTable = " villager couch";
         if (!isSuffix2Translate)
         {
             add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);

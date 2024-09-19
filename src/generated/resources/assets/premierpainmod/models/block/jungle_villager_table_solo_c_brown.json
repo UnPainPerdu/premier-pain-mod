@@ -2,7 +2,7 @@
   "parent": "premierpainmod:block/all_materials_block/villager_table/villager_table_solo/villager_table_solo_carpeted",
   "textures": {
     "0": "premierpainmod:block/all_materials_block/multiple_use_texture/jungle_villager",
-    "1": "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_brown",
+    "1": "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_brown",
     "2": "premierpainmod:block/all_materials_block/multiple_use_particle/jungle_villager"
   }
 }

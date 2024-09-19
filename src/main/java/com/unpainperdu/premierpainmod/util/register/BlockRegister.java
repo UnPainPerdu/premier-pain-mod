@@ -512,6 +512,48 @@ public class BlockRegister
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","dripstone_block_villager_bench","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","bedrock_villager_bench","bedrock");
 
+    //Villager couch
+    public static final DeferredBlock<Block> OAK_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","oak_villager_couch","wood");
+    public static final DeferredBlock<Block> BIRCH_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","birch_villager_couch","wood");
+    public static final DeferredBlock<Block> SPRUCE_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","spruce_villager_couch","wood");
+    public static final DeferredBlock<Block> JUNGLE_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","jungle_villager_couch","wood");
+    public static final DeferredBlock<Block> ACACIA_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","acacia_villager_couch","wood");
+    public static final DeferredBlock<Block> DARK_OAK_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","dark_oak_villager_couch","wood");
+    public static final DeferredBlock<Block> MANGROVE_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","mangrove_villager_couch","wood");
+    public static final DeferredBlock<Block> CHERRY_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","cherry_villager_couch","cherry");
+    public static final DeferredBlock<Block> BAMBOO_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","bamboo_villager_couch","bamboo");
+    public static final DeferredBlock<Block> CRIMSON_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","crimson_villager_couch","netherwood");
+    public static final DeferredBlock<Block> WARPED_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","warped_villager_couch","netherwood");
+    public static final DeferredBlock<Block> STONE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","stone_villager_couch","stone");
+    public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","mossy_stone_villager_couch","stone");
+    public static final DeferredBlock<Block> ANDESITE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","andesite_villager_couch","stone");
+    public static final DeferredBlock<Block> DIORITE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","diorite_villager_couch","stone");
+    public static final DeferredBlock<Block> GRANITE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","granite_villager_couch","stone");
+    public static final DeferredBlock<Block> PRISMARINE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","prismarine_villager_couch","stone");
+    public static final DeferredBlock<Block> BLACKSTONE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","blackstone_villager_couch","stone");
+    public static final DeferredBlock<Block> PURPUR_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","purpur_block_villager_couch","stone");
+    public static final DeferredBlock<Block> DEEPSLATE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","deepslate_villager_couch","deepslate");
+    public static final DeferredBlock<Block> TUFF_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","tuff_villager_couch","tuff");
+    public static final DeferredBlock<Block> PACKED_MUD_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","packed_mud_villager_couch","mud");
+    public static final DeferredBlock<Block> SANDSTONE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","sandstone_villager_couch","sandstone");
+    public static final DeferredBlock<Block> RED_SANDSTONE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","red_sandstone_villager_couch","sandstone");
+    public static final DeferredBlock<Block> QUARTZ_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","quartz_block_villager_couch","sandstone");
+    public static final DeferredBlock<Block> NETHER_BRICKS_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","nether_bricks_villager_couch","netherbrick");
+    public static final DeferredBlock<Block> BASALT_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","basalt_villager_couch","basalt");
+    public static final DeferredBlock<Block> END_STONE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","end_stone_villager_couch","endstone");
+    public static final DeferredBlock<Block> COAL_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","coal_block_villager_couch","mineral_strong");
+    public static final DeferredBlock<Block> IRON_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","iron_block_villager_couch","metal");
+    public static final DeferredBlock<Block> GOLD_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","gold_block_villager_couch","metal");
+    public static final DeferredBlock<Block> REDSTONE_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","redstone_block_villager_couch","metal");
+    public static final DeferredBlock<Block> EMERALD_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","emerald_block_villager_couch","metal");
+    public static final DeferredBlock<Block> DIAMOND_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","diamond_block_villager_couch","metal");
+    public static final DeferredBlock<Block> COPPER_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","copper_block_villager_couch","copper");
+    public static final DeferredBlock<Block> LAPIS_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","lapis_block_villager_couch","mineral_weak");
+    public static final DeferredBlock<Block> NETHERITE_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","netherite_block_villager_couch","netherite");
+    public static final DeferredBlock<Block> OBSIDIAN_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","obsidian_villager_couch","obsidan");
+    public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","amethyst_block_villager_couch","amethyst");
+    public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","dripstone_block_villager_couch","dripstone");
+    public static final DeferredBlock<Block> BEDROCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","bedrock_villager_couch","bedrock");
     //Villager Singing stone event block
     public static final DeferredBlock<Block> LIBERTY_BLOCK =  registerBlock("liberty_block", () -> new LibertyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.0F, 0.0F).noLootTable().noOcclusion()));
     //vegetation
@@ -723,6 +765,10 @@ public class BlockRegister
             case "villager_bench":
             {
                 return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBench(properties));
+            }
+            case "villager_couch":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerCouch(properties));
             }
             default :
             {

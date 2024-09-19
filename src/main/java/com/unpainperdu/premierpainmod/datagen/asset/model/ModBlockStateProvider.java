@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.datagen.asset.model;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerCouch;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
@@ -65,6 +66,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if (block instanceof DeadBushBlock) {deadBushWithItem(block);}
             else if (block instanceof AbstractTallGrass) {tallGrassWithItem(block);}
             else if (block instanceof VillagerBench) {villagerBenchWithItem(block);}
+            else if (block instanceof VillagerCouch) {villagerCouchWithItem(block);}
         }
     //manual
         //vegetation
@@ -240,7 +242,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(table);
         variantBuilder.forAllStates(state ->
         {
-            String carpetTexture = textureTableWithCarpetSelection(state, (VillagerTableBlock) table);
+            String carpetTexture = textureCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
             String modelName = getKey(table).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_table/";
             int rotation;
@@ -258,7 +260,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_duo_n_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_duo_n_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_duo_carpeted";
                 }
             }
@@ -274,7 +276,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_duo_w_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_duo_w_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_duo_carpeted";
                 }
             }
@@ -290,7 +292,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_duo_s_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_duo_s_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_duo_carpeted";
                 }
             }
@@ -306,7 +308,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_duo_e_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_duo_e_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_duo_carpeted";
                 }
             }
@@ -323,7 +325,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_trio_ns_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_trio_ns_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_trio_line_carpeted";
                 }
             }
@@ -339,7 +341,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_trio_we_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_trio_we_c" +nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_trio_line_carpeted";
                 }
             }
@@ -355,7 +357,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_trio_nw_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_trio_nw_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_trio_angle_carpeted";
                 }
             }
@@ -371,7 +373,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_trio_ne_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_trio_ne_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_trio_angle_carpeted";
                 }
             }
@@ -387,7 +389,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_trio_sw_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_trio_sw_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_trio_angle_carpeted";
                 }
             }
@@ -403,7 +405,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_trio_se_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_trio_se_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_trio_angle_carpeted";
                 }
             }
@@ -420,7 +422,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_quatuor_nes_c"+ nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_quatuor_nes_c"+ nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_quatuor_carpeted";
                 }
             }
@@ -436,7 +438,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_quatuor_esw_c"+ nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_quatuor_esw_c"+ nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_quatuor_carpeted";
                 }
             }
@@ -452,7 +454,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_quatuor_swn_c"+ nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_quatuor_swn_c"+ nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_quatuor_carpeted";
                 }
             }
@@ -468,7 +470,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_quatuor_wne_c"+ nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_quatuor_wne_c"+ nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_quatuor_carpeted";
                 }
             }
@@ -484,7 +486,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_pentuor_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_pentuor_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_pentuor_carpeted";
                 }
             }
@@ -500,7 +502,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_solo_c" + nameModelTableWithCarpetSelection(state, (VillagerTableBlock) table);
+                    modelName += "_solo_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_solo_carpeted";
                 }
             }
@@ -515,51 +517,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         ModelFile villagerWorkshopModel = models().withExistingParent(getKey(table).toString(),"premierpainmod:block/all_materials_block/villager_table/villager_table_solo/villager_table_solo").texture("0", "block/all_materials_block/multiple_use_texture/" + material);
         itemModels().getBuilder(getKey(table).getPath()).parent(villagerWorkshopModel);
     }
-    private String textureTableWithCarpetSelection(BlockState state,VillagerTableBlock table)
-    {
-        switch (state.getValue(VillagerTableBlock.COLOR))
-        {
-            case WHITE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_white";
-            case LIGHT_GRAY: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_light_gray";
-            case GRAY: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_gray";
-            case BLACK: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_black";
-            case BROWN: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_brown";
-            case RED: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_red";
-            case ORANGE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_orange";
-            case YELLOW: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_yellow";
-            case LIME: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_lime";
-            case GREEN: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_green";
-            case CYAN: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_cyan";
-            case LIGHT_BLUE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_light_blue";
-            case BLUE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_blue";
-            case PURPLE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_purple";
-            case MAGENTA: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_magenta";
-            default: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_pink";
-        }
-    }
 
-    private String nameModelTableWithCarpetSelection(BlockState state,VillagerTableBlock table)
-    {
-        switch (state.getValue(VillagerTableBlock.COLOR))
-        {
-            case WHITE: return "_white";
-            case LIGHT_GRAY: return "_light_gray";
-            case GRAY: return "_gray";
-            case BLACK: return "_black";
-            case BROWN: return "_brown";
-            case RED: return "_red";
-            case ORANGE: return "_orange";
-            case YELLOW: return "_yellow";
-            case LIME: return "_lime";
-            case GREEN: return "_green";
-            case CYAN: return "_cyan";
-            case LIGHT_BLUE: return "_light_blue";
-            case BLUE: return "_blue";
-            case PURPLE: return "_purple";
-            case MAGENTA: return "_magenta";
-            default: return "_pink";
-        }
-    }
     private void villagerChairWithItem(Block chair)
     {
         String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MOD_ID +":","");
@@ -587,7 +545,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             String modelName = getKey(throneChair).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_throne_chair/";
             String texture0 = "block/all_materials_block/multiple_use_texture/" + material;
-            String texture1 = textureThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);
+            String texture1 = textureCarpetSelection(state.getValue(VillagerThroneChairBlock.COLOR));
             String particle = "block/all_materials_block/multiple_use_particle/" + material;
             boolean flag = (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerCarpetColor.NONE);
             if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
@@ -599,7 +557,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_bottom_c" + nameModelThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);
+                    modelName += "_bottom_c" + nameModelCarpetSelection(state.getValue(VillagerThroneChairBlock.COLOR));
                     modelPath += "w_carpet/villager_throne_chair_bottom_carpeted";
                 }
             }
@@ -612,7 +570,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
                 else
                 {
-                    modelName += "_upper_c" + nameModelThroneChairWithCarpetSelection(state, (VillagerThroneChairBlock) throneChair);
+                    modelName += "_upper_c" + nameModelCarpetSelection(state.getValue(VillagerThroneChairBlock.COLOR));
                     modelPath += "w_carpet/villager_throne_chair_upper_carpeted";
                 }
             }
@@ -766,52 +724,6 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-    }
-
-    private String textureThroneChairWithCarpetSelection(BlockState state,VillagerThroneChairBlock ThroneTable)
-    {
-        switch (state.getValue(VillagerThroneChairBlock.COLOR))
-        {
-            case WHITE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_white";
-            case LIGHT_GRAY: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_light_gray";
-            case GRAY: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_gray";
-            case BLACK: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_black";
-            case BROWN: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_brown";
-            case RED: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_red";
-            case ORANGE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_orange";
-            case YELLOW: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_yellow";
-            case LIME: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_lime";
-            case GREEN: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_green";
-            case CYAN: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_cyan";
-            case LIGHT_BLUE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_light_blue";
-            case BLUE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_blue";
-            case PURPLE: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_purple";
-            case MAGENTA: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_magenta";
-            default: return "premierpainmod:block/all_materials_block/villager_table/carpet/villager_table_carpet_pink";
-        }
-    }
-
-    private String nameModelThroneChairWithCarpetSelection(BlockState state,VillagerThroneChairBlock ThroneTable)
-    {
-        switch (state.getValue(VillagerThroneChairBlock.COLOR))
-        {
-            case WHITE: return "_white";
-            case LIGHT_GRAY: return "_light_gray";
-            case GRAY: return "_gray";
-            case BLACK: return "_black";
-            case BROWN: return "_brown";
-            case RED: return "_red";
-            case ORANGE: return "_orange";
-            case YELLOW: return "_yellow";
-            case LIME: return "_lime";
-            case GREEN: return "_green";
-            case CYAN: return "_cyan";
-            case LIGHT_BLUE: return "_light_blue";
-            case BLUE: return "_blue";
-            case PURPLE: return "_purple";
-            case MAGENTA: return "_magenta";
-            default: return "_pink";
-        }
     }
 
     private void flowerBlockWithItem(Block block)
@@ -1003,6 +915,168 @@ public class ModBlockStateProvider extends BlockStateProvider
         });
         ModelFile villagerBenchModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_bench/villager_bench_alone").texture("0","block/all_materials_block/multiple_use_texture/" + material);
         itemModels().getBuilder(getKey(block).getPath()).parent(villagerBenchModel);
+    }
+
+    private void villagerCouchWithItem(Block block)
+    {
+        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+        String material = name.replace("_villager_couch","_villager");
+
+
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            VillagerCarpetColor villagerCarpetColor = state.getValue(VillagerCouch.CARPET_COLOR);
+            String carpetTexture = textureCarpetSelection(villagerCarpetColor);
+            String modelName = getKey(block).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_couch/";
+            if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.ALONE)
+            {
+                modelName += "_alone" + nameModelCarpetSelection(villagerCarpetColor);
+                modelPath += "villager_couch_alone";
+            }
+            else if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT_AND_RIGHT)
+            {
+                modelName += "_with_left_and_right" + nameModelCarpetSelection(villagerCarpetColor);
+                modelPath += "villager_couch_with_left_and_right";
+            }
+            else if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_RIGHT)
+            {
+                modelName += "_with_right" + nameModelCarpetSelection(villagerCarpetColor);
+                modelPath += "villager_couch_with_right";
+            }
+            else
+            {
+                modelName += "_with_left" + nameModelCarpetSelection(villagerCarpetColor);
+                modelPath += "villager_couch_with_left";
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("0",texture)
+                            .texture("1", carpetTexture)
+                            .texture("2", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
+        });
+        ModelFile villagerBenchModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_couch/villager_couch_alone")
+                .texture("0","block/all_materials_block/multiple_use_texture/" + material)
+                .texture("1", "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_white");
+        itemModels().getBuilder(getKey(block).getPath()).parent(villagerBenchModel);
+    }
+
+    private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)
+    {
+        String texturePath = "premierpainmod:block/all_materials_block/multiple_use_carpet/";
+        switch (villagerCarpetColor)
+        {
+            case WHITE:
+            {
+                texturePath += "villager_table_carpet_white";
+                break;
+            }
+            case LIGHT_GRAY:
+            {
+                texturePath += "villager_table_carpet_light_gray";
+                break;
+            }
+            case GRAY:
+            {
+                texturePath += "villager_table_carpet_gray";
+                break;
+            }
+            case BLACK:
+            {
+                texturePath += "villager_table_carpet_black";
+                break;
+            }
+            case BROWN:
+            {
+                texturePath += "villager_table_carpet_brown";
+                break;
+            }
+            case RED:
+            {
+                texturePath += "villager_table_carpet_red";
+                break;
+            }
+            case ORANGE:
+            {
+                texturePath += "villager_table_carpet_orange";
+                break;
+            }
+            case YELLOW:
+            {
+                texturePath += "villager_table_carpet_yellow";
+                break;
+            }
+            case LIME:
+            {
+                texturePath += "villager_table_carpet_lime";
+                break;
+            }
+            case GREEN:
+            {
+                texturePath += "villager_table_carpet_green";
+                break;
+            }
+            case CYAN:
+            {
+                texturePath += "villager_table_carpet_cyan";
+                break;
+            }
+            case LIGHT_BLUE:
+            {
+                texturePath += "villager_table_carpet_light_blue";
+                break;
+            }
+            case BLUE:
+            {
+                texturePath += "villager_table_carpet_blue";
+                break;
+            }
+            case PURPLE:
+            {
+                texturePath += "villager_table_carpet_purple";
+                break;
+            }
+            case MAGENTA:
+            {
+                texturePath += "villager_table_carpet_magenta";
+                break;
+            }
+            default:
+            {
+                texturePath += "villager_table_carpet_pink";
+                break;
+            }
+        }
+        return texturePath;
+    }
+
+    private String nameModelCarpetSelection(VillagerCarpetColor villagerCarpetColor)
+    {
+        switch (villagerCarpetColor)
+        {
+            case WHITE: return "_white";
+            case LIGHT_GRAY: return "_light_gray";
+            case GRAY: return "_gray";
+            case BLACK: return "_black";
+            case BROWN: return "_brown";
+            case RED: return "_red";
+            case ORANGE: return "_orange";
+            case YELLOW: return "_yellow";
+            case LIME: return "_lime";
+            case GREEN: return "_green";
+            case CYAN: return "_cyan";
+            case LIGHT_BLUE: return "_light_blue";
+            case BLUE: return "_blue";
+            case PURPLE: return "_purple";
+            case MAGENTA: return "_magenta";
+            default: return "_pink";
+        }
     }
 
 

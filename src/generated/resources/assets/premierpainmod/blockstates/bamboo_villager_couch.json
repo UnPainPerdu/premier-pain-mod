@@ -1,0 +1,2044 @@
+{
+  "variants": {
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_black",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_black",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_brown",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_brown",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_cyan",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_cyan",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_green",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_green",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_lime",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_lime",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_magenta",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_magenta",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_orange",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_orange",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_purple",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_purple",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_red",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_red",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_white",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_white",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_yellow",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=east,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_yellow",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_black",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_black",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_brown",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_brown",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_cyan",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_cyan",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_green",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_green",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_lime",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_lime",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_magenta",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_magenta",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_orange",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_orange",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_purple",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_purple",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_red",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_red",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_white",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_white",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_yellow",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=north,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_yellow",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_black"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_black"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_blue"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_blue"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_brown"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_brown"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_cyan"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_cyan"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_gray"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_gray"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_green"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_green"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_blue"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_blue"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_gray"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_gray"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_lime"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_lime"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_magenta"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_magenta"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_orange"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_orange"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_purple"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_purple"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_red"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_red"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_white"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_white"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_yellow"
+    },
+    "adaptable_sit_shape=middle_alone,facing=south,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_yellow"
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_black",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_black",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_brown",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_brown",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_cyan",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_cyan",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_green",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_green",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_light_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_lime",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_lime",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_magenta",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_magenta",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_orange",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_orange",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_purple",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_purple",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_red",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_red",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_white",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_white",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_yellow",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_alone,facing=west,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_alone_yellow",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_black",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_black",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_brown",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_brown",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_cyan",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_cyan",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_green",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_green",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_lime",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_lime",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_magenta",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_magenta",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_orange",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_orange",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_purple",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_purple",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_red",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_red",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_white",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_white",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_yellow",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=east,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_yellow",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_black",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_black",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_brown",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_brown",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_cyan",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_cyan",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_green",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_green",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_lime",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_lime",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_magenta",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_magenta",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_orange",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_orange",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_purple",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_purple",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_red",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_red",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_white",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_white",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_yellow",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=north,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_yellow",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_black"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_black"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_blue"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_blue"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_brown"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_brown"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_cyan"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_cyan"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_gray"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_gray"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_green"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_green"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_blue"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_blue"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_gray"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_gray"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_lime"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_lime"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_magenta"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_magenta"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_orange"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_orange"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_purple"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_purple"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_red"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_red"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_white"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_white"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_yellow"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=south,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_yellow"
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_black",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_black",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_brown",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_brown",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_cyan",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_cyan",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_green",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_green",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_light_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_lime",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_lime",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_magenta",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_magenta",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_orange",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_orange",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_purple",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_purple",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_red",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_red",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_white",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_white",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_yellow",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left,facing=west,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_yellow",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_black",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_black",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_brown",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_brown",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_cyan",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_cyan",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_green",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_green",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_lime",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_lime",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_magenta",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_magenta",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_orange",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_orange",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_purple",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_purple",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_red",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_red",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_white",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_white",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_yellow",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=east,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_yellow",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_black",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_black",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_brown",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_brown",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_cyan",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_cyan",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_green",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_green",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_lime",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_lime",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_magenta",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_magenta",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_orange",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_orange",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_purple",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_purple",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_red",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_red",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_white",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_white",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_yellow",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=north,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_yellow",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_black"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_black"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_blue"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_blue"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_brown"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_brown"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_cyan"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_cyan"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_gray"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_gray"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_green"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_green"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_blue"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_blue"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_gray"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_gray"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_lime"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_lime"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_magenta"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_magenta"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_orange"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_orange"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_purple"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_purple"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_red"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_red"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_white"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_white"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_yellow"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=south,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_yellow"
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_black",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_black",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_brown",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_brown",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_cyan",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_cyan",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_green",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_green",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_light_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_lime",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_lime",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_magenta",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_magenta",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_orange",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_orange",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_purple",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_purple",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_red",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_red",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_white",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_white",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_yellow",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_left_and_right,facing=west,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_left_and_right_yellow",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_black",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_black",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_brown",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_brown",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_cyan",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_cyan",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_green",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_green",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_blue",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_gray",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_lime",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_lime",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_magenta",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_magenta",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_orange",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_orange",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_purple",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_purple",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_red",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_red",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_white",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_white",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_yellow",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=east,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_yellow",
+      "y": 270
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_black",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_black",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_brown",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_brown",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_cyan",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_cyan",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_green",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_green",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_blue",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_gray",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_lime",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_lime",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_magenta",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_magenta",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_orange",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_orange",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_purple",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_purple",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_red",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_red",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_white",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_white",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_yellow",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=north,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_yellow",
+      "y": 180
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_black"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_black"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_blue"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_blue"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_brown"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_brown"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_cyan"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_cyan"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_gray"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_gray"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_green"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_green"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_blue"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_blue"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_gray"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_gray"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_lime"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_lime"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_magenta"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_magenta"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_orange"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_orange"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_purple"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_purple"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_red"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_red"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_white"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_white"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_yellow"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=south,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_yellow"
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_black",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_black",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_brown",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_brown",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_cyan",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_cyan",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_green",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_green",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_blue",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_light_gray",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_lime",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_lime",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_magenta",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_magenta",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_orange",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_orange",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_pink",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_purple",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_purple",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_red",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_red",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_white",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_white",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_yellow",
+      "y": 90
+    },
+    "adaptable_sit_shape=middle_with_right,facing=west,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/bamboo_villager_couch_with_right_yellow",
+      "y": 90
+    }
+  }
+}

@@ -29,6 +29,9 @@
     "premierpainmod:lapis_block_wall_villager_shelf",
     "premierpainmod:iron_block_villager_bench",
     "premierpainmod:copper_block_villager_bench",
-    "premierpainmod:lapis_block_villager_bench"
+    "premierpainmod:lapis_block_villager_bench",
+    "premierpainmod:iron_block_villager_couch",
+    "premierpainmod:copper_block_villager_couch",
+    "premierpainmod:lapis_block_villager_couch"
   ]
 }

@@ -9,6 +9,9 @@
     "premierpainmod:acacia_villager_chair": {
       "burn_time": 300
     },
+    "premierpainmod:acacia_villager_couch": {
+      "burn_time": 300
+    },
     "premierpainmod:acacia_villager_drawer": {
       "burn_time": 300
     },
@@ -34,6 +37,9 @@
       "burn_time": 300
     },
     "premierpainmod:bamboo_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:bamboo_villager_couch": {
       "burn_time": 300
     },
     "premierpainmod:bamboo_villager_drawer": {
@@ -63,6 +69,9 @@
     "premierpainmod:birch_villager_chair": {
       "burn_time": 300
     },
+    "premierpainmod:birch_villager_couch": {
+      "burn_time": 300
+    },
     "premierpainmod:birch_villager_drawer": {
       "burn_time": 300
     },
@@ -88,6 +97,9 @@
       "burn_time": 300
     },
     "premierpainmod:cherry_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:cherry_villager_couch": {
       "burn_time": 300
     },
     "premierpainmod:cherry_villager_drawer": {
@@ -117,6 +129,9 @@
     "premierpainmod:dark_oak_villager_chair": {
       "burn_time": 300
     },
+    "premierpainmod:dark_oak_villager_couch": {
+      "burn_time": 300
+    },
     "premierpainmod:dark_oak_villager_drawer": {
       "burn_time": 300
     },
@@ -142,6 +157,9 @@
       "burn_time": 300
     },
     "premierpainmod:jungle_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:jungle_villager_couch": {
       "burn_time": 300
     },
     "premierpainmod:jungle_villager_drawer": {
@@ -171,6 +189,9 @@
     "premierpainmod:mangrove_villager_chair": {
       "burn_time": 300
     },
+    "premierpainmod:mangrove_villager_couch": {
+      "burn_time": 300
+    },
     "premierpainmod:mangrove_villager_drawer": {
       "burn_time": 300
     },
@@ -198,6 +219,9 @@
     "premierpainmod:oak_villager_chair": {
       "burn_time": 300
     },
+    "premierpainmod:oak_villager_couch": {
+      "burn_time": 300
+    },
     "premierpainmod:oak_villager_drawer": {
       "burn_time": 300
     },
@@ -223,6 +247,9 @@
       "burn_time": 300
     },
     "premierpainmod:spruce_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_couch": {
       "burn_time": 300
     },
     "premierpainmod:spruce_villager_drawer": {

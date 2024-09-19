@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:purpur_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:purpur_block_villager_couch"
+  }
+}
