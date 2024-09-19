@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.event.blockEvent;
+package com.unpainperdu.premierpainmod.level.event.blockEvent.colorSwitchEvent;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
