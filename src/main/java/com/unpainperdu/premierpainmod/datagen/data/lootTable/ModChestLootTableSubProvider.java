@@ -24,6 +24,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
 
     public static ResourceKey<LootTable> FOREST_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","premier_pain_temple"); // key not change to forest_... cause laziness
     public static ResourceKey<LootTable> SAND_DESERT_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","sand_desert_premier_pain_temple");
+    public static ResourceKey<LootTable> SWAMP_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","swamp_premier_pain_temple");
 
     public ModChestLootTableSubProvider(HolderLookup.Provider lookupProvider)
     {
@@ -34,6 +35,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
     {
         forestPremierPainTempleChestLootTableGenerator(output);
         sandDesertPremierPainTempleChestLootTableGenerator(output);
+        swampPremierPainTempleChestLootTableGenerator(output);
     }
 
     public static ResourceKey<LootTable> createKey(String directory, String name)
@@ -101,6 +103,29 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
                         .add(LootItem.lootTableItem(Items.COPPER_INGOT).setWeight(50))
                         .add(LootItem.lootTableItem(Items.WHEAT).setWeight(100))
                         .add(LootItem.lootTableItem(Items.WHEAT_SEEDS).setWeight(100))
+                )//total weight = 1000
+        );
+    }
+
+    private static void swampPremierPainTempleChestLootTableGenerator(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder)
+    {
+        builder.accept(SWAMP_PREMIER_PAIN_TEMPLE_CHEST, LootTable.lootTable()
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2)))
+                .withPool(LootPool.lootPool()
+                        .setRolls(UniformGenerator.between(8, 15))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.MANGROVE_PROPAGULE).setWeight(75))
+                        .add(LootItem.lootTableItem(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE).setWeight(25))
+                        .add(LootItem.lootTableItem(ItemRegister.DIGGY_VILLAGER_SINGING_STONE).setWeight(25))
+                        .add(LootItem.lootTableItem(ItemRegister.MADNESS_VILLAGER_SINGING_STONE).setWeight(25))
+                        .add(LootItem.lootTableItem(Items.EMERALD).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.BREAD).setWeight(250))
+                        .add(LootItem.lootTableItem(Items.IRON_INGOT).setWeight(150))
+                        .add(LootItem.lootTableItem(Items.POTATO).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.STICK).setWeight(100))
+                        .add(LootItem.lootTableItem(Items.ARROW).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.CARROT).setWeight(100))
+                        .add(LootItem.lootTableItem(Items.POISONOUS_POTATO).setWeight(100))
                 )//total weight = 1000
         );
     }

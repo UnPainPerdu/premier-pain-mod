@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "premierpainmod:premier_pain_temple/swamp_premier_pain_temple_structure",
+      "weight": 1
+    }
+  ],
+  "placement":
+  {
+    "salt": 1642136474,
+    "spacing": 50,
+    "separation": 45,
+    "type": "minecraft:random_spread"
+  }
+}

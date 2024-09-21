@@ -1,4 +1,4 @@
-// 1.21.1	2024-09-19T15:52:41.2618419	Loot Tables
+// 1.21.1	2024-09-21T16:03:42.5568572	Loot Tables
 85e1b3be3a251346dee3b4a9e87e45d4d2a39670 data/premierpainmod/loot_table/blocks/acacia_standing_villager_shelf.json
 9aad298b58d17b0b5fe25d63ee29528f848013c4 data/premierpainmod/loot_table/blocks/acacia_villager_bench.json
 2fb10e5cf5f79a7045462e9fd6fd5bafd71b829a data/premierpainmod/loot_table/blocks/acacia_villager_brazier.json
@@ -455,3 +455,4 @@ a8581883d940fc8379845007c286674ed5794110 data/premierpainmod/loot_table/blocks/w
 baa57d4e8f26c402b176390cd65eb751d3f1fe42 data/premierpainmod/loot_table/blocks/warped_wall_villager_shelf.json
 947f847cb464e949029aa1e6bcfe6d1978390a61 data/premierpainmod/loot_table/chests/premier_pain_temple.json
 bb921e373ea0b71587c8f7b82e313e32cc4d4b43 data/premierpainmod/loot_table/chests/sand_desert_premier_pain_temple.json
+583bf0ef65fa719646995a88cf3892b07a1c3e8f data/premierpainmod/loot_table/chests/swamp_premier_pain_temple.json
