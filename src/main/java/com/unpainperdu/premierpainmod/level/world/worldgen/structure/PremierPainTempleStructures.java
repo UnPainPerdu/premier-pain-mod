@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.WorldGenerationContext;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
@@ -95,22 +96,13 @@ public class PremierPainTempleStructures extends Structure
      */
     private static boolean isSpawnable(Structure.GenerationContext context, int posY)
     {
-        // Grabs the chunk position we are at
-        ChunkPos chunkpos = context.chunkPos();
-        BlockPos blockPos = new BlockPos(chunkpos.getMinBlockX(), posY, chunkpos.getMinBlockZ());
-        boolean flag = false;
-
-        // Checks to make sure our structure does not spawn above land that's higher than y = 150
-        // to demonstrate how this method is good for checking extra conditions for spawning
-        flag = context.chunkGenerator().getFirstOccupiedHeight(
-                chunkpos.getMinBlockX(),
-                chunkpos.getMinBlockZ(),
-                Heightmap.Types.WORLD_SURFACE_WG,
-                context.heightAccessor(),
-                context.randomState()) > 63;
-
-        //return flag;
-        return true;
+        ChunkGenerator chunkGenerator = context.chunkGenerator();
+        boolean flag = true;
+        if (chunkGenerator.getSeaLevel() <= posY)
+        {
+            flag = false;
+        }
+        return flag;
     }
 
     @Override
