@@ -49,7 +49,15 @@ public class ModVegetationPlacement
         final Holder<ConfiguredFeature<?, ?>> TREE_MANGROVE_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.TREE_MANGROVE);
         register(pContext, ModVegetationPlacement.TREE_MANGROVE, TREE_MANGROVE_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> TREE_OAK_SWAMP_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.TREE_OAK_SWAMP);
-        register(pContext, ModVegetationPlacement.TREE_OAK_SWAMP, TREE_OAK_SWAMP_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(
+                pContext,
+                ModVegetationPlacement.TREE_OAK_SWAMP,
+                TREE_OAK_SWAMP_HOLDER,
+                RarityFilter.onAverageOnceEvery(1),
+                InSquarePlacement.spread(),
+                SurfaceWaterDepthFilter.forMaxDepth(2),
+                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+                BiomeFilter.biome());
         //misc
         final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
         register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());

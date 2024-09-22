@@ -57,7 +57,7 @@ public class ModOverworldRegion extends Region
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.WARM))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
                 .continentalness(Climate.Parameter.span(midInland, farInland))
-                .erosion(ParameterUtils.Erosion.EROSION_1)
+                .erosion(ParameterUtils.Erosion.EROSION_6)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, ModBiomes.SWAMP_PREMIER_PAIN_RUINS));
