@@ -9,6 +9,6 @@ public class SkySpearsFeature extends AbstractTallGrassFeature
 {
     public SkySpearsFeature(Codec<NoneFeatureConfiguration> pCodec)
     {
-        super(pCodec, 3, 9, 2, BlockRegister.SKY_SPEARS.get(), BlockTags.DIRT);
+        super(pCodec, 7, 11, 2, BlockRegister.SKY_SPEARS.get(), BlockTags.DIRT);
     }
 }

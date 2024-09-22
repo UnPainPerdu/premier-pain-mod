@@ -63,7 +63,7 @@ public class ModVegetationPlacement
         register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         //tall grass
         final Holder<ConfiguredFeature<?, ?>> SKY_SPEARS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.SKY_SPEARS);
-        register(pContext, ModVegetationPlacement.PATCH_SKY_SPEARS, SKY_SPEARS_HOLDER, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(pContext, ModVegetationPlacement.PATCH_SKY_SPEARS, SKY_SPEARS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> DEAD_TALL_BUSH_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.DEAD_TALL_BUSH);
         register(pContext, ModVegetationPlacement.PATCH_DEAD_TALL_BUSH, DEAD_TALL_BUSH_HOLDER, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
