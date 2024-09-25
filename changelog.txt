@@ -84,6 +84,8 @@ fix :
 --------------
 1.21.x-1.9.0
 update neoforge to 21.1.61
+## Warning :
+    All two width block blocks will be bugged after update, break it and replace it to fix
 ## add :
     - Sand desert Premier Pain ruins
     - Sand desert Premier Pain temple which spawn in sand desert Premier Pain ruins
