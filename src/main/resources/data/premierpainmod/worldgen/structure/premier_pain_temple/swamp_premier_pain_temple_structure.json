@@ -1,7 +1,7 @@
 {
   "type": "premierpainmod:premier_pain_temple_structure",
 
-  "start_pool": "premierpainmod:premier_pain_temple/swamp_premier_pain_temple_structure",
+  "start_pool": "premierpainmod:premier_pain_temple/swamp_premier_pain_temple_structure/bottom",
 
   "size": 1,
 
@@ -13,7 +13,7 @@
 
   "start_height":
   {
-    "absolute": 0
+    "absolute": -14
   },
 
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
