@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
@@ -149,7 +150,27 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     }
 
     @Override
-    public abstract VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context);
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context)
+    {
+        VoxelShape shape;
+        if(state.getValue(FACING) == Direction.NORTH)
+        {
+            shape = Shapes.or(Block.box(0, 4, 1, 16, 7, 14), Block.box(0, 7, 1, 16, 16, 3));
+        }
+        else if (state.getValue(FACING) == Direction.EAST)
+        {
+            shape = Shapes.or(Block.box(2, 4, 0, 15, 7, 16), Block.box(13, 7, 0, 15, 16, 16));
+        }
+        else if (state.getValue(FACING) == Direction.WEST)
+        {
+            shape = Shapes.or(Block.box(1, 4, 0, 14, 7, 16), Block.box(1, 7, 0, 3, 16, 16));
+        }
+        else
+        {
+            shape = Shapes.or(Block.box(0, 4, 2, 16, 7, 15), Block.box(0, 7, 13, 16, 16, 15));
+        }
+        return shape;
+    }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
