@@ -20,6 +20,7 @@ import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -48,6 +49,7 @@ public class CreativeMainTab
                     || block instanceof FloweredCactusBlock
                     || block instanceof AbstractGrowingAboveVegetation
                     || block instanceof FlowerBlock
+                    || block instanceof DeadBushBlock
             )
             {
                 output.accept(block);
