@@ -104,3 +104,11 @@ update neoforge to 21.1.61
 ## fix :
     - Grass in forest Premier Pain ruins stop spawning underground
     - Particle of some blocks
+--------------
+1.21.x-1.9.1
+
+## add :
+    - Pale oak type for the "all materials blocks"
+
+## fix :
+    - Dead ruins flower is now in the creative tab
