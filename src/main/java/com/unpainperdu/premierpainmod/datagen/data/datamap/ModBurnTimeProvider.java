@@ -36,6 +36,7 @@ public class ModBurnTimeProvider
         String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
 
         if ((itemName.contains("dark_oak"))
+                || (itemName.contains("pale_oak"))
                 || (itemName.contains("oak"))
                 || (itemName.contains("birch"))
                 || (itemName.contains("spruce"))

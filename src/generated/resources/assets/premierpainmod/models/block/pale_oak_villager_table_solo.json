@@ -1,0 +1,8 @@
+{
+  "parent": "premierpainmod:block/all_materials_block/villager_table/villager_table_solo/villager_table_solo",
+  "textures": {
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/pale_oak_villager",
+    "1": "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_pink",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/pale_oak_villager"
+  }
+}

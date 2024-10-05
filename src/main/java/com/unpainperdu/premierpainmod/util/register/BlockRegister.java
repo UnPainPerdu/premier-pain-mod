@@ -101,6 +101,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_STATUE = allMaterialsBlockRegister("villager_statue","bamboo_villager_statue","bamboo");
     public static final DeferredBlock<Block> CRIMSON_VILLAGER_STATUE = allMaterialsBlockRegister("villager_statue","crimson_villager_statue","netherwood");
     public static final DeferredBlock<Block> WARPED_VILLAGER_STATUE = allMaterialsBlockRegister("villager_statue","warped_villager_statue","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_VILLAGER_STATUE =  allMaterialsBlockRegister("villager_statue","pale_oak_villager_statue","wood");
     public static final DeferredBlock<Block> STONE_VILLAGER_STATUE =  allMaterialsBlockRegister("villager_statue","stone_villager_statue","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_STATUE =  allMaterialsBlockRegister("villager_statue","mossy_stone_villager_statue","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_STATUE =  allMaterialsBlockRegister("villager_statue","andesite_villager_statue","stone");
@@ -143,6 +144,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_PEDESTAL = allMaterialsBlockRegister("villager_pedestal","bamboo_villager_pedestal","bamboo");
     public static final DeferredBlock<Block> CRIMSON_PEDESTAL = allMaterialsBlockRegister("villager_pedestal","crimson_villager_pedestal","netherwood");
     public static final DeferredBlock<Block> WARPED_PEDESTAL = allMaterialsBlockRegister("villager_pedestal","warped_villager_pedestal","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_PEDESTAL = allMaterialsBlockRegister("villager_pedestal","pale_oak_villager_pedestal","wood");
     public static final DeferredBlock<Block> STONE_PEDESTAL =  allMaterialsBlockRegister("villager_pedestal","stone_villager_pedestal","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_PEDESTAL =  allMaterialsBlockRegister("villager_pedestal","mossy_stone_villager_pedestal","stone");
     public static final DeferredBlock<Block> ANDESITE_PEDESTAL =  allMaterialsBlockRegister("villager_pedestal","andesite_villager_pedestal","stone");
@@ -185,6 +187,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_BRAZIER = allMaterialsBlockRegister("villager_brazier","bamboo_villager_brazier","bamboo");
     public static final DeferredBlock<Block> CRIMSON_VILLAGER_BRAZIER = allMaterialsBlockRegister("villager_brazier","crimson_villager_brazier","netherwood");
     public static final DeferredBlock<Block> WARPED_VILLAGER_BRAZIER = allMaterialsBlockRegister("villager_brazier","warped_villager_brazier","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_VILLAGER_BRAZIER = allMaterialsBlockRegister("villager_brazier","pale_oak_villager_brazier","wood");
     public static final DeferredBlock<Block> STONE_VILLAGER_BRAZIER =  allMaterialsBlockRegister("villager_brazier","stone_villager_brazier","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_BRAZIER =  allMaterialsBlockRegister("villager_brazier","mossy_stone_villager_brazier","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_BRAZIER =  allMaterialsBlockRegister("villager_brazier","andesite_villager_brazier","stone");
@@ -227,6 +230,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_TABLE = allMaterialsBlockRegister("villager_table","bamboo_villager_table","bamboo");
     public static final DeferredBlock<Block> CRIMSON_VILLAGER_TABLE = allMaterialsBlockRegister("villager_table","crimson_villager_table","netherwood");
     public static final DeferredBlock<Block> WARPED_VILLAGER_TABLE = allMaterialsBlockRegister("villager_table","warped_villager_table","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_VILLAGER_TABLE = allMaterialsBlockRegister("villager_table","pale_oak_villager_table","wood");
     public static final DeferredBlock<Block> STONE_VILLAGER_TABLE =  allMaterialsBlockRegister("villager_table","stone_villager_table","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_TABLE =  allMaterialsBlockRegister("villager_table","mossy_stone_villager_table","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_TABLE =  allMaterialsBlockRegister("villager_table","andesite_villager_table","stone");
@@ -269,6 +273,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_CHAIR = allMaterialsBlockRegister("villager_chair","bamboo_villager_chair","bamboo");
     public static final DeferredBlock<Block> CRIMSON_VILLAGER_CHAIR = allMaterialsBlockRegister("villager_chair","crimson_villager_chair","netherwood");
     public static final DeferredBlock<Block> WARPED_VILLAGER_CHAIR = allMaterialsBlockRegister("villager_chair","warped_villager_chair","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_VILLAGER_CHAIR = allMaterialsBlockRegister("villager_chair","pale_oak_villager_chair","wood");
     public static final DeferredBlock<Block> STONE_VILLAGER_CHAIR =  allMaterialsBlockRegister("villager_chair","stone_villager_chair","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_CHAIR =  allMaterialsBlockRegister("villager_chair","mossy_stone_villager_chair","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_CHAIR =  allMaterialsBlockRegister("villager_chair","andesite_villager_chair","stone");
@@ -311,6 +316,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_THRONE_CHAIR = allMaterialsBlockRegister("villager_throne_chair","bamboo_villager_throne_chair","bamboo");
     public static final DeferredBlock<Block> CRIMSON_VILLAGER_THRONE_CHAIR = allMaterialsBlockRegister("villager_throne_chair","crimson_villager_throne_chair","netherwood");
     public static final DeferredBlock<Block> WARPED_VILLAGER_THRONE_CHAIR = allMaterialsBlockRegister("villager_throne_chair","warped_villager_throne_chair","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_VILLAGER_THRONE_CHAIR = allMaterialsBlockRegister("villager_throne_chair","pale_oak_villager_throne_chair","wood");
     public static final DeferredBlock<Block> STONE_VILLAGER_THRONE_CHAIR =  allMaterialsBlockRegister("villager_throne_chair","stone_villager_throne_chair","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_THRONE_CHAIR =  allMaterialsBlockRegister("villager_throne_chair","mossy_stone_villager_throne_chair","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_THRONE_CHAIR =  allMaterialsBlockRegister("villager_throne_chair","andesite_villager_throne_chair","stone");
@@ -354,6 +360,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_DRAWER = allMaterialsBlockRegister("villager_drawer","bamboo_villager_drawer","bamboo");
     public static final DeferredBlock<Block> CRIMSON_VILLAGER_DRAWER = allMaterialsBlockRegister("villager_drawer","crimson_villager_drawer","netherwood");
     public static final DeferredBlock<Block> WARPED_VILLAGER_DRAWER = allMaterialsBlockRegister("villager_drawer","warped_villager_drawer","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_VILLAGER_DRAWER = allMaterialsBlockRegister("villager_drawer","pale_oak_villager_drawer","wood");
     public static final DeferredBlock<Block> STONE_VILLAGER_DRAWER =  allMaterialsBlockRegister("villager_drawer","stone_villager_drawer","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_DRAWER =  allMaterialsBlockRegister("villager_drawer","mossy_stone_villager_drawer","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_DRAWER =  allMaterialsBlockRegister("villager_drawer","andesite_villager_drawer","stone");
@@ -397,6 +404,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_STANDING_VILLAGER_SHELF = allMaterialsBlockRegister("standing_villager_shelf","bamboo_standing_villager_shelf","bamboo");
     public static final DeferredBlock<Block> CRIMSON_STANDING_VILLAGER_SHELF = allMaterialsBlockRegister("standing_villager_shelf","crimson_standing_villager_shelf","netherwood");
     public static final DeferredBlock<Block> WARPED_STANDING_VILLAGER_SHELF = allMaterialsBlockRegister("standing_villager_shelf","warped_standing_villager_shelf","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_STANDING_VILLAGER_SHELF = allMaterialsBlockRegister("standing_villager_shelf","pale_oak_standing_villager_shelf","wood");
     public static final DeferredBlock<Block> STONE_STANDING_VILLAGER_SHELF =  allMaterialsBlockRegister("standing_villager_shelf","stone_standing_villager_shelf","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_STANDING_VILLAGER_SHELF =  allMaterialsBlockRegister("standing_villager_shelf","mossy_stone_standing_villager_shelf","stone");
     public static final DeferredBlock<Block> ANDESITE_STANDING_VILLAGER_SHELF =  allMaterialsBlockRegister("standing_villager_shelf","andesite_standing_villager_shelf","stone");
@@ -439,6 +447,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_WALL_VILLAGER_SHELF = allMaterialsBlockRegister("wall_villager_shelf","bamboo_wall_villager_shelf","bamboo");
     public static final DeferredBlock<Block> CRIMSON_WALL_VILLAGER_SHELF = allMaterialsBlockRegister("wall_villager_shelf","crimson_wall_villager_shelf","netherwood");
     public static final DeferredBlock<Block> WARPED_WALL_VILLAGER_SHELF = allMaterialsBlockRegister("wall_villager_shelf","warped_wall_villager_shelf","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_WALL_VILLAGER_SHELF = allMaterialsBlockRegister("wall_villager_shelf","pale_oak_wall_villager_shelf","wood");
     public static final DeferredBlock<Block> STONE_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","stone_wall_villager_shelf","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","mossy_stone_wall_villager_shelf","stone");
     public static final DeferredBlock<Block> ANDESITE_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","andesite_wall_villager_shelf","stone");
@@ -481,6 +490,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","bamboo_villager_bench","bamboo");
     public static final DeferredBlock<Block> CRIMSON_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","crimson_villager_bench","netherwood");
     public static final DeferredBlock<Block> WARPED_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","warped_villager_bench","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","pale_oak_villager_bench","wood");
     public static final DeferredBlock<Block> STONE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","stone_villager_bench","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","mossy_stone_villager_bench","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","andesite_villager_bench","stone");
@@ -524,6 +534,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> BAMBOO_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","bamboo_villager_couch","bamboo");
     public static final DeferredBlock<Block> CRIMSON_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","crimson_villager_couch","netherwood");
     public static final DeferredBlock<Block> WARPED_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","warped_villager_couch","netherwood");
+    public static final DeferredBlock<Block> PALE_OAK_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","pale_oak_villager_couch","wood");
     public static final DeferredBlock<Block> STONE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","stone_villager_couch","stone");
     public static final DeferredBlock<Block> MOSSY_STONE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","mossy_stone_villager_couch","stone");
     public static final DeferredBlock<Block> ANDESITE_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","andesite_villager_couch","stone");

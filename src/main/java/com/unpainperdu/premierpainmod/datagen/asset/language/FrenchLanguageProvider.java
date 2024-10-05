@@ -63,6 +63,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("jungle","acajou");
         globalAllMaterialTranslation("acacia","acacia");
         globalAllMaterialTranslation("dark_oak","chêne noir");
+        globalAllMaterialTranslation("pale_oak","chêne pâle");
         globalAllMaterialTranslation("mangrove","palétuvier");
         globalAllMaterialTranslation("cherry","cerisier");
         globalAllMaterialTranslation("crimson", "bois carmin");

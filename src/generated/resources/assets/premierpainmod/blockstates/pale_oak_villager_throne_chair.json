@@ -1,0 +1,1024 @@
+{
+  "variants": {
+    "facing=east,half=lower,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_black",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_black",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_blue",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_blue",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_brown",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_brown",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_cyan",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_cyan",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_gray",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_gray",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_green",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_green",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_blue",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_blue",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_gray",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_gray",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_lime",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_lime",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_magenta",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_magenta",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_orange",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_orange",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_pink",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_pink",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_purple",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_purple",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_red",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_red",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_white",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_white",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_yellow",
+      "y": 270
+    },
+    "facing=east,half=lower,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_yellow",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_black",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_black",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_blue",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_blue",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_brown",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_brown",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_cyan",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_cyan",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_gray",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_gray",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_green",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_green",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_blue",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_blue",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_gray",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_gray",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_lime",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_lime",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_magenta",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_magenta",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_orange",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_orange",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_pink",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_pink",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_purple",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_purple",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_red",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_red",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_white",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_white",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_yellow",
+      "y": 270
+    },
+    "facing=east,half=upper,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_yellow",
+      "y": 270
+    },
+    "facing=north,half=lower,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_black",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_black",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_blue",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_blue",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_brown",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_brown",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_cyan",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_cyan",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_gray",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_gray",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_green",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_green",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_blue",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_blue",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_gray",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_gray",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_lime",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_lime",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_magenta",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_magenta",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_orange",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_orange",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_pink",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_pink",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_purple",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_purple",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_red",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_red",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_white",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_white",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_yellow",
+      "y": 180
+    },
+    "facing=north,half=lower,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_yellow",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_black",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_black",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_blue",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_blue",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_brown",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_brown",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_cyan",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_cyan",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_gray",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_gray",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_green",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_green",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_blue",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_blue",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_gray",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_gray",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_lime",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_lime",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_magenta",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_magenta",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_orange",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_orange",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_pink",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_pink",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_purple",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_purple",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_red",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_red",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_white",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_white",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_yellow",
+      "y": 180
+    },
+    "facing=north,half=upper,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_yellow",
+      "y": 180
+    },
+    "facing=south,half=lower,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_black"
+    },
+    "facing=south,half=lower,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_black"
+    },
+    "facing=south,half=lower,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_blue"
+    },
+    "facing=south,half=lower,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_blue"
+    },
+    "facing=south,half=lower,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_brown"
+    },
+    "facing=south,half=lower,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_brown"
+    },
+    "facing=south,half=lower,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_cyan"
+    },
+    "facing=south,half=lower,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_cyan"
+    },
+    "facing=south,half=lower,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_gray"
+    },
+    "facing=south,half=lower,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_gray"
+    },
+    "facing=south,half=lower,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_green"
+    },
+    "facing=south,half=lower,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_green"
+    },
+    "facing=south,half=lower,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_blue"
+    },
+    "facing=south,half=lower,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_blue"
+    },
+    "facing=south,half=lower,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_gray"
+    },
+    "facing=south,half=lower,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_gray"
+    },
+    "facing=south,half=lower,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_lime"
+    },
+    "facing=south,half=lower,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_lime"
+    },
+    "facing=south,half=lower,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_magenta"
+    },
+    "facing=south,half=lower,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_magenta"
+    },
+    "facing=south,half=lower,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom"
+    },
+    "facing=south,half=lower,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom"
+    },
+    "facing=south,half=lower,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_orange"
+    },
+    "facing=south,half=lower,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_orange"
+    },
+    "facing=south,half=lower,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_pink"
+    },
+    "facing=south,half=lower,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_pink"
+    },
+    "facing=south,half=lower,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_purple"
+    },
+    "facing=south,half=lower,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_purple"
+    },
+    "facing=south,half=lower,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_red"
+    },
+    "facing=south,half=lower,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_red"
+    },
+    "facing=south,half=lower,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_white"
+    },
+    "facing=south,half=lower,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_white"
+    },
+    "facing=south,half=lower,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_yellow"
+    },
+    "facing=south,half=lower,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_yellow"
+    },
+    "facing=south,half=upper,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_black"
+    },
+    "facing=south,half=upper,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_black"
+    },
+    "facing=south,half=upper,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_blue"
+    },
+    "facing=south,half=upper,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_blue"
+    },
+    "facing=south,half=upper,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_brown"
+    },
+    "facing=south,half=upper,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_brown"
+    },
+    "facing=south,half=upper,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_cyan"
+    },
+    "facing=south,half=upper,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_cyan"
+    },
+    "facing=south,half=upper,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_gray"
+    },
+    "facing=south,half=upper,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_gray"
+    },
+    "facing=south,half=upper,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_green"
+    },
+    "facing=south,half=upper,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_green"
+    },
+    "facing=south,half=upper,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_blue"
+    },
+    "facing=south,half=upper,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_blue"
+    },
+    "facing=south,half=upper,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_gray"
+    },
+    "facing=south,half=upper,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_gray"
+    },
+    "facing=south,half=upper,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_lime"
+    },
+    "facing=south,half=upper,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_lime"
+    },
+    "facing=south,half=upper,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_magenta"
+    },
+    "facing=south,half=upper,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_magenta"
+    },
+    "facing=south,half=upper,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper"
+    },
+    "facing=south,half=upper,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper"
+    },
+    "facing=south,half=upper,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_orange"
+    },
+    "facing=south,half=upper,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_orange"
+    },
+    "facing=south,half=upper,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_pink"
+    },
+    "facing=south,half=upper,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_pink"
+    },
+    "facing=south,half=upper,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_purple"
+    },
+    "facing=south,half=upper,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_purple"
+    },
+    "facing=south,half=upper,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_red"
+    },
+    "facing=south,half=upper,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_red"
+    },
+    "facing=south,half=upper,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_white"
+    },
+    "facing=south,half=upper,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_white"
+    },
+    "facing=south,half=upper,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_yellow"
+    },
+    "facing=south,half=upper,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_yellow"
+    },
+    "facing=west,half=lower,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_black",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_black",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_blue",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_blue",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_brown",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_brown",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_cyan",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_cyan",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_gray",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_gray",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_green",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_green",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_blue",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_blue",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_gray",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_light_gray",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_lime",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_lime",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_magenta",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_magenta",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_orange",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_orange",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_pink",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_pink",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_purple",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_purple",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_red",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_red",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_white",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_white",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_yellow",
+      "y": 90
+    },
+    "facing=west,half=lower,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_bottom_c_yellow",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=black,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_black",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=black,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_black",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_blue",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_blue",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=brown,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_brown",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=brown,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_brown",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=cyan,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_cyan",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=cyan,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_cyan",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_gray",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_gray",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=green,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_green",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=green,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_green",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=light_blue,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_blue",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=light_blue,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_blue",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=light_gray,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_gray",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=light_gray,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_light_gray",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=lime,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_lime",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=lime,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_lime",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=magenta,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_magenta",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=magenta,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_magenta",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=none,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=none,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=orange,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_orange",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=orange,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_orange",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=pink,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_pink",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=pink,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_pink",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=purple,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_purple",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=purple,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_purple",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=red,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_red",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=red,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_red",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=white,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_white",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=white,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_white",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=yellow,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_yellow",
+      "y": 90
+    },
+    "facing=west,half=upper,villager_carpet_color=yellow,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_throne_chair_upper_c_yellow",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "minecraft:stick"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:pale_oak_villager_table"
+  }
+}

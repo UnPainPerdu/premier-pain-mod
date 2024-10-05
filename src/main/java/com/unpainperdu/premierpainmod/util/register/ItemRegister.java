@@ -32,6 +32,7 @@ public class ItemRegister
     public static final DeferredItem<Item>  BAMBOO_VILLAGER_SHELF = villagerShelfRegister("bamboo_villager_shelf", () ->BlockRegister.BAMBOO_STANDING_VILLAGER_SHELF,() -> BlockRegister.BAMBOO_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  CRIMSON_VILLAGER_SHELF = villagerShelfRegister("crimson_villager_shelf", () ->BlockRegister.CRIMSON_STANDING_VILLAGER_SHELF,() -> BlockRegister.CRIMSON_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  WARPED_VILLAGER_SHELF = villagerShelfRegister("warped_villager_shelf", () ->BlockRegister.WARPED_STANDING_VILLAGER_SHELF,() -> BlockRegister.WARPED_WALL_VILLAGER_SHELF);
+    public static final DeferredItem<Item>  PALE_OAK_VILLAGER_SHELF = villagerShelfRegister("pale_oak_villager_shelf", () ->BlockRegister.PALE_OAK_STANDING_VILLAGER_SHELF,() -> BlockRegister.PALE_OAK_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  STONE_VILLAGER_SHELF = villagerShelfRegister("stone_villager_shelf", () ->BlockRegister.STONE_STANDING_VILLAGER_SHELF,() -> BlockRegister.STONE_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  MOSSY_STONE_VILLAGER_SHELF = villagerShelfRegister("mossy_stone_villager_shelf", () ->BlockRegister.MOSSY_STONE_STANDING_VILLAGER_SHELF,() -> BlockRegister.MOSSY_STONE_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  ANDESITE_VILLAGER_SHELF = villagerShelfRegister("andesite_villager_shelf", () ->BlockRegister.ANDESITE_STANDING_VILLAGER_SHELF,() -> BlockRegister.ANDESITE_WALL_VILLAGER_SHELF);

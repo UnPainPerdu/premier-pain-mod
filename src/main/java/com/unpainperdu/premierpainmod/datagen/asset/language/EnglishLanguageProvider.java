@@ -64,6 +64,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("jungle");
         globalAllMaterialTranslation("acacia");
         globalAllMaterialTranslation("dark","oak",true);
+        globalAllMaterialTranslation("pale","oak",true);
         globalAllMaterialTranslation("mangrove");
         globalAllMaterialTranslation("cherry");
         globalAllMaterialTranslation("crimson");

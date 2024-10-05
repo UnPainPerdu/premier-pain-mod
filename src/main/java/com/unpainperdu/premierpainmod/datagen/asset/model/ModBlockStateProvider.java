@@ -177,6 +177,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
 
         if(material.equals("oak_villager")
+            ||material.equals("pale_oak_villager")
             ||material.equals("birch_villager")
             ||material.equals("spruce_villager")
             ||material.equals("jungle_villager")

@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,open=false,two_block_width_part=left,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_closed",
+      "y": 270
+    },
+    "facing=east,open=false,two_block_width_part=left,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_closed",
+      "y": 270
+    },
+    "facing=east,open=false,two_block_width_part=right,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_closed",
+      "y": 270
+    },
+    "facing=east,open=false,two_block_width_part=right,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_closed",
+      "y": 270
+    },
+    "facing=east,open=true,two_block_width_part=left,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_opened",
+      "y": 270
+    },
+    "facing=east,open=true,two_block_width_part=left,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_opened",
+      "y": 270
+    },
+    "facing=east,open=true,two_block_width_part=right,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_opened",
+      "y": 270
+    },
+    "facing=east,open=true,two_block_width_part=right,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_opened",
+      "y": 270
+    },
+    "facing=north,open=false,two_block_width_part=left,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_closed",
+      "y": 180
+    },
+    "facing=north,open=false,two_block_width_part=left,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_closed",
+      "y": 180
+    },
+    "facing=north,open=false,two_block_width_part=right,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_closed",
+      "y": 180
+    },
+    "facing=north,open=false,two_block_width_part=right,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_closed",
+      "y": 180
+    },
+    "facing=north,open=true,two_block_width_part=left,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_opened",
+      "y": 180
+    },
+    "facing=north,open=true,two_block_width_part=left,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_opened",
+      "y": 180
+    },
+    "facing=north,open=true,two_block_width_part=right,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_opened",
+      "y": 180
+    },
+    "facing=north,open=true,two_block_width_part=right,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_opened",
+      "y": 180
+    },
+    "facing=south,open=false,two_block_width_part=left,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_closed"
+    },
+    "facing=south,open=false,two_block_width_part=left,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_closed"
+    },
+    "facing=south,open=false,two_block_width_part=right,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_closed"
+    },
+    "facing=south,open=false,two_block_width_part=right,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_closed"
+    },
+    "facing=south,open=true,two_block_width_part=left,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_opened"
+    },
+    "facing=south,open=true,two_block_width_part=left,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_opened"
+    },
+    "facing=south,open=true,two_block_width_part=right,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_opened"
+    },
+    "facing=south,open=true,two_block_width_part=right,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_opened"
+    },
+    "facing=west,open=false,two_block_width_part=left,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_closed",
+      "y": 90
+    },
+    "facing=west,open=false,two_block_width_part=left,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_closed",
+      "y": 90
+    },
+    "facing=west,open=false,two_block_width_part=right,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_closed",
+      "y": 90
+    },
+    "facing=west,open=false,two_block_width_part=right,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_closed",
+      "y": 90
+    },
+    "facing=west,open=true,two_block_width_part=left,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_opened",
+      "y": 90
+    },
+    "facing=west,open=true,two_block_width_part=left,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_left_opened",
+      "y": 90
+    },
+    "facing=west,open=true,two_block_width_part=right,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_opened",
+      "y": 90
+    },
+    "facing=west,open=true,two_block_width_part=right,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_drawer_right_opened",
+      "y": 90
+    }
+  }
+}

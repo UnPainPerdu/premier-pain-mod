@@ -56,9 +56,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     villagerWorkshopRecipeBuilder(block);
                 }
                 //oak like
-                else if (blockName.contains("dark_oak")) {
+                else if (blockName.contains("dark_oak"))
+                {
                     buildingBlocksReciperBluilder(block, Blocks.DARK_OAK_PLANKS);
-                } else if (blockName.contains("oak")) {
+
+                }  else if (blockName.contains("pale_oak"))
+                {
+                    buildingBlocksReciperBluilder(block, Items.STICK);
+                }
+                else if (blockName.contains("oak")) {
                     buildingBlocksReciperBluilder(block, Blocks.OAK_PLANKS);
                 }
                 //stone like

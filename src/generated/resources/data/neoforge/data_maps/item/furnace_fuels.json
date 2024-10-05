@@ -240,6 +240,36 @@
     "premierpainmod:oak_villager_throne_chair": {
       "burn_time": 300
     },
+    "premierpainmod:pale_oak_villager_bench": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_couch": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:pale_oak_villager_throne_chair": {
+      "burn_time": 300
+    },
     "premierpainmod:spruce_villager_bench": {
       "burn_time": 300
     },
