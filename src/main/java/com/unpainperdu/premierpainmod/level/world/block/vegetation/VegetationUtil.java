@@ -3,10 +3,12 @@ package com.unpainperdu.premierpainmod.level.world.block.vegetation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GrassBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class VegetationUtil
 {
@@ -93,8 +95,8 @@ public class VegetationUtil
             while(i < 5)
             {
                 BlockPos posBelow = pos.below();
-                Block blockBelow = level.getBlockState(posBelow).getBlock();
-                if (blockBelow instanceof GrassBlock)
+                BlockState blockStateBelow = level.getBlockState(posBelow);
+                if (blockStateBelow.is(BlockTags.DIRT))
                 {
                     finalPos = pos;
                     break;
