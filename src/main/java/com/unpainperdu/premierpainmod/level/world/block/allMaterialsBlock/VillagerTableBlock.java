@@ -10,6 +10,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -113,5 +114,30 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
                 this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite())
         )
                 : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+    }
+
+    @Override
+    protected BlockState rotate(BlockState state, Rotation rot)
+    {
+        switch (rot)
+        {
+            case CLOCKWISE_180:
+                return state.setValue(NORTH, state.getValue(SOUTH))
+                        .setValue(EAST, state.getValue(WEST))
+                        .setValue(SOUTH, state.getValue(NORTH))
+                        .setValue(WEST, state.getValue(EAST));
+            case COUNTERCLOCKWISE_90:
+                return state.setValue(NORTH, state.getValue(EAST))
+                        .setValue(EAST, state.getValue(SOUTH))
+                        .setValue(SOUTH, state.getValue(WEST))
+                        .setValue(WEST, state.getValue(NORTH));
+            case CLOCKWISE_90:
+                return state.setValue(NORTH, state.getValue(WEST))
+                        .setValue(EAST, state.getValue(NORTH))
+                        .setValue(SOUTH, state.getValue(EAST))
+                        .setValue(WEST, state.getValue(SOUTH));
+            default:
+                return state;
+        }
     }
 }
