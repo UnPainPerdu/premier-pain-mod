@@ -13,6 +13,7 @@ public class CommonSetupEventPottedThing
     {
         //misc
         setPottedThing(event, BlockRegister.CACTUS_FLOWER_BLOCK, BlockRegister.POTTED_CACTUS_FLOWER_BLOCK);
+        setPottedThing(event, BlockRegister.SKY_SPEARS_FLOWER, BlockRegister.POTTED_SKY_SPEARS_FLOWER);
         //flower
         setPottedThing(event, BlockRegister.RUINS_FLOWER, BlockRegister.POTTED_RUINS_FLOWER);
         setPottedThing(event, BlockRegister.CIVILIZATIONS_FLOWER, BlockRegister.POTTED_CIVILIZATIONS_FLOWER);

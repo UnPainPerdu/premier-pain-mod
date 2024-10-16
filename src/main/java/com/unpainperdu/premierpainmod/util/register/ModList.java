@@ -502,6 +502,8 @@ public class ModList
             BlockRegister.FLOWERED_CACTUS_BLOCK,
             BlockRegister.CACTUS_FLOWER_BLOCK,
             BlockRegister.SKY_SPEARS,
+            BlockRegister.SKY_SPEARS_FLOWER,
+            BlockRegister.POTTED_SKY_SPEARS_FLOWER,
             BlockRegister.DEAD_TALL_BUSH
             );
 

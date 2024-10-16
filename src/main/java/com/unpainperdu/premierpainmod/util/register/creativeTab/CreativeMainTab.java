@@ -13,6 +13,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
@@ -50,6 +51,7 @@ public class CreativeMainTab
                     || block instanceof AbstractGrowingAboveVegetation
                     || block instanceof FlowerBlock
                     || block instanceof DeadBushBlock
+                    || block instanceof SkySpearsFlower
             )
             {
                 output.accept(block);
