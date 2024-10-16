@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeig
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.toolKit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -26,6 +27,22 @@ public class SkySpearsFlower extends Block
     {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any());
+    }
+
+    @Override
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
+    {
+        if(RandomUtil.getRandomIntInRange(100, random) >=80)
+        {
+            if (level.getBlockState(pos.below()).is(BlockTags.DIRT))
+            {
+                if (level.getBlockState(pos.above()).isAir())
+                {
+                    level.setBlock(pos,BlockRegister.SKY_SPEARS.get().defaultBlockState().setValue(SkySpears.HALF, DoubleBlockHalf.LOWER), 2);
+                    level.setBlock(pos.above(),BlockRegister.SKY_SPEARS.get().defaultBlockState().setValue(SkySpears.HALF, DoubleBlockHalf.UPPER), 2);
+                }
+            }
+        }
     }
 
     @Override
@@ -78,5 +95,11 @@ public class SkySpearsFlower extends Block
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
         return Block.box(5,0,5, 11, 10 ,11);
+    }
+
+    @Override
+    protected boolean isRandomlyTicking(BlockState state)
+    {
+        return true;
     }
 }

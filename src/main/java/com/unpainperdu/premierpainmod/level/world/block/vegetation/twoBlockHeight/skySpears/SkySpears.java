@@ -27,9 +27,9 @@ public class SkySpears extends AbstractTallGrass
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
-        if (state.getValue(SkySpears.HALF) == DoubleBlockHalf.UPPER && level.getBlockState(pos.above()).isAir())
+        if (RandomUtil.getRandomIntInRange(100, random) >= 65)
         {
-            if (RandomUtil.getRandomIntInRange(100, random) >= 65)
+            if (state.getValue(SkySpears.HALF) == DoubleBlockHalf.UPPER && level.getBlockState(pos.above()).isAir())
             {
                level.setBlock(pos.above(), BlockRegister.SKY_SPEARS_FLOWER.get().defaultBlockState(), 2);
             }
