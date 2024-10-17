@@ -112,3 +112,13 @@ update neoforge to 21.1.61
 
 ## fix :
     - Dead ruins flower is now in the creative tab
+--------------
+1.21.x-1.10.0
+
+## add :
+    - Sky spears flower which grow from sky spears and can grow into sky spears
+
+## fix :
+    - Swamp premier pain temple has no more air block ender it
+    - Curiosity flower can now spread on all dirt type block
+    - Villager table has right rotation now in generated structure
