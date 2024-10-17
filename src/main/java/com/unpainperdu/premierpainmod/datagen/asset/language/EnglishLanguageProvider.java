@@ -44,18 +44,21 @@ public class EnglishLanguageProvider extends LanguageProvider
             // villager workshop
         villagerWorkshopTranslation();
             //vegetation
+                //tall grass
+        add(BlockRegister.SKY_SPEARS.get(), "Sky spears");
+        add(BlockRegister.SKY_SPEARS_FLOWER.get(), "Sky spears flower");
+        add(BlockRegister.DEAD_TALL_BUSH.get(), "Dry bush");
                 //misc
         add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Flowered cactus");
         add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Cactus Flower");
-        add(BlockRegister.SKY_SPEARS.get(), "Sky spears");
-        add(BlockRegister.DEAD_TALL_BUSH.get(), "Dry bush");
-            //flower
-                //1 block flower
+
+                //flower
+                    //1 block flower
         add(BlockRegister.RUINS_FLOWER.get(), "Ruins flower");
         add(BlockRegister.CURIOSITY_FLOWER.get(), "Curiosity flower");
-                //growing flower
+                    //growing flower
         add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Civilizations flower");
-                //dead bush
+                    //dead bush
         add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Dead ruins flower");
             // "All material"
         globalAllMaterialTranslation("oak");

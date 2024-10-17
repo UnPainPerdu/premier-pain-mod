@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTa
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -39,6 +40,7 @@ public class ModCompostableProvider
             || block instanceof CactusFlowerBlock
             || block instanceof FloweredCactusBlock
             || block instanceof AbstractTallGrass
+            || block instanceof SkySpearsFlower
         )
         {
             compostableBuilder.add(item.getDefaultInstance().getItemHolder() ,new Compostable(0.65f),false);

@@ -70,6 +70,9 @@ public class ModBlockStateProvider extends BlockStateProvider
         }
     //manual
         //vegetation
+            //tall grass
+        skySpearsFlowerWithItem();
+        skySpearsFlowerPotBlock();
             //misc
         cactusFlowerBlockWithItem();
         floweredCactusBlockWithItem();
@@ -82,6 +85,8 @@ public class ModBlockStateProvider extends BlockStateProvider
         deadBushPotBlock(BlockRegister.POTTED_DEAD_RUINS_FLOWER.get(), BlockRegister.DEAD_RUINS_FLOWER.get());
                 //misc
         pottedFloweredCactus();
+                //tall grass
+
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
@@ -966,6 +971,25 @@ public class ModBlockStateProvider extends BlockStateProvider
                 .texture("0","block/all_materials_block/multiple_use_texture/" + material)
                 .texture("1", "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_white");
         itemModels().getBuilder(getKey(block).getPath()).parent(villagerBenchModel);
+    }
+
+    private void skySpearsFlowerWithItem()
+    {
+        Block block = BlockRegister.SKY_SPEARS_FLOWER.get();
+        ModelFile blockModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/tall_grass/sky_spears_flower")
+                .texture("0", "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
+        simpleBlock(block, blockModel);
+        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0","block/vegetation/tall_grass/sky_spears/sky_spears_flower");
+    }
+
+    private void skySpearsFlowerPotBlock()
+    {
+        Block block = BlockRegister.SKY_SPEARS_FLOWER.get();
+        Block pottedBlock = BlockRegister.POTTED_SKY_SPEARS_FLOWER.get();
+        universalPottedBlock(pottedBlock, block, "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)

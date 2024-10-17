@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "plant": "premierpainmod:block/vegetation/tall_grass/sky_spears/sky_spears_flower"
+  }
+}

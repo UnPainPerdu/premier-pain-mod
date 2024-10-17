@@ -94,7 +94,7 @@ public class SkySpearsFlower extends Block
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        return Block.box(5,0,5, 11, 10 ,11);
+        return Block.box(0,0,0,16,16,16);
     }
 
     @Override

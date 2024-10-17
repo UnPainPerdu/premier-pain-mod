@@ -1,0 +1,6 @@
+{
+  "parent": "premierpainmod:block/vegetation/tall_grass/sky_spears_flower",
+  "textures": {
+    "0": "premierpainmod:block/vegetation/tall_grass/sky_spears/sky_spears_flower"
+  }
+}

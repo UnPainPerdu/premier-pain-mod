@@ -11,6 +11,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -78,6 +79,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         //vegetation
             //tall grass
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.SKY_SPEARS.get(), Items.STICK);
+        pottedFlowerLootTableGenerator(BlockRegister.POTTED_SKY_SPEARS_FLOWER.get(), BlockRegister.SKY_SPEARS_FLOWER.get());
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.DEAD_TALL_BUSH.get(), Items.STICK);
         //potted thing
             //flower
@@ -175,6 +177,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 || block instanceof FloweredCactusBlock
                 || block instanceof CactusFlowerBlock
                 || block instanceof AbstractAdaptableSit
+                || block instanceof SkySpearsFlower
                 ;
     }
 

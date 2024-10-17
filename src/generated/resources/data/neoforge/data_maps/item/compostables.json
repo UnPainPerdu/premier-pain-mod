@@ -20,6 +20,9 @@
     },
     "premierpainmod:sky_spears": {
       "chance": 0.65
+    },
+    "premierpainmod:sky_spears_flower": {
+      "chance": 0.65
     }
   }
 }

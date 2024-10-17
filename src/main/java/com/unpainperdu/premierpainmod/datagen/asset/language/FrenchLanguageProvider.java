@@ -43,11 +43,14 @@ public class FrenchLanguageProvider extends LanguageProvider
             // villager workshop
         villagerWorkshopTranslation();
             //vegetation
+                //tall grass
+        add(BlockRegister.SKY_SPEARS.get(), "Lances du ciel");
+        add(BlockRegister.SKY_SPEARS_FLOWER.get(), "Fleure de lances du ciel");
+        add(BlockRegister.DEAD_TALL_BUSH.get(), "Buisson sec");
                 //misc
         add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Cactus fleuri");
         add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Fleure de cactus");
-        add(BlockRegister.SKY_SPEARS.get(), "Lances du ciel");
-        add(BlockRegister.DEAD_TALL_BUSH.get(), "Buisson sec");
+
             //flower
                 //1 block flower
         add(BlockRegister.RUINS_FLOWER.get(), "Fleure de ruines");
