@@ -93,7 +93,7 @@ public class CreativeMainTab
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
-            if(item instanceof VillagerSingingStone)
+            if(!(item instanceof VillagerShelfItem))
             {
                 output.accept(item);
             }

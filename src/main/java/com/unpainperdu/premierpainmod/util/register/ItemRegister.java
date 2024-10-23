@@ -20,7 +20,6 @@ public class ItemRegister
 {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PremierPainMod.MOD_ID);
 
-    public static final DeferredItem<Item> VILLAGER_ICON = ITEMS.register("villager_icon", () -> new Item(new Item.Properties()));
     //Item Villager Shelf
     public static final DeferredItem<Item> OAK_VILLAGER_SHELF = villagerShelfRegister("oak_villager_shelf", () -> BlockRegister.OAK_STANDING_VILLAGER_SHELF,() -> BlockRegister.OAK_WALL_VILLAGER_SHELF);
     public static final DeferredItem<Item>  BIRCH_VILLAGER_SHELF = villagerShelfRegister("birch_villager_shelf", () ->BlockRegister.BIRCH_STANDING_VILLAGER_SHELF,() -> BlockRegister.BIRCH_WALL_VILLAGER_SHELF);

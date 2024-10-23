@@ -35,8 +35,6 @@ public class FrenchLanguageProvider extends LanguageProvider
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Assez! J'en ai enduré bien assez...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Pierre chantante du Premier Pain");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"De la cuisson du pain au maniement de l'épée, nous venons de si loin!");
-            //other
-        add(ItemRegister.VILLAGER_ICON.get(), "Icone de villageois");
         //block
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");

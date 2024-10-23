@@ -36,8 +36,6 @@ public class EnglishLanguageProvider extends LanguageProvider
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Premier Pain singing stone");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"From backing bread to rise the sword, we come from so far!");
-            //other
-        add(ItemRegister.VILLAGER_ICON.get(), "Villager icon");
         //block
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");

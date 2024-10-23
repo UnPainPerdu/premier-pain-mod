@@ -22,7 +22,6 @@ public class ModItemStateProvider extends ItemModelProvider
     @Override
     protected void registerModels()
     {
-        item(ItemRegister.VILLAGER_ICON.get(), "misc/");
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
