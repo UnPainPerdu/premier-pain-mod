@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStone
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
@@ -68,6 +69,11 @@ public class ItemRegister
     public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE =villagerSingingStoneRegister("diggy_villager_singing_stone", 10, () -> SoundEventRegister.DIGGY_SOUND,new DiggyEvent());
     public static final DeferredItem<Item>  MADNESS_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("madness_villager_singing_stone", 20, () -> SoundEventRegister.MADNESS_SOUND,new MadnessEvent());
     public static final DeferredItem<Item>  PREMIER_PAIN_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("premier_pain_villager_singing_stone", 10, () -> SoundEventRegister.PREMIER_PAIN_SOUND,new PremierPainEvent());
+    //food
+        //vegetation
+    public static final DeferredItem<Item> CACTUS_FLOWER_FRUIT = basicFoodItemRegister("cactus_flower_fruit",64,4,0.3f);
+    public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit",64,4,0.3f);
+
 
     private static DeferredItem<Item> villagerShelfRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
     {
@@ -78,7 +84,26 @@ public class ItemRegister
     {
         return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties().stacksTo(1), soundEvent.get().get(), name, event, delayInSecond));
     }
-        public static void register(IEventBus modEventBus)
+    private static DeferredItem<Item> basicItemRegister(String name, int maxStackSize)
+    {
+        return ITEMS.register(name, () -> new Item(new Item.Properties().stacksTo(maxStackSize)));
+    }
+    /*
+    nutrition --> 1 = 1/2 jigot
+    saturation -->
+    */
+    private static DeferredItem<Item> basicFoodItemRegister(String name, int maxStackSize, int nutrition, float saturation)
+    {
+        return ITEMS.register(name, () -> new Item(new Item.Properties()
+                        .food(new FoodProperties.Builder()
+                            .nutrition(nutrition)
+                            .saturationModifier(saturation)
+                            .build()
+                            )
+                        .stacksTo(maxStackSize)
+                        ));
+    }
+    public static void register(IEventBus modEventBus)
     {
         ITEMS.register(modEventBus);
     }
