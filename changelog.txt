@@ -117,8 +117,14 @@ update neoforge to 21.1.61
 
 ## add :
     - Sky spears flower which grow from sky spears and can grow into sky spears
+    - Sky spears fruit craft from sky spears flower (give 4 food)
+    - Cactus flower fruit craft from cactus flower (give 4 food)
+
+## remake :
+    - creative tab icon is now the villager workbench
+    - creative tab has now a search bar
 
 ## fix :
-    - Swamp premier pain temple has no more air block ender it
+    - Swamp premier pain temple has no more air block under it
     - Curiosity flower can now spread on all dirt type block
-    - Villager table has right rotation now in generated structure
+    - Villager table has correct rotation now in generated structure
