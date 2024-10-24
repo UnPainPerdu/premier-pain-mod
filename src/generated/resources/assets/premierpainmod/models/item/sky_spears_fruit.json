@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:item/food/vegetation/sky_spears_fruit"
+  }
+}

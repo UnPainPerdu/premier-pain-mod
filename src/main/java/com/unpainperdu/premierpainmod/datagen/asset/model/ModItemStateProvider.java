@@ -22,6 +22,10 @@ public class ModItemStateProvider extends ItemModelProvider
     @Override
     protected void registerModels()
     {
+        //food
+            //item
+        vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());
+        vegetationFoodItem(ItemRegister.CACTUS_FLOWER_FRUIT.get());
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
@@ -52,6 +56,12 @@ public class ModItemStateProvider extends ItemModelProvider
                 .parent(getExistingFile(mcLoc("item/generated")))
                 .texture("layer0","item/villager_singing_stone/" + name);
     }
+
+    private void vegetationFoodItem(Item item)
+    {
+        item(item,"food/vegetation/");
+    }
+
     private String getName(Item item)
     {
         return BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");

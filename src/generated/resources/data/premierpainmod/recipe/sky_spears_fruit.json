@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "premierpainmod:sky_spears_flower"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:sky_spears_fruit"
+  }
+}

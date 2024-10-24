@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveV
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -16,24 +17,29 @@ import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 
 public class ModCompostableProvider
 {
+    static DataMapProvider.Builder<Compostable, Item> builder;
     protected static void gather(DataMapProvider.Builder<Compostable, Item> compostableBuilder)
     {
+        builder = compostableBuilder;
         compostableBuilder.replace(false);
+
+        addToCompostable(ItemRegister.SKY_SPEARS_FRUIT.get(),0.6F);
+        addToCompostable(ItemRegister.CACTUS_FLOWER_FRUIT.get(), 0.6F);
         for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
-            setBlockCompostable(deferredBlock.get(), compostableBuilder);
+            setCompostable(deferredBlock.get());
         }
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
-            setBlockCompostable(deferredItem.get(), compostableBuilder);
+            setCompostable(deferredItem.get());
         }
     }
-    private static void setBlockCompostable(Block block, DataMapProvider.Builder<Compostable, Item> compostableBuilder)
+    private static void setCompostable(Block block)
     {
-        setBlockCompostable(block.asItem(), compostableBuilder);
+        setCompostable(block.asItem());
     }
 
-    private static void setBlockCompostable(Item item, DataMapProvider.Builder<Compostable, Item> compostableBuilder)
+    private static void setCompostable(Item item)
     {
         Block block = Block.byItem(item);
         if(block instanceof FlowerBlock
@@ -43,11 +49,16 @@ public class ModCompostableProvider
             || block instanceof SkySpearsFlower
         )
         {
-            compostableBuilder.add(item.getDefaultInstance().getItemHolder() ,new Compostable(0.65f),false);
+            addToCompostable(item, 0.65f);
         }
         else if(block instanceof AbstractGrowingAboveVegetation)
         {
-            compostableBuilder.add(item.getDefaultInstance().getItemHolder() ,new Compostable(0.5f),false);
+            addToCompostable(item, 0.5f);
         }
+    }
+
+    private static void addToCompostable(Item item, float amountAddToCompost)
+    {
+        builder.add(item.getDefaultInstance().getItemHolder() ,new Compostable(amountAddToCompost),false);
     }
 }

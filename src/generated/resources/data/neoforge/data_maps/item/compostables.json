@@ -3,6 +3,9 @@
     "premierpainmod:cactus_flower_block": {
       "chance": 0.65
     },
+    "premierpainmod:cactus_flower_fruit": {
+      "chance": 0.6
+    },
     "premierpainmod:civilizations_flower": {
       "chance": 0.5
     },
@@ -23,6 +26,9 @@
     },
     "premierpainmod:sky_spears_flower": {
       "chance": 0.65
+    },
+    "premierpainmod:sky_spears_fruit": {
+      "chance": 0.6
     }
   }
 }
