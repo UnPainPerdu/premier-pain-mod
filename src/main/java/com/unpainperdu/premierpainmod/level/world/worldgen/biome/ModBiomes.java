@@ -21,15 +21,17 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModBiomes
 {
-    public static  final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "forest_premier_pain_ruins"));
-    public static  final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "sand_desert_premier_pain_ruins"));
-    public static  final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "swamp_premier_pain_ruins"));
+    public static final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "forest_premier_pain_ruins"));
+    public static final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "sand_desert_premier_pain_ruins"));
+    public static final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "swamp_premier_pain_ruins"));
+    public static final ResourceKey<Biome> GREAT_OLD_FIELD = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "great_old_field"));
 
     public static void boostrap(BootstrapContext<Biome> context)
     {
         context.register(FOREST_PREMIER_PAIN_RUINS, forestPremierPainRuins(context));
         context.register(SAND_DESERT_PREMIER_PAIN_RUINS, sandDesertPremierPainRuins(context));
         context.register(SWAMP_PREMIER_PAIN_RUINS, swampPremierPainRuins(context));
+        context.register(GREAT_OLD_FIELD, greatOldField(context));
     }
 
     protected static int calculateSkyColor(float pTemperature)
@@ -181,6 +183,44 @@ public class ModBiomes
                                 .skyColor(calculateSkyColor(temperature))
                                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
+                                .build()
+                )
+                .mobSpawnSettings(mobspawnsettings$builder.build())
+                .generationSettings(biomegenerationsettings$builder.build())
+                .build();
+    }
+
+    private static Biome greatOldField(BootstrapContext<Biome> context)
+    {
+        float temperature = 0.8F;
+        float downfall = 0.4f;
+
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
+        BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(temperature)
+                .downfall(downfall)
+                .specialEffects(
+                        new BiomeSpecialEffects.Builder()
+                                .waterColor(4159204)
+                                .waterFogColor(329011)
+                                .fogColor(12638463)
+                                .skyColor(calculateSkyColor(temperature))
+                                .foliageColorOverride(0xA6DD21)
+                                .grassColorOverride(0xA6DD21)
+                                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
                                 .build()
                 )
                 .mobSpawnSettings(mobspawnsettings$builder.build())

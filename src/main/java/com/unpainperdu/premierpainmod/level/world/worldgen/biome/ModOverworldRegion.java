@@ -45,6 +45,15 @@ public class ModOverworldRegion extends Region
                 .build().forEach(point -> builder.add(point, ModBiomes.FOREST_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.HOT))
+                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
+                .continentalness(Climate.Parameter.span(midInland, farInland))
+                .erosion(ParameterUtils.Erosion.EROSION_1)
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                .build().forEach(point -> builder.add(point, ModBiomes.GREAT_OLD_FIELD));
+
+        new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.ARID)
                 .continentalness(Climate.Parameter.span(midInland, farInland))
