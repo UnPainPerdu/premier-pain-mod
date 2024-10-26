@@ -28,13 +28,18 @@ public class ModOverworldRegion extends Region
     {
         super(name, RegionType.OVERWORLD, weight);
     }
+    /*
+    * Erosion ajuste si plaine ou montagne :  montagne -> 0, plaine -> 6
+    *
+    * Weirdness aussi :
+    *
+    * -1 et 1 = montagne, 0 = vallaie,
+    * */
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper)
     {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
-        // Overlap Vanilla's parameters with our own for our PREMIER_PAIN_RUINS biome.
-        // The parameters for this biome are chosen arbitrarily.
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.HOT))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
@@ -48,7 +53,7 @@ public class ModOverworldRegion extends Region
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.HOT))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
                 .continentalness(Climate.Parameter.span(midInland, farInland))
-                .erosion(ParameterUtils.Erosion.EROSION_1)
+                .erosion(ParameterUtils.Erosion.EROSION_6)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, ModBiomes.GREAT_OLD_FIELD));
@@ -59,7 +64,7 @@ public class ModOverworldRegion extends Region
                 .continentalness(Climate.Parameter.span(midInland, farInland))
                 .erosion(ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE)
-                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                .weirdness(Climate.Parameter.span(-0.35F, 0.35F))
                 .build().forEach(point -> builder.add(point, ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()

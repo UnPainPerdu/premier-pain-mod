@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.worldgen.structure.OldGreatFieldStructures;
 import com.unpainperdu.premierpainmod.level.world.worldgen.structure.PremierPainTempleStructures;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.structure.Structure;
@@ -22,6 +23,7 @@ public class StructureRegister
     public static final DeferredRegister<StructureType<?>> DEFERRED_REGISTRY_STRUCTURE = DeferredRegister.create(Registries.STRUCTURE_TYPE, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<StructureType<?>, StructureType<PremierPainTempleStructures>> PREMIER_PAIN_TEMPLE_STRUCTURE = DEFERRED_REGISTRY_STRUCTURE.register("premier_pain_temple_structure", () -> explicitStructureTypeTyping(PremierPainTempleStructures.CODEC));
+    public static final DeferredHolder<StructureType<?>, StructureType<OldGreatFieldStructures>> OLD_GREAT_FIELD_STRUCTURE = DEFERRED_REGISTRY_STRUCTURE.register("old_great_field_structure", () -> explicitStructureTypeTyping(OldGreatFieldStructures.CODEC));
 
     private static <T extends Structure> StructureType<T> explicitStructureTypeTyping(MapCodec<T> structureCodec)
     {
