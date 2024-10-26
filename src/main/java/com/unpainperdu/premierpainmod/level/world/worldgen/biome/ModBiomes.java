@@ -24,14 +24,14 @@ public class ModBiomes
     public static final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "forest_premier_pain_ruins"));
     public static final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "sand_desert_premier_pain_ruins"));
     public static final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "swamp_premier_pain_ruins"));
-    public static final ResourceKey<Biome> GREAT_OLD_FIELD = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "great_old_field"));
+    public static final ResourceKey<Biome> OLD_GREAT_FIELD = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "old_great_field"));
 
     public static void boostrap(BootstrapContext<Biome> context)
     {
         context.register(FOREST_PREMIER_PAIN_RUINS, forestPremierPainRuins(context));
         context.register(SAND_DESERT_PREMIER_PAIN_RUINS, sandDesertPremierPainRuins(context));
         context.register(SWAMP_PREMIER_PAIN_RUINS, swampPremierPainRuins(context));
-        context.register(GREAT_OLD_FIELD, greatOldField(context));
+        context.register(OLD_GREAT_FIELD, greatOldField(context));
     }
 
     protected static int calculateSkyColor(float pTemperature)
