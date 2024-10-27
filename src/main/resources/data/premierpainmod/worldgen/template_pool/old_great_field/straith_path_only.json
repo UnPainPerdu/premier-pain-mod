@@ -1,0 +1,15 @@
+{
+  "name": "premierpainmod:old_great_field_structure",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/old_great_field_structure_01",
+        "projection": "terrain_matching",
+        "processors": "premierpainmod:old_great_field_structure_path"
+      }
+    }
+  ]
+}
