@@ -122,7 +122,6 @@ public class PremierPainTempleStructures extends Structure
         // Turns the chunk coordinates into actual coordinates we can use. (Gets corner of that chunk)
         ChunkPos chunkPos = context.chunkPos();
         BlockPos blockPos = new BlockPos(chunkPos.getMinBlockX(), startY, chunkPos.getMinBlockZ());
-        System.out.println(blockPos);
 
         Optional<Structure.GenerationStub> structurePiecesGenerator =
                 JigsawPlacement.addPieces(

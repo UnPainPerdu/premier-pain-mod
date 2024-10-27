@@ -87,7 +87,6 @@ public class OldGreatFieldStructures extends Structure
         }
         ChunkPos chunkPos = context.chunkPos();
         BlockPos blockPos = new BlockPos(chunkPos.getMinBlockX(), startY, chunkPos.getMinBlockZ());
-        System.out.println(blockPos);
 
         Optional<Structure.GenerationStub> structurePiecesGenerator =
                 JigsawPlacement.addPieces(
