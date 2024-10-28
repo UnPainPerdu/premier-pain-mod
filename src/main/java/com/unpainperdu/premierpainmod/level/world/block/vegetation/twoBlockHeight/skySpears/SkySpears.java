@@ -8,12 +8,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SkySpears extends AbstractTallGrass
 {
@@ -40,12 +36,6 @@ public class SkySpears extends AbstractTallGrass
     public MapCodec<SkySpears> codec()
     {
         return CODEC;
-    }
-
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context)
-    {
-        return Block.box(0,0,0,16,16,16);
     }
 
     @Override

@@ -43,7 +43,11 @@ public abstract class AbstractTallGrass extends Block
     }
 
     @Override
-    public abstract VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context);
+    public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context)
+    {
+        Vec3 vec3 = state.getOffset(blockGetter, pos);
+        return Block.box(0,0,0,16,16,16).move(vec3.x, vec3.y, vec3.z);
+    }
 
     @Override
     protected BlockState updateShape(BlockState state, Direction direction, BlockState pFacingState, LevelAccessor level, BlockPos pos, BlockPos pFacingPos)

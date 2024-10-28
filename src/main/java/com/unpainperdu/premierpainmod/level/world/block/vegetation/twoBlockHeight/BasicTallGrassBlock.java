@@ -5,12 +5,8 @@ import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTa
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BasicTallGrassBlock extends AbstractTallGrass
 {
@@ -19,12 +15,6 @@ public class BasicTallGrassBlock extends AbstractTallGrass
     public BasicTallGrassBlock(Properties properties)
     {
         super(properties, BlockTags.DIRT);
-    }
-
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context)
-    {
-        return Block.box(0,0,0,16,16,16);
     }
 
     @Override
