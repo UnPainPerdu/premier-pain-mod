@@ -50,6 +50,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(BlockRegister.SKY_SPEARS.get(), "Sky spears");
         add(BlockRegister.SKY_SPEARS_FLOWER.get(), "Sky spears flower");
         add(BlockRegister.DEAD_TALL_BUSH.get(), "Dry bush");
+        add(BlockRegister.OLD_WILD_WHEAT.get(), "Old wild wheat");
                 //misc
         add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Flowered cactus");
         add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Cactus Flower");

@@ -18,6 +18,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.basicFlower.C
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.BasicTallGrassBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.DeadTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpears;
@@ -56,6 +57,7 @@ public class BlockRegister
     bamboo
     crimson
     warped
+    pale_oak
     stone
     end_stone
     mossy_stone
@@ -574,6 +576,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> SKY_SPEARS_FLOWER =  registerBlock("sky_spears_flower", () -> new SkySpearsFlower(BlockBehaviour.Properties.ofFullCopy(BlockRegister.SKY_SPEARS.get())));
     public static final DeferredBlock<Block> POTTED_SKY_SPEARS_FLOWER =  registerFlowerPot("potted_sky_spears_flower", () -> SKY_SPEARS_FLOWER);
     public static final DeferredBlock<Block> DEAD_TALL_BUSH =  registerBlock("dead_tall_bush", () -> new DeadTallGrass(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> OLD_WILD_WHEAT =  registerBlock("old_wild_wheat", () -> new BasicTallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     /*
         1 block flower
         -->

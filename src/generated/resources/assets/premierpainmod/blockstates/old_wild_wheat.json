@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "premierpainmod:block/old_wild_wheat_lower"
+    },
+    "half=upper": {
+      "model": "premierpainmod:block/old_wild_wheat_upper"
+    }
+  }
+}

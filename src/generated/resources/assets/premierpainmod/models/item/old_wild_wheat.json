@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:block/vegetation/tall_grass/old_wild_wheat/old_wild_wheat_upper"
+  }
+}

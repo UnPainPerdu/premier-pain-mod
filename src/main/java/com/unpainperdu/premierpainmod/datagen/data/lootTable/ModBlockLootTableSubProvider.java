@@ -81,6 +81,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.SKY_SPEARS.get(), Items.STICK);
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_SKY_SPEARS_FLOWER.get(), BlockRegister.SKY_SPEARS_FLOWER.get());
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.DEAD_TALL_BUSH.get(), Items.STICK);
+        itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.OLD_WILD_WHEAT.get(), Items.WHEAT);
         //potted thing
             //flower
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());

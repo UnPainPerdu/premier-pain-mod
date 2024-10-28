@@ -504,7 +504,8 @@ public class ModList
             BlockRegister.SKY_SPEARS,
             BlockRegister.SKY_SPEARS_FLOWER,
             BlockRegister.POTTED_SKY_SPEARS_FLOWER,
-            BlockRegister.DEAD_TALL_BUSH
+            BlockRegister.DEAD_TALL_BUSH,
+            BlockRegister.OLD_WILD_WHEAT
             );
 
     public static List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(

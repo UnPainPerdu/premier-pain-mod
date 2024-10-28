@@ -4,7 +4,9 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -29,5 +31,11 @@ public class BasicTallGrassBlock extends AbstractTallGrass
     public MapCodec<BasicTallGrassBlock> codec()
     {
         return CODEC;
+    }
+
+    @Override
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity)
+    {
+
     }
 }
