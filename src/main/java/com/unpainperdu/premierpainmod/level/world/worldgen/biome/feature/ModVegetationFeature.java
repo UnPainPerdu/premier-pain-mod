@@ -45,6 +45,7 @@ public class ModVegetationFeature
     //tall grass
     public static final ResourceKey<ConfiguredFeature<?, ?>> SKY_SPEARS = ModFeatureUtil.createKey("sky_spears");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_TALL_BUSH = ModFeatureUtil.createKey("dead_tall_bush");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OLD_WILD_WHEAT = ModFeatureUtil.createKey("old_wild_wheat");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> pContext)
     {
@@ -66,6 +67,7 @@ public class ModVegetationFeature
         //tall grass
         FeatureUtils.register(pContext, ModVegetationFeature.SKY_SPEARS, FeatureRegister.SKY_SPEARS.get(), NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(pContext, ModVegetationFeature.DEAD_TALL_BUSH, FeatureRegister.DEAD_TALL_BUSH.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModVegetationFeature.OLD_WILD_WHEAT, FeatureRegister.OLD_WILD_WHEAT.get(), NoneFeatureConfiguration.INSTANCE);
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(

@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.tallGrass;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.tallGrass;
 
 import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
@@ -21,7 +21,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 import java.util.ArrayList;
 
 
-public abstract class AbstractTallGrassFeature extends Feature<NoneFeatureConfiguration>
+public class TallGrassFeature extends Feature<NoneFeatureConfiguration>
 {
     protected int minNumberOfPos;
     protected int maxNumberOfPos;
@@ -29,7 +29,7 @@ public abstract class AbstractTallGrassFeature extends Feature<NoneFeatureConfig
     protected final Block tallGrass;
     protected final TagKey<Block> ground;
 
-    public AbstractTallGrassFeature(Codec<NoneFeatureConfiguration> pCodec, int minNumberOfPos, int maxNumberOfPos, int spread, Block tallGrass, TagKey<Block> blockTagToPutOntPatch)
+    public TallGrassFeature(Codec<NoneFeatureConfiguration> pCodec, int minNumberOfPos, int maxNumberOfPos, int spread, Block tallGrass, TagKey<Block> blockTagToPutOntPatch)
     {
         super(pCodec);
         this.minNumberOfPos = minNumberOfPos;

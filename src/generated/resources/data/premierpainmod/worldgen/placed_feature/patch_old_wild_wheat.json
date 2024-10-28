@@ -1,0 +1,21 @@
+{
+  "feature": "premierpainmod:old_wild_wheat",
+  "placement": [
+    {
+      "type": "minecraft:noise_threshold_count",
+      "above_noise": 45,
+      "below_noise": 45,
+      "noise_level": -0.8
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModFeatureUtil;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModVegetationFeature;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -30,6 +31,7 @@ public class ModVegetationPlacement
     //tall grass
     public static final ResourceKey<PlacedFeature> PATCH_SKY_SPEARS = ModPlacementUtil.createKey("patch_sky_spears");
     public static final ResourceKey<PlacedFeature> PATCH_DEAD_TALL_BUSH = ModPlacementUtil.createKey("patch_dead_tall_bush");
+    public static final ResourceKey<PlacedFeature> PATCH_OLD_WILD_WHEAT = ModPlacementUtil.createKey("patch_old_wild_wheat");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
@@ -66,8 +68,8 @@ public class ModVegetationPlacement
         register(pContext, ModVegetationPlacement.PATCH_SKY_SPEARS, SKY_SPEARS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> DEAD_TALL_BUSH_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.DEAD_TALL_BUSH);
         register(pContext, ModVegetationPlacement.PATCH_DEAD_TALL_BUSH, DEAD_TALL_BUSH_HOLDER, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-
-
+        final Holder<ConfiguredFeature<?, ?>> OLD_WILD_WHEAT_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.OLD_WILD_WHEAT);
+        register(pContext, ModVegetationPlacement.PATCH_OLD_WILD_WHEAT, OLD_WILD_WHEAT_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 45, 45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }
 
     protected static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedFeatureKey, Holder<ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... modifiers)
