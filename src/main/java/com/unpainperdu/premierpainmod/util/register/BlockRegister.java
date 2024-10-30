@@ -15,6 +15,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.basicFlower.CuriosityFlower;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
@@ -572,11 +573,13 @@ public class BlockRegister
     public static final DeferredBlock<Block> FLOWERED_CACTUS_BLOCK =  registerBlock("flowered_cactus_block", () -> new FloweredCactusBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CACTUS).noOcclusion()));
     public static final DeferredBlock<Block> CACTUS_FLOWER_BLOCK =  registerBlock("cactus_flower_block", () -> new CactusFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_CACTUS_FLOWER_BLOCK =  registerFlowerPot("potted_cactus_flower_block", () -> CACTUS_FLOWER_BLOCK);
-    public static final DeferredBlock<Block> SKY_SPEARS =  registerBlock("sky_spears", () -> new SkySpears(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> SKY_SPEARS =  registerBlock("sky_spears", () -> new SkySpears(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> SKY_SPEARS_FLOWER =  registerBlock("sky_spears_flower", () -> new SkySpearsFlower(BlockBehaviour.Properties.ofFullCopy(BlockRegister.SKY_SPEARS.get())));
     public static final DeferredBlock<Block> POTTED_SKY_SPEARS_FLOWER =  registerFlowerPot("potted_sky_spears_flower", () -> SKY_SPEARS_FLOWER);
-    public static final DeferredBlock<Block> DEAD_TALL_BUSH =  registerBlock("dead_tall_bush", () -> new DeadTallGrass(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
-    public static final DeferredBlock<Block> OLD_WILD_WHEAT =  registerBlock("old_wild_wheat", () -> new BasicTallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> DEAD_TALL_BUSH =  registerBlock("dead_tall_bush", () -> new DeadTallGrass(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> OLD_WILD_WHEAT =  registerBlock("old_wild_wheat", () -> new BasicTallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+        //cropLike
+    public static final DeferredBlock<Block> JELLYSHROOM =  registerBlock("jellyshroom", () -> new JellyShroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     /*
         1 block flower
         -->

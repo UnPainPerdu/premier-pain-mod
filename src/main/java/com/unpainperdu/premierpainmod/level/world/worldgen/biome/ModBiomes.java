@@ -204,7 +204,9 @@ public class ModBiomes
         BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
         BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_OLD_WILD_WHEAT);
+        BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
 
