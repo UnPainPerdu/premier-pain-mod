@@ -10,6 +10,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
@@ -52,6 +53,7 @@ public class CreativeMainTab
                     || block instanceof FlowerBlock
                     || block instanceof DeadBushBlock
                     || block instanceof SkySpearsFlower
+                    || block instanceof JellyShroomBlock
             )
             {
                 output.accept(block);

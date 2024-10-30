@@ -48,14 +48,11 @@ public abstract class AbstractCropLikeBlock extends Block
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
-        System.out.println("random tick");
         if (!level.isAreaLoaded(pos, 1)) return;
         if (state.getValue(AbstractCropLikeBlock.AGE) < MAX_AGE)
         {
-            System.out.println("if max age et light : " + level.getRawBrightness(pos, 0));
             if (!(isLightNeeded) || level.getRawBrightness(pos, 0) >= MIN_LIGHT_NEEDED)
             {
-                System.out.println("tick age : " + state.getValue(AbstractCropLikeBlock.AGE));
                 level.setBlock(pos, state.setValue(AbstractCropLikeBlock.AGE, state.getValue(AbstractCropLikeBlock.AGE) + 1), 2);
             }
         }

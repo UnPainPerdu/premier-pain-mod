@@ -82,6 +82,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_SKY_SPEARS_FLOWER.get(), BlockRegister.SKY_SPEARS_FLOWER.get());
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.DEAD_TALL_BUSH.get(), Items.STICK);
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.OLD_WILD_WHEAT.get(), Items.WHEAT);
+            //crop
+        jellyShroomLootTable();
         //potted thing
             //flower
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
@@ -149,23 +151,11 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                                         .otherwise(builder))));
     }
 
-    private <T extends Comparable<T> & StringRepresentable> LootTable.Builder TEMPcreateTallGrassDispatchTable(Block block, Property<T> property, T valueOfProperty, ItemLike resultIfNotShear)
+    private void jellyShroomLootTable()
     {
-        LootPoolEntryContainer.Builder<?> builder = (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(block, LootItem.lootTableItem(resultIfNotShear))
-                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)));
-
-        return LootTable.lootTable()
-                .withPool(
-                        this.applyExplosionCondition(
-                                block
-                                ,LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(block)
-                                                .when(HAS_SHEARS)
-                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
-                                                .otherwise(builder))));
+        //temp
+        Block block = BlockRegister.JELLYSHROOM.get();
+        normalBlockLootTableGenerator(block);
     }
 
     private boolean isNormalLoot(Block block)

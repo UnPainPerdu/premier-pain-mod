@@ -17,6 +17,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.util.register.ModList;
@@ -73,6 +74,8 @@ public class ModBlockStateProvider extends BlockStateProvider
             //tall grass
         skySpearsFlowerWithItem();
         skySpearsFlowerPotBlock();
+            //crop
+        jellyshroomWithItem();
             //misc
         cactusFlowerBlockWithItem();
         floweredCactusBlockWithItem();
@@ -990,6 +993,57 @@ public class ModBlockStateProvider extends BlockStateProvider
         Block block = BlockRegister.SKY_SPEARS_FLOWER.get();
         Block pottedBlock = BlockRegister.POTTED_SKY_SPEARS_FLOWER.get();
         universalPottedBlock(pottedBlock, block, "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
+    }
+
+    private void jellyshroomWithItem()
+    {
+        Block block = BlockRegister.JELLYSHROOM.get();
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            String modelPath = "premierpainmod:block/vegetation/crop/jellyshroom/jellyshroom_";
+            String modelName = getKey(block).toString() + "_";
+            switch (state.getValue(JellyShroomBlock.AGE))
+            {
+                case 1 :
+                {
+                    modelPath += "1";
+                    modelName += "1";
+                    break;
+                }
+
+                case 2 :
+                {
+                    modelPath += "2";
+                    modelName += "2";
+                    break;
+                }
+                case 3 :
+                {
+                    modelPath += "3";
+                    modelName += "3";
+                    break;
+                }
+                case 4 :
+                {
+                    modelPath += "4";
+                    modelName += "4";
+                    break;
+                }
+                default :
+                {
+                    modelPath += "0";
+                    modelName += "0";
+                }
+            }
+            ModelFile blockModel = models().withExistingParent(modelName, modelPath);
+            return ConfiguredModel.builder()
+                    .modelFile(blockModel)
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
+        });
+        ModelFile model = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/crop/jellyshroom/jellyshroom_0");
+        itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)

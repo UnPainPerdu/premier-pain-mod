@@ -54,14 +54,16 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Cactus fleuri");
         add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Fleure de cactus");
 
-            //flower
-                //1 block flower
+                //flower
+                    //1 block flower
         add(BlockRegister.RUINS_FLOWER.get(), "Fleure de ruines");
         add(BlockRegister.CURIOSITY_FLOWER.get(), "Fleure de curiosité");
-                //growing flower
+                    //growing flower
         add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Fleure des civilisations");
-                //dead bush
+                    //dead bush
         add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Fleure de ruines mortes");
+                //crop
+        add(BlockRegister.JELLYSHROOM.get(), "Champigelée");
             // "All material"
         globalAllMaterialTranslation("oak", "chêne");
         globalAllMaterialTranslation("birch","bouleau");

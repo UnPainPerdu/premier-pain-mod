@@ -498,6 +498,8 @@ public class ModList
             BlockRegister.DEAD_RUINS_FLOWER,
             BlockRegister.POTTED_DEAD_RUINS_FLOWER,
             //vegetation
+                //crop
+            BlockRegister.JELLYSHROOM,
                 //misc
             BlockRegister.FLOWERED_CACTUS_BLOCK,
             BlockRegister.CACTUS_FLOWER_BLOCK,

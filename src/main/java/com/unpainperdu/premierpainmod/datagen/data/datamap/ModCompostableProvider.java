@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveV
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.world.item.Item;
@@ -25,6 +26,7 @@ public class ModCompostableProvider
 
         addToCompostable(ItemRegister.SKY_SPEARS_FRUIT.get(),0.6F);
         addToCompostable(ItemRegister.CACTUS_FLOWER_FRUIT.get(), 0.6F);
+        addToCompostable(BlockRegister.JELLYSHROOM.get(), 0.4F);
         for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
             setCompostable(deferredBlock.get());
@@ -55,6 +57,11 @@ public class ModCompostableProvider
         {
             addToCompostable(item, 0.5f);
         }
+    }
+
+    private static void addToCompostable(Block block, float amountAddToCompost)
+    {
+        addToCompostable(block.asItem(), amountAddToCompost);
     }
 
     private static void addToCompostable(Item item, float amountAddToCompost)

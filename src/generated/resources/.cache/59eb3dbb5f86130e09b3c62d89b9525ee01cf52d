@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-28T15:31:59.8641712	Loot Tables
+// 1.21.1	2024-10-30T14:09:00.5323108	Loot Tables
 85e1b3be3a251346dee3b4a9e87e45d4d2a39670 data/premierpainmod/loot_table/blocks/acacia_standing_villager_shelf.json
 9aad298b58d17b0b5fe25d63ee29528f848013c4 data/premierpainmod/loot_table/blocks/acacia_villager_bench.json
 2fb10e5cf5f79a7045462e9fd6fd5bafd71b829a data/premierpainmod/loot_table/blocks/acacia_villager_brazier.json
@@ -236,6 +236,7 @@ c72ddf5d0d266d9f5c7221659e16a795861f970c data/premierpainmod/loot_table/blocks/i
 96148bf00f62bc6645a3d661af7be229b7559dc5 data/premierpainmod/loot_table/blocks/iron_block_villager_table.json
 ef19aa58e1c8b5c5ac5130df3f6b1898f073c1b0 data/premierpainmod/loot_table/blocks/iron_block_villager_throne_chair.json
 65cccb970dc467cf932d2beacba4a5fffe76f05d data/premierpainmod/loot_table/blocks/iron_block_wall_villager_shelf.json
+c3cd19181d182809c528604e30b5dc28e517745e data/premierpainmod/loot_table/blocks/jellyshroom.json
 98b66625d4a72c44a5cdef967f76596d35a3c98c data/premierpainmod/loot_table/blocks/jungle_standing_villager_shelf.json
 a6afb03e46c4cebb13f2ee21ee71873a0203b258 data/premierpainmod/loot_table/blocks/jungle_villager_bench.json
 192400210d7428e58c60801f2fb9e10e62547cfa data/premierpainmod/loot_table/blocks/jungle_villager_brazier.json

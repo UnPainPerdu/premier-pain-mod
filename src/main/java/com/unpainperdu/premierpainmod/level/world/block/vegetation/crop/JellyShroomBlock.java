@@ -22,7 +22,7 @@ public class JellyShroomBlock extends AbstractCropLikeBlock
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public JellyShroomBlock(Properties properties)
     {
-        super(properties, 4, 5, BlockTags.DIRT);
+        super(properties, 4, 0, BlockTags.DIRT);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(AGE, 0));
     }
 
@@ -36,7 +36,7 @@ public class JellyShroomBlock extends AbstractCropLikeBlock
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        return Block.box(0,0,0,16,16,16);
+        return Block.box(1,0,1,15,10,15);
     }
 
     @Override
