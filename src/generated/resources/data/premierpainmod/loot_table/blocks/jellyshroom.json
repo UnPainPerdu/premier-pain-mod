@@ -11,7 +11,126 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "0"
+              }
+            }
+          ],
           "name": "premierpainmod:jellyshroom"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "1"
+              }
+            }
+          ],
+          "name": "premierpainmod:jellyshroom"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "2"
+              }
+            }
+          ],
+          "name": "premierpainmod:jellyshroom"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "3"
+              }
+            }
+          ],
+          "name": "premierpainmod:jellyshroom"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "4"
+              }
+            }
+          ],
+          "name": "premierpainmod:jellyshroom"
+        }
+      ],
+      "functions": [
+        {
+          "add": false,
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "1"
+              }
+            }
+          ],
+          "count": 2.0,
+          "function": "minecraft:set_count"
+        },
+        {
+          "add": false,
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "2"
+              }
+            }
+          ],
+          "count": 3.0,
+          "function": "minecraft:set_count"
+        },
+        {
+          "add": false,
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "3"
+              }
+            }
+          ],
+          "count": 4.0,
+          "function": "minecraft:set_count"
+        },
+        {
+          "add": false,
+          "conditions": [
+            {
+              "block": "premierpainmod:jellyshroom",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "4"
+              }
+            }
+          ],
+          "count": 5.0,
+          "function": "minecraft:set_count"
         }
       ],
       "rolls": 1.0
