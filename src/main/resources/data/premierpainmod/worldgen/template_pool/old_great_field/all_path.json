@@ -3,7 +3,7 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 25,
+      "weight": 50,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:old_great_field/straight_path",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "weight": 35,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:old_great_field/cross_path",

@@ -55,7 +55,7 @@ public class ModOverworldRegion extends Region
                 .continentalness(Climate.Parameter.span(midInland, farInland))
                 .erosion(ParameterUtils.Erosion.EROSION_6)
                 .depth(ParameterUtils.Depth.SURFACE)
-                .weirdness(Climate.Parameter.span(-0.35F, 0.35F))
+                .weirdness(Climate.Parameter.span(-0.17F, 0.17F))
                 .build().forEach(point -> builder.add(point, ModBiomes.OLD_GREAT_FIELD));
 
         new ParameterUtils.ParameterPointListBuilder()
