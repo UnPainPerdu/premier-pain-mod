@@ -39,6 +39,7 @@ public class FrenchLanguageProvider extends LanguageProvider
                 //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Fruit de lances du ciel");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Fruit de fleure de cactus");
+        add(ItemRegister.JELLY_HAT.get(), "Chapeau-gelée");
         //block
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");

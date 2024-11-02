@@ -43,6 +43,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 //vegetation
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CACTUS_FLOWER_BLOCK, ItemRegister.CACTUS_FLOWER_FRUIT);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.SKY_SPEARS_FLOWER, ItemRegister.SKY_SPEARS_FRUIT);
+        oneItemToAnotherOneRecipeBuilder(BlockRegister.JELLYSHROOM, ItemRegister.JELLY_HAT);
         //block
             //misc
         oneItemToAnotherOneRecipeInFurnaceBuilder(BlockRegister.FLOWERED_CACTUS_BLOCK, Items.GREEN_DYE, RecipeCategory.MISC, 0.2f, 300);
@@ -291,9 +292,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result)
     {
+        oneItemToAnotherOneRecipeBuilder(resource, result, 1);
+    }
+
+    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result, int numberOutput)
+    {
         String resultName = BuiltInRegistries.BLOCK.getKey((Block) ((DeferredBlock<Block>) resource).get()).toString().replace(PremierPainMod.MOD_ID +":","");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result).requires(resource).unlockedBy("has_" + resultName, has(resource)).save(ModRecipeProvider.recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput).requires(resource).unlockedBy("has_" + resultName, has(resource)).save(ModRecipeProvider.recipeOutput);
     }
 
     /*

@@ -40,6 +40,7 @@ public class EnglishLanguageProvider extends LanguageProvider
                 //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky spears fruit");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Cactus flower fruit");
+        add(ItemRegister.JELLY_HAT.get(), "Jelly hat");
         //block
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");

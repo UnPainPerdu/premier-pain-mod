@@ -561,6 +561,7 @@ public class ModList
             //food
                 //vegetation
             ItemRegister.CACTUS_FLOWER_FRUIT,
-            ItemRegister.SKY_SPEARS_FRUIT
+            ItemRegister.SKY_SPEARS_FRUIT,
+            ItemRegister.JELLY_HAT
     );
 }

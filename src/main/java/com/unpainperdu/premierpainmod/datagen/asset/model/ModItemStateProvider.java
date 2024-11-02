@@ -26,6 +26,7 @@ public class ModItemStateProvider extends ItemModelProvider
             //item
         vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());
         vegetationFoodItem(ItemRegister.CACTUS_FLOWER_FRUIT.get());
+        vegetationFoodItem(ItemRegister.JELLY_HAT.get());
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();

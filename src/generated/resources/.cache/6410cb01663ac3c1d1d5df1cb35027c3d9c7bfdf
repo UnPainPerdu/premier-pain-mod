@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-24T11:12:16.13707	Item Models: premierpainmod
+// 1.21.1	2024-11-02T23:01:23.0728116	Item Models: premierpainmod
 8c73037c00ef33837d5eda43f190076431a19b74 assets/premierpainmod/models/item/acacia_villager_shelf.json
 4c7a6015d5c4273926503fb23636cf3aefb91ac0 assets/premierpainmod/models/item/amethyst_block_villager_shelf.json
 ed3716b233273d7ba9c0084fc2e129134e4632a5 assets/premierpainmod/models/item/andesite_villager_shelf.json
@@ -23,6 +23,7 @@ acda32f41b0d7435317d6fa3fce3a781cdc9d3ee assets/premierpainmod/models/item/diamo
 010629db075e523a2ea8fcc17089c53b3da7aea4 assets/premierpainmod/models/item/gold_block_villager_shelf.json
 6ad87a51f9d85100f08148850f2b3ec791630e24 assets/premierpainmod/models/item/granite_villager_shelf.json
 1171fde3b39d4bf31d6b1b08ddca4ba90a94823e assets/premierpainmod/models/item/iron_block_villager_shelf.json
+a4634ff0274deaafe7b0f859bb8019b37b69bd39 assets/premierpainmod/models/item/jelly_hat.json
 a99f4bc4f7c08ceefa9f845374f35be5cf5d869e assets/premierpainmod/models/item/jungle_villager_shelf.json
 66b88fe89d03a9b57ccf2fa2002e3339e52c2ac1 assets/premierpainmod/models/item/lapis_block_villager_shelf.json
 93669e2c28cdad657927d1ee86a535c4a926da11 assets/premierpainmod/models/item/liberty_villager_singing_stone.json

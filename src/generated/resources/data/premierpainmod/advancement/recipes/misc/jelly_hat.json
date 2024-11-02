@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jellyshroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:jellyshroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:jelly_hat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jellyshroom"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:jelly_hat"
+    ]
+  }
+}

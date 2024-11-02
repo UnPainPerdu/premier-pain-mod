@@ -72,6 +72,7 @@ public class ItemRegister
         //vegetation
     public static final DeferredItem<Item> CACTUS_FLOWER_FRUIT = basicFoodItemRegister("cactus_flower_fruit",64,4,0.3f);
     public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit",64,4,0.3f);
+    public static final DeferredItem<Item> JELLY_HAT = basicFoodItemRegister("jelly_hat",64,3,0.10f);
 
 
     private static DeferredItem<Item> villagerShelfRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
