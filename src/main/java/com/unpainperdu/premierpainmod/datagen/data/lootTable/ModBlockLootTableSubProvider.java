@@ -86,7 +86,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.SKY_SPEARS.get(), Items.STICK);
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_SKY_SPEARS_FLOWER.get(), BlockRegister.SKY_SPEARS_FLOWER.get());
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.DEAD_TALL_BUSH.get(), Items.STICK);
-        itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.OLD_WILD_WHEAT.get(), Items.WHEAT);
+        itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.OLD_WILD_WHEAT.get(), Items.WHEAT, 4.0f);
             //crop
         jellyShroomLootTable();
         //potted thing
@@ -135,14 +135,24 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private void itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(Block block, ItemLike resultIfNotShear)
     {
-        super.add(block, this.createTallGrassDispatchTable(block, AbstractTallGrass.HALF, DoubleBlockHalf.LOWER, resultIfNotShear));
+        itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(block, resultIfNotShear, 1.0f);
     }
 
-    private <T extends Comparable<T> & StringRepresentable> LootTable.Builder createTallGrassDispatchTable(Block block, Property<T> property, T valueOfProperty, ItemLike resultIfNotShear)
+    private void itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(Block block, ItemLike resultIfNotShear, float numberNoShearItem)
     {
-        LootPoolEntryContainer.Builder<?> builder = (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(block, LootItem.lootTableItem(resultIfNotShear))
+        super.add(block, this.createTallGrassDispatchTable(block, AbstractTallGrass.HALF, DoubleBlockHalf.LOWER, resultIfNotShear, numberNoShearItem));
+    }
+
+    private <T extends Comparable<T> & StringRepresentable> LootTable.Builder createTallGrassDispatchTable(Block block, Property<T> property, T valueOfProperty, ItemLike resultIfNotShear, float numberNoShearItem)
+    {
+        LootPoolEntryContainer.Builder<?> builder = (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(block,
+                        LootItem.lootTableItem(resultIfNotShear))
                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)));
+                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
+                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(numberNoShearItem))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty))));
+
         return LootTable.lootTable()
                 .withPool(
                         this.applyExplosionCondition(

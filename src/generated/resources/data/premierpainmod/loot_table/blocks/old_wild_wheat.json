@@ -45,6 +45,22 @@
                   }
                 }
               ],
+              "functions": [
+                {
+                  "add": false,
+                  "conditions": [
+                    {
+                      "block": "premierpainmod:old_wild_wheat",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "half": "lower"
+                      }
+                    }
+                  ],
+                  "count": 4.0,
+                  "function": "minecraft:set_count"
+                }
+              ],
               "name": "minecraft:wheat"
             }
           ]
