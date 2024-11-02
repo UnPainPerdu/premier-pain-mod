@@ -197,18 +197,13 @@ public class ModBiomes
 
         MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
-
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
-        BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
+        globalOverworldGeneration(biomegenerationsettings$builder);
         BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_OLD_WILD_WHEAT);
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addPlainVegetation(biomegenerationsettings$builder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
