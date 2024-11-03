@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-02T19:15:13.3482032	Loot Tables
+// 1.21.1	2024-11-03T10:56:08.8695321	Loot Tables
 85e1b3be3a251346dee3b4a9e87e45d4d2a39670 data/premierpainmod/loot_table/blocks/acacia_standing_villager_shelf.json
 9aad298b58d17b0b5fe25d63ee29528f848013c4 data/premierpainmod/loot_table/blocks/acacia_villager_bench.json
 2fb10e5cf5f79a7045462e9fd6fd5bafd71b829a data/premierpainmod/loot_table/blocks/acacia_villager_brazier.json
@@ -352,6 +352,7 @@ d5f32ef75a5c83793a8078237ed4a56c9512206c data/premierpainmod/loot_table/blocks/p
 8b444d39e2e740bb31820d2326cf81bc3b7972c6 data/premierpainmod/loot_table/blocks/potted_civilizations_flower.json
 353d359ae45b09373bc132f042202bffad3eb683 data/premierpainmod/loot_table/blocks/potted_curiosity_flower.json
 779fd28f49c4c414ff505bbc4e2a4a17a08dcaf3 data/premierpainmod/loot_table/blocks/potted_dead_ruins_flower.json
+08cc80e7c1f8a082aa26151915dba4acc48758c8 data/premierpainmod/loot_table/blocks/potted_jellyshroom.json
 693c121dade20cb80bfbd48bbc99f11355978183 data/premierpainmod/loot_table/blocks/potted_ruins_flower.json
 6b390e412a8d85b72ce1a35825dee9b197e15bc7 data/premierpainmod/loot_table/blocks/potted_sky_spears_flower.json
 8869c5400a8e32dbf5d7daafd5c37e9bdffc4739 data/premierpainmod/loot_table/blocks/prismarine_standing_villager_shelf.json

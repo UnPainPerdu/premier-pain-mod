@@ -1,0 +1,4 @@
+{
+  "parent": "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom",
+  "render_type": "minecraft:cutout"
+}

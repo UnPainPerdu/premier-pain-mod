@@ -98,6 +98,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_DEAD_RUINS_FLOWER.get(), BlockRegister.DEAD_RUINS_FLOWER.get());
             //misc
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get(), BlockRegister.CACTUS_FLOWER_BLOCK.get());
+            //crop
+        pottedFlowerLootTableGenerator(BlockRegister.POTTED_JELLYSHROOM.get(), BlockRegister.JELLYSHROOM.get());
     }
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks()

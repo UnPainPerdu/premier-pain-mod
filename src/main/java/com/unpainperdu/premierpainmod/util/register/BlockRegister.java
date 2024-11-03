@@ -580,6 +580,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> OLD_WILD_WHEAT =  registerBlock("old_wild_wheat", () -> new BasicTallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
         //cropLike
     public static final DeferredBlock<Block> JELLYSHROOM =  registerBlock("jellyshroom", () -> new JellyShroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> POTTED_JELLYSHROOM =  registerFlowerPot("potted_jellyshroom", () -> JELLYSHROOM);
     /*
         1 block flower
         -->

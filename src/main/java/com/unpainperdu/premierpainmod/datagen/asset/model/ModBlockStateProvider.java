@@ -29,7 +29,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -88,7 +87,9 @@ public class ModBlockStateProvider extends BlockStateProvider
         deadBushPotBlock(BlockRegister.POTTED_DEAD_RUINS_FLOWER.get(), BlockRegister.DEAD_RUINS_FLOWER.get());
                 //misc
         pottedFloweredCactus();
-                //tall grass
+                //crop
+        universalPottedBlock(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
+
 
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
@@ -749,12 +750,12 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void flowerPotBlock(Block flowerPotBlock, Block flowerBlock)
     {
         String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-        universalPottedBlock(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/one_block_flower/" + nameFlower);
+        pottedBlockWithBasicModel(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/one_block_flower/" + nameFlower);
     }
     private void deadBushPotBlock(Block deadBushPotBlock, Block deadBushBlock)
     {
         String nameFlower = BuiltInRegistries.BLOCK.getKey(deadBushBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-        universalPottedBlock(deadBushPotBlock, deadBushBlock, "block/vegetation/dead_bush/" + nameFlower);
+        pottedBlockWithBasicModel(deadBushPotBlock, deadBushBlock, "block/vegetation/dead_bush/" + nameFlower);
     }
 
     private void growingVegetationWithItem(Block block)
@@ -782,7 +783,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void flowerPotBlockForGrowingVegetation(Block flowerPotBlock, Block flowerBlock)
     {
         String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-        universalPottedBlock(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/growing_block_flower/" + nameFlower);
+        pottedBlockWithBasicModel(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/growing_block_flower/" + nameFlower);
     }
 
     private void floweredCactusBlockWithItem()
@@ -837,10 +838,17 @@ public class ModBlockStateProvider extends BlockStateProvider
     {
         Block flowerPotBlock = BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get();
         Block blockToPot = BlockRegister.CACTUS_FLOWER_BLOCK.get();
-        universalPottedBlock(flowerPotBlock, blockToPot, "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
+        pottedBlockWithBasicModel(flowerPotBlock, blockToPot, "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
     }
 
-    private void universalPottedBlock(Block pottedBlock, Block blockToPot, String folderOfPng)
+    private void universalPottedBlock(Block pottedBlock, String modelPath)
+    {
+        String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+        ModelFile modelFile = models().withExistingParent(namePottedBlock, modelPath)
+                .renderType("cutout");
+        simpleBlock(pottedBlock, modelFile);
+    }
+    private void pottedBlockWithBasicModel(Block pottedBlock, Block blockToPot, String folderOfPng)
     {
         String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID +":","");
 
@@ -992,7 +1000,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     {
         Block block = BlockRegister.SKY_SPEARS_FLOWER.get();
         Block pottedBlock = BlockRegister.POTTED_SKY_SPEARS_FLOWER.get();
-        universalPottedBlock(pottedBlock, block, "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
+        pottedBlockWithBasicModel(pottedBlock, block, "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
     }
 
     private void jellyshroomWithItem()

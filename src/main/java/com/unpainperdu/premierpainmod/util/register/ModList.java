@@ -500,6 +500,9 @@ public class ModList
             //vegetation
                 //crop
             BlockRegister.JELLYSHROOM,
+            BlockRegister.POTTED_JELLYSHROOM,
+                    //potted crop
+
                 //misc
             BlockRegister.FLOWERED_CACTUS_BLOCK,
             BlockRegister.CACTUS_FLOWER_BLOCK,
