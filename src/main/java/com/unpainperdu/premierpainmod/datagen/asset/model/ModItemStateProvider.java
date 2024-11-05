@@ -27,6 +27,11 @@ public class ModItemStateProvider extends ItemModelProvider
         vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());
         vegetationFoodItem(ItemRegister.CACTUS_FLOWER_FRUIT.get());
         vegetationFoodItem(ItemRegister.JELLY_HAT.get());
+            //stew
+        stewFoodItem(ItemRegister.JELLYSHROOM_STEW.get());
+        stewFoodItem(ItemRegister.CACTUS_STEW.get());
+        stewFoodItem(ItemRegister.POTATOES_AND_SPEARS_BOWL.get());
+        stewFoodItem(ItemRegister.FRUITS_BOWL.get());
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
@@ -61,6 +66,11 @@ public class ModItemStateProvider extends ItemModelProvider
     private void vegetationFoodItem(Item item)
     {
         item(item,"food/vegetation/");
+    }
+
+    private void stewFoodItem(Item item)
+    {
+        item(item,"food/stew/");
     }
 
     private String getName(Item item)

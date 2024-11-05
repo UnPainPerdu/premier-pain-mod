@@ -565,6 +565,11 @@ public class ModList
                 //vegetation
             ItemRegister.CACTUS_FLOWER_FRUIT,
             ItemRegister.SKY_SPEARS_FRUIT,
-            ItemRegister.JELLY_HAT
-    );
+            ItemRegister.JELLY_HAT,
+                //stew
+            ItemRegister.JELLYSHROOM_STEW,
+            ItemRegister.CACTUS_STEW,
+            ItemRegister.POTATOES_AND_SPEARS_BOWL,
+            ItemRegister.FRUITS_BOWL
+            );
 }

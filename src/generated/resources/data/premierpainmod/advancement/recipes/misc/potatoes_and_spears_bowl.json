@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_potatoes_and_spears_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:sky_spears_fruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:potatoes_and_spears_bowl"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_potatoes_and_spears_bowl"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:potatoes_and_spears_bowl"
+    ]
+  }
+}

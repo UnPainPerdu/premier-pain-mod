@@ -44,6 +44,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CACTUS_FLOWER_BLOCK, ItemRegister.CACTUS_FLOWER_FRUIT);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.SKY_SPEARS_FLOWER, ItemRegister.SKY_SPEARS_FRUIT);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.JELLYSHROOM, ItemRegister.JELLY_HAT);
+                //stew
+        shapelessRecipeBuilder(ItemRegister.JELLYSHROOM_STEW, ItemRegister.JELLY_HAT, 1, Items.BOWL, ItemRegister.JELLY_HAT, Items.SUGAR);
+        shapelessRecipeBuilder(ItemRegister.CACTUS_STEW, ItemRegister.CACTUS_FLOWER_FRUIT, 1, Items.BOWL, ItemRegister.CACTUS_FLOWER_FRUIT, Items.SUGAR);
+        shapelessRecipeBuilder(ItemRegister.POTATOES_AND_SPEARS_BOWL, ItemRegister.SKY_SPEARS_FRUIT, 1, Items.BOWL, ItemRegister.SKY_SPEARS_FRUIT, Items.BAKED_POTATO);
+        shapelessRecipeBuilder(ItemRegister.FRUITS_BOWL, ItemRegister.CACTUS_FLOWER_FRUIT, 1, Items.BOWL, ItemRegister.CACTUS_FLOWER_FRUIT, Items.SWEET_BERRIES, Items.GLOW_BERRIES, Items.APPLE);
         //block
             //misc
         oneItemToAnotherOneRecipeInFurnaceBuilder(BlockRegister.FLOWERED_CACTUS_BLOCK, Items.GREEN_DYE, RecipeCategory.MISC, 0.2f, 300);
@@ -313,5 +318,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(resource), recipeCategory, result, exp, cookingTime)
                 .unlockedBy("has_" + resultName, has(resource))
                 .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void shapelessRecipeBuilder(ItemLike result, ItemLike unlockItem, int numberOutput, ItemLike ... resource)
+    {
+        String resultName = BuiltInRegistries.ITEM.getKey((Item) ((DeferredItem<Item>) result).get()).toString().replace(PremierPainMod.MOD_ID +":","");
+
+        ShapelessRecipeBuilder shapelessRecipeBuilder = ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput);
+        for (ItemLike r : resource)
+        {
+            shapelessRecipeBuilder = shapelessRecipeBuilder.requires(r);
+        }
+
+        shapelessRecipeBuilder.unlockedBy("has_" + resultName, has(unlockItem)).save(ModRecipeProvider.recipeOutput);
     }
 }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jellyshroom_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:jelly_hat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:jellyshroom_stew"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jellyshroom_stew"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:jellyshroom_stew"
+    ]
+  }
+}

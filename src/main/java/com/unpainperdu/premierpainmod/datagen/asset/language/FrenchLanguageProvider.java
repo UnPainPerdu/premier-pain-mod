@@ -40,6 +40,11 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Fruit de lances du ciel");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Fruit de fleure de cactus");
         add(ItemRegister.JELLY_HAT.get(), "Chapeau-gelée");
+                //stew
+        add(ItemRegister.JELLYSHROOM_STEW.get(), "Soupe de champigelée");
+        add(ItemRegister.CACTUS_STEW.get(), "Soupe de fruits de cactus");
+        add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Bol de patates et de fruit de lance");
+        add(ItemRegister.FRUITS_BOWL.get(), "Bol de fruits");
         //block
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");

@@ -4,10 +4,10 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.*;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
-import com.unpainperdu.premierpainmod.level.world.item.items.food.ModdedStewItem;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -77,7 +77,8 @@ public class ItemRegister
         //stew
     public static final DeferredItem<Item> JELLYSHROOM_STEW = stewFoodItemRegister("jellyshroom_stew", 5);
     public static final DeferredItem<Item> CACTUS_STEW = stewFoodItemRegister("cactus_stew", 6);
-
+    public static final DeferredItem<Item> POTATOES_AND_SPEARS_BOWL = stewFoodItemRegister("potatoes_and_spears_bowl", 6);
+    public static final DeferredItem<Item> FRUITS_BOWL = stewFoodItemRegister("fruits_bowl", 9);
 
     private static DeferredItem<Item> villagerShelfRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
     {
@@ -110,13 +111,14 @@ public class ItemRegister
 
     private static DeferredItem<Item> stewFoodItemRegister(String name, int nutrition)
     {
-        return ITEMS.register(name, () -> new ModdedStewItem(new Item.Properties()
+        return ITEMS.register(name, () -> new Item(new Item.Properties()
                 .food(new FoodProperties.Builder()
                         .nutrition(nutrition)
                         .saturationModifier(0.6F)
+                        .usingConvertsTo(Items.BOWL)
                         .build()
                 )
-                .stacksTo(1)
+                .stacksTo(4)
         ));
     }
     public static void register(IEventBus modEventBus)
