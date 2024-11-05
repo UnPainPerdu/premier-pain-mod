@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.*;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
+import com.unpainperdu.premierpainmod.level.world.item.items.food.ModdedStewItem;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -73,6 +74,9 @@ public class ItemRegister
     public static final DeferredItem<Item> CACTUS_FLOWER_FRUIT = basicFoodItemRegister("cactus_flower_fruit",64,4,0.3f);
     public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit",64,4,0.3f);
     public static final DeferredItem<Item> JELLY_HAT = basicFoodItemRegister("jelly_hat",64,3,0.10f);
+        //stew
+    public static final DeferredItem<Item> JELLYSHROOM_STEW = stewFoodItemRegister("jellyshroom_stew", 5);
+    public static final DeferredItem<Item> CACTUS_STEW = stewFoodItemRegister("cactus_stew", 6);
 
 
     private static DeferredItem<Item> villagerShelfRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
@@ -102,6 +106,18 @@ public class ItemRegister
                             )
                         .stacksTo(maxStackSize)
                         ));
+    }
+
+    private static DeferredItem<Item> stewFoodItemRegister(String name, int nutrition)
+    {
+        return ITEMS.register(name, () -> new ModdedStewItem(new Item.Properties()
+                .food(new FoodProperties.Builder()
+                        .nutrition(nutrition)
+                        .saturationModifier(0.6F)
+                        .build()
+                )
+                .stacksTo(1)
+        ));
     }
     public static void register(IEventBus modEventBus)
     {
