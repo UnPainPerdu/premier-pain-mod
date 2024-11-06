@@ -1,5 +1,21 @@
 {
   "values": [
+    {
+      "id": "premierpainmod:forest_premier_pain_ruins",
+      "required": false
+    },
+    {
+      "id": "premierpainmod:swamp_premier_pain_ruins",
+      "required": false
+    },
+    {
+      "id": "premierpainmod:sand_desert_premier_pain_ruins",
+      "required": false
+    },
+    {
+      "id": "premierpainmod:old_great_field",
+      "required": false
+    },
     "minecraft:mushroom_fields",
     "minecraft:deep_frozen_ocean",
     "minecraft:frozen_ocean",

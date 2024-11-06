@@ -5,7 +5,11 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,19 +25,44 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider pProvider)
     {
-
         //Premier Pain ruins
             //forest
-        this.tag(BiomeTags.IS_FOREST).add(ModBiomes.FOREST_PREMIER_PAIN_RUINS);
-        this.tag(BiomeTags.IS_OVERWORLD).add(ModBiomes.FOREST_PREMIER_PAIN_RUINS);
+        generateTagsForOverWorldBiome(ModBiomes.FOREST_PREMIER_PAIN_RUINS,
+                BiomeTags.IS_FOREST,
+                Tags.Biomes.IS_DENSE_VEGETATION
+        );
             //swamp
-        this.tag(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS).add(ModBiomes.SWAMP_PREMIER_PAIN_RUINS);
-        this.tag(BiomeTags.IS_OVERWORLD).add(ModBiomes.SWAMP_PREMIER_PAIN_RUINS);
+        generateTagsForOverWorldBiome(ModBiomes.SWAMP_PREMIER_PAIN_RUINS,
+                Tags.Biomes.IS_SWAMP,
+                Tags.Biomes.IS_WET,
+                BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS
+        );
             //desert
-        this.tag(BiomeTags.SNOW_GOLEM_MELTS).add(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS);
-        this.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).add(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS);
-        this.tag(BiomeTags.IS_OVERWORLD).add(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS);
+        generateTagsForOverWorldBiome(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS,
+                Tags.Biomes.IS_DESERT,
+                Tags.Biomes.IS_HOT,
+                BiomeTags.SNOW_GOLEM_MELTS
+        );
+        //old great field
+        generateTagsForOverWorldBiome(ModBiomes.OLD_GREAT_FIELD,
+                Tags.Biomes.IS_PLAINS
+        );
 
         super.addTags(pProvider);
+    }
+
+    private void generateTagsForOverWorldBiome(ResourceKey<Biome> biome, TagKey<Biome> ... tags)
+    {
+        for(TagKey<Biome> tag : tags)
+        {
+            generateTag(biome, tag);
+        }
+        generateTag(biome, BiomeTags.HAS_MINESHAFT);
+        generateTag(biome, BiomeTags.IS_OVERWORLD);
+    }
+
+    private void generateTag(ResourceKey<Biome> biome, TagKey<Biome> tag)
+    {
+        this.tag(tag).addOptional(biome.location());
     }
 }

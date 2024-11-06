@@ -1,5 +1,9 @@
 {
   "values": [
+    {
+      "id": "premierpainmod:sand_desert_premier_pain_ruins",
+      "required": false
+    },
     "minecraft:badlands",
     "minecraft:basalt_deltas",
     "minecraft:crimson_forest",

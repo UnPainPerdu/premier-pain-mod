@@ -1,5 +1,11 @@
-// 1.21.1	2024-08-16T23:43:40.0908279	Tags for minecraft:worldgen/biome mod id premierpainmod
-6525dda69924a36f16797ed873bffc083e1f4de5 data/minecraft/tags/worldgen/biome/allows_surface_slime_spawns.json
+// 1.21.1	2024-11-06T16:19:12.3644921	Tags for minecraft:worldgen/biome mod id premierpainmod
+14411d360efc913d158f4d490950b2efe799120c data/c/tags/worldgen/biome/is_dense_vegetation.json
+603eb2ab5ca19aa3dd6c8e65fb8c387c71c90a17 data/c/tags/worldgen/biome/is_desert.json
+603eb2ab5ca19aa3dd6c8e65fb8c387c71c90a17 data/c/tags/worldgen/biome/is_hot.json
+65bbf320b095faa0f21ce9d5651f928154303a60 data/c/tags/worldgen/biome/is_plains.json
+a990e9c62bc2b461097bc6f26728f2e15c06617d data/c/tags/worldgen/biome/is_swamp.json
+a990e9c62bc2b461097bc6f26728f2e15c06617d data/c/tags/worldgen/biome/is_wet.json
+dd216a792a73297dfcd19b3da480950a52f1485b data/minecraft/tags/worldgen/biome/allows_surface_slime_spawns.json
 0f241c94b10e4b16b4304f66ad949bb089955b1e data/minecraft/tags/worldgen/biome/allows_tropical_fish_spawns_at_any_height.json
 6525dda69924a36f16797ed873bffc083e1f4de5 data/minecraft/tags/worldgen/biome/has_closer_water_fog.json
 45e2314b6fbf2e847bd70c163e678e0e756a1640 data/minecraft/tags/worldgen/biome/has_structure/ancient_city.json
@@ -9,7 +15,7 @@ f3ef2895c49e29111297e950661e5bc71a79989e data/minecraft/tags/worldgen/biome/has_
 91b0eb2c9a1bca9eaa7aeb065cf6566cc9ef4ef6 data/minecraft/tags/worldgen/biome/has_structure/end_city.json
 080d246ec6009090db8d9470d55c3ec78f26eced data/minecraft/tags/worldgen/biome/has_structure/igloo.json
 4515b902a2803d77400aa33b8a3a7751bcaf389a data/minecraft/tags/worldgen/biome/has_structure/jungle_temple.json
-d8269ffe956b3bf8819c11c41e405d3331434e8e data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
+b6d72660aa1f0098d278a9bee7cc87a7c5c49950 data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
 45707864d688ef531d52bd0287366ea1e7736874 data/minecraft/tags/worldgen/biome/has_structure/mineshaft_mesa.json
 a24545b58f3f91c6c033586e2b2ae12f1e8131b1 data/minecraft/tags/worldgen/biome/has_structure/nether_fortress.json
 15343ca7e7931ca3b093f52c77b5d7fae920fed9 data/minecraft/tags/worldgen/biome/has_structure/nether_fossil.json
@@ -41,13 +47,13 @@ a053eff4bd26b67c251ccf59a66ab8a98bbe5f6b data/minecraft/tags/worldgen/biome/is_b
 0394cc29b21ea80f88b2f36ea3f7dfb6c99192ff data/minecraft/tags/worldgen/biome/is_beach.json
 9f1a7b9d7c1f633c2245e7066a7bdc93fafb7ffd data/minecraft/tags/worldgen/biome/is_deep_ocean.json
 09eef8a5b31b2b922a1bf5e092e897bf6949121c data/minecraft/tags/worldgen/biome/is_end.json
-47f02d647a88fb06b4299217e2a5e87c598bc56a data/minecraft/tags/worldgen/biome/is_forest.json
+e1ea38f266bf36f912b487d4c8ead40ae5c3d086 data/minecraft/tags/worldgen/biome/is_forest.json
 f435c629c4e64303cb04329925903bda3d917ba9 data/minecraft/tags/worldgen/biome/is_hill.json
 f85bfa0d4b462706e486bac541e720ebc630330c data/minecraft/tags/worldgen/biome/is_jungle.json
 3173072176fa45f6ebdee6c273ff17a6ede1aa72 data/minecraft/tags/worldgen/biome/is_mountain.json
 e986c1b86e1b4d4abe4912ecfcabc31d8d7d576e data/minecraft/tags/worldgen/biome/is_nether.json
 068e9616fd14b1280352ffc9d66cc3846c00a5e4 data/minecraft/tags/worldgen/biome/is_ocean.json
-c06b5e8bd8ff65b18bb22032fe23b338919aa311 data/minecraft/tags/worldgen/biome/is_overworld.json
+2ba166fdc4484ef49114f2ecde7a6019c35530fe data/minecraft/tags/worldgen/biome/is_overworld.json
 3437f146e7780b8779e1617366226f1892d8a533 data/minecraft/tags/worldgen/biome/is_river.json
 562853abe345ceeddc3931331c8cdb3aa0fbe085 data/minecraft/tags/worldgen/biome/is_savanna.json
 f3dc9f00fb98a763e374de9b2aa55e6707d3a6f3 data/minecraft/tags/worldgen/biome/is_taiga.json
@@ -58,7 +64,7 @@ f3dc9f00fb98a763e374de9b2aa55e6707d3a6f3 data/minecraft/tags/worldgen/biome/is_t
 6410267e4c6c6e433ffa5df5cb5f1fefed919409 data/minecraft/tags/worldgen/biome/produces_corals_from_bonemeal.json
 92d2cbd84ddef8c77972b539dd8c7cffaa131aed data/minecraft/tags/worldgen/biome/reduce_water_ambient_spawns.json
 65aef629239b5fa923be6767bb43c837ebb35e8a data/minecraft/tags/worldgen/biome/required_ocean_monument_surrounding.json
-cfdcb319da5d14a39f3b32e5f0e83e496eee9e43 data/minecraft/tags/worldgen/biome/snow_golem_melts.json
+ebb8181a3f14a0ed865a063c2ca730c56664d1b3 data/minecraft/tags/worldgen/biome/snow_golem_melts.json
 3d220c49d07585dca965d162e0f6e1e6b51d2ee2 data/minecraft/tags/worldgen/biome/spawns_cold_variant_frogs.json
 f3ef2895c49e29111297e950661e5bc71a79989e data/minecraft/tags/worldgen/biome/spawns_gold_rabbits.json
 70978571ac75b9d8954293882c95413c8505d39f data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
