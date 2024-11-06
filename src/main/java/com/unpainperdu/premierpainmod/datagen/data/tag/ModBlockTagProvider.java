@@ -2,12 +2,16 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -100,6 +104,23 @@ public class ModBlockTagProvider extends BlockTagsProvider {
             )
             {
                 this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+            }
+            //flower
+            if (block instanceof FlowerBlock
+                    || block instanceof AbstractGrowingAboveVegetation
+                    || block instanceof CactusFlowerBlock
+                    || block instanceof SkySpearsFlower
+            )
+            {
+                this.tag(BlockTags.FLOWERS).add(block);
+            }
+            //stealable by enderman
+            if (block instanceof FlowerBlock
+                    || block instanceof CactusFlowerBlock
+                    || block instanceof SkySpearsFlower
+            )
+            {
+                this.tag(BlockTags.ENDERMAN_HOLDABLE).add(block);
             }
         }
     }
