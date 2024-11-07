@@ -1,10 +1,23 @@
 package com.unpainperdu.premierpainmod.util.register;
 
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerBrazier;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -521,6 +534,35 @@ public class ModList
             BlockRegister.MOUNTAIN_CURRANT_LEAVES
             );
 
+    /***
+     *
+     * @return AllMaterialsblocks in world
+     */
+    public static List<Block> getAllMaterialsBlocks()
+    {
+        List<Block> list = new ArrayList<>();
+        for (DeferredBlock<Block> deferredBlock : ALL_BLOCKS)
+        {
+            Block block = deferredBlock.get();
+            if (block instanceof VillagerStatue
+                    || block instanceof VillagerPedestalBlock
+                    || block instanceof VillagerBrazier
+                    || block instanceof VillagerTableBlock
+                    || block instanceof VillagerChairBlock
+                    || block instanceof VillagerThroneChairBlock
+                    || block instanceof VillagerDrawer
+                    || block instanceof StandingVillagerShelf
+                    || block instanceof WallVillagerShelf
+                    || block instanceof VillagerBench
+                    || block instanceof VillagerCouch
+            )
+            {
+                list.add(block);
+            }
+        }
+        return list;
+    }
+
     public static List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(
             // item villager shelf
             ItemRegister.OAK_VILLAGER_SHELF,
@@ -580,4 +622,32 @@ public class ModList
             ItemRegister.POTATOES_AND_SPEARS_BOWL,
             ItemRegister.FRUITS_BOWL
             );
+
+    /***
+     * @return AllMaterialsblocks items in inventory
+     */
+    public static List<Item> getAllMaterialsBlocksAsItem()
+    {
+        List<Item> list = new ArrayList<>();
+        for (Block block : getAllMaterialsBlocks())
+        {
+
+            if (!(block instanceof WallVillagerShelf)
+                    && !(block instanceof StandingVillagerShelf)
+            )
+            {
+                list.add(block.asItem());
+            }
+        }
+
+        for (DeferredItem<Item> deferredItem : ALL_ITEMS)
+        {
+            Item item = deferredItem.get();
+            if (item instanceof VillagerShelfItem)
+            {
+                list.add(item);
+            }
+        }
+        return list;
+    }
 }

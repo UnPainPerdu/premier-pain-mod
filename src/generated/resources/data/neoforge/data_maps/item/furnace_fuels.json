@@ -210,6 +210,15 @@
     "premierpainmod:mangrove_villager_throne_chair": {
       "burn_time": 300
     },
+    "premierpainmod:mountain_currant_log": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_planks": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_wood": {
+      "burn_time": 300
+    },
     "premierpainmod:oak_villager_bench": {
       "burn_time": 300
     },
@@ -298,6 +307,12 @@
       "burn_time": 300
     },
     "premierpainmod:spruce_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:stripped_mountain_currant_log": {
+      "burn_time": 300
+    },
+    "premierpainmod:stripped_mountain_currant_wood": {
       "burn_time": 300
     }
   }
