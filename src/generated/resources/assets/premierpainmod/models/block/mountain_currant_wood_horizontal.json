@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_log_side",
+    "side": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_log_side"
+  }
+}

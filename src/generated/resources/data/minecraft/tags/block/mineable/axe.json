@@ -131,6 +131,11 @@
     "premierpainmod:bamboo_villager_couch",
     "premierpainmod:crimson_villager_couch",
     "premierpainmod:warped_villager_couch",
-    "premierpainmod:pale_oak_villager_couch"
+    "premierpainmod:pale_oak_villager_couch",
+    "premierpainmod:mountain_currant_log",
+    "premierpainmod:stripped_mountain_currant_log",
+    "premierpainmod:mountain_currant_wood",
+    "premierpainmod:stripped_mountain_currant_wood",
+    "premierpainmod:mountain_currant_planks"
   ]
 }

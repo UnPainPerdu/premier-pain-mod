@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "premierpainmod:block/mountain_currant_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "premierpainmod:block/mountain_currant_wood"
+    },
+    "axis=z": {
+      "model": "premierpainmod:block/mountain_currant_wood_horizontal",
+      "x": 90
+    }
+  }
+}

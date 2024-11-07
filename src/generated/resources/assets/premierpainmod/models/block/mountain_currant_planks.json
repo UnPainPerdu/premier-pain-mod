@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks"
+  }
+}

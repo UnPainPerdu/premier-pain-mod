@@ -510,7 +510,15 @@ public class ModList
             BlockRegister.SKY_SPEARS_FLOWER,
             BlockRegister.POTTED_SKY_SPEARS_FLOWER,
             BlockRegister.DEAD_TALL_BUSH,
-            BlockRegister.OLD_WILD_WHEAT
+            BlockRegister.OLD_WILD_WHEAT,
+            //tree
+                //mountain_currant_tree
+            BlockRegister.MOUNTAIN_CURRANT_LOG,
+            BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG,
+            BlockRegister.MOUNTAIN_CURRANT_WOOD,
+            BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD,
+            BlockRegister.MOUNTAIN_CURRANT_PLANKS,
+            BlockRegister.MOUNTAIN_CURRANT_LEAVES
             );
 
     public static List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(

@@ -28,24 +28,24 @@ public class EnglishLanguageProvider extends LanguageProvider
         deathTranslation("liberty_damage3", "%s didn't give honor to a Super-Earth flag");
         //item
             //villagerSingingStone
-        add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(),"Villager singing stone of liberty");
+        add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(),"Villager Singing Stone of Liberty");
         descriptionMaker(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get().toString(),"Are you a true patriot ?");
-        add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(),"Villager singing stone of digging");
+        add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(),"Villager Singing Stone of Digging");
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(),"Don't fear the depth");
-        add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(),"Villager singing stone of madness");
+        add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(),"Villager Singing Stone of Madness");
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
-        add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Premier Pain singing stone");
+        add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Premier Pain Singing Stone");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"From backing bread to rise the sword, we come from so far!");
             //food
                 //vegetation
-        add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky spears fruit");
-        add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Cactus flower fruit");
-        add(ItemRegister.JELLY_HAT.get(), "Jelly hat");
+        add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky Spears Fruit");
+        add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Cactus Flower Fruit");
+        add(ItemRegister.JELLY_HAT.get(), "Jelly Hat");
                 //stew
-        add(ItemRegister.JELLYSHROOM_STEW.get(), "Jellyshroom stew");
-        add(ItemRegister.CACTUS_STEW.get(), "Cactus fruit stew");
-        add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Potatoes and spear fruit bowl");
-        add(ItemRegister.FRUITS_BOWL.get(), "Fruits bowl");
+        add(ItemRegister.JELLYSHROOM_STEW.get(), "Jellyshroom Stew");
+        add(ItemRegister.CACTUS_STEW.get(), "Cactus Fruit Stew");
+        add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Potatoes and Spear Fruit Bowl");
+        add(ItemRegister.FRUITS_BOWL.get(), "Fruits Bowl");
         //block
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");
@@ -53,24 +53,26 @@ public class EnglishLanguageProvider extends LanguageProvider
         villagerWorkshopTranslation();
             //vegetation
                 //tall grass
-        add(BlockRegister.SKY_SPEARS.get(), "Sky spears");
-        add(BlockRegister.SKY_SPEARS_FLOWER.get(), "Sky spears flower");
-        add(BlockRegister.DEAD_TALL_BUSH.get(), "Dry bush");
-        add(BlockRegister.OLD_WILD_WHEAT.get(), "Old wild wheat");
+        add(BlockRegister.SKY_SPEARS.get(), "Sky Spears");
+        add(BlockRegister.SKY_SPEARS_FLOWER.get(), "Sky Spears Flower");
+        add(BlockRegister.DEAD_TALL_BUSH.get(), "Dry Bush");
+        add(BlockRegister.OLD_WILD_WHEAT.get(), "Old Wild Wheat");
                 //misc
-        add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Flowered cactus");
+        add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Flowered Cactus");
         add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Cactus Flower");
 
                 //flower
                     //1 block flower
-        add(BlockRegister.RUINS_FLOWER.get(), "Ruins flower");
-        add(BlockRegister.CURIOSITY_FLOWER.get(), "Curiosity flower");
+        add(BlockRegister.RUINS_FLOWER.get(), "Ruins Flower");
+        add(BlockRegister.CURIOSITY_FLOWER.get(), "Curiosity Flower");
                     //growing flower
-        add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Civilizations flower");
+        add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Civilizations Flower");
                     //dead bush
-        add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Dead ruins flower");
+        add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Dead Ruins Flower");
                 //crop
         add(BlockRegister.JELLYSHROOM.get(), "Jellyshroom");
+            //tree
+        treeTranslator("mountain_currant", "Mountain Currant");
             // "All material"
         globalAllMaterialTranslation("oak");
         globalAllMaterialTranslation("birch");
@@ -385,5 +387,20 @@ public class EnglishLanguageProvider extends LanguageProvider
     private void descriptionMaker(String idOfItem, String translation)
     {
         add("item.description."+idOfItem.replace(PremierPainMod.MOD_ID +":",""),translation);
+    }
+
+    /***
+     *
+     * @param nameOfTree need to be in this : form dark_oak
+     */
+    private void treeTranslator(String nameOfTree, String translation)
+    {
+        String id = "block." + PremierPainMod.MOD_ID + ".";
+        add(id + nameOfTree + "_log",translation + " Log");
+        add(id + nameOfTree + "_wood",translation + " Wood");
+        add(id + "stripped_" + nameOfTree + "_log", "Stripped " + translation + " Log");
+        add(id + "stripped_" + nameOfTree + "_wood", "Stripped " + translation + " Wood");
+        add(id + nameOfTree + "_planks",translation + " Planks");
+        add(id + nameOfTree + "_leaves",translation + " Leaves");
     }
 }

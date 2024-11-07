@@ -70,6 +70,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Fleure de ruines mortes");
                 //crop
         add(BlockRegister.JELLYSHROOM.get(), "Champigelée");
+            //tree
+        treeTranslator("mountain_currant", "groseillier des montagnes");
             // "All material"
         globalAllMaterialTranslation("oak", "chêne");
         globalAllMaterialTranslation("birch","bouleau");
@@ -209,5 +211,20 @@ public class FrenchLanguageProvider extends LanguageProvider
     private void descriptionMaker(String idOfItem, String translation)
     {
         add("item.description."+idOfItem.replace(PremierPainMod.MOD_ID +":",""),translation);
+    }
+
+    /***
+     *
+     * @param nameOfTree need to be in this : form dark_oak
+     */
+    private void treeTranslator(String nameOfTree, String translation)
+    {
+        String id = "block." + PremierPainMod.MOD_ID + ".";
+        add(id + nameOfTree + "_log","Bûche de " + translation);
+        add(id + nameOfTree + "_wood", "Bois de " + translation);
+        add(id + "stripped_" + nameOfTree + "_log", "Bûche de " + translation + " écorcé");
+        add(id + "stripped_" + nameOfTree + "_wood", "Bois de " + translation + " écorcé");
+        add(id + nameOfTree + "_planks", "Planche en " + translation);
+        add(id + nameOfTree + "_leaves", "Feuilles de " + translation);
     }
 }

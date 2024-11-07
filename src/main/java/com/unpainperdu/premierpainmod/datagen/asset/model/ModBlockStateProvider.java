@@ -28,6 +28,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
@@ -89,15 +90,20 @@ public class ModBlockStateProvider extends BlockStateProvider
         pottedFloweredCactus();
                 //crop
         universalPottedBlock(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
-
-
+        //tree
+        logWithItem(BlockRegister.MOUNTAIN_CURRANT_LOG.get(),"mountain_currant_tree");
+        logWithItem(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get(),"mountain_currant_tree");
+        woodWithItem(BlockRegister.MOUNTAIN_CURRANT_WOOD.get(),"mountain_currant_tree");
+        woodWithItem(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get(),"mountain_currant_tree");
+        simpleBlockWithItem(BlockRegister.MOUNTAIN_CURRANT_PLANKS.get(), "block/tree/mountain_currant_tree/mountain_currant_planks");
+        leavesWithItem(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), "mountain_currant_tree");
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
 
-    private void simpleBlockWithItem(Block block)
+    private void simpleBlockWithItem(Block block, String texturePath)
     {
-        simpleBlockWithItem(block, cubeAll(block));
+        simpleBlockWithItem(block, models().cubeAll(getName(block), createResourceLocation(texturePath)));
     }
     private void simpleBlockWithItemWithCustomModel(Block block, String modelPath)
     {
@@ -1054,6 +1060,36 @@ public class ModBlockStateProvider extends BlockStateProvider
         itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
 
+    private void logWithItem(Block log, String folderInTree)
+    {
+        String name = getName(log);
+        ResourceLocation side = createResourceLocation("block/tree/" + folderInTree + "/" + name + "_side");
+        ResourceLocation end = createResourceLocation("block/tree/" + folderInTree + "/" + name + "_top");
+        axisBlock((RotatedPillarBlock) log,
+                side,
+                end
+        );
+        simpleBlockItem(log, models().cubeColumn(name, side, end));
+    }
+
+    private void woodWithItem(Block log, String folderInTree)
+    {
+        String name = getName(log);
+        ResourceLocation side = createResourceLocation("block/tree/" + folderInTree + "/" + name.replace("wood", "log") + "_side");;
+        axisBlock((RotatedPillarBlock) log,
+                side,
+                side
+        );
+        simpleBlockItem(log, models().cubeColumn(name, side, side));
+    }
+
+    private void leavesWithItem(Block leaves, String folderInTree)
+    {
+        String name = getName(leaves);
+        ModelFile model = models().leaves(name, createResourceLocation("block/tree/" + folderInTree + "/" + name)).renderType("cutout");
+        simpleBlockWithItem(leaves, model);
+    }
+
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)
     {
         String texturePath = "premierpainmod:block/all_materials_block/multiple_use_carpet/";
@@ -1175,5 +1211,10 @@ public class ModBlockStateProvider extends BlockStateProvider
     private String getName(Block block)
     {
         return getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+    }
+
+    private ResourceLocation createResourceLocation(String path)
+    {
+        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
     }
 }

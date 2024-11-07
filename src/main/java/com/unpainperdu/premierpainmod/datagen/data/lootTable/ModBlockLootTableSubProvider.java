@@ -8,6 +8,9 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.Villag
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
@@ -100,6 +103,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get(), BlockRegister.CACTUS_FLOWER_BLOCK.get());
             //crop
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_JELLYSHROOM.get(), BlockRegister.JELLYSHROOM.get());
+        //leaves
+        leavesLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
     }
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks()
@@ -218,6 +223,11 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                         ));
     }
 
+    private void leavesLootTable(Block leave, Block sapling)
+    {
+        super.add(leave, createLeavesDrops(leave, sapling, NORMAL_LEAVES_SAPLING_CHANCES));
+    }
+
     private boolean isNormalLoot(Block block)
     {
         return block instanceof VillagerPedestalBlock
@@ -229,6 +239,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 || block instanceof CactusFlowerBlock
                 || block instanceof AbstractAdaptableSit
                 || block instanceof SkySpearsFlower
+                || block instanceof FlammableBlock
+                || block instanceof LogBlock
                 ;
     }
 

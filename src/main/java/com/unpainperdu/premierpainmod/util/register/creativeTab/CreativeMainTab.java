@@ -10,12 +10,13 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
-import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
@@ -24,6 +25,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
@@ -35,6 +37,8 @@ public class CreativeMainTab
         generateMiscItems(output);
         //vegetation
         generateVegetation(output);
+        //wood and tree
+        generateWood(output);
         //all materials
         output.accept(BlockRegister.VILLAGER_WORKSHOP.get());
         generateAllMaterials(output);
@@ -54,6 +58,21 @@ public class CreativeMainTab
                     || block instanceof DeadBushBlock
                     || block instanceof SkySpearsFlower
                     || block instanceof JellyShroomBlock
+            )
+            {
+                output.accept(block);
+            }
+        }
+    }
+
+    private static void generateWood(CreativeModeTab.Output output)
+    {
+        for (DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        {
+            Block block = deferredBlock.get();
+            if(block instanceof LogBlock
+                    ||block instanceof FlammableBlock
+                    ||block instanceof LeavesBlock
             )
             {
                 output.accept(block);

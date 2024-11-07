@@ -2,6 +2,9 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
@@ -19,8 +22,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagProvider extends BlockTagsProvider {
-    public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper) {
+public class ModBlockTagProvider extends BlockTagsProvider
+{
+    public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper)
+    {
         super(packOutput, lookupProvider, PremierPainMod.MOD_ID, fileHelper);
     }
 
@@ -104,6 +109,45 @@ public class ModBlockTagProvider extends BlockTagsProvider {
             )
             {
                 this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+            }
+            //for all leaves
+            if (block instanceof ModLeavesBlock)
+            {
+                this.tag(BlockTags.LEAVES).add(block);
+                this.tag(BlockTags.REPLACEABLE_BY_TREES).add(block);
+                this.tag(BlockTags.MINEABLE_WITH_HOE).add(block);
+                this.tag(BlockTags.SWORD_EFFICIENT).add(block);
+                this.tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(block);
+                this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(block);
+                this.tag(BlockTags.PARROTS_SPAWNABLE_ON).add(block);
+            }
+            //for all log
+            if (block instanceof LogBlock)
+            {
+                this.tag(BlockTags.LOGS).add(block);
+                this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                this.tag(BlockTags.LOGS_THAT_BURN).add(block);
+                this.tag(BlockTags.SNAPS_GOAT_HORN).add(block);
+                this.tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(block);
+                this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(block);
+                this.tag(BlockTags.PARROTS_SPAWNABLE_ON).add(block);
+                if (!blockName.contains("stripped"))
+                {
+                    this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(block);
+                }
+                if (blockName.contains("mountain_currant"))
+                {
+                    // TODO : create tag for this kind of wood and apply it
+                }
+            }
+            //for all planks
+            if (block instanceof FlammableBlock)
+            {
+                if (blockName.contains("planks"))
+                {
+                    this.tag(BlockTags.PLANKS).add(block);
+                    this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                }
             }
             //flower
             if (block instanceof FlowerBlock

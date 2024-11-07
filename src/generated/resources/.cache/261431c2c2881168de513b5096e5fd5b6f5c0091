@@ -1,2 +1,5 @@
-// 1.21.1	2024-11-06T10:42:10.0410047	Tags for minecraft:item mod id premierpainmod
+// 1.21.1	2024-11-07T21:43:00.1368392	Tags for minecraft:item mod id premierpainmod
 22fe7f119049ea2a210b99f0c4e9657f32a9b79b data/minecraft/tags/item/flowers.json
+7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/item/logs.json
+7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/item/logs_that_burn.json
+81498951c878f166609e0b43b7adf285eb8429ad data/minecraft/tags/item/planks.json
