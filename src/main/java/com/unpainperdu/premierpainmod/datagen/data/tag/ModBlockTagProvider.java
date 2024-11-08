@@ -67,10 +67,6 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 {
                     this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(block);
                 }
-                if (blockName.contains("mountain_currant"))
-                {
-                    // TODO : create tag for this kind of wood and apply it
-                }
             }
             //for all planks
             if (block instanceof FlammableBlock)
