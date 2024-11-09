@@ -40,7 +40,7 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
 
         int randomInt = ModFeatureUtils.getRandomPositiveIntInRange(100, rand);
 
-        if (!isValidPlacementLocation(worldIn, pos) && randomInt > 30)
+        if (!isValidPlacementLocation(worldIn, pos) || randomInt > 30)
         {
             return false;
         }
@@ -53,8 +53,7 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
     {
         Block block = levelAccessor.getBlockState(pos).getBlock();
         BlockState blockBelowState = levelAccessor.getBlockState(pos.below());
-
-        return (block instanceof AirBlock) && blockBelowState.is(BlockTags.SAND);
+        return (block instanceof AirBlock) && (blockBelowState.is(BlockTags.SAND));
     }
 
     private static void generateFloweredCactus(WorldGenLevel worldIn, RandomSource rand, BlockPos pos, NoneFeatureConfiguration config,Direction direction)

@@ -139,3 +139,4 @@ update neoforge to 21.1.72
     - Curiosity flower can now spread on all dirt type block
     - Villager table has correct rotation now in generated structure
     - Biomes, blocks and items have tag now
+    - Flowered cactus should not spawn anymore on water
