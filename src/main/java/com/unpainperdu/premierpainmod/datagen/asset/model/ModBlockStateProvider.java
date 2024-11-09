@@ -17,6 +17,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
@@ -96,7 +97,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         woodWithItem(BlockRegister.MOUNTAIN_CURRANT_WOOD.get(),"mountain_currant_tree");
         woodWithItem(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get(),"mountain_currant_tree");
         simpleBlockWithItem(BlockRegister.MOUNTAIN_CURRANT_PLANKS.get(), "block/tree/mountain_currant_tree/mountain_currant_planks");
-        leavesWithItem(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), "mountain_currant_tree");
+        fruitLeavesWithItem(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), "mountain_currant_tree");
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
@@ -1088,6 +1089,28 @@ public class ModBlockStateProvider extends BlockStateProvider
         String name = getName(leaves);
         ModelFile model = models().leaves(name, createResourceLocation("block/tree/" + folderInTree + "/" + name)).renderType("cutout");
         simpleBlockWithItem(leaves, model);
+    }
+
+    private void fruitLeavesWithItem(Block leaves, String folderInTree)
+    {
+        String name = getName(leaves);
+        ModelFile baseModel = models().leaves(name, createResourceLocation("block/tree/" + folderInTree + "/" + name)).renderType("cutout");
+        ModelFile fruitModel = models().leaves(name + "_fruit", createResourceLocation("block/tree/" + folderInTree + "/" + name + "_fruit")).renderType("cutout");
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(leaves);
+        variantBuilder.forAllStates(state ->
+                {
+                    ModelFile finalModel = baseModel;
+                    System.out.println(state.getValue(ModLeavesBlock.HAS_FRUIT));
+                    if (state.getValue(ModLeavesBlock.HAS_FRUIT))
+                    {
+                        finalModel = fruitModel;
+                        System.out.println("if");
+                    }
+                    return ConfiguredModel.builder()
+                            .modelFile(finalModel)
+                            .build();
+                });
+        itemModels().getBuilder(getKey(leaves).getPath()).parent(baseModel);
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)
