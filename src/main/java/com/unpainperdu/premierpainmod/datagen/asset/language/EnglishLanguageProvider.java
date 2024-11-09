@@ -116,6 +116,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("amethyst","block",false);
         globalAllMaterialTranslation("dripstone","block",false);
         globalAllMaterialTranslation("bedrock");
+        globalAllMaterialTranslation("mountain", "currant", true);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix)

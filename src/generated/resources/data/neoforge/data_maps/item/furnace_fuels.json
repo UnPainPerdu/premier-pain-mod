@@ -216,6 +216,36 @@
     "premierpainmod:mountain_currant_planks": {
       "burn_time": 300
     },
+    "premierpainmod:mountain_currant_villager_bench": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_couch": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:mountain_currant_villager_throne_chair": {
+      "burn_time": 300
+    },
     "premierpainmod:mountain_currant_wood": {
       "burn_time": 300
     },

@@ -1100,11 +1100,9 @@ public class ModBlockStateProvider extends BlockStateProvider
         variantBuilder.forAllStates(state ->
                 {
                     ModelFile finalModel = baseModel;
-                    System.out.println(state.getValue(ModLeavesBlock.HAS_FRUIT));
                     if (state.getValue(ModLeavesBlock.HAS_FRUIT))
                     {
                         finalModel = fruitModel;
-                        System.out.println("if");
                     }
                     return ConfiguredModel.builder()
                             .modelFile(finalModel)

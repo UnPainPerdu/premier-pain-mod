@@ -1,7 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
@@ -50,6 +49,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         shapelessRecipeBuilder(ItemRegister.POTATOES_AND_SPEARS_BOWL, ItemRegister.SKY_SPEARS_FRUIT, 1, Items.BOWL, ItemRegister.SKY_SPEARS_FRUIT, Items.BAKED_POTATO);
         shapelessRecipeBuilder(ItemRegister.FRUITS_BOWL, ItemRegister.CACTUS_FLOWER_FRUIT, 1, Items.BOWL, ItemRegister.CACTUS_FLOWER_FRUIT, Items.SWEET_BERRIES, Items.GLOW_BERRIES, Items.APPLE);
         //block
+        villagerWorkshopRecipeBuilder();
             //misc
         oneItemToAnotherOneRecipeInFurnaceBuilder(BlockRegister.FLOWERED_CACTUS_BLOCK, Items.GREEN_DYE, RecipeCategory.MISC, 0.2f, 300);
             //flower to colorant
@@ -57,111 +57,121 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE);
             //all materials recipes
-        for(DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
+        for(Block block : ModList.getAllMaterialsBlocks())
         {
-            Block block = Defferedblock.get();
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
             if(!(block instanceof VillagerShelf))
             {
-                if (block instanceof VillagerWorkshop) {
-                    villagerWorkshopRecipeBuilder(block);
-                }
                 //oak like
-                else if (blockName.contains("dark_oak"))
+                if (blockName.contains("dark_oak"))
                 {
-                    buildingBlocksReciperBluilder(block, Blocks.DARK_OAK_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.DARK_OAK_PLANKS);
 
                 }  else if (blockName.contains("pale_oak"))
                 {
-                    buildingBlocksReciperBluilder(block, Items.STICK);
+                    buildingBlocksRecipeBluilder(block, Items.STICK);
                 }
-                else if (blockName.contains("oak")) {
-                    buildingBlocksReciperBluilder(block, Blocks.OAK_PLANKS);
+                else if (blockName.contains("oak"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.OAK_PLANKS);
                 }
                 //stone like
                 //sandstone like
-                else if (blockName.contains("red_sandstone")) {
-                    buildingBlocksReciperBluilder(block, Blocks.RED_SANDSTONE);
-                } else if (blockName.contains("sandstone")) {
-                    buildingBlocksReciperBluilder(block, Blocks.SANDSTONE);
+                else if (blockName.contains("red_sandstone"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.RED_SANDSTONE);
+                } else if (blockName.contains("sandstone"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.SANDSTONE);
                 }
                 //other
-                else if (blockName.contains("mossy_stone")) {
-                    buildingBlocksReciperBluilder(block, Blocks.MOSSY_COBBLESTONE);
-                } else if (blockName.contains("end_stone")) {
-                    buildingBlocksReciperBluilder(block, Blocks.END_STONE);
-                } else if (blockName.contains("blackstone")) {
-                    buildingBlocksReciperBluilder(block, Blocks.BLACKSTONE);
-                } else if (blockName.contains("redstone")) {
-                    buildingBlocksReciperBluilder(block, Blocks.REDSTONE_BLOCK);
-                } else if (blockName.contains("dripstone")) {
-                    buildingBlocksReciperBluilder(block, Blocks.DRIPSTONE_BLOCK);
-                } else if (blockName.contains("stone")) {
-                    buildingBlocksReciperBluilder(block, Blocks.COBBLESTONE);
+                else if (blockName.contains("mossy_stone"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.MOSSY_COBBLESTONE);
+                }
+                else if (blockName.contains("mountain_currant"))
+                {
+                    buildingBlocksRecipeBluilder(block, BlockRegister.MOUNTAIN_CURRANT_PLANKS);
+                }
+                else if (blockName.contains("end_stone"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.END_STONE);
+                } else if (blockName.contains("blackstone"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.BLACKSTONE);
+                } else if (blockName.contains("redstone"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.REDSTONE_BLOCK);
+                } else if (blockName.contains("dripstone"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.DRIPSTONE_BLOCK);
+                } else if (blockName.contains("stone"))
+                {
+                    buildingBlocksRecipeBluilder(block, Blocks.COBBLESTONE);
                 }
                 //other
                 else if (blockName.contains("birch")) {
-                    buildingBlocksReciperBluilder(block, Blocks.BIRCH_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.BIRCH_PLANKS);
                 } else if (blockName.contains("spruce")) {
-                    buildingBlocksReciperBluilder(block, Blocks.SPRUCE_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.SPRUCE_PLANKS);
                 } else if (blockName.contains("jungle")) {
-                    buildingBlocksReciperBluilder(block, Blocks.JUNGLE_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.JUNGLE_PLANKS);
                 } else if (blockName.contains("acacia")) {
-                    buildingBlocksReciperBluilder(block, Blocks.ACACIA_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.ACACIA_PLANKS);
                 } else if (blockName.contains("mangrove")) {
-                    buildingBlocksReciperBluilder(block, Blocks.MANGROVE_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.MANGROVE_PLANKS);
                 } else if (blockName.contains("cherry")) {
-                    buildingBlocksReciperBluilder(block, Blocks.CHERRY_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.CHERRY_PLANKS);
                 } else if (blockName.contains("bamboo")) {
-                    buildingBlocksReciperBluilder(block, Blocks.BAMBOO_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.BAMBOO_PLANKS);
                 } else if (blockName.contains("crimson")) {
-                    buildingBlocksReciperBluilder(block, Blocks.CRIMSON_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.CRIMSON_PLANKS);
                 } else if (blockName.contains("warped")) {
-                    buildingBlocksReciperBluilder(block, Blocks.WARPED_PLANKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.WARPED_PLANKS);
                 } else if (blockName.contains("andesite")) {
-                    buildingBlocksReciperBluilder(block, Blocks.ANDESITE);
+                    buildingBlocksRecipeBluilder(block, Blocks.ANDESITE);
                 } else if (blockName.contains("diorite")) {
-                    buildingBlocksReciperBluilder(block, Blocks.DIORITE);
+                    buildingBlocksRecipeBluilder(block, Blocks.DIORITE);
                 } else if (blockName.contains("granite")) {
-                    buildingBlocksReciperBluilder(block, Blocks.GRANITE);
+                    buildingBlocksRecipeBluilder(block, Blocks.GRANITE);
                 } else if (blockName.contains("prismarine")) {
-                    buildingBlocksReciperBluilder(block, Blocks.PRISMARINE);
+                    buildingBlocksRecipeBluilder(block, Blocks.PRISMARINE);
                 } else if (blockName.contains("purpur")) {
-                    buildingBlocksReciperBluilder(block, Blocks.PURPUR_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.PURPUR_BLOCK);
                 } else if (blockName.contains("deepslate")) {
-                    buildingBlocksReciperBluilder(block, Blocks.COBBLED_DEEPSLATE);
+                    buildingBlocksRecipeBluilder(block, Blocks.COBBLED_DEEPSLATE);
                 } else if (blockName.contains("tuff")) {
-                    buildingBlocksReciperBluilder(block, Blocks.TUFF);
+                    buildingBlocksRecipeBluilder(block, Blocks.TUFF);
                 } else if (blockName.contains("packed_mud")) {
-                    buildingBlocksReciperBluilder(block, Blocks.PACKED_MUD);
+                    buildingBlocksRecipeBluilder(block, Blocks.PACKED_MUD);
                 } else if (blockName.contains("quartz")) {
-                    buildingBlocksReciperBluilder(block, Blocks.QUARTZ_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.QUARTZ_BLOCK);
                 } else if (blockName.contains("nether_bricks")) {
-                    buildingBlocksReciperBluilder(block, Blocks.NETHER_BRICKS);
+                    buildingBlocksRecipeBluilder(block, Blocks.NETHER_BRICKS);
                 } else if (blockName.contains("basalt")) {
-                    buildingBlocksReciperBluilder(block, Blocks.BASALT);
+                    buildingBlocksRecipeBluilder(block, Blocks.BASALT);
                 } else if (blockName.contains("coal")) {
-                    buildingBlocksReciperBluilder(block, Blocks.COAL_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.COAL_BLOCK);
                 } else if (blockName.contains("iron")) {
-                    buildingBlocksReciperBluilder(block, Blocks.IRON_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.IRON_BLOCK);
                 } else if (blockName.contains("gold")) {
-                    buildingBlocksReciperBluilder(block, Blocks.GOLD_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.GOLD_BLOCK);
                 } else if (blockName.contains("emerald")) {
-                    buildingBlocksReciperBluilder(block, Blocks.EMERALD_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.EMERALD_BLOCK);
                 } else if (blockName.contains("diamond")) {
-                    buildingBlocksReciperBluilder(block, Blocks.DIAMOND_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.DIAMOND_BLOCK);
                 } else if (blockName.contains("copper")) {
-                    buildingBlocksReciperBluilder(block, Blocks.COPPER_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.COPPER_BLOCK);
                 } else if (blockName.contains("lapis")) {
-                    buildingBlocksReciperBluilder(block, Blocks.LAPIS_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.LAPIS_BLOCK);
                 } else if (blockName.contains("netherite")) {
-                    buildingBlocksReciperBluilder(block, Blocks.NETHERITE_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.NETHERITE_BLOCK);
                 } else if (blockName.contains("obsidian")) {
-                    buildingBlocksReciperBluilder(block, Blocks.OBSIDIAN);
+                    buildingBlocksRecipeBluilder(block, Blocks.OBSIDIAN);
                 } else if (blockName.contains("amethyst")) {
-                    buildingBlocksReciperBluilder(block, Blocks.AMETHYST_BLOCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.AMETHYST_BLOCK);
                 } else if (blockName.contains("bedrock")) {
-                    buildingBlocksReciperBluilder(block, Blocks.BEDROCK);
+                    buildingBlocksRecipeBluilder(block, Blocks.BEDROCK);
                 }
             }
         }
@@ -174,105 +184,106 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             {
                     //oak like
                 if (itemName.contains("dark_oak")) {
-                    buildingBlocksReciperBluilder(item, Blocks.DARK_OAK_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.DARK_OAK_PLANKS);
                 } else if (itemName.contains("oak")) {
-                    buildingBlocksReciperBluilder(item, Blocks.OAK_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.OAK_PLANKS);
                 }
                 //stone like
                 //sandstone like
                 else if (itemName.contains("red_sandstone")) {
-                    buildingBlocksReciperBluilder(item, Blocks.RED_SANDSTONE);
+                    buildingBlocksRecipeBluilder(item, Blocks.RED_SANDSTONE);
                 } else if (itemName.contains("sandstone")) {
-                    buildingBlocksReciperBluilder(item, Blocks.SANDSTONE);
+                    buildingBlocksRecipeBluilder(item, Blocks.SANDSTONE);
                 }
                 //other
                 else if (itemName.contains("mossy_stone")) {
-                    buildingBlocksReciperBluilder(item, Blocks.MOSSY_COBBLESTONE);
+                    buildingBlocksRecipeBluilder(item, Blocks.MOSSY_COBBLESTONE);
                 } else if (itemName.contains("end_stone")) {
-                    buildingBlocksReciperBluilder(item, Blocks.END_STONE);
+                    buildingBlocksRecipeBluilder(item, Blocks.END_STONE);
                 } else if (itemName.contains("blackstone")) {
-                    buildingBlocksReciperBluilder(item, Blocks.BLACKSTONE);
+                    buildingBlocksRecipeBluilder(item, Blocks.BLACKSTONE);
                 } else if (itemName.contains("redstone")) {
-                    buildingBlocksReciperBluilder(item, Blocks.REDSTONE_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.REDSTONE_BLOCK);
                 } else if (itemName.contains("dripstone")) {
-                    buildingBlocksReciperBluilder(item, Blocks.DRIPSTONE_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.DRIPSTONE_BLOCK);
                 } else if (itemName.contains("stone")) {
-                    buildingBlocksReciperBluilder(item, Blocks.COBBLESTONE);
+                    buildingBlocksRecipeBluilder(item, Blocks.COBBLESTONE);
                 }
                 //other
                 else if (itemName.contains("birch")) {
-                    buildingBlocksReciperBluilder(item, Blocks.BIRCH_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.BIRCH_PLANKS);
                 } else if (itemName.contains("spruce")) {
-                    buildingBlocksReciperBluilder(item, Blocks.SPRUCE_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.SPRUCE_PLANKS);
                 } else if (itemName.contains("jungle")) {
-                    buildingBlocksReciperBluilder(item, Blocks.JUNGLE_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.JUNGLE_PLANKS);
                 } else if (itemName.contains("acacia")) {
-                    buildingBlocksReciperBluilder(item, Blocks.ACACIA_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.ACACIA_PLANKS);
                 } else if (itemName.contains("mangrove")) {
-                    buildingBlocksReciperBluilder(item, Blocks.MANGROVE_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.MANGROVE_PLANKS);
                 } else if (itemName.contains("cherry")) {
-                    buildingBlocksReciperBluilder(item, Blocks.CHERRY_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.CHERRY_PLANKS);
                 } else if (itemName.contains("bamboo")) {
-                    buildingBlocksReciperBluilder(item, Blocks.BAMBOO_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.BAMBOO_PLANKS);
                 } else if (itemName.contains("crimson")) {
-                    buildingBlocksReciperBluilder(item, Blocks.CRIMSON_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.CRIMSON_PLANKS);
                 } else if (itemName.contains("warped")) {
-                    buildingBlocksReciperBluilder(item, Blocks.WARPED_PLANKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.WARPED_PLANKS);
                 } else if (itemName.contains("andesite")) {
-                    buildingBlocksReciperBluilder(item, Blocks.ANDESITE);
+                    buildingBlocksRecipeBluilder(item, Blocks.ANDESITE);
                 } else if (itemName.contains("diorite")) {
-                    buildingBlocksReciperBluilder(item, Blocks.DIORITE);
+                    buildingBlocksRecipeBluilder(item, Blocks.DIORITE);
                 } else if (itemName.contains("granite")) {
-                    buildingBlocksReciperBluilder(item, Blocks.GRANITE);
+                    buildingBlocksRecipeBluilder(item, Blocks.GRANITE);
                 } else if (itemName.contains("prismarine")) {
-                    buildingBlocksReciperBluilder(item, Blocks.PRISMARINE);
+                    buildingBlocksRecipeBluilder(item, Blocks.PRISMARINE);
                 } else if (itemName.contains("purpur")) {
-                    buildingBlocksReciperBluilder(item, Blocks.PURPUR_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.PURPUR_BLOCK);
                 } else if (itemName.contains("deepslate")) {
-                    buildingBlocksReciperBluilder(item, Blocks.COBBLED_DEEPSLATE);
+                    buildingBlocksRecipeBluilder(item, Blocks.COBBLED_DEEPSLATE);
                 } else if (itemName.contains("tuff")) {
-                    buildingBlocksReciperBluilder(item, Blocks.TUFF);
+                    buildingBlocksRecipeBluilder(item, Blocks.TUFF);
                 } else if (itemName.contains("packed_mud")) {
-                    buildingBlocksReciperBluilder(item, Blocks.PACKED_MUD);
+                    buildingBlocksRecipeBluilder(item, Blocks.PACKED_MUD);
                 } else if (itemName.contains("quartz")) {
-                    buildingBlocksReciperBluilder(item, Blocks.QUARTZ_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.QUARTZ_BLOCK);
                 } else if (itemName.contains("nether_bricks")) {
-                    buildingBlocksReciperBluilder(item, Blocks.NETHER_BRICKS);
+                    buildingBlocksRecipeBluilder(item, Blocks.NETHER_BRICKS);
                 } else if (itemName.contains("basalt")) {
-                    buildingBlocksReciperBluilder(item, Blocks.BASALT);
+                    buildingBlocksRecipeBluilder(item, Blocks.BASALT);
                 } else if (itemName.contains("coal")) {
-                    buildingBlocksReciperBluilder(item, Blocks.COAL_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.COAL_BLOCK);
                 } else if (itemName.contains("iron")) {
-                    buildingBlocksReciperBluilder(item, Blocks.IRON_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.IRON_BLOCK);
                 } else if (itemName.contains("gold")) {
-                    buildingBlocksReciperBluilder(item, Blocks.GOLD_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.GOLD_BLOCK);
                 } else if (itemName.contains("emerald")) {
-                    buildingBlocksReciperBluilder(item, Blocks.EMERALD_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.EMERALD_BLOCK);
                 } else if (itemName.contains("diamond")) {
-                    buildingBlocksReciperBluilder(item, Blocks.DIAMOND_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.DIAMOND_BLOCK);
                 } else if (itemName.contains("copper")) {
-                    buildingBlocksReciperBluilder(item, Blocks.COPPER_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.COPPER_BLOCK);
                 } else if (itemName.contains("lapis")) {
-                    buildingBlocksReciperBluilder(item, Blocks.LAPIS_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.LAPIS_BLOCK);
                 } else if (itemName.contains("netherite")) {
-                    buildingBlocksReciperBluilder(item, Blocks.NETHERITE_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.NETHERITE_BLOCK);
                 } else if (itemName.contains("obsidian")) {
-                    buildingBlocksReciperBluilder(item, Blocks.OBSIDIAN);
+                    buildingBlocksRecipeBluilder(item, Blocks.OBSIDIAN);
                 } else if (itemName.contains("amethyst")) {
-                    buildingBlocksReciperBluilder(item, Blocks.AMETHYST_BLOCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.AMETHYST_BLOCK);
                 } else if (itemName.contains("bedrock")) {
-                    buildingBlocksReciperBluilder(item, Blocks.BEDROCK);
+                    buildingBlocksRecipeBluilder(item, Blocks.BEDROCK);
                 }
             }
         }
     }
-    private void buildingBlocksReciperBluilder(ItemLike craftedBlock, ItemLike ingredient)
+    private void buildingBlocksRecipeBluilder(ItemLike craftedBlock, ItemLike ingredient)
     {
         villagerWorkshopResultFromBase(craftedBlock,RecipeCategory.BUILDING_BLOCKS,ingredient);
     }
 
-    private void villagerWorkshopRecipeBuilder(ItemLike craftedBlock)
+    private void villagerWorkshopRecipeBuilder()
     {
+        Block craftedBlock = BlockRegister.VILLAGER_WORKSHOP.get();
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(craftedBlock, 1))
                 .define('1', Items.COPPER_INGOT)
                 .define('2', Items.EMERALD)

@@ -37,9 +37,9 @@ public class ModBlockTagProvider extends BlockTagsProvider
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
             addTagForAllMaterialsBlock(block, blockName);
         }
-        for (DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
+        for (DeferredBlock<Block> deferredblock : ModList.ALL_BLOCKS)
         {
-            Block block = Defferedblock.get();
+            Block block = deferredblock.get();
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
 
             //for all leaves
@@ -169,6 +169,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 || (blockName.contains("crimson"))
                 || (blockName.contains("warped"))
                 || (blockName.contains("bamboo"))
+                || (blockName.contains("mountain_currant"))
         )
         {
             this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);

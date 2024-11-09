@@ -137,7 +137,8 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_STATUE =  allMaterialsBlockRegister("villager_statue","amethyst_block_villager_statue","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_STATUE =  allMaterialsBlockRegister("villager_statue","dripstone_block_villager_statue","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_STATUE =  allMaterialsBlockRegister("villager_statue","bedrock_villager_statue","bedrock");
-        //pedestal
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_VILLAGER_STATUE =  allMaterialsBlockRegister("villager_statue","mountain_currant_villager_statue","wood");
+    //pedestal
     public static final DeferredBlock<Block> OAK_PEDESTAL = allMaterialsBlockRegister("villager_pedestal","oak_villager_pedestal","wood");
     public static final DeferredBlock<Block> BIRCH_PEDESTAL = allMaterialsBlockRegister("villager_pedestal","birch_villager_pedestal","wood");
     public static final DeferredBlock<Block> SPRUCE_PEDESTAL = allMaterialsBlockRegister("villager_pedestal","spruce_villager_pedestal","wood");
@@ -180,7 +181,8 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_PEDESTAL =  allMaterialsBlockRegister("villager_pedestal","amethyst_block_villager_pedestal","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_PEDESTAL =  allMaterialsBlockRegister("villager_pedestal","dripstone_block_villager_pedestal","dripstone");
     public static final DeferredBlock<Block> BEDROCK_PEDESTAL =  allMaterialsBlockRegister("villager_pedestal","bedrock_villager_pedestal","bedrock");
-        //brazier
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_PEDESTAL =  allMaterialsBlockRegister("villager_pedestal","mountain_currant_villager_pedestal","wood");
+    //brazier
     public static final DeferredBlock<Block> OAK_VILLAGER_BRAZIER = allMaterialsBlockRegister("villager_brazier","oak_villager_brazier","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_BRAZIER = allMaterialsBlockRegister("villager_brazier","birch_villager_brazier","wood");
     public static final DeferredBlock<Block> SPRUCE_VILLAGER_BRAZIER = allMaterialsBlockRegister("villager_brazier","spruce_villager_brazier","wood");
@@ -223,7 +225,8 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_BRAZIER =  allMaterialsBlockRegister("villager_brazier","amethyst_block_villager_brazier","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_BRAZIER =  allMaterialsBlockRegister("villager_brazier","dripstone_block_villager_brazier","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_BRAZIER =  allMaterialsBlockRegister("villager_brazier","bedrock_villager_brazier","bedrock");
-        //table zone
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_VILLAGER_BRAZIER =  allMaterialsBlockRegister("villager_brazier","mountain_currant_villager_brazier","wood");
+    //table zone
     public static final DeferredBlock<Block> OAK_VILLAGER_TABLE = allMaterialsBlockRegister("villager_table","oak_villager_table","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_TABLE = allMaterialsBlockRegister("villager_table","birch_villager_table","wood");
     public static final DeferredBlock<Block> SPRUCE_VILLAGER_TABLE = allMaterialsBlockRegister("villager_table","spruce_villager_table","wood");
@@ -266,7 +269,8 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_TABLE =  allMaterialsBlockRegister("villager_table","amethyst_block_villager_table","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_TABLE =  allMaterialsBlockRegister("villager_table","dripstone_block_villager_table","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_TABLE =  allMaterialsBlockRegister("villager_table","bedrock_villager_table","bedrock");
-        //chair zone
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_VILLAGER_TABLE =  allMaterialsBlockRegister("villager_table","mountain_currant_villager_table","wood");
+    //chair zone
     public static final DeferredBlock<Block> OAK_VILLAGER_CHAIR = allMaterialsBlockRegister("villager_chair","oak_villager_chair","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_CHAIR = allMaterialsBlockRegister("villager_chair","birch_villager_chair","wood");
     public static final DeferredBlock<Block> SPRUCE_VILLAGER_CHAIR = allMaterialsBlockRegister("villager_chair","spruce_villager_chair","wood");
@@ -309,6 +313,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_CHAIR =  allMaterialsBlockRegister("villager_chair","amethyst_block_villager_chair","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_CHAIR =  allMaterialsBlockRegister("villager_chair","dripstone_block_villager_chair","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_CHAIR =  allMaterialsBlockRegister("villager_chair","bedrock_villager_chair","bedrock");
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_VILLAGER_CHAIR =  allMaterialsBlockRegister("villager_chair","mountain_currant_villager_chair","wood");
         //throne chair
     public static final DeferredBlock<Block> OAK_VILLAGER_THRONE_CHAIR = allMaterialsBlockRegister("villager_throne_chair","oak_villager_throne_chair","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_THRONE_CHAIR = allMaterialsBlockRegister("villager_throne_chair","birch_villager_throne_chair","wood");
@@ -352,7 +357,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_THRONE_CHAIR =  allMaterialsBlockRegister("villager_throne_chair","amethyst_block_villager_throne_chair","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR =  allMaterialsBlockRegister("villager_throne_chair","dripstone_block_villager_throne_chair","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_THRONE_CHAIR =  allMaterialsBlockRegister("villager_throne_chair","bedrock_villager_throne_chair","bedrock");
-
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_VILLAGER_THRONE_CHAIR =  allMaterialsBlockRegister("villager_throne_chair","mountain_currant_villager_throne_chair","wood");
     //drawer
     public static final DeferredBlock<Block> OAK_VILLAGER_DRAWER = allMaterialsBlockRegister("villager_drawer","oak_villager_drawer","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_DRAWER = allMaterialsBlockRegister("villager_drawer","birch_villager_drawer","wood");
@@ -396,6 +401,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_DRAWER =  allMaterialsBlockRegister("villager_drawer","amethyst_block_villager_drawer","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_DRAWER =  allMaterialsBlockRegister("villager_drawer","dripstone_block_villager_drawer","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_DRAWER =  allMaterialsBlockRegister("villager_drawer","bedrock_villager_drawer","bedrock");
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_VILLAGER_DRAWER =  allMaterialsBlockRegister("villager_drawer","mountain_currant_villager_drawer","wood");
     //shelf
         //standing
     public static final DeferredBlock<Block> OAK_STANDING_VILLAGER_SHELF = allMaterialsBlockRegister("standing_villager_shelf","oak_standing_villager_shelf","wood");
@@ -440,6 +446,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_STANDING_VILLAGER_SHELF =  allMaterialsBlockRegister("standing_villager_shelf","amethyst_block_standing_villager_shelf","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_STANDING_VILLAGER_SHELF =  allMaterialsBlockRegister("standing_villager_shelf","dripstone_block_standing_villager_shelf","dripstone");
     public static final DeferredBlock<Block> BEDROCK_STANDING_VILLAGER_SHELF =  allMaterialsBlockRegister("standing_villager_shelf","bedrock_standing_villager_shelf","bedrock");
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_STANDING_VILLAGER_SHELF =  allMaterialsBlockRegister("standing_villager_shelf","mountain_currant_standing_villager_shelf","wood");
         //wall
     public static final DeferredBlock<Block> OAK_WALL_VILLAGER_SHELF = allMaterialsBlockRegister("wall_villager_shelf","oak_wall_villager_shelf","wood");
     public static final DeferredBlock<Block> BIRCH_WALL_VILLAGER_SHELF = allMaterialsBlockRegister("wall_villager_shelf","birch_wall_villager_shelf","wood");
@@ -483,6 +490,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","amethyst_block_wall_villager_shelf","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","dripstone_block_wall_villager_shelf","dripstone");
     public static final DeferredBlock<Block> BEDROCK_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","bedrock_wall_villager_shelf","bedrock");
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_VILLAGER_SHELF =  allMaterialsBlockRegister("wall_villager_shelf","mountain_currant_wall_villager_shelf","wood");
     //Villager bench
     public static final DeferredBlock<Block> OAK_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","oak_villager_bench","wood");
     public static final DeferredBlock<Block> BIRCH_VILLAGER_BENCH = allMaterialsBlockRegister("villager_bench","birch_villager_bench","wood");
@@ -526,6 +534,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","amethyst_block_villager_bench","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","dripstone_block_villager_bench","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","bedrock_villager_bench","bedrock");
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_VILLAGER_BENCH =  allMaterialsBlockRegister("villager_bench","mountain_currant_villager_bench","wood");
 
     //Villager couch
     public static final DeferredBlock<Block> OAK_VILLAGER_COUCH = allMaterialsBlockRegister("villager_couch","oak_villager_couch","wood");
@@ -570,6 +579,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> AMETHYST_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","amethyst_block_villager_couch","amethyst");
     public static final DeferredBlock<Block> DRIPSTONE_BLOCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","dripstone_block_villager_couch","dripstone");
     public static final DeferredBlock<Block> BEDROCK_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","bedrock_villager_couch","bedrock");
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_VILLAGER_COUCH =  allMaterialsBlockRegister("villager_couch","mountain_currant_villager_couch","wood");
     //Villager Singing stone event block
     public static final DeferredBlock<Block> LIBERTY_BLOCK =  registerBlock("liberty_block", () -> new LibertyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(0.0F, 0.0F).noLootTable().noOcclusion()));
     //vegetation

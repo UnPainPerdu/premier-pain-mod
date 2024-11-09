@@ -115,6 +115,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("amethyst_block","améthyste");
         globalAllMaterialTranslation("dripstone_block","spéléothème");
         globalAllMaterialTranslation("bedrock","bedrock");
+        globalAllMaterialTranslation("mountain_currant","groseillier des montagnes");
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix, String translationSuffix)

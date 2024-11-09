@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.*;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
@@ -37,8 +38,6 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
-import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
-import net.minecraft.world.level.storage.loot.functions.LootItemFunctions;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -59,9 +58,9 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     @Override
     public void generate()
     {
-        for(DeferredBlock<Block> Defferedblock : ModList.ALL_BLOCKS)
+        for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
-            Block block = Defferedblock.get();
+            Block block = deferredBlock.get();
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
             if(!blockName.contains("bedrock"))
             {
@@ -250,7 +249,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     }
     private boolean is2WidthBlockLoot(Block block)
     {
-        return block instanceof AbstractTwoBlockWidth
-                || block instanceof AbstractTwoBlockWidthWithBlockEntity;
+        return (block instanceof AbstractTwoBlockWidth
+                || block instanceof AbstractTwoBlockWidthWithBlockEntity);
     }
 }

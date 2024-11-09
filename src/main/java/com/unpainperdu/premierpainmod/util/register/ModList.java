@@ -69,6 +69,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_VILLAGER_STATUE,
             BlockRegister.DRIPSTONE_BLOCK_VILLAGER_STATUE,
             BlockRegister.BEDROCK_VILLAGER_STATUE,
+            BlockRegister.MOUNTAIN_CURRANT_VILLAGER_STATUE,
             //pedestal
             BlockRegister.OAK_PEDESTAL,
             BlockRegister.BIRCH_PEDESTAL,
@@ -112,6 +113,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_PEDESTAL,
             BlockRegister.DRIPSTONE_BLOCK_PEDESTAL,
             BlockRegister.BEDROCK_PEDESTAL,
+            BlockRegister.MOUNTAIN_CURRANT_PEDESTAL,
             //brazier
             BlockRegister.OAK_VILLAGER_BRAZIER,
             BlockRegister.BIRCH_VILLAGER_BRAZIER,
@@ -155,6 +157,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_VILLAGER_BRAZIER,
             BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BRAZIER,
             BlockRegister.BEDROCK_VILLAGER_BRAZIER,
+            BlockRegister.MOUNTAIN_CURRANT_VILLAGER_BRAZIER,
             //table
             BlockRegister.OAK_VILLAGER_TABLE,
             BlockRegister.BIRCH_VILLAGER_TABLE,
@@ -198,6 +201,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_VILLAGER_TABLE,
             BlockRegister.DRIPSTONE_BLOCK_VILLAGER_TABLE,
             BlockRegister.BEDROCK_VILLAGER_TABLE,
+            BlockRegister.MOUNTAIN_CURRANT_VILLAGER_TABLE,
             //chair
             BlockRegister.OAK_VILLAGER_CHAIR,
             BlockRegister.BIRCH_VILLAGER_CHAIR,
@@ -241,6 +245,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_VILLAGER_CHAIR,
             BlockRegister.DRIPSTONE_BLOCK_VILLAGER_CHAIR,
             BlockRegister.BEDROCK_VILLAGER_CHAIR,
+            BlockRegister.MOUNTAIN_CURRANT_VILLAGER_CHAIR,
             //throne chair
             BlockRegister.OAK_VILLAGER_THRONE_CHAIR,
             BlockRegister.BIRCH_VILLAGER_THRONE_CHAIR,
@@ -284,6 +289,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_VILLAGER_THRONE_CHAIR,
             BlockRegister.DRIPSTONE_BLOCK_VILLAGER_THRONE_CHAIR,
             BlockRegister.BEDROCK_VILLAGER_THRONE_CHAIR,
+            BlockRegister.MOUNTAIN_CURRANT_VILLAGER_THRONE_CHAIR,
             //drawer
             BlockRegister.OAK_VILLAGER_DRAWER,
             BlockRegister.BIRCH_VILLAGER_DRAWER,
@@ -327,6 +333,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_VILLAGER_DRAWER,
             BlockRegister.DRIPSTONE_BLOCK_VILLAGER_DRAWER,
             BlockRegister.BEDROCK_VILLAGER_DRAWER,
+            BlockRegister.MOUNTAIN_CURRANT_VILLAGER_DRAWER,
             //shelf
                 //standing
             BlockRegister.OAK_STANDING_VILLAGER_SHELF,
@@ -371,7 +378,8 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_STANDING_VILLAGER_SHELF,
             BlockRegister.DRIPSTONE_BLOCK_STANDING_VILLAGER_SHELF,
             BlockRegister.BEDROCK_STANDING_VILLAGER_SHELF,
-                //wall
+            BlockRegister.MOUNTAIN_CURRANT_STANDING_VILLAGER_SHELF,
+            //wall
             BlockRegister.OAK_WALL_VILLAGER_SHELF,
             BlockRegister.BIRCH_WALL_VILLAGER_SHELF,
             BlockRegister.SPRUCE_WALL_VILLAGER_SHELF,
@@ -414,6 +422,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_WALL_VILLAGER_SHELF,
             BlockRegister.DRIPSTONE_BLOCK_WALL_VILLAGER_SHELF,
             BlockRegister.BEDROCK_WALL_VILLAGER_SHELF,
+            BlockRegister.MOUNTAIN_CURRANT_WALL_VILLAGER_SHELF,
             //villager bench
             BlockRegister.OAK_VILLAGER_BENCH,
             BlockRegister.BIRCH_VILLAGER_BENCH,
@@ -457,6 +466,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_VILLAGER_BENCH,
             BlockRegister.DRIPSTONE_BLOCK_VILLAGER_BENCH,
             BlockRegister.BEDROCK_VILLAGER_BENCH,
+            BlockRegister.MOUNTAIN_CURRANT_VILLAGER_BENCH,
             //villager couch
             BlockRegister.OAK_VILLAGER_COUCH,
             BlockRegister.BIRCH_VILLAGER_COUCH,
@@ -500,6 +510,7 @@ public class ModList
             BlockRegister.AMETHYST_BLOCK_VILLAGER_COUCH,
             BlockRegister.DRIPSTONE_BLOCK_VILLAGER_COUCH,
             BlockRegister.BEDROCK_VILLAGER_COUCH,
+            BlockRegister.MOUNTAIN_CURRANT_VILLAGER_COUCH,
             //flower and pot
             BlockRegister.RUINS_FLOWER,
             BlockRegister.POTTED_RUINS_FLOWER,
@@ -607,6 +618,7 @@ public class ModList
             ItemRegister.AMETHYST_BLOCK_VILLAGER_SHELF,
             ItemRegister.DRIPSTONE_BLOCK_VILLAGER_SHELF,
             ItemRegister.BEDROCK_VILLAGER_SHELF,
+            ItemRegister.MOUNTAIN_CURRANT_VILLAGER_SHELF,
             //villager'singing stone
             ItemRegister.LIBERTY_VILLAGER_SINGING_STONE,
             ItemRegister.DIGGY_VILLAGER_SINGING_STONE,
