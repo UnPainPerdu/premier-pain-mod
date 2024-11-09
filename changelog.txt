@@ -120,6 +120,15 @@ update neoforge to 21.1.72
     - Sky spears flower which grow from sky spears and can grow into sky spears
     - Sky spears fruit craft from sky spears flower (give 4 food)
     - Cactus flower fruit craft from cactus flower (give 4 food)
+    - Old Great Field biome a plain like biome
+    - Old Great Field structure where you can find ruined path and maybe some underground
+    - Old wild wheat wich loot 4 wheat and generate in Old Great Field biome
+    - JellyShroom, A crop like block which can be craft into Jelly hat (food that give 3 food), generate in Old Great Field structure
+    - JellyShroom stew food which give 5 food
+    - Cactus stew food which give 6 food
+    - Potatoes and spears bowl food which five 6 food
+    - Fruits bowl food which give 9 food
+    - Mountain currant tree with all blocks related to wood type block and allMaterialsBlocks
 
 ## remake :
     - creative tab icon is now the villager workbench
@@ -129,3 +138,4 @@ update neoforge to 21.1.72
     - Swamp premier pain temple has no more air block under it
     - Curiosity flower can now spread on all dirt type block
     - Villager table has correct rotation now in generated structure
+    - Biomes, blocks and items have tag now
