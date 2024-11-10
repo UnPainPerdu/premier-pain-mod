@@ -27,6 +27,7 @@ public class ModItemStateProvider extends ItemModelProvider
         vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());
         vegetationFoodItem(ItemRegister.CACTUS_FLOWER_FRUIT.get());
         vegetationFoodItem(ItemRegister.JELLY_HAT.get());
+        vegetationFoodItem(ItemRegister.MOUNTAIN_CURRANT.get());
             //stew
         stewFoodItem(ItemRegister.JELLYSHROOM_STEW.get());
         stewFoodItem(ItemRegister.CACTUS_STEW.get());

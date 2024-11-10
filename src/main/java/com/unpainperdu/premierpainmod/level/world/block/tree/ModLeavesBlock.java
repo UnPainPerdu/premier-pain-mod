@@ -1,5 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.tree;
 
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.toolKit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -28,6 +31,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ModLeavesBlock extends LeavesBlock
 {
@@ -122,7 +127,7 @@ public class ModLeavesBlock extends LeavesBlock
         if (state.getValue(ModLeavesBlock.HAS_FRUIT))
         {
             int j = 1 + RandomUtil.getRandomIntInRange(3, level.random);
-            popResource(level, pos, new ItemStack(Items.SWEET_BERRIES, j ));
+            popResource(level, pos, new ItemStack(getFruitForLeaves(state), j ));
             level.playSound(
                     null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F
             );
@@ -158,5 +163,20 @@ public class ModLeavesBlock extends LeavesBlock
     private static int getDistanceAt(BlockState neighbor)
     {
         return getOptionalDistanceAt(neighbor).orElse(7);
+    }
+
+    protected ItemLike getFruitForLeaves(BlockState state)
+    {
+        Map<BlockState, ItemLike> fruitAndLeavesMap = new HashMap<>();
+        fruitAndLeavesMap.put(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get().defaultBlockState(), ItemRegister.MOUNTAIN_CURRANT);
+
+        if (fruitAndLeavesMap.containsKey(state.getBlock().defaultBlockState()))
+        {
+            return  fruitAndLeavesMap.get(state.getBlock().defaultBlockState());
+        }
+        else
+        {
+            return state.getBlock().asItem();
+        }
     }
 }

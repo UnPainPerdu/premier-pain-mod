@@ -41,6 +41,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky Spears Fruit");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Cactus Flower Fruit");
         add(ItemRegister.JELLY_HAT.get(), "Jelly Hat");
+        add(ItemRegister.MOUNTAIN_CURRANT.get(), "Mountain Currant");
                 //stew
         add(ItemRegister.JELLYSHROOM_STEW.get(), "Jellyshroom Stew");
         add(ItemRegister.CACTUS_STEW.get(), "Cactus Fruit Stew");

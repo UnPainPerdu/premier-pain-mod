@@ -637,7 +637,8 @@ public class ModList
             ItemRegister.CACTUS_FLOWER_FRUIT,
             ItemRegister.SKY_SPEARS_FRUIT,
             ItemRegister.JELLY_HAT,
-                //stew
+            ItemRegister.MOUNTAIN_CURRANT,
+            //stew
             ItemRegister.JELLYSHROOM_STEW,
             ItemRegister.CACTUS_STEW,
             ItemRegister.POTATOES_AND_SPEARS_BOWL,
