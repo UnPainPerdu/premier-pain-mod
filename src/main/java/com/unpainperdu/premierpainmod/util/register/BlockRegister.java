@@ -33,8 +33,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
@@ -616,9 +618,16 @@ public class BlockRegister
     public static final DeferredBlock<Block> STRIPPED_MOUNTAIN_CURRANT_LOG =  registerBlock("stripped_mountain_currant_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WOOD =  registerBlock("mountain_currant_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> STRIPPED_MOUNTAIN_CURRANT_WOOD =  registerBlock("stripped_mountain_currant_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_PLANKS =  registerBlock("mountain_currant_planks", () -> new FlammableBlock(20,5,BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_LEAVES =  registerBlock("mountain_currant_leaves", () -> new ModLeavesBlock(true, 60,30,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_STAIRS =  registerBlock("mountain_currant_stairs", () -> registerStair(() -> MOUNTAIN_CURRANT_PLANKS));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_SLAB =  registerBlock("mountain_currant_slab", () -> registerSlab(() -> MOUNTAIN_CURRANT_PLANKS));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_BUTTON =  registerBlock("mountain_currant_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_PRESSURE_PLATE=  registerBlock("mountain_currant_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_FENCE =  registerBlock("mountain_currant_fence", () -> registerFence(() -> MOUNTAIN_CURRANT_PLANKS));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_FENCE_GATE =  registerBlock("mountain_currant_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_DOOR =  registerBlock("mountain_currant_door", () -> registerDoor(BlockSetType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_TRAPDOOR =  registerBlock("mountain_currant_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
 
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
@@ -820,6 +829,46 @@ public class BlockRegister
     private static <T extends Block> DeferredBlock<T> registerFlowerPot(String name, Supplier<DeferredBlock<Block>> flowerBlock)
     {
         return (DeferredBlock<T>) BLOCKS.register(name, () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), flowerBlock.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    }
+
+    private static Block registerStair(Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new StairBlock(baseBlock.get().get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
+    private static Block registerSlab(Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new SlabBlock(BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
+    private static Block registerButton(Block button, BlockSetType type, int tickToStayPressed)
+    {
+        return new ButtonBlock(type, tickToStayPressed, BlockBehaviour.Properties.ofFullCopy(button));
+    }
+
+    private static Block registerPressurePlate(BlockSetType type, Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new PressurePlateBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
+    private static Block registerFence(Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new FenceBlock(BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
+    private static Block registerFenceGate(WoodType type, Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new FenceGateBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
+    private static Block registerDoor(BlockSetType type, Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new DoorBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
+    private static Block registerTrapdoor(BlockSetType type, Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new TrapDoorBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
     }
 
     public static void register(IEventBus modEventBus)

@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.util.register.creativeTab;
 
+import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerCouch;
@@ -20,12 +21,10 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeigh
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DeadBushBlock;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
@@ -70,12 +69,28 @@ public class CreativeMainTab
         for (DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
             Block block = deferredBlock.get();
+            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
             if(block instanceof LogBlock
                     ||block instanceof FlammableBlock
                     ||block instanceof LeavesBlock
             )
             {
                 output.accept(block);
+            }
+            if (blockName.contains("mountain_currant"))
+            {
+                if (block instanceof StairBlock
+                        || block instanceof SlabBlock
+                        || block instanceof ButtonBlock
+                        || block instanceof PressurePlateBlock
+                        || block instanceof FenceBlock
+                        || block instanceof FenceGateBlock
+                        || block instanceof DoorBlock
+                        || block instanceof TrapDoorBlock
+                )
+                {
+                    output.accept(block);
+                }
             }
         }
     }
