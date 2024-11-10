@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "premierpainmod:block/mountain_currant_slab"
+    },
+    "type=double": {
+      "model": "premierpainmod:block/mountain_currant_slab_full"
+    },
+    "type=top": {
+      "model": "premierpainmod:block/mountain_currant_slab_top"
+    }
+  }
+}

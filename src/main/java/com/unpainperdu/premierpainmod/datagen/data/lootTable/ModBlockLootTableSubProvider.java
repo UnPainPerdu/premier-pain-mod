@@ -5,13 +5,11 @@ import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.*;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
-import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
@@ -27,9 +25,7 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DeadBushBlock;
-import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -240,12 +236,21 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 || block instanceof SkySpearsFlower
                 || block instanceof FlammableBlock
                 || block instanceof LogBlock
+                || block instanceof StairBlock
+                || block instanceof SlabBlock
+                || block instanceof ButtonBlock
+                || block instanceof PressurePlateBlock
+                || block instanceof FenceBlock
+                || block instanceof FenceGateBlock
+                || block instanceof TrapDoorBlock
                 ;
     }
 
     private boolean is2HeightBlockLoot(Block block)
     {
-        return block instanceof AbstractTwoBlockHeightBlock;
+        return block instanceof AbstractTwoBlockHeightBlock
+                        || block instanceof DoorBlock;
+
     }
     private boolean is2WidthBlockLoot(Block block)
     {

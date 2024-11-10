@@ -217,6 +217,7 @@ public class FrenchLanguageProvider extends LanguageProvider
     /***
      *
      * @param nameOfTree need to be in this : form dark_oak
+     * @param translation need to be in this form : chêne noir
      */
     private void treeTranslator(String nameOfTree, String translation)
     {
@@ -227,5 +228,13 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(id + "stripped_" + nameOfTree + "_wood", "Bois de " + translation + " écorcé");
         add(id + nameOfTree + "_planks", "Planche en " + translation);
         add(id + nameOfTree + "_leaves", "Feuilles de " + translation);
+        add(id + nameOfTree + "_stairs", "Escalier en " + translation);
+        add(id + nameOfTree + "_slab", "Dalle en " + translation);
+        add(id + nameOfTree + "_button", "Bouton en " + translation);
+        add(id + nameOfTree + "_pressure_plate", "Plaque de pression en " + translation);
+        add(id + nameOfTree + "_fence", "Barrière en " + translation);
+        add(id + nameOfTree + "_fence_gate", "Portillon en " + translation);
+        add(id + nameOfTree + "_door", "Porte en " + translation);
+        add(id + nameOfTree + "_trapdoor", "Trappe en " + translation);
     }
 }

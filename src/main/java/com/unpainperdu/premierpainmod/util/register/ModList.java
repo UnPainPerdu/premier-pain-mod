@@ -542,6 +542,7 @@ public class ModList
             BlockRegister.MOUNTAIN_CURRANT_WOOD,
             BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD,
             BlockRegister.MOUNTAIN_CURRANT_PLANKS,
+            BlockRegister.MOUNTAIN_CURRANT_LEAVES,
             BlockRegister.MOUNTAIN_CURRANT_STAIRS,
             BlockRegister.MOUNTAIN_CURRANT_SLAB,
             BlockRegister.MOUNTAIN_CURRANT_BUTTON,

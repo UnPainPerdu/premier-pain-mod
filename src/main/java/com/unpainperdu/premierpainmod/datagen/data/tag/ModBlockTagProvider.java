@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.tag;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
@@ -13,8 +14,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.*;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -67,6 +68,10 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 {
                     this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(block);
                 }
+                if (blockName.contains("mountain_currant"))
+                {
+                    tag(ModBlockTags.MOUNTAIN_CURRANT_LOGS).add(block);
+                }
             }
             //for all planks
             if (block instanceof FlammableBlock)
@@ -77,6 +82,57 @@ public class ModBlockTagProvider extends BlockTagsProvider
                     this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
                 }
             }
+            if (blockName.contains("mountain_currant"))
+            {
+                this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                if (block instanceof StairBlock)
+                {
+                    this.tag(BlockTags.STAIRS).add(block);
+                    this.tag(BlockTags.WOODEN_STAIRS).add(block);
+                }
+                else if (block instanceof SlabBlock)
+                {
+                    this.tag(BlockTags.SLABS).add(block);
+                    this.tag(BlockTags.WOODEN_SLABS).add(block);
+                }
+                else if (block instanceof ButtonBlock)
+                {
+                    this.tag(BlockTags.BUTTONS).add(block);
+                    this.tag(BlockTags.WOODEN_BUTTONS).add(block);
+                }
+                else if (block instanceof PressurePlateBlock)
+                {
+                    this.tag(BlockTags.PRESSURE_PLATES).add(block);
+                    this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(block);
+                    this.tag(BlockTags.WALL_POST_OVERRIDE).add(block);
+                }
+                else if (block instanceof FenceBlock)
+                {
+                    this.tag(BlockTags.FENCES).add(block);
+                    this.tag(BlockTags.WOODEN_FENCES).add(block);
+                    this.tag(Tags.Blocks.FENCES).add(block);
+                    this.tag(Tags.Blocks.FENCES_WOODEN).add(block);
+                }
+                else if (block instanceof FenceGateBlock)
+                {
+                    this.tag(BlockTags.FENCE_GATES).add(block);
+                    this.tag(BlockTags.UNSTABLE_BOTTOM_CENTER).add(block);
+                    this.tag(Tags.Blocks.FENCE_GATES).add(block);
+                    this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(block);
+                }
+                else if (block instanceof DoorBlock)
+                {
+                    this.tag(BlockTags.WOODEN_DOORS).add(block);
+                    this.tag(BlockTags.DOORS).add(block);
+                    this.tag(BlockTags.MOB_INTERACTABLE_DOORS).add(block);
+                }
+                else if (block instanceof TrapDoorBlock)
+                {
+                    this.tag(BlockTags.WOODEN_TRAPDOORS).add(block);
+                    this.tag(BlockTags.TRAPDOORS).add(block);
+                }
+            }
+            //wood slab
             //flower
             if (block instanceof FlowerBlock
                     || block instanceof AbstractGrowingAboveVegetation

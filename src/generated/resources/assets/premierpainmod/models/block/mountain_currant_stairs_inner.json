@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks",
+    "side": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks",
+    "top": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks"
+  }
+}

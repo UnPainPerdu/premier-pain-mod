@@ -392,7 +392,8 @@ public class EnglishLanguageProvider extends LanguageProvider
 
     /***
      *
-     * @param nameOfTree need to be in this : form dark_oak
+     * @param nameOfTree need to be in this form : dark_oak
+     * @param translation need to be in this form : Dark Oak
      */
     private void treeTranslator(String nameOfTree, String translation)
     {
@@ -403,5 +404,13 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(id + "stripped_" + nameOfTree + "_wood", "Stripped " + translation + " Wood");
         add(id + nameOfTree + "_planks",translation + " Planks");
         add(id + nameOfTree + "_leaves",translation + " Leaves");
+        add(id + nameOfTree + "_stairs",translation + " Stairs");
+        add(id + nameOfTree + "_slab",translation + " Slab");
+        add(id + nameOfTree + "_button",translation + " Button");
+        add(id + nameOfTree + "_pressure_plate",translation + " Pressure Plate");
+        add(id + nameOfTree + "_fence",translation + " Fence");
+        add(id + nameOfTree + "_fence_gate",translation + " Fence Gate");
+        add(id + nameOfTree + "_door",translation + " Door");
+        add(id + nameOfTree + "_trapdoor",translation + " Trapdoor");
     }
 }

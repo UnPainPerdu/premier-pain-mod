@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "premierpainmod:mountain_currant_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "premierpainmod:mountain_currant_planks"
+  }
+}

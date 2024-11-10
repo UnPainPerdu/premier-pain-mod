@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mountain_currant_wood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:mountain_currant_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:mountain_currant_wood"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mountain_currant_wood"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:mountain_currant_wood"
+    ]
+  }
+}

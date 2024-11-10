@@ -26,10 +26,7 @@ import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DeadBushBlock;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
@@ -98,6 +95,15 @@ public class ModBlockStateProvider extends BlockStateProvider
         woodWithItem(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get(),"mountain_currant_tree");
         simpleBlockWithItem(BlockRegister.MOUNTAIN_CURRANT_PLANKS.get(), "block/tree/mountain_currant_tree/mountain_currant_planks");
         fruitLeavesWithItem(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), "mountain_currant_tree");
+        ResourceLocation planksTexture = createResourceLocation("block/tree/mountain_currant_tree/mountain_currant_planks");
+        stairWithItem(BlockRegister.MOUNTAIN_CURRANT_STAIRS.get(), planksTexture);
+        slabWithItem(BlockRegister.MOUNTAIN_CURRANT_SLAB.get(), planksTexture);
+        buttonWithItem(BlockRegister.MOUNTAIN_CURRANT_BUTTON.get(),planksTexture);
+        pressurePlateWithItem(BlockRegister.MOUNTAIN_CURRANT_PRESSURE_PLATE.get(), planksTexture);
+        fenceWithItem(BlockRegister.MOUNTAIN_CURRANT_FENCE.get(), planksTexture);
+        fenceGateWithItem(BlockRegister.MOUNTAIN_CURRANT_FENCE_GATE.get(), planksTexture);
+        woodenDoorWithItem(BlockRegister.MOUNTAIN_CURRANT_DOOR.get(), "mountain_currant_tree");
+        woodenTrapdoorWithItem(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), "mountain_currant_tree");
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
@@ -193,15 +199,16 @@ public class ModBlockStateProvider extends BlockStateProvider
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
 
         if(material.equals("oak_villager")
-            ||material.equals("pale_oak_villager")
-            ||material.equals("birch_villager")
-            ||material.equals("spruce_villager")
-            ||material.equals("jungle_villager")
-            ||material.equals("acacia_villager")
-            ||material.equals("dark_oak_villager")
-            ||material.equals("mangrove_villager")
-            ||material.equals("cherry_villager")
-            ||material.equals("bamboo_villager")
+                ||material.equals("pale_oak_villager")
+                ||material.equals("birch_villager")
+                ||material.equals("spruce_villager")
+                ||material.equals("jungle_villager")
+                ||material.equals("acacia_villager")
+                ||material.equals("dark_oak_villager")
+                ||material.equals("mangrove_villager")
+                ||material.equals("cherry_villager")
+                ||material.equals("bamboo_villager")
+                ||material.equals("mountain_currant")
         )
         {
             texture_upper = "block/all_materials_block/villager_brazier/wood_villager_brazier_upper";
@@ -1109,6 +1116,80 @@ public class ModBlockStateProvider extends BlockStateProvider
                             .build();
                 });
         itemModels().getBuilder(getKey(leaves).getPath()).parent(baseModel);
+    }
+    private void stairWithItem(Block stairs, ResourceLocation texture)
+    {
+        stairsBlock((StairBlock) stairs, texture);
+        ModelFile model = models().stairs(getName(stairs) + "_item" ,texture, texture, texture);
+        itemModels().getBuilder(getKey(stairs).getPath()).parent(model);
+    }
+
+    private void slabWithItem(Block block, ResourceLocation texture)
+    {
+        ModelFile singleSLabModel = models().slab(getName(block), texture, texture, texture);
+
+        slabBlock((SlabBlock) block,
+                singleSLabModel,
+                models().slabTop(getName(block) + "_top", texture, texture, texture),
+                models().cubeAll(getName(block) + "_full", texture));
+        itemModels().getBuilder(getKey(block).getPath()).parent(singleSLabModel);
+    }
+
+    private void buttonWithItem(Block block, ResourceLocation texture)
+    {
+        String baseName = getName(block);
+        ModelFile button = models().button(baseName, texture);
+        ModelFile buttonPressed = models().buttonPressed(baseName + "_pressed", texture);
+        buttonBlock((ButtonBlock) block, button, buttonPressed);
+        ModelFile itemModel = models().withExistingParent(baseName + "_item", "block/button_inventory").texture("texture", texture);
+        itemModels().getBuilder(getKey(block).getPath()).parent(itemModel);
+    }
+    private void pressurePlateWithItem(Block block, ResourceLocation texture)
+    {
+        ModelFile pressurePlate = models().pressurePlate(getName(block), texture);
+        ModelFile pressurePlateDown = models().pressurePlateDown(getName(block) + "_down", texture);
+        pressurePlateBlock((PressurePlateBlock) block, pressurePlate, pressurePlateDown);
+        itemModels().getBuilder(getKey(block).getPath()).parent(pressurePlate);
+    }
+
+    private void fenceWithItem(Block block, ResourceLocation texture)
+    {
+        String baseName = getName(block);
+        fourWayBlock((CrossCollisionBlock) block,
+                models().fencePost(baseName + "_post", texture),
+                models().fenceSide(baseName + "_side", texture));
+        ModelFile itemModel = models().withExistingParent(baseName + "_item", "block/fence_inventory").texture("texture", texture);
+        itemModels().getBuilder(getKey(block).getPath()).parent(itemModel);
+    }
+    private void fenceGateWithItem(Block block, ResourceLocation texture)
+    {
+        String baseName = getName(block);
+        ModelFile gate = models().fenceGate(baseName, texture);
+        ModelFile gateOpen = models().fenceGateOpen(baseName + "_open", texture);
+        ModelFile gateWall = models().fenceGateWall(baseName + "_wall", texture);
+        ModelFile gateWallOpen = models().fenceGateWallOpen(baseName + "_wall_open", texture);
+        fenceGateBlock((FenceGateBlock) block, gate, gateOpen, gateWall, gateWallOpen);
+        itemModels().getBuilder(getKey(block).getPath()).parent(gate);
+    }
+
+    private void woodenDoorWithItem(Block door, String folderInTree)
+    {
+        String name = getName(door);
+        doorBlockWithRenderType((DoorBlock) door, createResourceLocation("block/tree/" + folderInTree + "/" + name + "_bottom"), createResourceLocation("block/tree/" + folderInTree + "/" + name + "_top"), "cutout");
+
+        itemModels().getBuilder((getKey(door).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0","item/tree/" + folderInTree + "/" + name);
+    }
+
+    private void woodenTrapdoorWithItem(Block block, String folderInTree)
+    {
+        String name = getName(block);
+        ResourceLocation texture = createResourceLocation("block/tree/" + folderInTree + "/" + name);
+        trapdoorBlockWithRenderType((TrapDoorBlock) block, texture, true, "cutout");
+        ModelFile model = models().trapdoorBottom(name, texture);
+        itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks"
+  }
+}

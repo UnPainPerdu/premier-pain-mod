@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
@@ -11,6 +12,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -56,6 +59,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CIVILIZATIONS_FLOWER, Items.ORANGE_DYE);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE);
+            //wood
+        oneItemToAnotherOneRecipeBuilder(ModItemTags.MOUNTAIN_CURRANT_LOGS, BlockRegister.MOUNTAIN_CURRANT_PLANKS, 4);
+        fourSameIntoOneRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_WOOD.get(), BlockRegister.MOUNTAIN_CURRANT_LOG.get(), 3);
+        fourSameIntoOneRecipeBuilder(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get(), 3);
+        stairsRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_STAIRS.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        slabRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_SLAB.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        buttonRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_BUTTON.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        pressurePlateRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_PRESSURE_PLATE.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        fenceRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_FENCE.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        fenceGateRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_FENCE_GATE.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        doorRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_DOOR.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        trapdoorRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
             //all materials recipes
         for(Block block : ModList.getAllMaterialsBlocks())
         {
@@ -318,6 +333,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput).requires(resource).unlockedBy("has_" + resultName, has(resource)).save(ModRecipeProvider.recipeOutput);
     }
 
+    private void oneItemToAnotherOneRecipeBuilder(TagKey<Item> resource, ItemLike result)
+    {
+        oneItemToAnotherOneRecipeBuilder(resource, result, 1);
+    }
+
+    private void oneItemToAnotherOneRecipeBuilder(TagKey<Item> resource, ItemLike result, int numberOutput)
+    {
+        String resultName = getName(result.asItem());
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput).requires(resource).unlockedBy("has_" + resultName, has(resource)).save(ModRecipeProvider.recipeOutput);
+    }
+
     /*
     for example cactus is 0.2 exp
     time in tick
@@ -342,5 +369,129 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
 
         shapelessRecipeBuilder.unlockedBy("has_" + resultName, has(unlockItem)).save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void stairsRecipeBuilder(Block result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 4))
+                .define('#', blockNeeded)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .unlockedBy("has_" + resultName + "_left", has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void slabRecipeBuilder(Block result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 6))
+                .define('#', blockNeeded)
+                .pattern("###")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void buttonRecipeBuilder(Block result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 6))
+                .define('#', blockNeeded)
+                .pattern("#")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void pressurePlateRecipeBuilder(Block result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+                .define('#', blockNeeded)
+                .pattern("##")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void fenceRecipeBuilder(Block result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 3))
+                .define('#', blockNeeded)
+                .define('s', Items.STICK)
+                .pattern("#s#")
+                .pattern("#s#")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void fenceGateRecipeBuilder(Block result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+                .define('#', blockNeeded)
+                .define('s', Items.STICK)
+                .pattern("s#s")
+                .pattern("s#s")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void doorRecipeBuilder(Block result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 3))
+                .define('#', blockNeeded)
+                .pattern("##")
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void trapdoorRecipeBuilder(Block result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 2))
+                .define('#', blockNeeded)
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+    private void fourSameIntoOneRecipeBuilder(Block result, Block blockNeeded)
+    {
+        fourSameIntoOneRecipeBuilder(result, blockNeeded, 1);
+    }
+    private void fourSameIntoOneRecipeBuilder(Block result, Block blockNeeded, int resultCount)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, resultCount))
+                .define('#', blockNeeded)
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+
+    private String getName(Block block)
+    {
+        return getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+    }
+
+    private String getName(Item item)
+    {
+        return getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");
+    }
+
+    private ResourceLocation getKey(Block block)
+    {
+        return BuiltInRegistries.BLOCK.getKey(block);
+    }
+
+    private ResourceLocation getKey(Item item)
+    {
+        return BuiltInRegistries.ITEM.getKey(item);
     }
 }
