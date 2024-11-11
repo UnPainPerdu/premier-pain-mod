@@ -1,11 +1,14 @@
 package com.unpainperdu.premierpainmod.client.util;
 
+import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 @EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
@@ -18,7 +21,8 @@ public class ClientRegisterHandler
     }
 
     @SubscribeEvent
-    public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+    public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event)
+    {
         BlockEntityRenderRegister.onRegisterBlockRenderers(new BlockRendererRegistry()
         {
             @Override
@@ -27,5 +31,10 @@ public class ClientRegisterHandler
                 event.registerBlockEntityRenderer(type, factory);
             }
         });
+    }
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event)
+    {
+        Sheets.addWoodType(ModWoodTypes.MOUNTAIN_CURRANT);
     }
 }

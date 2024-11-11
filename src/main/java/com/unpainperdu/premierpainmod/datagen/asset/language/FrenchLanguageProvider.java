@@ -222,20 +222,23 @@ public class FrenchLanguageProvider extends LanguageProvider
      */
     private void treeTranslator(String nameOfTree, String translation)
     {
-        String id = "block." + PremierPainMod.MOD_ID + ".";
-        add(id + nameOfTree + "_log","Bûche de " + translation);
-        add(id + nameOfTree + "_wood", "Bois de " + translation);
-        add(id + "stripped_" + nameOfTree + "_log", "Bûche de " + translation + " écorcé");
-        add(id + "stripped_" + nameOfTree + "_wood", "Bois de " + translation + " écorcé");
-        add(id + nameOfTree + "_planks", "Planche en " + translation);
-        add(id + nameOfTree + "_leaves", "Feuilles de " + translation);
-        add(id + nameOfTree + "_stairs", "Escalier en " + translation);
-        add(id + nameOfTree + "_slab", "Dalle en " + translation);
-        add(id + nameOfTree + "_button", "Bouton en " + translation);
-        add(id + nameOfTree + "_pressure_plate", "Plaque de pression en " + translation);
-        add(id + nameOfTree + "_fence", "Barrière en " + translation);
-        add(id + nameOfTree + "_fence_gate", "Portillon en " + translation);
-        add(id + nameOfTree + "_door", "Porte en " + translation);
-        add(id + nameOfTree + "_trapdoor", "Trappe en " + translation);
+        String block = "block." + PremierPainMod.MOD_ID + ".";
+        String item = "block." + PremierPainMod.MOD_ID + ".";
+        add(block + nameOfTree + "_log","Bûche de " + translation);
+        add(block + nameOfTree + "_wood", "Bois de " + translation);
+        add(block + "stripped_" + nameOfTree + "_log", "Bûche de " + translation + " écorcé");
+        add(block + "stripped_" + nameOfTree + "_wood", "Bois de " + translation + " écorcé");
+        add(block + nameOfTree + "_planks", "Planche en " + translation);
+        add(block + nameOfTree + "_leaves", "Feuilles de " + translation);
+        add(block + nameOfTree + "_stairs", "Escalier en " + translation);
+        add(block + nameOfTree + "_slab", "Dalle en " + translation);
+        add(block + nameOfTree + "_button", "Bouton en " + translation);
+        add(block + nameOfTree + "_pressure_plate", "Plaque de pression en " + translation);
+        add(block + nameOfTree + "_fence", "Barrière en " + translation);
+        add(block + nameOfTree + "_fence_gate", "Portillon en " + translation);
+        add(block + nameOfTree + "_door", "Porte en " + translation);
+        add(block + nameOfTree + "_trapdoor", "Trappe en " + translation);
+        add(item + nameOfTree + "_sign", "Pancarte en " + translation);
+        add(item + nameOfTree + "_hanging_sign", "Pancarte suspendue en " + translation);
     }
 }

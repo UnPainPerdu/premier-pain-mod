@@ -1,9 +1,12 @@
-// 1.21.1	2024-11-10T16:08:14.9226911	Tags for minecraft:block mod id premierpainmod
+// 1.21.1	2024-11-11T12:42:14.4138367	Tags for minecraft:block mod id premierpainmod
 3e5707f67c0583aeba5c533b5d1841a58fdfbe3c data/c/tags/block/fences.json
 3e5707f67c0583aeba5c533b5d1841a58fdfbe3c data/c/tags/block/fences/wooden.json
 147787d991219ba69df96a5ee9fbb5155d568a15 data/c/tags/block/fence_gates.json
 147787d991219ba69df96a5ee9fbb5155d568a15 data/c/tags/block/fence_gates/wooden.json
+5f17e0f81835918276dfc40b9906a4227d8b6ce6 data/minecraft/tags/block/all_hanging_signs.json
+42ae64f513d3592f17f2ee11009b2e0373dc4ba3 data/minecraft/tags/block/all_signs.json
 549b5cd315400088e03035ec47fe75068eb86627 data/minecraft/tags/block/buttons.json
+66c1b633d9e7b081783613e8dfb79a7f4a7099ad data/minecraft/tags/block/ceiling_hanging_signs.json
 8c88f57332e10b4c257904195ce0a0b9452a99ad data/minecraft/tags/block/completes_find_tree_tutorial.json
 0a2ee36b6f5aafbfd75d028230481de8f95cd0a5 data/minecraft/tags/block/doors.json
 0db74887b0c0a7b0f4caa427671a271d980c2141 data/minecraft/tags/block/enderman_holdable.json
@@ -14,7 +17,7 @@
 f424b8b70c23381b6c3a4e1e571a96480c44955f data/minecraft/tags/block/leaves.json
 7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/block/logs.json
 7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/block/logs_that_burn.json
-12a0ca79cad0852678827b6e6fdfd46b0d41e3cd data/minecraft/tags/block/mineable/axe.json
+ce773de6ff1c728695c39c37b3a423b716240d0a data/minecraft/tags/block/mineable/axe.json
 f424b8b70c23381b6c3a4e1e571a96480c44955f data/minecraft/tags/block/mineable/hoe.json
 e327449c7187eb61fea498bc8a6b787ec445c801 data/minecraft/tags/block/mineable/pickaxe.json
 0a2ee36b6f5aafbfd75d028230481de8f95cd0a5 data/minecraft/tags/block/mob_interactable_doors.json
@@ -26,13 +29,17 @@ cbb2f5a147056ac66190e560a5126ecce8376e73 data/minecraft/tags/block/needs_iron_to
 81498951c878f166609e0b43b7adf285eb8429ad data/minecraft/tags/block/planks.json
 ff82582617b050723b8bb8469920940c5016d2a1 data/minecraft/tags/block/pressure_plates.json
 f424b8b70c23381b6c3a4e1e571a96480c44955f data/minecraft/tags/block/replaceable_by_trees.json
+942d5693e9461cf61f6e621b04d7c2932b6ab26e data/minecraft/tags/block/signs.json
 5feb953fb965c0a134a94c96b4eb97bdc8f85ab2 data/minecraft/tags/block/slabs.json
 7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/block/snaps_goat_horn.json
 64c186cfe1692a1c4e7fd0f31f15aa48227c4174 data/minecraft/tags/block/stairs.json
+b5c1825a0e48089eafdba55b83f0f4db7c544423 data/minecraft/tags/block/standing_signs.json
 f424b8b70c23381b6c3a4e1e571a96480c44955f data/minecraft/tags/block/sword_efficient.json
 508b85a33c4e5ffa3a2e319d82ec684a79dcf01d data/minecraft/tags/block/trapdoors.json
 147787d991219ba69df96a5ee9fbb5155d568a15 data/minecraft/tags/block/unstable_bottom_center.json
+27952d96aaee8344793703740da918409a0a952a data/minecraft/tags/block/wall_hanging_signs.json
 ff82582617b050723b8bb8469920940c5016d2a1 data/minecraft/tags/block/wall_post_override.json
+f949b64a807c81d00dc829c891775f2f9e57f61d data/minecraft/tags/block/wall_signs.json
 549b5cd315400088e03035ec47fe75068eb86627 data/minecraft/tags/block/wooden_buttons.json
 0a2ee36b6f5aafbfd75d028230481de8f95cd0a5 data/minecraft/tags/block/wooden_doors.json
 3e5707f67c0583aeba5c533b5d1841a58fdfbe3c data/minecraft/tags/block/wooden_fences.json

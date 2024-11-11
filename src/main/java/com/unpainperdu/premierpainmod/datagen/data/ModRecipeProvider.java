@@ -71,6 +71,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         fenceGateRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_FENCE_GATE.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
         doorRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_DOOR.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
         trapdoorRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        signRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        hangingSignRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get());
             //all materials recipes
         for(Block block : ModList.getAllMaterialsBlocks())
         {
@@ -459,6 +461,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + resultName, has(blockNeeded))
                 .save(ModRecipeProvider.recipeOutput);
     }
+
+    private void signRecipeBuilder(Item result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 3))
+                .define('#', blockNeeded)
+                .define('t', Items.STICK)
+                .pattern("###")
+                .pattern("###")
+                .pattern(" t ")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void hangingSignRecipeBuilder(Item result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 6))
+                .define('#', blockNeeded)
+                .define('t', Items.CHAIN)
+                .pattern("t t")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
     private void fourSameIntoOneRecipeBuilder(Block result, Block blockNeeded)
     {
         fourSameIntoOneRecipeBuilder(result, blockNeeded, 1);

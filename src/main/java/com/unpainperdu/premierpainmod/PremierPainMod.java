@@ -3,10 +3,7 @@ package com.unpainperdu.premierpainmod;
 import com.unpainperdu.premierpainmod.datagen.DataGatherer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.surface.ModSurfaceRule;
 import com.unpainperdu.premierpainmod.util.commonSetupEvent.CommonSetupEventPottedThing;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.RegisterHandler;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.slf4j.Logger;
 

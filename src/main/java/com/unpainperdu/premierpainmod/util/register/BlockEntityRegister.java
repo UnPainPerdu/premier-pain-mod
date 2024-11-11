@@ -4,9 +4,15 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModHangingSignBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModStandingSignBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModWallHangingSignBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModWallSignBlock;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.PedestalBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerDrawerBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerShelfBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.tree.ModHangingSignBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.tree.ModSignBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -25,7 +31,8 @@ public class BlockEntityRegister
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<PedestalBlockEntity>> PEDESTAL_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("pedestal_block_entity",() -> BlockEntityType.Builder.of(PedestalBlockEntity::new, (listPedestalHelper()).toArray(new Block[0])).build(null));
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerDrawerBlockEntity>> VILLAGER_DRAWER_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("villager_drawer_block_entity",() -> BlockEntityType.Builder.of(VillagerDrawerBlockEntity::new, (listDrawerHelper()).toArray(new Block[0])).build(null));
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerShelfBlockEntity>> VILLAGER_SHELF_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("villager_shelf_block_entity",() -> BlockEntityType.Builder.of(VillagerShelfBlockEntity::new, listShelfHelper().toArray(new Block[0])).build(null));
-
+    public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<ModSignBlockEntity>> MOD_SIGN = BLOCK_ENTITY_TYPES.register("mod_sign",() -> BlockEntityType.Builder.of(ModSignBlockEntity::new, listSignHelper().toArray(new Block[0])).build(null));
+    public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<ModHangingSignBlockEntity>> MOD_HANGING_SIGN = BLOCK_ENTITY_TYPES.register("mod_hanging_sign",() -> BlockEntityType.Builder.of(ModHangingSignBlockEntity::new, listHangingSignHelper().toArray(new Block[0])).build(null));
 
     public static void register(IEventBus modEventBus)
     {
@@ -35,9 +42,9 @@ public class BlockEntityRegister
     private static List<Block> listPedestalHelper()
     {
         List<Block> listPedestal = new ArrayList<>();
-        for (DeferredBlock<Block> defferedBlock : ModList.ALL_BLOCKS)
+        for (DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
-            Block block = defferedBlock.get();
+            Block block = deferredBlock.get();
             if(block instanceof VillagerPedestalBlock)
                 listPedestal.add(block);
         }
@@ -47,9 +54,9 @@ public class BlockEntityRegister
     private static List<Block> listDrawerHelper()
     {
         List<Block> listPedestal = new ArrayList<>();
-        for (DeferredBlock<Block> defferedBlock : ModList.ALL_BLOCKS)
+        for (DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
-            Block block = defferedBlock.get();
+            Block block = deferredBlock.get();
             if(block instanceof VillagerDrawer)
                 listPedestal.add(block);
         }
@@ -59,12 +66,36 @@ public class BlockEntityRegister
     private static List<Block> listShelfHelper()
     {
         List<Block> listPedestal = new ArrayList<>();
-        for (DeferredBlock<Block> defferedBlock : ModList.ALL_BLOCKS)
+        for (DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
-            Block block = defferedBlock.get();
+            Block block = deferredBlock.get();
             if(block instanceof VillagerShelf)
                 listPedestal.add(block);
         }
         return  listPedestal;
+    }
+
+    private static List<Block> listSignHelper()
+    {
+        List<Block> list = new ArrayList<>();
+        for (DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        {
+            Block block = deferredBlock.get();
+            if(block instanceof ModStandingSignBlock || block instanceof ModWallSignBlock)
+                list.add(block);
+        }
+        return  list;
+    }
+
+    private static List<Block> listHangingSignHelper()
+    {
+        List<Block> list = new ArrayList<>();
+        for (DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        {
+            Block block = deferredBlock.get();
+            if(block instanceof ModHangingSignBlock || block instanceof ModWallHangingSignBlock)
+                list.add(block);
+        }
+        return  list;
     }
 }

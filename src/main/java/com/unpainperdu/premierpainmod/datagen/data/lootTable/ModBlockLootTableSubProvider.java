@@ -243,6 +243,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 || block instanceof FenceBlock
                 || block instanceof FenceGateBlock
                 || block instanceof TrapDoorBlock
+                || block instanceof SignBlock
                 ;
     }
 

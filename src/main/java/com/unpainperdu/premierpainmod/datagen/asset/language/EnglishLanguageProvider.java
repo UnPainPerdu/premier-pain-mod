@@ -398,20 +398,23 @@ public class EnglishLanguageProvider extends LanguageProvider
      */
     private void treeTranslator(String nameOfTree, String translation)
     {
-        String id = "block." + PremierPainMod.MOD_ID + ".";
-        add(id + nameOfTree + "_log",translation + " Log");
-        add(id + nameOfTree + "_wood",translation + " Wood");
-        add(id + "stripped_" + nameOfTree + "_log", "Stripped " + translation + " Log");
-        add(id + "stripped_" + nameOfTree + "_wood", "Stripped " + translation + " Wood");
-        add(id + nameOfTree + "_planks",translation + " Planks");
-        add(id + nameOfTree + "_leaves",translation + " Leaves");
-        add(id + nameOfTree + "_stairs",translation + " Stairs");
-        add(id + nameOfTree + "_slab",translation + " Slab");
-        add(id + nameOfTree + "_button",translation + " Button");
-        add(id + nameOfTree + "_pressure_plate",translation + " Pressure Plate");
-        add(id + nameOfTree + "_fence",translation + " Fence");
-        add(id + nameOfTree + "_fence_gate",translation + " Fence Gate");
-        add(id + nameOfTree + "_door",translation + " Door");
-        add(id + nameOfTree + "_trapdoor",translation + " Trapdoor");
+        String block = "block." + PremierPainMod.MOD_ID + ".";
+        String item = "block." + PremierPainMod.MOD_ID + ".";
+        add(block + nameOfTree + "_log",translation + " Log");
+        add(block + nameOfTree + "_wood",translation + " Wood");
+        add(block + "stripped_" + nameOfTree + "_log", "Stripped " + translation + " Log");
+        add(block + "stripped_" + nameOfTree + "_wood", "Stripped " + translation + " Wood");
+        add(block + nameOfTree + "_planks",translation + " Planks");
+        add(block + nameOfTree + "_leaves",translation + " Leaves");
+        add(block + nameOfTree + "_stairs",translation + " Stairs");
+        add(block + nameOfTree + "_slab",translation + " Slab");
+        add(block + nameOfTree + "_button",translation + " Button");
+        add(block + nameOfTree + "_pressure_plate",translation + " Pressure Plate");
+        add(block + nameOfTree + "_fence",translation + " Fence");
+        add(block + nameOfTree + "_fence_gate",translation + " Fence Gate");
+        add(block + nameOfTree + "_door",translation + " Door");
+        add(block + nameOfTree + "_trapdoor",translation + " Trapdoor");
+        add(item + nameOfTree + "_sign",translation + " Sign");
+        add(item + nameOfTree + "_hanging_sign",translation + " Hanging Sign");
     }
 }

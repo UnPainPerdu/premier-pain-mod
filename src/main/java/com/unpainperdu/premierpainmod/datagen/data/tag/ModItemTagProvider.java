@@ -3,14 +3,19 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
+import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.HangingSignItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -49,5 +54,21 @@ public class ModItemTagProvider extends ItemTagsProvider
         copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
         //mod
         copy(ModBlockTags.MOUNTAIN_CURRANT_LOGS, ModItemTags.MOUNTAIN_CURRANT_LOGS);
+
+        for (DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
+        {
+            Item item = deferredItem.get();
+            if (item instanceof SignItem)
+            {
+                if (item instanceof HangingSignItem)
+                {
+                    this.tag(ItemTags.HANGING_SIGNS).add(item);
+                }
+                else
+                {
+                    this.tag(ItemTags.SIGNS).add(item);
+                }
+            }
+        }
     }
 }

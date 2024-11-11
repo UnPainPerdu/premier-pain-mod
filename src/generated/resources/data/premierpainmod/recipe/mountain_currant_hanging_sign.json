@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "premierpainmod:stripped_mountain_currant_log"
+    },
+    "t": {
+      "item": "minecraft:chain"
+    }
+  },
+  "pattern": [
+    "t t",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "premierpainmod:mountain_currant_hanging_sign"
+  }
+}

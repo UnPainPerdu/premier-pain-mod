@@ -14,18 +14,17 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.*;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.basicFlower.CuriosityFlower;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
-import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.BasicTallGrassBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.DeadTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpears;
+import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -628,7 +627,10 @@ public class BlockRegister
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_FENCE_GATE =  registerBlock("mountain_currant_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_DOOR =  registerBlock("mountain_currant_door", () -> registerDoor(BlockSetType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_TRAPDOOR =  registerBlock("mountain_currant_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
-
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_SIGN =  registerBlockOnly("mountain_currant_sign", () -> new ModStandingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_SIGN =  registerBlockOnly("mountain_currant_wall_sign", () -> new ModWallSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_HANGING_SIGN =  registerBlockOnly("mountain_currant_hanging_sign", () -> new ModHangingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_HANGING_SIGN =  registerBlockOnly("mountain_currant_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
     {
@@ -636,7 +638,7 @@ public class BlockRegister
         registerBlockItem(name, madeBlock);
         return madeBlock;
     }
-    private static <T extends Block> DeferredBlock<T> registerBlockForShelf(String name, Supplier<T> block)
+    private static <T extends Block> DeferredBlock<T> registerBlockOnly(String name, Supplier<T> block)
     {
         DeferredBlock<T> madeBlock = BLOCKS.register(name, block);
         return madeBlock;
@@ -806,11 +808,11 @@ public class BlockRegister
             }
             case "standing_villager_shelf":
             {
-                return (DeferredBlock<T>) registerBlockForShelf(name, () -> new StandingVillagerShelf(properties));
+                return (DeferredBlock<T>) registerBlockOnly(name, () -> new StandingVillagerShelf(properties));
             }
             case "wall_villager_shelf":
             {
-                return (DeferredBlock<T>) registerBlockForShelf(name, () -> new WallVillagerShelf(properties));
+                return (DeferredBlock<T>) registerBlockOnly(name, () -> new WallVillagerShelf(properties));
             }
             case "villager_bench":
             {

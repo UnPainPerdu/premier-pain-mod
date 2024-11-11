@@ -23,7 +23,9 @@ import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -93,6 +95,18 @@ public class CreativeMainTab
                 }
             }
         }
+        for (DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
+        {
+            Item item = deferredItem.get();
+            String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
+            if (itemName.contains("mountain_currant"))
+            {
+                if (item instanceof SignItem)
+                {
+                    output.accept(item);
+                }
+            }
+        }
     }
 
     private static void generateAllMaterials(CreativeModeTab.Output output)
@@ -129,7 +143,11 @@ public class CreativeMainTab
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
-            if(!(item instanceof VillagerShelfItem))
+            if(
+                    !(item instanceof VillagerShelfItem
+                            || item instanceof SignItem
+                    )
+            )
             {
                 output.accept(item);
             }

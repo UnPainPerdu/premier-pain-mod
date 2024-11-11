@@ -3,9 +3,7 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
-import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.*;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
@@ -130,6 +128,30 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 {
                     this.tag(BlockTags.WOODEN_TRAPDOORS).add(block);
                     this.tag(BlockTags.TRAPDOORS).add(block);
+                }
+                else if (block instanceof SignBlock)
+                {
+                    this.tag(BlockTags.ALL_SIGNS).add(block);
+                    if (block instanceof ModStandingSignBlock)
+                    {
+                        this.tag(BlockTags.STANDING_SIGNS).add(block);
+                        this.tag(BlockTags.SIGNS).add(block);
+                    }
+                    else if (block instanceof ModWallSignBlock)
+                    {
+                        this.tag(BlockTags.WALL_SIGNS).add(block);
+                        this.tag(BlockTags.SIGNS).add(block);
+                    }
+                    else if (block instanceof ModHangingSignBlock)
+                    {
+                        this.tag(BlockTags.ALL_HANGING_SIGNS).add(block);
+                        this.tag(BlockTags.CEILING_HANGING_SIGNS).add(block);
+                    }
+                    else if (block instanceof ModWallHangingSignBlock)
+                    {
+                        this.tag(BlockTags.ALL_HANGING_SIGNS).add(block);
+                        this.tag(BlockTags.WALL_HANGING_SIGNS).add(block);
+                    }
                 }
             }
             //wood slab

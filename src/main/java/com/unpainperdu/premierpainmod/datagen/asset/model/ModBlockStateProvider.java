@@ -89,6 +89,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 //crop
         universalPottedBlock(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
         //tree
+            //mountain currant
         logWithItem(BlockRegister.MOUNTAIN_CURRANT_LOG.get(),"mountain_currant_tree");
         logWithItem(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get(),"mountain_currant_tree");
         woodWithItem(BlockRegister.MOUNTAIN_CURRANT_WOOD.get(),"mountain_currant_tree");
@@ -104,6 +105,8 @@ public class ModBlockStateProvider extends BlockStateProvider
         fenceGateWithItem(BlockRegister.MOUNTAIN_CURRANT_FENCE_GATE.get(), planksTexture);
         woodenDoorWithItem(BlockRegister.MOUNTAIN_CURRANT_DOOR.get(), "mountain_currant_tree");
         woodenTrapdoorWithItem(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), "mountain_currant_tree");
+        woodenSign(BlockRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN.get(), planksTexture);
+        woodenHangingSign(BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN.get(), planksTexture);
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
@@ -1190,6 +1193,16 @@ public class ModBlockStateProvider extends BlockStateProvider
         trapdoorBlockWithRenderType((TrapDoorBlock) block, texture, true, "cutout");
         ModelFile model = models().trapdoorBottom(name, texture);
         itemModels().getBuilder(getKey(block).getPath()).parent(model);
+    }
+
+    private void woodenSign(Block standing, Block wall, ResourceLocation texture)
+    {
+        signBlock((StandingSignBlock) standing, (WallSignBlock) wall, texture);
+    }
+
+    private void woodenHangingSign(Block ceiling, Block wall, ResourceLocation texture)
+    {
+        hangingSignBlock((CeilingHangingSignBlock) ceiling, (WallHangingSignBlock) wall, texture);
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)

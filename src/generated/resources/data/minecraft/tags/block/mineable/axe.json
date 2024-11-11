@@ -172,6 +172,10 @@
     "premierpainmod:mountain_currant_fence",
     "premierpainmod:mountain_currant_fence_gate",
     "premierpainmod:mountain_currant_door",
-    "premierpainmod:mountain_currant_trapdoor"
+    "premierpainmod:mountain_currant_trapdoor",
+    "premierpainmod:mountain_currant_sign",
+    "premierpainmod:mountain_currant_wall_sign",
+    "premierpainmod:mountain_currant_hanging_sign",
+    "premierpainmod:mountain_currant_wall_hanging_sign"
   ]
 }

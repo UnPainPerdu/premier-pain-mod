@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-10T16:08:14.9302892	Tags for minecraft:item mod id premierpainmod
+// 1.21.1	2024-11-11T12:42:14.4227419	Tags for minecraft:item mod id premierpainmod
 147787d991219ba69df96a5ee9fbb5155d568a15 data/c/tags/item/fence_gates.json
 147787d991219ba69df96a5ee9fbb5155d568a15 data/c/tags/item/fence_gates/wooden.json
 549b5cd315400088e03035ec47fe75068eb86627 data/minecraft/tags/item/buttons.json
@@ -6,9 +6,11 @@
 3e5707f67c0583aeba5c533b5d1841a58fdfbe3c data/minecraft/tags/item/fences.json
 147787d991219ba69df96a5ee9fbb5155d568a15 data/minecraft/tags/item/fence_gates.json
 22fe7f119049ea2a210b99f0c4e9657f32a9b79b data/minecraft/tags/item/flowers.json
+66c1b633d9e7b081783613e8dfb79a7f4a7099ad data/minecraft/tags/item/hanging_signs.json
 7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/item/logs.json
 7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/item/logs_that_burn.json
 81498951c878f166609e0b43b7adf285eb8429ad data/minecraft/tags/item/planks.json
+b5c1825a0e48089eafdba55b83f0f4db7c544423 data/minecraft/tags/item/signs.json
 5feb953fb965c0a134a94c96b4eb97bdc8f85ab2 data/minecraft/tags/item/slabs.json
 64c186cfe1692a1c4e7fd0f31f15aa48227c4174 data/minecraft/tags/item/stairs.json
 508b85a33c4e5ffa3a2e319d82ec684a79dcf01d data/minecraft/tags/item/trapdoors.json

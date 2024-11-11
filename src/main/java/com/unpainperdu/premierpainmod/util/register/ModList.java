@@ -550,8 +550,11 @@ public class ModList
             BlockRegister.MOUNTAIN_CURRANT_FENCE,
             BlockRegister.MOUNTAIN_CURRANT_FENCE_GATE,
             BlockRegister.MOUNTAIN_CURRANT_DOOR,
-            BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR
-
+            BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR,
+            BlockRegister.MOUNTAIN_CURRANT_SIGN,
+            BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN,
+            BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN,
+            BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN
             );
 
     /***
@@ -638,11 +641,15 @@ public class ModList
             ItemRegister.SKY_SPEARS_FRUIT,
             ItemRegister.JELLY_HAT,
             ItemRegister.MOUNTAIN_CURRANT,
-            //stew
+                //stew
             ItemRegister.JELLYSHROOM_STEW,
             ItemRegister.CACTUS_STEW,
             ItemRegister.POTATOES_AND_SPEARS_BOWL,
-            ItemRegister.FRUITS_BOWL
+            ItemRegister.FRUITS_BOWL,
+            //tree
+                //mountain currant
+            ItemRegister.MOUNTAIN_CURRANT_SIGN,
+            ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN
             );
 
     /***

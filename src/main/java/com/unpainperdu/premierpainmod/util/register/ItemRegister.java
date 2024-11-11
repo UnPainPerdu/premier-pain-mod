@@ -6,8 +6,10 @@ import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.V
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -81,6 +83,10 @@ public class ItemRegister
     public static final DeferredItem<Item> CACTUS_STEW = stewFoodItemRegister("cactus_stew", 6);
     public static final DeferredItem<Item> POTATOES_AND_SPEARS_BOWL = stewFoodItemRegister("potatoes_and_spears_bowl", 6);
     public static final DeferredItem<Item> FRUITS_BOWL = stewFoodItemRegister("fruits_bowl", 9);
+    //tree
+        //mountain currant
+    public static final DeferredItem<Item> MOUNTAIN_CURRANT_SIGN = signItemRegister("mountain_currant_sign", () -> BlockRegister.MOUNTAIN_CURRANT_SIGN, () -> BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN);
+    public static final DeferredItem<Item> MOUNTAIN_CURRANT_HANGING_SIGN = hangingSignItemRegister("mountain_currant_hanging_sign", () -> BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN, () -> BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN);
 
     private static DeferredItem<Item> villagerShelfRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
     {
@@ -123,6 +129,17 @@ public class ItemRegister
                 .stacksTo(4)
         ));
     }
+
+    private static DeferredItem<Item> signItemRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
+    {
+        return ITEMS.register(name, () -> new SignItem(new Item.Properties().stacksTo(16), standingBlock.get().get(), wallBlock.get().get()));
+    }
+
+    private static DeferredItem<Item> hangingSignItemRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
+    {
+        return ITEMS.register(name, () -> new HangingSignItem(standingBlock.get().get(), wallBlock.get().get(), new Item.Properties().stacksTo(16)));
+    }
+
     public static void register(IEventBus modEventBus)
     {
         ITEMS.register(modEventBus);

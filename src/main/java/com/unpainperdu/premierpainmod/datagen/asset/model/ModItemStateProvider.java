@@ -33,6 +33,10 @@ public class ModItemStateProvider extends ItemModelProvider
         stewFoodItem(ItemRegister.CACTUS_STEW.get());
         stewFoodItem(ItemRegister.POTATOES_AND_SPEARS_BOWL.get());
         stewFoodItem(ItemRegister.FRUITS_BOWL.get());
+        //tree
+            //mountain currant
+        item(ItemRegister.MOUNTAIN_CURRANT_SIGN.get(), "tree/mountain_currant_tree/");
+        item(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), "tree/mountain_currant_tree/");
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
