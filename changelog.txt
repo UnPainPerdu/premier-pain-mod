@@ -140,3 +140,4 @@ update neoforge to 21.1.72
     - Villager table has correct rotation now in generated structure
     - Biomes, blocks and items have tag now
     - Flowered cactus should not spawn anymore on water
+    - Premier pain mod biomes reduce spawn rate
