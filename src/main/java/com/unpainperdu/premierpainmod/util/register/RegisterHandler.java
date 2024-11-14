@@ -4,6 +4,8 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModTerraBlender
 import com.unpainperdu.premierpainmod.util.register.codec.CodecForGLMRegister;
 import com.unpainperdu.premierpainmod.util.register.creativeTab.CreativeTabRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
+import com.unpainperdu.premierpainmod.util.register.tree.FoliagePlacerTypesRegister;
+import com.unpainperdu.premierpainmod.util.register.tree.TrunkPlacerTypesRegister;
 import net.neoforged.bus.api.IEventBus;
 
 public class RegisterHandler
@@ -22,5 +24,7 @@ public class RegisterHandler
         ModTerraBlender.registerBiomes();
         FeatureRegister.register(modEventBus);
         StructureRegister.register(modEventBus);
+        TrunkPlacerTypesRegister.register(modEventBus);
+        FoliagePlacerTypesRegister.register(modEventBus);
     }
 }

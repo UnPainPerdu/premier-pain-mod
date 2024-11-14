@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
 
 import com.google.common.collect.ImmutableList;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MountainCurrantFoliagePlacer;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MountainCurrantTrunkPlacer;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.FeatureRegister;
 import net.minecraft.core.Holder;
@@ -8,7 +10,6 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -16,7 +17,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
@@ -72,7 +72,7 @@ public class ModVegetationFeature
         FeatureUtils.register(pContext, ModVegetationFeature.DEAD_TALL_BUSH, FeatureRegister.DEAD_TALL_BUSH.get(), NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(pContext, ModVegetationFeature.OLD_WILD_WHEAT, FeatureRegister.OLD_WILD_WHEAT.get(), NoneFeatureConfiguration.INSTANCE);
         //tree
-        FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createStraightBlobTree(BlockRegister.MOUNTAIN_CURRANT_LOG.get(), BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), 5, 3, 0 ,3).build());
+        FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createMountainCurrantTree(BlockRegister.MOUNTAIN_CURRANT_LOG.get(), BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), 3).build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(
@@ -83,6 +83,18 @@ public class ModVegetationFeature
                 new StraightTrunkPlacer(pBaseHeight, pHeightRandA, pHeightRandB),
                 BlockStateProvider.simple(pLeavesBlock),
                 new BlobFoliagePlacer(ConstantInt.of(pRadius), ConstantInt.of(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1)
+        );
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createMountainCurrantTree(
+            Block pLogBlock, Block pLeavesBlock, int pRadius
+    ) {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(pLogBlock),
+                new MountainCurrantTrunkPlacer(2, 1, 0),
+                BlockStateProvider.simple(pLeavesBlock),
+                new MountainCurrantFoliagePlacer(ConstantInt.of(pRadius), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 1)
         );
     }
