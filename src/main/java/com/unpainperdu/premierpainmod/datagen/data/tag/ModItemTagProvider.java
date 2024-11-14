@@ -3,8 +3,11 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
@@ -52,23 +55,35 @@ public class ModItemTagProvider extends ItemTagsProvider
         copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
         copy(BlockTags.TRAPDOORS, ItemTags.TRAPDOORS);
         copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
+        copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
         //mod
         copy(ModBlockTags.MOUNTAIN_CURRANT_LOGS, ModItemTags.MOUNTAIN_CURRANT_LOGS);
+
+        for (Item item : ModList.getAllItemsFromClass(SignItem.class))
+        {
+            if (item instanceof HangingSignItem)
+            {
+                this.tag(ItemTags.HANGING_SIGNS).add(item);
+            }
+            else
+            {
+                this.tag(ItemTags.SIGNS).add(item);
+            }
+        }
 
         for (DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
-            if (item instanceof SignItem)
+            if (item.components().has(DataComponents.FOOD))
             {
-                if (item instanceof HangingSignItem)
-                {
-                    this.tag(ItemTags.HANGING_SIGNS).add(item);
-                }
-                else
-                {
-                    this.tag(ItemTags.SIGNS).add(item);
-                }
+                this.tag(Tags.Items.FOODS).add(item);
             }
         }
+
+        this.tag(Tags.Items.FOODS_FRUIT).add(
+                ItemRegister.MOUNTAIN_CURRANT.get(),
+                ItemRegister.CACTUS_FLOWER_FRUIT.get(),
+                ItemRegister.SKY_SPEARS_FRUIT.get()
+                );
     }
 }

@@ -73,6 +73,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         trapdoorRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
         signRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
         hangingSignRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get());
+        boatRecipeBuilder(Items.OAK_BOAT, BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
             //all materials recipes
         for(Block block : ModList.getAllMaterialsBlocks())
         {
@@ -483,6 +484,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('t', Items.CHAIN)
                 .pattern("t t")
                 .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void boatRecipeBuilder(Item result, Block blockNeeded)
+    {
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+                .define('#', blockNeeded)
+                .pattern("# #")
                 .pattern("###")
                 .unlockedBy("has_" + resultName, has(blockNeeded))
                 .save(ModRecipeProvider.recipeOutput);

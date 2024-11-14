@@ -1,6 +1,8 @@
-// 1.21.1	2024-11-11T12:42:14.4227419	Tags for minecraft:item mod id premierpainmod
+// 1.21.1	2024-11-14T17:21:19.36332	Tags for minecraft:item mod id premierpainmod
 147787d991219ba69df96a5ee9fbb5155d568a15 data/c/tags/item/fence_gates.json
 147787d991219ba69df96a5ee9fbb5155d568a15 data/c/tags/item/fence_gates/wooden.json
+487467e8b282755f73086c788482cc5a004443b2 data/c/tags/item/foods.json
+36e6817a12340accf1fccfb1c6965f12276bbe15 data/c/tags/item/foods/fruit.json
 549b5cd315400088e03035ec47fe75068eb86627 data/minecraft/tags/item/buttons.json
 0a2ee36b6f5aafbfd75d028230481de8f95cd0a5 data/minecraft/tags/item/doors.json
 3e5707f67c0583aeba5c533b5d1841a58fdfbe3c data/minecraft/tags/item/fences.json
@@ -10,6 +12,7 @@
 7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/item/logs.json
 7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/item/logs_that_burn.json
 81498951c878f166609e0b43b7adf285eb8429ad data/minecraft/tags/item/planks.json
+f9158291b1bcb5d58f2d76945ab9b2e5db9f3432 data/minecraft/tags/item/saplings.json
 b5c1825a0e48089eafdba55b83f0f4db7c544423 data/minecraft/tags/item/signs.json
 5feb953fb965c0a134a94c96b4eb97bdc8f85ab2 data/minecraft/tags/item/slabs.json
 64c186cfe1692a1c4e7fd0f31f15aa48227c4174 data/minecraft/tags/item/stairs.json
