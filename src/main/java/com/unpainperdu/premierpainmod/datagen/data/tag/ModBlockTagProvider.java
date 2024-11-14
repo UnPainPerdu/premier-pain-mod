@@ -23,6 +23,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagProvider extends BlockTagsProvider
 {
+    // à refaire avec des listes
     public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper)
     {
         super(packOutput, lookupProvider, PremierPainMod.MOD_ID, fileHelper);

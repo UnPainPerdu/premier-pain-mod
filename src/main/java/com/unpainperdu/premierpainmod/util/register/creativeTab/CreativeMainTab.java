@@ -89,6 +89,7 @@ public class CreativeMainTab
                         || block instanceof FenceGateBlock
                         || block instanceof DoorBlock
                         || block instanceof TrapDoorBlock
+                        || block instanceof SaplingBlock
                 )
                 {
                     output.accept(block);

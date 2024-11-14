@@ -107,6 +107,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         woodenTrapdoorWithItem(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), "mountain_currant_tree");
         woodenSign(BlockRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN.get(), planksTexture);
         woodenHangingSign(BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN.get(), planksTexture);
+        saplingWithItem(BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), "mountain_currant_tree");
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }
@@ -1203,6 +1204,17 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void woodenHangingSign(Block ceiling, Block wall, ResourceLocation texture)
     {
         hangingSignBlock((CeilingHangingSignBlock) ceiling, (WallHangingSignBlock) wall, texture);
+    }
+
+    private void saplingWithItem(Block sapling, String folderInTree)
+    {
+        String name = getName(sapling);
+
+        ModelFile modelFile = models().withExistingParent(name, "block/cross").texture("cross", "block/tree/" + folderInTree + "/" + name).renderType("cutout");
+        ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated").texture("layer0", "block/tree/" + folderInTree + "/" + name);
+
+        simpleBlock(sapling, modelFile);
+        itemModels().getBuilder(getKey(sapling).getPath()).parent(itemModelFile);
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)

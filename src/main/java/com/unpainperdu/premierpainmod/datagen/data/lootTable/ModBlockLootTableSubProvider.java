@@ -99,7 +99,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
             //crop
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_JELLYSHROOM.get(), BlockRegister.JELLYSHROOM.get());
         //leaves
-        leavesLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        leavesLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get());
     }
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks()
@@ -244,6 +244,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 || block instanceof FenceGateBlock
                 || block instanceof TrapDoorBlock
                 || block instanceof SignBlock
+                || block instanceof SaplingBlock
                 ;
     }
 

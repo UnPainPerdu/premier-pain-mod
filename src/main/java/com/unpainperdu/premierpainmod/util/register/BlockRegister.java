@@ -24,6 +24,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeigh
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.DeadTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpears;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.ModTreeGrower;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -631,6 +632,8 @@ public class BlockRegister
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_SIGN =  registerBlockOnly("mountain_currant_wall_sign", () -> new ModWallSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_HANGING_SIGN =  registerBlockOnly("mountain_currant_hanging_sign", () -> new ModHangingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_HANGING_SIGN =  registerBlockOnly("mountain_currant_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_SAPLING =  registerBlock("mountain_currant_sapling", () -> new SaplingBlock(ModTreeGrower.MOUNTAIN_CURRANT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
     //create the block with a name and the factory (factory include properties)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
     {

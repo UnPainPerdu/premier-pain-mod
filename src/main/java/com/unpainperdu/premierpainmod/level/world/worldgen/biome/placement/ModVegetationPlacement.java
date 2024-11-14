@@ -3,6 +3,8 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModFeatureUtil;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModVegetationFeature;
+import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -10,6 +12,8 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -32,6 +36,8 @@ public class ModVegetationPlacement
     public static final ResourceKey<PlacedFeature> PATCH_SKY_SPEARS = ModPlacementUtil.createKey("patch_sky_spears");
     public static final ResourceKey<PlacedFeature> PATCH_DEAD_TALL_BUSH = ModPlacementUtil.createKey("patch_dead_tall_bush");
     public static final ResourceKey<PlacedFeature> PATCH_OLD_WILD_WHEAT = ModPlacementUtil.createKey("patch_old_wild_wheat");
+    //tree
+    public static final ResourceKey<PlacedFeature> MOUNTAIN_CURRANT = ModPlacementUtil.createKey("mountain_currant");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
@@ -60,6 +66,9 @@ public class ModVegetationPlacement
                 SurfaceWaterDepthFilter.forMaxDepth(2),
                 PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
                 BiomeFilter.biome());
+
+        final Holder<ConfiguredFeature<?, ?>> MOUNTAIN_CURRANT_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.MOUNTAIN_CURRANT);
+        register(pContext, ModVegetationPlacement.MOUNTAIN_CURRANT, MOUNTAIN_CURRANT_HOLDER, RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MOUNTAIN_CURRANT_SAPLING.get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         //misc
         final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
         register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());

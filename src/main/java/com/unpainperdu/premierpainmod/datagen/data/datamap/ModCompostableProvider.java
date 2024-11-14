@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.datamap;
 
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
@@ -11,6 +12,7 @@ import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -18,6 +20,7 @@ import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 
 public class ModCompostableProvider
 {
+    //vanilla list at compostable.json
     static DataMapProvider.Builder<Compostable, Item> builder;
     protected static void gather(DataMapProvider.Builder<Compostable, Item> compostableBuilder)
     {
@@ -56,6 +59,11 @@ public class ModCompostableProvider
         else if(block instanceof AbstractGrowingAboveVegetation)
         {
             addToCompostable(item, 0.5f);
+        }
+        else if (block instanceof ModLeavesBlock
+                    || block instanceof SaplingBlock)
+        {
+            addToCompostable(item, 0.3f);
         }
     }
 

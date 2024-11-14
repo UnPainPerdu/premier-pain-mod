@@ -240,5 +240,6 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(block + nameOfTree + "_trapdoor", "Trappe en " + translation);
         add(item + nameOfTree + "_sign", "Pancarte en " + translation);
         add(item + nameOfTree + "_hanging_sign", "Pancarte suspendue en " + translation);
+        add(item + nameOfTree + "_sapling", "Pousse de " + translation);
     }
 }

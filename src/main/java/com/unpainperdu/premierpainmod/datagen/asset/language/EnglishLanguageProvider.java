@@ -416,5 +416,6 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(block + nameOfTree + "_trapdoor",translation + " Trapdoor");
         add(item + nameOfTree + "_sign",translation + " Sign");
         add(item + nameOfTree + "_hanging_sign",translation + " Hanging Sign");
+        add(item + nameOfTree + "_sapling",translation + " Sapling");
     }
 }
