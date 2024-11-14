@@ -564,25 +564,35 @@ public class ModList
      */
     public static List<Block> getAllMaterialsBlocks()
     {
+        return  getAllBlocksFromClass(
+                VillagerStatue.class,
+                VillagerPedestalBlock.class,
+                VillagerBrazier.class,
+                VillagerTableBlock.class,
+                VillagerChairBlock.class,
+                VillagerThroneChairBlock.class,
+                VillagerDrawer.class,
+                StandingVillagerShelf.class,
+                WallVillagerShelf.class,
+                VillagerBench.class,
+                VillagerCouch.class
+        );
+    }
+
+    public static List<Block> getAllBlocksFromClass(Class<?> ... cList)
+    {
         List<Block> list = new ArrayList<>();
         for (DeferredBlock<Block> deferredBlock : ALL_BLOCKS)
         {
-            Block block = deferredBlock.get();
-            if (block instanceof VillagerStatue
-                    || block instanceof VillagerPedestalBlock
-                    || block instanceof VillagerBrazier
-                    || block instanceof VillagerTableBlock
-                    || block instanceof VillagerChairBlock
-                    || block instanceof VillagerThroneChairBlock
-                    || block instanceof VillagerDrawer
-                    || block instanceof StandingVillagerShelf
-                    || block instanceof WallVillagerShelf
-                    || block instanceof VillagerBench
-                    || block instanceof VillagerCouch
-            )
+            for (Class<?> c : cList)
             {
-                list.add(block);
+                Block block = deferredBlock.get();
+                if (c.isInstance(block))
+                {
+                    list.add(block);
+                }
             }
+
         }
         return list;
     }
@@ -677,6 +687,24 @@ public class ModList
             {
                 list.add(item);
             }
+        }
+        return list;
+    }
+
+    public static List<Item> getAllItemsFromClass(Class<?> ... cList)
+    {
+        List<Item> list = new ArrayList<>();
+        for (DeferredItem<Item> deferredBlock : ALL_ITEMS)
+        {
+            for (Class<?> c : cList)
+            {
+                Item item = deferredBlock.get();
+                if (c.isInstance(item))
+                {
+                    list.add(item);
+                }
+            }
+
         }
         return list;
     }

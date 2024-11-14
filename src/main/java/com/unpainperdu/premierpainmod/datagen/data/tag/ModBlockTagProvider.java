@@ -37,6 +37,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
             addTagForAllMaterialsBlock(block, blockName);
         }
+
         for (DeferredBlock<Block> deferredblock : ModList.ALL_BLOCKS)
         {
             Block block = deferredblock.get();
