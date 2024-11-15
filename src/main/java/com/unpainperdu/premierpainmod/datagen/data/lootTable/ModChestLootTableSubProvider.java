@@ -25,6 +25,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
     public static ResourceKey<LootTable> FOREST_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","premier_pain_temple"); // key not change to forest_... cause laziness
     public static ResourceKey<LootTable> SAND_DESERT_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","sand_desert_premier_pain_temple");
     public static ResourceKey<LootTable> SWAMP_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","swamp_premier_pain_temple");
+    public static ResourceKey<LootTable> OLD_GREAT_FIELD_FOOD_CHEST = createKey("chests","old_great_field_food");
 
     public ModChestLootTableSubProvider(HolderLookup.Provider lookupProvider)
     {
@@ -36,6 +37,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
         forestPremierPainTempleChestLootTableGenerator(output);
         sandDesertPremierPainTempleChestLootTableGenerator(output);
         swampPremierPainTempleChestLootTableGenerator(output);
+        oldGreatFieldFoodChestLootTableGenerator(output);
     }
 
     public static ResourceKey<LootTable> createKey(String directory, String name)
@@ -124,6 +126,29 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
                         .add(LootItem.lootTableItem(Items.POTATO).setWeight(50))
                         .add(LootItem.lootTableItem(Items.STICK).setWeight(100))
                         .add(LootItem.lootTableItem(Items.ARROW).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.CARROT).setWeight(100))
+                        .add(LootItem.lootTableItem(Items.POISONOUS_POTATO).setWeight(100))
+                )//total weight = 1000
+        );
+    }
+
+    private static void oldGreatFieldFoodChestLootTableGenerator(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder)
+    {
+        builder.accept(OLD_GREAT_FIELD_FOOD_CHEST, LootTable.lootTable()
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2)))
+                .withPool(LootPool.lootPool()
+                        .setRolls(UniformGenerator.between(8, 15))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegister.MOUNTAIN_CURRANT).setWeight(75))
+                        .add(LootItem.lootTableItem(BlockRegister.MOUNTAIN_CURRANT_LOG).setWeight(25))
+                        .add(LootItem.lootTableItem(BlockRegister.MOUNTAIN_CURRANT_SAPLING).setWeight(25))
+                        .add(LootItem.lootTableItem(ItemRegister.FRUITS_BOWL).setWeight(25))
+                        .add(LootItem.lootTableItem(ItemRegister.POTATOES_AND_SPEARS_BOWL).setWeight(25))
+                        .add(LootItem.lootTableItem(Items.EMERALD).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.BREAD).setWeight(250))
+                        .add(LootItem.lootTableItem(Items.APPLE).setWeight(150))
+                        .add(LootItem.lootTableItem(Items.POTATO).setWeight(50))
+                        .add(LootItem.lootTableItem(Items.STICK).setWeight(100))
                         .add(LootItem.lootTableItem(Items.CARROT).setWeight(100))
                         .add(LootItem.lootTableItem(Items.POISONOUS_POTATO).setWeight(100))
                 )//total weight = 1000
