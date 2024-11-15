@@ -399,7 +399,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void buttonRecipeBuilder(Block result, Block blockNeeded)
     {
         String resultName = getName(result);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 6))
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
                 .define('#', blockNeeded)
                 .pattern("#")
                 .unlockedBy("has_" + resultName, has(blockNeeded))

@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-14T17:21:19.3558148	Recipes
+// 1.21.1	2024-11-15T10:03:51.510761	Recipes
 a071dd91c763516a1c009bd56db8d3df0b53261b data/minecraft/advancement/recipes/misc/brown_dye.json
 b62b4c95908f92857ef809766f07820f7274313a data/minecraft/advancement/recipes/misc/green_dye.json
 df14eec925d4e2c2e266ecb277428ab420b1f443 data/minecraft/advancement/recipes/misc/magenta_dye.json
@@ -724,7 +724,7 @@ f6110a49f248398eb0f1ca671ed502fd7721d4d8 data/premierpainmod/recipe/mossy_stone_
 f4e1be624ed1a7da347176cd60582440bc5a4775 data/premierpainmod/recipe/mossy_stone_villager_statue_villagerworkshopping.json
 7d66bd2d1093f4273b7e17d8416d5ba466d0276c data/premierpainmod/recipe/mossy_stone_villager_table_villagerworkshopping.json
 539df5397af7097b4defc6b6f2f1dfd5a40df207 data/premierpainmod/recipe/mossy_stone_villager_throne_chair_villagerworkshopping.json
-4eb55a786750dc3f09e218f398657ffae94f0ba7 data/premierpainmod/recipe/mountain_currant_button.json
+f48d173ce6213e72f8a596e27b6569586dca08ca data/premierpainmod/recipe/mountain_currant_button.json
 eada1d4b3613118bfa1a0370830ef3af463cc39b data/premierpainmod/recipe/mountain_currant_door.json
 63044f2605510abd4e763dee1ee52042fa65a234 data/premierpainmod/recipe/mountain_currant_fence.json
 388404356df56b4277b5dc78e8d7f40d106ed0a8 data/premierpainmod/recipe/mountain_currant_fence_gate.json
