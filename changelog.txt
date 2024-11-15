@@ -122,13 +122,14 @@ update neoforge to 21.1.72
     - Cactus flower fruit craft from cactus flower (give 4 food)
     - Old Great Field biome a plain like biome
     - Old Great Field structure where you can find ruined path and maybe some underground
-    - Old wild wheat wich loot 4 wheat and generate in Old Great Field biome
+    - Old wild wheat which loot 4 wheat and generate in Old Great Field biome
     - JellyShroom, A crop like block which can be craft into Jelly hat (food that give 3 food), generate in Old Great Field structure
     - JellyShroom stew food which give 5 food
     - Cactus stew food which give 6 food
     - Potatoes and spears bowl food which five 6 food
     - Fruits bowl food which give 9 food
-    - Mountain currant tree with all blocks related to wood type block and allMaterialsBlocks
+    - Mountain currant tree with all blocks related to wood type block and allMaterialsBlocks and sapling, these tree spawn in old great field biome
+    _ Mountain currant fruit which give 4 food
 
 ## remake :
     - creative tab icon is now the villager workbench
