@@ -96,7 +96,8 @@ public class VegetationUtil
             {
                 BlockPos posBelow = pos.below();
                 BlockState blockStateBelow = level.getBlockState(posBelow);
-                if (blockStateBelow.is(BlockTags.DIRT))
+                BlockState state = level.getBlockState(pos);
+                if (blockStateBelow.is(BlockTags.DIRT) && state.isAir())
                 {
                     finalPos = pos;
                     break;
