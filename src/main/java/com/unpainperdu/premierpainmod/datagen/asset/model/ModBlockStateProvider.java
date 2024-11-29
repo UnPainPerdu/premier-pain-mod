@@ -87,7 +87,9 @@ public class ModBlockStateProvider extends BlockStateProvider
                 //misc
         pottedFloweredCactus();
                 //crop
-        universalPottedBlock(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
+        universalPottedBlockWithCustomModel(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
+                //sapling
+        pottedBlockWithBasicModel(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(),"block/tree/mountain_currant_tree/mountain_currant_sapling");
         //tree
             //mountain currant
         logWithItem(BlockRegister.MOUNTAIN_CURRANT_LOG.get(),"mountain_currant_tree");
@@ -859,7 +861,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         pottedBlockWithBasicModel(flowerPotBlock, blockToPot, "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
     }
 
-    private void universalPottedBlock(Block pottedBlock, String modelPath)
+    private void universalPottedBlockWithCustomModel(Block pottedBlock, String modelPath)
     {
         String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID +":","");
         ModelFile modelFile = models().withExistingParent(namePottedBlock, modelPath)

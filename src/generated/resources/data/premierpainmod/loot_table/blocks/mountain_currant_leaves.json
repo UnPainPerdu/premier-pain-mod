@@ -101,6 +101,19 @@
           "type": "minecraft:item",
           "conditions": [
             {
+              "block": "premierpainmod:mountain_currant_leaves",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "has_fruit": "true"
+              }
+            }
+          ],
+          "name": "premierpainmod:mountain_currant"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
               "chances": [
                 0.02,
                 0.022222223,
@@ -127,6 +140,13 @@
             }
           ],
           "name": "minecraft:stick"
+        }
+      ],
+      "functions": [
+        {
+          "add": false,
+          "count": 2.0,
+          "function": "minecraft:set_count"
         }
       ],
       "rolls": 1.0

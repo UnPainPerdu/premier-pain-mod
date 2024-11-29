@@ -42,6 +42,12 @@ public class ModBlockTagProvider extends BlockTagsProvider
             addTagForAllMaterialsBlock(block, blockName);
         }
 
+        //potted thing
+        for (Block block : ModList.getAllBlocksFromClass(FlowerPotBlock.class))
+        {
+            this.tag(BlockTags.FLOWER_POTS).add(block);
+        }
+
         //leaves
         for (Block block : ModList.getAllBlocksFromClass(ModLeavesBlock.class))
         {

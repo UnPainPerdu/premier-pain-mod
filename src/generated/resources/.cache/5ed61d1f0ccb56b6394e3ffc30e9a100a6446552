@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-29T11:30:09.6962348	Tags for minecraft:block mod id premierpainmod
+// 1.21.1	2024-11-29T12:23:54.6022813	Tags for minecraft:block mod id premierpainmod
 3e5707f67c0583aeba5c533b5d1841a58fdfbe3c data/c/tags/block/fences.json
 3e5707f67c0583aeba5c533b5d1841a58fdfbe3c data/c/tags/block/fences/wooden.json
 147787d991219ba69df96a5ee9fbb5155d568a15 data/c/tags/block/fence_gates.json
@@ -14,6 +14,7 @@ b09cd7fc242b3dbae25c85b682c4fc6fb363b074 data/minecraft/tags/block/crops.json
 3e5707f67c0583aeba5c533b5d1841a58fdfbe3c data/minecraft/tags/block/fences.json
 147787d991219ba69df96a5ee9fbb5155d568a15 data/minecraft/tags/block/fence_gates.json
 22fe7f119049ea2a210b99f0c4e9657f32a9b79b data/minecraft/tags/block/flowers.json
+bea661235840f67d910aac571c55c0544bfba011 data/minecraft/tags/block/flower_pots.json
 2c118f92b57b93a68ba2f3eafe7f23e7f91b4e4a data/minecraft/tags/block/lava_pool_stone_cannot_replace.json
 f424b8b70c23381b6c3a4e1e571a96480c44955f data/minecraft/tags/block/leaves.json
 7e2cc899ad95bd4b6ad105fb533090ff905b8f17 data/minecraft/tags/block/logs.json

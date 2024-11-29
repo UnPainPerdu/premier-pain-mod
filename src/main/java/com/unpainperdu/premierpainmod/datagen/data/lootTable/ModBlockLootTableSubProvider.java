@@ -10,20 +10,26 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.CivilizationsFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -35,8 +41,11 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.NotNull;
 
@@ -46,6 +55,8 @@ import java.util.stream.Collectors;
 
 public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 {
+    private static final float[] NORMAL_LEAVES_STICK_CHANCES = new float[]{0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F};
+
     public ModBlockLootTableSubProvider(HolderLookup.Provider provider)
     {
         super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(),provider);
@@ -84,7 +95,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.SKY_SPEARS.get(), Items.STICK);
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_SKY_SPEARS_FLOWER.get(), BlockRegister.SKY_SPEARS_FLOWER.get());
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.DEAD_TALL_BUSH.get(), Items.STICK);
-        itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.OLD_WILD_WHEAT.get(), Items.WHEAT, 4.0f);
+        itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.OLD_WILD_WHEAT.get(), Items.WHEAT, 2.0f);
             //crop
         jellyShroomLootTable();
         //potted thing
@@ -98,8 +109,10 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get(), BlockRegister.CACTUS_FLOWER_BLOCK.get());
             //crop
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_JELLYSHROOM.get(), BlockRegister.JELLYSHROOM.get());
+            //sapling
+        pottedFlowerLootTableGenerator(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get());
         //leaves
-        leavesLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get());
+        leavesWithFruitLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), ItemRegister.MOUNTAIN_CURRANT.get());
     }
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks()
@@ -177,7 +190,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         super.add(block, this.createJellyshroomDispatchTable());
     }
 
-    private <T extends Comparable<T> & StringRepresentable> LootTable.Builder createJellyshroomDispatchTable()
+    private LootTable.Builder createJellyshroomDispatchTable()
     {
         Block block = BlockRegister.JELLYSHROOM.get();
         IntegerProperty property = JellyShroomBlock.AGE ;
@@ -221,6 +234,47 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     private void leavesLootTable(Block leave, Block sapling)
     {
         super.add(leave, createLeavesDrops(leave, sapling, NORMAL_LEAVES_SAPLING_CHANCES));
+    }
+
+    private void leavesWithFruitLootTable(Block leave, Block sapling, Item fruit)
+    {
+        super.add(leave, createLeavesWithFruitDispatchTable(leave, sapling, fruit, NORMAL_LEAVES_SAPLING_CHANCES));
+    }
+
+    private LootTable.Builder createLeavesWithFruitDispatchTable(Block leavesBlock, Block saplingBlock, Item fruit, float... chances)
+    {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+
+        return this.createSilkTouchOrShearsDispatchTable(
+                        leavesBlock,
+                        ((LootPoolSingletonContainer.Builder)this.applyExplosionCondition(leavesBlock, LootItem.lootTableItem(saplingBlock)))
+                                .when(BonusLevelTableCondition.bonusLevelFlatChance(registrylookup.getOrThrow(Enchantments.FORTUNE), chances))
+                )
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .when(this.doesNotHaveShearsOrSilkTouch())
+                                .add(LootItem.lootTableItem(fruit)
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(leavesBlock)
+                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ModLeavesBlock.HAS_FRUIT, true))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f)))
+                                .add(
+                                        ((LootPoolSingletonContainer.Builder)this.applyExplosionDecay(
+                                                leavesBlock, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                        ))
+                                                .when(BonusLevelTableCondition.bonusLevelFlatChance(registrylookup.getOrThrow(Enchantments.FORTUNE), NORMAL_LEAVES_STICK_CHANCES))
+                                )
+                );
+    }
+
+    private LootItemCondition.Builder doesNotHaveShearsOrSilkTouch()
+    {
+        return this.hasShearsOrSilkTouch().invert();
+    }
+
+    private LootItemCondition.Builder hasShearsOrSilkTouch()
+    {
+        return HAS_SHEARS.or(this.hasSilkTouch());
     }
 
     private boolean isNormalLoot(Block block)

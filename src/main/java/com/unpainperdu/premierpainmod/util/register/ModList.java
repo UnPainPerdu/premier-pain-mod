@@ -555,8 +555,9 @@ public class ModList
             BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN,
             BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN,
             BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN,
-            BlockRegister.MOUNTAIN_CURRANT_SAPLING
-            );
+            BlockRegister.MOUNTAIN_CURRANT_SAPLING,
+            BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING
+    );
 
     /***
      *
