@@ -144,3 +144,15 @@ I'm back with food for everyone !
     - Biomes, blocks and items have tag now
     - Flowered cactus should not spawn anymore on water
     - Premier pain mod biomes reduce spawn rate
+--------------
+# 1.21.[0,1]-1.10.1
+
+What would be a world without bugs ?
+
+## fix :
+    - item render bug with some mod for mountain currant leaves
+    - mountain currant leaves with fruits drop these fruits when destroyed
+    - sky spears flower model
+    - all biomes is now a bit rarer
+    - oak_boat craft with custom wood doesn't override vanilla one anymore
+    - villager workshop is mineable with pickaxe again
