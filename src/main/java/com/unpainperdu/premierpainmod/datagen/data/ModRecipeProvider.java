@@ -56,9 +56,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             //misc
         oneItemToAnotherOneRecipeInFurnaceBuilder(BlockRegister.FLOWERED_CACTUS_BLOCK, Items.GREEN_DYE, RecipeCategory.MISC, 0.2f, 300);
             //flower to colorant
-        oneItemToAnotherOneRecipeBuilder(BlockRegister.CIVILIZATIONS_FLOWER, Items.ORANGE_DYE);
-        oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE);
-        oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE);
+        oneItemToAnotherOneRecipeBuilder(BlockRegister.CIVILIZATIONS_FLOWER, Items.ORANGE_DYE, "_mod_flower");
+        oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE, "_mod_flower");
+        oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE, "_mod_flower");
             //wood
         oneItemToAnotherOneRecipeBuilder(ModItemTags.MOUNTAIN_CURRANT_LOGS, BlockRegister.MOUNTAIN_CURRANT_PLANKS, 4);
         fourSameIntoOneRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_WOOD.get(), BlockRegister.MOUNTAIN_CURRANT_LOG.get(), 3);
@@ -333,7 +333,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         String resultName = BuiltInRegistries.BLOCK.getKey((Block) ((DeferredBlock<Block>) resource).get()).toString().replace(PremierPainMod.MOD_ID +":","");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput).requires(resource).unlockedBy("has_" + resultName, has(resource)).save(ModRecipeProvider.recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput)
+                .requires(resource)
+                .unlockedBy("has_" + resultName, has(resource))
+                .save(ModRecipeProvider.recipeOutput);
     }
 
     private void oneItemToAnotherOneRecipeBuilder(TagKey<Item> resource, ItemLike result)
@@ -345,7 +348,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         String resultName = getName(result.asItem());
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput).requires(resource).unlockedBy("has_" + resultName, has(resource)).save(ModRecipeProvider.recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput)
+                .requires(resource)
+                .unlockedBy("has_" + resultName, has(resource))
+                .save(ModRecipeProvider.recipeOutput);
+    }
+
+    /*
+    * Use it if the recipe may result a vanilla item
+    * @name add itself at the name of folder name
+    **/
+    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result, String name)
+    {
+        oneItemToAnotherOneRecipeBuilder(resource, result, 1, name);
+    }
+
+    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result, int numberOutput, String name)
+    {
+        String resultName = getName(result.asItem());
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput)
+                .requires(resource)
+                .unlockedBy("has_" + resultName, has(resource))
+                .save(ModRecipeProvider.recipeOutput, "premierpainmod:"+resultName+name);
     }
 
     /*
@@ -358,7 +383,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(resource), recipeCategory, result, exp, cookingTime)
                 .unlockedBy("has_" + resultName, has(resource))
-                .save(ModRecipeProvider.recipeOutput);
+                .save(ModRecipeProvider.recipeOutput, "premierpainmod:" + resultName + "_furnace");
     }
 
     private void shapelessRecipeBuilder(ItemLike result, ItemLike unlockItem, int numberOutput, ItemLike ... resource)
@@ -497,7 +522,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("# #")
                 .pattern("###")
                 .unlockedBy("has_" + resultName, has(blockNeeded))
-                .save(ModRecipeProvider.recipeOutput);
+                .save(ModRecipeProvider.recipeOutput, "premierpainmod:"+resultName+"_custom");
     }
 
     private void fourSameIntoOneRecipeBuilder(Block result, Block blockNeeded)
@@ -523,7 +548,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private String getName(Item item)
     {
-        return getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");
+        String result = getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");
+        result = result.replace("minecraft:","");
+        return result;
     }
 
     private ResourceLocation getKey(Block block)

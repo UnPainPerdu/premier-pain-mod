@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_civilizations_flower": {
+    "has_orange_dye": {
       "conditions": {
         "items": [
           {
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:orange_dye"
+        "recipe": "premierpainmod:orange_dye_mod_flower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_civilizations_flower"
+      "has_orange_dye"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:orange_dye"
+      "premierpainmod:orange_dye_mod_flower"
     ]
   }
 }

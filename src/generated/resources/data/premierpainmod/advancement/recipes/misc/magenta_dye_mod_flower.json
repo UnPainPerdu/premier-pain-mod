@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_minecraft:oak_boat": {
+    "has_magenta_dye": {
       "conditions": {
         "items": [
           {
-            "items": "premierpainmod:mountain_currant_planks"
+            "items": "premierpainmod:curiosity_flower"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:oak_boat"
+        "recipe": "premierpainmod:magenta_dye_mod_flower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_minecraft:oak_boat"
+      "has_magenta_dye"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:oak_boat"
+      "premierpainmod:magenta_dye_mod_flower"
     ]
   }
 }

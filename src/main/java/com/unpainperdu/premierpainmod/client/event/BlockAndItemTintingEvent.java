@@ -20,16 +20,15 @@ public class BlockAndItemTintingEvent
         event.register((state, level, pos, tintIndex) -> level != null && pos != null
                         ? BiomeColors.getAverageFoliageColor(level, pos)
                         : FoliageColor.getDefaultColor(),
-                BlockRegister.MOUNTAIN_CURRANT_LEAVES.value());
+                BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
     }
 
     @SubscribeEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event)
     {
         event.register((stack, tintIndex) -> {
-                    BlockState blockstate = ((BlockItem)stack.getItem()).getBlock().defaultBlockState();
-                    return BlockColors.createDefault().getColor(blockstate, null, null, tintIndex);
+                    return 0x91BD59;
                 },
-                BlockRegister.MOUNTAIN_CURRANT_LEAVES.value());
+                BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
     }
 }
