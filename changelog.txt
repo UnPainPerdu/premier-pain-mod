@@ -156,3 +156,8 @@ What would be a world without bugs ?
     - all biomes is now a bit rarer
     - oak_boat craft with custom wood doesn't override vanilla one anymore
     - villager workshop is mineable with pickaxe again
+--------------
+# 1.21.[0,1]-1.11
+
+## remake :
+    - villager table and throne chair consume carpet when carpeted and drop it when destroyed/sheared
