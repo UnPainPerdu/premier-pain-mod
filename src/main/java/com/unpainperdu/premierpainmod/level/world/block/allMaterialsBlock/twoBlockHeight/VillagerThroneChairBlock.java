@@ -2,21 +2,25 @@ package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBl
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTwoBlockHeightBlock;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.helpInterface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock
+public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock implements CarpetedBlock
 {
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
     public static final EnumProperty<VillagerCarpetColor> COLOR = ModBlockStateProperties.VILLAGER_CARPET_COLOR;
@@ -118,5 +122,25 @@ public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock
                 }
             }
         }
+    }
+    @Override
+    public VillagerCarpetColor getCarpetColor(BlockState state)
+    {
+        return state.getValue(VillagerThroneChairBlock.COLOR);
+    }
+
+    @Override
+    public void setCarpetColor(Level level, BlockPos pos, BlockState state, VillagerCarpetColor newColor)
+    {
+        DoubleBlockHalf half = state.getValue(VillagerThroneChairBlock.HALF);
+        if (half == DoubleBlockHalf.LOWER)
+        {
+            level.setBlock(pos.above(), state.setValue(VillagerThroneChairBlock.COLOR, newColor).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.UPPER), 3);
+        }
+        else
+        {
+            level.setBlock(pos.below(), state.setValue(VillagerThroneChairBlock.COLOR, newColor).setValue(VillagerThroneChairBlock.HALF, DoubleBlockHalf.LOWER), 3);
+        }
+        level.setBlock(pos, state.setValue(VillagerThroneChairBlock.COLOR, newColor), 3);
     }
 }

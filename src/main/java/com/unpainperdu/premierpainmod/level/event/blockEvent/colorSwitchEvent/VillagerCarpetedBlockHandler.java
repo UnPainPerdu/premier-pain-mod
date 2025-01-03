@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.level.event.blockEvent.colorSwitchEvent;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.event.blockEvent.colorSwitchEvent.util.DropEventColorHelper;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.helpInterface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -23,9 +24,9 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import static java.lang.Boolean.TRUE;
 
 @EventBusSubscriber(modid = PremierPainMod.MOD_ID)
-public class VillagerTableHandler
+public class VillagerCarpetedBlockHandler
 {
-    private VillagerTableHandler() {}
+    private VillagerCarpetedBlockHandler() {}
 
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event)
@@ -38,13 +39,14 @@ public class VillagerTableHandler
             BlockPos pos = event.getPos();
             BlockState state = level.getBlockState(pos);
             Block block = level.getBlockState(pos).getBlock();
-            if ((isPlayerInRange(player, pos)) && (block instanceof VillagerTableBlock))
+            if ((isPlayerInRange(player, pos)) && (block instanceof CarpetedBlock))
             {
 
                 ItemStack itemStack = player.getMainHandItem();
                 Item item = itemStack.getItem();
                 Block carpetBlock = Block.byItem(item);
-                if((carpetBlock instanceof WoolCarpetBlock) && (state.getValue(VillagerTableBlock.COLOR) == VillagerCarpetColor.NONE))
+                CarpetedBlock carpetedBlock = (CarpetedBlock) block;
+                if((carpetBlock instanceof WoolCarpetBlock) && (carpetedBlock.getCarpetColor(state) == VillagerCarpetColor.NONE))
                 {
                     if (!player.isCreative())
                     {
@@ -53,7 +55,7 @@ public class VillagerTableHandler
                         player.setItemSlot(EquipmentSlot.MAINHAND, newItemStack);
                     }
 
-                    level.setBlock(pos, state.setValue(VillagerTableBlock.COLOR, colorDedection((WoolCarpetBlock) carpetBlock)), 3);
+                    carpetedBlock.setCarpetColor(level, pos, state, colorDetection((WoolCarpetBlock) carpetBlock));
                     level.playSound(null, pos, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
                     event.setCanceled(TRUE);
                 }
@@ -64,7 +66,7 @@ public class VillagerTableHandler
                     {
                         DropEventColorHelper.dropCarpet(level, pos, state.getValue(VillagerTableBlock.COLOR));
                     }
-                    level.setBlock(pos, state.setValue(VillagerTableBlock.COLOR, VillagerCarpetColor.NONE), 3);
+                    carpetedBlock.setCarpetColor(level, pos, state, VillagerCarpetColor.NONE);
                     level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
                     player.getMainHandItem().hurtAndBreak(1, player, LivingEntity.getSlotForHand(event.getHand()));
                 }
@@ -84,7 +86,7 @@ public class VillagerTableHandler
         playerPos = BlockPos.containing(playerPos.getX() + 0.5D, playerPos.getY() + 0.5D, playerPos.getZ() + 0.5D);
         return range.minX <= playerPos.getX() && range.minY <= playerPos.getY() && range.minZ <= playerPos.getZ() && range.maxX >= playerPos.getX() && range.maxY >= playerPos.getY() && range.maxZ >= playerPos.getZ();
     }
-    private static VillagerCarpetColor colorDedection(WoolCarpetBlock carpetBlock)
+    private static VillagerCarpetColor colorDetection(WoolCarpetBlock carpetBlock)
     {
         switch (carpetBlock.getColor())
         {

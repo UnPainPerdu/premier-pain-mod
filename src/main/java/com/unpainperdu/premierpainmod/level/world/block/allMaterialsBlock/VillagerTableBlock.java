@@ -1,17 +1,16 @@
 package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.block.helpInterface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.PipeBlock;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -26,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
+public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock, CarpetedBlock
 {
     public static final MapCodec<VillagerTableBlock> CODEC = simpleCodec(VillagerTableBlock::new);
     public static final BooleanProperty NORTH = PipeBlock.NORTH;
@@ -139,5 +138,17 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock
             default:
                 return state;
         }
+    }
+
+    @Override
+    public VillagerCarpetColor getCarpetColor(BlockState state)
+    {
+        return state.getValue(VillagerTableBlock.COLOR);
+    }
+
+    @Override
+    public void setCarpetColor(Level level, BlockPos pos, BlockState state, VillagerCarpetColor newColor)
+    {
+        level.setBlock(pos, state.setValue(VillagerTableBlock.COLOR, newColor), 3);
     }
 }
