@@ -79,7 +79,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 {
                     carpetedBlockTableGenerator(block);
                 }
-                if (is2HeightBlockLoot(block))
+                else if (is2HeightBlockLoot(block))
                 {
                     twoBlockHeightLootTableGenerator(block);
                 }
@@ -125,15 +125,172 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private void carpetedBlockTableGenerator(Block block)
     {
-        if (block instanceof VillagerThroneChairBlock)
+        if (is2HeightBlockLoot(block))
         {
-            super.add(block, this.createSinglePropConditionTable(block, VillagerStatue.HALF, DoubleBlockHalf.LOWER));
+            super.add(block, this.create2BlockHeightCarpetDispatchTable(block));
         }
         else
         {
             super.add(block, this.createSimpleCarpetDispatchTable(block));
         }
     }
+
+    private LootTable.Builder create2BlockHeightCarpetDispatchTable(Block block)
+    {
+        EnumProperty<VillagerCarpetColor> colorProperty = VillagerTableBlock.COLOR ;
+
+        return LootTable.lootTable()
+                .withPool(
+                        this.applyExplosionCondition(
+                                block
+                                ,LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(block)
+                                            .when(
+                                                    LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                            )
+                                        )
+                        )
+                )
+                .withPool(
+                        this.applyExplosionCondition(
+                                block,
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(Blocks.WHITE_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.WHITE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.LIGHT_GRAY_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIGHT_GRAY)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.GRAY_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.GRAY)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.BLACK_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BLACK)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.BROWN_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BROWN)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.RED_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.RED)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.ORANGE_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.ORANGE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.YELLOW_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.YELLOW)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.LIME_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIME)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.GREEN_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.GREEN)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.CYAN_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.CYAN)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.LIGHT_BLUE_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIGHT_BLUE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.BLUE_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BLUE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.PURPLE_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.PURPLE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.MAGENTA_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.MAGENTA)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.PINK_CARPET)
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.PINK)))
+                                        )
+                        )
+                )
+                ;
+    }
+
     private LootTable.Builder createSimpleCarpetDispatchTable(Block block)
     {
         EnumProperty<VillagerCarpetColor> colorProperty = VillagerTableBlock.COLOR ;
@@ -216,13 +373,6 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                                             .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.PINK)))
                                     )
-
-
-
-
-
-
-
                     )
                 )
                 ;
