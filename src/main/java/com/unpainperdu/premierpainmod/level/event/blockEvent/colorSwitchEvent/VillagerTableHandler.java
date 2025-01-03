@@ -1,11 +1,13 @@
 package com.unpainperdu.premierpainmod.level.event.blockEvent.colorSwitchEvent;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.event.blockEvent.colorSwitchEvent.util.DropEventColorHelper;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -39,11 +41,18 @@ public class VillagerTableHandler
             if ((isPlayerInRange(player, pos)) && (block instanceof VillagerTableBlock))
             {
 
-                ItemStack itemStack =player.getMainHandItem();
+                ItemStack itemStack = player.getMainHandItem();
                 Item item = itemStack.getItem();
                 Block carpetBlock = Block.byItem(item);
                 if((carpetBlock instanceof WoolCarpetBlock) && (state.getValue(VillagerTableBlock.COLOR) == VillagerCarpetColor.NONE))
                 {
+                    if (!player.isCreative())
+                    {
+                        ItemStack newItemStack = player.getMainHandItem();
+                        newItemStack.shrink(1);
+                        player.setItemSlot(EquipmentSlot.MAINHAND, newItemStack);
+                    }
+
                     level.setBlock(pos, state.setValue(VillagerTableBlock.COLOR, colorDedection((WoolCarpetBlock) carpetBlock)), 3);
                     level.playSound(null, pos, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
                     event.setCanceled(TRUE);
@@ -51,6 +60,10 @@ public class VillagerTableHandler
 
                 if ((item instanceof ShearsItem) && (state.getValue(VillagerTableBlock.COLOR) != VillagerCarpetColor.NONE))
                 {
+                    if (!player.isCreative())
+                    {
+                        DropEventColorHelper.dropCarpet(level, pos, state.getValue(VillagerTableBlock.COLOR));
+                    }
                     level.setBlock(pos, state.setValue(VillagerTableBlock.COLOR, VillagerCarpetColor.NONE), 3);
                     level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
                     player.getMainHandItem().hurtAndBreak(1, player, LivingEntity.getSlotForHand(event.getHand()));
