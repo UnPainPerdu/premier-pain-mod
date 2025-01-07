@@ -17,20 +17,19 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ModList
 {
     public static final List<DeferredBlock<Block>> ALL_BLOCKS = generateAllBlocksList();
+
     /***
      *
      * @return AllMaterialsblocks in world
      */
     public static List<Block> getAllMaterialsBlocks()
     {
-        return  getAllBlocksFromClass(
+        return getAllBlocksFromClass(
                 VillagerStatue.class,
                 VillagerPedestalBlock.class,
                 VillagerBrazier.class,
@@ -45,7 +44,7 @@ public class ModList
         );
     }
 
-    public static List<Block> getAllBlocksFromClass(Class<?> ... cList)
+    public static List<Block> getAllBlocksFromClass(Class<?>... cList)
     {
         List<Block> list = new ArrayList<>();
         for (DeferredBlock<Block> deferredBlock : ALL_BLOCKS)
@@ -93,7 +92,7 @@ public class ModList
         return list;
     }
 
-    public static List<Item> getAllItemsFromClass(Class<?> ... cList)
+    public static List<Item> getAllItemsFromClass(Class<?>... cList)
     {
         List<Item> list = new ArrayList<>();
         for (DeferredItem<Item> deferredBlock : ALL_ITEMS)
@@ -166,9 +165,10 @@ public class ModList
         );
         ArrayList<DeferredBlock<Block>> tempList = new ArrayList<>(ALL_BLOCKS);
         tempList.addAll(BlockRegister.AllMaterialsMap.values());
-
+        tempList.sort(new BlockComparator());
         return tempList.stream().toList();
     }
+
     private static List<DeferredItem<Item>> generateAllItemsList()
     {
         List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(
@@ -194,6 +194,46 @@ public class ModList
         );
         ArrayList<DeferredItem<Item>> tempList = new ArrayList<>(ALL_ITEMS);
         tempList.addAll(ItemRegister.AllMaterialsMap.values());
+        tempList.sort(new ItemComparator());
         return tempList;
     }
+
+    public static class BlockComparator implements Comparator<DeferredBlock<Block>>
+    {
+
+        @Override
+        public int compare(DeferredBlock<Block> o1, DeferredBlock<Block> o2)
+        {
+            String id1 = o1.getId().toString();
+            String id2 = o2.getId().toString();
+
+            int classCompare = id1.compareTo(id2);
+            if (classCompare != 0)
+            {
+                return classCompare;
+            }
+
+            return 0;
+        }
+    }
+
+    public static class ItemComparator implements Comparator<DeferredItem<Item>>
+    {
+
+        @Override
+        public int compare(DeferredItem<Item> o1, DeferredItem<Item> o2)
+        {
+            String id1 = o1.getId().toString();
+            String id2 = o2.getId().toString();
+
+            int classCompare = id1.compareTo(id2);
+            if (classCompare != 0)
+            {
+                return classCompare;
+            }
+
+            return 0;
+        }
+    }
 }
+

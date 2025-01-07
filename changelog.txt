@@ -161,3 +161,4 @@ What would be a world without bugs ?
 
 ## remake :
     - villager table and throne chair consume carpet when carpeted and drop it when destroyed/sheared
+    - sort in Premier Pain Mod's creative tab

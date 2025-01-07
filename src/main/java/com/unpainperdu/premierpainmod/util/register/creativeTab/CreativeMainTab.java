@@ -23,12 +23,15 @@ import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class CreativeMainTab
 {
@@ -112,6 +115,7 @@ public class CreativeMainTab
 
     private static void generateAllMaterials(CreativeModeTab.Output output)
     {
+        List<Item> itemList = new ArrayList<>();
         for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
         {
             Block block = deferredBlock.get();
@@ -126,16 +130,23 @@ public class CreativeMainTab
                     || block instanceof VillagerCouch
             )
             {
-                output.accept(block);
+                itemList.add(block.asItem());
             }
         }
+
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
             if (item instanceof VillagerShelfItem)
             {
-                output.accept(item);
+                itemList.add(item);
             }
+        }
+
+        itemList.sort(new ItemComparator());
+        for (Item item : itemList)
+        {
+            output.accept(item);
         }
     }
 
@@ -154,4 +165,18 @@ public class CreativeMainTab
             }
         }
     }
+
+    public static class ItemComparator implements Comparator<Item>
+    {
+
+        @Override
+        public int compare(Item o1, Item o2)
+        {
+            String id1 = o1.toString();
+            String id2 = o2.toString();
+
+            return id1.compareTo(id2);
+        }
+    }
 }
+
