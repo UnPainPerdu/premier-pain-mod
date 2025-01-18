@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.util.register;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
@@ -133,7 +134,7 @@ public class BlockRegister
         List<String> blockTypes = Arrays.asList("villager_statue", "villager_pedestal", "villager_brazier",
                 "villager_table", "villager_chair", "villager_throne_chair",
                 "villager_drawer", "standing_villager_shelf", "wall_villager_shelf",
-                "villager_bench", "villager_couch"
+                "villager_bench", "villager_couch", "villager_brewing_station"
         );
 
         for (String blockType : blockTypes)
@@ -367,6 +368,10 @@ public class BlockRegister
             case "villager_couch":
             {
                 return (DeferredBlock<T>) registerBlock(name, () -> new VillagerCouch(properties));
+            }
+            case "villager_brewing_station":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrewingStation(properties));
             }
             default :
             {

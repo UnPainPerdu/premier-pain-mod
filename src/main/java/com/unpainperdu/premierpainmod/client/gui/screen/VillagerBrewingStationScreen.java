@@ -1,7 +1,7 @@
-package com.unpainperdu.premierpainmod.client.gui.screen.VillagerDrawerScreen;
+package com.unpainperdu.premierpainmod.client.gui.screen;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.villagerDrawerMenu.VillagerDrawerMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.VillagerBrewingStationMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
@@ -9,13 +9,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class VillagerDrawerScreen extends AbstractContainerScreen<VillagerDrawerMenu> implements MenuAccess<VillagerDrawerMenu>
+public class VillagerBrewingStationScreen extends AbstractContainerScreen<VillagerBrewingStationMenu> implements MenuAccess<VillagerBrewingStationMenu>
 {
-
-    public VillagerDrawerScreen(VillagerDrawerMenu pMenu, Inventory pPlayerInventory, Component pTitle)
+    public VillagerBrewingStationScreen(VillagerBrewingStationMenu menu, Inventory playerInventory, Component title)
     {
-        super(pMenu, pPlayerInventory, pTitle);
-
+        super(menu, playerInventory, title);
     }
 
     @Override

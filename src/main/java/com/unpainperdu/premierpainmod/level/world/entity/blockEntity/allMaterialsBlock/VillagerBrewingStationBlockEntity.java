@@ -1,27 +1,32 @@
 package com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock;
 
+import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.VillagerBrewingStationMenu;
+import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.RecipeCraftingHolder;
-import net.minecraft.world.inventory.StackedContentsCompatible;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, RecipeCraftingHolder, StackedContentsCompatible
 {
+    protected FluidTank fluidTank;
     private static final int WATER_INPUT_SLOT = 0;
     private static final int[] SLOTS_FOR_WATER = new int[]{0};
     private static final int INGREDIENT_INPUT_SLOT_0 = 1;
@@ -40,61 +45,208 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     private static final int OUTPUT_SLOT = 13;
     private static final int[] SLOTS_FOR_OUTPUT = new int[]{13};
     private static final int SLOTS_NUMBER = 14;
-    int cookingProgress;
+    public static final int BREWING_TIME_STANDARD = 2000;
+    public static final int DATA_BREWING_PROGRESS = 0;
+    public static final int DATA_BREWING_TOTAL_TIME = 1;
+    //int brewingProgress;
+    //int brewingTotalTime;
     private NonNullList<ItemStack> items = NonNullList.withSize(SLOTS_NUMBER, ItemStack.EMPTY);
-
-    public VillagerBrewingStationBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState blockState)
+    /*
+    protected final ContainerData dataAccess = new ContainerData()
     {
-        super(type, pos, blockState);
-    }
+        @Override
+        public int get(int dataIndex)
+        {
+            switch (dataIndex)
+            {
+                case 0:
+                    return VillagerBrewingStationBlockEntity.this.brewingProgress;
+                case 1:
+                    return VillagerBrewingStationBlockEntity.this.brewingTotalTime;
+                default:
+                    return 0;
+            }
+        }
 
-    @Override
-    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
+        @Override
+        public void set(int dataIndex, int newValue)
+        {
+            switch (dataIndex)
+            {
+                case 0:
+                    VillagerBrewingStationBlockEntity.this.brewingProgress = newValue;
+                    break;
+                case 1:
+                    VillagerBrewingStationBlockEntity.this.brewingTotalTime = newValue;
+            }
+        }
+
+        @Override
+        public int getCount()
+        {
+            return 2;
+        }
+    };
+     */
+
+    //private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
+
+    public VillagerBrewingStationBlockEntity(BlockPos pos, BlockState blockState)
     {
-
-    }
-
-    @Override
-    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
-    {
-
-    }
-
-    @Override
-    public Component getDisplayName()
-    {
-        return null;
+        super(BlockEntityRegister.VILLAGER_BREWING_STATION_ENTITY.get(), pos, blockState);
+        this.fluidTank = new FluidTank(1000);
     }
 
     @Override
     protected Component getDefaultName()
     {
-        return null;
+        return Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_brewing_station");
     }
 
     @Override
-    protected NonNullList<ItemStack> getItems()
+    protected AbstractContainerMenu createMenu(int id, Inventory player)
+    {
+        return VillagerBrewingStationMenu.VillagerBrewingStationMenu(id, player, this);
+    }
+
+    @Override
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)
+    {
+        super.loadAdditional(tag, registries);
+        this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(tag, this.items, registries);
+        //this.brewingProgress = tag.getInt("BrewTime");
+        //this.brewingTotalTime = tag.getInt("BrewTimeTotal");
+        //CompoundTag compoundtag = tag.getCompound("RecipesUsed");
+        /*
+        for (String s : compoundtag.getAllKeys())
+        {
+            this.recipesUsed.put(ResourceLocation.parse(s), compoundtag.getInt(s));
+        }
+
+         */
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)
+    {
+        super.saveAdditional(tag, registries);
+        //tag.putInt("BrewTime", this.brewingProgress);
+        //tag.putInt("BrewTimeTotal", this.brewingTotalTime);
+        ContainerHelper.saveAllItems(tag, this.items, registries);
+        //CompoundTag compoundtag = new CompoundTag();
+        //this.recipesUsed.forEach((p_187449_, p_187450_) -> compoundtag.putInt(p_187449_.toString(), p_187450_));
+        //tag.put("RecipesUsed", compoundtag);
+    }
+
+    /*
+    public static void serverTick(Level level, BlockPos pos, BlockState state, VillagerBrewingStationBlockEntity blockEntity)
+    {
+        boolean flag1 = false;
+
+        List<ItemStack>  itemStacks = blockEntity.items;
+        ItemStack itemstack = blockEntity.items.get(1);
+        ItemStack itemstack1 = blockEntity.items.get(0);
+        boolean hasEnoughItems = blockEntity.hasEnoughItems(itemStacks);
+        if (hasEnoughItems && isFull(blockEntity))
+        {
+            //RecipeHolder<?> recipeholder = blockEntity.quickCheck.getRecipeFor(new SingleRecipeInput(itemstack1), level).orElse(null);
+
+            int i = blockEntity.getMaxStackSize();
+
+            if (!blockEntity.isLit() && canBurn(level.registryAccess(), recipeholder, blockEntity.items, i, blockEntity))
+            {
+                blockEntity.litTime = blockEntity.getBurnDuration(itemstack);
+                blockEntity.litDuration = blockEntity.litTime;
+                if (blockEntity.isLit())
+                {
+                    flag1 = true;
+                    if (itemstack.hasCraftingRemainingItem())
+                    {
+                        blockEntity.items.set(1, itemstack.getCraftingRemainingItem());
+                    }
+                    else
+                    if (flag3)
+                    {
+                        Item item = itemstack.getItem();
+                        itemstack.shrink(1);
+                        if (itemstack.isEmpty())
+                        {
+                            blockEntity.items.set(1, itemstack.getCraftingRemainingItem());
+                        }
+                    }
+                }
+            }
+
+            if (blockEntity.isLit() && canBurn(level.registryAccess(), recipeholder, blockEntity.items, i, blockEntity))
+            {
+                blockEntity.cookingProgress++;
+                if (blockEntity.cookingProgress == blockEntity.cookingTotalTime)
+                {
+                    blockEntity.cookingProgress = 0;
+                    blockEntity.cookingTotalTime = getTotalCookTime(level, blockEntity);
+                    if (burn(level.registryAccess(), recipeholder, blockEntity.items, i, blockEntity))
+                    {
+                        blockEntity.setRecipeUsed(recipeholder);
+                    }
+
+                    flag1 = true;
+                }
+            }
+            else
+            {
+                blockEntity.cookingProgress = 0;
+            }
+        }
+        else if (!blockEntity.isLit() && blockEntity.cookingProgress > 0)
+        {
+            blockEntity.cookingProgress = Mth.clamp(blockEntity.cookingProgress - 2, 0, blockEntity.cookingTotalTime);
+        }
+
+        if (flag != blockEntity.isLit())
+        {
+            flag1 = true;
+            state = state.setValue(AbstractFurnaceBlock.LIT, Boolean.valueOf(blockEntity.isLit()));
+            level.setBlock(pos, state, 3);
+        }
+
+        if (flag1)
+        {
+            setChanged(level, pos, state);
+        }
+    }
+
+     */
+
+    protected boolean hasEnoughItems(List<ItemStack> itemStackList)
+    {
+        int i = 0;
+        for (ItemStack itemStack : itemStackList)
+        {
+            if (!itemStack.isEmpty())
+            {
+                i ++;
+            }
+        }
+        return i >= 3;
+    }
+
+    //todo
+    protected boolean isFilled()
+    {
+        return false;
+    }
+
+    @Override
+    public NonNullList<ItemStack> getItems()
     {
         return items;
     }
 
     @Override
-    protected void setItems(NonNullList<ItemStack> items)
+    public void setItems(NonNullList<ItemStack> items)
     {
         this.items = items;
-    }
-
-    @Nullable
-    @Override
-    public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player)
-    {
-        return null;
-    }
-
-    @Override
-    protected AbstractContainerMenu createMenu(int containerId, Inventory inventory)
-    {
-        return null;
     }
 
     @Override
@@ -143,5 +295,10 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     public void fillStackedContents(StackedContents contents)
     {
 
+    }
+
+    protected static boolean isFull(VillagerBrewingStationBlockEntity blockEntity)
+    {
+        return !blockEntity.fluidTank.isEmpty();
     }
 }
