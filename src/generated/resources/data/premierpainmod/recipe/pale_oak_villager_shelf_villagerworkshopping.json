@@ -1,7 +1,7 @@
 {
   "type": "premierpainmod:villager_workshopping",
   "ingredient": {
-    "item": "minecraft:oak_planks"
+    "item": "minecraft:stick"
   },
   "result": {
     "count": 1,

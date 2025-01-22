@@ -131,6 +131,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         shelfTranslation(suffix,translationSuffix);
         benchTranslation(suffix,translationSuffix);
         couchTranslation(suffix,translationSuffix);
+        brewingStationTranslation(suffix,translationSuffix);
     }
 
     // will create translation : "block.premierpainmod.suffix_villager_statue": "Statue de villageois 'Suffix'"
@@ -199,6 +200,13 @@ public class FrenchLanguageProvider extends LanguageProvider
     {
         String standingShelf = "_villager_couch";
         String translationPedestal = "Canapé du villageois en ";
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+standingShelf,translationPedestal + translation);
+    }
+
+    private void brewingStationTranslation(String suffix, String translation)
+    {
+        String standingShelf = "_villager_brewing_station";
+        String translationPedestal = "Fut de brassage du villageois en ";
         add("block."+PremierPainMod.MOD_ID +"."+suffix+standingShelf,translationPedestal + translation);
     }
 

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,filled=false,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 270
+    },
+    "facing=east,filled=false,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 270
+    },
+    "facing=east,filled=true,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 270
+    },
+    "facing=east,filled=true,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 270
+    },
+    "facing=north,filled=false,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 180
+    },
+    "facing=north,filled=false,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 180
+    },
+    "facing=north,filled=true,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 180
+    },
+    "facing=north,filled=true,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 180
+    },
+    "facing=south,filled=false,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station"
+    },
+    "facing=south,filled=false,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station"
+    },
+    "facing=south,filled=true,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station"
+    },
+    "facing=south,filled=true,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station"
+    },
+    "facing=west,filled=false,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 90
+    },
+    "facing=west,filled=false,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 90
+    },
+    "facing=west,filled=true,waterlogged=false": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 90
+    },
+    "facing=west,filled=true,waterlogged=true": {
+      "model": "premierpainmod:block/pale_oak_villager_brewing_station",
+      "y": 90
+    }
+  }
+}

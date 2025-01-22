@@ -201,9 +201,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             if((item instanceof VillagerShelfItem))
             {
                     //oak like
-                if (itemName.contains("dark_oak")) {
+                if (itemName.contains("dark_oak"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.DARK_OAK_PLANKS);
-                } else if (itemName.contains("oak")) {
+                }
+                else if (itemName.contains("pale_oak"))
+                {
+                    buildingBlocksRecipeBluilder(item, Items.STICK);
+                }
+                else if (itemName.contains("oak"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.OAK_PLANKS);
                 }
                 //stone like

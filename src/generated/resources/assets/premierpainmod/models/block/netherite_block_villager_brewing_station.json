@@ -1,0 +1,8 @@
+{
+  "parent": "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station",
+  "textures": {
+    "1": "premierpainmod:block/all_materials_block/villager_brewing_station/void",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_texture/netherite_block_villager",
+    "3": "premierpainmod:block/all_materials_block/multiple_use_particle/netherite_block_villager"
+  }
+}

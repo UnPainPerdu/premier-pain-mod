@@ -132,6 +132,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         shelfTranslation(suffix);
         benchTranslation(suffix);
         couchTranslation(suffix);
+        brewingStationTranslation(suffix);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
@@ -146,6 +147,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         shelfTranslation(suffix1, suffix2, isSuffix2Translate);
         benchTranslation(suffix1, suffix2, isSuffix2Translate);
         couchTranslation(suffix1, suffix2, isSuffix2Translate);
+        brewingStationTranslation(suffix1, suffix2, isSuffix2Translate);
     }
 
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
@@ -368,6 +370,29 @@ public class EnglishLanguageProvider extends LanguageProvider
         String translation1 = capitalize(suffix1);
         String table = "_villager_couch";
         String translationTable = " villager couch";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
+        }
+    }
+
+    private void brewingStationTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String bench = "_villager_brewing_station";
+        String translationTable = " villager brewing station";
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translation + translationTable);
+    }
+
+    private void brewingStationTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String table = "_villager_brewing_station";
+        String translationTable = " villager brewing station";
         if (!isSuffix2Translate)
         {
             add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);

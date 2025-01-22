@@ -1,12 +1,12 @@
 {
   "values": [
     "premierpainmod:cactus_flower_fruit",
-    "premierpainmod:sky_spears_fruit",
-    "premierpainmod:jelly_hat",
-    "premierpainmod:mountain_currant",
-    "premierpainmod:jellyshroom_stew",
     "premierpainmod:cactus_stew",
+    "premierpainmod:fruits_bowl",
+    "premierpainmod:jelly_hat",
+    "premierpainmod:jellyshroom_stew",
+    "premierpainmod:mountain_currant",
     "premierpainmod:potatoes_and_spears_bowl",
-    "premierpainmod:fruits_bowl"
+    "premierpainmod:sky_spears_fruit"
   ]
 }

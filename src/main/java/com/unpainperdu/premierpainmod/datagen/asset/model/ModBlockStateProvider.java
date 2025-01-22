@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
@@ -66,6 +67,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if (block instanceof AbstractTallGrass) {tallGrassWithItem(block);}
             else if (block instanceof VillagerBench) {villagerBenchWithItem(block);}
             else if (block instanceof VillagerCouch) {villagerCouchWithItem(block);}
+            else if (block instanceof VillagerBrewingStation) {villagerBrewingStationWithItem(block);}
         }
     //manual
         //vegetation
@@ -1002,6 +1004,29 @@ public class ModBlockStateProvider extends BlockStateProvider
                 .texture("0","block/all_materials_block/multiple_use_texture/" + material)
                 .texture("1", "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_white");
         itemModels().getBuilder(getKey(block).getPath()).parent(villagerBenchModel);
+    }
+    private void villagerBrewingStationWithItem(Block block)
+    {
+
+        String name = getName(block);
+        String material = name.replace("_villager_brewing_station","_villager");
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            String modelName = getKey(block).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station";
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("1","premierpainmod:block/all_materials_block/villager_brewing_station/void")
+                            .texture("2",texture)
+                            .texture("3", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
+        });
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station").texture("1","premierpainmod:block/all_materials_block/villager_brewing_station/void").texture("2", "block/all_materials_block/multiple_use_texture/" + material).texture("3","block/all_materials_block/multiple_use_particle/" + material);
+        itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
 
     private void skySpearsFlowerWithItem()
