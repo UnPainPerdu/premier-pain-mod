@@ -10,6 +10,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.Villag
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerBrazier;
@@ -1015,11 +1016,30 @@ public class ModBlockStateProvider extends BlockStateProvider
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
         variantBuilder.forAllStates(state ->
         {
+            String liquidTexture = "premierpainmod:block/all_materials_block/villager_brewing_station/";
             String modelName = getKey(block).toString();
+            switch (state.getValue(VillagerBrewingStation.CONTENT))
+            {
+                case LiquidContent.WATER -> {
+                    liquidTexture = liquidTexture + "water_still";
+                    modelName += "_water";
+                    break;
+                }
+                case LiquidContent.BEER -> {
+                    liquidTexture = liquidTexture + "water_still";
+                    modelName += "_beer";
+                    break;
+                }
+                default ->{
+                    liquidTexture = liquidTexture + "void";
+                    modelName += "_empty";
+                    break;
+                }
+            }
             String modelPath = "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station";
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("1","premierpainmod:block/all_materials_block/villager_brewing_station/void")
+                            .texture("1",liquidTexture)
                             .texture("2",texture)
                             .texture("3", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())

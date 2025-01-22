@@ -1,63 +1,93 @@
 {
   "variants": {
-    "facing=east,filled=false,waterlogged=false": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=east,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_beer",
       "y": 270
     },
-    "facing=east,filled=false,waterlogged=true": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=east,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_beer",
       "y": 270
     },
-    "facing=east,filled=true,waterlogged=false": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=east,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_empty",
       "y": 270
     },
-    "facing=east,filled=true,waterlogged=true": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=east,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_empty",
       "y": 270
     },
-    "facing=north,filled=false,waterlogged=false": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=east,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_water",
+      "y": 270
+    },
+    "facing=east,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_water",
+      "y": 270
+    },
+    "facing=north,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_beer",
       "y": 180
     },
-    "facing=north,filled=false,waterlogged=true": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=north,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_beer",
       "y": 180
     },
-    "facing=north,filled=true,waterlogged=false": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=north,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_empty",
       "y": 180
     },
-    "facing=north,filled=true,waterlogged=true": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=north,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_empty",
       "y": 180
     },
-    "facing=south,filled=false,waterlogged=false": {
-      "model": "premierpainmod:block/stone_villager_brewing_station"
+    "facing=north,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_water",
+      "y": 180
     },
-    "facing=south,filled=false,waterlogged=true": {
-      "model": "premierpainmod:block/stone_villager_brewing_station"
+    "facing=north,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_water",
+      "y": 180
     },
-    "facing=south,filled=true,waterlogged=false": {
-      "model": "premierpainmod:block/stone_villager_brewing_station"
+    "facing=south,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_beer"
     },
-    "facing=south,filled=true,waterlogged=true": {
-      "model": "premierpainmod:block/stone_villager_brewing_station"
+    "facing=south,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_beer"
     },
-    "facing=west,filled=false,waterlogged=false": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=south,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_empty"
+    },
+    "facing=south,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_empty"
+    },
+    "facing=south,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_water"
+    },
+    "facing=south,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_water"
+    },
+    "facing=west,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_beer",
       "y": 90
     },
-    "facing=west,filled=false,waterlogged=true": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=west,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_beer",
       "y": 90
     },
-    "facing=west,filled=true,waterlogged=false": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=west,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_empty",
       "y": 90
     },
-    "facing=west,filled=true,waterlogged=true": {
-      "model": "premierpainmod:block/stone_villager_brewing_station",
+    "facing=west,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_empty",
+      "y": 90
+    },
+    "facing=west,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_water",
+      "y": 90
+    },
+    "facing=west,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/stone_villager_brewing_station_water",
       "y": 90
     }
   }
