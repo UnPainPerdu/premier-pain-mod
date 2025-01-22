@@ -18,8 +18,11 @@ public class EnglishLanguageProvider extends LanguageProvider
     protected void addTranslations()
     {
         add("itemGroup.premierpainmod", "Premier Pain mod");
+        //gui
         add("container."+ PremierPainMod.MOD_ID +".villager_workshop","Villager workshop");
+            //container
         add("container."+ PremierPainMod.MOD_ID +".villager_drawer","Villager drawer");
+        add("container."+ PremierPainMod.MOD_ID +".villager_brewing_station","Brewing station");
         //potion effect
         add("effect.minecraft.hero_of_the_village","Hero of villagers");
         //death message
