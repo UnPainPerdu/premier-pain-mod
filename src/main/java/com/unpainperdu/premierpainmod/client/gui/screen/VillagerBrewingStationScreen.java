@@ -29,7 +29,7 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
 
     protected ResourceLocation getBackgroundTexture()
     {
-        return loc("textures/gui/container/all_materials_block/villager_drawer/villager_drawer.png");
+        return loc("textures/gui/container/all_materials_block/villager_brewing_station.png");
     }
 
     @Override
