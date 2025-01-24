@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
@@ -21,6 +22,9 @@ import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,6 +35,14 @@ public class VillagerBrewingStation extends BaseEntityBlock
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final EnumProperty<LiquidContent> CONTENT = ModBlockStateProperties.LIQUID_CONTENT;
     public static final IntegerProperty LEVEL = ModBlockStateProperties.LEVEL_4;
+
+    private static final VoxelShape BASE = Block.box(1, 0, 1, 15, 15, 15);
+    private static final VoxelShape NORTH_PART = Block.box(1, 0, 0, 15, 15, 1);
+    private static final VoxelShape SOUTH_PART = Block.box(1, 0, 15, 15, 15, 16);
+    private static final VoxelShape WEST_PART = Block.box(0, 0, 1, 1, 15, 15);
+    private static final VoxelShape EAST_PART = Block.box(15, 0, 1, 16, 15, 15);
+    private static final VoxelShape Y_SHAPE = Shapes.or(BASE, NORTH_PART, SOUTH_PART);
+    private static final VoxelShape X_SHAPE = Shapes.or(BASE, WEST_PART, EAST_PART);
 
     public VillagerBrewingStation(Properties properties)
     {
@@ -52,6 +64,13 @@ public class VillagerBrewingStation extends BaseEntityBlock
     }
 
     @Override
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext)
+    {
+        Direction direction = blockState.getValue(FACING);
+        return direction.getAxis() == Direction.Axis.X ? X_SHAPE : Y_SHAPE;
+    }
+
+    @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult)
     {
         if (level.isClientSide)
@@ -63,6 +82,7 @@ public class VillagerBrewingStation extends BaseEntityBlock
             return InteractionResult.CONSUME;
         }
     }
+
 
     protected void openContainer(Level level, BlockPos pos, Player player)
     {
