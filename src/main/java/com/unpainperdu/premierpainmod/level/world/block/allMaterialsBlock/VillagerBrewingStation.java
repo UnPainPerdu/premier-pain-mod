@@ -3,14 +3,11 @@ package com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock;
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.PedestalBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerBrewingStationBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -18,13 +15,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -37,11 +30,12 @@ public class VillagerBrewingStation extends BaseEntityBlock
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final EnumProperty<LiquidContent> CONTENT = ModBlockStateProperties.LIQUID_CONTENT;
+    public static final IntegerProperty LEVEL = ModBlockStateProperties.LEVEL_4;
 
     public VillagerBrewingStation(Properties properties)
     {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE).setValue(FACING, Direction.NORTH).setValue(CONTENT, LiquidContent.EMPTY));
+        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE).setValue(FACING, Direction.NORTH).setValue(CONTENT, LiquidContent.EMPTY).setValue(LEVEL, 0));
     }
 
     @Override
@@ -109,7 +103,7 @@ public class VillagerBrewingStation extends BaseEntityBlock
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add( WATERLOGGED, FACING, CONTENT);
+        pBuilder.add( WATERLOGGED, FACING, CONTENT, LEVEL);
     }
 
     @Override

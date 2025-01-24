@@ -1016,36 +1016,45 @@ public class ModBlockStateProvider extends BlockStateProvider
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
         variantBuilder.forAllStates(state ->
         {
-            String liquidTexture = "premierpainmod:block/all_materials_block/villager_brewing_station/";
-            String modelName = getKey(block).toString();
-            switch (state.getValue(VillagerBrewingStation.CONTENT))
+            int level = state.getValue(VillagerBrewingStation.LEVEL);
+            String modelPath = "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station_" + level;
+            String modelName = getKey(block).toString() + level;
+            /*
+            switch (state.getValue(VillagerBrewingStation.LEVEL))
             {
-                case LiquidContent.WATER -> {
-                    liquidTexture = liquidTexture + "water_still";
-                    modelName += "_water";
+                case 1 -> {
+                    modelPath += "1";
+                    modelName += "_1";
                     break;
                 }
-                case LiquidContent.BEER -> {
-                    liquidTexture = liquidTexture + "water_still";
-                    modelName += "_beer";
+                case 2 -> {
+                    modelName += "_2";
+                    break;
+                }
+                case 3 -> {
+                    modelName += "_3";
+                    break;
+                }
+                case 4 -> {
+                    modelName += "_4";
                     break;
                 }
                 default ->{
-                    liquidTexture = liquidTexture + "void";
-                    modelName += "_empty";
+                    modelName += "_5";
                     break;
                 }
             }
-            String modelPath = "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station";
+
+             */
+
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("1",liquidTexture)
                             .texture("2",texture)
                             .texture("3", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station").texture("1","premierpainmod:block/all_materials_block/villager_brewing_station/void").texture("2", "block/all_materials_block/multiple_use_texture/" + material).texture("3","block/all_materials_block/multiple_use_particle/" + material);
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station_0").texture("2", "block/all_materials_block/multiple_use_texture/" + material).texture("3","block/all_materials_block/multiple_use_particle/" + material);
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
 

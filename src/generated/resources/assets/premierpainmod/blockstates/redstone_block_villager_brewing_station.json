@@ -1,93 +1,453 @@
 {
   "variants": {
-    "facing=east,liquid_content=beer,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_beer",
+    "facing=east,level_4=0,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 270
     },
-    "facing=east,liquid_content=beer,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_beer",
+    "facing=east,level_4=0,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 270
     },
-    "facing=east,liquid_content=empty,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_empty",
+    "facing=east,level_4=0,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 270
     },
-    "facing=east,liquid_content=empty,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_empty",
+    "facing=east,level_4=0,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 270
     },
-    "facing=east,liquid_content=water,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_water",
+    "facing=east,level_4=0,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 270
     },
-    "facing=east,liquid_content=water,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_water",
+    "facing=east,level_4=0,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 270
     },
-    "facing=north,liquid_content=beer,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_beer",
+    "facing=east,level_4=1,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=north,level_4=0,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 180
     },
-    "facing=north,liquid_content=beer,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_beer",
+    "facing=north,level_4=0,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 180
     },
-    "facing=north,liquid_content=empty,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_empty",
+    "facing=north,level_4=0,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 180
     },
-    "facing=north,liquid_content=empty,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_empty",
+    "facing=north,level_4=0,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 180
     },
-    "facing=north,liquid_content=water,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_water",
+    "facing=north,level_4=0,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 180
     },
-    "facing=north,liquid_content=water,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_water",
+    "facing=north,level_4=0,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 180
     },
-    "facing=south,liquid_content=beer,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_beer"
+    "facing=north,level_4=1,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 180
     },
-    "facing=south,liquid_content=beer,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_beer"
+    "facing=north,level_4=1,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 180
     },
-    "facing=south,liquid_content=empty,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_empty"
+    "facing=north,level_4=1,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 180
     },
-    "facing=south,liquid_content=empty,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_empty"
+    "facing=north,level_4=1,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 180
     },
-    "facing=south,liquid_content=water,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_water"
+    "facing=north,level_4=1,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 180
     },
-    "facing=south,liquid_content=water,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_water"
+    "facing=north,level_4=1,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 180
     },
-    "facing=west,liquid_content=beer,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_beer",
+    "facing=north,level_4=2,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=south,level_4=0,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0"
+    },
+    "facing=south,level_4=1,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1"
+    },
+    "facing=south,level_4=2,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2"
+    },
+    "facing=south,level_4=3,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3"
+    },
+    "facing=south,level_4=4,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4"
+    },
+    "facing=west,level_4=0,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 90
     },
-    "facing=west,liquid_content=beer,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_beer",
+    "facing=west,level_4=0,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 90
     },
-    "facing=west,liquid_content=empty,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_empty",
+    "facing=west,level_4=0,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 90
     },
-    "facing=west,liquid_content=empty,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_empty",
+    "facing=west,level_4=0,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 90
     },
-    "facing=west,liquid_content=water,waterlogged=false": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_water",
+    "facing=west,level_4=0,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
       "y": 90
     },
-    "facing=west,liquid_content=water,waterlogged=true": {
-      "model": "premierpainmod:block/redstone_block_villager_brewing_station_water",
+    "facing=west,level_4=0,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=beer,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=beer,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=empty,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=empty,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=water,waterlogged=false": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/redstone_block_villager_brewing_station4",
       "y": 90
     }
   }
