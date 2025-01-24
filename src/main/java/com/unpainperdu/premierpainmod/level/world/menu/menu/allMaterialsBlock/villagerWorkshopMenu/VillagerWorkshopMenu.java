@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.villagerWorkshopMenu;
+package com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.villagerWorkshopMenu;
 
 import com.google.common.collect.Lists;
 import java.util.List;

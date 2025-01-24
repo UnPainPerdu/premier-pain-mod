@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock.VillagerBrewingStationMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.VillagerBrewingStationMenu;
 import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,10 +12,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -43,7 +43,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     private static final int INGREDIENT_INPUT_SLOT_11 = 12;
     private static final int[] SLOTS_FOR_INPUT = new int[]{1,2,3,4,5,6,7,8,9,10,11,12};
     private static final int OUTPUT_SLOT = 13;
-    private static final int[] SLOTS_FOR_OUTPUT = new int[]{13};
+    private static final int[] SLOTS_FOR_OUTPUT = new int[]{13, WATER_INPUT_SLOT};
     private static final int SLOTS_NUMBER = 14;
     public static final int BREWING_TIME_STANDARD = 2000;
     public static final int DATA_BREWING_PROGRESS = 0;
@@ -250,6 +250,24 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     }
 
     @Override
+    public boolean canPlaceItem(int index, ItemStack stack)
+    {
+        if (index == OUTPUT_SLOT)
+        {
+            return false;
+        }
+        else if (index != WATER_INPUT_SLOT)
+        {
+            return true;
+        }
+        else
+        {
+            ItemStack itemstack = this.items.get(WATER_INPUT_SLOT);
+            return stack.is(Items.WATER_BUCKET) && itemstack.isEmpty();
+        }
+    }
+
+    @Override
     public int[] getSlotsForFace(Direction side)
     {
         switch (side)
@@ -263,13 +281,26 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     @Override
     public boolean canPlaceItemThroughFace(int index, ItemStack itemStack, @Nullable Direction direction)
     {
-        return false;
+        return this.canPlaceItem(index, itemStack);
     }
 
     @Override
     public boolean canTakeItemThroughFace(int index, ItemStack stack, Direction direction)
     {
-        return false;
+        System.out.println(index +" "+ stack.toString() +" "+ direction);
+        boolean flag = false;
+        if (index == OUTPUT_SLOT)
+        {
+            System.out.println("output");
+            flag = true;
+        }
+
+        if (index == WATER_INPUT_SLOT && stack.is(Items.BUCKET))
+        {
+            System.out.println("input");
+            flag = true;
+        }
+        return flag;
     }
 
     @Override

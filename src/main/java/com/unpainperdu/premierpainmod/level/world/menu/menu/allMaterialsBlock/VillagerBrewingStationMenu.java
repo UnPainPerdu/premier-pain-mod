@@ -1,5 +1,7 @@
-package com.unpainperdu.premierpainmod.level.world.menu.allMaterialsBlock;
+package com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock;
 
+import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSLot;
+import com.unpainperdu.premierpainmod.level.world.menu.slot.WaterBucketSlot;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -56,8 +58,19 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
             {
                 if (slotListPlacement.contains(m) && n <= SLOTS)
                 {
-                    this.addSlot(new Slot(this.container, n, 8 + k * 18, 18 + j * 18));
-                    n ++;
+                    if (m == 0)
+                    {
+                        this.addSlot(new WaterBucketSlot(this.container, n, 8 + k * 18, 18 + j * 18));
+                    }
+                    else if(m == 26)
+                    {
+                        this.addSlot(new NoPlacementSLot(this.container, n, 8 + k * 18, 18 + j * 18));
+                    }
+                    else
+                    {
+                        this.addSlot(new Slot(this.container, n, 8 + k * 18, 18 + j * 18));
+                    }
+                    n++;
                 }
                 m ++;
             }
