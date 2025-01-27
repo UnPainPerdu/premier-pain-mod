@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.VillagerBrewingStationMenu;
 import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
@@ -17,8 +19,14 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.WaterFluid;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,7 +34,6 @@ import java.util.List;
 
 public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, RecipeCraftingHolder, StackedContentsCompatible
 {
-    protected FluidTank fluidTank;
     private static final int WATER_INPUT_SLOT = 0;
     private static final int[] SLOTS_FOR_WATER = new int[]{0};
     private static final int INGREDIENT_INPUT_SLOT_0 = 1;
@@ -51,6 +58,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     //int brewingProgress;
     //int brewingTotalTime;
     private NonNullList<ItemStack> items = NonNullList.withSize(SLOTS_NUMBER, ItemStack.EMPTY);
+    private FluidTank fluidTank;
     /*
     protected final ContainerData dataAccess = new ContainerData()
     {
@@ -115,6 +123,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         super.loadAdditional(tag, registries);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(tag, this.items, registries);
+        fluidTank.readFromNBT(registries, tag.getCompound("tank"));
         //this.brewingProgress = tag.getInt("BrewTime");
         //this.brewingTotalTime = tag.getInt("BrewTimeTotal");
         //CompoundTag compoundtag = tag.getCompound("RecipesUsed");
@@ -134,14 +143,30 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         //tag.putInt("BrewTime", this.brewingProgress);
         //tag.putInt("BrewTimeTotal", this.brewingTotalTime);
         ContainerHelper.saveAllItems(tag, this.items, registries);
-        //CompoundTag compoundtag = new CompoundTag();
-        //this.recipesUsed.forEach((p_187449_, p_187450_) -> compoundtag.putInt(p_187449_.toString(), p_187450_));
-        //tag.put("RecipesUsed", compoundtag);
+        CompoundTag compoundTagFluidTank = new CompoundTag();
+        fluidTank.writeToNBT(registries, compoundTagFluidTank);
+        tag.put("tank", compoundTagFluidTank);
+        //CompoundTag compoundTagRecipe = new CompoundTag();
+        //this.recipesUsed.forEach((p_187449_, p_187450_) -> compoundTagRecipe.putInt(p_187449_.toString(), p_187450_));
+        //tag.put("RecipesUsed", compoundTagRecipe);
     }
 
-    /*
+
     public static void serverTick(Level level, BlockPos pos, BlockState state, VillagerBrewingStationBlockEntity blockEntity)
     {
+        if (blockEntity.fluidTank.isEmpty())
+        {
+            NonNullList<ItemStack> itemStacks = blockEntity.items;
+            if (itemStacks.get(WATER_INPUT_SLOT).is(Items.WATER_BUCKET))
+            {
+                blockEntity.fluidTank.fill(new FluidStack(Fluids.WATER, 1000), IFluidHandler.FluidAction.EXECUTE);
+                level.setBlock(pos, state.setValue(VillagerBrewingStation.LEVEL, 4).setValue(VillagerBrewingStation.CONTENT, LiquidContent.WATER), 3);
+                itemStacks.set(WATER_INPUT_SLOT, new ItemStack(Items.BUCKET));
+                blockEntity.setItems(itemStacks);
+                blockEntity.setChanged();
+            }
+        }
+        /*
         boolean flag1 = false;
 
         List<ItemStack>  itemStacks = blockEntity.items;
@@ -214,9 +239,11 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         {
             setChanged(level, pos, state);
         }
-    }
 
-     */
+    }
+*/
+
+    }
 
     protected boolean hasEnoughItems(List<ItemStack> itemStackList)
     {
@@ -287,17 +314,14 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     @Override
     public boolean canTakeItemThroughFace(int index, ItemStack stack, Direction direction)
     {
-        System.out.println(index +" "+ stack.toString() +" "+ direction);
         boolean flag = false;
         if (index == OUTPUT_SLOT)
         {
-            System.out.println("output");
             flag = true;
         }
 
         if (index == WATER_INPUT_SLOT && stack.is(Items.BUCKET))
         {
-            System.out.println("input");
             flag = true;
         }
         return flag;
@@ -328,8 +352,17 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
 
     }
 
-    protected static boolean isFull(VillagerBrewingStationBlockEntity blockEntity)
+    @javax.annotation.Nullable
+    public static <T extends BlockEntity> BlockEntityTicker<T> createBrewingStationTicker(
+            Level level, BlockEntityType<T> serverType, BlockEntityType<VillagerBrewingStationBlockEntity> clientType
+    )
     {
-        return !blockEntity.fluidTank.isEmpty();
+        return level.isClientSide ? null : createTickerHelper(serverType, clientType, VillagerBrewingStationBlockEntity::serverTick);
+    }
+
+    @javax.annotation.Nullable
+    public static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> serverType, BlockEntityType<E> clientType, BlockEntityTicker<? super E> ticker)
+    {
+        return clientType == serverType ? (BlockEntityTicker<A>)ticker : null;
     }
 }
