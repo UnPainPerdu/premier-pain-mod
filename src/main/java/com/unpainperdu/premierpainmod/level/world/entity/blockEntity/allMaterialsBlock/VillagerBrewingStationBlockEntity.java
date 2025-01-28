@@ -43,7 +43,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     private static final int[] SIDE_SLOTS = new int[]{0, 13};
     private static final int[] SLOTS_FOR_OUTPUT = new int[]{13, WATER_INPUT_SLOT};
     private static final int SLOTS_NUMBER = 15;
-    public static final int BREWING_TIME_STANDARD = 2000;
+    public static final int BREWING_TIME_STANDARD = 100;
     public static final int DATA_BREWING_PROGRESS = 0;
     public static final int DATA_BREWING_TOTAL_TIME = 1;
     int brewingProgress;
@@ -97,6 +97,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         this.fluidTank = new FluidTank(1000);
         this.quickCheck = RecipeManager.createCheck((RecipeType<VillagerBrewingStationRecipe>) RecipeTypeRegister.VILLAGER_BREWING_STATION_RECIPE_TYPE.get());
         this.recipeType = RecipeTypeRegister.VILLAGER_BREWING_STATION_RECIPE_TYPE.get();
+        this.brewingTotalTime = BREWING_TIME_STANDARD;
     }
 
     @Override
@@ -157,7 +158,6 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                 blockEntity.setChanged();
             }
         }
-        /*
         boolean flag1 = false;
         List<ItemStack>  itemStacks = blockEntity.getIngredientItem();
         FluidStack fluidStackInput = blockEntity.fluidTank.getFluid();
@@ -167,7 +167,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
             RecipeHolder<?> recipeholder = blockEntity.quickCheck.getRecipeFor(new VillagerBrewingStationInput(fluidStackInput, itemStacks), level).orElse(null);
 
             int i = blockEntity.getMaxStackSize();
-            if (!blockEntity.canBrew())
+            if (!canBrew(level.registryAccess(), recipeholder,fluidStackInput, blockEntity.getIngredientItem(), i, blockEntity))
             {
                 blockEntity.brewingProgress = 0;
             }
@@ -177,8 +177,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                 if (blockEntity.brewingProgress == blockEntity.brewingTotalTime)
                 {
                     blockEntity.brewingProgress = 0;
-                    blockEntity.brewingTotalTime = BREWING_TIME_STANDARD;
-                    if (brew(level.registryAccess(), recipeholder, blockEntity.items, i, blockEntity))
+                    if (brew(level.registryAccess(), recipeholder, fluidStackInput, blockEntity.getIngredientItem(), i, blockEntity))
                     {
                         blockEntity.setRecipeUsed(recipeholder);
                     }
@@ -187,11 +186,16 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                 }
             }
         }
+        else
+        {
+            blockEntity.brewingProgress = 0;
+        }
         if (flag1)
         {
             setChanged(level, pos, state);
         }
-         */
+        System.out.println(blockEntity.brewingProgress);
+        System.out.println(blockEntity.fluidTank.getFluid() + " " + blockEntity.fluidTank.getFluidAmount());
     }
 
     protected boolean hasEnoughItems(List<ItemStack> itemStackList)
@@ -204,7 +208,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                 i ++;
             }
         }
-        return i >= 3;
+        return i >= 1;
     }
 
     @Override
@@ -299,37 +303,43 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
 
     }
 
-    /*
-    private static boolean brew(RegistryAccess registryAccess, @javax.annotation.Nullable RecipeHolder<?> recipe, NonNullList<ItemStack> inventory, int maxStackSize, BrewingStandBlockEntity brewingStation)
+    private static boolean brew(RegistryAccess registryAccess, @javax.annotation.Nullable RecipeHolder<?> recipe,FluidStack fluidStackInput, NonNullList<ItemStack> ingredients, int maxStackSize, VillagerBrewingStationBlockEntity brewingStation)
     {
-        if (recipe != null && canBrew(registryAccess, recipe, inventory, maxStackSize, brewingStation))
+        if (recipe != null && canBrew(registryAccess, recipe, fluidStackInput,ingredients, maxStackSize, brewingStation))
         {
-            ItemStack itemstack = inventory.get(0);
-            ItemStack itemstack1 = ((RecipeHolder<? extends AbstractCookingRecipe>) recipe).value().assemble(new SingleRecipeInput(furnace.getItem(0)), registryAccess);
-            ItemStack itemstack2 = inventory.get(2);
-            if (itemstack2.isEmpty()) {
-                inventory.set(2, itemstack1.copy());
-            } else if (ItemStack.isSameItemSameComponents(itemstack2, itemstack1)) {
-                itemstack2.grow(itemstack1.getCount());
-            }
+            FluidStack fluidStackResult = ((RecipeHolder<? extends VillagerBrewingStationRecipe>) recipe).value().assembleFluidResult(new VillagerBrewingStationInput(fluidStackInput, ingredients), registryAccess);
 
-            if (itemstack.is(Blocks.WET_SPONGE.asItem()) && !inventory.get(1).isEmpty() && inventory.get(1).is(Items.BUCKET)) {
-                inventory.set(1, new ItemStack(Items.WATER_BUCKET));
+            brewingStation.fluidTank.setFluid(fluidStackResult);
+            for (ItemStack itemStack : ingredients)
+            {
+                itemStack.shrink(1);
             }
-
-            itemstack.shrink(1);
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
 
-     */
-
-    private static boolean canBrew(RegistryAccess registryAccess, RecipeHolder<?> recipe, NonNullList<ItemStack> inventory, int maxStackSize, BrewingStandBlockEntity brewingStation)
+    private static boolean canBrew(RegistryAccess registryAccess, RecipeHolder<?> recipe, FluidStack fluidStackInput, NonNullList<ItemStack> ingredients, int maxStackSize, VillagerBrewingStationBlockEntity brewingStation)
     {
-        boolean flag = true;
-        return flag;
+        if (brewingStation.hasEnoughItems(ingredients) && recipe != null)
+        {
+            FluidStack fluidStackResult = ((RecipeHolder<? extends VillagerBrewingStationRecipe>) recipe).value().assembleFluidResult(new VillagerBrewingStationInput(fluidStackInput, ingredients), registryAccess);
+            if (fluidStackResult.isEmpty())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 
     @javax.annotation.Nullable

@@ -3,13 +3,20 @@ package com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeSerializerRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class VillagerBrewingStationRecipe implements Recipe<VillagerBrewingStationInput>
@@ -33,14 +40,24 @@ public class VillagerBrewingStationRecipe implements Recipe<VillagerBrewingStati
         {
             flag = false;
         }
-        int i = 0;
-        for (Ingredient ingredient : this.inputItem)
+        List<Ingredient> ingredientList = new ArrayList<>(this.inputItem);
+        List<ItemStack> itemStacks = input.itemStacks();
+
+        for (Ingredient ingredient : ingredientList)
         {
-            if(!ingredient.test(input.itemStacks().get(i)))
+            boolean flagIngr = false;
+
+            for (ItemStack itemStack : itemStacks)
+            {
+                if(ingredient.test(itemStack))
+                {
+                    flagIngr = true;
+                }
+            }
+            if (!flagIngr)
             {
                 flag = false;
             }
-            i ++;
         }
         return flag;
     }

@@ -13,6 +13,15 @@
   "ingredients": [
     {
       "item": "premierpainmod:civilizations_flower"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:stone"
     }
   ]
 }

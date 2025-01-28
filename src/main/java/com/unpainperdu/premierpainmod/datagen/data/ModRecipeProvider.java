@@ -47,7 +47,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //testField
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(Fluids.LAVA, 1000) , BlockRegister.CIVILIZATIONS_FLOWER.get());
+
+        //fluid
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(Fluids.LAVA, 1000) , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.MAGMA_CREAM, Items.NETHER_WART, Blocks.STONE);
         //item
             //food
                 //vegetation
