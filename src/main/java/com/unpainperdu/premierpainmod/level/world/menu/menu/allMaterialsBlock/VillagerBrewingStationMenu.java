@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock;
 
-import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSLot;
+import com.unpainperdu.premierpainmod.level.world.menu.slot.MugAndBottleOnlySlot;
+import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.WaterBucketSlot;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import net.minecraft.world.Container;
@@ -12,12 +13,9 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class VillagerBrewingStationMenu extends AbstractContainerMenu
 {
-    private static final int SLOTS = 14;
+    private static final int SLOTS = 15;
     private final Container container;
     private final int containerRows = 3;
 
@@ -48,31 +46,18 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
         this.container = pContainer;
         this.container.startOpen(pPlayerInventory.player);
         int i = (this.containerRows - 4) * 18;
-        int m = 0;
-        int n = 0;
-        List<Integer> slotListPlacement = Arrays.asList(0, 3, 4, 5, 6, 12, 13, 14, 15,21, 22, 23, 24, 26);
 
+        this.addSlot(new WaterBucketSlot(this.container, 0, 8, 18));
+        this.addSlot(new MugAndBottleOnlySlot(this.container, 13, 8 + 8 * 18, 18));
+        this.addSlot(new NoPlacementSlot(this.container, 14, 8 + 8 * 18, 18 + 2 * 18));
+
+        int n = 1;
         for (int j = 0; j < this.containerRows; j++)
         {
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 4; k++)
             {
-                if (slotListPlacement.contains(m) && n <= SLOTS)
-                {
-                    if (m == 0)
-                    {
-                        this.addSlot(new WaterBucketSlot(this.container, n, 8 + k * 18, 18 + j * 18));
-                    }
-                    else if(m == 26)
-                    {
-                        this.addSlot(new NoPlacementSLot(this.container, n, 8 + k * 18, 18 + j * 18));
-                    }
-                    else
-                    {
-                        this.addSlot(new Slot(this.container, n, 8 + k * 18, 18 + j * 18));
-                    }
-                    n++;
-                }
-                m ++;
+                this.addSlot(new Slot(this.container, n, 8 + (k+3) * 18, 18 + j * 18));
+                n++;
             }
         }
 

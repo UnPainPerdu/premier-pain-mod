@@ -1,0 +1,18 @@
+{
+  "type": "premierpainmod:villager_brewing",
+  "fluidInput": {
+    "amount": 1000,
+    "ingredient": {
+      "fluid": "minecraft:water"
+    }
+  },
+  "fluidResult": {
+    "amount": 1000,
+    "id": "minecraft:lava"
+  },
+  "ingredients": [
+    {
+      "item": "premierpainmod:civilizations_flower"
+    }
+  ]
+}

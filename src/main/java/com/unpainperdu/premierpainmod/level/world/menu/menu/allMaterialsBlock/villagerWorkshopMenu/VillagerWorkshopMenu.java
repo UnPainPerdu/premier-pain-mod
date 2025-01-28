@@ -3,7 +3,7 @@ package com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.v
 import com.google.common.collect.Lists;
 import java.util.List;
 
-import com.unpainperdu.premierpainmod.level.world.item.crafting.villagerWorkshopRecipe.VillagerWorkshopRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;

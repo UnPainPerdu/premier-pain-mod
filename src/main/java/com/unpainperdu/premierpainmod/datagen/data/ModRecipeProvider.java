@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.datagen.data;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerBrewingStationRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.register.BlockRegister;
@@ -21,11 +22,16 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.FluidIngredient;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder
@@ -40,6 +46,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(@NotNull RecipeOutput pRecipeOutput)
     {
         ModRecipeProvider.recipeOutput = pRecipeOutput;
+        //testField
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(Fluids.LAVA, 1000) , BlockRegister.CIVILIZATIONS_FLOWER.get());
         //item
             //food
                 //vegetation
@@ -547,6 +555,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(ModRecipeProvider.recipeOutput);
     }
 
+    private void BrewingStationRecipeBuilder(FluidStack fluidInput, FluidStack fluidOutput, ItemLike ... itemLikes)
+    {
+        String resultName = getName(fluidOutput);
+        SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.single(fluidInput),1000);
+        ArrayList<Ingredient> ingredientList = new ArrayList<>();
+        for (ItemLike itemLike : itemLikes)
+        {
+            ingredientList.add(Ingredient.of(itemLike));
+        }
+        new VillagerBrewingStationRecipeBuilder(sizedFluidIngredient, ingredientList, fluidOutput)
+                .unlockedBy("has_civilization_flower", has(BlockRegister.CIVILIZATIONS_FLOWER))
+                .save(ModRecipeProvider.recipeOutput, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "brewing_" + resultName));
+    }
+
 
     private String getName(Block block)
     {
@@ -556,6 +578,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private String getName(Item item)
     {
         String result = getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");
+        result = result.replace("minecraft:","");
+        return result;
+    }
+
+    private String getName(FluidStack fluid)
+    {
+        String result = getKey(fluid.getFluid().getBucket()).toString().replace(PremierPainMod.MOD_ID +":","");
         result = result.replace("minecraft:","");
         return result;
     }
