@@ -178,19 +178,28 @@ public class ModList
                 ItemRegister.LIBERTY_VILLAGER_SINGING_STONE,
                 ItemRegister.DIGGY_VILLAGER_SINGING_STONE,
                 ItemRegister.MADNESS_VILLAGER_SINGING_STONE,
+                //beer
+                    //empty
+                ItemRegister.EMPTY_GLASS,
+                ItemRegister.EMPTY_BOTTLE,
+                ItemRegister.EMPTY_MUG,
+                    //PainDieux
+                ItemRegister.PAIN_DIEUX_GLASS,
+                ItemRegister.PAIN_DIEUX_BOTTLE,
+                ItemRegister.PAIN_DIEUX_MUG,
                 //food
-                //vegetation
+                    //vegetation
                 ItemRegister.CACTUS_FLOWER_FRUIT,
                 ItemRegister.SKY_SPEARS_FRUIT,
                 ItemRegister.JELLY_HAT,
                 ItemRegister.MOUNTAIN_CURRANT,
-                //stew
+                    //stew
                 ItemRegister.JELLYSHROOM_STEW,
                 ItemRegister.CACTUS_STEW,
                 ItemRegister.POTATOES_AND_SPEARS_BOWL,
                 ItemRegister.FRUITS_BOWL,
                 //tree
-                //mountain currant
+                    //mountain currant
                 ItemRegister.MOUNTAIN_CURRANT_SIGN,
                 ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN
         );
