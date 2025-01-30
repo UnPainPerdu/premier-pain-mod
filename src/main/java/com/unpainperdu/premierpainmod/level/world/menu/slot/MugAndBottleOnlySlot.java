@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.menu.slot;
 
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.world.Container;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +18,6 @@ public class MugAndBottleOnlySlot extends Slot
     @Override
     public boolean mayPlace(ItemStack stack)
     {
-        return stack.is(Items.GLASS_BOTTLE) || stack.is(Items.BUCKET);
+        return stack.is(ItemRegister.EMPTY_MUG) || stack.is(ItemRegister.EMPTY_BOTTLE) || stack.is(Items.BUCKET);
     }
 }

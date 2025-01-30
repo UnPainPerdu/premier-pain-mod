@@ -3,9 +3,11 @@ package com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMateria
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
+import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villagerBrewingStation.VillagerBrewingStationInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villagerBrewingStation.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.VillagerBrewingStationMenu;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
@@ -24,6 +26,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
@@ -188,12 +191,99 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         {
             blockEntity.brewingProgress = 0;
         }
+
+        if (!blockEntity.fluidTank.isEmpty() && !blockEntity.items.get(GLASS_INPUT_SLOT_1).isEmpty())
+        {
+            NonNullList<ItemStack> itemList = blockEntity.getItems();
+            ItemStack glassInput = itemList.get(GLASS_INPUT_SLOT_1);
+            FluidStack fluidStack = blockEntity.fluidTank.getFluid();
+            ItemStack output = itemList.get(OUTPUT_SLOT);
+            if (glassInput.is(Items.BUCKET))
+            {
+                if (output.isEmpty() && fluidStack.getFluid() instanceof FlowingFluid && blockEntity.fluidTank.getFluidAmount() >= 1000)
+                {
+                    ItemStack bucket = new ItemStack(fluidStack.getFluid().getBucket());
+                    blockEntity.fluidTank.drain(1000, IFluidHandler.FluidAction.EXECUTE);
+                    itemList.set(OUTPUT_SLOT, bucket.copy());
+                    blockEntity.setItems(itemList);
+                    blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                    flag1 = true;
+                }
+            }
+            else if (fluidStack.getFluid() instanceof BeerFluid && blockEntity.fluidTank.getFluidAmount() >= 250)
+            {
+                if (glassInput.is(ItemRegister.EMPTY_MUG))
+                {
+                    ItemStack mug = new ItemStack(((BeerFluid) fluidStack.getFluid()).getMug());
+                    if (output.isEmpty())
+                    {
+                        blockEntity.fluidTank.drain(250, IFluidHandler.FluidAction.EXECUTE);
+                        itemList.set(OUTPUT_SLOT, mug.copy());
+                        blockEntity.setItems(itemList);
+                        blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                        flag1 = true;
+                    }
+                    else if (itemList.get(OUTPUT_SLOT).is(mug.getItem()) && itemList.get(OUTPUT_SLOT).getCount() < itemList.get(OUTPUT_SLOT).getMaxStackSize())
+                    {
+                        blockEntity.fluidTank.drain(250, IFluidHandler.FluidAction.EXECUTE);
+                        blockEntity.items.get(OUTPUT_SLOT).grow(1);
+                        blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                        flag1 = true;
+                    }
+
+                }
+                else if (glassInput.is(ItemRegister.EMPTY_BOTTLE))
+                {
+                    ItemStack bottle = new ItemStack(((BeerFluid) fluidStack.getFluid()).getBottle());
+                    if (output.isEmpty())
+                    {
+                        blockEntity.fluidTank.drain(250, IFluidHandler.FluidAction.EXECUTE);
+                        itemList.set(OUTPUT_SLOT, bottle.copy());
+                        blockEntity.setItems(itemList);
+                        blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                        flag1 = true;
+                    }
+                    else if (itemList.get(OUTPUT_SLOT).is(bottle.getItem()) && itemList.get(OUTPUT_SLOT).getCount() < itemList.get(OUTPUT_SLOT).getMaxStackSize())
+                    {
+                        blockEntity.fluidTank.drain(250, IFluidHandler.FluidAction.EXECUTE);
+                        blockEntity.items.get(OUTPUT_SLOT).grow(1);
+                        blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                        flag1 = true;
+                    }
+                }
+            }
+        }
+
         if (flag1)
         {
             setChanged(level, pos, state);
         }
-        //System.out.println(blockEntity.brewingProgress);
-        //System.out.println(blockEntity.fluidTank.getFluid() + " " + blockEntity.fluidTank.getFluidAmount());
+        blockEntity.updateLevelFromTank(level, pos, state, blockEntity.fluidTank);
+
+        System.out.println(blockEntity.brewingProgress);
+        System.out.println(blockEntity.fluidTank.getFluid() + " " + blockEntity.fluidTank.getFluidAmount());
+    }
+
+    protected void updateLevelFromTank(Level level, BlockPos pos, BlockState state, FluidTank fluidTank)
+    {
+        int levelInt = 0;
+        if (fluidTank.getFluidAmount() >= 1000)
+        {
+            levelInt = 4;
+        }
+        else if (fluidTank.getFluidAmount() >= 750)
+        {
+            levelInt = 3;
+        }
+        else if (fluidTank.getFluidAmount() >= 500)
+        {
+            levelInt = 2;
+        }
+        else if (fluidTank.getFluidAmount() >= 250)
+        {
+            levelInt = 1;
+        }
+        level.setBlock(pos, state.setValue(VillagerBrewingStation.LEVEL, levelInt).setValue(VillagerBrewingStation.CONTENT, LiquidContent.WATER), 3);
     }
 
     protected boolean hasEnoughItems(List<ItemStack> itemStackList)
@@ -230,7 +320,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         }
         else if (index == GLASS_INPUT_SLOT_1)
         {
-            return stack.is(Items.GLASS_BOTTLE) || stack.is(Items.BUCKET);
+            return stack.is(ItemRegister.EMPTY_MUG.get()) || stack.is(ItemRegister.EMPTY_BOTTLE.get()) || stack.is(Items.BUCKET);
         }
         else if (index != WATER_INPUT_SLOT)
         {

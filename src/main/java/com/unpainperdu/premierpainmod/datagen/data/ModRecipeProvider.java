@@ -9,6 +9,7 @@ import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.V
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.register.fluid.FluidRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -49,7 +50,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //testField
 
         //fluid
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(Fluids.LAVA, 1000) , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.MAGMA_CREAM, Items.NETHER_WART, Blocks.STONE);
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.PAIN_DIEUX_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.WHEAT, Items.SUGAR);
         //item
             //food
                 //vegetation

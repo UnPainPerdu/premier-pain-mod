@@ -8,20 +8,17 @@
   },
   "fluidResult": {
     "amount": 1000,
-    "id": "minecraft:lava"
+    "id": "premierpainmod:pain_dieux_fluid"
   },
   "ingredients": [
     {
       "item": "premierpainmod:civilizations_flower"
     },
     {
-      "item": "minecraft:magma_cream"
+      "item": "minecraft:wheat"
     },
     {
-      "item": "minecraft:nether_wart"
-    },
-    {
-      "item": "minecraft:stone"
+      "item": "minecraft:sugar"
     }
   ]
 }

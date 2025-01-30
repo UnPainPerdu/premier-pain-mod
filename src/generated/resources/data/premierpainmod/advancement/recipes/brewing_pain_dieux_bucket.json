@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:brewing_lava_bucket"
+        "recipe": "premierpainmod:brewing_pain_dieux_bucket"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:brewing_lava_bucket"
+      "premierpainmod:brewing_pain_dieux_bucket"
     ]
   }
 }
