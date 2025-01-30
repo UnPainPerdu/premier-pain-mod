@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.util.commonSetupEvent;
 
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;

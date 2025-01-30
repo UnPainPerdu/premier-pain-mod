@@ -1,8 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register.creativeTab;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

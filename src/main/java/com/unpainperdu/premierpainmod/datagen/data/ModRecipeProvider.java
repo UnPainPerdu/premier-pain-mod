@@ -6,7 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerBrewingStationRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.HolderLookup;

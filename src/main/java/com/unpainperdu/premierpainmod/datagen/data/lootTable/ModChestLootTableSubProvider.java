@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.lootTable;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;

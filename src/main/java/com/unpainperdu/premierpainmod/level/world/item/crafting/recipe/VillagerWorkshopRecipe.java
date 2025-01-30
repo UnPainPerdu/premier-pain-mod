@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.item.crafting.recipe;
 
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeSerializerRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import net.minecraft.core.NonNullList;

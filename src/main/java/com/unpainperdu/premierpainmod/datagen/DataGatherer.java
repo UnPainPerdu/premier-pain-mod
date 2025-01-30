@@ -10,6 +10,7 @@ import com.unpainperdu.premierpainmod.datagen.data.datamap.ModDataMap;
 import com.unpainperdu.premierpainmod.datagen.data.lootTable.ModLootTableProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModBiomeTagProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModBlockTagProvider;
+import com.unpainperdu.premierpainmod.datagen.data.tag.ModFluidTag;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModItemTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -41,7 +42,7 @@ public class DataGatherer
         generator.addProvider(event.includeServer(), new ModSoundProvider(packOutput,fileHelper));
         generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModDataMap(packOutput, lookupProvider));
-
+        generator.addProvider(event.includeServer(), new ModFluidTag(packOutput, lookupProvider));
 
         ModDataPackProvider.onGatherData(event);
     }

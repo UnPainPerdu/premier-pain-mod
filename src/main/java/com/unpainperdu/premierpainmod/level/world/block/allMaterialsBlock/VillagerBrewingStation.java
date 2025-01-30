@@ -4,7 +4,7 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerBrewingStationBlockEntity;
-import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.Containers;

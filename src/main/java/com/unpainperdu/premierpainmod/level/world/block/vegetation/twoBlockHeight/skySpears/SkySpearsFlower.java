@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeig
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.toolKit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

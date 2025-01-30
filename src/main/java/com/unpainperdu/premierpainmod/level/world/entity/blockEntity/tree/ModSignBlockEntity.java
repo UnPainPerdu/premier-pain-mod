@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.entity.blockEntity.tree;
 
-import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SignBlockEntity;

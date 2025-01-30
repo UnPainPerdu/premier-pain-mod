@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent;
 
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.item.ItemEntity;

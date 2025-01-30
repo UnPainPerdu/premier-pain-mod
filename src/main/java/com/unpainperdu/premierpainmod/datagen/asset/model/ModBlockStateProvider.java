@@ -10,7 +10,6 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.Villag
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerBrazier;
@@ -24,7 +23,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShr
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.util.register.ModList;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;

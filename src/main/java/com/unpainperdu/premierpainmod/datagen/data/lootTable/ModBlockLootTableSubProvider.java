@@ -6,7 +6,6 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.Villag
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.helpInterface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
@@ -20,7 +19,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveV
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;

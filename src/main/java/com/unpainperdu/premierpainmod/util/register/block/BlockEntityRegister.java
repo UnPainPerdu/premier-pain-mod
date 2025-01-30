@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.register;
+package com.unpainperdu.premierpainmod.util.register.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
@@ -15,6 +15,7 @@ import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterial
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerShelfBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.tree.ModHangingSignBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.tree.ModSignBlockEntity;
+import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;

@@ -2,9 +2,8 @@ package com.unpainperdu.premierpainmod.client.event;
 
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
-import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
@@ -13,8 +12,6 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
-
-import java.util.List;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class BlockAndItemTintingEvent

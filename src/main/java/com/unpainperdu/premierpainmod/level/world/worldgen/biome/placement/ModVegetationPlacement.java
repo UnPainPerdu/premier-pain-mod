@@ -1,9 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement;
 
-import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModFeatureUtil;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModVegetationFeature;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -11,8 +9,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;

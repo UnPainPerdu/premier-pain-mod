@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.block.tree;
 
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;

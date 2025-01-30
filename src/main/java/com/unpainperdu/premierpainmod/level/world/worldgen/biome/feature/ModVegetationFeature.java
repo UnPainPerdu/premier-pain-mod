@@ -3,7 +3,7 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
 import com.google.common.collect.ImmutableList;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MountainCurrantFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MountainCurrantTrunkPlacer;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.FeatureRegister;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;

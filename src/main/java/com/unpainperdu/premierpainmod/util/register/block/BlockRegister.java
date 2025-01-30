@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.register;
+package com.unpainperdu.premierpainmod.util.register.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
@@ -26,6 +26,8 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeigh
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.DeadTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpears;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.ModTreeGrower;
+import com.unpainperdu.premierpainmod.util.register.fluid.FluidRegister;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -38,6 +40,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
@@ -72,6 +75,20 @@ public class BlockRegister
     public static final Map<String, DeferredBlock<Block>> AllMaterialsMap = createAllMaterialsBlocks();
 
     //public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBrewingStation(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
+    //liquid block zone, see FluidRegister too
+    public static final DeferredBlock<Block> PAIN_DIEUX = registerBlockOnly("pain_dieux",
+            () -> new LiquidBlock(
+                    (FlowingFluid) FluidRegister.PAIN_DIEUX_FLUID.get(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_YELLOW)
+                            .replaceable()
+                            .noCollission()
+                            .strength(100.0F)
+                            .pushReaction(PushReaction.DESTROY)
+                            .noLootTable()
+                            .liquid()
+                            .sound(SoundType.EMPTY)
+            ));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
      //Villager Singing stone event block

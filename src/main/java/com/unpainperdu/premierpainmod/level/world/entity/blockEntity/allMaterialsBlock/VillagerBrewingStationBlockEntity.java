@@ -6,7 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properti
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villagerBrewingStation.VillagerBrewingStationInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villagerBrewingStation.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.VillagerBrewingStationMenu;
-import com.unpainperdu.premierpainmod.util.register.BlockEntityRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.*;
@@ -22,7 +22,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
@@ -31,7 +30,6 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, RecipeCraftingHolder, StackedContentsCompatible
@@ -194,8 +192,8 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         {
             setChanged(level, pos, state);
         }
-        System.out.println(blockEntity.brewingProgress);
-        System.out.println(blockEntity.fluidTank.getFluid() + " " + blockEntity.fluidTank.getFluidAmount());
+        //System.out.println(blockEntity.brewingProgress);
+        //System.out.println(blockEntity.fluidTank.getFluid() + " " + blockEntity.fluidTank.getFluidAmount());
     }
 
     protected boolean hasEnoughItems(List<ItemStack> itemStackList)

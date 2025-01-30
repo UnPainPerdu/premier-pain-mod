@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
-import com.unpainperdu.premierpainmod.util.register.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import net.minecraft.sounds.SoundEvents;

@@ -13,6 +13,7 @@ import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlo
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -115,6 +116,8 @@ public class ModList
     private static List<DeferredBlock<Block>> generateAllBlocksList()
     {
         List<DeferredBlock<Block>> ALL_BLOCKS = Arrays.asList(
+                //liquid
+                BlockRegister.PAIN_DIEUX,
                 //workshop
                 BlockRegister.VILLAGER_WORKSHOP,
 
@@ -180,6 +183,7 @@ public class ModList
                 ItemRegister.MADNESS_VILLAGER_SINGING_STONE,
                 //beer
                     //empty
+                ItemRegister.PAIN_DIEUX_BUCKET,
                 ItemRegister.EMPTY_GLASS,
                 ItemRegister.EMPTY_BOTTLE,
                 ItemRegister.EMPTY_MUG,

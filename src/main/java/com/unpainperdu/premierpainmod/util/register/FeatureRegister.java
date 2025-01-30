@@ -8,6 +8,7 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.feature
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.RuinsFlowerPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.misc.FloweredCactusFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.tallGrass.TallGrassFeature;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -38,7 +39,7 @@ public class FeatureRegister
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> SKY_SPEARS = FEATURES.register("sky_spears",
                 () -> new TallGrassFeature(NoneFeatureConfiguration.CODEC, 7, 11 ,2 ,BlockRegister.SKY_SPEARS.get(), BlockTags.DIRT));
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> DEAD_TALL_BUSH = FEATURES.register("dead_tall_bush",
-            () -> new TallGrassFeature(NoneFeatureConfiguration.CODEC, 2, 5,2 ,BlockRegister.DEAD_TALL_BUSH.get(), BlockTags.SAND));
+            () -> new TallGrassFeature(NoneFeatureConfiguration.CODEC, 2, 5,2 , BlockRegister.DEAD_TALL_BUSH.get(), BlockTags.SAND));
     public static DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> OLD_WILD_WHEAT = FEATURES.register("old_wild_wheat",
             () -> new TallGrassFeature(NoneFeatureConfiguration.CODEC, 1, 1 ,1 ,BlockRegister.OLD_WILD_WHEAT.get(), BlockTags.DIRT));
 

@@ -6,15 +6,14 @@ import com.unpainperdu.premierpainmod.level.world.item.items.DrinkableBeerItem.D
 import com.unpainperdu.premierpainmod.level.world.item.items.DrinkableBeerItem.DrinkableBeerItemType;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.fluid.FluidRegister;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -41,6 +40,7 @@ public class ItemRegister
     public static final DeferredItem<Item>  EMPTY_BOTTLE = ITEMS.register("empty_bottle", () -> new Item(new Item.Properties().stacksTo(16)));
     public static final DeferredItem<Item>  EMPTY_MUG = ITEMS.register("empty_mug", () -> new Item(new Item.Properties().stacksTo(16)));
         //PainDieux
+    public static final DeferredItem<Item> PAIN_DIEUX_BUCKET = ITEMS.register("pain_dieux_bucket", () -> new BucketItem(FluidRegister.PAIN_DIEUX_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> PAIN_DIEUX_GLASS = glassBeerRegister("pain_dieux_glass", MobEffects.DIG_SPEED);
     public static final DeferredItem<Item> PAIN_DIEUX_BOTTLE = bottleBeerRegister("pain_dieux_bottle", MobEffects.DIG_SPEED);
     public static final DeferredItem<Item> PAIN_DIEUX_MUG = mugBeerRegister("pain_dieux_mug", MobEffects.DIG_SPEED);
@@ -130,7 +130,16 @@ public class ItemRegister
 
     private static DeferredItem<Item> bottleBeerRegister(String name, Holder<MobEffect> effect)
     {
-        return beerItemRegister(name, DrinkableBeerItemType.BOTTLE, 1, 0.2f, () -> ItemRegister.EMPTY_BOTTLE, effect);
+        return ITEMS.register(name, () -> new DrinkableBeerItem(new Item.Properties()
+                .food(new FoodProperties.Builder()
+                        .nutrition(1)
+                        .saturationModifier(0.2f)
+                        .usingConvertsTo(ItemRegister.EMPTY_BOTTLE.get())
+                        .build()
+                )
+                        .craftRemainder(ItemRegister.EMPTY_BOTTLE.get())
+                .stacksTo(16)
+                , DrinkableBeerItemType.BOTTLE, name, effect));
     }
 
     private static DeferredItem<Item> mugBeerRegister(String name, Holder<MobEffect> effect)
