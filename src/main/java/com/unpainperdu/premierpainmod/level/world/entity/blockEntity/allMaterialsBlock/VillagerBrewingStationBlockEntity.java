@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
+import com.unpainperdu.premierpainmod.level.world.fluid.fluidType.BeerFluidType;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villagerBrewingStation.VillagerBrewingStationInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villagerBrewingStation.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.VillagerBrewingStationMenu;
@@ -29,6 +30,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import org.jetbrains.annotations.Nullable;
@@ -153,7 +155,6 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
             if (itemStacks.get(WATER_INPUT_SLOT).is(Items.WATER_BUCKET))
             {
                 blockEntity.fluidTank.fill(new FluidStack(Fluids.WATER, 1000), IFluidHandler.FluidAction.EXECUTE);
-                level.setBlock(pos, state.setValue(VillagerBrewingStation.LEVEL, 4).setValue(VillagerBrewingStation.CONTENT, LiquidContent.WATER), 3);
                 itemStacks.set(WATER_INPUT_SLOT, new ItemStack(Items.BUCKET));
                 blockEntity.setItems(itemStacks);
                 blockEntity.setChanged();
@@ -266,7 +267,13 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
 
     protected void updateLevelFromTank(Level level, BlockPos pos, BlockState state, FluidTank fluidTank)
     {
+        LiquidContent content = LiquidContent.WATER;
         int levelInt = 0;
+        FluidType fluidType = fluidTank.getFluid().getFluidType();
+        if (fluidType instanceof BeerFluidType)
+        {
+            content = ((BeerFluidType) fluidType).getLiquidContent();
+        }
         if (fluidTank.getFluidAmount() >= 1000)
         {
             levelInt = 4;
@@ -283,7 +290,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         {
             levelInt = 1;
         }
-        level.setBlock(pos, state.setValue(VillagerBrewingStation.LEVEL, levelInt).setValue(VillagerBrewingStation.CONTENT, LiquidContent.WATER), 3);
+        level.setBlock(pos, state.setValue(VillagerBrewingStation.LEVEL, levelInt).setValue(VillagerBrewingStation.CONTENT, content), 3);
     }
 
     protected boolean hasEnoughItems(List<ItemStack> itemStackList)
@@ -297,6 +304,11 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
             }
         }
         return i >= 1;
+    }
+
+    public FluidTank getFluidTank()
+    {
+        return fluidTank;
     }
 
     @Override

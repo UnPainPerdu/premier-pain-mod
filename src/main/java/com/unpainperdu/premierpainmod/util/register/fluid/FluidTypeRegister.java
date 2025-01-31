@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register.fluid;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import com.unpainperdu.premierpainmod.level.world.fluid.fluidType.BeerFluidType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -23,7 +24,7 @@ public class FluidTypeRegister
                     .fallDistanceModifier(0F)
                     .canHydrate(false)
                     .descriptionId("premierpainmod.block.description." + "pain_dieux_type")
-                    , 0xf1faa12d, new Vector3f(214f/255f, 128f/255f, 000f/255f)));
+                    , LiquidContent.BLOND_BEER));
 
     public static void register(IEventBus bus)
     {

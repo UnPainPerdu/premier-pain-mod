@@ -1,10 +1,10 @@
 {
   "variants": {
-    "facing=east,level_4=0,liquid_content=beer,waterlogged=false": {
+    "facing=east,level_4=0,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 270
     },
-    "facing=east,level_4=0,liquid_content=beer,waterlogged=true": {
+    "facing=east,level_4=0,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 270
     },
@@ -24,11 +24,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 270
     },
-    "facing=east,level_4=1,liquid_content=beer,waterlogged=false": {
+    "facing=east,level_4=1,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 270
     },
-    "facing=east,level_4=1,liquid_content=beer,waterlogged=true": {
+    "facing=east,level_4=1,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 270
     },
@@ -48,11 +48,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 270
     },
-    "facing=east,level_4=2,liquid_content=beer,waterlogged=false": {
+    "facing=east,level_4=2,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 270
     },
-    "facing=east,level_4=2,liquid_content=beer,waterlogged=true": {
+    "facing=east,level_4=2,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 270
     },
@@ -72,11 +72,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 270
     },
-    "facing=east,level_4=3,liquid_content=beer,waterlogged=false": {
+    "facing=east,level_4=3,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 270
     },
-    "facing=east,level_4=3,liquid_content=beer,waterlogged=true": {
+    "facing=east,level_4=3,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 270
     },
@@ -96,11 +96,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 270
     },
-    "facing=east,level_4=4,liquid_content=beer,waterlogged=false": {
+    "facing=east,level_4=4,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4",
       "y": 270
     },
-    "facing=east,level_4=4,liquid_content=beer,waterlogged=true": {
+    "facing=east,level_4=4,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4",
       "y": 270
     },
@@ -120,11 +120,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station4",
       "y": 270
     },
-    "facing=north,level_4=0,liquid_content=beer,waterlogged=false": {
+    "facing=north,level_4=0,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 180
     },
-    "facing=north,level_4=0,liquid_content=beer,waterlogged=true": {
+    "facing=north,level_4=0,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 180
     },
@@ -144,11 +144,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 180
     },
-    "facing=north,level_4=1,liquid_content=beer,waterlogged=false": {
+    "facing=north,level_4=1,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 180
     },
-    "facing=north,level_4=1,liquid_content=beer,waterlogged=true": {
+    "facing=north,level_4=1,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 180
     },
@@ -168,11 +168,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 180
     },
-    "facing=north,level_4=2,liquid_content=beer,waterlogged=false": {
+    "facing=north,level_4=2,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 180
     },
-    "facing=north,level_4=2,liquid_content=beer,waterlogged=true": {
+    "facing=north,level_4=2,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 180
     },
@@ -192,11 +192,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 180
     },
-    "facing=north,level_4=3,liquid_content=beer,waterlogged=false": {
+    "facing=north,level_4=3,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 180
     },
-    "facing=north,level_4=3,liquid_content=beer,waterlogged=true": {
+    "facing=north,level_4=3,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 180
     },
@@ -216,11 +216,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 180
     },
-    "facing=north,level_4=4,liquid_content=beer,waterlogged=false": {
+    "facing=north,level_4=4,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4",
       "y": 180
     },
-    "facing=north,level_4=4,liquid_content=beer,waterlogged=true": {
+    "facing=north,level_4=4,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4",
       "y": 180
     },
@@ -240,10 +240,10 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station4",
       "y": 180
     },
-    "facing=south,level_4=0,liquid_content=beer,waterlogged=false": {
+    "facing=south,level_4=0,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0"
     },
-    "facing=south,level_4=0,liquid_content=beer,waterlogged=true": {
+    "facing=south,level_4=0,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0"
     },
     "facing=south,level_4=0,liquid_content=empty,waterlogged=false": {
@@ -258,10 +258,10 @@
     "facing=south,level_4=0,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0"
     },
-    "facing=south,level_4=1,liquid_content=beer,waterlogged=false": {
+    "facing=south,level_4=1,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1"
     },
-    "facing=south,level_4=1,liquid_content=beer,waterlogged=true": {
+    "facing=south,level_4=1,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1"
     },
     "facing=south,level_4=1,liquid_content=empty,waterlogged=false": {
@@ -276,10 +276,10 @@
     "facing=south,level_4=1,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1"
     },
-    "facing=south,level_4=2,liquid_content=beer,waterlogged=false": {
+    "facing=south,level_4=2,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2"
     },
-    "facing=south,level_4=2,liquid_content=beer,waterlogged=true": {
+    "facing=south,level_4=2,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2"
     },
     "facing=south,level_4=2,liquid_content=empty,waterlogged=false": {
@@ -294,10 +294,10 @@
     "facing=south,level_4=2,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2"
     },
-    "facing=south,level_4=3,liquid_content=beer,waterlogged=false": {
+    "facing=south,level_4=3,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3"
     },
-    "facing=south,level_4=3,liquid_content=beer,waterlogged=true": {
+    "facing=south,level_4=3,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3"
     },
     "facing=south,level_4=3,liquid_content=empty,waterlogged=false": {
@@ -312,10 +312,10 @@
     "facing=south,level_4=3,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3"
     },
-    "facing=south,level_4=4,liquid_content=beer,waterlogged=false": {
+    "facing=south,level_4=4,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4"
     },
-    "facing=south,level_4=4,liquid_content=beer,waterlogged=true": {
+    "facing=south,level_4=4,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4"
     },
     "facing=south,level_4=4,liquid_content=empty,waterlogged=false": {
@@ -330,11 +330,11 @@
     "facing=south,level_4=4,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4"
     },
-    "facing=west,level_4=0,liquid_content=beer,waterlogged=false": {
+    "facing=west,level_4=0,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 90
     },
-    "facing=west,level_4=0,liquid_content=beer,waterlogged=true": {
+    "facing=west,level_4=0,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 90
     },
@@ -354,11 +354,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station0",
       "y": 90
     },
-    "facing=west,level_4=1,liquid_content=beer,waterlogged=false": {
+    "facing=west,level_4=1,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 90
     },
-    "facing=west,level_4=1,liquid_content=beer,waterlogged=true": {
+    "facing=west,level_4=1,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 90
     },
@@ -378,11 +378,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station1",
       "y": 90
     },
-    "facing=west,level_4=2,liquid_content=beer,waterlogged=false": {
+    "facing=west,level_4=2,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 90
     },
-    "facing=west,level_4=2,liquid_content=beer,waterlogged=true": {
+    "facing=west,level_4=2,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 90
     },
@@ -402,11 +402,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station2",
       "y": 90
     },
-    "facing=west,level_4=3,liquid_content=beer,waterlogged=false": {
+    "facing=west,level_4=3,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 90
     },
-    "facing=west,level_4=3,liquid_content=beer,waterlogged=true": {
+    "facing=west,level_4=3,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 90
     },
@@ -426,11 +426,11 @@
       "model": "premierpainmod:block/mangrove_villager_brewing_station3",
       "y": 90
     },
-    "facing=west,level_4=4,liquid_content=beer,waterlogged=false": {
+    "facing=west,level_4=4,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4",
       "y": 90
     },
-    "facing=west,level_4=4,liquid_content=beer,waterlogged=true": {
+    "facing=west,level_4=4,liquid_content=blond_beer,waterlogged=true": {
       "model": "premierpainmod:block/mangrove_villager_brewing_station4",
       "y": 90
     },
