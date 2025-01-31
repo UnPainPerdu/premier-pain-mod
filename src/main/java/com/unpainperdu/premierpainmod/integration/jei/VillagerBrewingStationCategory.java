@@ -89,9 +89,9 @@ public class VillagerBrewingStationCategory implements IRecipeCategory<VillagerB
             }
 
             FluidStack outputFluid = recipe.getResultFluid();
-            builder.addSlot(RecipeIngredientRole.INPUT, 118 ,11 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
-            builder.addSlot(RecipeIngredientRole.INPUT, 118 ,27 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
-            builder.addSlot(RecipeIngredientRole.INPUT, 118 ,43 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 118 ,11 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 118 ,27 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 118 ,43 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
         }
     }
 }
