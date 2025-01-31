@@ -39,6 +39,20 @@ public class EnglishLanguageProvider extends LanguageProvider
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Premier Pain Singing Stone");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"From backing bread to rise the sword, we come from so far!");
+            //beer
+                //empty
+        add(ItemRegister.EMPTY_GLASS.get(), "Empty Polymorphic Glass");
+        add(ItemRegister.EMPTY_BOTTLE.get(), "Empty Polymorphic Bottle");
+        add(ItemRegister.EMPTY_MUG.get(), "Empty Mug");
+                //pain dieux
+        add(PremierPainMod.MOD_ID +".block.description.pain_dieux_type","Pain Dieux");
+        add(ItemRegister.PAIN_DIEUX_BUCKET.get(),"Pain Dieux Bucket");
+        add(ItemRegister.PAIN_DIEUX_GLASS.get(), "Pain Dieux Glass");
+        add(ItemRegister.PAIN_DIEUX_BOTTLE.get(), "Pain Dieux Bottle");
+        add(ItemRegister.PAIN_DIEUX_MUG.get(), "Pain Dieux Mug");
+        add("item.description.pain_dieux_glass","A unique glass for an unique beer.");
+        add("item.description.pain_dieux_bottle","A classy bottle of good beverage.");
+        add("item.description.pain_dieux_mug","Nothing better than a fresh Pain Dieux");
             //food
                 //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky Spears Fruit");

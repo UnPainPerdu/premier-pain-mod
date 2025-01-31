@@ -15,6 +15,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -48,11 +50,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //testField
-
         //fluid
         BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.PAIN_DIEUX_FLUID, 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.WHEAT, Items.SUGAR);
         //item
+            //beer
+                //empty
+        createEmptyContainer();
+                //Pain Dieux
+        shapelessRecipeBuilder(ItemRegister.PAIN_DIEUX_BOTTLE, ItemRegister.PAIN_DIEUX_BUCKET, 4, ItemRegister.PAIN_DIEUX_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.PAIN_DIEUX_GLASS, ItemRegister.PAIN_DIEUX_BOTTLE, 1, ItemRegister.PAIN_DIEUX_BOTTLE, ItemRegister.EMPTY_GLASS);
             //food
                 //vegetation
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CACTUS_FLOWER_BLOCK, ItemRegister.CACTUS_FLOWER_FRUIT);
@@ -573,6 +580,42 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(ModRecipeProvider.recipeOutput, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "brewing_" + resultName));
     }
 
+    private void createEmptyContainer()
+    {
+        TagKey<Item> wood = ItemTags.PLANKS;
+        Item ironNugget = Items.IRON_NUGGET;
+        Block glass = Blocks.GLASS;
+
+        Item result = ItemRegister.EMPTY_GLASS.get();
+        String resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 5))
+                .define('#', glass)
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_" + resultName, has(glass))
+                .save(ModRecipeProvider.recipeOutput);
+
+        result = ItemRegister.EMPTY_BOTTLE.get();
+        resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 7))
+                .define('#', glass)
+                .pattern("# #")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_" + resultName, has(glass))
+                .save(ModRecipeProvider.recipeOutput);
+
+        result = ItemRegister.EMPTY_MUG.get();
+        resultName = getName(result);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 7))
+                .define('#', wood)
+                .define('$', ironNugget)
+                .pattern("# #")
+                .pattern("$ $")
+                .pattern("###")
+                .unlockedBy("has_" + resultName, has(glass))
+                .save(ModRecipeProvider.recipeOutput);
+    }
 
     private String getName(Block block)
     {

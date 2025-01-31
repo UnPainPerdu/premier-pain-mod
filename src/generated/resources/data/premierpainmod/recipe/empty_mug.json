@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "$": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    "# #",
+    "$ $",
+    "###"
+  ],
+  "result": {
+    "count": 7,
+    "id": "premierpainmod:empty_mug"
+  }
+}

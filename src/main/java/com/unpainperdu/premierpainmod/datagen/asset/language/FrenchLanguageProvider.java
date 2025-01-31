@@ -38,6 +38,20 @@ public class FrenchLanguageProvider extends LanguageProvider
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Assez! J'en ai enduré bien assez...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Pierre chantante du Premier Pain");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"De la cuisson du pain au maniement de l'épée, nous venons de si loin!");
+            //beer
+                //empty
+        add(ItemRegister.EMPTY_GLASS.get(), "Verre vide polymorphe");
+        add(ItemRegister.EMPTY_BOTTLE.get(), "Bouteille vide polymorphe");
+        add(ItemRegister.EMPTY_MUG.get(), "Chope vide");
+                //pain dieux
+        add(PremierPainMod.MOD_ID +".block.description.pain_dieux_type","Pain Dieux");
+        add(ItemRegister.PAIN_DIEUX_BUCKET.get(),"Seau de Pain Dieux");
+        add(ItemRegister.PAIN_DIEUX_GLASS.get(), "Verre de Pain Dieux");
+        add(ItemRegister.PAIN_DIEUX_BOTTLE.get(), "Bouteille de Pain Dieux");
+        add(ItemRegister.PAIN_DIEUX_MUG.get(), "Chope de Pain Dieux");
+        add("item.description.pain_dieux_glass","Un verre unique pour une bière unique.");
+        add("item.description.pain_dieux_bottle","Une bouteille classe de bon breuvage.");
+        add("item.description.pain_dieux_mug","Rien de tel qu'une bonne Pain Dieux fraiche !");
             //food
                 //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Fruit de lances du ciel");

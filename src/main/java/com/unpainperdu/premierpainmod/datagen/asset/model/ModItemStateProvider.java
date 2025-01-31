@@ -22,6 +22,16 @@ public class ModItemStateProvider extends ItemModelProvider
     @Override
     protected void registerModels()
     {
+        //beer
+            //empty
+        item(ItemRegister.EMPTY_GLASS.get(),"beer/glass/");
+        item(ItemRegister.EMPTY_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.EMPTY_MUG.get(),"beer/mug/");
+            //pain dieux
+        item(ItemRegister.PAIN_DIEUX_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.PAIN_DIEUX_GLASS.get(),"beer/glass/");
+        item(ItemRegister.PAIN_DIEUX_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.PAIN_DIEUX_MUG.get(),"beer/mug/");
         //food
             //item
         vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());
