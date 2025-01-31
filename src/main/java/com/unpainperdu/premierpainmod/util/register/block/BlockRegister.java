@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.BeerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerCouch;
 import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
@@ -77,7 +78,7 @@ public class BlockRegister
     //public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBrewingStation(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
     //liquid block zone, see FluidRegister too
     public static final DeferredBlock<Block> PAIN_DIEUX = registerBlockOnly("pain_dieux",
-            () -> new LiquidBlock(
+            () -> new BeerBlock(
                     (FlowingFluid) FluidRegister.PAIN_DIEUX_FLUID.get(),
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.COLOR_YELLOW)

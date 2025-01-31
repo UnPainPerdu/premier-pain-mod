@@ -22,7 +22,8 @@ public class VillagerWorkshopRecipe extends SingleItemRecipe
     }
 
     @Override
-    public ItemStack getToastSymbol() {
+    public ItemStack getToastSymbol()
+    {
         return new ItemStack(BlockRegister.VILLAGER_WORKSHOP);
     }
 
