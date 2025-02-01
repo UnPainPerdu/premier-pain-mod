@@ -32,5 +32,6 @@ public class RegisterHandler
         FoliagePlacerTypesRegister.register(modEventBus);
         FluidRegister.register(modEventBus);
         FluidTypeRegister.register(modEventBus);
+        ParticleTypeRegister.register(modEventBus);
     }
 }

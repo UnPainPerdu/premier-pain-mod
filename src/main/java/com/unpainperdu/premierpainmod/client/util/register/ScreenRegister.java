@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.client;
+package com.unpainperdu.premierpainmod.client.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.client.gui.screen.VillagerShelfScreen.VillagerShelfScreen;

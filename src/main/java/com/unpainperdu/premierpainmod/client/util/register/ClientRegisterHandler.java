@@ -1,6 +1,8 @@
-package com.unpainperdu.premierpainmod.client.util;
+package com.unpainperdu.premierpainmod.client.util.register;
 
-import com.unpainperdu.premierpainmod.client.FluidRender;
+import com.unpainperdu.premierpainmod.client.particle.beerParticle.blond.BlondBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.render.FluidRender;
+import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.FluidTypeRegister;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.client.renderer.Sheets;
@@ -12,6 +14,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
 @EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
@@ -46,5 +49,15 @@ public class ClientRegisterHandler
     public static void registerClientExtensions(RegisterClientExtensionsEvent event)
     {
         event.registerFluidType(FluidTypeRegister.PAIN_DIEUX_TYPE.get().register(), FluidTypeRegister.PAIN_DIEUX_TYPE.get());
+    }
+
+    @SubscribeEvent
+    public static void registerParticleProviders(RegisterParticleProvidersEvent event)
+    {
+        // There are multiple ways to register providers, all differing in the functional type they provide in the
+        // second parameter. For example, #registerSpriteSet represents a Function<SpriteSet, ParticleProvider<?>>:
+        event.registerSpriteSet(ParticleTypeRegister.BLOND_BEER_FOAM.get(), BlondBeerFoamProvider::new);
+        // Other methods include #registerSprite, which is essentially a Supplier<TextureSheetParticle>,
+        // and #registerSpecial, which maps to a Supplier<Particle>. See the source code of the event for further info.
     }
 }

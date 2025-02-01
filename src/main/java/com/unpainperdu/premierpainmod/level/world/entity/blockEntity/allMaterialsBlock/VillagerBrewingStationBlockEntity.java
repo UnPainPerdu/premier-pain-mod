@@ -261,8 +261,8 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         }
         blockEntity.updateLevelFromTank(level, pos, state, blockEntity.fluidTank);
 
-        System.out.println(blockEntity.brewingProgress);
-        System.out.println(blockEntity.fluidTank.getFluid() + " " + blockEntity.fluidTank.getFluidAmount());
+        //System.out.println(blockEntity.brewingProgress);
+        //System.out.println(blockEntity.fluidTank.getFluid() + " " + blockEntity.fluidTank.getFluidAmount());
     }
 
     protected void updateLevelFromTank(Level level, BlockPos pos, BlockState state, FluidTank fluidTank)

@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.client;
+package com.unpainperdu.premierpainmod.client.render;
 
 import com.unpainperdu.premierpainmod.util.register.fluid.FluidRegister;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;

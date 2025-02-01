@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.client.util;
+package com.unpainperdu.premierpainmod.client.util.register;
 
 import com.unpainperdu.premierpainmod.client.render.renderBlockEntity.VillagerPedestalRender;
 import com.unpainperdu.premierpainmod.client.render.renderBlockEntity.VillagerShelfRender;

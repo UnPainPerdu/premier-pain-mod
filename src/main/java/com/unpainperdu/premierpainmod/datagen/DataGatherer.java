@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen;
 
+import com.unpainperdu.premierpainmod.datagen.asset.ModParticleDescriptionProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.ModSoundProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.language.ModLanguageProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.model.ModBlockStateProvider;
@@ -43,6 +44,7 @@ public class DataGatherer
         generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModDataMap(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModFluidTag(packOutput, lookupProvider));
+        generator.addProvider(event.includeClient(), new ModParticleDescriptionProvider(packOutput, fileHelper));
 
         ModDataPackProvider.onGatherData(event);
     }
