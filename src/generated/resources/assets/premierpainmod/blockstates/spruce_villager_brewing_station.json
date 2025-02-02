@@ -1,10 +1,42 @@
 {
   "variants": {
+    "facing=east,level_4=0,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
     "facing=east,level_4=0,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 270
     },
     "facing=east,level_4=0,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 270
     },
@@ -16,6 +48,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 270
     },
+    "facing=east,level_4=0,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
     "facing=east,level_4=0,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 270
@@ -24,11 +80,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 270
     },
+    "facing=east,level_4=0,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=0,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
     "facing=east,level_4=1,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 270
     },
     "facing=east,level_4=1,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 270
     },
@@ -40,6 +136,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 270
     },
+    "facing=east,level_4=1,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
     "facing=east,level_4=1,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 270
@@ -48,11 +168,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 270
     },
+    "facing=east,level_4=1,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=1,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
     "facing=east,level_4=2,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 270
     },
     "facing=east,level_4=2,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 270
     },
@@ -64,6 +224,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 270
     },
+    "facing=east,level_4=2,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
     "facing=east,level_4=2,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 270
@@ -72,11 +256,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 270
     },
+    "facing=east,level_4=2,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=2,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
     "facing=east,level_4=3,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 270
     },
     "facing=east,level_4=3,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 270
     },
@@ -88,6 +312,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 270
     },
+    "facing=east,level_4=3,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
     "facing=east,level_4=3,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 270
@@ -96,11 +344,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 270
     },
+    "facing=east,level_4=3,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=3,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
     "facing=east,level_4=4,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 270
     },
     "facing=east,level_4=4,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 270
     },
@@ -112,6 +400,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 270
     },
+    "facing=east,level_4=4,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
     "facing=east,level_4=4,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 270
@@ -120,11 +432,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 270
     },
+    "facing=east,level_4=4,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=east,level_4=4,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 270
+    },
+    "facing=north,level_4=0,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
     "facing=north,level_4=0,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 180
     },
     "facing=north,level_4=0,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 180
     },
@@ -136,6 +488,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 180
     },
+    "facing=north,level_4=0,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
     "facing=north,level_4=0,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 180
@@ -144,11 +520,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 180
     },
+    "facing=north,level_4=0,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=0,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
     "facing=north,level_4=1,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 180
     },
     "facing=north,level_4=1,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 180
     },
@@ -160,6 +576,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 180
     },
+    "facing=north,level_4=1,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
     "facing=north,level_4=1,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 180
@@ -168,11 +608,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 180
     },
+    "facing=north,level_4=1,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=1,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
     "facing=north,level_4=2,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 180
     },
     "facing=north,level_4=2,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 180
     },
@@ -184,6 +664,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 180
     },
+    "facing=north,level_4=2,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
     "facing=north,level_4=2,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 180
@@ -192,11 +696,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 180
     },
+    "facing=north,level_4=2,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=2,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
     "facing=north,level_4=3,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 180
     },
     "facing=north,level_4=3,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 180
     },
@@ -208,6 +752,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 180
     },
+    "facing=north,level_4=3,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
     "facing=north,level_4=3,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 180
@@ -216,11 +784,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 180
     },
+    "facing=north,level_4=3,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=3,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
     "facing=north,level_4=4,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 180
     },
     "facing=north,level_4=4,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 180
     },
@@ -232,6 +840,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 180
     },
+    "facing=north,level_4=4,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
     "facing=north,level_4=4,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 180
@@ -240,10 +872,42 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 180
     },
+    "facing=north,level_4=4,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=north,level_4=4,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 180
+    },
+    "facing=south,level_4=0,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
     "facing=south,level_4=0,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0"
     },
     "facing=south,level_4=0,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0"
     },
     "facing=south,level_4=0,liquid_content=empty,waterlogged=false": {
@@ -252,16 +916,64 @@
     "facing=south,level_4=0,liquid_content=empty,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0"
     },
+    "facing=south,level_4=0,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
     "facing=south,level_4=0,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0"
     },
     "facing=south,level_4=0,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0"
     },
+    "facing=south,level_4=0,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=0,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0"
+    },
+    "facing=south,level_4=1,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
     "facing=south,level_4=1,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1"
     },
     "facing=south,level_4=1,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1"
     },
     "facing=south,level_4=1,liquid_content=empty,waterlogged=false": {
@@ -270,16 +982,64 @@
     "facing=south,level_4=1,liquid_content=empty,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1"
     },
+    "facing=south,level_4=1,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
     "facing=south,level_4=1,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1"
     },
     "facing=south,level_4=1,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1"
     },
+    "facing=south,level_4=1,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=1,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1"
+    },
+    "facing=south,level_4=2,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
     "facing=south,level_4=2,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2"
     },
     "facing=south,level_4=2,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2"
     },
     "facing=south,level_4=2,liquid_content=empty,waterlogged=false": {
@@ -288,16 +1048,64 @@
     "facing=south,level_4=2,liquid_content=empty,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2"
     },
+    "facing=south,level_4=2,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
     "facing=south,level_4=2,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2"
     },
     "facing=south,level_4=2,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2"
     },
+    "facing=south,level_4=2,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=2,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2"
+    },
+    "facing=south,level_4=3,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
     "facing=south,level_4=3,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3"
     },
     "facing=south,level_4=3,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3"
     },
     "facing=south,level_4=3,liquid_content=empty,waterlogged=false": {
@@ -306,16 +1114,64 @@
     "facing=south,level_4=3,liquid_content=empty,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3"
     },
+    "facing=south,level_4=3,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
     "facing=south,level_4=3,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3"
     },
     "facing=south,level_4=3,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3"
     },
+    "facing=south,level_4=3,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=3,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3"
+    },
+    "facing=south,level_4=4,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
     "facing=south,level_4=4,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4"
     },
     "facing=south,level_4=4,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4"
     },
     "facing=south,level_4=4,liquid_content=empty,waterlogged=false": {
@@ -324,17 +1180,73 @@
     "facing=south,level_4=4,liquid_content=empty,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4"
     },
+    "facing=south,level_4=4,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
     "facing=south,level_4=4,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4"
     },
     "facing=south,level_4=4,liquid_content=water,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4"
     },
+    "facing=south,level_4=4,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=south,level_4=4,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4"
+    },
+    "facing=west,level_4=0,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
     "facing=west,level_4=0,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 90
     },
     "facing=west,level_4=0,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 90
     },
@@ -346,6 +1258,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 90
     },
+    "facing=west,level_4=0,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
     "facing=west,level_4=0,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 90
@@ -354,11 +1290,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station0",
       "y": 90
     },
+    "facing=west,level_4=0,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=0,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station0",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
     "facing=west,level_4=1,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 90
     },
     "facing=west,level_4=1,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 90
     },
@@ -370,6 +1346,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 90
     },
+    "facing=west,level_4=1,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
     "facing=west,level_4=1,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 90
@@ -378,11 +1378,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station1",
       "y": 90
     },
+    "facing=west,level_4=1,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=1,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station1",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
     "facing=west,level_4=2,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 90
     },
     "facing=west,level_4=2,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 90
     },
@@ -394,6 +1434,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 90
     },
+    "facing=west,level_4=2,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
     "facing=west,level_4=2,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 90
@@ -402,11 +1466,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station2",
       "y": 90
     },
+    "facing=west,level_4=2,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=2,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station2",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
     "facing=west,level_4=3,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 90
     },
     "facing=west,level_4=3,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 90
     },
@@ -418,6 +1522,30 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 90
     },
+    "facing=west,level_4=3,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
     "facing=west,level_4=3,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 90
@@ -426,11 +1554,51 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station3",
       "y": 90
     },
+    "facing=west,level_4=3,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=3,liquid_content=white_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station3",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=amber_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=amber_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=black_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=black_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
     "facing=west,level_4=4,liquid_content=blond_beer,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 90
     },
     "facing=west,level_4=4,liquid_content=blond_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=brown_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=brown_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=dark_red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=dark_red_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 90
     },
@@ -442,11 +1610,43 @@
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 90
     },
+    "facing=west,level_4=4,liquid_content=green_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=green_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=purple_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=purple_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=red_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=red_beer,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
     "facing=west,level_4=4,liquid_content=water,waterlogged=false": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 90
     },
     "facing=west,level_4=4,liquid_content=water,waterlogged=true": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=white_beer,waterlogged=false": {
+      "model": "premierpainmod:block/spruce_villager_brewing_station4",
+      "y": 90
+    },
+    "facing=west,level_4=4,liquid_content=white_beer,waterlogged=true": {
       "model": "premierpainmod:block/spruce_villager_brewing_station4",
       "y": 90
     }
