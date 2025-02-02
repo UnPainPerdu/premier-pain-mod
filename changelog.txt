@@ -159,6 +159,16 @@ What would be a world without bugs ?
 --------------
 # 1.21.[0,1]-1.11
 
+## add:
+    - Villager Brewing Station
+        A machine which transform water and ingredients into another fluid with possibility to empty it with a bucket, mug and bottle if possible
+    - beer fluid with bucket, mug, glass and bottle
+        beer : Pain Dieux
+
 ## remake :
     - villager table and throne chair consume carpet when carpeted and drop it when destroyed/sheared
     - sort in Premier Pain Mod's creative tab
+
+## fix :
+    - typo in all flower in french
+    "Oui, je suis francophone de base, mais je foire fleur pour fleure. Oupsi"
