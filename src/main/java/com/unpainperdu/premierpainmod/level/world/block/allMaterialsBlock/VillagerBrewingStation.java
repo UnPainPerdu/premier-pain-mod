@@ -92,7 +92,7 @@ public class VillagerBrewingStation extends BaseEntityBlock
         BlockEntity blockentity = level.getBlockEntity(pos);
         if (blockentity instanceof VillagerBrewingStationBlockEntity)
         {
-            player.openMenu((VillagerBrewingStationBlockEntity)blockentity);
+            player.openMenu((VillagerBrewingStationBlockEntity)blockentity, pos);
         }
     }
 

@@ -16,10 +16,14 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
@@ -55,7 +59,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     private NonNullList<ItemStack> items = NonNullList.withSize(SLOTS_NUMBER, ItemStack.EMPTY);
     private FluidTank fluidTank;
 
-    protected final ContainerData dataAccess = new ContainerData()
+    public final ContainerData dataAccess = new ContainerData()
     {
         @Override
         public int get(int dataIndex)
@@ -90,29 +94,6 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
             return 2;
         }
     };
-
-    protected final IFluidStackContainerData fluidDataAccess = new IFluidStackContainerData()
-    {
-
-        @Override
-        public FluidStack get(int index)
-        {
-            return VillagerBrewingStationBlockEntity.this.fluidTank.getFluid();
-        }
-
-        @Override
-        public void set(int index, FluidStack fluidStack)
-        {
-            VillagerBrewingStationBlockEntity.this.fluidTank.setFluid(fluidStack);
-        }
-
-        @Override
-        public int getCount()
-        {
-            return 1;
-        }
-    };
-
     private final RecipeType<? extends VillagerBrewingStationRecipe> recipeType;
     private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
     private final RecipeManager.CachedCheck<VillagerBrewingStationInput, ? extends VillagerBrewingStationRecipe> quickCheck;
@@ -143,9 +124,9 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     }
 
     @Override
-    protected AbstractContainerMenu createMenu(int id, Inventory player)
+    public AbstractContainerMenu createMenu(int id, Inventory inventory)
     {
-        return VillagerBrewingStationMenu.VillagerBrewingStationMenu(id, player, this, dataAccess, fluidDataAccess);
+        return new VillagerBrewingStationMenu(id, inventory, this);
     }
 
     @Override
@@ -511,5 +492,20 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     public static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> serverType, BlockEntityType<E> clientType, BlockEntityTicker<? super E> ticker)
     {
         return clientType == serverType ? (BlockEntityTicker<A>)ticker : null;
+    }
+
+    //for link between client side BE and server side BE I suppose
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries)
+    {
+        return saveWithoutMetadata(registries);
+    }
+
+    //for link between client side BE and server side BE I suppose
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket()
+    {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 }

@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.client.gui.screen;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.client.gui.render.FluidTankRenderer;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.VillagerBrewingStationMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -9,12 +10,21 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
+import net.neoforged.neoforge.fluids.FluidStack;
 
 public class VillagerBrewingStationScreen extends AbstractContainerScreen<VillagerBrewingStationMenu> implements MenuAccess<VillagerBrewingStationMenu>
 {
+    private FluidTankRenderer fluidRenderer;
+
     public VillagerBrewingStationScreen(VillagerBrewingStationMenu menu, Inventory playerInventory, Component title)
     {
         super(menu, playerInventory, title);
+        assignFluidRenderer();
+    }
+
+    private void assignFluidRenderer()
+    {
+        fluidRenderer = new FluidTankRenderer(1000, true, 16, 43);
     }
 
     @Override
@@ -58,6 +68,7 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
 
     private void renderFluidStack(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
     {
-
+        FluidStack fluidStack = this.menu.villagerBrewingStationBlockEntity.getFluidTank().getFluid();
+        fluidRenderer.render(guiGraphics, leftPos + 36, topPos + 27, fluidStack);
     }
 }

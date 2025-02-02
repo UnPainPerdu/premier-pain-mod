@@ -1,17 +1,22 @@
 package com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock;
 
+import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerBrewingStationBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.MugAndBottleOnlySlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.WaterBucketSlot;
-import com.unpainperdu.premierpainmod.util.ModContainerData.IFluidStackContainerData;
-import com.unpainperdu.premierpainmod.util.ModContainerData.SimpleFluidContainerData;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
+import com.unpainperdu.premierpainmod.util.register.ModList;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidStack;
 
@@ -20,42 +25,18 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
     private static final int SLOTS = 15;
     private final Container container;
     private final ContainerData data;
-    private final IFluidStackContainerData fluidData;
     private final int containerRows = 3;
+    public final VillagerBrewingStationBlockEntity villagerBrewingStationBlockEntity;
 
-    public static VillagerBrewingStationMenu VillagerBrewingStationMenu(int pContainerId, Inventory pPlayerInventory)
+    public VillagerBrewingStationMenu(int id, Inventory inv, BlockEntity entity)
     {
-        return new VillagerBrewingStationMenu(MenuTypesRegister.VILLAGER_BREWING_STATION.get(), pContainerId, pPlayerInventory);
-    }
-    public static VillagerBrewingStationMenu VillagerBrewingStationMenu(int pContainerId, Inventory pPlayerInventory, Container pContainer, ContainerData data, IFluidStackContainerData fluidData)
-    {
-        return new VillagerBrewingStationMenu(MenuTypesRegister.VILLAGER_BREWING_STATION.get(), pContainerId, pPlayerInventory, pContainer, data, fluidData);
-    }
+        super(MenuTypesRegister.VILLAGER_BREWING_STATION.get(), id);
+        checkContainerSize((Container) entity, SLOTS);
+        this.container = (Container) entity;
 
-    private VillagerBrewingStationMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory)
-    {
-        this(pType, pContainerId, pPlayerInventory, new SimpleContainer(SLOTS), new SimpleContainerData(3), new SimpleFluidContainerData(1));
-    }
-
-    public VillagerBrewingStationMenu(int pContainerId, Inventory pPlayerInventory)
-    {
-        this(MenuTypesRegister.VILLAGER_BREWING_STATION.get(),pContainerId, pPlayerInventory,  new SimpleContainer(SLOTS), new SimpleContainerData(2), new SimpleFluidContainerData(1));
-    }
-
-    public VillagerBrewingStationMenu(MenuType<?> pType, int pContainerId, Inventory pPlayerInventory, Container pContainer, ContainerData data, IFluidStackContainerData fluidData)
-    {
-        super(MenuTypesRegister.VILLAGER_BREWING_STATION.get(), pContainerId);
-
-        checkContainerSize(pContainer, SLOTS);
-        this.data = data;
-        this.fluidData = fluidData;
-        System.out.println("progress : " + data.get(0));
-        System.out.println("max : " + data.get(1));
-        System.out.println(fluidData.get(0));
-        this.container = pContainer;
-        this.container.startOpen(pPlayerInventory.player);
-        int i = (this.containerRows - 4) * 18;
-
+        this.data = ((VillagerBrewingStationBlockEntity) entity).dataAccess;
+        this.villagerBrewingStationBlockEntity = (VillagerBrewingStationBlockEntity) entity;
+        this.container.startOpen(inv.player);
         this.addSlot(new WaterBucketSlot(this.container, 0, 8, 18));
         this.addSlot(new MugAndBottleOnlySlot(this.container, 13, 8 + 8 * 18, 18));
         this.addSlot(new NoPlacementSlot(this.container, 14, 8 + 8 * 18, 18 + 2 * 18));
@@ -69,21 +50,23 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
                 n++;
             }
         }
+        this.addDataSlots(data);
+
+
+        int i = (this.containerRows - 4) * 18;
 
         for (int l = 0; l < 3; l++)
         {
             for (int j1 = 0; j1 < 9; j1++)
             {
-                this.addSlot(new Slot(pPlayerInventory, j1 + l * 9 + 9, 8 + j1 * 18, 102 + l * 18 + i));
+                this.addSlot(new Slot(inv, j1 + l * 9 + 9, 8 + j1 * 18, 102 + l * 18 + i));
             }
         }
 
         for (int i1 = 0; i1 < 9; i1++)
         {
-            this.addSlot(new Slot(pPlayerInventory, i1, 8 + i1 * 18, 160 + i));
+            this.addSlot(new Slot(inv, i1, 8 + i1 * 18, 160 + i));
         }
-
-        this.addDataSlots(data);
     }
 
     @Override
@@ -123,7 +106,15 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
     @Override
     public boolean stillValid(Player pPlayer)
     {
-        return this.container.stillValid(pPlayer);
+        boolean flag = false;
+        for (Block block : ModList.getAllBlocksFromClass(VillagerBrewingStation.class))
+        {
+            if (stillValid(ContainerLevelAccess.create(villagerBrewingStationBlockEntity.getLevel(), villagerBrewingStationBlockEntity.getBlockPos()), pPlayer, block))
+            {
+                flag = true;
+            }
+        }
+        return flag;
     }
 
     @Override
@@ -153,7 +144,7 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
 
     public FluidStack getFluidStack()
     {
-        return this.fluidData.get(0);
+        return this.villagerBrewingStationBlockEntity.getFluidTank().getFluid();
     }
 
     public int getFluidAmount()
