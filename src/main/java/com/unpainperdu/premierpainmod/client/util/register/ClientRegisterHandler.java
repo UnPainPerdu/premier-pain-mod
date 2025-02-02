@@ -49,6 +49,14 @@ public class ClientRegisterHandler
     public static void registerClientExtensions(RegisterClientExtensionsEvent event)
     {
         event.registerFluidType(FluidTypeRegister.PAIN_DIEUX_TYPE.get().register(), FluidTypeRegister.PAIN_DIEUX_TYPE.get());
+        event.registerFluidType(FluidTypeRegister.LA_CHATEAU_TYPE.get().register(), FluidTypeRegister.LA_CHATEAU_TYPE.get());
+        event.registerFluidType(FluidTypeRegister.DEBIER_TYPE.get().register(), FluidTypeRegister.DEBIER_TYPE.get());
+        event.registerFluidType(FluidTypeRegister.ENVAHISSEUR_ROUGE_TYPE.get().register(), FluidTypeRegister.ENVAHISSEUR_ROUGE_TYPE.get());
+        event.registerFluidType(FluidTypeRegister.RASPBUISSON_TYPE.get().register(), FluidTypeRegister.RASPBUISSON_TYPE.get());
+        event.registerFluidType(FluidTypeRegister.LA_BLANCHE_CITADINE_TYPE.get().register(), FluidTypeRegister.LA_BLANCHE_CITADINE_TYPE.get());
+        event.registerFluidType(FluidTypeRegister.CRANE_NOIR_TYPE.get().register(), FluidTypeRegister.CRANE_NOIR_TYPE.get());
+        event.registerFluidType(FluidTypeRegister.TAK_TYPE.get().register(), FluidTypeRegister.TAK_TYPE.get());
+        event.registerFluidType(FluidTypeRegister.DISENDER_TYPE.get().register(), FluidTypeRegister.DISENDER_TYPE.get());
     }
 
     @SubscribeEvent

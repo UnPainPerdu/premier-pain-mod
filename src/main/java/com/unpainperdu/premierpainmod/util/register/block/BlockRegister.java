@@ -77,17 +77,27 @@ public class BlockRegister
 
     //public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBrewingStation(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
     //liquid block zone, see FluidRegister too
-    private static BlockBehaviour.Properties beerStandardProperties = BlockBehaviour.Properties.of()
-            .replaceable()
-            .noCollission()
-            .strength(100.0F)
-            .pushReaction(PushReaction.DESTROY)
-            .noLootTable()
-            .liquid()
-            .sound(SoundType.EMPTY);
-
+    //beer
+    private static BlockBehaviour.Properties beerStandardProperties = BlockBehaviour.Properties.of().replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY);
     public static final DeferredBlock<Block> PAIN_DIEUX = registerBlockOnly("pain_dieux",
             () -> new BeerBlock((FlowingFluid) FluidRegister.PAIN_DIEUX_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_YELLOW)));
+    public static final DeferredBlock<Block> LA_CHATEAU = registerBlockOnly("la_chateau",
+            () -> new BeerBlock((FlowingFluid) FluidRegister.LA_CHATEAU_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_BROWN)));
+    public static final DeferredBlock<Block> DEBIER = registerBlockOnly("debier",
+            () -> new BeerBlock((FlowingFluid) FluidRegister.DEBIER_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_GREEN)));
+    public static final DeferredBlock<Block> ENVAHISSEUR_ROUGE = registerBlockOnly("envahisseur_rouge",
+            () -> new BeerBlock((FlowingFluid) FluidRegister.ENVAHISSEUR_ROUGE_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_GREEN)));
+    public static final DeferredBlock<Block> RASPBUISSON = registerBlockOnly("raspbuisson",
+            () -> new BeerBlock((FlowingFluid) FluidRegister.RASPBUISSON_FLUID.get(), beerStandardProperties.mapColor(MapColor.NETHER)));
+    public static final DeferredBlock<Block> LA_BLANCHE_CITADINE = registerBlockOnly("la_blanche_citadine",
+            () -> new BeerBlock((FlowingFluid) FluidRegister.LA_BLANCHE_CITADINE_FLUID.get(), beerStandardProperties.mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final DeferredBlock<Block> CRANE_NOIR = registerBlockOnly("crane_noir",
+            () -> new BeerBlock((FlowingFluid) FluidRegister.CRANE_NOIR_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_BLACK)));
+    public static final DeferredBlock<Block> TAK = registerBlockOnly("tak",
+            () -> new BeerBlock((FlowingFluid) FluidRegister.TAK_FLUID.get(), beerStandardProperties.mapColor(MapColor.TERRACOTTA_ORANGE)));
+    public static final DeferredBlock<Block> DISENDER = registerBlockOnly("disender",
+            () -> new BeerBlock((FlowingFluid) FluidRegister.DISENDER_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_PURPLE)));
+
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
      //Villager Singing stone event block

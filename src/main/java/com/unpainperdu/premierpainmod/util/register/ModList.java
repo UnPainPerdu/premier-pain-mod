@@ -117,7 +117,16 @@ public class ModList
     {
         List<DeferredBlock<Block>> ALL_BLOCKS = Arrays.asList(
                 //liquid
+                    //beer
                 BlockRegister.PAIN_DIEUX,
+                BlockRegister.LA_CHATEAU,
+                BlockRegister.DEBIER,
+                BlockRegister.ENVAHISSEUR_ROUGE,
+                BlockRegister.RASPBUISSON,
+                BlockRegister.LA_BLANCHE_CITADINE,
+                BlockRegister.CRANE_NOIR,
+                BlockRegister.TAK,
+                BlockRegister.DISENDER,
                 //workshop
                 BlockRegister.VILLAGER_WORKSHOP,
 

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "premierpainmod:block/water"
+    }
+  },
+  "render_type": "cutout"
+}

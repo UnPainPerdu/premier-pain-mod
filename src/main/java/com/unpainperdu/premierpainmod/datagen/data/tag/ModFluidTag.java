@@ -21,9 +21,44 @@ public class ModFluidTag extends FluidTagsProvider
     {
         this.tag(FluidTags.WATER)
                 .add(FluidRegister.PAIN_DIEUX_FLUID.get())
-                .add(FluidRegister.FLOWING_PAIN_DIEUX_FLUID.get());
+                .add(FluidRegister.FLOWING_PAIN_DIEUX_FLUID.get())
+                .add(FluidRegister.LA_CHATEAU_FLUID.get())
+                .add(FluidRegister.FLOWING_LA_CHATEAU_FLUID.get())
+                .add(FluidRegister.DEBIER_FLUID.get())
+                .add(FluidRegister.FLOWING_DEBIER_FLUID.get())
+                .add(FluidRegister.ENVAHISSEUR_ROUGE_FLUID.get())
+                .add(FluidRegister.FLOWING_ENVAHISSEUR_ROUGE_FLUID.get())
+                .add(FluidRegister.RASPBUISSON_FLUID.get())
+                .add(FluidRegister.FLOWING_RASPBUISSON_FLUID.get())
+                .add(FluidRegister.LA_BLANCHE_CITADINE_FLUID.get())
+                .add(FluidRegister.FLOWING_LA_BLANCHE_CITADINE_FLUID.get())
+                .add(FluidRegister.CRANE_NOIR_FLUID.get())
+                .add(FluidRegister.FLOWING_CRANE_NOIR_FLUID.get())
+                .add(FluidRegister.TAK_FLUID.get())
+                .add(FluidRegister.FLOWING_TAK_FLUID.get())
+                .add(FluidRegister.DISENDER_FLUID.get())
+                .add(FluidRegister.FLOWING_DISENDER_FLUID.get())
+        ;
+
         this.tag(Tags.Fluids.WATER)
                 .add(FluidRegister.PAIN_DIEUX_FLUID.get())
-                .add(FluidRegister.FLOWING_PAIN_DIEUX_FLUID.get());
+                .add(FluidRegister.FLOWING_PAIN_DIEUX_FLUID.get())
+                .add(FluidRegister.LA_CHATEAU_FLUID.get())
+                .add(FluidRegister.FLOWING_LA_CHATEAU_FLUID.get())
+                .add(FluidRegister.DEBIER_FLUID.get())
+                .add(FluidRegister.FLOWING_DEBIER_FLUID.get())
+                .add(FluidRegister.ENVAHISSEUR_ROUGE_FLUID.get())
+                .add(FluidRegister.FLOWING_ENVAHISSEUR_ROUGE_FLUID.get())
+                .add(FluidRegister.RASPBUISSON_FLUID.get())
+                .add(FluidRegister.FLOWING_RASPBUISSON_FLUID.get())
+                .add(FluidRegister.LA_BLANCHE_CITADINE_FLUID.get())
+                .add(FluidRegister.FLOWING_LA_BLANCHE_CITADINE_FLUID.get())
+                .add(FluidRegister.CRANE_NOIR_FLUID.get())
+                .add(FluidRegister.FLOWING_CRANE_NOIR_FLUID.get())
+                .add(FluidRegister.TAK_FLUID.get())
+                .add(FluidRegister.FLOWING_TAK_FLUID.get())
+                .add(FluidRegister.DISENDER_FLUID.get())
+                .add(FluidRegister.FLOWING_DISENDER_FLUID.get())
+        ;
     }
 }
