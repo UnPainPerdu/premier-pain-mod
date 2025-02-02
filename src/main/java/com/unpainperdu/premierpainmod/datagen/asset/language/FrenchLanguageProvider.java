@@ -71,21 +71,21 @@ public class FrenchLanguageProvider extends LanguageProvider
             //vegetation
                 //tall grass
         add(BlockRegister.SKY_SPEARS.get(), "Lances du ciel");
-        add(BlockRegister.SKY_SPEARS_FLOWER.get(), "Fleure de lances du ciel");
+        add(BlockRegister.SKY_SPEARS_FLOWER.get(), "Fleur de lances du ciel");
         add(BlockRegister.DEAD_TALL_BUSH.get(), "Buisson sec");
         add(BlockRegister.OLD_WILD_WHEAT.get(), "Ancien blé sauvage");
                 //misc
         add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Cactus fleuri");
-        add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Fleure de cactus");
+        add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Fleur de cactus");
 
                 //flower
                     //1 block flower
-        add(BlockRegister.RUINS_FLOWER.get(), "Fleure de ruines");
-        add(BlockRegister.CURIOSITY_FLOWER.get(), "Fleure de curiosité");
+        add(BlockRegister.RUINS_FLOWER.get(), "Fleur de ruines");
+        add(BlockRegister.CURIOSITY_FLOWER.get(), "Fleur de curiosité");
                     //growing flower
-        add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Fleure des civilisations");
+        add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Fleuredes civilisations");
                     //dead bush
-        add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Fleure de ruines mortes");
+        add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Fleur de ruines mortes");
                 //crop
         add(BlockRegister.JELLYSHROOM.get(), "Champigelée");
             //tree
