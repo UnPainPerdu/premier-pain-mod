@@ -23,6 +23,7 @@ public class EnglishLanguageProvider extends LanguageProvider
             //container
         add("container."+ PremierPainMod.MOD_ID +".villager_drawer","Villager drawer");
         add("container."+ PremierPainMod.MOD_ID +".villager_brewing_station","Brewing station");
+        add(PremierPainMod.MOD_ID + ".tooltip.liquid.amount.with.capacity", "%s / %s mB");
         //potion effect
         add("effect.minecraft.hero_of_the_village","Hero of villagers");
         //death message

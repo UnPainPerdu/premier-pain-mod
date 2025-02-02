@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.client.gui.render;
 import com.google.common.base.Preconditions;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
+import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -194,12 +195,12 @@ public class FluidTankRenderer
 
             if (tooltipMode == TooltipMode.SHOW_AMOUNT_AND_CAPACITY)
             {
-                MutableComponent amountString = Component.translatable("arcane_chemistry.tooltip.liquid.amount.with.capacity", nf.format(milliBuckets), nf.format(capacity));
+                MutableComponent amountString = Component.translatable(PremierPainMod.MOD_ID + ".tooltip.liquid.amount.with.capacity", nf.format(milliBuckets), nf.format(capacity));
                 tooltip.add(amountString.withStyle(ChatFormatting.GRAY));
             }
             else if (tooltipMode == TooltipMode.SHOW_AMOUNT)
             {
-                MutableComponent amountString = Component.translatable("arcane_chemistry.tooltip.liquid.amount", nf.format(milliBuckets));
+                MutableComponent amountString = Component.translatable(PremierPainMod.MOD_ID + ".tooltip.liquid.amount", nf.format(milliBuckets));
                 tooltip.add(amountString.withStyle(ChatFormatting.GRAY));
             }
         }

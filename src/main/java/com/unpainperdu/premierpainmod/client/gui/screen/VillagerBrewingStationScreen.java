@@ -10,7 +10,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.neoforge.fluids.FluidStack;
+
+import java.util.Optional;
 
 public class VillagerBrewingStationScreen extends AbstractContainerScreen<VillagerBrewingStationMenu> implements MenuAccess<VillagerBrewingStationMenu>
 {
@@ -70,5 +73,32 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
     {
         FluidStack fluidStack = this.menu.villagerBrewingStationBlockEntity.getFluidTank().getFluid();
         fluidRenderer.render(guiGraphics, leftPos + 36, topPos + 27, fluidStack);
+    }
+
+    @Override
+    protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY)
+    {
+        super.renderLabels(guiGraphics, mouseX, mouseY);
+
+        renderFluidTooltipArea(guiGraphics, mouseX, mouseY, leftPos, topPos, menu.villagerBrewingStationBlockEntity.getFluidTank().getFluid(), 36, 27, fluidRenderer);
+    }
+
+    public void renderFluidTooltipArea(GuiGraphics guiGraphics, int pMouseX, int pMouseY, int x, int y,
+                                       FluidStack stack, int offsetX, int offsetY, FluidTankRenderer renderer)
+    {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, offsetX, offsetY, renderer)) {
+            guiGraphics.renderTooltip(this.font, renderer.getTooltip(stack, TooltipFlag.Default.NORMAL),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+        }
+    }
+
+    private static boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, FluidTankRenderer renderer)
+    {
+        return isMouseOver(pMouseX, pMouseY, x + offsetX, y + offsetY, renderer.getWidth(), renderer.getHeight());
+    }
+
+    public static boolean isMouseOver(double mouseX, double mouseY, int x, int y, int sizeX, int sizeY)
+    {
+        return (mouseX >= x && mouseX <= x + sizeX) && (mouseY >= y && mouseY <= y + sizeY);
     }
 }

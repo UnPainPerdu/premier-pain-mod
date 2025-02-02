@@ -536,5 +536,6 @@
   "item.premierpainmod.premier_pain_villager_singing_stone": "Premier Pain Singing Stone",
   "item.premierpainmod.sky_spears_fruit": "Sky Spears Fruit",
   "itemGroup.premierpainmod": "Premier Pain mod",
-  "premierpainmod.block.description.pain_dieux_type": "Pain Dieux"
+  "premierpainmod.block.description.pain_dieux_type": "Pain Dieux",
+  "premierpainmod.tooltip.liquid.amount.with.capacity": "%s / %s mB"
 }
