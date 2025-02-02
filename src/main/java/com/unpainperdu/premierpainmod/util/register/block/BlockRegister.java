@@ -77,19 +77,17 @@ public class BlockRegister
 
     //public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBrewingStation(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
     //liquid block zone, see FluidRegister too
+    private static BlockBehaviour.Properties beerStandardProperties = BlockBehaviour.Properties.of()
+            .replaceable()
+            .noCollission()
+            .strength(100.0F)
+            .pushReaction(PushReaction.DESTROY)
+            .noLootTable()
+            .liquid()
+            .sound(SoundType.EMPTY);
+
     public static final DeferredBlock<Block> PAIN_DIEUX = registerBlockOnly("pain_dieux",
-            () -> new BeerBlock(
-                    (FlowingFluid) FluidRegister.PAIN_DIEUX_FLUID.get(),
-                    BlockBehaviour.Properties.of()
-                            .mapColor(MapColor.COLOR_YELLOW)
-                            .replaceable()
-                            .noCollission()
-                            .strength(100.0F)
-                            .pushReaction(PushReaction.DESTROY)
-                            .noLootTable()
-                            .liquid()
-                            .sound(SoundType.EMPTY)
-            ));
+            () -> new BeerBlock((FlowingFluid) FluidRegister.PAIN_DIEUX_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_YELLOW)));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
      //Villager Singing stone event block
