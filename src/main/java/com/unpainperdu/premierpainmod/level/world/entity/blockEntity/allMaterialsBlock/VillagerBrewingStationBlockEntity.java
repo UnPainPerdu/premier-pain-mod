@@ -8,6 +8,7 @@ import com.unpainperdu.premierpainmod.level.world.fluid.fluidType.BeerFluidType;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villagerBrewingStation.VillagerBrewingStationInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villagerBrewingStation.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.VillagerBrewingStationMenu;
+import com.unpainperdu.premierpainmod.util.ModContainerData.IFluidStackContainerData;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
@@ -62,9 +63,9 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
             switch (dataIndex)
             {
                 case 0:
-                    return VillagerBrewingStationBlockEntity.this.brewingProgress;
+                    return VillagerBrewingStationBlockEntity.this.getBrewingProgress();
                 case 1:
-                    return VillagerBrewingStationBlockEntity.this.brewingTotalTime;
+                    return VillagerBrewingStationBlockEntity.this.getBrewingTotalTime();
                 default:
                     return 0;
             }
@@ -90,6 +91,28 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         }
     };
 
+    protected final IFluidStackContainerData fluidDataAccess = new IFluidStackContainerData()
+    {
+
+        @Override
+        public FluidStack get(int index)
+        {
+            return VillagerBrewingStationBlockEntity.this.fluidTank.getFluid();
+        }
+
+        @Override
+        public void set(int index, FluidStack fluidStack)
+        {
+            VillagerBrewingStationBlockEntity.this.fluidTank.setFluid(fluidStack);
+        }
+
+        @Override
+        public int getCount()
+        {
+            return 1;
+        }
+    };
+
     private final RecipeType<? extends VillagerBrewingStationRecipe> recipeType;
     private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
     private final RecipeManager.CachedCheck<VillagerBrewingStationInput, ? extends VillagerBrewingStationRecipe> quickCheck;
@@ -109,10 +132,20 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         return Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_brewing_station");
     }
 
+    public int getBrewingProgress()
+    {
+        return this.brewingProgress;
+    }
+
+    public int getBrewingTotalTime()
+    {
+        return this.brewingTotalTime;
+    }
+
     @Override
     protected AbstractContainerMenu createMenu(int id, Inventory player)
     {
-        return VillagerBrewingStationMenu.VillagerBrewingStationMenu(id, player, this);
+        return VillagerBrewingStationMenu.VillagerBrewingStationMenu(id, player, this, dataAccess, fluidDataAccess);
     }
 
     @Override
@@ -387,7 +420,11 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     @Override
     public void setRecipeUsed(@Nullable RecipeHolder<?> recipe)
     {
-
+        if (recipe != null)
+        {
+            ResourceLocation resourcelocation = recipe.id();
+            this.recipesUsed.addTo(resourcelocation, 1);
+        }
     }
 
     @Nullable
@@ -400,7 +437,10 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     @Override
     public void fillStackedContents(StackedContents contents)
     {
-
+        for (ItemStack itemstack : this.items)
+        {
+            contents.accountStack(itemstack);
+        }
     }
 
     private static boolean brew(RegistryAccess registryAccess, @javax.annotation.Nullable RecipeHolder<?> recipe,FluidStack fluidStackInput, NonNullList<ItemStack> ingredients, int maxStackSize, VillagerBrewingStationBlockEntity brewingStation)
