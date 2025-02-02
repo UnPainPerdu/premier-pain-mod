@@ -22,7 +22,7 @@ public class FluidTypeRegister
     public static final DeferredHolder<FluidType, BeerFluidType> LA_BLANCHE_CITADINE_TYPE = beerRegister("la_blanche_citadine_type", LiquidContent.WHITE_BEER);
     public static final DeferredHolder<FluidType, BeerFluidType> CRANE_NOIR_TYPE = beerRegister("crane_noir_type", LiquidContent.BLACK_BEER);
     public static final DeferredHolder<FluidType, BeerFluidType> TAK_TYPE = beerRegister("tak_type", LiquidContent.AMBER_BEER);
-    public static final DeferredHolder<FluidType, BeerFluidType> ENDER_STYLE_TYPE = beerRegister("ender_style_type", LiquidContent.PURPLE_BEER);
+    public static final DeferredHolder<FluidType, BeerFluidType> DISENDER_TYPE = beerRegister("disender_type", LiquidContent.PURPLE_BEER);
 
     public static DeferredHolder<FluidType, BeerFluidType> beerRegister(String name, LiquidContent content)
     {

@@ -66,7 +66,7 @@ public class DrinkableBeerItem extends Item
         if (foodproperties != null)
         {
             stack1 = livingEntity.eat(level, stack, foodproperties);
-            livingEntity.addEffect(new MobEffectInstance(effect, type.getEffectDuration(), 2));
+            livingEntity.addEffect(new MobEffectInstance(effect, type.getEffectDuration(), 1));
         }
         else
         {

@@ -183,14 +183,54 @@ public class ModList
                 ItemRegister.MADNESS_VILLAGER_SINGING_STONE,
                 //beer
                     //empty
-                ItemRegister.PAIN_DIEUX_BUCKET,
                 ItemRegister.EMPTY_GLASS,
                 ItemRegister.EMPTY_BOTTLE,
                 ItemRegister.EMPTY_MUG,
                     //PainDieux
+                ItemRegister.PAIN_DIEUX_BUCKET,
                 ItemRegister.PAIN_DIEUX_GLASS,
                 ItemRegister.PAIN_DIEUX_BOTTLE,
                 ItemRegister.PAIN_DIEUX_MUG,
+                    //LA_CHATEAU
+                ItemRegister.LA_CHATEAU_BUCKET,
+                ItemRegister.LA_CHATEAU_GLASS,
+                ItemRegister.LA_CHATEAU_BOTTLE,
+                ItemRegister.LA_CHATEAU_MUG,
+                    //DEBIER
+                ItemRegister.DEBIER_BUCKET,
+                ItemRegister.DEBIER_GLASS,
+                ItemRegister.DEBIER_BOTTLE,
+                ItemRegister.DEBIER_MUG,
+                    //ENVAHISSEUR_ROUGE
+                ItemRegister.ENVAHISSEUR_ROUGE_BUCKET,
+                ItemRegister.ENVAHISSEUR_ROUGE_GLASS,
+                ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE,
+                ItemRegister.ENVAHISSEUR_ROUGE_MUG,
+                    //RASPBUISSON
+                ItemRegister.RASPBUISSON_BUCKET,
+                ItemRegister.RASPBUISSON_GLASS,
+                ItemRegister.RASPBUISSON_BOTTLE,
+                ItemRegister.RASPBUISSON_MUG,
+                    //LA_BLANCHE_CITADINE
+                ItemRegister.LA_BLANCHE_CITADINE_BUCKET,
+                ItemRegister.LA_BLANCHE_CITADINE_GLASS,
+                ItemRegister.LA_BLANCHE_CITADINE_BOTTLE,
+                ItemRegister.LA_BLANCHE_CITADINE_MUG,
+                    //CRANE_NOIR
+                ItemRegister.CRANE_NOIR_BUCKET,
+                ItemRegister.CRANE_NOIR_GLASS,
+                ItemRegister.CRANE_NOIR_BOTTLE,
+                ItemRegister.CRANE_NOIR_MUG,
+                    //TAK
+                ItemRegister.TAK_BUCKET,
+                ItemRegister.TAK_GLASS,
+                ItemRegister.TAK_BOTTLE,
+                ItemRegister.TAK_MUG,
+                    //DISENDER
+                ItemRegister.DISENDER_BUCKET,
+                ItemRegister.DISENDER_GLASS,
+                ItemRegister.DISENDER_BOTTLE,
+                ItemRegister.DISENDER_MUG,
                 //food
                     //vegetation
                 ItemRegister.CACTUS_FLOWER_FRUIT,
