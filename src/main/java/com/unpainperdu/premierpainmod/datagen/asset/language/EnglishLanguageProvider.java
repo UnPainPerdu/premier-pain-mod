@@ -54,6 +54,78 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.pain_dieux_glass","A unique glass for an unique beer.");
         add("item.description.pain_dieux_bottle","A classy bottle of good beverage.");
         add("item.description.pain_dieux_mug","Nothing better than a fresh Pain Dieux");
+                //la chateau
+        add(PremierPainMod.MOD_ID +".block.description.la_chateau_type","La Chateau");
+        add(ItemRegister.LA_CHATEAU_BUCKET.get(),"La Chateau Bucket");
+        add(ItemRegister.LA_CHATEAU_GLASS.get(), "La Chateau Glass");
+        add(ItemRegister.LA_CHATEAU_BOTTLE.get(), "La Chateau Bottle");
+        add(ItemRegister.LA_CHATEAU_MUG.get(), "La Chateau Mug");
+        add("item.description.la_chateau_glass","A solid royal glass.");
+        add("item.description.la_chateau_bottle","You already know you will enjoy it.");
+        add("item.description.la_chateau_mug","A big mug worthy for a knight!");
+                //debier
+        add(PremierPainMod.MOD_ID +".block.description.debier_type","DeBier");
+        add(ItemRegister.DEBIER_BUCKET.get(),"DeBier Bucket");
+        add(ItemRegister.DEBIER_GLASS.get(), "DeBier Glass");
+        add(ItemRegister.DEBIER_BOTTLE.get(), "DeBier Bottle");
+        add(ItemRegister.DEBIER_MUG.get(), "DeBier Mug");
+        add("item.description.debier_glass","Strong luck well served.");
+        add("item.description.debier_bottle","Saint-Patrick's favorite.");
+        add("item.description.debier_mug","you will be traeted as an Irish!");
+                //envahisseur_rouge
+        add(PremierPainMod.MOD_ID +".block.description.envahissuer_rouge_type","Envahisseur Rouge");
+        add(ItemRegister.ENVAHISSEUR_ROUGE_BUCKET.get(),"Envahisseur Rouge Bucket");
+        add(ItemRegister.ENVAHISSEUR_ROUGE_GLASS.get(), "Envahisseur Rouge Glass");
+        add(ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE.get(), "Envahisseur Rouge Bottle");
+        add(ItemRegister.ENVAHISSEUR_ROUGE_MUG.get(), "Envahisseur Rouge Mug");
+        add("item.description.envahissuer_rouge_glass","VIOLENCE.");
+        add("item.description.envahissuer_rouge_bottle","Only this bottle can handle it.");
+        add("item.description.envahissuer_rouge_mug","Lead a raid like a god!");
+                //raspbuisson
+        add(PremierPainMod.MOD_ID +".block.description.raspbuisson_type","RaspBuisson");
+        add(ItemRegister.RASPBUISSON_BUCKET.get(),"RaspBuisson Bucket");
+        add(ItemRegister.RASPBUISSON_GLASS.get(), "RaspBuisson Glass");
+        add(ItemRegister.RASPBUISSON_BOTTLE.get(), "RaspBuisson Bottle");
+        add(ItemRegister.RASPBUISSON_MUG.get(), "RaspBuisson Mug");
+        add("item.description.raspbuisson_glass","Delicate raspberry flavor well served.");
+        add("item.description.raspbuisson_bottle","Such a color attract everyone.");
+        add("item.description.raspbuisson_mug","So fresh!");
+                //la_blanche_citadine
+        add(PremierPainMod.MOD_ID +".block.description.la_blanche_citadine_type","La Blanche Citadine");
+        add(ItemRegister.LA_BLANCHE_CITADINE_BUCKET.get(),"La Blanche Citadine Bucket");
+        add(ItemRegister.LA_BLANCHE_CITADINE_GLASS.get(), "La Blanche Citadine Glass");
+        add(ItemRegister.LA_BLANCHE_CITADINE_BOTTLE.get(), "La Blanche Citadine Bottle");
+        add(ItemRegister.LA_BLANCHE_CITADINE_MUG.get(), "La Blanche Citadine Mug");
+        add("item.description.la_blanche_citadine_glass","Light and perfect for the evening.");
+        add("item.description.la_blanche_citadine_bottle","Simply delicious.");
+        add("item.description.la_blanche_citadine_mug","Faster toward the barrel!");
+                //crane_noir
+        add(PremierPainMod.MOD_ID +".block.description.crane_noir_type","Crane Noir");
+        add(ItemRegister.CRANE_NOIR_BUCKET.get(),"Crane Noir Bucket");
+        add(ItemRegister.CRANE_NOIR_GLASS.get(), "Crane Noir Glass");
+        add(ItemRegister.CRANE_NOIR_BOTTLE.get(), "Crane Noir Bottle");
+        add(ItemRegister.CRANE_NOIR_MUG.get(), "Crane Noir Mug");
+        add("item.description.crane_noir_glass","A quality drink to drink into the skulls of your enemies.");
+        add("item.description.crane_noir_bottle","Solide as obsidian.");
+        add("item.description.crane_noir_mug","Your stamina is getting multiplied!");
+                //tak
+        add(PremierPainMod.MOD_ID +".block.description.tak_type","Tak");
+        add(ItemRegister.TAK_BUCKET.get(),"Tak Bucket");
+        add(ItemRegister.TAK_GLASS.get(), "Tak Glass");
+        add(ItemRegister.TAK_BOTTLE.get(), "Tak Bottle");
+        add(ItemRegister.TAK_MUG.get(), "Tak Mug");
+        add("item.description.tak_glass","TakTakTak.");
+        add("item.description.tak_bottle","TakTak.");
+        add("item.description.tak_mug","TakTakTakTakTakTakTakTak!");
+                //disender
+        add(PremierPainMod.MOD_ID +".block.description.disender_type","DisEnder");
+        add(ItemRegister.DISENDER_BUCKET.get(),"DisEnder Bucket");
+        add(ItemRegister.DISENDER_GLASS.get(), "DisEnder Glass");
+        add(ItemRegister.DISENDER_BOTTLE.get(), "DisEnder Bottle");
+        add(ItemRegister.DISENDER_MUG.get(), "DisEnder Mug");
+        add("item.description.disender_glass","Very oddly interesting.");
+        add("item.description.disender_bottle","It's special but tasty.");
+        add("item.description.disender_mug","Fresh and foamy");
             //food
                 //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky Spears Fruit");

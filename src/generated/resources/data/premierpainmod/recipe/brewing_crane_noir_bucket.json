@@ -8,7 +8,7 @@
   },
   "fluidResult": {
     "amount": 1000,
-    "id": "premierpainmod:pain_dieux_fluid"
+    "id": "premierpainmod:crane_noir_fluid"
   },
   "ingredients": [
     {
@@ -18,7 +18,10 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:wheat"
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:ink_sac"
     }
   ]
 }

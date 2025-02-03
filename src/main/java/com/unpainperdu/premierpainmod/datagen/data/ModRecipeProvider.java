@@ -52,7 +52,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //testField
         //fluid
         BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.PAIN_DIEUX_FLUID, 1000)
-                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.WHEAT, Items.SUGAR);
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.WHEAT);
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.LA_CHATEAU_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.GLISTERING_MELON_SLICE, Items.WHEAT);
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.DEBIER_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.RABBIT_FOOT, ItemRegister.MOUNTAIN_CURRANT.get());
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.ENVAHISSEUR_ROUGE_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.APPLE, Items.BLAZE_POWDER);
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.RASPBUISSON_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.APPLE, Items.GLISTERING_MELON_SLICE, ItemRegister.CACTUS_FLOWER_FRUIT.get());
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.LA_BLANCHE_CITADINE_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.SUGAR_CANE, Items.BONE_MEAL);
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.CRANE_NOIR_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.IRON_INGOT, Items.INK_SAC);
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.TAK_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, ItemRegister.SKY_SPEARS_FRUIT.get(), Blocks.NETHERRACK.asItem());
+        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FluidRegister.DISENDER_FLUID, 1000)
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.FEATHER, ItemRegister.JELLY_HAT.get());
         //item
             //beer
                 //empty

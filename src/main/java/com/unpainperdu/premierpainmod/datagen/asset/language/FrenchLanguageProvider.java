@@ -51,7 +51,79 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.PAIN_DIEUX_MUG.get(), "Chope de Pain Dieux");
         add("item.description.pain_dieux_glass","Un verre unique pour une bière unique.");
         add("item.description.pain_dieux_bottle","Une bouteille classe de bon breuvage.");
-        add("item.description.pain_dieux_mug","Rien de tel qu'une bonne Pain Dieux fraiche !");
+        add("item.description.pain_dieux_mug","Rien de tel qu'une bonne Pain Dieux fraiche!");
+                //la chateau
+        add(PremierPainMod.MOD_ID +".block.description.la_chateau_type","La Chateau");
+        add(ItemRegister.LA_CHATEAU_BUCKET.get(),"Seau de La Chateau");
+        add(ItemRegister.LA_CHATEAU_GLASS.get(), "Verre de La Chateau");
+        add(ItemRegister.LA_CHATEAU_BOTTLE.get(), "Bouteille de La Chateau");
+        add(ItemRegister.LA_CHATEAU_MUG.get(), "Chope de La Chateau");
+        add("item.description.la_chateau_glass","Un solide verre royal.");
+        add("item.description.la_chateau_bottle","Vous savez déjà que vous allez apprécier.");
+        add("item.description.la_chateau_mug","Une grosse chope digne d'un chevalier!");
+                //debier
+        add(PremierPainMod.MOD_ID +".block.description.debier_type","DeBier");
+        add(ItemRegister.DEBIER_BUCKET.get(),"Seau de DeBier");
+        add(ItemRegister.DEBIER_GLASS.get(), "Verre de DeBier");
+        add(ItemRegister.DEBIER_BOTTLE.get(), "Bouteille de DeBier");
+        add(ItemRegister.DEBIER_MUG.get(), "Chope de DeBier");
+        add("item.description.debier_glass","Concentré de chance bien servi.");
+        add("item.description.debier_bottle","La favorite de la Saint-Patrick.");
+        add("item.description.debier_mug","On va vous confondre avec un Irlandais avec ça!");
+                //envahisseur_rouge
+        add(PremierPainMod.MOD_ID +".block.description.envahissuer_rouge_type","Envahisseur Rouge");
+        add(ItemRegister.ENVAHISSEUR_ROUGE_BUCKET.get(),"Seau d'Envahisseur Rouge");
+        add(ItemRegister.ENVAHISSEUR_ROUGE_GLASS.get(), "Verre d'Envahisseur Rouge");
+        add(ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE.get(), "Bouteille d'Envahisseur Rouge");
+        add(ItemRegister.ENVAHISSEUR_ROUGE_MUG.get(), "Chope d'Envahisseur Rouge");
+        add("item.description.envahissuer_rouge_glass","VIOLENCE.");
+        add("item.description.envahissuer_rouge_bottle","Seul cette bouteille peut la contenir.");
+        add("item.description.envahissuer_rouge_mug","Menez un raid comme un Dieu!");
+                //raspbuisson
+        add(PremierPainMod.MOD_ID +".block.description.raspbuisson_type","RaspBuisson");
+        add(ItemRegister.RASPBUISSON_BUCKET.get(),"Seau de RaspBuisson");
+        add(ItemRegister.RASPBUISSON_GLASS.get(), "Verre de RaspBuisson");
+        add(ItemRegister.RASPBUISSON_BOTTLE.get(), "Bouteille de RaspBuisson");
+        add(ItemRegister.RASPBUISSON_MUG.get(), "Chope de RaspBuisson");
+        add("item.description.raspbuisson_glass","Délicat parfum de framboise bien servi.");
+        add("item.description.raspbuisson_bottle","Une telle couleur attire tout le monde.");
+        add("item.description.raspbuisson_mug","Tellement fraix!");
+                //la_blanche_citadine
+        add(PremierPainMod.MOD_ID +".block.description.la_blanche_citadine_type","La Blanche Citadine");
+        add(ItemRegister.LA_BLANCHE_CITADINE_BUCKET.get(),"Seau de La Blanche Citadine");
+        add(ItemRegister.LA_BLANCHE_CITADINE_GLASS.get(), "Verre de La Blanche Citadine");
+        add(ItemRegister.LA_BLANCHE_CITADINE_BOTTLE.get(), "Bouteille de La Blanche Citadine");
+        add(ItemRegister.LA_BLANCHE_CITADINE_MUG.get(), "Chope de La Blanche Citadine");
+        add("item.description.la_blanche_citadine_glass","Légère et parfaite pour une fin de soirée.");
+        add("item.description.la_blanche_citadine_bottle","Simplement délicieuse.");
+        add("item.description.la_blanche_citadine_mug","Vos pats vers le fut s'accélère!");
+                //crane_noir
+        add(PremierPainMod.MOD_ID +".block.description.crane_noir_type","Crane Noir");
+        add(ItemRegister.CRANE_NOIR_BUCKET.get(),"Seau de Crane Noir");
+        add(ItemRegister.CRANE_NOIR_GLASS.get(), "Verre de Crane Noir");
+        add(ItemRegister.CRANE_NOIR_BOTTLE.get(), "Bouteille de Crane Noir");
+        add(ItemRegister.CRANE_NOIR_MUG.get(), "Chope de Crane Noir");
+        add("item.description.crane_noir_glass","Un fortifiant de qualité à boire dans le crâne de vos ennemis.");
+        add("item.description.crane_noir_bottle","Solide comme l'obsidienne.");
+        add("item.description.crane_noir_mug","Votre endurance est décuplée!");
+                //tak
+        add(PremierPainMod.MOD_ID +".block.description.tak_type","Tak");
+        add(ItemRegister.TAK_BUCKET.get(),"Seau de Tak");
+        add(ItemRegister.TAK_GLASS.get(), "Verre de Tak");
+        add(ItemRegister.TAK_BOTTLE.get(), "Bouteille de Tak");
+        add(ItemRegister.TAK_MUG.get(), "Chope de Tak");
+        add("item.description.tak_glass","TakTakTak.");
+        add("item.description.tak_bottle","TakTak.");
+        add("item.description.tak_mug","TakTakTakTakTakTakTakTak!");
+                //disender
+        add(PremierPainMod.MOD_ID +".block.description.disender_type","DisEnder");
+        add(ItemRegister.DISENDER_BUCKET.get(),"Seau de DisEnder");
+        add(ItemRegister.DISENDER_GLASS.get(), "Verre de DisEnder");
+        add(ItemRegister.DISENDER_BOTTLE.get(), "Bouteille de DisEnder");
+        add(ItemRegister.DISENDER_MUG.get(), "Chope de DisEnder");
+        add("item.description.disender_glass","Très bizarrement intéressant.");
+        add("item.description.disender_bottle","C'est spécial mais gouteux.");
+        add("item.description.disender_mug","Fraix et mousseux");
             //food
                 //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Fruit de lances du ciel");

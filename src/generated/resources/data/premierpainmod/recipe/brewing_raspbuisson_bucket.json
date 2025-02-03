@@ -8,7 +8,7 @@
   },
   "fluidResult": {
     "amount": 1000,
-    "id": "premierpainmod:pain_dieux_fluid"
+    "id": "premierpainmod:raspbuisson_fluid"
   },
   "ingredients": [
     {
@@ -18,7 +18,13 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:wheat"
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    {
+      "item": "premierpainmod:cactus_flower_fruit"
     }
   ]
 }
