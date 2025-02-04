@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.client.event;
 
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.SeatEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.SeatEntity;
 import com.unpainperdu.premierpainmod.util.register.EntityRegister;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;

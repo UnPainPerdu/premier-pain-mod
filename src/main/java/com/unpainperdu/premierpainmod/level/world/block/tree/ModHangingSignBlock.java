@@ -1,9 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.block.tree;
 
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.tree.ModHangingSignBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.tree.ModHangingSignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.CeilingHangingSignBlock;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;

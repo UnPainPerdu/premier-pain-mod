@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.SeatEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.SeatEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

@@ -6,9 +6,9 @@ import com.unpainperdu.premierpainmod.datagen.asset.language.ModLanguageProvider
 import com.unpainperdu.premierpainmod.datagen.asset.model.ModBlockStateProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.model.ModItemStateProvider;
 import com.unpainperdu.premierpainmod.datagen.data.*;
-import com.unpainperdu.premierpainmod.datagen.data.dataPackRegistries.ModDataPackProvider;
+import com.unpainperdu.premierpainmod.datagen.data.data_pack_registries.ModDataPackProvider;
 import com.unpainperdu.premierpainmod.datagen.data.datamap.ModDataMap;
-import com.unpainperdu.premierpainmod.datagen.data.lootTable.ModLootTableProvider;
+import com.unpainperdu.premierpainmod.datagen.data.loot_table.ModLootTableProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModBiomeTagProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModBlockTagProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModFluidTag;

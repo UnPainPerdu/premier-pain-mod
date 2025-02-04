@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.block.tree;
 
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.tree.ModSignBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.tree.ModSignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;

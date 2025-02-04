@@ -1,18 +1,18 @@
 package com.unpainperdu.premierpainmod.util.register;
 
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.AdaptableSit.VillagerBench;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.AdaptableSit.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockHeight.VillagerBrazier;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockHeight.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockHeight.VillagerThroneChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.VillagerDrawer;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

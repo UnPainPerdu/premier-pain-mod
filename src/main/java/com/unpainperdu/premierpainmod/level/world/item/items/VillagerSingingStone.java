@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.item.items;
 
-import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.AbstractVillagerSingingStoneEvent;
+import com.unpainperdu.premierpainmod.level.event.item_event.villager_singing_stone_event.AbstractVillagerSingingStoneEvent;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;

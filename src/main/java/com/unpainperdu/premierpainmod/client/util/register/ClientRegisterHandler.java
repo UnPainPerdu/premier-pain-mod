@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.client.util.register;
 
-import com.unpainperdu.premierpainmod.client.particle.beerParticle.blond.BlondBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.blond.BlondBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.FluidTypeRegister;

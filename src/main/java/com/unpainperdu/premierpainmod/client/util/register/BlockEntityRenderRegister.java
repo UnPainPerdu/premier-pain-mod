@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.client.util.register;
 
-import com.unpainperdu.premierpainmod.client.render.renderBlockEntity.VillagerPedestalRender;
-import com.unpainperdu.premierpainmod.client.render.renderBlockEntity.VillagerShelfRender;
+import com.unpainperdu.premierpainmod.client.render.render_block_entity.VillagerPedestalRender;
+import com.unpainperdu.premierpainmod.client.render.render_block_entity.VillagerShelfRender;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;

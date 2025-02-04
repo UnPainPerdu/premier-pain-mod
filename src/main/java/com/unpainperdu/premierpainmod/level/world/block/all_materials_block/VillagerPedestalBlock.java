@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.all_materials_block;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.PedestalBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.PedestalBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;

@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.util.register.fluid;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
-import com.unpainperdu.premierpainmod.level.world.fluid.fluidType.BeerFluidType;
+import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.BeerFluidType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredHolder;
