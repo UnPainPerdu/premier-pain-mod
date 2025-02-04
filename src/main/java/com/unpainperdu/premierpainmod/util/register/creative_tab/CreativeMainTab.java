@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.register.creativeTab;
+package com.unpainperdu.premierpainmod.util.register.creative_tab;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
@@ -36,6 +36,8 @@ import java.util.List;
 
 public class CreativeMainTab
 {
+    private CreativeMainTab(){}
+
     public static void generateCreativeMainTab(CreativeModeTab.ItemDisplayParameters param, CreativeModeTab.Output output)
     {
         //Items

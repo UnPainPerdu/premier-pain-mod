@@ -54,6 +54,8 @@ import java.util.function.ToIntFunction;
 
 public class BlockRegister
 {
+    private BlockRegister(){}
+
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MOD_ID);
 
     public static final List<String> MATERIALS = Arrays.asList("oak",
@@ -78,7 +80,7 @@ public class BlockRegister
     //public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBrewingStation(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
     //liquid block zone, see FluidRegister too
     //beer
-    private static BlockBehaviour.Properties beerStandardProperties = BlockBehaviour.Properties.of().replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY);
+    private static final BlockBehaviour.Properties beerStandardProperties = BlockBehaviour.Properties.of().replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY);
     public static final DeferredBlock<Block> PAIN_DIEUX = registerBlockOnly("pain_dieux",
             () -> new BeerBlock((FlowingFluid) FluidRegister.PAIN_DIEUX_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_YELLOW)));
     public static final DeferredBlock<Block> LA_CHATEAU = registerBlockOnly("la_chateau",
@@ -177,7 +179,8 @@ public class BlockRegister
 
     private static String getMaterialType(String material)
     {
-        String materialType = switch (material)
+
+        return switch (material)
         {
             case "cherry" -> "cherry";
             case "bamboo" -> "bamboo";
@@ -200,8 +203,6 @@ public class BlockRegister
             case "bedrock" -> "bedrock";
             default -> "wood";
         };
-
-        return materialType;
     }
 
     //create the block with a name and the factory (factory include properties)
@@ -213,8 +214,7 @@ public class BlockRegister
     }
     private static <T extends Block> DeferredBlock<T> registerBlockOnly(String name, Supplier<T> block)
     {
-        DeferredBlock<T> madeBlock = BLOCKS.register(name, block);
-        return madeBlock;
+        return BLOCKS.register(name, block);
     }
 
     //create the item block of the block
@@ -223,9 +223,9 @@ public class BlockRegister
         ItemRegister.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    private static ToIntFunction<BlockState> litBlockEmission(int pLightValue)
+    private static ToIntFunction<BlockState> litBlockEmission(int lightValue)
     {
-        return p_50763_ -> p_50763_.getValue(BlockStateProperties.LIT) ? pLightValue : 0;
+        return state -> state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
     }
 
     private static <T extends Block> DeferredBlock<T> allMaterialsBlockRegister(String block, String name, String type)

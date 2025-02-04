@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.register.creativeTab;
+package com.unpainperdu.premierpainmod.util.register.creative_tab;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
@@ -13,6 +13,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CreativeTabRegister
 {
+    private CreativeTabRegister(){}
+
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> PREMIER_PAIN_MOD = CREATIVE_MODE_TABS.register("premier_pain_mod", () -> CreativeModeTab.builder()
