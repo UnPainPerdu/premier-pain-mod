@@ -20,9 +20,11 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegeta
 import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
+import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
@@ -162,12 +164,19 @@ public class CreativeMainTab
             if(
                     !(item instanceof VillagerShelfItem
                             || item instanceof SignItem
+                            || item instanceof BucketItem
+                            || item instanceof DrinkableBeerItem
                     )
             )
             {
                 output.accept(item);
             }
         }
+        for(Item item : ModList.getAllItemsFromClass(BucketItem.class, DrinkableBeerItem.class))
+        {
+            output.accept(item);
+        }
+
     }
 
     public static class ItemComparator implements Comparator<Item>
