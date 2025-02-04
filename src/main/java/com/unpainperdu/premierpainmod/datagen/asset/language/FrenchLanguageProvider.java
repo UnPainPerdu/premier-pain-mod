@@ -71,14 +71,14 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("item.description.debier_bottle","La favorite de la Saint-Patrick.");
         add("item.description.debier_mug","On va vous confondre avec un Irlandais avec ça!");
                 //envahisseur_rouge
-        add(PremierPainMod.MOD_ID +".block.description.envahissuer_rouge_type","Envahisseur Rouge");
+        add(PremierPainMod.MOD_ID +".block.description.envahisseur_rouge_type","Envahisseur Rouge");
         add(ItemRegister.ENVAHISSEUR_ROUGE_BUCKET.get(),"Seau d'Envahisseur Rouge");
         add(ItemRegister.ENVAHISSEUR_ROUGE_GLASS.get(), "Verre d'Envahisseur Rouge");
         add(ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE.get(), "Bouteille d'Envahisseur Rouge");
         add(ItemRegister.ENVAHISSEUR_ROUGE_MUG.get(), "Chope d'Envahisseur Rouge");
-        add("item.description.envahissuer_rouge_glass","VIOLENCE.");
-        add("item.description.envahissuer_rouge_bottle","Seul cette bouteille peut la contenir.");
-        add("item.description.envahissuer_rouge_mug","Menez un raid comme un Dieu!");
+        add("item.description.envahisseur_rouge_glass","VIOLENCE.");
+        add("item.description.envahisseur_rouge_bottle","Seul cette bouteille peut la contenir.");
+        add("item.description.envahisseur_rouge_mug","Menez un raid comme un Dieu!");
                 //raspbuisson
         add(PremierPainMod.MOD_ID +".block.description.raspbuisson_type","RaspBuisson");
         add(ItemRegister.RASPBUISSON_BUCKET.get(),"Seau de RaspBuisson");

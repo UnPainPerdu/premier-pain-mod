@@ -27,11 +27,51 @@ public class ModItemStateProvider extends ItemModelProvider
         item(ItemRegister.EMPTY_GLASS.get(),"beer/glass/");
         item(ItemRegister.EMPTY_BOTTLE.get(),"beer/bottle/");
         item(ItemRegister.EMPTY_MUG.get(),"beer/mug/");
-            //pain dieux
+            //LA_CHATEAU
+        item(ItemRegister.LA_CHATEAU_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.LA_CHATEAU_GLASS.get(),"beer/glass/");
+        item(ItemRegister.LA_CHATEAU_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.LA_CHATEAU_MUG.get(),"beer/mug/");
+        //DEBIER
+        item(ItemRegister.DEBIER_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.DEBIER_GLASS.get(),"beer/glass/");
+        item(ItemRegister.DEBIER_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.DEBIER_MUG.get(),"beer/mug/");
+        //ENVAHISSEUR_ROUGE
+        item(ItemRegister.ENVAHISSEUR_ROUGE_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.ENVAHISSEUR_ROUGE_GLASS.get(),"beer/glass/");
+        item(ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.ENVAHISSEUR_ROUGE_MUG.get(),"beer/mug/");
+        //RASPBUISSON
+        item(ItemRegister.RASPBUISSON_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.RASPBUISSON_GLASS.get(),"beer/glass/");
+        item(ItemRegister.RASPBUISSON_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.RASPBUISSON_MUG.get(),"beer/mug/");
+        //pain dieux
         item(ItemRegister.PAIN_DIEUX_BUCKET.get(),"beer/bucket/");
         item(ItemRegister.PAIN_DIEUX_GLASS.get(),"beer/glass/");
         item(ItemRegister.PAIN_DIEUX_BOTTLE.get(),"beer/bottle/");
         item(ItemRegister.PAIN_DIEUX_MUG.get(),"beer/mug/");
+        //LA_BLANCHE_CITADINE
+        item(ItemRegister.LA_BLANCHE_CITADINE_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.LA_BLANCHE_CITADINE_GLASS.get(),"beer/glass/");
+        item(ItemRegister.LA_BLANCHE_CITADINE_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.LA_BLANCHE_CITADINE_MUG.get(),"beer/mug/");
+        //CRANE_NOIR
+        item(ItemRegister.CRANE_NOIR_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.CRANE_NOIR_GLASS.get(),"beer/glass/");
+        item(ItemRegister.CRANE_NOIR_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.CRANE_NOIR_MUG.get(),"beer/mug/");
+        //TAK
+        item(ItemRegister.TAK_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.TAK_GLASS.get(),"beer/glass/");
+        item(ItemRegister.TAK_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.TAK_MUG.get(),"beer/mug/");
+        //DISENDER
+        item(ItemRegister.DISENDER_BUCKET.get(),"beer/bucket/");
+        item(ItemRegister.DISENDER_GLASS.get(),"beer/glass/");
+        item(ItemRegister.DISENDER_BOTTLE.get(),"beer/bottle/");
+        item(ItemRegister.DISENDER_MUG.get(),"beer/mug/");
         //food
             //item
         vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:brewing_envahissuer_rouge_bucket"
+        "recipe": "premierpainmod:brewing_envahisseur_rouge_bucket"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:brewing_envahissuer_rouge_bucket"
+      "premierpainmod:brewing_envahisseur_rouge_bucket"
     ]
   }
 }
