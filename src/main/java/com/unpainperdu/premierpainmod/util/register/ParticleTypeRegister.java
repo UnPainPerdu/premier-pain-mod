@@ -10,8 +10,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ParticleTypeRegister
 {
+    private ParticleTypeRegister(){}
+
     //the rest of stuff in client part
-    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPE = DeferredRegister.create(Registries.PARTICLE_TYPE, PremierPainMod.MOD_ID);;
+    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPE = DeferredRegister.create(Registries.PARTICLE_TYPE, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOND_BEER_FOAM = PARTICLE_TYPE.register("blond_beer_foam", () -> new SimpleParticleType(false));
 

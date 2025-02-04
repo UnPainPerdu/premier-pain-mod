@@ -10,6 +10,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class SoundEventRegister
 {
+    private SoundEventRegister(){}
+
     public static final DeferredRegister<SoundEvent> SOUND_EVENT = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, PremierPainMod.MOD_ID);
     /*register part
         --> ModSoundProvider needed, need tool conversion for mp3 to ogg

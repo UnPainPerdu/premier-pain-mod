@@ -2,8 +2,8 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
-import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractCropLikeBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.tree.*;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;

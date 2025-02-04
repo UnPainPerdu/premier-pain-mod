@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock.villagerDrawerMenu.VillagerDrawerMenu;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;

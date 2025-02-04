@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.vegetation.crop;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractCropLikeBlock;
+import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;

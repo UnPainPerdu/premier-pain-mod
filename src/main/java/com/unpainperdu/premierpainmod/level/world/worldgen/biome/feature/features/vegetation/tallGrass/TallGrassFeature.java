@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.tallGrass;
 
 import com.mojang.serialization.Codec;
-import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
+import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

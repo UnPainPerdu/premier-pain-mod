@@ -1,17 +1,17 @@
 package com.unpainperdu.premierpainmod.util.register;
 
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerBench;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.AdaptableSit.VillagerCouch;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerBrazier;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerThroneChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.AdaptableSit.VillagerBench;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.AdaptableSit.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockHeight.VillagerBrazier;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockHeight.VillagerStatue;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockHeight.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.villagerShelf.StandingVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.villagerShelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.world.item.Item;
@@ -23,6 +23,8 @@ import java.util.*;
 
 public class ModList
 {
+    private ModList(){}
+
     public static final List<DeferredBlock<Block>> ALL_BLOCKS = generateAllBlocksList();
 
     /***
@@ -115,7 +117,7 @@ public class ModList
 
     private static List<DeferredBlock<Block>> generateAllBlocksList()
     {
-        List<DeferredBlock<Block>> ALL_BLOCKS = Arrays.asList(
+        List<DeferredBlock<Block>> allBlocks = Arrays.asList(
                 //liquid
                     //beer
                 BlockRegister.PAIN_DIEUX,
@@ -177,7 +179,7 @@ public class ModList
                 BlockRegister.MOUNTAIN_CURRANT_SAPLING,
                 BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING
         );
-        ArrayList<DeferredBlock<Block>> tempList = new ArrayList<>(ALL_BLOCKS);
+        ArrayList<DeferredBlock<Block>> tempList = new ArrayList<>(allBlocks);
         tempList.addAll(BlockRegister.AllMaterialsMap.values());
         tempList.sort(new BlockComparator());
         return tempList.stream().toList();
@@ -185,7 +187,7 @@ public class ModList
 
     private static List<DeferredItem<Item>> generateAllItemsList()
     {
-        List<DeferredItem<Item>> ALL_ITEMS = Arrays.asList(
+        List<DeferredItem<Item>> allItems = Arrays.asList(
                 //villager'singing stone
                 ItemRegister.LIBERTY_VILLAGER_SINGING_STONE,
                 ItemRegister.DIGGY_VILLAGER_SINGING_STONE,
@@ -256,7 +258,7 @@ public class ModList
                 ItemRegister.MOUNTAIN_CURRANT_SIGN,
                 ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN
         );
-        ArrayList<DeferredItem<Item>> tempList = new ArrayList<>(ALL_ITEMS);
+        ArrayList<DeferredItem<Item>> tempList = new ArrayList<>(allItems);
         tempList.addAll(ItemRegister.AllMaterialsMap.values());
         tempList.sort(new ItemComparator());
         return tempList;
@@ -271,13 +273,7 @@ public class ModList
             String id1 = o1.getId().toString();
             String id2 = o2.getId().toString();
 
-            int classCompare = id1.compareTo(id2);
-            if (classCompare != 0)
-            {
-                return classCompare;
-            }
-
-            return 0;
+            return id1.compareTo(id2);
         }
     }
 
@@ -290,13 +286,7 @@ public class ModList
             String id1 = o1.getId().toString();
             String id2 = o2.getId().toString();
 
-            int classCompare = id1.compareTo(id2);
-            if (classCompare != 0)
-            {
-                return classCompare;
-            }
-
-            return 0;
+            return id1.compareTo(id2);
         }
     }
 }

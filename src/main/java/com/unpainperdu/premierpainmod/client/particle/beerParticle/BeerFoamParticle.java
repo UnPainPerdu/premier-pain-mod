@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.client.particle.beerParticle;
 
-import com.unpainperdu.premierpainmod.util.toolKit.RandomUtil;
+import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.ParticleRenderType;
 import net.minecraft.client.particle.SpriteSet;

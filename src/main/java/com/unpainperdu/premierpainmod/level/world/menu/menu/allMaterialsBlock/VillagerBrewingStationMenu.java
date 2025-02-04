@@ -1,16 +1,13 @@
 package com.unpainperdu.premierpainmod.level.world.menu.menu.allMaterialsBlock;
 
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.VillagerBrewingStationBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.MugAndBottleOnlySlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.WaterBucketSlot;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
-import net.minecraft.core.BlockPos;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;

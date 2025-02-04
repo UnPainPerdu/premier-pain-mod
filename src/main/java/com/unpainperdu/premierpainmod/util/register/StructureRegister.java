@@ -13,6 +13,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class StructureRegister
 {
+    private StructureRegister(){}
+
     /*
     See in data :
         -tags/worldgen/biome/has_structure/ for biome filter

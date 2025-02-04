@@ -2,8 +2,8 @@ package com.unpainperdu.premierpainmod.level.event.blockEvent.colorSwitchEvent;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.event.blockEvent.colorSwitchEvent.util.DropEventColorHelper;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.helpInterface.CarpetedBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.help_interface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;

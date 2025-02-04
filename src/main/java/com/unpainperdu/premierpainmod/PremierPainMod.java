@@ -18,7 +18,6 @@ import terrablender.api.SurfaceRuleManager;
 public class PremierPainMod
 {
     public static final String MOD_ID = "premierpainmod";
-    private static final Logger LOGGER = LogUtils.getLogger();
     public PremierPainMod(IEventBus modEventBus, ModContainer modContainer)
     {
         modEventBus.addListener(DataGatherer::dataGatherer);

@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.data.datamap;
 
-import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
+import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;

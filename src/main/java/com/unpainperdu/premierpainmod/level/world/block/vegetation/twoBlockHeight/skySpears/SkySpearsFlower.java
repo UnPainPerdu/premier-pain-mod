@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.AbstractTallGrass;
+import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.toolKit.RandomUtil;
+import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

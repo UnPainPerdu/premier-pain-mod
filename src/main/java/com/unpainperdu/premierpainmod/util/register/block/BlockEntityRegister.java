@@ -1,10 +1,10 @@
 package com.unpainperdu.premierpainmod.util.register.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.VillagerDrawer;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidthWithBlockEntity.villagerShelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModHangingSignBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModStandingSignBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModWallHangingSignBlock;

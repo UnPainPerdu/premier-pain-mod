@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.client.render.renderBlockEntity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.entity.blockEntity.allMaterialsBlock.PedestalBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;

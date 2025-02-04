@@ -1,15 +1,15 @@
 package com.unpainperdu.premierpainmod.datagen.data.lootTable;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.abstractBlock.*;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.VillagerTableBlock;
-import com.unpainperdu.premierpainmod.level.world.block.helpInterface.CarpetedBlock;
+import com.unpainperdu.premierpainmod.level.world.block.abstract_block.*;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.help_interface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockHeight.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.allMaterialsBlock.twoBlockWidth.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockHeight.VillagerStatue;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.twoBlockWidth.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;

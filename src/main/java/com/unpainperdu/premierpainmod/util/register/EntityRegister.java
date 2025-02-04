@@ -11,6 +11,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class EntityRegister
 {
+    private EntityRegister(){}
+
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<EntityType<?>,EntityType<SeatEntity>> SEAT_ENTITY = ENTITY_TYPES.register("seat_entity",() -> EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC).setTrackingRange(256)
