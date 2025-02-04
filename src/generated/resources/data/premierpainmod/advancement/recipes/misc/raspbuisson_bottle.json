@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raspbuisson_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:raspbuisson_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:raspbuisson_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raspbuisson_bottle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:raspbuisson_bottle"
+    ]
+  }
+}

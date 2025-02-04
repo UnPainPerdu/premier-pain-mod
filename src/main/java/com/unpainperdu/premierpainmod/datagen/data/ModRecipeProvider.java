@@ -75,6 +75,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 //Pain Dieux
         shapelessRecipeBuilder(ItemRegister.PAIN_DIEUX_BOTTLE, ItemRegister.PAIN_DIEUX_BUCKET, 4, ItemRegister.PAIN_DIEUX_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
         shapelessRecipeBuilder(ItemRegister.PAIN_DIEUX_GLASS, ItemRegister.PAIN_DIEUX_BOTTLE, 1, ItemRegister.PAIN_DIEUX_BOTTLE, ItemRegister.EMPTY_GLASS);
+                //LA_CHATEAU
+        shapelessRecipeBuilder(ItemRegister.LA_CHATEAU_BOTTLE, ItemRegister.LA_CHATEAU_BUCKET, 4, ItemRegister.LA_CHATEAU_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.LA_CHATEAU_GLASS, ItemRegister.LA_CHATEAU_BOTTLE, 1, ItemRegister.LA_CHATEAU_BOTTLE, ItemRegister.EMPTY_GLASS);
+                //DEBIER
+        shapelessRecipeBuilder(ItemRegister.DEBIER_BOTTLE, ItemRegister.DEBIER_BUCKET, 4, ItemRegister.DEBIER_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.DEBIER_GLASS, ItemRegister.DEBIER_BOTTLE, 1, ItemRegister.DEBIER_BOTTLE, ItemRegister.EMPTY_GLASS);
+                //ENVAHISSEUR_ROUGE
+        shapelessRecipeBuilder(ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE, ItemRegister.ENVAHISSEUR_ROUGE_BUCKET, 4, ItemRegister.ENVAHISSEUR_ROUGE_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.ENVAHISSEUR_ROUGE_GLASS, ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE, 1, ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE, ItemRegister.EMPTY_GLASS);
+                //RASPBUISSON
+        shapelessRecipeBuilder(ItemRegister.RASPBUISSON_BOTTLE, ItemRegister.RASPBUISSON_BUCKET, 4, ItemRegister.RASPBUISSON_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.RASPBUISSON_GLASS, ItemRegister.RASPBUISSON_BOTTLE, 1, ItemRegister.RASPBUISSON_BOTTLE, ItemRegister.EMPTY_GLASS);
+                //LA_BLANCHE_CITADINE
+        shapelessRecipeBuilder(ItemRegister.LA_BLANCHE_CITADINE_BOTTLE, ItemRegister.LA_BLANCHE_CITADINE_BUCKET, 4, ItemRegister.LA_BLANCHE_CITADINE_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.LA_BLANCHE_CITADINE_GLASS, ItemRegister.LA_BLANCHE_CITADINE_BOTTLE, 1, ItemRegister.LA_BLANCHE_CITADINE_BOTTLE, ItemRegister.EMPTY_GLASS);
+                //CRANE_NOIR
+        shapelessRecipeBuilder(ItemRegister.CRANE_NOIR_BOTTLE, ItemRegister.CRANE_NOIR_BUCKET, 4, ItemRegister.CRANE_NOIR_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.CRANE_NOIR_GLASS, ItemRegister.CRANE_NOIR_BOTTLE, 1, ItemRegister.CRANE_NOIR_BOTTLE, ItemRegister.EMPTY_GLASS);
+                //TAK
+        shapelessRecipeBuilder(ItemRegister.TAK_BOTTLE, ItemRegister.TAK_BUCKET, 4, ItemRegister.TAK_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.TAK_GLASS, ItemRegister.TAK_BOTTLE, 1, ItemRegister.TAK_BOTTLE, ItemRegister.EMPTY_GLASS);
+                //DISENDER
+        shapelessRecipeBuilder(ItemRegister.DISENDER_BOTTLE, ItemRegister.DISENDER_BUCKET, 4, ItemRegister.DISENDER_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
+        shapelessRecipeBuilder(ItemRegister.DISENDER_GLASS, ItemRegister.DISENDER_BOTTLE, 1, ItemRegister.DISENDER_BOTTLE, ItemRegister.EMPTY_GLASS);
             //food
                 //vegetation
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CACTUS_FLOWER_BLOCK, ItemRegister.CACTUS_FLOWER_FRUIT);

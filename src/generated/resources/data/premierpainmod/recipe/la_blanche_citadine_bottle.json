@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "premierpainmod:la_blanche_citadine_bucket"
+    },
+    {
+      "item": "premierpainmod:empty_bottle"
+    },
+    {
+      "item": "premierpainmod:empty_bottle"
+    },
+    {
+      "item": "premierpainmod:empty_bottle"
+    },
+    {
+      "item": "premierpainmod:empty_bottle"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "premierpainmod:la_blanche_citadine_bottle"
+  }
+}

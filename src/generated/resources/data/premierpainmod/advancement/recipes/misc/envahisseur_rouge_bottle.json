@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_envahisseur_rouge_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:envahisseur_rouge_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:envahisseur_rouge_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_envahisseur_rouge_bottle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:envahisseur_rouge_bottle"
+    ]
+  }
+}

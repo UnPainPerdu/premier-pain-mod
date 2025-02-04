@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_envahisseur_rouge_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:envahisseur_rouge_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:envahisseur_rouge_glass"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_envahisseur_rouge_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:envahisseur_rouge_glass"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "premierpainmod:crane_noir_bottle"
+    },
+    {
+      "item": "premierpainmod:empty_glass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:crane_noir_glass"
+  }
+}
