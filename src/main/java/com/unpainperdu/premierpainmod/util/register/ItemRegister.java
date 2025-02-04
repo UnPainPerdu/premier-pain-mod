@@ -2,8 +2,8 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.event.itemEvent.VillagerSingingStoneEvent.*;
-import com.unpainperdu.premierpainmod.level.world.item.items.DrinkableBeerItem.DrinkableBeerItem;
-import com.unpainperdu.premierpainmod.level.world.item.items.DrinkableBeerItem.DrinkableBeerItemType;
+import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
+import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItemType;
 import com.unpainperdu.premierpainmod.level.world.item.items.allMaterialsBlock.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
@@ -27,6 +27,8 @@ import java.util.function.Supplier;
 
 public class ItemRegister
 {
+    private ItemRegister(){}
+
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PremierPainMod.MOD_ID);
     public static final Map<String, DeferredItem<Item>> AllMaterialsMap = createAllMaterialsItems();
     //villager's singing stone
@@ -119,10 +121,6 @@ public class ItemRegister
     private static DeferredItem<Item> villagerSingingStoneRegister(String name, int delayInSecond, Supplier<DeferredHolder<SoundEvent, SoundEvent>> soundEvent, AbstractVillagerSingingStoneEvent event)
     {
         return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties().stacksTo(1), soundEvent.get().get(), name, event, delayInSecond));
-    }
-    private static DeferredItem<Item> basicItemRegister(String name, int maxStackSize)
-    {
-        return ITEMS.register(name, () -> new Item(new Item.Properties().stacksTo(maxStackSize)));
     }
     /*
     nutrition --> 1 = 1/2 jigot

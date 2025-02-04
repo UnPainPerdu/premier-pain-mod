@@ -478,7 +478,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translation + translationTable);
     }
 
-    private void brewingStationTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void brewingStationTranslation(String suffix1, String suffix2, boolean isSuffix2Translate)
     {
         String translation1 = capitalize(suffix1);
         String table = "_villager_brewing_station";

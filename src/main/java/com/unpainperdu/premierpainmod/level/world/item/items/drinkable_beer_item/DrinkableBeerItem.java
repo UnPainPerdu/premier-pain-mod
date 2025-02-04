@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.item.items.DrinkableBeerItem;
+package com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;

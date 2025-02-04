@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.item.items.DrinkableBeerItem;
+package com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item;
 
 public enum DrinkableBeerItemType
 {
@@ -13,7 +13,7 @@ public enum DrinkableBeerItemType
     {
         this.name = name;
         this.effectDuration = effectDuration * 20;
-    };
+    }
 
     @Override
     public String toString()
