@@ -1,8 +1,5 @@
 package com.unpainperdu.premierpainmod.level.world.fluid.beer;
 
-import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.fluid.FluidRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.util.RandomSource;

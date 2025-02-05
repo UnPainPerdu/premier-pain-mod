@@ -25,14 +25,14 @@ public class ModParticleDescriptionProvider extends ParticleDescriptionProvider
     protected void addDescriptions()
     {
         createBeerFoamDescription(ParticleTypeRegister.BLOND_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
-        createBeerFoamDescription(ParticleTypeRegister.BROWN_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
-        createBeerFoamDescription(ParticleTypeRegister.GREEN_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
-        createBeerFoamDescription(ParticleTypeRegister.RED_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
-        createBeerFoamDescription(ParticleTypeRegister.DARK_RED_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
-        createBeerFoamDescription(ParticleTypeRegister.WHITE_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
-        createBeerFoamDescription(ParticleTypeRegister.BLACK_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
-        createBeerFoamDescription(ParticleTypeRegister.AMBER_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
-        createBeerFoamDescription(ParticleTypeRegister.PURPLE_BEER_FOAM.get(), "beer_foam/blond/blond_beer_foam_");
+        createBeerFoamDescription(ParticleTypeRegister.BROWN_BEER_FOAM.get(), "beer_foam/brown/brown_beer_foam_");
+        createBeerFoamDescription(ParticleTypeRegister.GREEN_BEER_FOAM.get(), "beer_foam/green/green_beer_foam_");
+        createBeerFoamDescription(ParticleTypeRegister.RED_BEER_FOAM.get(), "beer_foam/red/red_beer_foam_");
+        createBeerFoamDescription(ParticleTypeRegister.DARK_RED_BEER_FOAM.get(), "beer_foam/dark_red/dark_red_beer_foam_");
+        createBeerFoamDescription(ParticleTypeRegister.WHITE_BEER_FOAM.get(), "beer_foam/white/white_beer_foam_");
+        createBeerFoamDescription(ParticleTypeRegister.BLACK_BEER_FOAM.get(), "beer_foam/black/black_beer_foam_");
+        createBeerFoamDescription(ParticleTypeRegister.AMBER_BEER_FOAM.get(), "beer_foam/amber/amber_beer_foam_");
+        createBeerFoamDescription(ParticleTypeRegister.PURPLE_BEER_FOAM.get(), "beer_foam/purple/purple_beer_foam_");
     }
 
     /**
