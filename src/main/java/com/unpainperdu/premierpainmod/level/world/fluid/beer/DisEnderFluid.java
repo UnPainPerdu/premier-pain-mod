@@ -18,7 +18,7 @@ public abstract class DisEnderFluid extends BeerFluid
     @Override
     public ParticleOptions getFoam()
     {
-        return ParticleTypeRegister.BLOND_BEER_FOAM.get();
+        return ParticleTypeRegister.PURPLE_BEER_FOAM.get();
     }
 
     @Override

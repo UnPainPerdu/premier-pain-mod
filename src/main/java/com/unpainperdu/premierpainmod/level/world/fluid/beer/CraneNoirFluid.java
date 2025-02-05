@@ -18,7 +18,7 @@ public abstract class CraneNoirFluid extends BeerFluid
     @Override
     public ParticleOptions getFoam()
     {
-        return ParticleTypeRegister.BLOND_BEER_FOAM.get();
+        return ParticleTypeRegister.BLACK_BEER_FOAM.get();
     }
 
     @Override

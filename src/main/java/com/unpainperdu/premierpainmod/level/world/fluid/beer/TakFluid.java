@@ -18,7 +18,7 @@ public abstract class TakFluid extends BeerFluid
     @Override
     public ParticleOptions getFoam()
     {
-        return ParticleTypeRegister.BLOND_BEER_FOAM.get();
+        return ParticleTypeRegister.AMBER_BEER_FOAM.get();
     }
 
     @Override

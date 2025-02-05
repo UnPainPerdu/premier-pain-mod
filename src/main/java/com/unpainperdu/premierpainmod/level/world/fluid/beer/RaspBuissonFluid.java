@@ -18,7 +18,7 @@ public abstract class RaspBuissonFluid extends BeerFluid
     @Override
     public ParticleOptions getFoam()
     {
-        return ParticleTypeRegister.BLOND_BEER_FOAM.get();
+        return ParticleTypeRegister.DARK_RED_BEER_FOAM.get();
     }
 
     @Override

@@ -18,7 +18,7 @@ public abstract class EnvahisseurRougeFluid extends BeerFluid
     @Override
     public ParticleOptions getFoam()
     {
-        return ParticleTypeRegister.BLOND_BEER_FOAM.get();
+        return ParticleTypeRegister.RED_BEER_FOAM.get();
     }
 
     @Override

@@ -1,6 +1,15 @@
 package com.unpainperdu.premierpainmod.client.util.register;
 
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.amber.AmberBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.black.BlackBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.blond.BlondBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.brown.BrownBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.dark_red.DarkRedBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.green.GreenBeerFoamParticle;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.green.GreenBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.purple.PurpleBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.red.RedBeerFoamProvider;
+import com.unpainperdu.premierpainmod.client.particle.beer_particle.white.WhiteBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.FluidTypeRegister;
@@ -65,6 +74,14 @@ public class ClientRegisterHandler
         // There are multiple ways to register providers, all differing in the functional type they provide in the
         // second parameter. For example, #registerSpriteSet represents a Function<SpriteSet, ParticleProvider<?>>:
         event.registerSpriteSet(ParticleTypeRegister.BLOND_BEER_FOAM.get(), BlondBeerFoamProvider::new);
+        event.registerSpriteSet(ParticleTypeRegister.BROWN_BEER_FOAM.get(), BrownBeerFoamProvider::new);
+        event.registerSpriteSet(ParticleTypeRegister.GREEN_BEER_FOAM.get(), GreenBeerFoamProvider::new);
+        event.registerSpriteSet(ParticleTypeRegister.RED_BEER_FOAM.get(), RedBeerFoamProvider::new);
+        event.registerSpriteSet(ParticleTypeRegister.DARK_RED_BEER_FOAM.get(), DarkRedBeerFoamProvider::new);
+        event.registerSpriteSet(ParticleTypeRegister.WHITE_BEER_FOAM.get(), WhiteBeerFoamProvider::new);
+        event.registerSpriteSet(ParticleTypeRegister.BLACK_BEER_FOAM.get(), BlackBeerFoamProvider::new);
+        event.registerSpriteSet(ParticleTypeRegister.AMBER_BEER_FOAM.get(), AmberBeerFoamProvider::new);
+        event.registerSpriteSet(ParticleTypeRegister.PURPLE_BEER_FOAM.get(), PurpleBeerFoamProvider::new);
         // Other methods include #registerSprite, which is essentially a Supplier<TextureSheetParticle>,
         // and #registerSpecial, which maps to a Supplier<Particle>. See the source code of the event for further info.
     }

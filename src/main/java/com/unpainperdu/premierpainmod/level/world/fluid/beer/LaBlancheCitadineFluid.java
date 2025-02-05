@@ -18,7 +18,7 @@ public abstract class LaBlancheCitadineFluid extends BeerFluid
     @Override
     public ParticleOptions getFoam()
     {
-        return ParticleTypeRegister.BLOND_BEER_FOAM.get();
+        return ParticleTypeRegister.WHITE_BEER_FOAM.get();
     }
 
     @Override
