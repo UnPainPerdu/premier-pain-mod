@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.client.gui.screen.villager_shelf_screen.Vi
 import com.unpainperdu.premierpainmod.client.gui.screen.villager_workshop_recipe_screen.VillagerWorkshopRecipeScreen;
 import com.unpainperdu.premierpainmod.client.gui.screen.villager_drawer_screen.VillagerDrawerScreen;
 import com.unpainperdu.premierpainmod.client.gui.screen.VillagerBrewingStationScreen;
+import com.unpainperdu.premierpainmod.client.gui.screen.VillagerMusicalFridgeScreen;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -21,5 +22,6 @@ public class ScreenRegister
         event.register(MenuTypesRegister.VILLAGER_DRAWER.get(), VillagerDrawerScreen::new);
         event.register(MenuTypesRegister.VILLAGER_SHELF.get(), VillagerShelfScreen::new);
         event.register(MenuTypesRegister.VILLAGER_BREWING_STATION.get(), VillagerBrewingStationScreen::new);
+        event.register(MenuTypesRegister.VILLAGER_MUSICAL_FRIDGE.get(), VillagerMusicalFridgeScreen::new);
     }
 }

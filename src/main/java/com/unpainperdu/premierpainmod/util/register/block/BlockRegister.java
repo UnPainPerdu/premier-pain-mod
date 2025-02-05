@@ -8,6 +8,7 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.Vill
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.event_block.LibertyBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
@@ -162,7 +163,7 @@ public class BlockRegister
         List<String> blockTypes = Arrays.asList("villager_statue", "villager_pedestal", "villager_brazier",
                 "villager_table", "villager_chair", "villager_throne_chair",
                 "villager_drawer", "standing_villager_shelf", "wall_villager_shelf",
-                "villager_bench", "villager_couch", "villager_brewing_station"
+                "villager_bench", "villager_couch", "villager_brewing_station","villager_musical_fridge"
         );
 
         for (String blockType : blockTypes)
@@ -398,6 +399,10 @@ public class BlockRegister
             case "villager_brewing_station":
             {
                 return (DeferredBlock<T>) registerBlock(name, () -> new VillagerBrewingStation(properties));
+            }
+            case "villager_musical_fridge":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerMusicalFridgeBlock(properties));
             }
             default :
             {

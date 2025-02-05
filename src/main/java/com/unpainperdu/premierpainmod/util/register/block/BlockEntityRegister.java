@@ -3,16 +3,14 @@ package com.unpainperdu.premierpainmod.util.register.block;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModHangingSignBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModStandingSignBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModWallHangingSignBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModWallSignBlock;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.PedestalBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerDrawerBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerShelfBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.*;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.tree.ModHangingSignBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.tree.ModSignBlockEntity;
 import com.unpainperdu.premierpainmod.util.register.ModList;
@@ -39,6 +37,7 @@ public class BlockEntityRegister
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<ModSignBlockEntity>> MOD_SIGN = BLOCK_ENTITY_TYPES.register("mod_sign",() -> BlockEntityType.Builder.of(ModSignBlockEntity::new, listSignHelper().toArray(new Block[0])).build(null));
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<ModHangingSignBlockEntity>> MOD_HANGING_SIGN = BLOCK_ENTITY_TYPES.register("mod_hanging_sign",() -> BlockEntityType.Builder.of(ModHangingSignBlockEntity::new, listHangingSignHelper().toArray(new Block[0])).build(null));
     public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerBrewingStationBlockEntity>> VILLAGER_BREWING_STATION_ENTITY = BLOCK_ENTITY_TYPES.register("villager_brewing_station_entity",() -> BlockEntityType.Builder.of(VillagerBrewingStationBlockEntity::new, ModList.getAllBlocksFromClass(VillagerBrewingStation.class).toArray(new Block[0])).build(null));
+    public static final DeferredHolder<BlockEntityType<?>,BlockEntityType<VillagerMusicalFridgeBlockEntity>> VILLAGER_MUSICAL_FRIDGE_ENTITY = BLOCK_ENTITY_TYPES.register("villager_musical_fridge_entity",() -> BlockEntityType.Builder.of(VillagerMusicalFridgeBlockEntity::new, ModList.getAllBlocksFromClass(VillagerMusicalFridgeBlock.class).toArray(new Block[0])).build(null));
 
     public static void register(IEventBus modEventBus)
     {
