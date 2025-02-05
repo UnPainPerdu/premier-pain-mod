@@ -36,7 +36,7 @@ public class ModParticleDescriptionProvider extends ParticleDescriptionProvider
     }
 
     /**
-     *texture x/x/x_0, x/x/x_1 ... become just x/x/x_
+     * @param texture x/x/x_0, x/x/x_1 ... become just x/x/x_
      **/
     private void createBeerFoamDescription(ParticleType<?> particleType, String texture)
     {
