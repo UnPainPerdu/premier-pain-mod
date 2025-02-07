@@ -2,11 +2,14 @@ package com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTwoBlockHeightBlockWithBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerMusicalFridgeBlockEntity;
+import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +19,8 @@ import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -101,6 +106,10 @@ public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithB
         if (isLowerPart(state))
         {
             Containers.dropContentsOnDestroy(state, newState, level, pos);
+            if (!state.is(newState.getBlock()) && level.getBlockEntity(pos) instanceof VillagerMusicalFridgeBlockEntity entity)
+            {
+                entity.getJukeboxSongPlayer().stop(level, state);
+            }
         }
         super.onRemove(state, level, pos, newState, isMoving);
     }
@@ -132,5 +141,12 @@ public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithB
             blockentity = level.getBlockEntity(pos.below());
         }
         return blockentity;
+    }
+
+    @javax.annotation.Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType)
+    {
+        return VillagerMusicalFridgeBlockEntity.createBrewingStationTicker(level, blockEntityType, BlockEntityRegister.VILLAGER_MUSICAL_FRIDGE_ENTITY.get());
     }
 }
