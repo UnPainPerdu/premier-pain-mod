@@ -34,11 +34,11 @@ public class VillagerMusicalFridgeMenu extends AbstractContainerMenu
         {
             for (int k = 0; k < SLOTS_PER_ROW; k++)
             {
-                this.addSlot(new Slot(this.container, k + j * SLOTS_PER_ROW, 35 + k * 18, 18 + j * 18));
+                this.addSlot(new Slot(this.container, (k + j * SLOTS_PER_ROW) + 1, 35 + k * 18, 18 + j * 18));
             }
         }
 
-        this.addSlot(new DiscSlot(this.container, 36, 143,108));
+        this.addSlot(new DiscSlot(this.container, 0, 147,108));
 
 
         //player inv drawing

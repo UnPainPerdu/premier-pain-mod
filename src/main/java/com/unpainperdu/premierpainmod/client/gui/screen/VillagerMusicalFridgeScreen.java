@@ -34,7 +34,7 @@ public class VillagerMusicalFridgeScreen extends AbstractContainerScreen<Village
 
     protected ResourceLocation getBackgroundTexture()
     {
-        return loc("textures/gui/container/all_materials_block/villager_drawer/villager_drawer.png");
+        return loc("textures/gui/container/all_materials_block/villager_musical_fridge.png");
     }
 
     @Override
@@ -42,5 +42,12 @@ public class VillagerMusicalFridgeScreen extends AbstractContainerScreen<Village
     {
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         this.renderTooltip(pGuiGraphics, pMouseX, pMouseY);
+    }
+
+    @Override
+    protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY)
+    {
+        guiGraphics.drawString(this.font, this.title, this.titleLabelX + 27, this.titleLabelY, 4210752, false);
+        guiGraphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, 4210752, false);
     }
 }

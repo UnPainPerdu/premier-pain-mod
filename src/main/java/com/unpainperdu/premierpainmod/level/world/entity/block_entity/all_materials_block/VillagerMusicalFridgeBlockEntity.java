@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.VillagerMusicalFridgeMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_drawer_menu.VillagerDrawerMenu;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -23,12 +23,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 
 public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
 {
     private static final int CONTAINER_SIZE = 37;
-    private static final int DISC_SLOT = 36;
-    private static final int[] ITEMS_SLOTS = new int[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35};
+    private static final int DISC_SLOT = 0;
+    private static final int[] ITEMS_SLOTS = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36};
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter()
     {
         @Override
@@ -158,8 +159,16 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
     {
         level.playSound(null, pos, pSound, SoundSource.BLOCKS, 1.0F, 1.0F);
     }
-    void updateBlockStateIsOpen(BlockState pState, boolean pOpen)
+    void updateBlockStateIsOpen(BlockState state, boolean open)
     {
-        this.level.setBlock(this.getBlockPos(), pState.setValue(VillagerDrawer.OPEN, Boolean.valueOf(pOpen)), 3);
+        if (state.getValue(VillagerMusicalFridgeBlock.HALF) == DoubleBlockHalf.LOWER)
+        {
+            this.level.setBlock(this.getBlockPos().above(), state.setValue(VillagerMusicalFridgeBlock.OPEN, open), 3);
+        }
+        else
+        {
+            this.level.setBlock(this.getBlockPos().below(), state.setValue(VillagerMusicalFridgeBlock.OPEN, open), 3);
+        }
+        this.level.setBlock(this.getBlockPos(), state.setValue(VillagerMusicalFridgeBlock.OPEN, open), 3);
     }
 }
