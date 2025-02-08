@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.Vill
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.help_interface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
@@ -569,7 +570,9 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     private boolean is2HeightBlockLoot(Block block)
     {
         return block instanceof AbstractTwoBlockHeightBlock
-                        || block instanceof DoorBlock;
+                        || block instanceof DoorBlock
+                        || block instanceof VillagerMusicalFridgeBlock
+                ;
 
     }
     private boolean is2WidthBlockLoot(Block block)

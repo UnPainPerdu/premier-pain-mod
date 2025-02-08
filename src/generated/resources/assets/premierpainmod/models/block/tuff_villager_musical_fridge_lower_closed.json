@@ -1,0 +1,7 @@
+{
+  "parent": "premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_lower_closed",
+  "textures": {
+    "1": "premierpainmod:block/all_materials_block/multiple_use_texture/tuff_villager",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/tuff_villager"
+  }
+}

@@ -9,6 +9,7 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.Vill
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
@@ -45,7 +46,8 @@ public class ModList
                 WallVillagerShelf.class,
                 VillagerBench.class,
                 VillagerCouch.class,
-                VillagerBrewingStation.class
+                VillagerBrewingStation.class,
+                VillagerMusicalFridgeBlock.class
         );
     }
 

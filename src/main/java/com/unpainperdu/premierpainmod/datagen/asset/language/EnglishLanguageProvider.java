@@ -223,6 +223,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         benchTranslation(suffix);
         couchTranslation(suffix);
         brewingStationTranslation(suffix);
+        villagerMusicalFridgeTranslation(suffix);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
@@ -238,6 +239,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         benchTranslation(suffix1, suffix2, isSuffix2Translate);
         couchTranslation(suffix1, suffix2, isSuffix2Translate);
         brewingStationTranslation(suffix1, suffix2, isSuffix2Translate);
+        villagerMusicalFridgeTranslation(suffix1, suffix2, isSuffix2Translate);
     }
 
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
@@ -483,6 +485,29 @@ public class EnglishLanguageProvider extends LanguageProvider
         String translation1 = capitalize(suffix1);
         String table = "_villager_brewing_station";
         String translationTable = " villager brewing station";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
+        }
+    }
+
+    private void villagerMusicalFridgeTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String fridge = "_villager_musical_fridge";
+        String translationFridge = " villager musical cooler";
+        add("block."+PremierPainMod.MOD_ID +"."+suffix + fridge, translation + translationFridge);
+    }
+
+    private void villagerMusicalFridgeTranslation(String suffix1, String suffix2, boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String table = "_villager_musical_fridge";
+        String translationTable = " villager musical cooler";
         if (!isSuffix2Translate)
         {
             add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);

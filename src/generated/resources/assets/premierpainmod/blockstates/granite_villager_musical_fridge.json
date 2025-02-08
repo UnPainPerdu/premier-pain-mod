@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,half=lower,open=false,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_closed",
+      "y": 270
+    },
+    "facing=east,half=lower,open=false,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_closed",
+      "y": 270
+    },
+    "facing=east,half=lower,open=true,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_opened",
+      "y": 270
+    },
+    "facing=east,half=lower,open=true,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_opened",
+      "y": 270
+    },
+    "facing=east,half=upper,open=false,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_closed",
+      "y": 270
+    },
+    "facing=east,half=upper,open=false,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_closed",
+      "y": 270
+    },
+    "facing=east,half=upper,open=true,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_opened",
+      "y": 270
+    },
+    "facing=east,half=upper,open=true,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_opened",
+      "y": 270
+    },
+    "facing=north,half=lower,open=false,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_closed",
+      "y": 180
+    },
+    "facing=north,half=lower,open=false,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_closed",
+      "y": 180
+    },
+    "facing=north,half=lower,open=true,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_opened",
+      "y": 180
+    },
+    "facing=north,half=lower,open=true,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_opened",
+      "y": 180
+    },
+    "facing=north,half=upper,open=false,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_closed",
+      "y": 180
+    },
+    "facing=north,half=upper,open=false,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_closed",
+      "y": 180
+    },
+    "facing=north,half=upper,open=true,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_opened",
+      "y": 180
+    },
+    "facing=north,half=upper,open=true,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_opened",
+      "y": 180
+    },
+    "facing=south,half=lower,open=false,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_closed"
+    },
+    "facing=south,half=lower,open=false,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_closed"
+    },
+    "facing=south,half=lower,open=true,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_opened"
+    },
+    "facing=south,half=lower,open=true,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_opened"
+    },
+    "facing=south,half=upper,open=false,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_closed"
+    },
+    "facing=south,half=upper,open=false,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_closed"
+    },
+    "facing=south,half=upper,open=true,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_opened"
+    },
+    "facing=south,half=upper,open=true,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_opened"
+    },
+    "facing=west,half=lower,open=false,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_closed",
+      "y": 90
+    },
+    "facing=west,half=lower,open=false,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_closed",
+      "y": 90
+    },
+    "facing=west,half=lower,open=true,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_opened",
+      "y": 90
+    },
+    "facing=west,half=lower,open=true,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_lower_opened",
+      "y": 90
+    },
+    "facing=west,half=upper,open=false,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_closed",
+      "y": 90
+    },
+    "facing=west,half=upper,open=false,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_closed",
+      "y": 90
+    },
+    "facing=west,half=upper,open=true,waterlogged=false": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_opened",
+      "y": 90
+    },
+    "facing=west,half=upper,open=true,waterlogged=true": {
+      "model": "premierpainmod:block/granite_villager_musical_fridge_upper_opened",
+      "y": 90
+    }
+  }
+}

@@ -8,6 +8,7 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.Vill
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
@@ -68,6 +69,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if (block instanceof VillagerBench) {villagerBenchWithItem(block);}
             else if (block instanceof VillagerCouch) {villagerCouchWithItem(block);}
             else if (block instanceof VillagerBrewingStation) {villagerBrewingStationWithItem(block);}
+            else if (block instanceof VillagerMusicalFridgeBlock) {villagerMusicalFridgeBlockWithItem(block);}
         }
     //manual
         //vegetation
@@ -1007,7 +1009,6 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
     private void villagerBrewingStationWithItem(Block block)
     {
-
         String name = getName(block);
         String material = name.replace("_villager_brewing_station","_villager");
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
@@ -1018,33 +1019,6 @@ public class ModBlockStateProvider extends BlockStateProvider
             int level = state.getValue(VillagerBrewingStation.LEVEL);
             String modelPath = "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station_" + level;
             String modelName = getKey(block).toString() + level;
-            /*
-            switch (state.getValue(VillagerBrewingStation.LEVEL))
-            {
-                case 1 -> {
-                    modelPath += "1";
-                    modelName += "_1";
-                    break;
-                }
-                case 2 -> {
-                    modelName += "_2";
-                    break;
-                }
-                case 3 -> {
-                    modelName += "_3";
-                    break;
-                }
-                case 4 -> {
-                    modelName += "_4";
-                    break;
-                }
-                default ->{
-                    modelName += "_5";
-                    break;
-                }
-            }
-
-             */
 
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
@@ -1054,6 +1028,50 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .build();
         });
         ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station_0").texture("2", "block/all_materials_block/multiple_use_texture/" + material).texture("3","block/all_materials_block/multiple_use_particle/" + material);
+        itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
+    }
+    private void villagerMusicalFridgeBlockWithItem(Block block)
+    {
+        String name = getName(block);
+        String material = name.replace("_villager_musical_fridge","_villager");
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            String modelPath = "premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_";
+            String modelName = getKey(block).toString();
+            if (state.getValue(VillagerMusicalFridgeBlock.HALF) == DoubleBlockHalf.LOWER)
+            {
+                modelPath = modelPath + "lower_";
+                modelName = modelName + "_lower_";
+            }
+            else
+            {
+                modelPath = modelPath + "upper_";
+                modelName = modelName + "_upper_";
+            }
+
+            if (state.getValue(VillagerMusicalFridgeBlock.OPEN))
+            {
+                modelPath = modelPath + "opened";
+                modelName = modelName + "opened";
+            }
+            else
+            {
+                modelPath = modelPath + "closed";
+                modelName = modelName + "closed";
+            }
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("1",texture)
+                            .texture("2", particle))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
+        });
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_item")
+                .texture("2",texture);
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
 
