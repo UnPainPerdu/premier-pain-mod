@@ -2,14 +2,12 @@ package com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTwoBlockHeightBlockWithBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerMusicalFridgeBlockEntity;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -33,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithBlockEntity
 {
-    //lower part is the block entity
+    //lower part contain the block entity
 
     public static final MapCodec<VillagerMusicalFridgeBlock> CODEC = simpleCodec(VillagerMusicalFridgeBlock::new);
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
@@ -52,8 +50,19 @@ public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithB
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context)
     {
-        VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
-        return SHAPE;
+        VoxelShape shape;
+        switch (state.getValue(FACING))
+        {
+            case EAST -> shape = Block.box(0, 0, 0, 16, 16, 16);
+
+            case SOUTH -> shape = Block.box(1, 0, 3, 15, 16, 16);
+
+            case WEST -> shape = Block.box(0, 0, 0, 16, 16, 16);
+
+            default -> shape = Block.box(1, 0, 0, 15, 16, 13);
+
+        }
+        return shape;
     }
 
     @Override
