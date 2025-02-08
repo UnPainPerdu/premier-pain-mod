@@ -1,8 +1,6 @@
 {
   "parent": "premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_item",
   "textures": {
-    "0": "premierpainmod:block/all_materials_block/villager_musical_fridge/glass_lower",
-    "1": "premierpainmod:block/all_materials_block/villager_musical_fridge/glass_upper",
     "2": "premierpainmod:block/all_materials_block/multiple_use_texture/emerald_block_villager"
   }
 }

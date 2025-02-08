@@ -23,6 +23,7 @@ public class EnglishLanguageProvider extends LanguageProvider
             //container
         add("container."+ PremierPainMod.MOD_ID +".villager_drawer","Villager drawer");
         add("container."+ PremierPainMod.MOD_ID +".villager_brewing_station","Brewing station");
+        add("container."+ PremierPainMod.MOD_ID +".villager_musical_fridge","Musical fridge");
         add(PremierPainMod.MOD_ID + ".tooltip.liquid.amount.with.capacity", "%s / %s mB");
         //potion effect
         add("effect.minecraft.hero_of_the_village","Hero of villagers");
@@ -499,7 +500,7 @@ public class EnglishLanguageProvider extends LanguageProvider
     {
         String translation = capitalize(suffix);
         String fridge = "_villager_musical_fridge";
-        String translationFridge = " villager musical cooler";
+        String translationFridge = " villager musical fridge";
         add("block."+PremierPainMod.MOD_ID +"."+suffix + fridge, translation + translationFridge);
     }
 
@@ -507,7 +508,7 @@ public class EnglishLanguageProvider extends LanguageProvider
     {
         String translation1 = capitalize(suffix1);
         String table = "_villager_musical_fridge";
-        String translationTable = " villager musical cooler";
+        String translationTable = " villager musical fridge";
         if (!isSuffix2Translate)
         {
             add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);

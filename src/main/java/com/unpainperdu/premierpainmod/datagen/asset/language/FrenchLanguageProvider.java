@@ -21,6 +21,7 @@ public class FrenchLanguageProvider extends LanguageProvider
             //container
         add("container."+ PremierPainMod.MOD_ID +".villager_drawer","Tiroir du villageois");
         add("container."+ PremierPainMod.MOD_ID +".villager_brewing_station","Fut de brassage");
+        add("container."+ PremierPainMod.MOD_ID +".villager_musical_fridge","Frigo musical");
         //potion effect
         add("effect.minecraft.hero_of_the_village","Héro des villageois");
         //death message

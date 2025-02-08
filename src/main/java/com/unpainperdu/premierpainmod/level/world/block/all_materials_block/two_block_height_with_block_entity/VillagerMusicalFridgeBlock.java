@@ -53,11 +53,11 @@ public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithB
         VoxelShape shape;
         switch (state.getValue(FACING))
         {
-            case EAST -> shape = Block.box(0, 0, 0, 16, 16, 16);
+            case EAST -> shape = Block.box(3, 0, 1, 16, 16, 15);
 
             case SOUTH -> shape = Block.box(1, 0, 3, 15, 16, 16);
 
-            case WEST -> shape = Block.box(0, 0, 0, 16, 16, 16);
+            case WEST -> shape = Block.box(0, 0, 1, 13, 16, 15);
 
             default -> shape = Block.box(1, 0, 0, 15, 16, 13);
 
