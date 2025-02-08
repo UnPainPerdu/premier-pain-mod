@@ -8,8 +8,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -21,6 +24,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.JukeboxSong;
 import net.minecraft.world.item.JukeboxSongPlayer;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -30,7 +34,7 @@ import java.util.Optional;
 
 public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
 {
-    private static final int CONTAINER_SIZE = 37;
+    public static final int CONTAINER_SIZE = 37;
     private static final int DISC_SLOT = 0;
     private static final int[] ITEMS_SLOTS = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36};
     private final JukeboxSongPlayer jukeboxSongPlayer = new JukeboxSongPlayer(this::onSongChanged, this.getBlockPos());
@@ -100,13 +104,13 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
     }
 
     @Override
-    protected Component getDefaultName()
+    public Component getDefaultName()
     {
         return Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_musical_fridge");
     }
 
     @Override
-    protected NonNullList<ItemStack> getItems()
+    public NonNullList<ItemStack> getItems()
     {
         return this.items;
     }
@@ -117,7 +121,7 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
         this.items = items;
     }
 
-    protected ItemStack getDisc()
+    public ItemStack getDisc()
     {
         return this.items.get(DISC_SLOT);
     }
@@ -230,4 +234,41 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
         return clientType == serverType ? (BlockEntityTicker<A>)ticker : null;
     }
 
+
+    //-----------------------------------------------
+    //Something in these methods allow item going to client for client render class
+    @Override
+    protected void applyImplicitComponents(BlockEntity.DataComponentInput pComponentInput)
+    {
+        super.applyImplicitComponents(pComponentInput);
+        pComponentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(this.getItems());
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder pComponents)
+    {
+        super.collectImplicitComponents(pComponents);
+        pComponents.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItems()));
+    }
+
+    @Override
+    public void removeComponentsFromTag(CompoundTag pTag)
+    {
+        pTag.remove("Items");
+    }
+
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket()
+    {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries)
+    {
+        CompoundTag compoundtag = new CompoundTag();
+        ContainerHelper.saveAllItems(compoundtag, this.items, true, pRegistries);
+        return compoundtag;
+    }
+    //-----------------------------------------------
 }
