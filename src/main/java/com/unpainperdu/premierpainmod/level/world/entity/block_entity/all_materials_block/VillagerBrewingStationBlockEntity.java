@@ -47,7 +47,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     private static final int GLASS_INPUT_SLOT_1 = 13;
     private static final int OUTPUT_SLOT = 14;
     private static final int[] SIDE_SLOTS = new int[]{0, 13};
-    private static final int[] SLOTS_FOR_OUTPUT = new int[]{13, WATER_INPUT_SLOT};
+    private static final int[] SLOTS_FOR_OUTPUT = new int[]{14, WATER_INPUT_SLOT};
     private static final int SLOTS_NUMBER = 15;
     public static final int BREWING_TIME_STANDARD = 100;
     public static final int DATA_BREWING_PROGRESS = 0;
