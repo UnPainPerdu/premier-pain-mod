@@ -2,9 +2,9 @@ package com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_ite
 
 public enum DrinkableBeerItemType
 {
-    GLASS("glass", 30),
+    GLASS("glass", 45),
     BOTTLE("bottle", 20),
-    MUG("mug", 45)
+    MUG("mug", 35)
     ;
     private final String name;
     private final int effectDuration;
