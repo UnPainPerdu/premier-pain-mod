@@ -162,8 +162,19 @@ What would be a world without bugs ?
 ## add:
     - Villager Brewing Station
         A machine which transform water and ingredients into another fluid with possibility to empty it with a bucket, mug and bottle if possible
-    - beer fluid with bucket, mug, glass and bottle
+    - Beer fluid with bucket, mug, glass and bottle, it gives effect when drunk!
         beer : Pain Dieux
+               La Cheateau
+               DeBier
+               Envahisseur Rouge
+               RaspBuisson
+               La Blanche Citadine
+               Crane noir
+               Tak
+               DisEnder
+
+    - Villager Musical Fridge
+        A container able to store 6x6 stacks with a special slot to put a disc. When opened, the disc is play (5 minutes cd)
 
 ## remake :
     - villager table and throne chair consume carpet when carpeted and drop it when destroyed/sheared
