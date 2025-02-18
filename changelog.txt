@@ -183,3 +183,13 @@ What would be a world without bugs ?
 ## fix :
     - typo in all flower in french
     "Oui, je suis francophone de base, mais je foire fleur pour fleure. Oupsi"
+
+--------------
+# 1.21.[0,1]-1.11.1
+
+## balance :
+    - La Chateau was hmm... monstrous ? Now it regens only 1 time when drink
+    - some beer is a bit stronger, some a bit weaker
+## fix :
+    - sound for all material type block of quartz, mud and nether bricks
+    - Jellyshroom farm should now spawn in old great field structure
