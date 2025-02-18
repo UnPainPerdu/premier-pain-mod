@@ -30,6 +30,15 @@
       }
     },
     {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/jellyshroom_farm",
+        "projection": "rigid",
+        "processors": "premierpainmod:jellyshroom_farm"
+      }
+    },
+    {
       "weight": 90,
       "element": {
         "element_type": "minecraft:empty_pool_element",
