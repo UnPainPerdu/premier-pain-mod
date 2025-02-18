@@ -76,6 +76,14 @@ public class BlockRegister
             "dripstone_block","bedrock","mountain_currant"
 
     );
+
+
+    private static final List<String> BLOCKTYPES = Arrays.asList("villager_statue", "villager_pedestal", "villager_brazier",
+            "villager_table", "villager_chair", "villager_throne_chair",
+            "villager_drawer", "standing_villager_shelf", "wall_villager_shelf",
+            "villager_bench", "villager_couch", "villager_brewing_station","villager_musical_fridge"
+    );
+
     public static final Map<String, DeferredBlock<Block>> AllMaterialsMap = createAllMaterialsBlocks();
 
     //public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBrewingStation(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
@@ -160,13 +168,8 @@ public class BlockRegister
     private static Map<String, DeferredBlock<Block>> createAllMaterialsBlocks()
     {
         Map<String, DeferredBlock<Block>> map = new HashMap<>();
-        List<String> blockTypes = Arrays.asList("villager_statue", "villager_pedestal", "villager_brazier",
-                "villager_table", "villager_chair", "villager_throne_chair",
-                "villager_drawer", "standing_villager_shelf", "wall_villager_shelf",
-                "villager_bench", "villager_couch", "villager_brewing_station","villager_musical_fridge"
-        );
 
-        for (String blockType : blockTypes)
+        for (String blockType : BLOCKTYPES)
         {
             for (String material : MATERIALS)
             {
@@ -186,11 +189,11 @@ public class BlockRegister
             case "cherry" -> "cherry";
             case "bamboo" -> "bamboo";
             case "crimson", "warped" -> "netherwood";
-            case "stone", "mossy_stone", "andesite", "diorite", "granite", "prismarine", "blackstone", "purpur" -> "stone";
+            case "stone", "mossy_stone", "andesite", "diorite", "granite", "prismarine", "blackstone", "purpur", "quartz_block" -> "stone";
             case "deepslate" -> "deepslate";
             case "tuff" -> "tuff";
             case "sandstone", "red_sandstone" -> "sandstone";
-            case "netherbrick" -> "nether_brick";
+            case "nether_bricks" -> "nether_bricks";
             case "basalt" -> "basalt";
             case "end_stone" -> "endstone";
             case "coal_block" -> "mineral_strong";
@@ -202,6 +205,7 @@ public class BlockRegister
             case "amethyst_block" -> "amethyst";
             case "dripstone_block" -> "dripstone";
             case "bedrock" -> "bedrock";
+            case "packed_mud" -> "mud";
             default -> "wood";
         };
     }
@@ -268,7 +272,7 @@ public class BlockRegister
                 properties =  BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion();
                 break;
             }
-            case "netherbrick":
+            case "nether_bricks":
             {
                 properties =  BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS).noOcclusion();
                 break;
