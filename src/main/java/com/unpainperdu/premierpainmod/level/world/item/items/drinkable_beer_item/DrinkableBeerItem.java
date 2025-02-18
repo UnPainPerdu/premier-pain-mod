@@ -23,13 +23,17 @@ public class DrinkableBeerItem extends Item
     private DrinkableBeerItemType type;
     private final String translatableDescriptionId;
     private final Holder<MobEffect> effect;
+    private final int potionLevel;
+    private final float timeMultiplicater;
 
-    public DrinkableBeerItem(Properties properties, DrinkableBeerItemType type, String translatableDescriptionId, Holder<MobEffect> effect)
+    public DrinkableBeerItem(Properties properties, DrinkableBeerItemType type, String translatableDescriptionId, Holder<MobEffect> effect, int potionLevel, float timeMultiplicater)
     {
         super(properties);
         this.type = type;
         this.translatableDescriptionId = translatableDescriptionId;
         this.effect = effect;
+        this.potionLevel = potionLevel;
+        this.timeMultiplicater = timeMultiplicater;
     }
 
     @Override
@@ -66,7 +70,21 @@ public class DrinkableBeerItem extends Item
         if (foodproperties != null)
         {
             stack1 = livingEntity.eat(level, stack, foodproperties);
-            livingEntity.addEffect(new MobEffectInstance(effect, type.getEffectDuration(), 1));
+            int time = (int) (type.getEffectDuration()*this.timeMultiplicater);
+            if (time < 1)
+            {
+                time = 1;
+            }
+            int potLevel = this.potionLevel - 1;
+            if (potLevel < 0)
+            {
+                potLevel = 0;
+            }
+            else if (potLevel > 255)
+            {
+                potLevel = 255;
+            }
+            livingEntity.addEffect(new MobEffectInstance(effect, time, potLevel));
         }
         else
         {
