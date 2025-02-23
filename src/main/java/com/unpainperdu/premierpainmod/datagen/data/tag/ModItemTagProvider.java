@@ -8,10 +8,12 @@ import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
@@ -71,6 +73,16 @@ public class ModItemTagProvider extends ItemTagsProvider
             }
         }
 
+        for (Item item : ModList.getAllItemsFromClass(BoatItem.class))
+        {
+            this.tag(ItemTags.BOATS).add(item);
+            String name = getName(item);
+            if (name.contains("chest_boat"))
+            {
+                this.tag(ItemTags.CHEST_BOATS).add(item);
+            }
+        }
+
         for (DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
@@ -85,5 +97,10 @@ public class ModItemTagProvider extends ItemTagsProvider
                 ItemRegister.CACTUS_FLOWER_FRUIT.get(),
                 ItemRegister.SKY_SPEARS_FRUIT.get()
                 );
+    }
+
+    private String getName(Item item)
+    {
+        return BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
     }
 }

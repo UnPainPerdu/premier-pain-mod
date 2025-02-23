@@ -87,6 +87,8 @@ public class ModItemStateProvider extends ItemModelProvider
             //mountain currant
         item(ItemRegister.MOUNTAIN_CURRANT_SIGN.get(), "tree/mountain_currant_tree/");
         item(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), "tree/mountain_currant_tree/");
+        itemWithTexturePath(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), "item/tree/mountain_currant_tree/mountain_currant_boat");
+        itemWithTexturePath(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), "item/tree/mountain_currant_tree/mountain_currant_chest_boat");
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();
@@ -100,6 +102,16 @@ public class ModItemStateProvider extends ItemModelProvider
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
                 .texture("layer0","item/"+ folder + name);
+    }
+     /***
+     * path with /textures/ as root
+     ***/
+    private void itemWithTexturePath(Item item, String path)
+    {
+        String name = getName(item);
+        getBuilder(name)
+                .parent(getExistingFile(mcLoc("item/generated")))
+                .texture("layer0",path);
     }
 
     private void villagerShelfItem(Item item)

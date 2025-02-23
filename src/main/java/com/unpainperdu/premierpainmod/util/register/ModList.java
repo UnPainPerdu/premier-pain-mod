@@ -159,7 +159,7 @@ public class ModList
                 BlockRegister.DEAD_TALL_BUSH,
                 BlockRegister.OLD_WILD_WHEAT,
                 //tree
-                //mountain_currant_tree
+                    //mountain_currant_tree
                 BlockRegister.MOUNTAIN_CURRANT_LOG,
                 BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG,
                 BlockRegister.MOUNTAIN_CURRANT_WOOD,
@@ -258,7 +258,9 @@ public class ModList
                 //tree
                     //mountain currant
                 ItemRegister.MOUNTAIN_CURRANT_SIGN,
-                ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN
+                ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN,
+                ItemRegister.MOUNTAIN_CURRANT_BOAT,
+                ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT
         );
         ArrayList<DeferredItem<Item>> tempList = new ArrayList<>(allItems);
         tempList.addAll(ItemRegister.AllMaterialsMap.values());

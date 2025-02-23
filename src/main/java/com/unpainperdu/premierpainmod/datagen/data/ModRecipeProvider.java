@@ -131,7 +131,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         trapdoorRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
         signRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
         hangingSignRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get());
-        boatRecipeBuilder(Items.OAK_BOAT, BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        boatRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
+        boatWithChestRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), ItemRegister.MOUNTAIN_CURRANT_BOAT.get());
             //all materials recipes
         for(Block block : ModList.getAllMaterialsBlocks())
         {
@@ -587,6 +588,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("# #")
                 .pattern("###")
                 .unlockedBy("has_" + resultName, has(blockNeeded))
+                .save(ModRecipeProvider.recipeOutput, "premierpainmod:"+resultName+"_custom");
+    }
+    private void boatWithChestRecipeBuilder(Item ChestBoat, Item boat)
+    {
+        String resultName = getName(ChestBoat);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(ChestBoat, 1))
+                .define('$', Blocks.CHEST)
+                .define('#', boat)
+                .pattern("$")
+                .pattern("#")
+                .unlockedBy("has_" + resultName, has(boat))
                 .save(ModRecipeProvider.recipeOutput, "premierpainmod:"+resultName+"_custom");
     }
 

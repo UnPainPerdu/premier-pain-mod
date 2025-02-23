@@ -187,6 +187,10 @@ What would be a world without bugs ?
 --------------
 # 1.21.[0,1]-1.11.1
 
+## add :
+    - Mountain Currant Boat
+    - Mountain Currant Boat with Chest
+    "I have finally add these one, so much easier to just extend the Boat.Type enum than rewrite a new boat entity"
 ## balance :
     - La Chateau was hmm... monstrous ? Now it regens only 1 time when drink
     - some beer is a bit stronger, some a bit weaker

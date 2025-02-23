@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_oak_boat": {
+    "has_mountain_currant_chest_boat": {
       "conditions": {
         "items": [
           {
-            "items": "premierpainmod:mountain_currant_planks"
+            "items": "premierpainmod:mountain_currant_boat"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:oak_boat_custom"
+        "recipe": "premierpainmod:mountain_currant_chest_boat_custom"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_oak_boat"
+      "has_mountain_currant_chest_boat"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:oak_boat_custom"
+      "premierpainmod:mountain_currant_chest_boat_custom"
     ]
   }
 }

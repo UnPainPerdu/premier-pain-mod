@@ -41,6 +41,10 @@ public class EnglishLanguageProvider extends LanguageProvider
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Premier Pain Singing Stone");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"From backing bread to rise the sword, we come from so far!");
+            //tree
+                //mountain currant
+        add(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), "Mountain Currant Boat");
+        add(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), "Mountain Currant Boat with Chest");
             //beer
                 //empty
         add(ItemRegister.EMPTY_GLASS.get(), "Empty Polymorphic Glass");

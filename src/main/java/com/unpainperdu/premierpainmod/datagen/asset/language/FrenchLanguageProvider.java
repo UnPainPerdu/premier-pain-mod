@@ -39,6 +39,10 @@ public class FrenchLanguageProvider extends LanguageProvider
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Assez! J'en ai enduré bien assez...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Pierre chantante du Premier Pain");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"De la cuisson du pain au maniement de l'épée, nous venons de si loin!");
+            //tree
+                //mountain currant
+        add(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), "Bateau en groseillier des montagnes");
+        add(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), "Bateau de stockage en groseillier des montagnes");
             //beer
                 //empty
         add(ItemRegister.EMPTY_GLASS.get(), "Verre vide polymorphe");

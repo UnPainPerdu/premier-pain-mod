@@ -12,6 +12,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
@@ -28,7 +29,7 @@ import java.util.function.Supplier;
 public class ItemRegister
 {
     private ItemRegister(){}
-
+    //register zone
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PremierPainMod.MOD_ID);
     public static final Map<String, DeferredItem<Item>> AllMaterialsMap = createAllMaterialsItems();
     //villager's singing stone
@@ -101,6 +102,8 @@ public class ItemRegister
         //mountain currant
     public static final DeferredItem<Item> MOUNTAIN_CURRANT_SIGN = signItemRegister("mountain_currant_sign", () -> BlockRegister.MOUNTAIN_CURRANT_SIGN, () -> BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN);
     public static final DeferredItem<Item> MOUNTAIN_CURRANT_HANGING_SIGN = hangingSignItemRegister("mountain_currant_hanging_sign", () -> BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN, () -> BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN);
+    public static final DeferredItem<Item> MOUNTAIN_CURRANT_BOAT = ITEMS.register("mountain_currant_boat", () -> new BoatItem(false, Boat.Type.valueOf("premierpainmod_MOUNTAIN_CURRANT"), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> MOUNTAIN_CURRANT_CHEST_BOAT = ITEMS.register("mountain_currant_chest_boat", () -> new BoatItem(true, Boat.Type.valueOf("premierpainmod_MOUNTAIN_CURRANT"), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     private static Map<String, DeferredItem<Item>> createAllMaterialsItems()
     {
