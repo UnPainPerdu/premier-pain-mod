@@ -25,6 +25,7 @@ public class ModBiomes
     public static final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "sand_desert_premier_pain_ruins"));
     public static final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "swamp_premier_pain_ruins"));
     public static final ResourceKey<Biome> OLD_GREAT_FIELD = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "old_great_field"));
+    public static final ResourceKey<Biome> JUNGLE_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "jungle_premier_pain_ruins"));
 
     public static void boostrap(BootstrapContext<Biome> context)
     {
@@ -32,6 +33,7 @@ public class ModBiomes
         context.register(SAND_DESERT_PREMIER_PAIN_RUINS, sandDesertPremierPainRuins(context));
         context.register(SWAMP_PREMIER_PAIN_RUINS, swampPremierPainRuins(context));
         context.register(OLD_GREAT_FIELD, greatOldField(context));
+        context.register(JUNGLE_PREMIER_PAIN_RUINS, junglePremierPainRuins(context));
     }
 
     protected static int calculateSkyColor(float pTemperature)
@@ -220,6 +222,44 @@ public class ModBiomes
                                 .grassColorOverride(0xA6DD21)
                                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+                                .build()
+                )
+                .mobSpawnSettings(mobspawnsettings$builder.build())
+                .generationSettings(biomegenerationsettings$builder.build())
+                .build();
+    }
+
+    private static Biome junglePremierPainRuins(BootstrapContext<Biome> context)
+    {
+        float temperature = 0.95F;
+        float downfall = 0.9F;
+
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        BiomeDefaultFeatures.baseJungleSpawns(mobspawnsettings$builder);
+        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3));
+        globalOverworldGeneration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addWarmFlowers(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addJungleGrass(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addJungleMelons(biomegenerationsettings$builder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(temperature)
+                .downfall(downfall)
+                .specialEffects(
+                        new BiomeSpecialEffects.Builder()
+                                .waterColor(0x3F76E4)
+                                .waterFogColor(329011)
+                                .fogColor(12638463)
+                                .skyColor(calculateSkyColor(temperature))
+                                .foliageColorOverride(0x30BB0B)
+                                .grassColorOverride(0x59C93C)
+                                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE))
                                 .build()
                 )
                 .mobSpawnSettings(mobspawnsettings$builder.build())

@@ -1,10 +1,6 @@
 {
   "values": [
     {
-      "id": "premierpainmod:forest_premier_pain_ruins",
-      "required": false
-    },
-    {
       "id": "premierpainmod:jungle_premier_pain_ruins",
       "required": false
     }

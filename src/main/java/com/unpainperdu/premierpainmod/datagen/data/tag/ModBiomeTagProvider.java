@@ -43,6 +43,13 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
                 Tags.Biomes.IS_HOT,
                 BiomeTags.SNOW_GOLEM_MELTS
         );
+            //jungle
+        generateTagsForOverWorldBiome(ModBiomes.JUNGLE_PREMIER_PAIN_RUINS,
+                Tags.Biomes.IS_JUNGLE,
+                Tags.Biomes.IS_WET,
+                Tags.Biomes.IS_HOT,
+                Tags.Biomes.IS_DENSE_VEGETATION
+        );
         //old great field
         generateTagsForOverWorldBiome(ModBiomes.OLD_GREAT_FIELD,
                 Tags.Biomes.IS_PLAINS

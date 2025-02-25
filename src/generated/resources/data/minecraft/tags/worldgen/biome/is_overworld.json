@@ -13,6 +13,10 @@
       "required": false
     },
     {
+      "id": "premierpainmod:jungle_premier_pain_ruins",
+      "required": false
+    },
+    {
       "id": "premierpainmod:old_great_field",
       "required": false
     },
