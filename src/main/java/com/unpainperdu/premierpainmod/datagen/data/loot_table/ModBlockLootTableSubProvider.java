@@ -2,10 +2,7 @@ package com.unpainperdu.premierpainmod.datagen.data.loot_table;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.*;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.help_interface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
@@ -564,6 +561,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 || block instanceof SignBlock
                 || block instanceof SaplingBlock
                 || block instanceof VillagerBrewingStation
+                || block instanceof VillagerChiseledHead
                 ;
     }
 

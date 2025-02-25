@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "axis=x,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_unlit",
+      "x": 90,
+      "y": 270
+    },
+    "axis=x,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_unlit",
+      "x": 90,
+      "y": 270
+    },
+    "axis=x,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_lit",
+      "x": 90,
+      "y": 270
+    },
+    "axis=x,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_lit",
+      "x": 90,
+      "y": 270
+    },
+    "axis=y,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_unlit"
+    },
+    "axis=y,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_unlit"
+    },
+    "axis=y,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_lit"
+    },
+    "axis=y,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_lit"
+    },
+    "axis=z,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_unlit",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_unlit",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_lit",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/tuff_villager_chiseled_head_lit",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

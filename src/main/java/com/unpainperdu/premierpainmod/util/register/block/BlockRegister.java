@@ -2,12 +2,9 @@ package com.unpainperdu.premierpainmod.util.register.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.BeerBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.event_block.LibertyBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
@@ -81,7 +78,8 @@ public class BlockRegister
     private static final List<String> BLOCKTYPES = Arrays.asList("villager_statue", "villager_pedestal", "villager_brazier",
             "villager_table", "villager_chair", "villager_throne_chair",
             "villager_drawer", "standing_villager_shelf", "wall_villager_shelf",
-            "villager_bench", "villager_couch", "villager_brewing_station","villager_musical_fridge"
+            "villager_bench", "villager_couch", "villager_brewing_station",
+            "villager_musical_fridge","villager_chiseled_head"
     );
 
     public static final Map<String, DeferredBlock<Block>> AllMaterialsMap = createAllMaterialsBlocks();
@@ -407,6 +405,10 @@ public class BlockRegister
             case "villager_musical_fridge":
             {
                 return (DeferredBlock<T>) registerBlock(name, () -> new VillagerMusicalFridgeBlock(properties));
+            }
+            case "villager_chiseled_head":
+            {
+                return (DeferredBlock<T>) registerBlock(name, () -> new VillagerChiseledHead(properties.lightLevel(litBlockEmission(13))));
             }
             default :
             {

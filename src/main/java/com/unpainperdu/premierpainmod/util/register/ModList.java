@@ -1,11 +1,8 @@
 package com.unpainperdu.premierpainmod.util.register;
 
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
@@ -47,7 +44,8 @@ public class ModList
                 VillagerBench.class,
                 VillagerCouch.class,
                 VillagerBrewingStation.class,
-                VillagerMusicalFridgeBlock.class
+                VillagerMusicalFridgeBlock.class,
+                VillagerChiseledHead.class
         );
     }
 

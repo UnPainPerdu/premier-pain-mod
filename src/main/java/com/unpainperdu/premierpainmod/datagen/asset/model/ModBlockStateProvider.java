@@ -2,12 +2,9 @@ package com.unpainperdu.premierpainmod.datagen.asset.model;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
@@ -25,6 +22,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveV
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -70,6 +68,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             else if (block instanceof VillagerCouch) {villagerCouchWithItem(block);}
             else if (block instanceof VillagerBrewingStation) {villagerBrewingStationWithItem(block);}
             else if (block instanceof VillagerMusicalFridgeBlock) {villagerMusicalFridgeBlockWithItem(block);}
+            else if (block instanceof VillagerChiseledHead) {villagerChiseledHeadBlockWithItem(block);}
         }
     //manual
         //vegetation
@@ -1072,6 +1071,60 @@ public class ModBlockStateProvider extends BlockStateProvider
         });
         ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_item")
                 .texture("2",texture);
+        itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
+    }
+
+    private void villagerChiseledHeadBlockWithItem(Block block)
+    {
+        String name = getName(block);
+        String material = name.replace("_villager_chiseled_head","_villager");
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            String modelPath = "premierpainmod:block/all_materials_block/villager_chiseled_head/villager_chiseled_head_";
+            String modelName = getKey(block).toString();
+            int rotationX;
+            int rotationY;
+            if (state.getValue(VillagerChiseledHead.LIT))
+            {
+                modelPath += "lit";
+                modelName += "_lit";
+            }
+            else
+            {
+                modelPath += "unlit";
+                modelName += "_unlit";
+            }
+
+            if (state.getValue(VillagerChiseledHead.AXIS) == Direction.Axis.X)
+            {
+                rotationX = 90;
+                rotationY = 270;
+            }
+            else if (state.getValue(VillagerChiseledHead.AXIS) == Direction.Axis.Y)
+            {
+                rotationX = 0;
+                rotationY = 0;
+            }
+            else
+            {
+                rotationX = 90;
+                rotationY = 180;
+            }
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("1",texture)
+                            .texture("2", particle))
+                    .rotationX(rotationX)
+                    .rotationY(rotationY)
+                    .build();
+        });
+
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_chiseled_head/villager_chiseled_head_lit")
+                .texture("1",texture);
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
 

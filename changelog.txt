@@ -197,3 +197,9 @@ What would be a world without bugs ?
 ## fix :
     - sound for all material type block of quartz, mud and nether bricks
     - Jellyshroom farm should now spawn in old great field structure
+--------------
+# 1.21.[0,1]-1.12
+
+## add :
+    - Jungle Premier Pain Ruins, a new biome with unique vegetation!
+    - Villager Chiseled Head, a decorative block which produce light

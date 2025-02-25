@@ -229,6 +229,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         couchTranslation(suffix);
         brewingStationTranslation(suffix);
         villagerMusicalFridgeTranslation(suffix);
+        villagerChiseledHeadTranslation(suffix);
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
@@ -245,6 +246,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         couchTranslation(suffix1, suffix2, isSuffix2Translate);
         brewingStationTranslation(suffix1, suffix2, isSuffix2Translate);
         villagerMusicalFridgeTranslation(suffix1, suffix2, isSuffix2Translate);
+        villagerChiseledHeadTranslation(suffix1, suffix2, isSuffix2Translate);
     }
 
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
@@ -520,6 +522,29 @@ public class EnglishLanguageProvider extends LanguageProvider
         else
         {
             add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
+        }
+    }
+
+    private void villagerChiseledHeadTranslation(String suffix)
+    {
+        String translation = capitalize(suffix);
+        String chiseledHead = "_villager_chiseled_head";
+        String translationChiseledHead = " Villager Chiseled Head";
+        add("block."+PremierPainMod.MOD_ID +"."+suffix + chiseledHead, translation + translationChiseledHead);
+    }
+
+    private void villagerChiseledHeadTranslation(String suffix1, String suffix2, boolean isSuffix2Translate)
+    {
+        String translation1 = capitalize(suffix1);
+        String chiseledHead = "_villager_chiseled_head";
+        String translationChiseledHead = " Villager Chiseled Head";
+        if (!isSuffix2Translate)
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + chiseledHead, translation1 + translationChiseledHead);
+        }
+        else
+        {
+            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + chiseledHead, translation1 +" "+ suffix2 + translationChiseledHead);
         }
     }
 

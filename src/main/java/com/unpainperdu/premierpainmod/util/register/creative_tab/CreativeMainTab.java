@@ -2,12 +2,9 @@ package com.unpainperdu.premierpainmod.util.register.creative_tab;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
@@ -25,6 +22,7 @@ import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -136,6 +134,7 @@ public class CreativeMainTab
                     || block instanceof VillagerCouch
                     || block instanceof VillagerBrewingStation
                     || block instanceof VillagerMusicalFridgeBlock
+                    || block instanceof VillagerChiseledHead
             )
             {
                 itemList.add(block.asItem());

@@ -3,6 +3,8 @@ package com.unpainperdu.premierpainmod.util.tool_kit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class DirectionHelper
 {
@@ -169,5 +171,32 @@ public class DirectionHelper
     public static Direction getRightDirection(Direction direction)
     {
         return direction.getClockWise();
+    }
+
+    /**
+     * true if east or west
+     **/
+    public static boolean isBlockOnXAxis(BlockState state)
+    {
+        Direction facing = state.getValue(BlockStateProperties.FACING);
+        return facing == Direction.EAST || facing == Direction.WEST;
+    }
+
+    /**
+     * true if north or south
+     **/
+    public static boolean isBlockOnZAxis(BlockState state)
+    {
+        Direction facing = state.getValue(BlockStateProperties.FACING);
+        return facing == Direction.NORTH || facing == Direction.SOUTH;
+    }
+
+    /**
+     * true if up or down
+     **/
+    public static boolean isBlockOnYAxis(BlockState state)
+    {
+        Direction facing = state.getValue(BlockStateProperties.FACING);
+        return facing == Direction.UP || facing == Direction.DOWN;
     }
 }
