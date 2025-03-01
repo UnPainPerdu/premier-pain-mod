@@ -1,7 +1,9 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
 
 import com.google.common.collect.ImmutableList;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MorichePalmFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MountainCurrantFoliagePlacer;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MorichePalmTrunkPlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MountainCurrantTrunkPlacer;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.FeatureRegister;
@@ -49,6 +51,7 @@ public class ModVegetationFeature
     public static final ResourceKey<ConfiguredFeature<?, ?>> OLD_WILD_WHEAT = ModFeatureUtil.createKey("old_wild_wheat");
     //tree
     public static final ResourceKey<ConfiguredFeature<?, ?>> MOUNTAIN_CURRANT = ModFeatureUtil.createKey("mountain_currant");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MORICHE_PALM = ModFeatureUtil.createKey("moriche_palm");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> pContext)
     {
@@ -73,6 +76,7 @@ public class ModVegetationFeature
         FeatureUtils.register(pContext, ModVegetationFeature.OLD_WILD_WHEAT, FeatureRegister.OLD_WILD_WHEAT.get(), NoneFeatureConfiguration.INSTANCE);
         //tree
         FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createMountainCurrantTree(BlockRegister.MOUNTAIN_CURRANT_LOG.get(), BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), 3).build());
+        FeatureUtils.register(pContext, MORICHE_PALM, Feature.TREE, createMorichePalmTree(BlockRegister.MORICHE_PALM_LOG.get(), BlockRegister.MORICHE_PALM_LEAVES.get()).build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(
@@ -95,6 +99,17 @@ public class ModVegetationFeature
                 new MountainCurrantTrunkPlacer(2, 1, 0),
                 BlockStateProvider.simple(pLeavesBlock),
                 new MountainCurrantFoliagePlacer(ConstantInt.of(pRadius), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 0, 1)
+        );
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createMorichePalmTree(
+            Block pLogBlock, Block pLeavesBlock) {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(pLogBlock),
+                new MorichePalmTrunkPlacer(2, 1, 0),
+                BlockStateProvider.simple(pLeavesBlock),
+                new MorichePalmFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 1)
         );
     }
