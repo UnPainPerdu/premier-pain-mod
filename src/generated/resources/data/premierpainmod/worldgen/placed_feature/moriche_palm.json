@@ -2,8 +2,10 @@
   "feature": "premierpainmod:moriche_palm",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 1
+      "type": "minecraft:noise_threshold_count",
+      "above_noise": 45,
+      "below_noise": 45,
+      "noise_level": -0.8
     },
     {
       "type": "minecraft:in_square"

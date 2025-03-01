@@ -67,7 +67,7 @@ public class ModVegetationPlacement
         final Holder<ConfiguredFeature<?, ?>> MOUNTAIN_CURRANT_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.MOUNTAIN_CURRANT);
         register(pContext, ModVegetationPlacement.MOUNTAIN_CURRANT, MOUNTAIN_CURRANT_HOLDER, RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MOUNTAIN_CURRANT_SAPLING.get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> MORICHE_PALM_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.MORICHE_PALM);
-        register(pContext, ModVegetationPlacement.MORICHE_PALM, MORICHE_PALM_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MORICHE_PALM_SAPLING.get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(pContext, ModVegetationPlacement.MORICHE_PALM, MORICHE_PALM_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 45, 45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MORICHE_PALM_SAPLING.get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         //misc
         final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
         register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
