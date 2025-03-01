@@ -107,7 +107,7 @@ public class ModVegetationFeature
             Block pLogBlock, Block pLeavesBlock) {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(pLogBlock),
-                new MorichePalmTrunkPlacer(2, 1, 0),
+                new MorichePalmTrunkPlacer(13, 10, 7),
                 BlockStateProvider.simple(pLeavesBlock),
                 new MorichePalmFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 1)

@@ -9,7 +9,7 @@
       }
     },
     "foliage_placer": {
-      "type": "premierpainmod:mountain_currant_foliage_placer",
+      "type": "premierpainmod:moriche_palm_foliage_placer",
       "height": 2,
       "offset": 0,
       "radius": 3
@@ -35,10 +35,10 @@
       "upper_size": 1
     },
     "trunk_placer": {
-      "type": "premierpainmod:mountain_currant_trunk_placer",
-      "base_height": 2,
-      "height_rand_a": 1,
-      "height_rand_b": 0
+      "type": "premierpainmod:moriche_palm_trunk_placer",
+      "base_height": 13,
+      "height_rand_a": 10,
+      "height_rand_b": 7
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
