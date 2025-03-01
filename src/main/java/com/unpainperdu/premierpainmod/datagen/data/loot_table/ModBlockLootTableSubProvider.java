@@ -117,8 +117,10 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_JELLYSHROOM.get(), BlockRegister.JELLYSHROOM.get());
             //sapling
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get());
+        pottedFlowerLootTableGenerator(BlockRegister.POTTED_MORICHE_PALM_SAPLING.get(), BlockRegister.MORICHE_PALM_SAPLING.get());
         //leaves
         leavesWithFruitLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), ItemRegister.MOUNTAIN_CURRANT.get());
+        leavesLootTable(BlockRegister.MORICHE_PALM_LEAVES.get(), BlockRegister.MORICHE_PALM_SAPLING.get());
     }
 
     private void carpetedBlockTableGenerator(Block block)

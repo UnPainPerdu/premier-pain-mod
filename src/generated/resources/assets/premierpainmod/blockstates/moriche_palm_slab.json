@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "premierpainmod:block/moriche_palm_slab"
+    },
+    "type=double": {
+      "model": "premierpainmod:block/moriche_palm_slab_full"
+    },
+    "type=top": {
+      "model": "premierpainmod:block/moriche_palm_slab_top"
+    }
+  }
+}

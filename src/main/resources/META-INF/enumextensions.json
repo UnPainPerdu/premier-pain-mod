@@ -8,6 +8,15 @@
         "class": "com/unpainperdu/premierpainmod/util/register/EnumExtensionList",
         "field": "MOUNTAIN_CURRANT_BOAT_TYPE"
       }
+    },
+    {
+      "enum": "net/minecraft/world/entity/vehicle/Boat$Type",
+      "name": "premierpainmod_MORICHE_PALM",
+      "constructor": "(Ljava/util/function/Supplier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V",
+      "parameters": {
+        "class": "com/unpainperdu/premierpainmod/util/register/EnumExtensionList",
+        "field": "MORICHE_PALM_BOAT_TYPE"
+      }
     }
   ]
 }

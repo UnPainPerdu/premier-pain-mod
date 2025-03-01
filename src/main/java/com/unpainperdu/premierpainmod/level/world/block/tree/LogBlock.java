@@ -60,6 +60,8 @@ public class LogBlock extends RotatedPillarBlock
         Map<BlockState, BlockState> logAndWoodMap = new HashMap<>();
         logAndWoodMap.put(BlockRegister.MOUNTAIN_CURRANT_LOG.get().defaultBlockState(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get().defaultBlockState());
         logAndWoodMap.put(BlockRegister.MOUNTAIN_CURRANT_WOOD.get().defaultBlockState(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get().defaultBlockState());
+        logAndWoodMap.put(BlockRegister.MORICHE_PALM_LOG.get().defaultBlockState(), BlockRegister.STRIPPED_MORICHE_PALM_LOG.get().defaultBlockState());
+        logAndWoodMap.put(BlockRegister.MORICHE_PALM_WOOD.get().defaultBlockState(), BlockRegister.STRIPPED_MORICHE_PALM_WOOD.get().defaultBlockState());
 
         return logAndWoodMap;
     }

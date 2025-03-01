@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "premierpainmod:moriche_palm_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "premierpainmod:moriche_palm_planks"
+  }
+}

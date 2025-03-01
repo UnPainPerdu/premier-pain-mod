@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "premierpainmod:moriche_palm_standing_villager_shelf",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "two_block_width_part": "right"
+              }
+            }
+          ],
+          "name": "premierpainmod:moriche_palm_villager_shelf"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "premierpainmod:blocks/moriche_palm_standing_villager_shelf"
+}

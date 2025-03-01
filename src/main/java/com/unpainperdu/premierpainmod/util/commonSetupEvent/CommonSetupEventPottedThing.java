@@ -24,6 +24,7 @@ public class CommonSetupEventPottedThing
         setPottedThing(event, BlockRegister.JELLYSHROOM, BlockRegister.POTTED_JELLYSHROOM);
         //sapling
         setPottedThing(event, BlockRegister.MOUNTAIN_CURRANT_SAPLING, BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING);
+        setPottedThing(event, BlockRegister.MORICHE_PALM_SAPLING, BlockRegister.POTTED_MORICHE_PALM_SAPLING);
     }
 
     public static void setPottedThing(final FMLCommonSetupEvent event, DeferredBlock<Block> thingToPot, DeferredBlock<Block> thingPotted)

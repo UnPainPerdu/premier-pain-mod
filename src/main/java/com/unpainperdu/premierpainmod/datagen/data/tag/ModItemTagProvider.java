@@ -60,6 +60,7 @@ public class ModItemTagProvider extends ItemTagsProvider
         copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
         //mod
         copy(ModBlockTags.MOUNTAIN_CURRANT_LOGS, ModItemTags.MOUNTAIN_CURRANT_LOGS);
+        copy(ModBlockTags.MORICHE_PALM_LOGS, ModItemTags.MORICHE_PALM_LOGS);
 
         for (Item item : ModList.getAllItemsFromClass(SignItem.class))
         {

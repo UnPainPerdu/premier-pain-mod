@@ -21,6 +21,12 @@
     "premierpainmod:jellyshroom": {
       "chance": 0.4
     },
+    "premierpainmod:moriche_palm_leaves": {
+      "chance": 0.3
+    },
+    "premierpainmod:moriche_palm_sapling": {
+      "chance": 0.3
+    },
     "premierpainmod:mountain_currant_leaves": {
       "chance": 0.3
     },

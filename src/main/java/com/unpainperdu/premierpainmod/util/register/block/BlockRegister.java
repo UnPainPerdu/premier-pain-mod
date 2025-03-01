@@ -70,7 +70,8 @@ public class BlockRegister
             "gold_block","redstone_block","emerald_block",
             "diamond_block","copper_block","lapis_block",
             "netherite_block","obsidian","amethyst_block",
-            "dripstone_block","bedrock","mountain_currant"
+            "dripstone_block","bedrock","mountain_currant",
+            "moriche_palm"
 
     );
 
@@ -161,6 +162,27 @@ public class BlockRegister
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_HANGING_SIGN =  registerBlockOnly("mountain_currant_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_SAPLING =  registerBlock("mountain_currant_sapling", () -> new SaplingBlock(ModTreeGrower.MOUNTAIN_CURRANT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     public static final DeferredBlock<Block> POTTED_MOUNTAIN_CURRANT_SAPLING = registerFlowerPot("potted_mountain_currant_sapling",() -> MOUNTAIN_CURRANT_SAPLING);
+        //moriche_palm
+    public static final DeferredBlock<Block> MORICHE_PALM_LOG =  registerBlock("moriche_palm_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> STRIPPED_MORICHE_PALM_LOG =  registerBlock("stripped_moriche_palm_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> MORICHE_PALM_WOOD =  registerBlock("moriche_palm_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> STRIPPED_MORICHE_PALM_WOOD =  registerBlock("stripped_moriche_palm_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> MORICHE_PALM_PLANKS =  registerBlock("moriche_palm_planks", () -> new FlammableBlock(20,5,BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> MORICHE_PALM_LEAVES =  registerBlock("moriche_palm_leaves", () -> new ModLeavesBlock(false, 60,30,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final DeferredBlock<Block> MORICHE_PALM_STAIRS =  registerBlock("moriche_palm_stairs", () -> registerStair(() -> MORICHE_PALM_PLANKS));
+    public static final DeferredBlock<Block> MORICHE_PALM_SLAB =  registerBlock("moriche_palm_slab", () -> registerSlab(() -> MORICHE_PALM_PLANKS));
+    public static final DeferredBlock<Block> MORICHE_PALM_BUTTON =  registerBlock("moriche_palm_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30));
+    public static final DeferredBlock<Block> MORICHE_PALM_PRESSURE_PLATE=  registerBlock("moriche_palm_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> MORICHE_PALM_PLANKS));
+    public static final DeferredBlock<Block> MORICHE_PALM_FENCE =  registerBlock("moriche_palm_fence", () -> registerFence(() -> MORICHE_PALM_PLANKS));
+    public static final DeferredBlock<Block> MORICHE_PALM_FENCE_GATE =  registerBlock("moriche_palm_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> MORICHE_PALM_PLANKS));
+    public static final DeferredBlock<Block> MORICHE_PALM_DOOR =  registerBlock("moriche_palm_door", () -> registerDoor(BlockSetType.OAK, () -> MORICHE_PALM_PLANKS));
+    public static final DeferredBlock<Block> MORICHE_PALM_TRAPDOOR =  registerBlock("moriche_palm_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> MORICHE_PALM_PLANKS));
+    public static final DeferredBlock<Block> MORICHE_PALM_SIGN =  registerBlockOnly("moriche_palm_sign", () -> new ModStandingSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> MORICHE_PALM_WALL_SIGN =  registerBlockOnly("moriche_palm_wall_sign", () -> new ModWallSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> MORICHE_PALM_HANGING_SIGN =  registerBlockOnly("moriche_palm_hanging_sign", () -> new ModHangingSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> MORICHE_PALM_WALL_HANGING_SIGN =  registerBlockOnly("moriche_palm_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> MORICHE_PALM_SAPLING =  registerBlock("moriche_palm_sapling", () -> new SaplingBlock(ModTreeGrower.MORICHE_PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_MORICHE_PALM_SAPLING = registerFlowerPot("potted_moriche_palm_sapling",() -> MORICHE_PALM_SAPLING);
 
 
     private static Map<String, DeferredBlock<Block>> createAllMaterialsBlocks()
@@ -453,12 +475,12 @@ public class BlockRegister
 
     private static Block registerDoor(BlockSetType type, Supplier<DeferredBlock<Block>> baseBlock)
     {
-        return new DoorBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+        return new DoorBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()).noOcclusion().pushReaction(PushReaction.DESTROY));
     }
 
     private static Block registerTrapdoor(BlockSetType type, Supplier<DeferredBlock<Block>> baseBlock)
     {
-        return new TrapDoorBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+        return new TrapDoorBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()).noOcclusion().isValidSpawn(Blocks::never));
     }
 
     public static void register(IEventBus modEventBus)

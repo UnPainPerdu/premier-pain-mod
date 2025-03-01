@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 public class ModItemTags
 {
     public static final TagKey<Item> MOUNTAIN_CURRANT_LOGS = create("mountain_currant_logs");
+    public static final TagKey<Item> MORICHE_PALM_LOGS = create("moriche_palm_logs");
 
     private static TagKey<Item> create(String name)
     {

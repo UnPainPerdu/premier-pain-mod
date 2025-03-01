@@ -84,11 +84,17 @@ public class ModItemStateProvider extends ItemModelProvider
         stewFoodItem(ItemRegister.POTATOES_AND_SPEARS_BOWL.get());
         stewFoodItem(ItemRegister.FRUITS_BOWL.get());
         //tree
-            //mountain currant
+            //mountain_currant
         item(ItemRegister.MOUNTAIN_CURRANT_SIGN.get(), "tree/mountain_currant_tree/");
         item(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), "tree/mountain_currant_tree/");
         itemWithTexturePath(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), "item/tree/mountain_currant_tree/mountain_currant_boat");
         itemWithTexturePath(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), "item/tree/mountain_currant_tree/mountain_currant_chest_boat");
+            //moriche_palm
+        item(ItemRegister.MORICHE_PALM_SIGN.get(), "tree/moriche_palm_tree/");
+        item(ItemRegister.MORICHE_PALM_HANGING_SIGN.get(), "tree/moriche_palm_tree/");
+        itemWithTexturePath(ItemRegister.MORICHE_PALM_BOAT.get(), "item/tree/moriche_palm_tree/moriche_palm_boat");
+        itemWithTexturePath(ItemRegister.MORICHE_PALM_CHEST_BOAT.get(), "item/tree/moriche_palm_tree/moriche_palm_chest_boat");
+
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {
             Item item = deferredItem.get();

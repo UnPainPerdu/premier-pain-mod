@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_log_top",
+    "side": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_log_side"
+  }
+}

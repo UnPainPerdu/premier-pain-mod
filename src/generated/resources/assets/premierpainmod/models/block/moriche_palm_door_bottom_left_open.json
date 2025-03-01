@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_door_bottom",
+    "top": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_door_top"
+  }
+}

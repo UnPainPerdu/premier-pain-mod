@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_planks",
+    "side": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_planks",
+    "top": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_planks"
+  }
+}

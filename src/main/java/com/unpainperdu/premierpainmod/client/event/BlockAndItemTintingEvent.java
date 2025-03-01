@@ -20,10 +20,10 @@ public class BlockAndItemTintingEvent
     @SubscribeEvent
     public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event)
     {
-        event.register((state, level, pos, tintIndex) -> level != null && pos != null
-                        ? BiomeColors.getAverageFoliageColor(level, pos)
-                        : FoliageColor.getDefaultColor(),
-                BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
+        //vegetation
+            //tree
+        setTintingForVegetation(event, BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
+        setTintingForVegetation(event, BlockRegister.MORICHE_PALM_LEAVES.get());
         for (Block block : ModList.getAllBlocksFromClass(VillagerBrewingStation.class))
         {
             event.register((state, level, pos, tintIndex) -> getColorFromContentBrewingStation(state, level, pos, tintIndex),block);
@@ -34,7 +34,9 @@ public class BlockAndItemTintingEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event)
     {
         event.register((stack, tintIndex) -> 0x91BD59,
-                BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
+                BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(),
+                BlockRegister.MORICHE_PALM_LEAVES.get()
+        );
     }
     /*
     get tint color define in fluid type of the fluid in the fluid tank
@@ -52,5 +54,13 @@ public class BlockAndItemTintingEvent
         catch (Exception ignored) {}
 
         return color;
+    }
+
+    private static void setTintingForVegetation(RegisterColorHandlersEvent.Block event, Block block)
+    {
+        event.register((state, level, pos, tintIndex) -> level != null && pos != null
+                        ? BiomeColors.getAverageFoliageColor(level, pos)
+                        : FoliageColor.getDefaultColor(),
+                block);
     }
 }

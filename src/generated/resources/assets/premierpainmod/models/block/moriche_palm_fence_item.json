@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_planks"
+  }
+}

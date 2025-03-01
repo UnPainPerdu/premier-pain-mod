@@ -22,7 +22,6 @@ import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -86,7 +85,9 @@ public class CreativeMainTab
             {
                 output.accept(block);
             }
-            if (blockName.contains("mountain_currant"))
+            if (blockName.contains("mountain_currant")
+                || blockName.contains("moriche_palm")
+            )
             {
                 if (block instanceof StairBlock
                         || block instanceof SlabBlock
@@ -107,7 +108,9 @@ public class CreativeMainTab
         {
             Item item = deferredItem.get();
             String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
-            if (itemName.contains("mountain_currant"))
+            if (itemName.contains("mountain_currant")
+                    || itemName.contains("moriche_palm")
+            )
             {
                 if (item instanceof SignItem)
                 {

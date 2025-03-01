@@ -93,26 +93,47 @@ public class ModBlockStateProvider extends BlockStateProvider
         universalPottedBlockWithCustomModel(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
                 //sapling
         pottedBlockWithBasicModel(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(),"block/tree/mountain_currant_tree/mountain_currant_sapling");
+        pottedBlockWithBasicModel(BlockRegister.POTTED_MORICHE_PALM_SAPLING.get(), BlockRegister.MORICHE_PALM_SAPLING.get(),"block/tree/moriche_palm_tree/moriche_palm_sapling");
         //tree
-            //mountain currant
+            //mountain_currant
         logWithItem(BlockRegister.MOUNTAIN_CURRANT_LOG.get(),"mountain_currant_tree");
         logWithItem(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get(),"mountain_currant_tree");
         woodWithItem(BlockRegister.MOUNTAIN_CURRANT_WOOD.get(),"mountain_currant_tree");
         woodWithItem(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get(),"mountain_currant_tree");
         simpleBlockWithItem(BlockRegister.MOUNTAIN_CURRANT_PLANKS.get(), "block/tree/mountain_currant_tree/mountain_currant_planks");
         fruitLeavesWithItem(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), "mountain_currant_tree");
-        ResourceLocation planksTexture = createResourceLocation("block/tree/mountain_currant_tree/mountain_currant_planks");
-        stairWithItem(BlockRegister.MOUNTAIN_CURRANT_STAIRS.get(), planksTexture);
-        slabWithItem(BlockRegister.MOUNTAIN_CURRANT_SLAB.get(), planksTexture);
-        buttonWithItem(BlockRegister.MOUNTAIN_CURRANT_BUTTON.get(),planksTexture);
-        pressurePlateWithItem(BlockRegister.MOUNTAIN_CURRANT_PRESSURE_PLATE.get(), planksTexture);
-        fenceWithItem(BlockRegister.MOUNTAIN_CURRANT_FENCE.get(), planksTexture);
-        fenceGateWithItem(BlockRegister.MOUNTAIN_CURRANT_FENCE_GATE.get(), planksTexture);
+        ResourceLocation mountainCurrantPlanksTexture = createResourceLocation("block/tree/mountain_currant_tree/mountain_currant_planks");
+        stairWithItem(BlockRegister.MOUNTAIN_CURRANT_STAIRS.get(), mountainCurrantPlanksTexture);
+        slabWithItem(BlockRegister.MOUNTAIN_CURRANT_SLAB.get(), mountainCurrantPlanksTexture);
+        buttonWithItem(BlockRegister.MOUNTAIN_CURRANT_BUTTON.get(),mountainCurrantPlanksTexture);
+        pressurePlateWithItem(BlockRegister.MOUNTAIN_CURRANT_PRESSURE_PLATE.get(), mountainCurrantPlanksTexture);
+        fenceWithItem(BlockRegister.MOUNTAIN_CURRANT_FENCE.get(), mountainCurrantPlanksTexture);
+        fenceGateWithItem(BlockRegister.MOUNTAIN_CURRANT_FENCE_GATE.get(), mountainCurrantPlanksTexture);
         woodenDoorWithItem(BlockRegister.MOUNTAIN_CURRANT_DOOR.get(), "mountain_currant_tree");
         woodenTrapdoorWithItem(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), "mountain_currant_tree");
-        woodenSign(BlockRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN.get(), planksTexture);
-        woodenHangingSign(BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN.get(), planksTexture);
+        woodenSign(BlockRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN.get(), mountainCurrantPlanksTexture);
+        woodenHangingSign(BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN.get(), mountainCurrantPlanksTexture);
         saplingWithItem(BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), "mountain_currant_tree");
+            //moriche_palm
+        logWithItem(BlockRegister.MORICHE_PALM_LOG.get(),"moriche_palm_tree");
+        logWithItem(BlockRegister.STRIPPED_MORICHE_PALM_LOG.get(),"moriche_palm_tree");
+        woodWithItem(BlockRegister.MORICHE_PALM_WOOD.get(),"moriche_palm_tree");
+        woodWithItem(BlockRegister.STRIPPED_MORICHE_PALM_WOOD.get(),"moriche_palm_tree");
+        simpleBlockWithItem(BlockRegister.MORICHE_PALM_PLANKS.get(), "block/tree/moriche_palm_tree/moriche_palm_planks");
+        leavesWithItem(BlockRegister.MORICHE_PALM_LEAVES.get(), "moriche_palm_tree");
+        ResourceLocation morichePalmPlanksTexture = createResourceLocation("block/tree/moriche_palm_tree/moriche_palm_planks");
+        stairWithItem(BlockRegister.MORICHE_PALM_STAIRS.get(), morichePalmPlanksTexture);
+        slabWithItem(BlockRegister.MORICHE_PALM_SLAB.get(), morichePalmPlanksTexture);
+        buttonWithItem(BlockRegister.MORICHE_PALM_BUTTON.get(),morichePalmPlanksTexture);
+        pressurePlateWithItem(BlockRegister.MORICHE_PALM_PRESSURE_PLATE.get(), morichePalmPlanksTexture);
+        fenceWithItem(BlockRegister.MORICHE_PALM_FENCE.get(), morichePalmPlanksTexture);
+        fenceGateWithItem(BlockRegister.MORICHE_PALM_FENCE_GATE.get(), morichePalmPlanksTexture);
+        woodenDoorWithItem(BlockRegister.MORICHE_PALM_DOOR.get(), "moriche_palm_tree");
+        woodenTrapdoorWithItem(BlockRegister.MORICHE_PALM_TRAPDOOR.get(), "moriche_palm_tree");
+        woodenSign(BlockRegister.MORICHE_PALM_SIGN.get(), BlockRegister.MORICHE_PALM_WALL_SIGN.get(), morichePalmPlanksTexture);
+        woodenHangingSign(BlockRegister.MORICHE_PALM_HANGING_SIGN.get(), BlockRegister.MORICHE_PALM_WALL_HANGING_SIGN.get(), morichePalmPlanksTexture);
+        saplingWithItem(BlockRegister.MORICHE_PALM_SAPLING.get(), "moriche_palm_tree");
+
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
     }

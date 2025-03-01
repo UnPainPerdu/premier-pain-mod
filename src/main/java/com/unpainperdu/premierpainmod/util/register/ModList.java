@@ -157,7 +157,7 @@ public class ModList
                 BlockRegister.DEAD_TALL_BUSH,
                 BlockRegister.OLD_WILD_WHEAT,
                 //tree
-                    //mountain_currant_tree
+                    //mountain_currant
                 BlockRegister.MOUNTAIN_CURRANT_LOG,
                 BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG,
                 BlockRegister.MOUNTAIN_CURRANT_WOOD,
@@ -177,7 +177,28 @@ public class ModList
                 BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN,
                 BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN,
                 BlockRegister.MOUNTAIN_CURRANT_SAPLING,
-                BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING
+                BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING,
+                    //moriche_palm
+                BlockRegister.MORICHE_PALM_LOG,
+                BlockRegister.STRIPPED_MORICHE_PALM_LOG,
+                BlockRegister.MORICHE_PALM_WOOD,
+                BlockRegister.STRIPPED_MORICHE_PALM_WOOD,
+                BlockRegister.MORICHE_PALM_PLANKS,
+                BlockRegister.MORICHE_PALM_LEAVES,
+                BlockRegister.MORICHE_PALM_STAIRS,
+                BlockRegister.MORICHE_PALM_SLAB,
+                BlockRegister.MORICHE_PALM_BUTTON,
+                BlockRegister.MORICHE_PALM_PRESSURE_PLATE,
+                BlockRegister.MORICHE_PALM_FENCE,
+                BlockRegister.MORICHE_PALM_FENCE_GATE,
+                BlockRegister.MORICHE_PALM_DOOR,
+                BlockRegister.MORICHE_PALM_TRAPDOOR,
+                BlockRegister.MORICHE_PALM_SIGN,
+                BlockRegister.MORICHE_PALM_WALL_SIGN,
+                BlockRegister.MORICHE_PALM_HANGING_SIGN,
+                BlockRegister.MORICHE_PALM_WALL_HANGING_SIGN,
+                BlockRegister.MORICHE_PALM_SAPLING,
+                BlockRegister.POTTED_MORICHE_PALM_SAPLING
         );
         ArrayList<DeferredBlock<Block>> tempList = new ArrayList<>(allBlocks);
         tempList.addAll(BlockRegister.AllMaterialsMap.values());
@@ -254,11 +275,16 @@ public class ModList
                 ItemRegister.POTATOES_AND_SPEARS_BOWL,
                 ItemRegister.FRUITS_BOWL,
                 //tree
-                    //mountain currant
+                    //mountain_currant
                 ItemRegister.MOUNTAIN_CURRANT_SIGN,
                 ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN,
                 ItemRegister.MOUNTAIN_CURRANT_BOAT,
-                ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT
+                ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT,
+                    //moriche_palm
+                ItemRegister.MORICHE_PALM_SIGN,
+                ItemRegister.MORICHE_PALM_HANGING_SIGN,
+                ItemRegister.MORICHE_PALM_BOAT,
+                ItemRegister.MORICHE_PALM_CHEST_BOAT
         );
         ArrayList<DeferredItem<Item>> tempList = new ArrayList<>(allItems);
         tempList.addAll(ItemRegister.AllMaterialsMap.values());

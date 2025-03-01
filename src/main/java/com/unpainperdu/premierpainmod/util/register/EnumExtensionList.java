@@ -20,4 +20,14 @@ public class EnumExtensionList
             (Supplier<Item>)() -> ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(),
             (Supplier<Item>)() -> Items.STICK,
             false
-    );}
+    );
+
+    public static final EnumProxy<Boat.Type> MORICHE_PALM_BOAT_TYPE = new EnumProxy<>(Boat.Type.class,
+            (Supplier<Block>)() -> BlockRegister.MORICHE_PALM_PLANKS.get(),
+            "premierpainmod:moriche_palm",
+            (Supplier<Item>)() -> ItemRegister.MORICHE_PALM_BOAT.get(),
+            (Supplier<Item>)() -> ItemRegister.MORICHE_PALM_CHEST_BOAT.get(),
+            (Supplier<Item>)() -> Items.STICK,
+            false
+    );
+}

@@ -78,6 +78,10 @@ public class ModBlockTagProvider extends BlockTagsProvider
             {
                 tag(ModBlockTags.MOUNTAIN_CURRANT_LOGS).add(block);
             }
+            if (blockName.contains("moriche_palm"))
+            {
+                tag(ModBlockTags.MORICHE_PALM_LOGS).add(block);
+            }
         }
 
         //planks
@@ -105,7 +109,9 @@ public class ModBlockTagProvider extends BlockTagsProvider
         ))
         {
             String blockName = getName(block);
-            if (blockName.contains("mountain_currant"))
+            if (blockName.contains("mountain_currant")
+                || blockName.contains("moriche_palm")
+            )
             {
                 this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
                 switch (block)
@@ -300,6 +306,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 || (blockName.contains("warped"))
                 || (blockName.contains("bamboo"))
                 || (blockName.contains("mountain_currant"))
+                || (blockName.contains("moriche_palm"))
         )
         {
             this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);

@@ -99,11 +99,16 @@ public class ItemRegister
     public static final DeferredItem<Item> POTATOES_AND_SPEARS_BOWL = stewFoodItemRegister("potatoes_and_spears_bowl", 6);
     public static final DeferredItem<Item> FRUITS_BOWL = stewFoodItemRegister("fruits_bowl", 9);
     //tree
-        //mountain currant
+        //mountain_currant
     public static final DeferredItem<Item> MOUNTAIN_CURRANT_SIGN = signItemRegister("mountain_currant_sign", () -> BlockRegister.MOUNTAIN_CURRANT_SIGN, () -> BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN);
     public static final DeferredItem<Item> MOUNTAIN_CURRANT_HANGING_SIGN = hangingSignItemRegister("mountain_currant_hanging_sign", () -> BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN, () -> BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN);
     public static final DeferredItem<Item> MOUNTAIN_CURRANT_BOAT = ITEMS.register("mountain_currant_boat", () -> new BoatItem(false, Boat.Type.valueOf("premierpainmod_MOUNTAIN_CURRANT"), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> MOUNTAIN_CURRANT_CHEST_BOAT = ITEMS.register("mountain_currant_chest_boat", () -> new BoatItem(true, Boat.Type.valueOf("premierpainmod_MOUNTAIN_CURRANT"), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+        //moriche_palm
+    public static final DeferredItem<Item> MORICHE_PALM_SIGN = signItemRegister("moriche_palm_sign", () -> BlockRegister.MORICHE_PALM_SIGN, () -> BlockRegister.MORICHE_PALM_WALL_SIGN);
+    public static final DeferredItem<Item> MORICHE_PALM_HANGING_SIGN = hangingSignItemRegister("moriche_palm_hanging_sign", () -> BlockRegister.MORICHE_PALM_HANGING_SIGN, () -> BlockRegister.MORICHE_PALM_WALL_HANGING_SIGN);
+    public static final DeferredItem<Item> MORICHE_PALM_BOAT = ITEMS.register("moriche_palm_boat", () -> new BoatItem(false, Boat.Type.valueOf("premierpainmod_MORICHE_PALM"), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> MORICHE_PALM_CHEST_BOAT = ITEMS.register("moriche_palm_chest_boat", () -> new BoatItem(true, Boat.Type.valueOf("premierpainmod_MORICHE_PALM"), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     private static Map<String, DeferredItem<Item>> createAllMaterialsItems()
     {

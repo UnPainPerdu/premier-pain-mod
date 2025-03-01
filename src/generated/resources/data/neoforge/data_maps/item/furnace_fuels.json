@@ -273,6 +273,54 @@
     "premierpainmod:mangrove_villager_throne_chair": {
       "burn_time": 300
     },
+    "premierpainmod:moriche_palm_log": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_planks": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_bench": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_brazier": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_brewing_station": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_chiseled_head": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_couch": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_musical_fridge": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_pedestal": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_shelf": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_statue": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_table": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_wood": {
+      "burn_time": 300
+    },
     "premierpainmod:mountain_currant_log": {
       "burn_time": 300
     },
@@ -436,6 +484,12 @@
       "burn_time": 300
     },
     "premierpainmod:spruce_villager_throne_chair": {
+      "burn_time": 300
+    },
+    "premierpainmod:stripped_moriche_palm_log": {
+      "burn_time": 300
+    },
+    "premierpainmod:stripped_moriche_palm_wood": {
       "burn_time": 300
     },
     "premierpainmod:stripped_mountain_currant_log": {

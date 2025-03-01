@@ -1,0 +1,10 @@
+{
+  "type": "premierpainmod:villager_workshopping",
+  "ingredient": {
+    "item": "premierpainmod:moriche_palm_planks"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:moriche_palm_villager_bench"
+  }
+}

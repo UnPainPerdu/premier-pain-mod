@@ -51,6 +51,7 @@ public class ClientRegisterHandler
     public static void onClientSetup(FMLClientSetupEvent event)
     {
         Sheets.addWoodType(ModWoodTypes.MOUNTAIN_CURRANT);
+        Sheets.addWoodType(ModWoodTypes.MORICHE_PALM);
         event.enqueueWork(() ->  FluidRender.setRenderLayerForFluid(event));
     }
 

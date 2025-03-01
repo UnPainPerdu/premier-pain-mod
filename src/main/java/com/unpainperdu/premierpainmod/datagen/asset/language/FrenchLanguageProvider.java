@@ -39,10 +39,6 @@ public class FrenchLanguageProvider extends LanguageProvider
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Assez! J'en ai enduré bien assez...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Pierre chantante du Premier Pain");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"De la cuisson du pain au maniement de l'épée, nous venons de si loin!");
-            //tree
-                //mountain currant
-        add(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), "Bateau en groseillier des montagnes");
-        add(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), "Bateau de stockage en groseillier des montagnes");
             //beer
                 //empty
         add(ItemRegister.EMPTY_GLASS.get(), "Verre vide polymorphe");
@@ -144,7 +140,7 @@ public class FrenchLanguageProvider extends LanguageProvider
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");
             // villager workshop
-        villagerWorkshopTranslation();
+        add(BlockRegister.VILLAGER_WORKSHOP.get(),"Atelier du villageois");
             //vegetation
                 //tall grass
         add(BlockRegister.SKY_SPEARS.get(), "Lances du ciel");
@@ -167,6 +163,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(BlockRegister.JELLYSHROOM.get(), "Champigelée");
             //tree
         treeTranslator("mountain_currant", "groseillier des montagnes");
+        treeTranslator("moriche_palm", "Palmier-bâche");
             // "All material"
         globalAllMaterialTranslation("oak", "chêne");
         globalAllMaterialTranslation("birch","bouleau");
@@ -211,6 +208,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("dripstone_block","spéléothème");
         globalAllMaterialTranslation("bedrock","bedrock");
         globalAllMaterialTranslation("mountain_currant","groseillier des montagnes");
+        globalAllMaterialTranslation("moriche_palm","Palmier-bâche");
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix, String translationSuffix)
@@ -250,10 +248,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         String translationPedestal = "Brazero en ";
         add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationPedestal + translation);
     }
-    private void villagerWorkshopTranslation()
-    {
-        add("block."+PremierPainMod.MOD_ID +".villager_workshop","Atelier du villageois");
-    }
+
     private void tableTranslation(String suffix, String translation)
     {
         String pedestal = "_villager_table";
@@ -341,7 +336,7 @@ public class FrenchLanguageProvider extends LanguageProvider
     private void treeTranslator(String nameOfTree, String translation)
     {
         String block = "block." + PremierPainMod.MOD_ID + ".";
-        String item = "block." + PremierPainMod.MOD_ID + ".";
+        String item = "item." + PremierPainMod.MOD_ID + ".";
         add(block + nameOfTree + "_log","Bûche de " + translation);
         add(block + nameOfTree + "_wood", "Bois de " + translation);
         add(block + "stripped_" + nameOfTree + "_log", "Bûche de " + translation + " écorcé");
@@ -356,8 +351,10 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(block + nameOfTree + "_fence_gate", "Portillon en " + translation);
         add(block + nameOfTree + "_door", "Porte en " + translation);
         add(block + nameOfTree + "_trapdoor", "Trappe en " + translation);
-        add(item + nameOfTree + "_sign", "Pancarte en " + translation);
-        add(item + nameOfTree + "_hanging_sign", "Pancarte suspendue en " + translation);
-        add(item + nameOfTree + "_sapling", "Pousse de " + translation);
+        add(block + nameOfTree + "_sign", "Pancarte en " + translation);
+        add(block + nameOfTree + "_hanging_sign", "Pancarte suspendue en " + translation);
+        add(block + nameOfTree + "_sapling", "Pousse de " + translation);
+        add(item + nameOfTree + "_boat", "Bateau en " + translation);
+        add(item + nameOfTree + "_chest_boat", "Bateau de stockage en " + translation);
     }
 }

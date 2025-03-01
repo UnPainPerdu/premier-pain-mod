@@ -41,10 +41,6 @@ public class EnglishLanguageProvider extends LanguageProvider
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
         add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Premier Pain Singing Stone");
         descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"From backing bread to rise the sword, we come from so far!");
-            //tree
-                //mountain currant
-        add(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), "Mountain Currant Boat");
-        add(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), "Mountain Currant Boat with Chest");
             //beer
                 //empty
         add(ItemRegister.EMPTY_GLASS.get(), "Empty Polymorphic Glass");
@@ -146,7 +142,7 @@ public class EnglishLanguageProvider extends LanguageProvider
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");
             // villager workshop
-        villagerWorkshopTranslation();
+        add(BlockRegister.VILLAGER_WORKSHOP.get(),"Villager Workshop");
             //vegetation
                 //tall grass
         add(BlockRegister.SKY_SPEARS.get(), "Sky Spears");
@@ -169,383 +165,162 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(BlockRegister.JELLYSHROOM.get(), "Jellyshroom");
             //tree
         treeTranslator("mountain_currant", "Mountain Currant");
+        treeTranslator("moriche_palm", "Moriche Palm");
             // "All material"
-        globalAllMaterialTranslation("oak");
-        globalAllMaterialTranslation("birch");
-        globalAllMaterialTranslation("spruce");
-        globalAllMaterialTranslation("jungle");
-        globalAllMaterialTranslation("acacia");
-        globalAllMaterialTranslation("dark","oak",true);
-        globalAllMaterialTranslation("pale","oak",true);
-        globalAllMaterialTranslation("mangrove");
-        globalAllMaterialTranslation("cherry");
-        globalAllMaterialTranslation("crimson");
-        globalAllMaterialTranslation("warped");
-        globalAllMaterialTranslation("bamboo");
-        globalAllMaterialTranslation("stone");
-        globalAllMaterialTranslation("mossy","stone",true);
-        globalAllMaterialTranslation("andesite");
-        globalAllMaterialTranslation("diorite");
-        globalAllMaterialTranslation("granite");
-        globalAllMaterialTranslation("prismarine");
-        globalAllMaterialTranslation("blackstone");
-        globalAllMaterialTranslation("purpur","block",false);
-        globalAllMaterialTranslation("deepslate");
-        globalAllMaterialTranslation("tuff");
-        globalAllMaterialTranslation("packed","mud",true);
-        globalAllMaterialTranslation("sandstone");
-        globalAllMaterialTranslation("red","sandstone",true);
-        globalAllMaterialTranslation("quartz","block",false);
-        globalAllMaterialTranslation("nether","bricks",true);
-        globalAllMaterialTranslation("basalt");
-        globalAllMaterialTranslation("end","stone",true);
-        globalAllMaterialTranslation("coal","block",false);
-        globalAllMaterialTranslation("iron","block",false);
-        globalAllMaterialTranslation("gold","block",false);
-        globalAllMaterialTranslation("redstone","block",false);
-        globalAllMaterialTranslation("emerald","block",false);
-        globalAllMaterialTranslation("diamond","block",false);
-        globalAllMaterialTranslation("copper","block",false);
-        globalAllMaterialTranslation("lapis","block",false);
-        globalAllMaterialTranslation("netherite","block",false);
-        globalAllMaterialTranslation("obsidian");
-        globalAllMaterialTranslation("amethyst","block",false);
-        globalAllMaterialTranslation("dripstone","block",false);
-        globalAllMaterialTranslation("bedrock");
-        globalAllMaterialTranslation("mountain", "currant", true);
+        globalAllMaterialTranslation("oak", "Oak");
+        globalAllMaterialTranslation("birch","Birch");
+        globalAllMaterialTranslation("spruce","Spruce");
+        globalAllMaterialTranslation("jungle","Jungle");
+        globalAllMaterialTranslation("acacia","Acacia");
+        globalAllMaterialTranslation("dark_oak","Dark Oak");
+        globalAllMaterialTranslation("pale_oak","Pale Oak");
+        globalAllMaterialTranslation("mangrove","Mangrove");
+        globalAllMaterialTranslation("cherry","Cherry");
+        globalAllMaterialTranslation("crimson", "Crimson");
+        globalAllMaterialTranslation("warped","Warped");
+        globalAllMaterialTranslation("bamboo","Bamboo");
+        globalAllMaterialTranslation("stone","Stone");
+        globalAllMaterialTranslation("mossy_stone","Mossy Stone");
+        globalAllMaterialTranslation("andesite","Andesite");
+        globalAllMaterialTranslation("diorite","Diorite");
+        globalAllMaterialTranslation("granite","Granite");
+        globalAllMaterialTranslation("prismarine","Prismarine");
+        globalAllMaterialTranslation("blackstone","Blackstone");
+        globalAllMaterialTranslation("purpur_block","Purpur");
+        globalAllMaterialTranslation("deepslate","Deepslate");
+        globalAllMaterialTranslation("tuff","Tuff");
+        globalAllMaterialTranslation("packed_mud","Packed Mud");
+        globalAllMaterialTranslation("sandstone","Sandstone");
+        globalAllMaterialTranslation("red_sandstone","Red Sandstone");
+        globalAllMaterialTranslation("quartz_block","Quartz");
+        globalAllMaterialTranslation("nether_bricks","Nether Bricks");
+        globalAllMaterialTranslation("basalt","Basalt");
+        globalAllMaterialTranslation("end_stone","End Stone");
+        globalAllMaterialTranslation("coal_block","Coal");
+        globalAllMaterialTranslation("iron_block","Iron");
+        globalAllMaterialTranslation("gold_block","Gold");
+        globalAllMaterialTranslation("redstone_block","Redstone");
+        globalAllMaterialTranslation("emerald_block","Emerald");
+        globalAllMaterialTranslation("diamond_block","Diamond");
+        globalAllMaterialTranslation("copper_block","Copper");
+        globalAllMaterialTranslation("lapis_block","Lapis");
+        globalAllMaterialTranslation("netherite_block","Netherite");
+        globalAllMaterialTranslation("obsidian","Obsidian");
+        globalAllMaterialTranslation("amethyst_block","Amethyst");
+        globalAllMaterialTranslation("dripstone_block","Dripstone");
+        globalAllMaterialTranslation("bedrock","Bedrock");
+        globalAllMaterialTranslation("mountain_currant","Mountain Currant");
+        globalAllMaterialTranslation("moriche_palm","Moriche Palm");
     }
     //Only use for "all material" blocks
-    private void globalAllMaterialTranslation(String suffix)
+    private void globalAllMaterialTranslation(String suffix, String translationSuffix)
     {
-        statueTranslation(suffix);
-        pedestalTranslation(suffix);
-        brazierTranslation(suffix);
-        tableTranslation(suffix);
-        chairTranslation(suffix);
-        throneChairTranslation(suffix);
-        drawerTranslation(suffix);
-        shelfTranslation(suffix);
-        benchTranslation(suffix);
-        couchTranslation(suffix);
-        brewingStationTranslation(suffix);
-        villagerMusicalFridgeTranslation(suffix);
-        villagerChiseledHeadTranslation(suffix);
-    }
-    //Only use for "all material" blocks
-    private void globalAllMaterialTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
-    {
-        statueTranslation(suffix1, suffix2, isSuffix2Translate);
-        pedestalTranslation(suffix1, suffix2, isSuffix2Translate);
-        brazierTranslation(suffix1, suffix2, isSuffix2Translate);
-        tableTranslation(suffix1, suffix2, isSuffix2Translate);
-        chairTranslation(suffix1, suffix2, isSuffix2Translate);
-        throneChairTranslation(suffix1, suffix2, isSuffix2Translate);
-        drawerTranslation(suffix1, suffix2, isSuffix2Translate);
-        shelfTranslation(suffix1, suffix2, isSuffix2Translate);
-        benchTranslation(suffix1, suffix2, isSuffix2Translate);
-        couchTranslation(suffix1, suffix2, isSuffix2Translate);
-        brewingStationTranslation(suffix1, suffix2, isSuffix2Translate);
-        villagerMusicalFridgeTranslation(suffix1, suffix2, isSuffix2Translate);
-        villagerChiseledHeadTranslation(suffix1, suffix2, isSuffix2Translate);
+        statueTranslation(suffix, translationSuffix);
+        pedestalTranslation(suffix, translationSuffix);
+        brazierTranslation(suffix, translationSuffix);
+        tableTranslation(suffix, translationSuffix);
+        chairTranslation(suffix, translationSuffix);
+        throneChairTranslation(suffix, translationSuffix);
+        drawerTranslation(suffix, translationSuffix);
+        shelfTranslation(suffix, translationSuffix);
+        benchTranslation(suffix, translationSuffix);
+        couchTranslation(suffix, translationSuffix);
+        brewingStationTranslation(suffix, translationSuffix);
+        villagerMusicalFridgeTranslation(suffix, translationSuffix);
+        villagerChiseledHeadTranslation(suffix, translationSuffix);
     }
 
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' villager statue"
-    private void statueTranslation(String suffix)
+    private void statueTranslation(String suffix, String translationSuffix)
     {
-        String translation = capitalize(suffix);
         String statue = "_villager_statue";
         String translationStatue = " villager statue";
-        add("block."+PremierPainMod.MOD_ID +"."+suffix+statue,translation+translationStatue);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+statue,translationSuffix+translationStatue);
     }
-    // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix1' 'suffix2' villager statue"
-    private void statueTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
-    {
-        String translation1 = capitalize(suffix1);
-        String statue = "_villager_statue";
-        String translationStatue = " villager statue";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + statue, translation1 + translationStatue);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + statue, translation1 +" "+ suffix2 + translationStatue);
-        }
-    }
+
     // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix' pedestal"
-    private void pedestalTranslation(String suffix)
+    private void pedestalTranslation(String suffix, String translationSuffix)
     {
-        String translation = capitalize(suffix);
         String pedestal = "_villager_pedestal";
         String translationPedestal = " villager pedestal";
-        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translation+translationPedestal);
-    }
-    // will create translation : "block.premierpainmod.suffix_villager_statue": "'Suffix1' 'suffix2' pedestal"
-    private void pedestalTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
-    {
-        String translation1 = capitalize(suffix1);
-        String pedestal = "_villager_pedestal";
-        String translationPedestal = " villager pedestal";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 + translationPedestal);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 +" "+ suffix2 + translationPedestal);
-        }
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationSuffix+translationPedestal);
     }
 
-    private void brazierTranslation(String suffix)
+    private void brazierTranslation(String suffix, String translationSuffix)
     {
-        String translation = capitalize(suffix);
         String pedestal = "_villager_brazier";
         String translationPedestal = " villager brazier";
-        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translation+translationPedestal);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix+pedestal,translationSuffix+translationPedestal);
     }
 
-    private void brazierTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void tableTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String pedestal = "_villager_brazier";
-        String translationPedestal = " villager brazier";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 + translationPedestal);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + pedestal, translation1 +" "+ suffix2 + translationPedestal);
-        }
-    }
-    private void villagerWorkshopTranslation()
-    {
-        add("block."+PremierPainMod.MOD_ID +".villager_workshop","Villager Workshop");
-    }
-    private void tableTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String table = "_villager_table";
         String translationTable = " villager table";
-        add("block."+PremierPainMod.MOD_ID +"."+ suffix + table,translation + translationTable);
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + table,translationSuffix + translationTable);
     }
 
-    private void tableTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void chairTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String table = "_villager_table";
-        String translationTable = " villager table";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-    private void chairTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String table = "_villager_chair";
         String translationTable = " villager chair";
-        add("block."+PremierPainMod.MOD_ID +"."+ suffix + table,translation + translationTable);
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + table,translationSuffix + translationTable);
     }
 
-    private void chairTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void throneChairTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String table = "_villager_chair";
-        String translationTable = " villager chair";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-    private void throneChairTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String table = "_villager_throne_chair";
         String translationTable = " villager throne chair";
-        add("block."+PremierPainMod.MOD_ID +"."+ suffix + table,translation + translationTable);
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + table,translationSuffix + translationTable);
     }
 
-    private void throneChairTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void drawerTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String table = "_villager_throne_chair";
-        String translationTable = " villager throne chair";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-    private void drawerTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String table = "_villager_drawer";
         String translationTable = " villager drawer";
-        add("block."+PremierPainMod.MOD_ID +"."+ suffix + table,translation + translationTable);
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + table,translationSuffix + translationTable);
     }
 
-    private void drawerTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void shelfTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String table = "_villager_drawer";
-        String translationTable = " villager drawer";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-    private void shelfTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
-        String shelfItem = "_villager_shelf";
-        String wallShelf = "_wall_villager_shelf";
         String standingShelf = "_standing_villager_shelf";
         String translationTable = " villager shelf";
-        add("block."+PremierPainMod.MOD_ID +"."+ suffix + standingShelf,translation + translationTable);
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + standingShelf,translationSuffix + translationTable);
     }
 
-    private void shelfTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void benchTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String translationTable = " villager shelf";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + "_standing_villager_shelf", translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + "_standing_villager_shelf", translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-
-    private void benchTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String bench = "_villager_bench";
         String translationTable = " villager bench";
-        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translation + translationTable);
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translationSuffix + translationTable);
     }
 
-    private void benchTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void couchTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String table = "_villager_bench";
-        String translationTable = " villager bench";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-    private void couchTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String bench = "_villager_couch";
         String translationTable = " villager couch";
-        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translation + translationTable);
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translationSuffix + translationTable);
     }
 
-    private void couchTranslation(String suffix1, String suffix2, Boolean isSuffix2Translate)
+    private void brewingStationTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String table = "_villager_couch";
-        String translationTable = " villager couch";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-
-    private void brewingStationTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String bench = "_villager_brewing_station";
         String translationTable = " villager brewing station";
-        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translation + translationTable);
+        add("block."+PremierPainMod.MOD_ID +"."+ suffix + bench,translationSuffix + translationTable);
     }
 
-    private void brewingStationTranslation(String suffix1, String suffix2, boolean isSuffix2Translate)
+    private void villagerMusicalFridgeTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String table = "_villager_brewing_station";
-        String translationTable = " villager brewing station";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-
-    private void villagerMusicalFridgeTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String fridge = "_villager_musical_fridge";
         String translationFridge = " villager musical fridge";
-        add("block."+PremierPainMod.MOD_ID +"."+suffix + fridge, translation + translationFridge);
+        add("block."+PremierPainMod.MOD_ID +"."+suffix + fridge, translationSuffix + translationFridge);
     }
 
-    private void villagerMusicalFridgeTranslation(String suffix1, String suffix2, boolean isSuffix2Translate)
+    private void villagerChiseledHeadTranslation(String suffix, String translationSuffix)
     {
-        String translation1 = capitalize(suffix1);
-        String table = "_villager_musical_fridge";
-        String translationTable = " villager musical fridge";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 + translationTable);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + table, translation1 +" "+ suffix2 + translationTable);
-        }
-    }
-
-    private void villagerChiseledHeadTranslation(String suffix)
-    {
-        String translation = capitalize(suffix);
         String chiseledHead = "_villager_chiseled_head";
         String translationChiseledHead = " Villager Chiseled Head";
-        add("block."+PremierPainMod.MOD_ID +"."+suffix + chiseledHead, translation + translationChiseledHead);
-    }
-
-    private void villagerChiseledHeadTranslation(String suffix1, String suffix2, boolean isSuffix2Translate)
-    {
-        String translation1 = capitalize(suffix1);
-        String chiseledHead = "_villager_chiseled_head";
-        String translationChiseledHead = " Villager Chiseled Head";
-        if (!isSuffix2Translate)
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + chiseledHead, translation1 + translationChiseledHead);
-        }
-        else
-        {
-            add("block." + PremierPainMod.MOD_ID + "." + suffix1 + "_" + suffix2 + chiseledHead, translation1 +" "+ suffix2 + translationChiseledHead);
-        }
+        add("block."+PremierPainMod.MOD_ID +"."+suffix + chiseledHead, translationSuffix + translationChiseledHead);
     }
 
     private void deathTranslation(String id, String translation)
@@ -569,7 +344,7 @@ public class EnglishLanguageProvider extends LanguageProvider
     private void treeTranslator(String nameOfTree, String translation)
     {
         String block = "block." + PremierPainMod.MOD_ID + ".";
-        String item = "block." + PremierPainMod.MOD_ID + ".";
+        String item = "item." + PremierPainMod.MOD_ID + ".";
         add(block + nameOfTree + "_log",translation + " Log");
         add(block + nameOfTree + "_wood",translation + " Wood");
         add(block + "stripped_" + nameOfTree + "_log", "Stripped " + translation + " Log");
@@ -584,8 +359,10 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(block + nameOfTree + "_fence_gate",translation + " Fence Gate");
         add(block + nameOfTree + "_door",translation + " Door");
         add(block + nameOfTree + "_trapdoor",translation + " Trapdoor");
-        add(item + nameOfTree + "_sign",translation + " Sign");
-        add(item + nameOfTree + "_hanging_sign",translation + " Hanging Sign");
-        add(item + nameOfTree + "_sapling",translation + " Sapling");
+        add(block + nameOfTree + "_sign",translation + " Sign");
+        add(block + nameOfTree + "_hanging_sign",translation + " Hanging Sign");
+        add(block + nameOfTree + "_sapling",translation + " Sapling");
+        add(item + nameOfTree + "_boat", translation + " Boat");
+        add(item + nameOfTree + "_chest_boat", translation + " Boat with Chest");
     }
 }

@@ -118,6 +118,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE, "_mod_flower");
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE, "_mod_flower");
             //wood
+                //mountain_currant
         oneItemToAnotherOneRecipeBuilder(ModItemTags.MOUNTAIN_CURRANT_LOGS, BlockRegister.MOUNTAIN_CURRANT_PLANKS, 4);
         fourSameIntoOneRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_WOOD.get(), BlockRegister.MOUNTAIN_CURRANT_LOG.get(), 3);
         fourSameIntoOneRecipeBuilder(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get(), 3);
@@ -133,12 +134,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         hangingSignRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get());
         boatRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
         boatWithChestRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), ItemRegister.MOUNTAIN_CURRANT_BOAT.get());
+            //moriche_palm
+        oneItemToAnotherOneRecipeBuilder(ModItemTags.MORICHE_PALM_LOGS, BlockRegister.MORICHE_PALM_PLANKS, 4);
+        fourSameIntoOneRecipeBuilder(BlockRegister.MORICHE_PALM_WOOD.get(), BlockRegister.MORICHE_PALM_LOG.get(), 3);
+        fourSameIntoOneRecipeBuilder(BlockRegister.STRIPPED_MORICHE_PALM_WOOD.get(), BlockRegister.STRIPPED_MORICHE_PALM_LOG.get(), 3);
+        stairsRecipeBuilder(BlockRegister.MORICHE_PALM_STAIRS.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        slabRecipeBuilder(BlockRegister.MORICHE_PALM_SLAB.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        buttonRecipeBuilder(BlockRegister.MORICHE_PALM_BUTTON.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        pressurePlateRecipeBuilder(BlockRegister.MORICHE_PALM_PRESSURE_PLATE.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        fenceRecipeBuilder(BlockRegister.MORICHE_PALM_FENCE.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        fenceGateRecipeBuilder(BlockRegister.MORICHE_PALM_FENCE_GATE.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        doorRecipeBuilder(BlockRegister.MORICHE_PALM_DOOR.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        trapdoorRecipeBuilder(BlockRegister.MORICHE_PALM_TRAPDOOR.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        signRecipeBuilder(ItemRegister.MORICHE_PALM_SIGN.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        hangingSignRecipeBuilder(ItemRegister.MORICHE_PALM_HANGING_SIGN.get(), BlockRegister.STRIPPED_MORICHE_PALM_LOG.get());
+        boatRecipeBuilder(ItemRegister.MORICHE_PALM_BOAT.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
+        boatWithChestRecipeBuilder(ItemRegister.MORICHE_PALM_CHEST_BOAT.get(), ItemRegister.MORICHE_PALM_BOAT.get());
             //all materials recipes
         for(Block block : ModList.getAllMaterialsBlocks())
         {
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
             if(!(block instanceof VillagerShelf))
             {
+                // order mater for compose material
                 //oak like
                 if (blockName.contains("dark_oak"))
                 {
@@ -169,6 +187,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 else if (blockName.contains("mountain_currant"))
                 {
                     buildingBlocksRecipeBluilder(block, BlockRegister.MOUNTAIN_CURRANT_PLANKS);
+                }
+                else if (blockName.contains("moriche_palm"))
+                {
+                    buildingBlocksRecipeBluilder(block, BlockRegister.MORICHE_PALM_PLANKS);
                 }
                 else if (blockName.contains("end_stone"))
                 {
@@ -274,23 +296,45 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 }
                 //stone like
                 //sandstone like
-                else if (itemName.contains("red_sandstone")) {
+                else if (itemName.contains("red_sandstone"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.RED_SANDSTONE);
-                } else if (itemName.contains("sandstone")) {
+                }
+                else if (itemName.contains("sandstone"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.SANDSTONE);
                 }
                 //other
-                else if (itemName.contains("mossy_stone")) {
+                else if (itemName.contains("mossy_stone"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.MOSSY_COBBLESTONE);
-                } else if (itemName.contains("end_stone")) {
+                }
+                else if (itemName.contains("mountain_currant"))
+                {
+                    buildingBlocksRecipeBluilder(item, BlockRegister.MOUNTAIN_CURRANT_PLANKS);
+                }
+                else if (itemName.contains("moriche_palm"))
+                {
+                    buildingBlocksRecipeBluilder(item, BlockRegister.MORICHE_PALM_PLANKS);
+                }
+                else if (itemName.contains("end_stone"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.END_STONE);
-                } else if (itemName.contains("blackstone")) {
+                }
+                else if (itemName.contains("blackstone"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.BLACKSTONE);
-                } else if (itemName.contains("redstone")) {
+                }
+                else if (itemName.contains("redstone"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.REDSTONE_BLOCK);
-                } else if (itemName.contains("dripstone")) {
+                }
+                else if (itemName.contains("dripstone"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.DRIPSTONE_BLOCK);
-                } else if (itemName.contains("stone")) {
+                }
+                else if (itemName.contains("stone"))
+                {
                     buildingBlocksRecipeBluilder(item, Blocks.COBBLESTONE);
                 }
                 //other
