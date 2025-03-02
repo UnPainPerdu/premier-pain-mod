@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.client.event;
 
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ModList;
 import net.minecraft.client.renderer.BiomeColors;
@@ -22,7 +23,7 @@ public class BlockAndItemTintingEvent
     {
         //vegetation
             //tree
-        setTintingForVegetation(event, BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
+        setTintingForFruitLeaves(event, BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
         setTintingForVegetation(event, BlockRegister.MORICHE_PALM_LEAVES.get());
         for (Block block : ModList.getAllBlocksFromClass(VillagerBrewingStation.class))
         {
@@ -62,5 +63,24 @@ public class BlockAndItemTintingEvent
                         ? BiomeColors.getAverageFoliageColor(level, pos)
                         : FoliageColor.getDefaultColor(),
                 block);
+    }
+
+    private static void setTintingForFruitLeaves(RegisterColorHandlersEvent.Block event, Block block)
+    {
+            event.register((state, level, pos, tintIndex) -> getColorForFruitLeaves(state, level, pos, tintIndex), block);
+    }
+
+    private static int getColorForFruitLeaves(BlockState state, BlockAndTintGetter level, BlockPos pos, int tintIndex)
+    {
+        int color = 0xFFFFFF;
+
+        if (tintIndex == 5 || !state.getValue(ModLeavesBlock.HAS_FRUIT))
+        {
+            color = level != null && pos != null
+                    ? BiomeColors.getAverageFoliageColor(level, pos)
+                    : FoliageColor.getDefaultColor();
+        }
+
+        return color;
     }
 }

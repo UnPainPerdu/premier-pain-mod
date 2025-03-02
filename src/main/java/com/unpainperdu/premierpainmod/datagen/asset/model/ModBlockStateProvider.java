@@ -1252,18 +1252,26 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void fruitLeavesWithItem(Block leaves, String folderInTree)
     {
         String name = getName(leaves);
+        String leavesTexture = "block/tree/" + folderInTree + "/" + name;
+        String fruitLeavesTexture = "block/tree/" + folderInTree + "/" + name + "_fruit";
+        String modelPath = "premierpainmod:block/vegetation/tree/leaves_with_fruit";
+
         ModelFile baseModel = models().leaves(name, createResourceLocation("block/tree/" + folderInTree + "/" + name)).renderType("cutout");
-        ModelFile fruitModel = models().leaves(name + "_fruit", createResourceLocation("block/tree/" + folderInTree + "/" + name + "_fruit")).renderType("cutout");
+
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(leaves);
         variantBuilder.forAllStates(state ->
                 {
-                    ModelFile finalModel = baseModel;
                     if (state.getValue(ModLeavesBlock.HAS_FRUIT))
                     {
-                        finalModel = fruitModel;
+                        return ConfiguredModel.builder()
+                                .modelFile(models().withExistingParent(name + "_fruit", modelPath)
+                                        .texture("0",leavesTexture)
+                                        .texture("1", fruitLeavesTexture)
+                                        .renderType("cutout"))
+                                .build();
                     }
                     return ConfiguredModel.builder()
-                            .modelFile(finalModel)
+                            .modelFile(baseModel)
                             .build();
                 });
         itemModels().getBuilder(getKey(leaves).getPath()).parent(baseModel);
