@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-01T12:03:05.5525373	Item Models: premierpainmod
+// 1.21.1	2025-03-02T10:47:21.962078	Item Models: premierpainmod
 8c73037c00ef33837d5eda43f190076431a19b74 assets/premierpainmod/models/item/acacia_villager_shelf.json
 4c7a6015d5c4273926503fb23636cf3aefb91ac0 assets/premierpainmod/models/item/amethyst_block_villager_shelf.json
 ed3716b233273d7ba9c0084fc2e129134e4632a5 assets/premierpainmod/models/item/andesite_villager_shelf.json
@@ -61,6 +61,7 @@ cf13c201b1c2ed16a11348b815fc14537f8b0702 assets/premierpainmod/models/item/la_ch
 387276e8ae2df9728dda36b6266f8dfb7f0b9405 assets/premierpainmod/models/item/mangrove_villager_shelf.json
 0f0fdcd4417e4bcea106d7b9c6b3f65adb16f0a8 assets/premierpainmod/models/item/moriche_palm_boat.json
 1a639d531603e8fe312f19c4e0b7d66a45adf919 assets/premierpainmod/models/item/moriche_palm_chest_boat.json
+b39690fae6e454790850b14fe1289b2b91cd9c30 assets/premierpainmod/models/item/moriche_palm_fruit.json
 e7089830ac17f7ecd52fc00d566a8516ed6c2bea assets/premierpainmod/models/item/moriche_palm_hanging_sign.json
 3a3a05b49f0e9b55ab129ec3b29201a4255d5455 assets/premierpainmod/models/item/moriche_palm_sign.json
 85d61db4bfebd93636c4cca3bc9658a1964e8d23 assets/premierpainmod/models/item/moriche_palm_villager_shelf.json

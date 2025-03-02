@@ -96,7 +96,8 @@ public class ModItemTagProvider extends ItemTagsProvider
         this.tag(Tags.Items.FOODS_FRUIT).add(
                 ItemRegister.MOUNTAIN_CURRANT.get(),
                 ItemRegister.CACTUS_FLOWER_FRUIT.get(),
-                ItemRegister.SKY_SPEARS_FRUIT.get()
+                ItemRegister.SKY_SPEARS_FRUIT.get(),
+                ItemRegister.MORICHE_PALM_FRUIT.get()
                 );
     }
 

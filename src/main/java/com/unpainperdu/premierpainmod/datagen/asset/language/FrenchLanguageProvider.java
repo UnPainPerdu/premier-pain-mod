@@ -131,6 +131,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Fruit de fleure de cactus");
         add(ItemRegister.JELLY_HAT.get(), "Chapeau-gelée");
         add(ItemRegister.MOUNTAIN_CURRANT.get(), "Groseille des montagnes");
+        add(ItemRegister.MORICHE_PALM_FRUIT.get(), "Fruit de palmier-bâche");
                 //stew
         add(ItemRegister.JELLYSHROOM_STEW.get(), "Soupe de champigelée");
         add(ItemRegister.CACTUS_STEW.get(), "Soupe de fruits de cactus");

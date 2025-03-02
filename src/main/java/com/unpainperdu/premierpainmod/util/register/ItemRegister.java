@@ -93,6 +93,7 @@ public class ItemRegister
     public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit",64,4,0.3f);
     public static final DeferredItem<Item> JELLY_HAT = basicFoodItemRegister("jelly_hat",64,3,0.10f);
     public static final DeferredItem<Item> MOUNTAIN_CURRANT = basicFoodItemRegister("mountain_currant",64,4,0.2f);
+    public static final DeferredItem<Item> MORICHE_PALM_FRUIT = basicFoodItemRegister("moriche_palm_fruit",64,3,0.2f);
         //stew
     public static final DeferredItem<Item> JELLYSHROOM_STEW = stewFoodItemRegister("jellyshroom_stew", 5);
     public static final DeferredItem<Item> CACTUS_STEW = stewFoodItemRegister("cactus_stew", 6);

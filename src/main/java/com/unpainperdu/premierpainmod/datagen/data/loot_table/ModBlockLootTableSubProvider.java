@@ -119,8 +119,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get());
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_MORICHE_PALM_SAPLING.get(), BlockRegister.MORICHE_PALM_SAPLING.get());
         //leaves
-        leavesWithFruitLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), ItemRegister.MOUNTAIN_CURRANT.get());
-        leavesLootTable(BlockRegister.MORICHE_PALM_LEAVES.get(), BlockRegister.MORICHE_PALM_SAPLING.get());
+        leavesWithFruitRightClickLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), ItemRegister.MOUNTAIN_CURRANT.get());
+        leavesWithFruitLikeOakLootTable(BlockRegister.MORICHE_PALM_LEAVES.get(), BlockRegister.MORICHE_PALM_SAPLING.get(), ItemRegister.MORICHE_PALM_FRUIT.get());
     }
 
     private void carpetedBlockTableGenerator(Block block)
@@ -500,7 +500,27 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         super.add(leave, createLeavesDrops(leave, sapling, NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
-    private void leavesWithFruitLootTable(Block leave, Block sapling, Item fruit)
+    private void leavesWithFruitLikeOakLootTable(Block leave, Block sapling, Item fruit)
+    {
+        LootTable.Builder oakLikeLeavesDrops = this.createLeavesDrops(leave, sapling, NORMAL_LEAVES_SAPLING_CHANCES)
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .when(this.doesNotHaveShearsOrSilkTouch())
+                                .add(
+                                        ((LootPoolSingletonContainer.Builder)this.applyExplosionCondition(leave, LootItem.lootTableItem(fruit)))
+                                                .when(
+                                                        BonusLevelTableCondition.bonusLevelFlatChance(
+                                                                this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE), 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F
+                                                        )
+                                                )
+                                )
+                );
+
+        super.add(leave, oakLikeLeavesDrops);
+    }
+
+    private void leavesWithFruitRightClickLootTable(Block leave, Block sapling, Item fruit)
     {
         super.add(leave, createLeavesWithFruitDispatchTable(leave, sapling, fruit, NORMAL_LEAVES_SAPLING_CHANCES));
     }

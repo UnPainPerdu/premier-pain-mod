@@ -269,6 +269,7 @@ public class ModList
                 ItemRegister.SKY_SPEARS_FRUIT,
                 ItemRegister.JELLY_HAT,
                 ItemRegister.MOUNTAIN_CURRANT,
+                ItemRegister.MORICHE_PALM_FRUIT,
                     //stew
                 ItemRegister.JELLYSHROOM_STEW,
                 ItemRegister.CACTUS_STEW,
