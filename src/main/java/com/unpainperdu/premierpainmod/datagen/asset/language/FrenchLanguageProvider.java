@@ -132,6 +132,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.JELLY_HAT.get(), "Chapeau-gelée");
         add(ItemRegister.MOUNTAIN_CURRANT.get(), "Groseille des montagnes");
         add(ItemRegister.MORICHE_PALM_FRUIT.get(), "Fruit de palmier-bâche");
+        add(ItemRegister.ACHIOTE_FRUIT.get(), "Fruit de roucou");
                 //stew
         add(ItemRegister.JELLYSHROOM_STEW.get(), "Soupe de champigelée");
         add(ItemRegister.CACTUS_STEW.get(), "Soupe de fruits de cactus");
@@ -164,7 +165,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(BlockRegister.JELLYSHROOM.get(), "Champigelée");
             //tree
         treeTranslator("mountain_currant", "groseillier des montagnes");
-        treeTranslator("moriche_palm", "Palmier-bâche");
+        treeTranslator("moriche_palm", "palmier-bâche");
+        treeTranslator("achiote", "roucou");
             // "All material"
         globalAllMaterialTranslation("oak", "chêne");
         globalAllMaterialTranslation("birch","bouleau");
@@ -210,6 +212,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("bedrock","bedrock");
         globalAllMaterialTranslation("mountain_currant","groseillier des montagnes");
         globalAllMaterialTranslation("moriche_palm","Palmier-bâche");
+        globalAllMaterialTranslation("achiote","roucou");
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix, String translationSuffix)

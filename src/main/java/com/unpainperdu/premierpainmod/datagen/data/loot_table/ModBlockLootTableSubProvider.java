@@ -118,9 +118,11 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
             //sapling
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get());
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_MORICHE_PALM_SAPLING.get(), BlockRegister.MORICHE_PALM_SAPLING.get());
+        pottedFlowerLootTableGenerator(BlockRegister.POTTED_ACHIOTE_SAPLING.get(), BlockRegister.ACHIOTE_SAPLING.get());
         //leaves
         leavesWithFruitRightClickLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), ItemRegister.MOUNTAIN_CURRANT.get());
         leavesWithFruitLikeOakLootTable(BlockRegister.MORICHE_PALM_LEAVES.get(), BlockRegister.MORICHE_PALM_SAPLING.get(), ItemRegister.MORICHE_PALM_FRUIT.get());
+        leavesWithFruitRightClickLootTable(BlockRegister.ACHIOTE_LEAVES.get(), BlockRegister.ACHIOTE_SAPLING.get(), ItemRegister.ACHIOTE_FRUIT.get());
     }
 
     private void carpetedBlockTableGenerator(Block block)

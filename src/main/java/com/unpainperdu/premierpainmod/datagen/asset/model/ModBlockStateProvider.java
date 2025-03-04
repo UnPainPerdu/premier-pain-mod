@@ -91,9 +91,6 @@ public class ModBlockStateProvider extends BlockStateProvider
         pottedFloweredCactus();
                 //crop
         universalPottedBlockWithCustomModel(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
-                //sapling
-        pottedBlockWithBasicModel(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(),"block/tree/mountain_currant_tree/mountain_currant_sapling");
-        pottedBlockWithBasicModel(BlockRegister.POTTED_MORICHE_PALM_SAPLING.get(), BlockRegister.MORICHE_PALM_SAPLING.get(),"block/tree/moriche_palm_tree/moriche_palm_sapling");
         //tree
             //mountain_currant
         logWithItem(BlockRegister.MOUNTAIN_CURRANT_LOG.get(),"mountain_currant_tree");
@@ -114,7 +111,8 @@ public class ModBlockStateProvider extends BlockStateProvider
         woodenSign(BlockRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN.get(), mountainCurrantPlanksTexture);
         woodenHangingSign(BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN.get(), mountainCurrantPlanksTexture);
         saplingWithItem(BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), "mountain_currant_tree");
-            //moriche_palm
+        pottedBlockWithBasicModel(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(),"block/tree/mountain_currant_tree/mountain_currant_sapling");
+        //moriche_palm
         logWithItem(BlockRegister.MORICHE_PALM_LOG.get(),"moriche_palm_tree");
         logWithItem(BlockRegister.STRIPPED_MORICHE_PALM_LOG.get(),"moriche_palm_tree");
         woodWithItem(BlockRegister.MORICHE_PALM_WOOD.get(),"moriche_palm_tree");
@@ -133,6 +131,27 @@ public class ModBlockStateProvider extends BlockStateProvider
         woodenSign(BlockRegister.MORICHE_PALM_SIGN.get(), BlockRegister.MORICHE_PALM_WALL_SIGN.get(), morichePalmPlanksTexture);
         woodenHangingSign(BlockRegister.MORICHE_PALM_HANGING_SIGN.get(), BlockRegister.MORICHE_PALM_WALL_HANGING_SIGN.get(), morichePalmPlanksTexture);
         saplingWithItem(BlockRegister.MORICHE_PALM_SAPLING.get(), "moriche_palm_tree");
+        pottedBlockWithBasicModel(BlockRegister.POTTED_MORICHE_PALM_SAPLING.get(), BlockRegister.MORICHE_PALM_SAPLING.get(),"block/tree/moriche_palm_tree/moriche_palm_sapling");
+        //achiote
+        logWithItem(BlockRegister.ACHIOTE_LOG.get(),"achiote_tree");
+        logWithItem(BlockRegister.STRIPPED_ACHIOTE_LOG.get(),"achiote_tree");
+        woodWithItem(BlockRegister.ACHIOTE_WOOD.get(),"achiote_tree");
+        woodWithItem(BlockRegister.STRIPPED_ACHIOTE_WOOD.get(),"achiote_tree");
+        simpleBlockWithItem(BlockRegister.ACHIOTE_PLANKS.get(), "block/tree/achiote_tree/achiote_planks");
+        fruitLeavesWithItem(BlockRegister.ACHIOTE_LEAVES.get(), "achiote_tree");
+        ResourceLocation achiotePlanksTexture = createResourceLocation("block/tree/achiote_tree/achiote_planks");
+        stairWithItem(BlockRegister.ACHIOTE_STAIRS.get(), achiotePlanksTexture);
+        slabWithItem(BlockRegister.ACHIOTE_SLAB.get(), achiotePlanksTexture);
+        buttonWithItem(BlockRegister.ACHIOTE_BUTTON.get(),achiotePlanksTexture);
+        pressurePlateWithItem(BlockRegister.ACHIOTE_PRESSURE_PLATE.get(), achiotePlanksTexture);
+        fenceWithItem(BlockRegister.ACHIOTE_FENCE.get(), achiotePlanksTexture);
+        fenceGateWithItem(BlockRegister.ACHIOTE_FENCE_GATE.get(), achiotePlanksTexture);
+        woodenDoorWithItem(BlockRegister.ACHIOTE_DOOR.get(), "achiote_tree");
+        woodenTrapdoorWithItem(BlockRegister.ACHIOTE_TRAPDOOR.get(), "achiote_tree");
+        woodenSign(BlockRegister.ACHIOTE_SIGN.get(), BlockRegister.ACHIOTE_WALL_SIGN.get(), achiotePlanksTexture);
+        woodenHangingSign(BlockRegister.ACHIOTE_HANGING_SIGN.get(), BlockRegister.ACHIOTE_WALL_HANGING_SIGN.get(), achiotePlanksTexture);
+        saplingWithItem(BlockRegister.ACHIOTE_SAPLING.get(), "achiote_tree");
+        pottedBlockWithBasicModel(BlockRegister.POTTED_ACHIOTE_SAPLING.get(), BlockRegister.ACHIOTE_SAPLING.get(),"block/tree/achiote_tree/achiote_sapling");
 
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");

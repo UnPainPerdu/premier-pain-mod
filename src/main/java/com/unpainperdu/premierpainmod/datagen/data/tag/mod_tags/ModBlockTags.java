@@ -10,6 +10,7 @@ public class ModBlockTags
 {
     public static final TagKey<Block> MOUNTAIN_CURRANT_LOGS = create("mountain_currant_logs");
     public static final TagKey<Block> MORICHE_PALM_LOGS = create("moriche_palm_logs");
+    public static final TagKey<Block> ACHIOTE_LOGS = create("achiote_logs");
 
     private static TagKey<Block> create(String name)
     {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "premierpainmod:block/tree/achiote_tree/achiote_planks"
+  }
+}

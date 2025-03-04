@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "premierpainmod:block/achiote_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "premierpainmod:block/achiote_log"
+    },
+    "axis=z": {
+      "model": "premierpainmod:block/achiote_log_horizontal",
+      "x": 90
+    }
+  }
+}

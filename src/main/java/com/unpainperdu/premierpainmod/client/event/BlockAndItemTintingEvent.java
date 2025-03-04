@@ -25,9 +25,10 @@ public class BlockAndItemTintingEvent
             //tree
         setTintingForFruitLeaves(event, BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
         setTintingForVegetation(event, BlockRegister.MORICHE_PALM_LEAVES.get());
+        setTintingForFruitLeaves(event, BlockRegister.ACHIOTE_LEAVES.get());
         for (Block block : ModList.getAllBlocksFromClass(VillagerBrewingStation.class))
         {
-            event.register((state, level, pos, tintIndex) -> getColorFromContentBrewingStation(state, level, pos, tintIndex),block);
+            event.register(BlockAndItemTintingEvent::getColorFromContentBrewingStation,block);
         }
     }
 
@@ -36,7 +37,8 @@ public class BlockAndItemTintingEvent
     {
         event.register((stack, tintIndex) -> 0x91BD59,
                 BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(),
-                BlockRegister.MORICHE_PALM_LEAVES.get()
+                BlockRegister.MORICHE_PALM_LEAVES.get(),
+                BlockRegister.ACHIOTE_LEAVES.get()
         );
     }
     /*
@@ -67,14 +69,14 @@ public class BlockAndItemTintingEvent
 
     private static void setTintingForFruitLeaves(RegisterColorHandlersEvent.Block event, Block block)
     {
-            event.register((state, level, pos, tintIndex) -> getColorForFruitLeaves(state, level, pos, tintIndex), block);
+            event.register(BlockAndItemTintingEvent::getColorForFruitLeaves, block);
     }
 
     private static int getColorForFruitLeaves(BlockState state, BlockAndTintGetter level, BlockPos pos, int tintIndex)
     {
         int color = 0xFFFFFF;
 
-        if (tintIndex == 5 || !state.getValue(ModLeavesBlock.HAS_FRUIT))
+        if ((tintIndex == 0 || tintIndex == 5) || !state.getValue(ModLeavesBlock.HAS_FRUIT))
         {
             color = level != null && pos != null
                     ? BiomeColors.getAverageFoliageColor(level, pos)

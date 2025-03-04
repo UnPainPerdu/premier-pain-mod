@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_achiote_hanging_sign": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:stripped_achiote_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:achiote_hanging_sign"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_achiote_hanging_sign"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:achiote_hanging_sign"
+    ]
+  }
+}

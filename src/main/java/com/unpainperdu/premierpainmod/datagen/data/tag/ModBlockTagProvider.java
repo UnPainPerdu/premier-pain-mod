@@ -82,6 +82,10 @@ public class ModBlockTagProvider extends BlockTagsProvider
             {
                 tag(ModBlockTags.MORICHE_PALM_LOGS).add(block);
             }
+            if (blockName.contains("achiote"))
+            {
+                tag(ModBlockTags.ACHIOTE_LOGS).add(block);
+            }
         }
 
         //planks
@@ -111,6 +115,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
             String blockName = getName(block);
             if (blockName.contains("mountain_currant")
                 || blockName.contains("moriche_palm")
+                || blockName.contains("achiote")
             )
             {
                 this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);

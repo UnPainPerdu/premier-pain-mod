@@ -30,4 +30,13 @@ public class EnumExtensionList
             (Supplier<Item>)() -> Items.STICK,
             false
     );
+
+    public static final EnumProxy<Boat.Type> ACHIOTE_BOAT_TYPE = new EnumProxy<>(Boat.Type.class,
+            (Supplier<Block>)() -> BlockRegister.ACHIOTE_PLANKS.get(),
+            "premierpainmod:achiote",
+            (Supplier<Item>)() -> ItemRegister.ACHIOTE_BOAT.get(),
+            (Supplier<Item>)() -> ItemRegister.ACHIOTE_CHEST_BOAT.get(),
+            (Supplier<Item>)() -> Items.STICK,
+            false
+    );
 }

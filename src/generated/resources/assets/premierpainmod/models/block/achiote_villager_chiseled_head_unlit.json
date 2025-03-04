@@ -1,0 +1,7 @@
+{
+  "parent": "premierpainmod:block/all_materials_block/villager_chiseled_head/villager_chiseled_head_unlit",
+  "textures": {
+    "1": "premierpainmod:block/all_materials_block/multiple_use_texture/achiote_villager",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/achiote_villager"
+  }
+}

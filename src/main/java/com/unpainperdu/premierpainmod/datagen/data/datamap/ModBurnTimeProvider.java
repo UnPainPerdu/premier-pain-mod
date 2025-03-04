@@ -56,6 +56,7 @@ public class ModBurnTimeProvider
                 || (itemName.contains("bamboo"))
                 || (itemName.contains("mountain_currant"))
                 || (itemName.contains("moriche_palm"))
+                || (itemName.contains("achiote"))
         )
         {
             addToBurnable(item, 300, burnableBuilder);

@@ -61,6 +61,7 @@ public class ModItemTagProvider extends ItemTagsProvider
         //mod
         copy(ModBlockTags.MOUNTAIN_CURRANT_LOGS, ModItemTags.MOUNTAIN_CURRANT_LOGS);
         copy(ModBlockTags.MORICHE_PALM_LOGS, ModItemTags.MORICHE_PALM_LOGS);
+        copy(ModBlockTags.ACHIOTE_LOGS, ModItemTags.ACHIOTE_LOGS);
 
         for (Item item : ModList.getAllItemsFromClass(SignItem.class))
         {
@@ -97,7 +98,8 @@ public class ModItemTagProvider extends ItemTagsProvider
                 ItemRegister.MOUNTAIN_CURRANT.get(),
                 ItemRegister.CACTUS_FLOWER_FRUIT.get(),
                 ItemRegister.SKY_SPEARS_FRUIT.get(),
-                ItemRegister.MORICHE_PALM_FRUIT.get()
+                ItemRegister.MORICHE_PALM_FRUIT.get(),
+                ItemRegister.ACHIOTE_FRUIT.get()
                 );
     }
 

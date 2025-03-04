@@ -71,7 +71,7 @@ public class BlockRegister
             "diamond_block","copper_block","lapis_block",
             "netherite_block","obsidian","amethyst_block",
             "dripstone_block","bedrock","mountain_currant",
-            "moriche_palm"
+            "moriche_palm","achiote"
 
     );
 
@@ -183,7 +183,27 @@ public class BlockRegister
     public static final DeferredBlock<Block> MORICHE_PALM_WALL_HANGING_SIGN =  registerBlockOnly("moriche_palm_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
     public static final DeferredBlock<Block> MORICHE_PALM_SAPLING =  registerBlock("moriche_palm_sapling", () -> new SaplingBlock(ModTreeGrower.MORICHE_PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     public static final DeferredBlock<Block> POTTED_MORICHE_PALM_SAPLING = registerFlowerPot("potted_moriche_palm_sapling",() -> MORICHE_PALM_SAPLING);
-
+        //achiote
+    public static final DeferredBlock<Block> ACHIOTE_LOG =  registerBlock("achiote_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> STRIPPED_ACHIOTE_LOG =  registerBlock("stripped_achiote_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> ACHIOTE_WOOD =  registerBlock("achiote_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> STRIPPED_ACHIOTE_WOOD =  registerBlock("stripped_achiote_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> ACHIOTE_PLANKS =  registerBlock("achiote_planks", () -> new FlammableBlock(20,5,BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> ACHIOTE_LEAVES =  registerBlock("achiote_leaves", () -> new ModLeavesBlock(true, 60,30,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final DeferredBlock<Block> ACHIOTE_STAIRS =  registerBlock("achiote_stairs", () -> registerStair(() -> ACHIOTE_PLANKS));
+    public static final DeferredBlock<Block> ACHIOTE_SLAB =  registerBlock("achiote_slab", () -> registerSlab(() -> ACHIOTE_PLANKS));
+    public static final DeferredBlock<Block> ACHIOTE_BUTTON =  registerBlock("achiote_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30));
+    public static final DeferredBlock<Block> ACHIOTE_PRESSURE_PLATE=  registerBlock("achiote_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> ACHIOTE_PLANKS));
+    public static final DeferredBlock<Block> ACHIOTE_FENCE =  registerBlock("achiote_fence", () -> registerFence(() -> ACHIOTE_PLANKS));
+    public static final DeferredBlock<Block> ACHIOTE_FENCE_GATE =  registerBlock("achiote_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> ACHIOTE_PLANKS));
+    public static final DeferredBlock<Block> ACHIOTE_DOOR =  registerBlock("achiote_door", () -> registerDoor(BlockSetType.OAK, () -> ACHIOTE_PLANKS));
+    public static final DeferredBlock<Block> ACHIOTE_TRAPDOOR =  registerBlock("achiote_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> ACHIOTE_PLANKS));
+    public static final DeferredBlock<Block> ACHIOTE_SIGN =  registerBlockOnly("achiote_sign", () -> new ModStandingSignBlock(ModWoodTypes.ACHIOTE, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> ACHIOTE_WALL_SIGN =  registerBlockOnly("achiote_wall_sign", () -> new ModWallSignBlock(ModWoodTypes.ACHIOTE, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> ACHIOTE_HANGING_SIGN =  registerBlockOnly("achiote_hanging_sign", () -> new ModHangingSignBlock(ModWoodTypes.ACHIOTE, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> ACHIOTE_WALL_HANGING_SIGN =  registerBlockOnly("achiote_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.ACHIOTE, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
+    public static final DeferredBlock<Block> ACHIOTE_SAPLING =  registerBlock("achiote_sapling", () -> new SaplingBlock(ModTreeGrower.ACHIOTE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_ACHIOTE_SAPLING = registerFlowerPot("potted_achiote_sapling",() -> ACHIOTE_SAPLING);
 
     private static Map<String, DeferredBlock<Block>> createAllMaterialsBlocks()
     {

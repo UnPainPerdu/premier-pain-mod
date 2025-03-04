@@ -79,6 +79,7 @@ public class ModItemStateProvider extends ItemModelProvider
         vegetationFoodItem(ItemRegister.JELLY_HAT.get());
         vegetationFoodItem(ItemRegister.MOUNTAIN_CURRANT.get());
         vegetationFoodItem(ItemRegister.MORICHE_PALM_FRUIT.get());
+        vegetationFoodItem(ItemRegister.ACHIOTE_FRUIT.get());
             //stew
         stewFoodItem(ItemRegister.JELLYSHROOM_STEW.get());
         stewFoodItem(ItemRegister.CACTUS_STEW.get());
@@ -95,6 +96,11 @@ public class ModItemStateProvider extends ItemModelProvider
         item(ItemRegister.MORICHE_PALM_HANGING_SIGN.get(), "tree/moriche_palm_tree/");
         itemWithTexturePath(ItemRegister.MORICHE_PALM_BOAT.get(), "item/tree/moriche_palm_tree/moriche_palm_boat");
         itemWithTexturePath(ItemRegister.MORICHE_PALM_CHEST_BOAT.get(), "item/tree/moriche_palm_tree/moriche_palm_chest_boat");
+            //achiote
+        item(ItemRegister.ACHIOTE_SIGN.get(), "tree/achiote_tree/");
+        item(ItemRegister.ACHIOTE_HANGING_SIGN.get(), "tree/achiote_tree/");
+        itemWithTexturePath(ItemRegister.ACHIOTE_BOAT.get(), "item/tree/achiote_tree/achiote_boat");
+        itemWithTexturePath(ItemRegister.ACHIOTE_CHEST_BOAT.get(), "item/tree/achiote_tree/achiote_chest_boat");
 
         for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
         {

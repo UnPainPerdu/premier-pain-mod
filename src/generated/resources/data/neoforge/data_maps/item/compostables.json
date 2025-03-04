@@ -1,5 +1,11 @@
 {
   "values": {
+    "premierpainmod:achiote_leaves": {
+      "chance": 0.3
+    },
+    "premierpainmod:achiote_sapling": {
+      "chance": 0.3
+    },
     "premierpainmod:cactus_flower_block": {
       "chance": 0.65
     },

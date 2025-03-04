@@ -1,8 +1,10 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
 
 import com.google.common.collect.ImmutableList;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.AchioteFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MorichePalmFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MountainCurrantFoliagePlacer;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.AchioteTrunkPlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MorichePalmTrunkPlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MountainCurrantTrunkPlacer;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
@@ -52,6 +54,7 @@ public class ModVegetationFeature
     //tree
     public static final ResourceKey<ConfiguredFeature<?, ?>> MOUNTAIN_CURRANT = ModFeatureUtil.createKey("mountain_currant");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MORICHE_PALM = ModFeatureUtil.createKey("moriche_palm");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ACHIOTE = ModFeatureUtil.createKey("achiote");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> pContext)
     {
@@ -77,6 +80,7 @@ public class ModVegetationFeature
         //tree
         FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createMountainCurrantTree(BlockRegister.MOUNTAIN_CURRANT_LOG.get(), BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), 3).build());
         FeatureUtils.register(pContext, MORICHE_PALM, Feature.TREE, createMorichePalmTree(BlockRegister.MORICHE_PALM_LOG.get(), BlockRegister.MORICHE_PALM_LEAVES.get()).build());
+        FeatureUtils.register(pContext, ACHIOTE, Feature.TREE, createAchioteTree(BlockRegister.ACHIOTE_LOG.get(), BlockRegister.ACHIOTE_LEAVES.get()).build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(
@@ -93,7 +97,8 @@ public class ModVegetationFeature
 
     private static TreeConfiguration.TreeConfigurationBuilder createMountainCurrantTree(
             Block pLogBlock, Block pLeavesBlock, int pRadius
-    ) {
+    )
+    {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(pLogBlock),
                 new MountainCurrantTrunkPlacer(2, 1, 0),
@@ -104,12 +109,25 @@ public class ModVegetationFeature
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createMorichePalmTree(
-            Block pLogBlock, Block pLeavesBlock) {
+            Block pLogBlock, Block pLeavesBlock)
+    {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(pLogBlock),
                 new MorichePalmTrunkPlacer(13, 10, 7),
                 BlockStateProvider.simple(pLeavesBlock),
                 new MorichePalmFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 0, 1)
+        );
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createAchioteTree(
+            Block pLogBlock, Block pLeavesBlock)
+    {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(pLogBlock),
+                new AchioteTrunkPlacer(3, 2, 2),
+                BlockStateProvider.simple(pLeavesBlock),
+                new AchioteFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 1)
         );
     }

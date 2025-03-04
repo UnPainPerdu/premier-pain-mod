@@ -198,7 +198,28 @@ public class ModList
                 BlockRegister.MORICHE_PALM_HANGING_SIGN,
                 BlockRegister.MORICHE_PALM_WALL_HANGING_SIGN,
                 BlockRegister.MORICHE_PALM_SAPLING,
-                BlockRegister.POTTED_MORICHE_PALM_SAPLING
+                BlockRegister.POTTED_MORICHE_PALM_SAPLING,
+                    //achiote
+                BlockRegister.ACHIOTE_LOG,
+                BlockRegister.STRIPPED_ACHIOTE_LOG,
+                BlockRegister.ACHIOTE_WOOD,
+                BlockRegister.STRIPPED_ACHIOTE_WOOD,
+                BlockRegister.ACHIOTE_PLANKS,
+                BlockRegister.ACHIOTE_LEAVES,
+                BlockRegister.ACHIOTE_STAIRS,
+                BlockRegister.ACHIOTE_SLAB,
+                BlockRegister.ACHIOTE_BUTTON,
+                BlockRegister.ACHIOTE_PRESSURE_PLATE,
+                BlockRegister.ACHIOTE_FENCE,
+                BlockRegister.ACHIOTE_FENCE_GATE,
+                BlockRegister.ACHIOTE_DOOR,
+                BlockRegister.ACHIOTE_TRAPDOOR,
+                BlockRegister.ACHIOTE_SIGN,
+                BlockRegister.ACHIOTE_WALL_SIGN,
+                BlockRegister.ACHIOTE_HANGING_SIGN,
+                BlockRegister.ACHIOTE_WALL_HANGING_SIGN,
+                BlockRegister.ACHIOTE_SAPLING,
+                BlockRegister.POTTED_ACHIOTE_SAPLING
         );
         ArrayList<DeferredBlock<Block>> tempList = new ArrayList<>(allBlocks);
         tempList.addAll(BlockRegister.AllMaterialsMap.values());
@@ -270,6 +291,7 @@ public class ModList
                 ItemRegister.JELLY_HAT,
                 ItemRegister.MOUNTAIN_CURRANT,
                 ItemRegister.MORICHE_PALM_FRUIT,
+                    ItemRegister.ACHIOTE_FRUIT,
                     //stew
                 ItemRegister.JELLYSHROOM_STEW,
                 ItemRegister.CACTUS_STEW,
@@ -285,7 +307,12 @@ public class ModList
                 ItemRegister.MORICHE_PALM_SIGN,
                 ItemRegister.MORICHE_PALM_HANGING_SIGN,
                 ItemRegister.MORICHE_PALM_BOAT,
-                ItemRegister.MORICHE_PALM_CHEST_BOAT
+                ItemRegister.MORICHE_PALM_CHEST_BOAT,
+                    //achiote
+                ItemRegister.ACHIOTE_SIGN,
+                ItemRegister.ACHIOTE_HANGING_SIGN,
+                ItemRegister.ACHIOTE_BOAT,
+                ItemRegister.ACHIOTE_CHEST_BOAT
         );
         ArrayList<DeferredItem<Item>> tempList = new ArrayList<>(allItems);
         tempList.addAll(ItemRegister.AllMaterialsMap.values());

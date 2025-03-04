@@ -168,6 +168,7 @@ public class ModLeavesBlock extends LeavesBlock
     {
         Map<BlockState, ItemLike> fruitAndLeavesMap = new HashMap<>();
         fruitAndLeavesMap.put(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get().defaultBlockState(), ItemRegister.MOUNTAIN_CURRANT);
+        fruitAndLeavesMap.put(BlockRegister.ACHIOTE_LEAVES.get().defaultBlockState(), ItemRegister.ACHIOTE_FRUIT);
 
         if (fruitAndLeavesMap.containsKey(state.getBlock().defaultBlockState()))
         {

@@ -87,6 +87,7 @@ public class CreativeMainTab
             }
             if (blockName.contains("mountain_currant")
                 || blockName.contains("moriche_palm")
+                || blockName.contains("achiote")
             )
             {
                 if (block instanceof StairBlock

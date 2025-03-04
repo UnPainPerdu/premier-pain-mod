@@ -62,6 +62,8 @@ public class LogBlock extends RotatedPillarBlock
         logAndWoodMap.put(BlockRegister.MOUNTAIN_CURRANT_WOOD.get().defaultBlockState(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get().defaultBlockState());
         logAndWoodMap.put(BlockRegister.MORICHE_PALM_LOG.get().defaultBlockState(), BlockRegister.STRIPPED_MORICHE_PALM_LOG.get().defaultBlockState());
         logAndWoodMap.put(BlockRegister.MORICHE_PALM_WOOD.get().defaultBlockState(), BlockRegister.STRIPPED_MORICHE_PALM_WOOD.get().defaultBlockState());
+        logAndWoodMap.put(BlockRegister.ACHIOTE_LOG.get().defaultBlockState(), BlockRegister.STRIPPED_ACHIOTE_LOG.get().defaultBlockState());
+        logAndWoodMap.put(BlockRegister.ACHIOTE_WOOD.get().defaultBlockState(), BlockRegister.STRIPPED_ACHIOTE_WOOD.get().defaultBlockState());
 
         return logAndWoodMap;
     }

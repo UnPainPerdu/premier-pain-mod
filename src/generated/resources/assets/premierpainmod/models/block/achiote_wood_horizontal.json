@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "premierpainmod:block/tree/achiote_tree/achiote_log_side",
+    "side": "premierpainmod:block/tree/achiote_tree/achiote_log_side"
+  }
+}

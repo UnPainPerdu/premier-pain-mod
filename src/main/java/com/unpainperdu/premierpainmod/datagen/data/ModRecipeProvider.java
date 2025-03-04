@@ -150,6 +150,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         hangingSignRecipeBuilder(ItemRegister.MORICHE_PALM_HANGING_SIGN.get(), BlockRegister.STRIPPED_MORICHE_PALM_LOG.get());
         boatRecipeBuilder(ItemRegister.MORICHE_PALM_BOAT.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
         boatWithChestRecipeBuilder(ItemRegister.MORICHE_PALM_CHEST_BOAT.get(), ItemRegister.MORICHE_PALM_BOAT.get());
+            //achiote
+        oneItemToAnotherOneRecipeBuilder(ModItemTags.ACHIOTE_LOGS, BlockRegister.ACHIOTE_PLANKS, 4);
+        fourSameIntoOneRecipeBuilder(BlockRegister.ACHIOTE_WOOD.get(), BlockRegister.ACHIOTE_LOG.get(), 3);
+        fourSameIntoOneRecipeBuilder(BlockRegister.STRIPPED_ACHIOTE_WOOD.get(), BlockRegister.STRIPPED_ACHIOTE_LOG.get(), 3);
+        stairsRecipeBuilder(BlockRegister.ACHIOTE_STAIRS.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        slabRecipeBuilder(BlockRegister.ACHIOTE_SLAB.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        buttonRecipeBuilder(BlockRegister.ACHIOTE_BUTTON.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        pressurePlateRecipeBuilder(BlockRegister.ACHIOTE_PRESSURE_PLATE.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        fenceRecipeBuilder(BlockRegister.ACHIOTE_FENCE.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        fenceGateRecipeBuilder(BlockRegister.ACHIOTE_FENCE_GATE.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        doorRecipeBuilder(BlockRegister.ACHIOTE_DOOR.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        trapdoorRecipeBuilder(BlockRegister.ACHIOTE_TRAPDOOR.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        signRecipeBuilder(ItemRegister.ACHIOTE_SIGN.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        hangingSignRecipeBuilder(ItemRegister.ACHIOTE_HANGING_SIGN.get(), BlockRegister.STRIPPED_ACHIOTE_LOG.get());
+        boatRecipeBuilder(ItemRegister.ACHIOTE_BOAT.get(), BlockRegister.ACHIOTE_PLANKS.get());
+        boatWithChestRecipeBuilder(ItemRegister.ACHIOTE_CHEST_BOAT.get(), ItemRegister.ACHIOTE_BOAT.get());
             //all materials recipes
         for(Block block : ModList.getAllMaterialsBlocks())
         {
@@ -191,6 +207,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 else if (blockName.contains("moriche_palm"))
                 {
                     buildingBlocksRecipeBluilder(block, BlockRegister.MORICHE_PALM_PLANKS);
+                }
+                else if (blockName.contains("achiote"))
+                {
+                    buildingBlocksRecipeBluilder(block, BlockRegister.ACHIOTE_PLANKS);
                 }
                 else if (blockName.contains("end_stone"))
                 {

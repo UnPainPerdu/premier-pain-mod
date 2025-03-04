@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "premierpainmod:block/achiote_slab"
+    },
+    "type=double": {
+      "model": "premierpainmod:block/achiote_slab_full"
+    },
+    "type=top": {
+      "model": "premierpainmod:block/achiote_slab_top"
+    }
+  }
+}

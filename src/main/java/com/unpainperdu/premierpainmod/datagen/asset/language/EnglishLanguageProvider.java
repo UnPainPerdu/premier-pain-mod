@@ -134,6 +134,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.JELLY_HAT.get(), "Jelly Hat");
         add(ItemRegister.MOUNTAIN_CURRANT.get(), "Mountain Currant");
         add(ItemRegister.MORICHE_PALM_FRUIT.get(), "Moriche Palm Fruit");
+        add(ItemRegister.ACHIOTE_FRUIT.get(), "Achiote Fruit");
                 //stew
         add(ItemRegister.JELLYSHROOM_STEW.get(), "Jellyshroom Stew");
         add(ItemRegister.CACTUS_STEW.get(), "Cactus Fruit Stew");
@@ -167,6 +168,7 @@ public class EnglishLanguageProvider extends LanguageProvider
             //tree
         treeTranslator("mountain_currant", "Mountain Currant");
         treeTranslator("moriche_palm", "Moriche Palm");
+        treeTranslator("achiote", "Achiote");
             // "All material"
         globalAllMaterialTranslation("oak", "Oak");
         globalAllMaterialTranslation("birch","Birch");
@@ -212,6 +214,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("bedrock","Bedrock");
         globalAllMaterialTranslation("mountain_currant","Mountain Currant");
         globalAllMaterialTranslation("moriche_palm","Moriche Palm");
+        globalAllMaterialTranslation("achiote","Achiote");
     }
     //Only use for "all material" blocks
     private void globalAllMaterialTranslation(String suffix, String translationSuffix)

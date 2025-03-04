@@ -5,11 +5,13 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ModItemTags
 {
     public static final TagKey<Item> MOUNTAIN_CURRANT_LOGS = create("mountain_currant_logs");
     public static final TagKey<Item> MORICHE_PALM_LOGS = create("moriche_palm_logs");
+    public static final TagKey<Item> ACHIOTE_LOGS = create("achiote_logs");
 
     private static TagKey<Item> create(String name)
     {

@@ -1,0 +1,172 @@
+{
+  "variants": {
+    "distance=1,has_fruit=false,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=1,has_fruit=false,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=1,has_fruit=false,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=1,has_fruit=false,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=1,has_fruit=true,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=1,has_fruit=true,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=1,has_fruit=true,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=1,has_fruit=true,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=2,has_fruit=false,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=2,has_fruit=false,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=2,has_fruit=false,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=2,has_fruit=false,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=2,has_fruit=true,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=2,has_fruit=true,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=2,has_fruit=true,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=2,has_fruit=true,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=3,has_fruit=false,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=3,has_fruit=false,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=3,has_fruit=false,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=3,has_fruit=false,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=3,has_fruit=true,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=3,has_fruit=true,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=3,has_fruit=true,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=3,has_fruit=true,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=4,has_fruit=false,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=4,has_fruit=false,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=4,has_fruit=false,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=4,has_fruit=false,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=4,has_fruit=true,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=4,has_fruit=true,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=4,has_fruit=true,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=4,has_fruit=true,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=5,has_fruit=false,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=5,has_fruit=false,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=5,has_fruit=false,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=5,has_fruit=false,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=5,has_fruit=true,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=5,has_fruit=true,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=5,has_fruit=true,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=5,has_fruit=true,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=6,has_fruit=false,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=6,has_fruit=false,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=6,has_fruit=false,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=6,has_fruit=false,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=6,has_fruit=true,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=6,has_fruit=true,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=6,has_fruit=true,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=6,has_fruit=true,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=7,has_fruit=false,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=7,has_fruit=false,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=7,has_fruit=false,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=7,has_fruit=false,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves"
+    },
+    "distance=7,has_fruit=true,persistent=false,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=7,has_fruit=true,persistent=false,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=7,has_fruit=true,persistent=true,waterlogged=false": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    },
+    "distance=7,has_fruit=true,persistent=true,waterlogged=true": {
+      "model": "premierpainmod:block/achiote_leaves_fruit"
+    }
+  }
+}
