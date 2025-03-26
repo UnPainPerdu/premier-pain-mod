@@ -10,6 +10,7 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.util.java_comparator.BlockComparator;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 
@@ -81,19 +82,6 @@ public class ModBLockList
 
         }
         return list;
-    }
-
-    public static class BlockComparator implements Comparator<Block>
-    {
-
-        @Override
-        public int compare(Block o1, Block o2)
-        {
-            String id1 = o1.toString();
-            String id2 = o2.toString();
-
-            return id1.compareTo(id2);
-        }
     }
 }
 

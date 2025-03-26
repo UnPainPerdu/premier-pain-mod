@@ -3,16 +3,20 @@ package com.unpainperdu.premierpainmod.util.mod_list;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
+import com.unpainperdu.premierpainmod.util.java_comparator.ItemComparator;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class ModItemList
 {
+
+    /**
+     * Little reminder that's ALL items, so item from blocks included
+    **/
     public static List<Item> ALL_ITEMS = generateAllItemsList();
 
     private static List<Item> generateAllItemsList()
@@ -79,18 +83,5 @@ public class ModItemList
 
         }
         return list;
-    }
-
-    public static class ItemComparator implements Comparator<Item>
-    {
-
-        @Override
-        public int compare(Item o1, Item o2)
-        {
-            String id1 = o1.toString();
-            String id2 = o2.toString();
-
-            return id1.compareTo(id2);
-        }
     }
 }

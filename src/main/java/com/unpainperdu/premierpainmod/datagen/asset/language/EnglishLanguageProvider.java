@@ -39,8 +39,6 @@ public class EnglishLanguageProvider extends LanguageProvider
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(),"Don't fear the depth");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(),"Villager Singing Stone of Madness");
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Enough! I have endured more than enough...");
-        add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Premier Pain Singing Stone");
-        descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"From backing bread to rise the sword, we come from so far!");
             //beer
                 //empty
         add(ItemRegister.EMPTY_GLASS.get(), "Empty Polymorphic Glass");

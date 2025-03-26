@@ -36,7 +36,6 @@ public class ItemRegister
     public static final DeferredItem<Item>  LIBERTY_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("liberty_villager_singing_stone", 10, () -> SoundEventRegister.LIBERTY_SOUND,new LibertyEvent());
     public static final DeferredItem<Item>  DIGGY_VILLAGER_SINGING_STONE =villagerSingingStoneRegister("diggy_villager_singing_stone", 10, () -> SoundEventRegister.DIGGY_SOUND,new DiggyEvent());
     public static final DeferredItem<Item>  MADNESS_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("madness_villager_singing_stone", 20, () -> SoundEventRegister.MADNESS_SOUND,new MadnessEvent());
-    public static final DeferredItem<Item>  PREMIER_PAIN_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("premier_pain_villager_singing_stone", 10, () -> SoundEventRegister.PREMIER_PAIN_SOUND,new PremierPainEvent());
     //beer
         //empty
     public static final DeferredItem<Item>  EMPTY_GLASS = ITEMS.register("empty_glass", () -> new Item(new Item.Properties().stacksTo(16)));

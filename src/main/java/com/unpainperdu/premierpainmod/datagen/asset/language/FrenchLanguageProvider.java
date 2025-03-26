@@ -37,8 +37,6 @@ public class FrenchLanguageProvider extends LanguageProvider
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(),"N'ais pas peur des profondeurs");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(),"Pierre chantante du villageois foux");
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(),"Assez! J'en ai enduré bien assez...");
-        add(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get(),"Pierre chantante du Premier Pain");
-        descriptionMakerWIP(ItemRegister.PREMIER_PAIN_VILLAGER_SINGING_STONE.get().toString(),"De la cuisson du pain au maniement de l'épée, nous venons de si loin!");
             //beer
                 //empty
         add(ItemRegister.EMPTY_GLASS.get(), "Verre vide polymorphe");
@@ -158,7 +156,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(BlockRegister.RUINS_FLOWER.get(), "Fleur de ruines");
         add(BlockRegister.CURIOSITY_FLOWER.get(), "Fleur de curiosité");
                     //growing flower
-        add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Fleuredes civilisations");
+        add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Fleur des civilisations");
                     //tall flower
         add(BlockRegister.HELICON_FLOWER.get(), "Hélicon");
                     //dead bush
