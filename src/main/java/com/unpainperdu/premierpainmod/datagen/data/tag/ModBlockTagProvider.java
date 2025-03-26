@@ -9,7 +9,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveV
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -35,20 +35,20 @@ public class ModBlockTagProvider extends BlockTagsProvider
         //villager workshop
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BlockRegister.VILLAGER_WORKSHOP.get());
 
-        for(Block block : ModList.getAllMaterialsBlocks())
+        for(Block block : ModBLockList.getAllMaterialsBlocks())
         {
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
             addTagForAllMaterialsBlock(block, blockName);
         }
 
         //potted thing
-        for (Block block : ModList.getAllBlocksFromClass(FlowerPotBlock.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(FlowerPotBlock.class))
         {
             this.tag(BlockTags.FLOWER_POTS).add(block);
         }
 
         //leaves
-        for (Block block : ModList.getAllBlocksFromClass(ModLeavesBlock.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(ModLeavesBlock.class))
         {
             this.tag(BlockTags.LEAVES).add(block);
             this.tag(BlockTags.REPLACEABLE_BY_TREES).add(block);
@@ -60,7 +60,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         }
 
         //logs
-        for (Block block : ModList.getAllBlocksFromClass(LogBlock.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(LogBlock.class))
         {
             String blockName = getName(block);
             this.tag(BlockTags.LOGS).add(block);
@@ -89,7 +89,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         }
 
         //planks
-        for (Block block : ModList.getAllBlocksFromClass(FlammableBlock.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(FlammableBlock.class))
         {
             String blockName = getName(block);
             if (blockName.contains("planks"))
@@ -100,7 +100,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         }
 
         //mountain currant crafted thing
-        for (Block block : ModList.getAllBlocksFromClass(
+        for (Block block : ModBLockList.getAllBlocksFromClass(
                 StairBlock.class,
                 SlabBlock.class,
                 ButtonBlock.class,
@@ -201,7 +201,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         }
 
         //sapling
-        for (Block block : ModList.getAllBlocksFromClass(SaplingBlock.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(SaplingBlock.class))
         {
             this.tag(BlockTags.SAPLINGS).add(block);
             this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
@@ -209,7 +209,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         }
 
         //crop
-        for (Block block : ModList.getAllBlocksFromClass(AbstractCropLikeBlock.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(AbstractCropLikeBlock.class))
         {
             this.tag(BlockTags.CROPS).add(block);
             this.tag(BlockTags.SWORD_EFFICIENT).add(block);
@@ -217,7 +217,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         }
 
         //flower
-        for (Block block : ModList.getAllBlocksFromClass(
+        for (Block block : ModBLockList.getAllBlocksFromClass(
                 FlowerBlock.class,
                 AbstractGrowingAboveVegetation.class,
                 CactusFlowerBlock.class,
@@ -229,7 +229,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         }
 
         //stealable by enderman
-        for (Block block : ModList.getAllBlocksFromClass(
+        for (Block block : ModBLockList.getAllBlocksFromClass(
                 FlowerBlock.class,
                 CactusFlowerBlock.class,
                 SkySpearsFlower.class

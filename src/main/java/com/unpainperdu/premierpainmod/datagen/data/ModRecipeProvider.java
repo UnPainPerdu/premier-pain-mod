@@ -6,9 +6,10 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerBrewingStationRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
+import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.fluid.FluidRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -167,7 +168,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         boatRecipeBuilder(ItemRegister.ACHIOTE_BOAT.get(), BlockRegister.ACHIOTE_PLANKS.get());
         boatWithChestRecipeBuilder(ItemRegister.ACHIOTE_CHEST_BOAT.get(), ItemRegister.ACHIOTE_BOAT.get());
             //all materials recipes
-        for(Block block : ModList.getAllMaterialsBlocks())
+        for(Block block : ModBLockList.getAllMaterialsBlocks())
         {
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
             if(!(block instanceof VillagerShelf))
@@ -295,9 +296,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             }
         }
         for(
-                DeferredItem<Item> Deffereditem : ModList.ALL_ITEMS)
+                Item item : ModItemList.ALL_ITEMS)
         {
-            Item item = Deffereditem.get();
             String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");
             if((item instanceof VillagerShelfItem))
             {

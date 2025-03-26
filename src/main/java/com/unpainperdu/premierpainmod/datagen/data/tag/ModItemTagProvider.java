@@ -3,10 +3,10 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
+import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -63,7 +63,7 @@ public class ModItemTagProvider extends ItemTagsProvider
         copy(ModBlockTags.MORICHE_PALM_LOGS, ModItemTags.MORICHE_PALM_LOGS);
         copy(ModBlockTags.ACHIOTE_LOGS, ModItemTags.ACHIOTE_LOGS);
 
-        for (Item item : ModList.getAllItemsFromClass(SignItem.class))
+        for (Item item : ModItemList.getAllItemsFromClass(SignItem.class))
         {
             if (item instanceof HangingSignItem)
             {
@@ -75,7 +75,7 @@ public class ModItemTagProvider extends ItemTagsProvider
             }
         }
 
-        for (Item item : ModList.getAllItemsFromClass(BoatItem.class))
+        for (Item item : ModItemList.getAllItemsFromClass(BoatItem.class))
         {
             this.tag(ItemTags.BOATS).add(item);
             String name = getName(item);
@@ -85,9 +85,8 @@ public class ModItemTagProvider extends ItemTagsProvider
             }
         }
 
-        for (DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
+        for (Item item : ModItemList.ALL_ITEMS)
         {
-            Item item = deferredItem.get();
             if (item.components().has(DataComponents.FOOD))
             {
                 this.tag(Tags.Items.FOODS).add(item);

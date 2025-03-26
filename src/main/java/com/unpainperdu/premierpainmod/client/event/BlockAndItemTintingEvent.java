@@ -3,7 +3,7 @@ package com.unpainperdu.premierpainmod.client.event;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockAndTintGetter;
@@ -26,7 +26,7 @@ public class BlockAndItemTintingEvent
         setTintingForFruitLeaves(event, BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
         setTintingForVegetation(event, BlockRegister.MORICHE_PALM_LEAVES.get());
         setTintingForFruitLeaves(event, BlockRegister.ACHIOTE_LEAVES.get());
-        for (Block block : ModList.getAllBlocksFromClass(VillagerBrewingStation.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class))
         {
             event.register(BlockAndItemTintingEvent::getColorFromContentBrewingStation,block);
         }

@@ -20,7 +20,7 @@ import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveVegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
@@ -31,7 +31,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredBlock;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
@@ -47,9 +46,8 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        for(DeferredBlock<Block> DeferredBlock : ModList.ALL_BLOCKS)
+        for(Block block : ModBLockList.ALL_BLOCKS)
         {
-            Block block = DeferredBlock.get();
             switch (block)
             {
                 case VillagerWorkshop ignored -> villagerWorkshopWithItem(block);

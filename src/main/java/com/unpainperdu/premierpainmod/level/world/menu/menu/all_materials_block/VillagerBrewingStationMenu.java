@@ -6,7 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.menu.slot.MugAndBottleOnlySlot
 import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.WaterBucketSlot;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -104,7 +104,7 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
     public boolean stillValid(Player pPlayer)
     {
         boolean flag = false;
-        for (Block block : ModList.getAllBlocksFromClass(VillagerBrewingStation.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class))
         {
             if (stillValid(ContainerLevelAccess.create(villagerBrewingStationBlockEntity.getLevel(), villagerBrewingStationBlockEntity.getBlockPos()), pPlayer, block))
             {

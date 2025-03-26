@@ -19,15 +19,15 @@ import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
+import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.*;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.ArrayList;
@@ -54,9 +54,8 @@ public class CreativeMainTab
 
     private static void generateVegetation(CreativeModeTab.Output output)
     {
-        for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        for(Block block : ModBLockList.ALL_BLOCKS)
         {
-            Block block = deferredBlock.get();
             if(block instanceof AbstractTallGrass
                     || block instanceof CactusFlowerBlock
                     || block instanceof FloweredCactusBlock
@@ -75,9 +74,8 @@ public class CreativeMainTab
 
     private static void generateWood(CreativeModeTab.Output output)
     {
-        for (DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        for (Block block : ModBLockList.ALL_BLOCKS)
         {
-            Block block = deferredBlock.get();
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
             if(block instanceof LogBlock
                     ||block instanceof FlammableBlock
@@ -106,9 +104,8 @@ public class CreativeMainTab
                 }
             }
         }
-        for (DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
+        for (Item item : ModItemList.ALL_ITEMS)
         {
-            Item item = deferredItem.get();
             String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
             if (itemName.contains("mountain_currant")
                     || itemName.contains("moriche_palm")
@@ -125,9 +122,8 @@ public class CreativeMainTab
     private static void generateAllMaterials(CreativeModeTab.Output output)
     {
         List<Item> itemList = new ArrayList<>();
-        for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        for(Block block : ModBLockList.ALL_BLOCKS)
         {
-            Block block = deferredBlock.get();
             if(block instanceof VillagerStatue
                     || block instanceof VillagerPedestalBlock
                     || block instanceof VillagerBrazier
@@ -146,9 +142,8 @@ public class CreativeMainTab
             }
         }
 
-        for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
+        for(Item item : ModItemList.ALL_ITEMS)
         {
-            Item item = deferredItem.get();
             if (item instanceof VillagerShelfItem)
             {
                 itemList.add(item);
@@ -164,9 +159,8 @@ public class CreativeMainTab
 
     private static void generateMiscItems(CreativeModeTab.Output output)
     {
-        for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
+        for(Item item : ModItemList.ALL_ITEMS)
         {
-            Item item = deferredItem.get();
             if(
                     !(item instanceof VillagerShelfItem
                             || item instanceof SignItem
@@ -178,7 +172,7 @@ public class CreativeMainTab
                 output.accept(item);
             }
         }
-        for(Item item : ModList.getAllItemsFromClass(BucketItem.class, DrinkableBeerItem.class))
+        for(Item item : ModItemList.getAllItemsFromClass(BucketItem.class, DrinkableBeerItem.class))
         {
             output.accept(item);
         }

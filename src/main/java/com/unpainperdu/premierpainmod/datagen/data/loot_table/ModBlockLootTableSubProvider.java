@@ -19,7 +19,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegeta
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -48,7 +48,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -67,9 +66,8 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     @Override
     public void generate()
     {
-        for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        for(Block block : ModBLockList.ALL_BLOCKS)
         {
-            Block block = deferredBlock.get();
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
             if(!blockName.contains("bedrock"))
             {

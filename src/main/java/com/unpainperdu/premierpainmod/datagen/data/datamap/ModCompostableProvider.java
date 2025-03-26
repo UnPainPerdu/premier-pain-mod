@@ -6,16 +6,16 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.growingAboveV
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight.skySpears.SkySpearsFlower;
+import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.TallFlowerBlock;
 import net.neoforged.neoforge.common.data.DataMapProvider;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 
@@ -31,13 +31,13 @@ public class ModCompostableProvider
         addToCompostable(ItemRegister.SKY_SPEARS_FRUIT.get(),0.6F);
         addToCompostable(ItemRegister.CACTUS_FLOWER_FRUIT.get(), 0.6F);
         addToCompostable(BlockRegister.JELLYSHROOM.get(), 0.4F);
-        for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        for(Block block : ModBLockList.ALL_BLOCKS)
         {
-            setCompostable(deferredBlock.get());
+            setCompostable(block);
         }
-        for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
+        for(Item item : ModItemList.ALL_ITEMS)
         {
-            setCompostable(deferredItem.get());
+            setCompostable(item);
         }
     }
     private static void setCompostable(Block block)

@@ -4,7 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import mezz.jei.api.IModPlugin;
@@ -55,7 +55,7 @@ public class JEIPlugin implements IModPlugin
     {
         registration.addRecipeCatalyst(new ItemStack(BlockRegister.VILLAGER_WORKSHOP), JEIRecipeType.VILLAGER_WORKSHOP_TYPE);
 
-        for (Block block : ModList.getAllBlocksFromClass(VillagerBrewingStation.class))
+        for (Block block : ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class))
         {
             registration.addRecipeCatalyst(new ItemStack(block), JEIRecipeType.VILLAGER_BREWING_STATION_TYPE);
         }

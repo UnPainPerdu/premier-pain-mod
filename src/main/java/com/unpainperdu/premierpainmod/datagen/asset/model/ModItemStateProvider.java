@@ -3,8 +3,9 @@ package com.unpainperdu.premierpainmod.datagen.asset.model;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
+import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
@@ -102,9 +103,8 @@ public class ModItemStateProvider extends ItemModelProvider
         itemWithTexturePath(ItemRegister.ACHIOTE_BOAT.get(), "item/tree/achiote_tree/achiote_boat");
         itemWithTexturePath(ItemRegister.ACHIOTE_CHEST_BOAT.get(), "item/tree/achiote_tree/achiote_chest_boat");
 
-        for(DeferredItem<Item> deferredItem : ModList.ALL_ITEMS)
+        for(Item item : ModItemList.ALL_ITEMS)
         {
-            Item item = deferredItem.get();
             if(item instanceof VillagerShelfItem) {villagerShelfItem(item);}
             if(item instanceof VillagerSingingStone){villagerSingingStone(item);}
         }

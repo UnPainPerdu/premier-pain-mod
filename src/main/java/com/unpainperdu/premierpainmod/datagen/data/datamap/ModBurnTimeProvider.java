@@ -3,14 +3,12 @@ package com.unpainperdu.premierpainmod.datagen.data.datamap;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
-import com.unpainperdu.premierpainmod.util.register.ModList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
+import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.DataMapProvider;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 
 import java.util.ArrayList;
@@ -23,14 +21,13 @@ public class ModBurnTimeProvider
     {
         burnableBuilder.replace(false);
         //allMaterialsBlocks
-        for(Item item : ModList.getAllMaterialsBlocksAsItem())
+        for(Item item : ModItemList.getAllMaterialsBlocksAsItem())
         {
             setBlockBurnableByFurnace(item, burnableBuilder);
         }
         //Log
-        for(DeferredBlock<Block> deferredBlock : ModList.ALL_BLOCKS)
+        for(Block block : ModBLockList.ALL_BLOCKS)
         {
-            Block block = deferredBlock.get();
             if (block instanceof LogBlock
                     || block instanceof FlammableBlock
             )
