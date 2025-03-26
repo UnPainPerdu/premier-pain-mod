@@ -594,6 +594,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         return block instanceof AbstractTwoBlockHeightBlock
                         || block instanceof DoorBlock
                         || block instanceof VillagerMusicalFridgeBlock
+                        || block instanceof TallFlowerBlock
                 ;
 
     }

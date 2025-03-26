@@ -87,7 +87,7 @@ public class BlockRegister
 
     //public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBrewingStation(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
     //liquid block zone, see FluidRegister too
-    //beer
+        //beer
     private static final BlockBehaviour.Properties beerStandardProperties = BlockBehaviour.Properties.of().replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY);
     public static final DeferredBlock<Block> PAIN_DIEUX = registerBlockOnly("pain_dieux",
             () -> new BeerBlock((FlowingFluid) FluidRegister.PAIN_DIEUX_FLUID.get(), beerStandardProperties.mapColor(MapColor.COLOR_YELLOW)));
@@ -125,23 +125,23 @@ public class BlockRegister
         //cropLike
     public static final DeferredBlock<Block> JELLYSHROOM =  registerBlock("jellyshroom", () -> new JellyShroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).noCollission().noOcclusion().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> POTTED_JELLYSHROOM =  registerFlowerPot("potted_jellyshroom", () -> JELLYSHROOM);
-    /*
-        1 block flower
+    /*  1 block flower
         -->
         flower block
-        flower pot
-         */
+        flower pot */
     public static final DeferredBlock<Block> RUINS_FLOWER =  registerBlock("ruins_flower", () -> new FlowerBlock(MobEffects.WITHER,5,BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_RUINS_FLOWER = registerFlowerPot("potted_ruins_flower",() -> RUINS_FLOWER);
     public static final DeferredBlock<Block> CIVILIZATIONS_FLOWER =  registerBlock("civilizations_flower", () -> new CivilizationsFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_CIVILIZATIONS_FLOWER = registerFlowerPot("potted_civilizations_flower",() -> CIVILIZATIONS_FLOWER);
     public static final DeferredBlock<Block> CURIOSITY_FLOWER =  registerBlock("curiosity_flower", () -> new CuriosityFlower(MobEffects.REGENERATION,5,BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_CURIOSITY_FLOWER = registerFlowerPot("potted_curiosity_flower",() -> CURIOSITY_FLOWER);
+        //2 blocks tall flower
+    public static final DeferredBlock<Block> HELICON_FLOWER = registerTallFlower("helicon_flower");
         //dead bush block (like flower)
     public static final DeferredBlock<Block> DEAD_RUINS_FLOWER =  registerBlock("dead_ruins_flower", () -> new DeadBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEAD_BUSH).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_DEAD_RUINS_FLOWER = registerFlowerPot("potted_dead_ruins_flower",() -> DEAD_RUINS_FLOWER);
-    //tree
-        //mountain_currant
+        //tree
+            //mountain_currant
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_LOG =  registerBlock("mountain_currant_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> STRIPPED_MOUNTAIN_CURRANT_LOG =  registerBlock("stripped_mountain_currant_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WOOD =  registerBlock("mountain_currant_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
@@ -162,7 +162,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_HANGING_SIGN =  registerBlockOnly("mountain_currant_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
     public static final DeferredBlock<Block> MOUNTAIN_CURRANT_SAPLING =  registerBlock("mountain_currant_sapling", () -> new SaplingBlock(ModTreeGrower.MOUNTAIN_CURRANT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     public static final DeferredBlock<Block> POTTED_MOUNTAIN_CURRANT_SAPLING = registerFlowerPot("potted_mountain_currant_sapling",() -> MOUNTAIN_CURRANT_SAPLING);
-        //moriche_palm
+            //moriche_palm
     public static final DeferredBlock<Block> MORICHE_PALM_LOG =  registerBlock("moriche_palm_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> STRIPPED_MORICHE_PALM_LOG =  registerBlock("stripped_moriche_palm_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> MORICHE_PALM_WOOD =  registerBlock("moriche_palm_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
@@ -183,7 +183,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> MORICHE_PALM_WALL_HANGING_SIGN =  registerBlockOnly("moriche_palm_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
     public static final DeferredBlock<Block> MORICHE_PALM_SAPLING =  registerBlock("moriche_palm_sapling", () -> new SaplingBlock(ModTreeGrower.MORICHE_PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     public static final DeferredBlock<Block> POTTED_MORICHE_PALM_SAPLING = registerFlowerPot("potted_moriche_palm_sapling",() -> MORICHE_PALM_SAPLING);
-        //achiote
+            //achiote
     public static final DeferredBlock<Block> ACHIOTE_LOG =  registerBlock("achiote_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> STRIPPED_ACHIOTE_LOG =  registerBlock("stripped_achiote_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> ACHIOTE_WOOD =  registerBlock("achiote_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
@@ -501,6 +501,18 @@ public class BlockRegister
     private static Block registerTrapdoor(BlockSetType type, Supplier<DeferredBlock<Block>> baseBlock)
     {
         return new TrapDoorBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()).noOcclusion().isValidSpawn(Blocks::never));
+    }
+
+    private static DeferredBlock<Block> registerTallFlower(String name)
+    {
+        return registerBlock(name, () -> new TallFlowerBlock(BlockBehaviour.Properties.of()
+                .mapColor(MapColor.PLANT)
+                .noCollission()
+                .instabreak()
+                .sound(SoundType.GRASS)
+                .offsetType(BlockBehaviour.OffsetType.XZ)
+                .ignitedByLava()
+                .pushReaction(PushReaction.DESTROY)));
     }
 
     public static void register(IEventBus modEventBus)

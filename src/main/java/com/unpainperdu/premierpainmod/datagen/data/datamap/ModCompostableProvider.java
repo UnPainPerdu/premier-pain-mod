@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.TallFlowerBlock;
 import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -48,10 +49,11 @@ public class ModCompostableProvider
     {
         Block block = Block.byItem(item);
         if(block instanceof FlowerBlock
-            || block instanceof CactusFlowerBlock
-            || block instanceof FloweredCactusBlock
-            || block instanceof AbstractTallGrass
-            || block instanceof SkySpearsFlower
+                || block instanceof CactusFlowerBlock
+                || block instanceof FloweredCactusBlock
+                || block instanceof AbstractTallGrass
+                || block instanceof SkySpearsFlower
+                || block instanceof TallFlowerBlock
         )
         {
             addToCompostable(item, 0.65f);

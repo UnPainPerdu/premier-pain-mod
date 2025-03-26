@@ -50,25 +50,30 @@ public class ModBlockStateProvider extends BlockStateProvider
         for(DeferredBlock<Block> DeferredBlock : ModList.ALL_BLOCKS)
         {
             Block block = DeferredBlock.get();
-            if(block instanceof VillagerWorkshop) {villagerWorkshopWithItem(block);}
-            else if(block instanceof VillagerStatue) {villagerStatueWithItem(block);}
-            else if(block instanceof VillagerPedestalBlock) {villagerPedestalWithItem(block);}
-            else if(block instanceof VillagerBrazier) {villagerBrazierWithItem(block);}
-            else if(block instanceof VillagerTableBlock) {villagerTableWithItem(block);}
-            else if(block instanceof VillagerChairBlock) {villagerChairWithItem(block);}
-            else if(block instanceof VillagerThroneChairBlock) {villagerThroneChairWithItem(block);}
-            else if(block instanceof VillagerDrawer) {villagerDrawerWithItem(block);}
-            else if(block instanceof WallVillagerShelf) {wallVillagerShelf(block);}
-            else if(block instanceof StandingVillagerShelf) {standingVillagerShelf(block);}
-            else if (block instanceof FlowerBlock) {flowerBlockWithItem(block);}
-            else if (block instanceof AbstractGrowingAboveVegetation) {growingVegetationWithItem(block);}
-            else if (block instanceof DeadBushBlock) {deadBushWithItem(block);}
-            else if (block instanceof AbstractTallGrass) {tallGrassWithItem(block);}
-            else if (block instanceof VillagerBench) {villagerBenchWithItem(block);}
-            else if (block instanceof VillagerCouch) {villagerCouchWithItem(block);}
-            else if (block instanceof VillagerBrewingStation) {villagerBrewingStationWithItem(block);}
-            else if (block instanceof VillagerMusicalFridgeBlock) {villagerMusicalFridgeBlockWithItem(block);}
-            else if (block instanceof VillagerChiseledHead) {villagerChiseledHeadBlockWithItem(block);}
+            switch (block)
+            {
+                case VillagerWorkshop ignored -> villagerWorkshopWithItem(block);
+                case VillagerStatue ignored -> villagerStatueWithItem(block);
+                case VillagerPedestalBlock ignored -> villagerPedestalWithItem(block);
+                case VillagerBrazier ignored -> villagerBrazierWithItem(block);
+                case VillagerTableBlock ignored -> villagerTableWithItem(block);
+                case VillagerChairBlock ignored -> villagerChairWithItem(block);
+                case VillagerThroneChairBlock ignored -> villagerThroneChairWithItem(block);
+                case VillagerDrawer ignored -> villagerDrawerWithItem(block);
+                case WallVillagerShelf ignored -> wallVillagerShelf(block);
+                case StandingVillagerShelf ignored -> standingVillagerShelf(block);
+                case FlowerBlock ignored -> flowerBlockWithItem(block);
+                case AbstractGrowingAboveVegetation ignored -> growingVegetationWithItem(block);
+                case DeadBushBlock ignored -> deadBushWithItem(block);
+                case AbstractTallGrass ignored -> tallGrassWithItem(block);
+                case VillagerBench ignored -> villagerBenchWithItem(block);
+                case VillagerCouch ignored -> villagerCouchWithItem(block);
+                case VillagerBrewingStation ignored -> villagerBrewingStationWithItem(block);
+                case VillagerMusicalFridgeBlock ignored -> villagerMusicalFridgeBlockWithItem(block);
+                case VillagerChiseledHead ignored -> villagerChiseledHeadBlockWithItem(block);
+                case TallFlowerBlock ignored -> tallFlower(block);
+                default -> {}
+            }
         }
     //manual
         //vegetation
@@ -1389,6 +1394,39 @@ public class ModBlockStateProvider extends BlockStateProvider
 
         simpleBlock(sapling, modelFile);
         itemModels().getBuilder(getKey(sapling).getPath()).parent(itemModelFile);
+    }
+
+    private void tallFlower(Block block)
+    {
+        /*
+        String name = getName(block);
+        String top = "block/tree/" + name + "/top" ;
+        String bottom = "block/tree/" + name + "/bottom" ;
+        String modelPath = "premierpainmod:block/vegetation/tree/leaves_with_fruit";
+
+        ModelFile baseModel = models().leaves(name, createResourceLocation("block/tree/" + folderInTree + "/" + name)).renderType("cutout");
+
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            if (state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER)
+            {
+
+            }
+            else
+            {
+
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(name + "_fruit", modelPath)
+                            .texture("0",leavesTexture)
+                            .texture("1", fruitLeavesTexture)
+                            .renderType("cutout"))
+                    .build();
+        });
+        itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
+
+         */
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)

@@ -62,6 +62,7 @@ public class CreativeMainTab
                     || block instanceof FloweredCactusBlock
                     || block instanceof AbstractGrowingAboveVegetation
                     || block instanceof FlowerBlock
+                    || block instanceof TallFlowerBlock
                     || block instanceof DeadBushBlock
                     || block instanceof SkySpearsFlower
                     || block instanceof JellyShroomBlock

@@ -221,7 +221,8 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 FlowerBlock.class,
                 AbstractGrowingAboveVegetation.class,
                 CactusFlowerBlock.class,
-                SkySpearsFlower.class
+                SkySpearsFlower.class,
+                TallFlowerBlock.class
         ))
         {
             this.tag(BlockTags.FLOWERS).add(block);
