@@ -6,8 +6,6 @@ import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
-import static org.apache.commons.lang3.StringUtils.capitalize;
-
 public class EnglishLanguageProvider extends LanguageProvider
 {
     public EnglishLanguageProvider(PackOutput packOutput)

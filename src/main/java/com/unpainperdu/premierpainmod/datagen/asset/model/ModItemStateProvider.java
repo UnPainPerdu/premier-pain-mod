@@ -5,13 +5,12 @@ import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
-import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredItem;
 
 public class ModItemStateProvider extends ItemModelProvider
 {
@@ -28,51 +27,16 @@ public class ModItemStateProvider extends ItemModelProvider
         item(ItemRegister.EMPTY_GLASS.get(),"beer/glass/");
         item(ItemRegister.EMPTY_BOTTLE.get(),"beer/bottle/");
         item(ItemRegister.EMPTY_MUG.get(),"beer/mug/");
-            //LA_CHATEAU
-        item(ItemRegister.LA_CHATEAU_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.LA_CHATEAU_GLASS.get(),"beer/glass/");
-        item(ItemRegister.LA_CHATEAU_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.LA_CHATEAU_MUG.get(),"beer/mug/");
-        //DEBIER
-        item(ItemRegister.DEBIER_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.DEBIER_GLASS.get(),"beer/glass/");
-        item(ItemRegister.DEBIER_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.DEBIER_MUG.get(),"beer/mug/");
-        //ENVAHISSEUR_ROUGE
-        item(ItemRegister.ENVAHISSEUR_ROUGE_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.ENVAHISSEUR_ROUGE_GLASS.get(),"beer/glass/");
-        item(ItemRegister.ENVAHISSEUR_ROUGE_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.ENVAHISSEUR_ROUGE_MUG.get(),"beer/mug/");
-        //RASPBUISSON
-        item(ItemRegister.RASPBUISSON_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.RASPBUISSON_GLASS.get(),"beer/glass/");
-        item(ItemRegister.RASPBUISSON_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.RASPBUISSON_MUG.get(),"beer/mug/");
-        //pain dieux
-        item(ItemRegister.PAIN_DIEUX_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.PAIN_DIEUX_GLASS.get(),"beer/glass/");
-        item(ItemRegister.PAIN_DIEUX_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.PAIN_DIEUX_MUG.get(),"beer/mug/");
-        //LA_BLANCHE_CITADINE
-        item(ItemRegister.LA_BLANCHE_CITADINE_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.LA_BLANCHE_CITADINE_GLASS.get(),"beer/glass/");
-        item(ItemRegister.LA_BLANCHE_CITADINE_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.LA_BLANCHE_CITADINE_MUG.get(),"beer/mug/");
-        //CRANE_NOIR
-        item(ItemRegister.CRANE_NOIR_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.CRANE_NOIR_GLASS.get(),"beer/glass/");
-        item(ItemRegister.CRANE_NOIR_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.CRANE_NOIR_MUG.get(),"beer/mug/");
-        //TAK
-        item(ItemRegister.TAK_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.TAK_GLASS.get(),"beer/glass/");
-        item(ItemRegister.TAK_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.TAK_MUG.get(),"beer/mug/");
-        //DISENDER
-        item(ItemRegister.DISENDER_BUCKET.get(),"beer/bucket/");
-        item(ItemRegister.DISENDER_GLASS.get(),"beer/glass/");
-        item(ItemRegister.DISENDER_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.DISENDER_MUG.get(),"beer/mug/");
+        beerItems("la_chateau");
+        beerItems("debier");
+        beerItems("envahisseur_rouge");
+        beerItems("raspbuisson");
+        beerItems("pain_dieux");
+        beerItems("la_blanche_citadine");
+        beerItems("raspbuisson");
+        beerItems("crane_noir");
+        beerItems("tak");
+        beerItems("disender");
         //food
             //item
         vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());
@@ -87,21 +51,9 @@ public class ModItemStateProvider extends ItemModelProvider
         stewFoodItem(ItemRegister.POTATOES_AND_SPEARS_BOWL.get());
         stewFoodItem(ItemRegister.FRUITS_BOWL.get());
         //tree
-            //mountain_currant
-        item(ItemRegister.MOUNTAIN_CURRANT_SIGN.get(), "tree/mountain_currant_tree/");
-        item(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), "tree/mountain_currant_tree/");
-        itemWithTexturePath(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), "item/tree/mountain_currant_tree/mountain_currant_boat");
-        itemWithTexturePath(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), "item/tree/mountain_currant_tree/mountain_currant_chest_boat");
-            //moriche_palm
-        item(ItemRegister.MORICHE_PALM_SIGN.get(), "tree/moriche_palm_tree/");
-        item(ItemRegister.MORICHE_PALM_HANGING_SIGN.get(), "tree/moriche_palm_tree/");
-        itemWithTexturePath(ItemRegister.MORICHE_PALM_BOAT.get(), "item/tree/moriche_palm_tree/moriche_palm_boat");
-        itemWithTexturePath(ItemRegister.MORICHE_PALM_CHEST_BOAT.get(), "item/tree/moriche_palm_tree/moriche_palm_chest_boat");
-            //achiote
-        item(ItemRegister.ACHIOTE_SIGN.get(), "tree/achiote_tree/");
-        item(ItemRegister.ACHIOTE_HANGING_SIGN.get(), "tree/achiote_tree/");
-        itemWithTexturePath(ItemRegister.ACHIOTE_BOAT.get(), "item/tree/achiote_tree/achiote_boat");
-        itemWithTexturePath(ItemRegister.ACHIOTE_CHEST_BOAT.get(), "item/tree/achiote_tree/achiote_chest_boat");
+        woodItems("mountain_currant");
+        woodItems("moriche_palm");
+        woodItems("achiote");
 
         for(Item item : ModItemList.ALL_ITEMS)
         {
@@ -109,6 +61,7 @@ public class ModItemStateProvider extends ItemModelProvider
             if(item instanceof VillagerSingingStone){villagerSingingStone(item);}
         }
     }
+
     private void item(Item item, String folder)
     {
         String name = getName(item);
@@ -151,6 +104,39 @@ public class ModItemStateProvider extends ItemModelProvider
     private void stewFoodItem(Item item)
     {
         item(item,"food/stew/");
+    }
+
+    /**
+     * will generate item state
+     * for beerId_bucket
+     *     beerId_glass
+     *     beerId_bottle
+     *     beerId_mug
+     * */
+    private void beerItems(String beerId)
+    {
+        item(getItemFromId(beerId + "_bucket"),"beer/bucket/");
+        item(getItemFromId(beerId + "_glass"),"beer/glass/");
+        item(getItemFromId(beerId + "_bottle"),"beer/bottle/");
+        item(getItemFromId(beerId + "_mug"),"beer/mug/");
+    }
+
+    private void woodItems(String woodId)
+    {
+        item(getItemFromId(woodId + "_sign"), "tree/" + woodId + "_tree/");
+        item(getItemFromId(woodId + "_hanging_sign"), "tree/" + woodId + "_tree/");
+        itemWithTexturePath(getItemFromId(woodId + "_boat"), "item/tree/" + woodId + "_tree/" + woodId + "_boat");
+        itemWithTexturePath(getItemFromId(woodId + "_chest_boat"), "item/tree/" + woodId + "_tree/" + woodId + "_chest_boat");
+    }
+
+    private static Item getItemFromId(String path)
+    {
+        return getItemFromId(PremierPainMod.MOD_ID, path);
+    }
+
+    private static Item getItemFromId(String nameSpace, String path)
+    {
+        return BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(nameSpace, path));
     }
 
     private String getName(Item item)

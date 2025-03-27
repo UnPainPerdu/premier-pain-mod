@@ -69,13 +69,13 @@ public class CreativeMainTab
             {
                 case AbstractTallGrass t -> orderedByListVegetation.get(0).add(block);
                 case CactusFlowerBlock t -> orderedByListVegetation.get(1).add(block);
-                case FloweredCactusBlock t -> orderedByListVegetation.get(1).add(block);
-                case AbstractGrowingAboveVegetation t -> orderedByListVegetation.get(1).add(block);
-                case FlowerBlock t -> orderedByListVegetation.get(1).add(block);
-                case TallFlowerBlock t -> orderedByListVegetation.get(1).add(block);
-                case DeadBushBlock t -> orderedByListVegetation.get(1).add(block);
-                case SkySpearsFlower t -> orderedByListVegetation.get(1).add(block);
-                case JellyShroomBlock t -> orderedByListVegetation.get(1).add(block);
+                case FloweredCactusBlock t -> orderedByListVegetation.get(2).add(block);
+                case AbstractGrowingAboveVegetation t -> orderedByListVegetation.get(3).add(block);
+                case FlowerBlock t -> orderedByListVegetation.get(4).add(block);
+                case TallFlowerBlock t -> orderedByListVegetation.get(5).add(block);
+                case DeadBushBlock t -> orderedByListVegetation.get(6).add(block);
+                case SkySpearsFlower t -> orderedByListVegetation.get(7).add(block);
+                case JellyShroomBlock t -> orderedByListVegetation.get(8).add(block);
                 default -> {/*nothing to do*/}
             }
             for (List<Block> lb : orderedByListVegetation)
