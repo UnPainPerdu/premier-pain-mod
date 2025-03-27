@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.util.register.codec;
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.util.GLM.VillagerSingingStoneGLM;
+import com.unpainperdu.premierpainmod.util.global_loot_modifier.VillagerSingingStoneGLM;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.registries.DeferredRegister;

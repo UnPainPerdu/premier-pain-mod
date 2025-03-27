@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.GLM;
+package com.unpainperdu.premierpainmod.util.global_loot_modifier;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

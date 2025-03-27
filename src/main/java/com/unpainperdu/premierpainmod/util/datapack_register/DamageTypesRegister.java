@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.datapackRegister;
+package com.unpainperdu.premierpainmod.util.datapack_register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.core.registries.Registries;
@@ -8,6 +8,7 @@ import net.minecraft.world.damagesource.DamageType;
 
 public class DamageTypesRegister
 {
+    private DamageTypesRegister(){}
     /*
     need to datagen too
     */

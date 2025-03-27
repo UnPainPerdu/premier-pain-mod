@@ -2,12 +2,9 @@ package com.unpainperdu.premierpainmod;
 
 import com.unpainperdu.premierpainmod.datagen.DataGatherer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.surface.ModSurfaceRule;
-import com.unpainperdu.premierpainmod.util.commonSetupEvent.CommonSetupEventPottedThing;
+import com.unpainperdu.premierpainmod.util.common_setup_event.CommonSetupEventPottedThing;
 import com.unpainperdu.premierpainmod.util.register.RegisterHandler;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import org.slf4j.Logger;
-
-import com.mojang.logging.LogUtils;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;

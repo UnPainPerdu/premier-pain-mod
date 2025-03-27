@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.commonSetupEvent;
+package com.unpainperdu.premierpainmod.util.common_setup_event;
 
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.world.level.block.Block;
@@ -9,6 +9,8 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class CommonSetupEventPottedThing
 {
+    private CommonSetupEventPottedThing(){}
+
     public static void setupEventPottedThing(final FMLCommonSetupEvent event)
     {
         //misc

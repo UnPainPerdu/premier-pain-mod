@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.util.GLM.VillagerSingingStoneGLM;
+import com.unpainperdu.premierpainmod.util.global_loot_modifier.VillagerSingingStoneGLM;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
