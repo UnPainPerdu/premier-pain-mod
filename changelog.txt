@@ -207,6 +207,9 @@ What would be a world without bugs ?
 
     - Villager Chiseled Head, a decorative block which produce light and can be switched between on/off
 
+## change :
+    mountain currant fruit give less food but more saturation and is eaten faster
+
 ## fix :
     - mountain curran leaves does not tint anymore its fruit
     - add missing tag for stripped wood and log
