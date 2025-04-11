@@ -4,6 +4,8 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractAdaptableSit;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 
 public class VillagerBench extends AbstractAdaptableSit
 {
@@ -25,5 +27,11 @@ public class VillagerBench extends AbstractAdaptableSit
     public MapCodec<? extends AbstractAdaptableSit> codec()
     {
         return CODEC;
+    }
+
+    @Override
+    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType)
+    {
+        return false;
     }
 }
