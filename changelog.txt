@@ -205,3 +205,7 @@ What would be a world without bugs ?
         -moriche palm tree -> new tree with new wood set which drop moriche palm fruit like oak drop apple
 
     - Villager Chiseled Head, a decorative block which produce light
+
+## fix :
+    - mountain curran leaves does not tint anymore its fruit
+    - add missing tag for stripped wood and log

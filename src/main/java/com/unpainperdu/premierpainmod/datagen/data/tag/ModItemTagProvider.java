@@ -58,6 +58,8 @@ public class ModItemTagProvider extends ItemTagsProvider
         copy(BlockTags.TRAPDOORS, ItemTags.TRAPDOORS);
         copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
         copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
+        copy(Tags.Blocks.STRIPPED_WOODS, Tags.Items.STRIPPED_WOODS);
+        copy(Tags.Blocks.STRIPPED_LOGS,Tags.Items.STRIPPED_LOGS);
         //mod
         copy(ModBlockTags.MOUNTAIN_CURRANT_LOGS, ModItemTags.MOUNTAIN_CURRANT_LOGS);
         copy(ModBlockTags.MORICHE_PALM_LOGS, ModItemTags.MORICHE_PALM_LOGS);

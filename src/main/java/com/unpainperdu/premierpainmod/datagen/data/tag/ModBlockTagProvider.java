@@ -74,6 +74,18 @@ public class ModBlockTagProvider extends BlockTagsProvider
             {
                 this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(block);
             }
+            else
+            {
+                if (blockName.contains("log"))
+                {
+                    this.tag(Tags.Blocks.STRIPPED_LOGS).add(block);
+                }
+                else if (blockName.contains("wood"))
+                {
+                    this.tag(Tags.Blocks.STRIPPED_WOODS).add(block);
+                }
+
+            }
             if (blockName.contains("mountain_currant"))
             {
                 tag(ModBlockTags.MOUNTAIN_CURRANT_LOGS).add(block);

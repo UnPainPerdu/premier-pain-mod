@@ -1,8 +1,10 @@
-// 1.21.1	2025-03-26T19:14:46.5638293	Tags for minecraft:block mod id premierpainmod
+// 1.21.1	2025-04-11T13:45:46.3533071	Tags for minecraft:block mod id premierpainmod
 7f17a84c5867cc54c0582449818379348abefb56 data/c/tags/block/fences.json
 7f17a84c5867cc54c0582449818379348abefb56 data/c/tags/block/fences/wooden.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/block/fence_gates.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/block/fence_gates/wooden.json
+2181dd8782c677483a7a0439bb2684850b63f493 data/c/tags/block/stripped_logs.json
+7ac2ef101278002136be9744b3297d3893abc5da data/c/tags/block/stripped_woods.json
 7845a2d74a591e64db91b9ade127e1230af3e2dd data/minecraft/tags/block/all_hanging_signs.json
 21be14491824344df2735ffe5e8e3703847573eb data/minecraft/tags/block/all_signs.json
 639a49ebf59f50b8c4394ec1ebffe045e665d51b data/minecraft/tags/block/buttons.json
