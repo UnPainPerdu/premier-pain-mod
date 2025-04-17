@@ -2,6 +2,8 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.featur
 
 import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
+import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;
+import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -38,7 +40,7 @@ public abstract class AbstractDeadBushPatchFeature extends Feature<NoneFeatureCo
         RandomSource rand = pContext.random();
         BlockPos pos = pContext.origin();
         NoneFeatureConfiguration config = pContext.config();
-        Direction direction = ModFeatureUtils.getDirection(rand);
+        Direction direction = DirectionHelper.getRandomDirection(rand);
 
         if (!isValidPlacementLocation(worldIn, pos))
         {
@@ -46,8 +48,8 @@ public abstract class AbstractDeadBushPatchFeature extends Feature<NoneFeatureCo
         }
         else
         {
-            ArrayList<BlockPos> listPos = ModFeatureUtils.getRandomPosWithSameY(pos, this.minNumberOfPos, this.maxNumberOfPos, this.spread, rand);
-            listPos = ModFeatureUtils.setAllPosToTheGround(listPos, worldIn);
+            ArrayList<BlockPos> listPos = PosHelper.getRandomPosWithSameY(pos, this.minNumberOfPos, this.maxNumberOfPos, this.spread, rand);
+            listPos = PosHelper.setAllPosToTheGround(listPos, worldIn);
 
             for (BlockPos pos1 : listPos)
             {

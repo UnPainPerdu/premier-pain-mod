@@ -28,6 +28,7 @@ public class FeatureRegister
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> HOUSE_FOUNDATION_RUINS = FEATURES.register("house_foundation_ruins",() -> new HouseFoundationRuinsFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> VILLAGER_PILLAR_RUINS_DESERT = FEATURES.register("villager_pillar_ruins_desert",() -> new VillagerPillarRuinsFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> MUD_PACK = FEATURES.register("mud_pack",() -> new MudPackFeature(NoneFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> VILLAGER_TOTEM = FEATURES.register("villager_totem",() -> new VillagerTotemFeature(NoneFeatureConfiguration.CODEC));
     //vegetation
         //flower
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_RUINS_FLOWER = FEATURES.register("patch_ruins_flower",() -> new RuinsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));

@@ -2,6 +2,8 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.featur
 
 import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
+import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;
+import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -31,12 +33,7 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
         RandomSource rand = pContext.random();
         BlockPos pos = pContext.origin();
         NoneFeatureConfiguration config = pContext.config();
-        Direction direction = ModFeatureUtils.getDirection(rand);
-        if (ModFeatureUtils.isSpawning(100,20, rand))
-        {
-            return false;
-        }
-
+        Direction direction = DirectionHelper.getRandomDirection(rand);
         mudPackGenerator(worldIn,chunkGenerator,rand,pos,config, direction);
         return true;
     }
@@ -49,8 +46,8 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
             return;
         }
         ArrayList<BlockPos> allPosList = new ArrayList<>();
-        ArrayList<BlockPos> posListLayer1 = ModFeatureUtils.getRandomPosWithSameY(pos, 7,12, 1, rand);
-        posListLayer1 = ModFeatureUtils.setAllPosToTheGround(posListLayer1, worldIn);
+        ArrayList<BlockPos> posListLayer1 = PosHelper.getRandomPosWithSameY(pos, 7,12, 1, rand);
+        posListLayer1 = PosHelper.setAllPosToTheGround(posListLayer1, worldIn);
 
         for(BlockPos pos1 : posListLayer1)
         {
@@ -58,8 +55,8 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
             allPosList.add(pos1);
         }
 
-        ArrayList<BlockPos> posListLayer2 = ModFeatureUtils.getRandomPosWithSameY(pos.above(), 3,7, 1, rand);
-        posListLayer2 = ModFeatureUtils.setAllPosToTheGround(posListLayer2, worldIn);
+        ArrayList<BlockPos> posListLayer2 = PosHelper.getRandomPosWithSameY(pos.above(), 3,7, 1, rand);
+        posListLayer2 = PosHelper.setAllPosToTheGround(posListLayer2, worldIn);
 
         for(BlockPos pos1 : posListLayer2)
         {
@@ -67,8 +64,8 @@ public class MudPackFeature extends Feature<NoneFeatureConfiguration>
             allPosList.add(pos1);
         }
 
-        ArrayList<BlockPos> posListLayer3 = ModFeatureUtils.getRandomPosWithSameY(pos.above(), 1,2, 1, rand);
-        posListLayer3 = ModFeatureUtils.setAllPosToTheGround(posListLayer3, worldIn);
+        ArrayList<BlockPos> posListLayer3 = PosHelper.getRandomPosWithSameY(pos.above(), 1,2, 1, rand);
+        posListLayer3 = PosHelper.setAllPosToTheGround(posListLayer3, worldIn);
 
         for(BlockPos pos1 : posListLayer3)
         {

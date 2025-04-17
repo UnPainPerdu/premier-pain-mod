@@ -1,7 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch;
 
 import com.mojang.serialization.Codec;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
+import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;
+import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -10,8 +11,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GrassBlock;
-import net.minecraft.world.level.block.MudBlock;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -40,7 +39,7 @@ public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfigurati
         RandomSource rand = pContext.random();
         BlockPos pos = pContext.origin();
         NoneFeatureConfiguration config = pContext.config();
-        Direction direction = ModFeatureUtils.getDirection(rand);
+        Direction direction = DirectionHelper.getRandomDirection(rand);
 
         if (!isValidPlacementLocation(worldIn, pos))
         {
@@ -48,8 +47,8 @@ public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfigurati
         }
         else
         {
-            ArrayList<BlockPos> listPos = ModFeatureUtils.getRandomPosWithSameY(pos, this.minNumberOfPos, this.maxNumberOfPos, this.spread, rand);
-            listPos = ModFeatureUtils.setAllPosToTheGround(listPos, worldIn);
+            ArrayList<BlockPos> listPos = PosHelper.getRandomPosWithSameY(pos, this.minNumberOfPos, this.maxNumberOfPos, this.spread, rand);
+            listPos = PosHelper.setAllPosToTheGround(listPos, worldIn);
 
             for (BlockPos pos1 : listPos)
             {
@@ -66,14 +65,7 @@ public abstract class AbstractFlowerPatch extends Feature<NoneFeatureConfigurati
         Block block = levelAccessor.getBlockState(pos).getBlock();
         Block blockBelow = levelAccessor.getBlockState(pos.below()).getBlock();
 
-    if((block instanceof AirBlock) && (blockBelow.defaultBlockState().is(BlockTags.DIRT)))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (block instanceof AirBlock) && (blockBelow.defaultBlockState().is(BlockTags.DIRT));
     }
     protected abstract void generateFlower(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction) ;
 }

@@ -1,8 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch;
 
 import com.mojang.serialization.Codec;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -21,7 +21,7 @@ public class CivilizationsFlowerPatchFeature extends AbstractFlowerPatch
     @Override
     protected void generateFlower(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
-        int randomHeight = ModFeatureUtils.getRandomPositiveIntInRange(5, rand) + 1;
+        int randomHeight = RandomUtil.getRandomPositiveIntInRange(5, rand) + 1;
         for (int i = 0; i < randomHeight; i++)
         {
             worldIn.setBlock(pos, BlockRegister.CIVILIZATIONS_FLOWER.get().defaultBlockState(), 2);

@@ -173,6 +173,65 @@ public class DirectionHelper
         return direction.getClockWise();
     }
 
+    public static Direction getRandomDirection(RandomSource rand)
+    {
+        switch(RandomUtil.getRandomPositiveIntInRange(4,rand))
+        {
+            case 0:
+            {
+                return Direction.NORTH;
+            }
+            case 1:
+            {
+                return Direction.EAST;
+            }
+            case 2:
+            {
+                return Direction.SOUTH;
+            }
+            default :
+            {
+                return Direction.WEST;
+            }
+        }
+    }
+
+
+    public static Direction getNextDirection_NESW(Direction direction)
+    {
+        return getNextDirection_NESW(direction, 1);
+    }
+
+    public static Direction getNextDirection_NESW(Direction direction, int howMuch)
+    {
+        for (int i = 0; i < howMuch; i++)
+        {
+            switch (direction)
+            {
+                case Direction.NORTH:
+                {
+                    direction = Direction.EAST;
+                    break;
+                }
+                case Direction.EAST:
+                {
+                    direction = Direction.SOUTH;
+                    break;
+                }
+                case Direction.SOUTH:
+                {
+                    direction = Direction.WEST;
+                    break;
+                }
+                default:
+                {
+                    direction = Direction.NORTH;
+                }
+            }
+        }
+        return direction;
+    }
+
     /**
      * true if east or west
      **/

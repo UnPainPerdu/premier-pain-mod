@@ -2,6 +2,9 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.featur
 
 import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
+import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;
+import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
+import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -31,7 +34,7 @@ public class BushAndStoneFeature extends Feature<NoneFeatureConfiguration>
         RandomSource rand = pContext.random();
         BlockPos pos = pContext.origin();
         NoneFeatureConfiguration config = pContext.config();
-        Direction direction = ModFeatureUtils.getDirection(rand);
+        Direction direction = DirectionHelper.getRandomDirection(rand);
 
         bushAndStoneGenerator(worldIn,chunkGenerator,rand,pos,config, direction);
 
@@ -43,13 +46,13 @@ public class BushAndStoneFeature extends Feature<NoneFeatureConfiguration>
         Block block = worldIn.getBlockState(pos.below()).getBlock();
         if(block instanceof GrassBlock)
         {
-            int nbrBock = ModFeatureUtils.getRandomPositiveIntInRange(25,rand);
+            int nbrBock = RandomUtil.getRandomPositiveIntInRange(25,rand);
             ArrayList<BlockPos> posList = new ArrayList<>();
             for (int i = 4; i <= nbrBock; i++)
             {
                 posList.add(pos);
                 BlockPos posTemp = getRandomPosNextToPos(pos, rand);
-                if(!ModFeatureUtils.isPosInList(posTemp, posList))
+                if(!PosHelper.isPosInList(posTemp, posList))
                 {
                     pos = posTemp;
                 }
@@ -65,7 +68,7 @@ public class BushAndStoneFeature extends Feature<NoneFeatureConfiguration>
                     Block blockBelow = worldIn.getBlockState(belowPos).getBlock();
                     if(blockBelow instanceof AirBlock)
                     {
-                        if (!ModFeatureUtils.isPosInList(belowPos, posList))
+                        if (!PosHelper.isPosInList(belowPos, posList))
                         {
                             posList.set(i, belowPos);
                         }
@@ -91,7 +94,7 @@ public class BushAndStoneFeature extends Feature<NoneFeatureConfiguration>
 
     private void stoneBlockGenerator(BlockPos pos, WorldGenLevel worldIn, RandomSource rand, Direction direction)
     {
-        int random = ModFeatureUtils.getRandomPositiveIntInRange(2,rand);
+        int random = RandomUtil.getRandomPositiveIntInRange(2,rand);
         if (random == 0)
         {
             worldIn.setBlock(pos, Blocks.STONE.defaultBlockState(),2);
@@ -108,7 +111,7 @@ public class BushAndStoneFeature extends Feature<NoneFeatureConfiguration>
 
     private BlockPos getRandomPosNextToPos(BlockPos pos, RandomSource rand)
     {
-        int random = ModFeatureUtils.getRandomPositiveIntInRange(5,rand);
+        int random = RandomUtil.getRandomPositiveIntInRange(5,rand);
         switch (random)
         {
             case 0 :
@@ -153,7 +156,7 @@ public class BushAndStoneFeature extends Feature<NoneFeatureConfiguration>
         }
         for(BlockPos pos1 : tempPosList)
         {
-            int random = ModFeatureUtils.getRandomPositiveIntInRange(20, rand);
+            int random = RandomUtil.getRandomPositiveIntInRange(20, rand);
             if(random<7)
             {
                 stoneBlockGenerator(pos1, worldIn, rand, direction);

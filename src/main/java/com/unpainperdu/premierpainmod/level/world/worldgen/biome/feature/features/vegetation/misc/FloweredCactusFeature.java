@@ -4,6 +4,8 @@ import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;
+import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -36,9 +38,9 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
         RandomSource rand = context.random();
         BlockPos pos = context.origin();
         NoneFeatureConfiguration config = context.config();
-        Direction direction = ModFeatureUtils.getDirection(rand);
+        Direction direction = DirectionHelper.getRandomDirection(rand);
 
-        int randomInt = ModFeatureUtils.getRandomPositiveIntInRange(100, rand);
+        int randomInt = RandomUtil.getRandomPositiveIntInRange(100, rand);
 
         if (!isValidPlacementLocation(worldIn, pos) || randomInt > 30)
         {
@@ -63,7 +65,7 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
         List<BlockPos> mainPosList = Arrays.asList(pos, pos.above(), pos.above(2), pos.above(3), pos.above(4));
 
         int i = 0 ;
-        int maxHeight = ModFeatureUtils.getRandomIntInRange(4, rand) + 1 ;
+        int maxHeight = RandomUtil.getRandomIntInRange(4, rand) + 1 ;
         for (BlockPos pos1 : mainPosList)
         {
             if (i >= maxHeight)
@@ -73,7 +75,7 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
             ModFeatureUtils.generateBlock(worldIn , pos1, rand, defaultFloweredCactusState, false);
             if (i > 1)
             {
-                int numberArm = ModFeatureUtils.getRandomIntInRange(10, rand);
+                int numberArm = RandomUtil.getRandomIntInRange(10, rand);
                 if (numberArm < 4)
                 {
                     generateNewArm(defaultFloweredCactusState, worldIn, pos1, rand);
@@ -86,7 +88,7 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
 
     private static void generateNewArm(BlockState state, WorldGenLevel level, BlockPos pos, RandomSource rand)
     {
-        int randomInt = ModFeatureUtils.getRandomPositiveIntInRange(4, rand);
+        int randomInt = RandomUtil.getRandomPositiveIntInRange(4, rand);
         Direction direction;
         switch (randomInt)
         {
@@ -117,7 +119,7 @@ public class FloweredCactusFeature extends Feature<NoneFeatureConfiguration>
                         .setValue(FloweredCactusBlock.FACING, direction.getOpposite())
                         .setValue(FloweredCactusBlock.GROW_STAGE,0), false);
 
-        randomInt = ModFeatureUtils.getRandomPositiveIntInRange(10, rand);
+        randomInt = RandomUtil.getRandomPositiveIntInRange(10, rand);
         if (randomInt < 9 && level.getBlockState(newPos).getBlock() instanceof FloweredCactusBlock)
         {
             if(level.getBlockState(newPos).getValue(FloweredCactusBlock.PART_NUM) == 2 && level.getBlockState(newPos.above()).getBlock() instanceof AirBlock)

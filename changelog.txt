@@ -205,6 +205,7 @@ What would be a world without bugs ?
         - Moriche palm tree -> new tree with new wood set which drop moriche palm fruit like oak drop apple
         - Achiote tree -> new tree with new wood set which grow fruit on it
         - Falling Helicon flower -> a tall flower which can be crafted into red_dye
+        - little totem feature
 
     - Villager Chiseled Head, a decorative block which produce light and can be switched between on/off
 

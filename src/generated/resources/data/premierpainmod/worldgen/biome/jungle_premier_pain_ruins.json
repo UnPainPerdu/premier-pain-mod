@@ -34,6 +34,7 @@
       "minecraft:lake_lava_surface"
     ],
     [
+      "premierpainmod:villager_totem",
       "minecraft:amethyst_geode"
     ],
     [
@@ -75,8 +76,7 @@
     ],
     [],
     [
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:spring_water"
     ],
     [
       "minecraft:glow_lichen",

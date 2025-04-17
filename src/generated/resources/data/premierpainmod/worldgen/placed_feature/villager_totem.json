@@ -1,11 +1,9 @@
 {
-  "feature": "premierpainmod:patch_civilizations_flower",
+  "feature": "premierpainmod:villager_totem",
   "placement": [
     {
-      "type": "minecraft:noise_threshold_count",
-      "above_noise": 5,
-      "below_noise": 15,
-      "noise_level": -0.8
+      "type": "minecraft:rarity_filter",
+      "chance": 2
     },
     {
       "type": "minecraft:in_square"

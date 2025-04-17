@@ -239,7 +239,13 @@ public class ModBiomes
         BiomeDefaultFeatures.baseJungleSpawns(mobspawnsettings$builder);
         mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2))
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3));
-        globalOverworldGeneration(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_TOTEM);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
+        BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.MORICHE_PALM);
