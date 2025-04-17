@@ -202,8 +202,9 @@ What would be a world without bugs ?
 
 ## add :
     - Jungle Premier Pain Ruins, a new biome with unique vegetation which contain :
-        - moriche palm tree -> new tree with new wood set which drop moriche palm fruit like oak drop apple
-        - achiote tree -> new tree with new wood set which grow fruit on it
+        - Moriche palm tree -> new tree with new wood set which drop moriche palm fruit like oak drop apple
+        - Achiote tree -> new tree with new wood set which grow fruit on it
+        - Falling Helicon flower -> a tall flower which can be crafted into red_dye
 
     - Villager Chiseled Head, a decorative block which produce light and can be switched between on/off
 
@@ -213,3 +214,4 @@ What would be a world without bugs ?
 ## fix :
     - mountain curran leaves does not tint anymore its fruit
     - add missing tag for stripped wood and log
+    - Some all materials type block is not anymore path findable by mob (as brazero)

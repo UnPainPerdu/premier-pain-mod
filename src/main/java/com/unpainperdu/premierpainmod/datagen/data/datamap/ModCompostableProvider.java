@@ -30,6 +30,7 @@ public class ModCompostableProvider
 
         addToCompostable(ItemRegister.SKY_SPEARS_FRUIT.get(),0.6F);
         addToCompostable(ItemRegister.CACTUS_FLOWER_FRUIT.get(), 0.6F);
+        addToCompostable(BlockRegister.CACTUS_FLOWER_BLOCK.get(), 0.6F);
         addToCompostable(BlockRegister.JELLYSHROOM.get(), 0.4F);
         for(Block block : ModBLockList.ALL_BLOCKS)
         {

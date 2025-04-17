@@ -244,6 +244,7 @@ public class ModBiomes
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.MORICHE_PALM);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.ACHIOTE);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_FALLING_HELICON_FLOWER);
         BiomeDefaultFeatures.addWarmFlowers(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addJungleGrass(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addJungleMelons(biomegenerationsettings$builder);

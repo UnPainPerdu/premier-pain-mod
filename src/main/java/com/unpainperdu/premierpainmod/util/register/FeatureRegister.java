@@ -33,7 +33,10 @@ public class FeatureRegister
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_RUINS_FLOWER = FEATURES.register("patch_ruins_flower",() -> new RuinsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_CIVILIZATIONS_FLOWER = FEATURES.register("patch_civilizations_flower",() -> new CivilizationsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_CURIOSITY_FLOWER = FEATURES.register("patch_curiosity_flower",() -> new CuriosityFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
-        //dead bush
+    public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> FALLING_HELICON_FLOWER = FEATURES.register("falling_helicon_flower",
+            () -> new TallGrassFeature(NoneFeatureConfiguration.CODEC, 4, 15 ,4 ,BlockRegister.FALLING_HELICON_FLOWER.get(), BlockTags.DIRT));
+
+    //dead bush
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> PATCH_DEAD_RUINS_FLOWER = FEATURES.register("patch_dead_ruins_flower",() -> new DeadRuinsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
         //misc
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> FLOWERED_CACTUS = FEATURES.register("flowered_cactus",() -> new FloweredCactusFeature(NoneFeatureConfiguration.CODEC));

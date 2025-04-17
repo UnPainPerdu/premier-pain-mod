@@ -1,11 +1,9 @@
 {
-  "feature": "premierpainmod:patch_civilizations_flower",
+  "feature": "premierpainmod:patch_falling_helicon_flower",
   "placement": [
     {
-      "type": "minecraft:noise_threshold_count",
-      "above_noise": 15,
-      "below_noise": 10,
-      "noise_level": -0.8
+      "type": "minecraft:rarity_filter",
+      "chance": 1
     },
     {
       "type": "minecraft:in_square"
