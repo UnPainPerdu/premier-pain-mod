@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_magenta_dye": {
+    "has_red_dye": {
       "conditions": {
         "items": [
           {
-            "items": "premierpainmod:curiosity_flower"
+            "items": "premierpainmod:falling_helicon_flower"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:magenta_dye_mod_flower"
+        "recipe": "premierpainmod:red_dye_from_falling_helicon_flower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_magenta_dye"
+      "has_red_dye"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:magenta_dye_mod_flower"
+      "premierpainmod:red_dye_from_falling_helicon_flower"
     ]
   }
 }

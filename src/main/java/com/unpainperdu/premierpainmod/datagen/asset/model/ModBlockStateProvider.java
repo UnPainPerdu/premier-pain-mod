@@ -1374,35 +1374,36 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void tallFlower(Block block)
     {
-        /*
         String name = getName(block);
-        String top = "block/tree/" + name + "/top" ;
-        String bottom = "block/tree/" + name + "/bottom" ;
-        String modelPath = "premierpainmod:block/vegetation/tree/leaves_with_fruit";
-
-        ModelFile baseModel = models().leaves(name, createResourceLocation("block/tree/" + folderInTree + "/" + name)).renderType("cutout");
+        String top = "block/vegetation/flower_block/tall_flower/" + name + "/top" ;
+        String bottom = "block/vegetation/flower_block/tall_flower/" + name + "/bottom" ;
+        String modelPath = "block/cross";
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
         variantBuilder.forAllStates(state ->
         {
+            String modelName = name;
+            String texture;
+
             if (state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER)
             {
-
+                modelName += "_bottom";
+                texture = bottom;
             }
             else
             {
-
+                modelName += "_top";
+                texture = top;
             }
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(name + "_fruit", modelPath)
-                            .texture("0",leavesTexture)
-                            .texture("1", fruitLeavesTexture)
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("cross",texture)
                             .renderType("cutout"))
                     .build();
         });
-        itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
-
-         */
+        ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated")
+                .texture("layer0", top);
+        itemModels().getBuilder(getKey(block).getPath()).parent(itemModelFile);
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)

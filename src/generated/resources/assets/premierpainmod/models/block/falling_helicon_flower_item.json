@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:block/vegetation/flower_block/tall_flower/falling_helicon_flower/top"
+  }
+}

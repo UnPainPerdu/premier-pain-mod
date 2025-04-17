@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_jellyshroom": {
+    "has_sky_spears_fruit": {
       "conditions": {
         "items": [
           {
-            "items": "premierpainmod:jellyshroom"
+            "items": "premierpainmod:sky_spears_flower"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:jelly_hat"
+        "recipe": "premierpainmod:sky_spears_fruit_from_sky_spears_flower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_jellyshroom"
+      "has_sky_spears_fruit"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:jelly_hat"
+      "premierpainmod:sky_spears_fruit_from_sky_spears_flower"
     ]
   }
 }

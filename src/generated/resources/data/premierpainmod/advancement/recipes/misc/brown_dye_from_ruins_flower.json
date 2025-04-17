@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cactus_flower_block": {
+    "has_brown_dye": {
       "conditions": {
         "items": [
           {
-            "items": "premierpainmod:cactus_flower_block"
+            "items": "premierpainmod:ruins_flower"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:cactus_flower_fruit"
+        "recipe": "premierpainmod:brown_dye_from_ruins_flower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cactus_flower_block"
+      "has_brown_dye"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:cactus_flower_fruit"
+      "premierpainmod:brown_dye_from_ruins_flower"
     ]
   }
 }

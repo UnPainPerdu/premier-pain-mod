@@ -115,9 +115,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             //misc
         oneItemToAnotherOneRecipeInFurnaceBuilder(BlockRegister.FLOWERED_CACTUS_BLOCK, Items.GREEN_DYE, RecipeCategory.MISC, 0.2f, 300);
             //flower to colorant
-        oneItemToAnotherOneRecipeBuilder(BlockRegister.CIVILIZATIONS_FLOWER, Items.ORANGE_DYE, "_mod_flower");
-        oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE, "_mod_flower");
-        oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE, "_mod_flower");
+        oneItemToAnotherOneRecipeBuilder(BlockRegister.CIVILIZATIONS_FLOWER, Items.ORANGE_DYE);
+        oneItemToAnotherOneRecipeBuilder(BlockRegister.RUINS_FLOWER, Items.BROWN_DYE);
+        oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE);
+        oneItemToAnotherOneRecipeBuilder(BlockRegister.FALLING_HELICON_FLOWER, Items.RED_DYE, 2);
             //wood
                 //mountain_currant
         oneItemToAnotherOneRecipeBuilder(ModItemTags.MOUNTAIN_CURRANT_LOGS, BlockRegister.MOUNTAIN_CURRANT_PLANKS, 4);
@@ -454,21 +455,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(ModRecipeProvider.recipeOutput, BuiltInRegistries.ITEM.getKey(pResult.asItem())+"_villagerworkshopping");
     }
 
-    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result)
-    {
-        oneItemToAnotherOneRecipeBuilder(resource, result, 1);
-    }
-
-    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result, int numberOutput)
-    {
-        String resultName = BuiltInRegistries.BLOCK.getKey((Block) ((DeferredBlock<Block>) resource).get()).toString().replace(PremierPainMod.MOD_ID +":","");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput)
-                .requires(resource)
-                .unlockedBy("has_" + resultName, has(resource))
-                .save(ModRecipeProvider.recipeOutput);
-    }
-
     private void oneItemToAnotherOneRecipeBuilder(TagKey<Item> resource, ItemLike result)
     {
         oneItemToAnotherOneRecipeBuilder(resource, result, 1);
@@ -484,23 +470,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(ModRecipeProvider.recipeOutput);
     }
 
-    /*
+    /**
     * Use it if the recipe may result a vanilla item
     * @name add itself at the name of folder name
     **/
-    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result, String name)
+    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result)
     {
-        oneItemToAnotherOneRecipeBuilder(resource, result, 1, name);
+        oneItemToAnotherOneRecipeBuilder(resource, result, 1);
     }
 
-    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result, int numberOutput, String name)
+    private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result, int numberOutput)
     {
         String resultName = getName(result.asItem());
-
+        String ingredientName = getName(resource.asItem());
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput)
                 .requires(resource)
                 .unlockedBy("has_" + resultName, has(resource))
-                .save(ModRecipeProvider.recipeOutput, "premierpainmod:"+resultName+name);
+                .save(ModRecipeProvider.recipeOutput, "premierpainmod:"+ resultName + "_from_" + ingredientName);
     }
 
     /*

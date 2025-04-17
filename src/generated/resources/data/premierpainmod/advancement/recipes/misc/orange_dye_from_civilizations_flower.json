@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:orange_dye_mod_flower"
+        "recipe": "premierpainmod:orange_dye_from_civilizations_flower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:orange_dye_mod_flower"
+      "premierpainmod:orange_dye_from_civilizations_flower"
     ]
   }
 }

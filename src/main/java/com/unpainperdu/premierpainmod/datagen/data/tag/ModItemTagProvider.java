@@ -38,6 +38,7 @@ public class ModItemTagProvider extends ItemTagsProvider
     protected void addTags(HolderLookup.Provider pProvider)
     {
         copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
+        copy(BlockTags.TALL_FLOWERS, ItemTags.TALL_FLOWERS);
         copy(BlockTags.LOGS, ItemTags.LOGS);
         copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
         copy(BlockTags.PLANKS, ItemTags.PLANKS);

@@ -158,7 +158,7 @@ public class FrenchLanguageProvider extends LanguageProvider
                     //growing flower
         add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Fleur des civilisations");
                     //tall flower
-        add(BlockRegister.HELICON_FLOWER.get(), "Hélicon");
+        add(BlockRegister.FALLING_HELICON_FLOWER.get(), "Hélicon retombante");
                     //dead bush
         add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Fleur de ruines mortes");
                 //crop

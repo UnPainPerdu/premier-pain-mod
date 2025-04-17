@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "premierpainmod:block/falling_helicon_flower_bottom"
+    },
+    "half=upper": {
+      "model": "premierpainmod:block/falling_helicon_flower_top"
+    }
+  }
+}

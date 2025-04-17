@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_brown_dye": {
+    "has_jelly_hat": {
       "conditions": {
         "items": [
           {
-            "items": "premierpainmod:ruins_flower"
+            "items": "premierpainmod:jellyshroom"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:brown_dye_mod_flower"
+        "recipe": "premierpainmod:jelly_hat_from_jellyshroom"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_brown_dye"
+      "has_jelly_hat"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:brown_dye_mod_flower"
+      "premierpainmod:jelly_hat_from_jellyshroom"
     ]
   }
 }

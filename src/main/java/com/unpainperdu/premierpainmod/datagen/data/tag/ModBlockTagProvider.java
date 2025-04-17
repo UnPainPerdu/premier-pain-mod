@@ -233,11 +233,18 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 FlowerBlock.class,
                 AbstractGrowingAboveVegetation.class,
                 CactusFlowerBlock.class,
-                SkySpearsFlower.class,
-                TallFlowerBlock.class
+                SkySpearsFlower.class
         ))
         {
             this.tag(BlockTags.FLOWERS).add(block);
+        }
+            //tall flower
+        for (Block block : ModBLockList.getAllBlocksFromClass(TallFlowerBlock.class))
+        {
+            this.tag(BlockTags.SWORD_EFFICIENT).add(block);
+            this.tag(BlockTags.REPLACEABLE_BY_TREES).add(block);
+            this.tag(BlockTags.FLOWERS).add(block);
+            this.tag(BlockTags.TALL_FLOWERS).add(block);
         }
 
         //stealable by enderman

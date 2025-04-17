@@ -136,7 +136,7 @@ public class BlockRegister
     public static final DeferredBlock<Block> CURIOSITY_FLOWER =  registerBlock("curiosity_flower", () -> new CuriosityFlower(MobEffects.REGENERATION,5,BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_CURIOSITY_FLOWER = registerFlowerPot("potted_curiosity_flower",() -> CURIOSITY_FLOWER);
         //2 blocks tall flower
-    public static final DeferredBlock<Block> HELICON_FLOWER = registerTallFlower("helicon_flower");
+    public static final DeferredBlock<Block> FALLING_HELICON_FLOWER = registerTallFlower("falling_helicon_flower");
         //dead bush block (like flower)
     public static final DeferredBlock<Block> DEAD_RUINS_FLOWER =  registerBlock("dead_ruins_flower", () -> new DeadBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEAD_BUSH).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> POTTED_DEAD_RUINS_FLOWER = registerFlowerPot("potted_dead_ruins_flower",() -> DEAD_RUINS_FLOWER);
