@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "premierpainmod:jungle_underground_petra",
+      "weight": 1
+    }
+  ],
+  "placement":
+  {
+    "salt": 1642136474,
+    "spacing": 25,
+    "separation": 20,
+    "type": "minecraft:random_spread"
+  }
+}

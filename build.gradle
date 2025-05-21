@@ -22,6 +22,16 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    exclusiveContent {
+        forRepository {
+            maven {
+                url("https://cursemaven.com")
+            }
+        }
+        filter {
+            includeGroup("curse.maven")
+        }
+    }
 }
 
 base {
@@ -199,6 +209,7 @@ dependencies {
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     // at runtime, use the full JEI jar for NeoForge
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    runtimeOnly("curse.maven:worldedit-225608:5830452")
     //TerraBlender
     implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablenderVersion}"
 }
