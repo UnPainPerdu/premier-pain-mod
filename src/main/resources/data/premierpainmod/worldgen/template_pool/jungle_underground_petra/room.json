@@ -1,0 +1,24 @@
+{
+  "name": "premierpainmod:jungle_underground_petra",
+  "fallback": "premierpainmod:jungle_underground_petra/room_wall",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:jungle_underground_petra/house_s_0",
+        "projection": "rigid",
+        "processors": "premierpainmod:jungle_underground_petra"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:jungle_underground_petra/house_s_1",
+        "projection": "rigid",
+        "processors": "premierpainmod:jungle_underground_petra"
+      }
+    }
+  ]
+}

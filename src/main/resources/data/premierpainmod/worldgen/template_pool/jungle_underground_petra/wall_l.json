@@ -1,32 +1,14 @@
 {
   "name": "premierpainmod:jungle_underground_petra",
-  "fallback": "minecraft:empty",
+  "fallback": "premierpainmod:jungle_underground_petra/wall_l_fallback",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "premierpainmod:jungle_underground_petra/wall_l_0",
+        "location": "premierpainmod:jungle_underground_petra/corridor_entrance",
         "projection": "rigid",
-        "processors": "premierpainmod:old_great_field_structure_path"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "premierpainmod:jungle_underground_petra/wall_l_1",
-        "projection": "rigid",
-        "processors": "premierpainmod:old_great_field_structure_path"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "premierpainmod:jungle_underground_petra/wall_l_2",
-        "projection": "rigid",
-        "processors": "premierpainmod:bedrock_to_air"
+        "processors": "premierpainmod:jungle_underground_petra"
       }
     }
   ]
