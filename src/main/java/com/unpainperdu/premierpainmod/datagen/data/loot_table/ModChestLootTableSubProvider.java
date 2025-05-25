@@ -1,8 +1,8 @@
 package com.unpainperdu.premierpainmod.datagen.data.loot_table;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
@@ -15,34 +15,42 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
+import static com.unpainperdu.premierpainmod.datagen.data.loot_table.chest.JungleUndergroundPetraChestLootTable.jungleUnderGroundPetraChestLootTableGenerator;
+
 public class ModChestLootTableSubProvider implements LootTableSubProvider
 {
-    public HolderLookup.Provider registries;
+    public final HolderLookup.Provider registries;
 
-    public static ResourceKey<LootTable> FOREST_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","premier_pain_temple"); // key not change to forest_... cause laziness
-    public static ResourceKey<LootTable> SAND_DESERT_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","sand_desert_premier_pain_temple");
-    public static ResourceKey<LootTable> SWAMP_PREMIER_PAIN_TEMPLE_CHEST = createKey("chests","swamp_premier_pain_temple");
-    public static ResourceKey<LootTable> OLD_GREAT_FIELD_FOOD_CHEST = createKey("chests","old_great_field_food");
+    public static final String CHEST_DIRECTORY = "chests";
 
+    public static final ResourceKey<LootTable> FOREST_PREMIER_PAIN_TEMPLE_CHEST = createKey("premier_pain_temple");
+    public static final ResourceKey<LootTable> SAND_DESERT_PREMIER_PAIN_TEMPLE_CHEST = createKey("sand_desert_premier_pain_temple");
+    public static final ResourceKey<LootTable> SWAMP_PREMIER_PAIN_TEMPLE_CHEST = createKey("swamp_premier_pain_temple");
+    public static final ResourceKey<LootTable> OLD_GREAT_FIELD_FOOD_CHEST = createKey("old_great_field_food");
+
+    //see https://fr.minecraft.wiki/w/Table_de_butin (in french)
     public ModChestLootTableSubProvider(HolderLookup.Provider lookupProvider)
     {
         this.registries = lookupProvider;
     }
+
     @Override
-    public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output)
+    public void generate(@NotNull BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output)
     {
         forestPremierPainTempleChestLootTableGenerator(output);
         sandDesertPremierPainTempleChestLootTableGenerator(output);
         swampPremierPainTempleChestLootTableGenerator(output);
         oldGreatFieldFoodChestLootTableGenerator(output);
+        jungleUnderGroundPetraChestLootTableGenerator(output);
     }
 
-    public static ResourceKey<LootTable> createKey(String directory, String name)
+    public static ResourceKey<LootTable> createKey(String name)
     {
-        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, directory + "/"+name));
+        return ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, CHEST_DIRECTORY + "/" + name));
     }
 
     private static void forestPremierPainTempleChestLootTableGenerator(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder)
@@ -50,7 +58,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
         // LootTable.lootTable() returns a loot table builder we can add loot tables to.
         builder.accept(FOREST_PREMIER_PAIN_TEMPLE_CHEST, LootTable.lootTable()
                 // Add a loot table-level loot function. This example uses a number provider (see below).
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2))) // lié au nombre d'items par slot et slot occupés
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))) // lié au nombre d'items par slot et slot occupés
                 // Add a loot pool.
                 .withPool(LootPool.lootPool()
                         // Add a loot pool-level function, similar to above.
@@ -58,6 +66,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
                         // Both of these methods utilize a number provider.
                         .setRolls(UniformGenerator.between(8, 15)) // lié aussi au nombre d'items par slot et slot occupés
                         .setBonusRolls(ConstantValue.exactly(0))
+                        //bonus rolls if luck effect
                         // .add(LootItem.lootTableItem(ItemLikes).setWeight(int nullable).setQuality(int nullable))
                         // weight -> weight / (tous les weight) chances de spawn
                         // quality -> extra weight si potion luck
@@ -82,7 +91,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
         // LootTable.lootTable() returns a loot table builder we can add loot tables to.
         builder.accept(SAND_DESERT_PREMIER_PAIN_TEMPLE_CHEST, LootTable.lootTable()
                 // Add a loot table-level loot function. This example uses a number provider (see below).
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2))) // lié au nombre d'items par slot et slot occupés
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))) // lié au nombre d'items par slot et slot occupés
                 // Add a loot pool.
                 .withPool(LootPool.lootPool()
                         // Add a loot pool-level function, similar to above.
@@ -112,7 +121,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
     private static void swampPremierPainTempleChestLootTableGenerator(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder)
     {
         builder.accept(SWAMP_PREMIER_PAIN_TEMPLE_CHEST, LootTable.lootTable()
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2)))
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2)))
                 .withPool(LootPool.lootPool()
                         .setRolls(UniformGenerator.between(8, 15))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -135,7 +144,7 @@ public class ModChestLootTableSubProvider implements LootTableSubProvider
     private static void oldGreatFieldFoodChestLootTableGenerator(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> builder)
     {
         builder.accept(OLD_GREAT_FIELD_FOOD_CHEST, LootTable.lootTable()
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2)))
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2)))
                 .withPool(LootPool.lootPool()
                         .setRolls(UniformGenerator.between(8, 15))
                         .setBonusRolls(ConstantValue.exactly(0))
