@@ -52,7 +52,7 @@ public class ModVegetationPlacement
         register(pContext, ModVegetationPlacement.PATCH_CURIOSITY_FLOWER, PATCH_CURIOSITY_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 5, 10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
             //tall_flower
         final Holder<ConfiguredFeature<?, ?>> FALLING_HELICON_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_FALLING_HELICON_FLOWER);
-        register(pContext, ModVegetationPlacement.PATCH_FALLING_HELICON_FLOWER, FALLING_HELICON_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 50, 50), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(pContext, ModVegetationPlacement.PATCH_FALLING_HELICON_FLOWER, FALLING_HELICON_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 10, 25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         //dead bush
         final Holder<ConfiguredFeature<?, ?>> PATCH_DEAD_RUINS_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_DEAD_RUINS_FLOWER);
         register(pContext, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER, PATCH_DEAD_RUINS_FLOWER_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
