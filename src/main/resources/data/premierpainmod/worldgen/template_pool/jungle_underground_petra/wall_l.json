@@ -8,7 +8,8 @@
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/corridor_entrance",
         "projection": "rigid",
-        "processors": "premierpainmod:jungle_underground_petra"
+        "processors": "premierpainmod:jungle_underground_petra",
+        "override_liquid_settings": "ignore_waterlogging"
       }
     }
   ]

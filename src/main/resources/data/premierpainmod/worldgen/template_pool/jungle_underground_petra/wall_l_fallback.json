@@ -17,7 +17,8 @@
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/wall_l_1",
         "projection": "rigid",
-        "processors": "premierpainmod:jungle_underground_petra"
+        "processors": "premierpainmod:jungle_underground_petra",
+        "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
@@ -26,7 +27,8 @@
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/wall_l_2",
         "projection": "rigid",
-        "processors": "premierpainmod:jungle_underground_petra"
+        "processors": "premierpainmod:jungle_underground_petra",
+        "override_liquid_settings": "ignore_waterlogging"
       }
     }
   ]
