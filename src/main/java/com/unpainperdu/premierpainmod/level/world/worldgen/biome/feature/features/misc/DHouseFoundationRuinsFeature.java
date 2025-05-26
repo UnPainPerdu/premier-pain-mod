@@ -18,12 +18,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HouseFoundationRuinsFeature extends Feature<NoneFeatureConfiguration>
+public class DHouseFoundationRuinsFeature extends Feature<NoneFeatureConfiguration>
 {
     private int numberA = 1000;
     private int countInFlag = 0;
     private boolean flag = false;
-    public HouseFoundationRuinsFeature(Codec<NoneFeatureConfiguration> pCodec)
+    public DHouseFoundationRuinsFeature(Codec<NoneFeatureConfiguration> pCodec)
     {
         super(pCodec);
     }

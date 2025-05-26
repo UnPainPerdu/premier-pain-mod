@@ -79,7 +79,7 @@ public record BushAndRockConfiguration(int maxExcludedNumberOfBlock,
             }
             if (statesForRock.isEmpty())
             {
-                throw new IllegalArgumentException("statesForRock list must not be null");
+                throw new IllegalArgumentException("statesForRock list must not be empty");
             }
             return new BushAndRockConfiguration(this.maxExcludedNumberOfBlock, this.statesForRock, this.percentageOfCoverageBy2ndLayer, this.statesFor2ndLayer);
         }

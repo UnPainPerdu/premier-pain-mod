@@ -227,14 +227,7 @@ public class PosHelper
     public static boolean isFlying(BlockPos pos, WorldGenLevel worldIn)
     {
         Block block = worldIn.getBlockState(pos.below()).getBlock();
-        if(block instanceof AirBlock || block instanceof LiquidBlock || block instanceof LeavesBlock)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return block instanceof AirBlock || block instanceof LiquidBlock || block instanceof LeavesBlock;
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
 
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock_feature.BushAndRockConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
 import com.unpainperdu.premierpainmod.util.register.FeatureRegister;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -38,7 +39,14 @@ public class ModMiscOverworldFeatures
                         .statesFor2ndLayer(List.of(BlockStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState().setValue(LeavesBlock.PERSISTENT, true))))
                         .build()
                 );
-        FeatureUtils.register(pContext, ModMiscOverworldFeatures.HOUSE_FOUNDATION_RUINS, FeatureRegister.HOUSE_FOUNDATION_RUINS.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModMiscOverworldFeatures.HOUSE_FOUNDATION_RUINS, FeatureRegister.HOUSE_FOUNDATION_RUINS.get(),
+                new HouseFoundationRuinsConfiguration.Builder()
+                        .states(List.of(
+                                BlockStateProvider.simple(Blocks.COBBLESTONE.defaultBlockState()),
+                                BlockStateProvider.simple(Blocks.MOSSY_COBBLESTONE.defaultBlockState())
+                        ))
+                        .build()
+        );
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.VILLAGER_PILLAR_RUINS_DESERT, FeatureRegister.VILLAGER_PILLAR_RUINS_DESERT.get(), NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.MUD_PACK, FeatureRegister.MUD_PACK.get(), NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.VILLAGER_TOTEM, FeatureRegister.VILLAGER_TOTEM.get(), NoneFeatureConfiguration.INSTANCE);

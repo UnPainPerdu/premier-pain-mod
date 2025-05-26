@@ -1,4 +1,19 @@
 {
   "type": "premierpainmod:house_foundation_ruins",
-  "config": {}
+  "config": {
+    "states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:cobblestone"
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mossy_cobblestone"
+        }
+      }
+    ]
+  }
 }
