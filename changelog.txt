@@ -209,11 +209,12 @@ What would be a world without bugs ?
         - Jungle underground Petra, a village generate in this jungle underground !
 
     - Villager Chiseled Head, a decorative block which produce light and can be switched between on/off
+    - add off set model and hitbox to match vanilla model for almost all vegetation
 
 ## change :
     - mountain currant fruits give less food but more saturation and are eaten faster
     - Jellyshroom item texture
-    
+
 ## fix :
     - mountain currant leaves does not tint anymore its fruit
     - add missing tag for stripped wood and log

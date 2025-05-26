@@ -12,6 +12,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -78,6 +79,7 @@ public class CactusFlowerBlock extends Block
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        return Block.box(5,0,5, 11, 10 ,11);
+        Vec3 vec3 = state.getOffset(level, pos);
+        return Block.box(5,0,5, 11, 10 ,11).move(vec3.x, vec3.y, vec3.z);
     }
 }
