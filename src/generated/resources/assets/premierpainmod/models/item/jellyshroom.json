@@ -1,3 +1,6 @@
 {
-  "parent": "premierpainmod:block/jellyshroom"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:item/vegetation/crop/jellyshroom"
+  }
 }

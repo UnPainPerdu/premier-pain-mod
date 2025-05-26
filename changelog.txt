@@ -206,13 +206,15 @@ What would be a world without bugs ?
         - Achiote tree -> new tree with new wood set which grow fruit on it
         - Falling Helicon flower -> a tall flower which can be crafted into red_dye
         - little totem feature
+        - Jungle underground Petra, a village generate in this jungle underground !
 
     - Villager Chiseled Head, a decorative block which produce light and can be switched between on/off
 
 ## change :
-    mountain currant fruit give less food but more saturation and is eaten faster
-
+    - mountain currant fruits give less food but more saturation and are eaten faster
+    - Jellyshroom item texture
+    
 ## fix :
-    - mountain curran leaves does not tint anymore its fruit
+    - mountain currant leaves does not tint anymore its fruit
     - add missing tag for stripped wood and log
     - Some all materials type block is not anymore path findable by mob (as brazero)

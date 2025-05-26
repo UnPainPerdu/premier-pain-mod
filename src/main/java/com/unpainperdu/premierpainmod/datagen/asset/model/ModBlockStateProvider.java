@@ -1180,8 +1180,10 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile model = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/crop/jellyshroom/jellyshroom_0");
-        itemModels().getBuilder(getKey(block).getPath()).parent(model);
+        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0","item/vegetation/crop/jellyshroom");
     }
 
     private void logWithItem(Block log, String folderInTree)
