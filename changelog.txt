@@ -219,3 +219,6 @@ What would be a world without bugs ?
     - mountain currant leaves does not tint anymore its fruit
     - add missing tag for stripped wood and log
     - Some all materials type block is not anymore path findable by mob (as brazero)
+
+## Note
+    - Feature in biome can have change by accident, send these change in the issue page of my Github

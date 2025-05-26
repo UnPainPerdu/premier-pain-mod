@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock_feature.BushAndRockConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock_feature.BushAndRockFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.*;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.dead_bush_patch.DeadRuinsFlowerPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.CivilizationsFlowerPatchFeature;
@@ -24,7 +26,7 @@ public class FeatureRegister
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, PremierPainMod.MOD_ID);
     //misc
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> VILLAGER_STATUE_RUINS = FEATURES.register("villager_statue_ruins",() -> new VillagerStatueRuinsFeature(NoneFeatureConfiguration.CODEC));
-    public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> BUSH_AND_STONE = FEATURES.register("bush_and_stone",() -> new BushAndStoneFeature(NoneFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>,Feature<BushAndRockConfiguration>> BUSH_AND_ROCK = FEATURES.register("bush_and_rock",() -> new BushAndRockFeature(BushAndRockConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> HOUSE_FOUNDATION_RUINS = FEATURES.register("house_foundation_ruins",() -> new HouseFoundationRuinsFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> VILLAGER_PILLAR_RUINS_DESERT = FEATURES.register("villager_pillar_ruins_desert",() -> new VillagerPillarRuinsFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>,Feature<NoneFeatureConfiguration>> MUD_PACK = FEATURES.register("mud_pack",() -> new MudPackFeature(NoneFeatureConfiguration.CODEC));

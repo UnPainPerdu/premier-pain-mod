@@ -1,0 +1,34 @@
+{
+  "type": "premierpainmod:bush_and_rock",
+  "config": {
+    "max_excluded_number_of_block": 25,
+    "percentage_of_coverage_by_2nd_layer": 75,
+    "states_for_2nd_layer": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:oak_leaves",
+          "Properties": {
+            "distance": "7",
+            "persistent": "true",
+            "waterlogged": "false"
+          }
+        }
+      }
+    ],
+    "states_for_rock": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:stone"
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:cobblestone"
+        }
+      }
+    ]
+  }
+}

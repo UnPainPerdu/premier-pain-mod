@@ -61,7 +61,7 @@ public class ModBiomes
         BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
         addVillagerStatue(biomegenerationsettings$builder);
         addHouseFoundationRuins(biomegenerationsettings$builder);
-        addBushAndStoneFeature(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.BUSH_AND_ROCK);
         addRuinsFlowers(biomegenerationsettings$builder);
         addCivilizationsFlowers(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
@@ -279,11 +279,6 @@ public class ModBiomes
     public static void addVillagerStatue(BiomeGenerationSettings.Builder pBuilder)
     {
         pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_STATUE_RUINS);
-    }
-
-    public static void addBushAndStoneFeature(BiomeGenerationSettings.Builder pBuilder)
-    {
-        pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.BUSH_AND_STONE);
     }
 
     public static void addRuinsFlowers(BiomeGenerationSettings.Builder pBuilder)
