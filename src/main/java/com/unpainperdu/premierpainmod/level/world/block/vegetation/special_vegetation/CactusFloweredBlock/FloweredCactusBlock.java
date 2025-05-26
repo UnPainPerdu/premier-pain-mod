@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock;
+package com.unpainperdu.premierpainmod.level.world.block.vegetation.special_vegetation.CactusFloweredBlock;
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.VegetationUtil;

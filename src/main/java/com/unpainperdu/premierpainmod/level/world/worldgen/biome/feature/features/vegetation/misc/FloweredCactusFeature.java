@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.misc;
 
 import com.mojang.serialization.Codec;
-import com.unpainperdu.premierpainmod.level.world.block.vegetation.specialVegetation.CactusFloweredBlock.FloweredCactusBlock;
+import com.unpainperdu.premierpainmod.level.world.block.vegetation.special_vegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.ModFeatureUtils;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;

@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block.vegetation.twoBlockHeight;
+package com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_height;
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
