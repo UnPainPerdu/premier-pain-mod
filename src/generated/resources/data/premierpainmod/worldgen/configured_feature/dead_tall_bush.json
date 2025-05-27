@@ -1,4 +1,23 @@
 {
-  "type": "premierpainmod:dead_tall_bush",
-  "config": {}
+  "type": "premierpainmod:tall_vegetation_flower",
+  "config": {
+    "ground_allowed": [
+      "minecraft:dirt",
+      "minecraft:sand"
+    ],
+    "max_flower_number": 5,
+    "min_flower_number": 2,
+    "spread": 2,
+    "states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:dead_tall_bush",
+          "Properties": {
+            "half": "lower"
+          }
+        }
+      }
+    ]
+  }
 }

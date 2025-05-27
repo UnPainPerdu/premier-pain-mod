@@ -1,4 +1,22 @@
 {
-  "type": "premierpainmod:sky_spears",
-  "config": {}
+  "type": "premierpainmod:tall_vegetation_flower",
+  "config": {
+    "ground_allowed": [
+      "minecraft:dirt"
+    ],
+    "max_flower_number": 11,
+    "min_flower_number": 7,
+    "spread": 2,
+    "states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:sky_spears",
+          "Properties": {
+            "half": "lower"
+          }
+        }
+      }
+    ]
+  }
 }

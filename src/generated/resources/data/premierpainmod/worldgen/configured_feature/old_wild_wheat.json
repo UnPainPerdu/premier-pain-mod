@@ -1,4 +1,22 @@
 {
-  "type": "premierpainmod:old_wild_wheat",
-  "config": {}
+  "type": "premierpainmod:tall_vegetation_flower",
+  "config": {
+    "ground_allowed": [
+      "minecraft:dirt"
+    ],
+    "max_flower_number": 1,
+    "min_flower_number": 1,
+    "spread": 1,
+    "states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:old_wild_wheat",
+          "Properties": {
+            "half": "lower"
+          }
+        }
+      }
+    ]
+  }
 }

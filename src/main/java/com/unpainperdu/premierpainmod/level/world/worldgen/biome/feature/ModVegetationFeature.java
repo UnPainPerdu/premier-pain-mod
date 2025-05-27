@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
 
 import com.google.common.collect.ImmutableList;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.PatchConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.AchioteFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MorichePalmFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MountainCurrantFoliagePlacer;
@@ -16,6 +17,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -65,22 +67,79 @@ public class ModVegetationFeature
         Holder<PlacedFeature> holder22 = holdergetter1.getOrThrow(TreePlacements.TALL_MANGROVE_CHECKED);
         Holder<PlacedFeature> holder29 = holdergetter1.getOrThrow(TreePlacements.MANGROVE_CHECKED);
         //flower
-        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_RUINS_FLOWER, FeatureRegister.PATCH_RUINS_FLOWER.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_RUINS_FLOWER, FeatureRegister.BASIC_VEGETATION_PATCH.get(),
+                new PatchConfiguration.Builder()
+                        .spread(5)
+                        .minFlowerNumber(5)
+                        .maxFlowerNumber(10)
+                        .states(List.of(BlockStateProvider.simple(BlockRegister.RUINS_FLOWER.get().defaultBlockState())))
+                        .groundAllowed(List.of(BlockTags.DIRT))
+                        .builder()
+        );
+
         FeatureUtils.register(pContext, ModVegetationFeature.PATCH_CIVILIZATIONS_FLOWER, FeatureRegister.PATCH_CIVILIZATIONS_FLOWER.get(), NoneFeatureConfiguration.INSTANCE);
-        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_CURIOSITY_FLOWER, FeatureRegister.PATCH_CURIOSITY_FLOWER.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_CURIOSITY_FLOWER, FeatureRegister.BASIC_VEGETATION_PATCH.get(),
+                new PatchConfiguration.Builder()
+                        .spread(10)
+                        .minFlowerNumber(1)
+                        .maxFlowerNumber(3)
+                        .states(List.of(BlockStateProvider.simple(BlockRegister.CURIOSITY_FLOWER.get().defaultBlockState())))
+                        .groundAllowed(List.of(BlockTags.DIRT))
+                        .builder()
+        );
             //tall_flower
-        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_FALLING_HELICON_FLOWER, FeatureRegister.FALLING_HELICON_FLOWER.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_FALLING_HELICON_FLOWER, FeatureRegister.TALL_VEGETATION_PATCH.get(),
+                new PatchConfiguration.Builder()
+                        .spread(4)
+                        .minFlowerNumber(4)
+                        .maxFlowerNumber(15)
+                        .states(List.of(BlockStateProvider.simple(BlockRegister.FALLING_HELICON_FLOWER.get().defaultBlockState())))
+                        .groundAllowed(List.of(BlockTags.DIRT))
+                        .builder()
+        );
         //dead bush
-        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_DEAD_RUINS_FLOWER, FeatureRegister.PATCH_DEAD_RUINS_FLOWER.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_DEAD_RUINS_FLOWER, FeatureRegister.BASIC_VEGETATION_PATCH.get(),
+                new PatchConfiguration.Builder()
+                    .spread(5)
+                    .minFlowerNumber(5)
+                    .maxFlowerNumber(10)
+                    .states(List.of(BlockStateProvider.simple(BlockRegister.DEAD_RUINS_FLOWER.get().defaultBlockState())))
+                    .groundAllowed(List.of(BlockTags.DIRT, BlockTags.SAND))
+                    .builder()
+        );
         //tree
         FeatureUtils.register(pContext, TREE_MANGROVE, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(holder22, 0.85F)), holder29));
         FeatureUtils.register(pContext, TREE_OAK_SWAMP, Feature.TREE, createStraightBlobTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES, 5, 3, 0, 3).decorators(ImmutableList.of(new LeaveVineDecorator(0.25F))).build());
         //misc
         FeatureUtils.register(pContext, ModVegetationFeature.FLOWERED_CACTUS, FeatureRegister.FLOWERED_CACTUS.get(), NoneFeatureConfiguration.INSTANCE);
         //tall grass
-        FeatureUtils.register(pContext, ModVegetationFeature.SKY_SPEARS, FeatureRegister.SKY_SPEARS.get(), NoneFeatureConfiguration.INSTANCE);
-        FeatureUtils.register(pContext, ModVegetationFeature.DEAD_TALL_BUSH, FeatureRegister.DEAD_TALL_BUSH.get(), NoneFeatureConfiguration.INSTANCE);
-        FeatureUtils.register(pContext, ModVegetationFeature.OLD_WILD_WHEAT, FeatureRegister.OLD_WILD_WHEAT.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModVegetationFeature.SKY_SPEARS, FeatureRegister.TALL_VEGETATION_PATCH.get(),
+                new PatchConfiguration.Builder()
+                        .spread(2)
+                        .minFlowerNumber(7)
+                        .maxFlowerNumber(11)
+                        .states(List.of(BlockStateProvider.simple(BlockRegister.SKY_SPEARS.get().defaultBlockState())))
+                        .groundAllowed(List.of(BlockTags.DIRT))
+                        .builder()
+        );
+        FeatureUtils.register(pContext, ModVegetationFeature.DEAD_TALL_BUSH, FeatureRegister.TALL_VEGETATION_PATCH.get(),
+                new PatchConfiguration.Builder()
+                        .spread(2)
+                        .minFlowerNumber(2)
+                        .maxFlowerNumber(5)
+                        .states(List.of(BlockStateProvider.simple(BlockRegister.DEAD_TALL_BUSH.get().defaultBlockState())))
+                        .groundAllowed(List.of(BlockTags.DIRT, BlockTags.SAND))
+                        .builder()
+        );
+        FeatureUtils.register(pContext, ModVegetationFeature.OLD_WILD_WHEAT, FeatureRegister.TALL_VEGETATION_PATCH.get(),
+                new PatchConfiguration.Builder()
+                        .spread(1)
+                        .minFlowerNumber(1)
+                        .maxFlowerNumber(5)
+                        .states(List.of(BlockStateProvider.simple(BlockRegister.OLD_WILD_WHEAT.get().defaultBlockState())))
+                        .groundAllowed(List.of(BlockTags.DIRT))
+                        .builder()
+        );
         //tree
         FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createMountainCurrantTree(BlockRegister.MOUNTAIN_CURRANT_LOG.get(), BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), 3).build());
         FeatureUtils.register(pContext, MORICHE_PALM, Feature.TREE, createMorichePalmTree(BlockRegister.MORICHE_PALM_LOG.get(), BlockRegister.MORICHE_PALM_LEAVES.get()).build());

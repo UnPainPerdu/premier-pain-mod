@@ -1,4 +1,20 @@
 {
-  "type": "premierpainmod:patch_dead_ruins_flower",
-  "config": {}
+  "type": "premierpainmod:basic_vegetation_flower",
+  "config": {
+    "ground_allowed": [
+      "minecraft:dirt",
+      "minecraft:sand"
+    ],
+    "max_flower_number": 10,
+    "min_flower_number": 5,
+    "spread": 5,
+    "states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:dead_ruins_flower"
+        }
+      }
+    ]
+  }
 }

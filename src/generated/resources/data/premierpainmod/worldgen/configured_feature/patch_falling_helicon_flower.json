@@ -1,4 +1,22 @@
 {
-  "type": "premierpainmod:falling_helicon_flower",
-  "config": {}
+  "type": "premierpainmod:tall_vegetation_flower",
+  "config": {
+    "ground_allowed": [
+      "minecraft:dirt"
+    ],
+    "max_flower_number": 15,
+    "min_flower_number": 4,
+    "spread": 4,
+    "states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:falling_helicon_flower",
+          "Properties": {
+            "half": "lower"
+          }
+        }
+      }
+    ]
+  }
 }
