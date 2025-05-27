@@ -4,7 +4,7 @@
     "ground_allowed": [
       "minecraft:dirt"
     ],
-    "max_flower_number": 1,
+    "max_flower_number": 5,
     "min_flower_number": 1,
     "spread": 1,
     "states": [

@@ -21,11 +21,16 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModBiomes
 {
-    public static final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "forest_premier_pain_ruins"));
-    public static final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "sand_desert_premier_pain_ruins"));
-    public static final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "swamp_premier_pain_ruins"));
-    public static final ResourceKey<Biome> OLD_GREAT_FIELD = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "old_great_field"));
-    public static final ResourceKey<Biome> JUNGLE_PREMIER_PAIN_RUINS = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "jungle_premier_pain_ruins"));
+    public static final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = createKey("forest_premier_pain_ruins");
+    public static final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = createKey("sand_desert_premier_pain_ruins");
+    public static final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = createKey("swamp_premier_pain_ruins");
+    public static final ResourceKey<Biome> OLD_GREAT_FIELD = createKey("old_great_field");
+    public static final ResourceKey<Biome> JUNGLE_PREMIER_PAIN_RUINS = createKey("jungle_premier_pain_ruins");
+
+    private static ResourceKey<Biome> createKey(String path)
+    {
+        return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path));
+    }
 
     public static void boostrap(BootstrapContext<Biome> context)
     {
