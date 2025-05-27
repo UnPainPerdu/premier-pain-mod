@@ -1,4 +1,23 @@
 {
-  "type": "premierpainmod:patch_civilizations_flower",
-  "config": {}
+  "type": "premierpainmod:growing_above_vegetation_flower",
+  "config": {
+    "ground_allowed": [
+      "minecraft:dirt"
+    ],
+    "max_flower_number": 5,
+    "min_flower_number": 2,
+    "spread": 2,
+    "states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:civilizations_flower",
+          "Properties": {
+            "age": "0",
+            "max_height": "0"
+          }
+        }
+      }
+    ]
+  }
 }

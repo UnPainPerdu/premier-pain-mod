@@ -77,7 +77,15 @@ public class ModVegetationFeature
                         .builder()
         );
 
-        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_CIVILIZATIONS_FLOWER, FeatureRegister.PATCH_CIVILIZATIONS_FLOWER.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModVegetationFeature.PATCH_CIVILIZATIONS_FLOWER, FeatureRegister.GROWING_ABOVE_VEGETATION_PATCH.get(),
+                new PatchConfiguration.Builder()
+                        .spread(2)
+                        .minFlowerNumber(2)
+                        .maxFlowerNumber(5)
+                        .states(List.of(BlockStateProvider.simple(BlockRegister.CIVILIZATIONS_FLOWER.get().defaultBlockState())))
+                        .groundAllowed(List.of(BlockTags.DIRT))
+                        .builder()
+        );
         FeatureUtils.register(pContext, ModVegetationFeature.PATCH_CURIOSITY_FLOWER, FeatureRegister.BASIC_VEGETATION_PATCH.get(),
                 new PatchConfiguration.Builder()
                         .spread(10)

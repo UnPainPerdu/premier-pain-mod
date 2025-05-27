@@ -6,13 +6,13 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configu
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.BasicFlowerPatchFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.GrowingAboveVegetationPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.PatchConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.TallVegetationPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.MudPackFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.VillagerPillarRuinsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.VillagerStatueRuinsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.VillagerTotemFeature;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.flower_patch.CivilizationsFlowerPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.misc.FloweredCactusFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -39,7 +39,7 @@ public class FeatureRegister
     //flower
     public static final DeferredHolder<Feature<?>, Feature<PatchConfiguration>> BASIC_VEGETATION_PATCH = FEATURES.register("basic_vegetation_flower", () -> new BasicFlowerPatchFeature(PatchConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<PatchConfiguration>> TALL_VEGETATION_PATCH = FEATURES.register("tall_vegetation_flower", () -> new TallVegetationPatchFeature(PatchConfiguration.CODEC));
-    public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> PATCH_CIVILIZATIONS_FLOWER = FEATURES.register("patch_civilizations_flower", () -> new CivilizationsFlowerPatchFeature(NoneFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<PatchConfiguration>> GROWING_ABOVE_VEGETATION_PATCH = FEATURES.register("growing_above_vegetation_flower", () -> new GrowingAboveVegetationPatchFeature(PatchConfiguration.CODEC));
     //misc
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> FLOWERED_CACTUS = FEATURES.register("flowered_cactus", () -> new FloweredCactusFeature(NoneFeatureConfiguration.CODEC));
 
