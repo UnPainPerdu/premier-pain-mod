@@ -36,8 +36,6 @@ public class VillagerBrewingStation extends BaseEntityBlock
     public static final MapCodec<VillagerBrewingStation> CODEC = simpleCodec(VillagerBrewingStation::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    public static final EnumProperty<LiquidContent> CONTENT = ModBlockStateProperties.LIQUID_CONTENT;
-    public static final IntegerProperty LEVEL = ModBlockStateProperties.LEVEL_4;
 
     private static final VoxelShape BASE = Block.box(1, 0, 1, 15, 15, 15);
     private static final VoxelShape NORTH_PART = Block.box(1, 0, 0, 15, 15, 1);
@@ -50,7 +48,7 @@ public class VillagerBrewingStation extends BaseEntityBlock
     public VillagerBrewingStation(Properties properties)
     {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE).setValue(FACING, Direction.NORTH).setValue(CONTENT, LiquidContent.EMPTY).setValue(LEVEL, 0));
+        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE).setValue(FACING, Direction.NORTH));
     }
 
     @Override
@@ -126,7 +124,7 @@ public class VillagerBrewingStation extends BaseEntityBlock
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add( WATERLOGGED, FACING, CONTENT, LEVEL);
+        pBuilder.add( WATERLOGGED, FACING);
     }
 
     @Override

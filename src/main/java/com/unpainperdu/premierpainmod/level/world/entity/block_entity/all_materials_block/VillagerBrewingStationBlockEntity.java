@@ -14,11 +14,13 @@ import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -161,6 +163,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, VillagerBrewingStationBlockEntity blockEntity)
     {
+        boolean flag1 = false;
         if (blockEntity.fluidTank.isEmpty())
         {
             NonNullList<ItemStack> itemStacks = blockEntity.items;
@@ -169,10 +172,9 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                 blockEntity.fluidTank.fill(new FluidStack(Fluids.WATER, 1000), IFluidHandler.FluidAction.EXECUTE);
                 itemStacks.set(WATER_INPUT_SLOT, new ItemStack(Items.BUCKET));
                 blockEntity.setItems(itemStacks);
-                blockEntity.setChanged();
+                flag1 = true;
             }
         }
-        boolean flag1 = false;
         List<ItemStack>  itemStacks = blockEntity.getIngredientItem();
         FluidStack fluidStackInput = blockEntity.fluidTank.getFluid();
 
@@ -269,41 +271,10 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
 
         if (flag1)
         {
-            setChanged(level, pos, state);
+            blockEntity.setChanged();
         }
-        blockEntity.updateLevelFromTank(level, pos, state, blockEntity.fluidTank);
-
-        //System.out.println(blockEntity.brewingProgress);
-        //System.out.println(blockEntity.fluidTank.getFluid() + " " + blockEntity.fluidTank.getFluidAmount());
     }
 
-    protected void updateLevelFromTank(Level level, BlockPos pos, BlockState state, FluidTank fluidTank)
-    {
-        LiquidContent content = LiquidContent.WATER;
-        int levelInt = 0;
-        FluidType fluidType = fluidTank.getFluid().getFluidType();
-        if (fluidType instanceof BeerFluidType)
-        {
-            content = ((BeerFluidType) fluidType).getLiquidContent();
-        }
-        if (fluidTank.getFluidAmount() >= 1000)
-        {
-            levelInt = 4;
-        }
-        else if (fluidTank.getFluidAmount() >= 750)
-        {
-            levelInt = 3;
-        }
-        else if (fluidTank.getFluidAmount() >= 500)
-        {
-            levelInt = 2;
-        }
-        else if (fluidTank.getFluidAmount() >= 250)
-        {
-            levelInt = 1;
-        }
-        level.setBlock(pos, state.setValue(VillagerBrewingStation.LEVEL, levelInt).setValue(VillagerBrewingStation.CONTENT, content), 3);
-    }
 
     protected boolean hasEnoughItems(List<ItemStack> itemStackList)
     {
@@ -461,14 +432,6 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         }
     }
 
-    @javax.annotation.Nullable
-    public static <T extends BlockEntity> BlockEntityTicker<T> createBrewingStationTicker(
-            Level level, BlockEntityType<T> serverType, BlockEntityType<VillagerBrewingStationBlockEntity> clientType
-    )
-    {
-        return level.isClientSide ? null : createTickerHelper(serverType, clientType, VillagerBrewingStationBlockEntity::serverTick);
-    }
-
     private NonNullList<ItemStack> getIngredientItem()
     {
         NonNullList<ItemStack> temp = NonNullList.withSize(SLOTS_FOR_INGREDIENT.length, ItemStack.EMPTY);
@@ -487,23 +450,54 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     }
 
     @javax.annotation.Nullable
+    public static <T extends BlockEntity> BlockEntityTicker<T> createBrewingStationTicker(
+            Level level, BlockEntityType<T> serverType, BlockEntityType<VillagerBrewingStationBlockEntity> clientType
+    )
+    {
+        return level.isClientSide ? null : createTickerHelper(serverType, clientType, VillagerBrewingStationBlockEntity::serverTick);
+    }
+
+    @javax.annotation.Nullable
     public static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> serverType, BlockEntityType<E> clientType, BlockEntityTicker<? super E> ticker)
     {
         return clientType == serverType ? (BlockEntityTicker<A>)ticker : null;
     }
 
-    //for link between client side BE and server side BE I suppose
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries)
     {
-        return saveWithoutMetadata(registries);
+        CompoundTag tag = new CompoundTag();
+        saveAdditional(tag, registries);
+        return tag;
     }
 
-    //for link between client side BE and server side BE I suppose
+    @Override
+    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider lookupProvider)
+    {
+        loadAdditional(tag, lookupProvider);
+    }
+
+    @Override
+    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider lookupProvider)
+    {
+        CompoundTag tag = pkt.getTag();
+        loadAdditional(tag == null ? new CompoundTag() : tag, lookupProvider);
+    }
+
     @Nullable
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket()
     {
         return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public void setChanged()
+    {
+        if (level instanceof ServerLevel serverLevel)
+        {
+            serverLevel.getChunkSource().blockChanged(getBlockPos());
+        }
+        super.setChanged();
     }
 }

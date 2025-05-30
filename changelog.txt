@@ -214,6 +214,7 @@ What would be a world without bugs ?
 ## change :
     - mountain currant fruits give less food but more saturation and are eaten faster
     - Jellyshroom item texture
+    - completely rework fluid display for Villager Brewing Station, so any fluid which being somehow in the barrel will be displayed
 
 ## fix :
     - mountain currant leaves does not tint anymore its fruit
@@ -221,4 +222,4 @@ What would be a world without bugs ?
     - Some all materials type block is not anymore path findable by mob (as brazero)
 
 ## Note
-    - Feature in biome can have changed by accident, send these change in the issue page of my Github
+    - Feature in biome can have changed by accident, send these change in the issue page of my GitHub

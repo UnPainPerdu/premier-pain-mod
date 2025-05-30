@@ -26,10 +26,6 @@ public class BlockAndItemTintingEvent
         setTintingForFruitLeaves(event, BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
         setTintingForVegetation(event, BlockRegister.MORICHE_PALM_LEAVES.get());
         setTintingForFruitLeaves(event, BlockRegister.ACHIOTE_LEAVES.get());
-        for (Block block : ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class))
-        {
-            event.register(BlockAndItemTintingEvent::getColorFromContentBrewingStation,block);
-        }
     }
 
     @SubscribeEvent
@@ -40,23 +36,6 @@ public class BlockAndItemTintingEvent
                 BlockRegister.MORICHE_PALM_LEAVES.get(),
                 BlockRegister.ACHIOTE_LEAVES.get()
         );
-    }
-    /*
-    get tint color define in fluid type of the fluid in the fluid tank
-    */
-    private static int getColorFromContentBrewingStation(BlockState state, BlockAndTintGetter level, BlockPos pos, int tintIndex)
-    {
-        int color = 0xFFFFFF;
-        try
-        {
-            if (tintIndex == 5)
-            {
-                color = state.getValue(VillagerBrewingStation.CONTENT).getTintIndex();
-            }
-        }
-        catch (Exception ignored) {}
-
-        return color;
     }
 
     private static void setTintingForVegetation(RegisterColorHandlersEvent.Block event, Block block)

@@ -1001,18 +1001,17 @@ public class ModBlockStateProvider extends BlockStateProvider
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
         variantBuilder.forAllStates(state ->
         {
-            int level = state.getValue(VillagerBrewingStation.LEVEL);
-            String modelPath = "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station_" + level;
-            String modelName = getKey(block).toString() + level;
+            String modelPath = "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station";
+            String modelName = getKey(block).toString();
 
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("2",texture)
-                            .texture("3", particle))
+                            .texture("1",texture)
+                            .texture("2", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station_0").texture("2", "block/all_materials_block/multiple_use_texture/" + material).texture("3","block/all_materials_block/multiple_use_particle/" + material);
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station").texture("1", "block/all_materials_block/multiple_use_texture/" + material).texture("2","block/all_materials_block/multiple_use_particle/" + material);
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
     private void villagerMusicalFridgeBlockWithItem(Block block)

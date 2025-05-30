@@ -1,7 +1,0 @@
-{
-  "parent": "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station_1",
-  "textures": {
-    "2": "premierpainmod:block/all_materials_block/multiple_use_texture/diorite_villager",
-    "3": "premierpainmod:block/all_materials_block/multiple_use_particle/diorite_villager"
-  }
-}
