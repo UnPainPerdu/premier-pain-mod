@@ -215,6 +215,7 @@ What would be a world without bugs ?
     - mountain currant fruits give less food but more saturation and are eaten faster
     - Jellyshroom item texture
     - completely rework fluid display for Villager Brewing Station, so any fluid which being somehow in the barrel will be displayed
+    - Forest premier pain ruins tint is now more like the one of vanilla forest
 
 ## fix :
     - mountain currant leaves does not tint anymore its fruit
