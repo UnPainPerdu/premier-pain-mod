@@ -243,4 +243,12 @@ public class PosHelper
         }
         return tempList;
     }
+
+    public static BlockPos changeRandomlyYPos(RandomSource rand, BlockPos pos, int minOffset, int maxOffSet)
+    {
+        int i = RandomUtil.getRandomPositiveIntInRange(2, rand);
+        int yChange = RandomUtil.getRandomPositiveIntInRange(maxOffSet - minOffset + 1, rand) + minOffset;
+        int y =  pos.getY() + (yChange * (i == 0 ? -1 : 1));
+        return new BlockPos(pos.getX(), y, pos.getZ());
+    }
 }

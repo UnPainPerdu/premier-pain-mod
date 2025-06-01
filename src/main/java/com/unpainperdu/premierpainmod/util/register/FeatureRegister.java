@@ -1,17 +1,18 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock_feature.BushAndRockConfiguration;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock_feature.BushAndRockFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.random_ruins_state.villager_statue_ruins.VillagerStatueRuinsConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.random_ruins_state.villager_statue_ruins.VillagerStatueRuinsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.BasicFlowerPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.GrowingAboveVegetationPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.PatchConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.TallVegetationPatchFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.MudPackFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.VillagerPillarRuinsFeature;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.VillagerStatueRuinsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.misc.VillagerTotemFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.features.vegetation.misc.FloweredCactusFeature;
 import net.minecraft.core.registries.Registries;
@@ -29,7 +30,7 @@ public class FeatureRegister
 
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, PremierPainMod.MOD_ID);
     //misc
-    public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> VILLAGER_STATUE_RUINS = FEATURES.register("villager_statue_ruins", () -> new VillagerStatueRuinsFeature(NoneFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<VillagerStatueRuinsConfiguration>> VILLAGER_STATUE_RUINS = FEATURES.register("villager_statue_ruins", () -> new VillagerStatueRuinsFeature(VillagerStatueRuinsConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<BushAndRockConfiguration>> BUSH_AND_ROCK = FEATURES.register("bush_and_rock", () -> new BushAndRockFeature(BushAndRockConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<HouseFoundationRuinsConfiguration>> HOUSE_FOUNDATION_RUINS = FEATURES.register("house_foundation_ruins", () -> new HouseFoundationRuinsFeature(HouseFoundationRuinsConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> VILLAGER_PILLAR_RUINS_DESERT = FEATURES.register("villager_pillar_ruins_desert", () -> new VillagerPillarRuinsFeature(NoneFeatureConfiguration.CODEC));

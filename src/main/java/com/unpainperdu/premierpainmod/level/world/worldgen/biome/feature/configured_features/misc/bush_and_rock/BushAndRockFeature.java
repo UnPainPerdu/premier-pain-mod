@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock_feature;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock;
 
 import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.AbstractFeature;

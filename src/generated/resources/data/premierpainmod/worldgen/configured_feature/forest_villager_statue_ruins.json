@@ -1,0 +1,73 @@
+{
+  "type": "premierpainmod:villager_statue_ruins",
+  "config": {
+    "blockStates": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:stone_bricks"
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mossy_stone_bricks"
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:cracked_stone_bricks"
+        }
+      }
+    ],
+    "slabStates": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:stone_brick_slab",
+          "Properties": {
+            "type": "bottom",
+            "waterlogged": "false"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mossy_stone_brick_slab",
+          "Properties": {
+            "type": "bottom",
+            "waterlogged": "false"
+          }
+        }
+      }
+    ],
+    "stairStates": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:stone_brick_stairs",
+          "Properties": {
+            "facing": "north",
+            "half": "bottom",
+            "shape": "straight",
+            "waterlogged": "false"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mossy_stone_brick_stairs",
+          "Properties": {
+            "facing": "north",
+            "half": "bottom",
+            "shape": "straight",
+            "waterlogged": "false"
+          }
+        }
+      }
+    ]
+  }
+}

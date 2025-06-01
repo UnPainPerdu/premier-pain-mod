@@ -7,6 +7,7 @@ import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
@@ -34,8 +35,15 @@ public class HouseFoundationRuinsFeature extends AbstractFeature<HouseFoundation
     {
         WorldGenLevel worldIn = context.level();
         BlockPos pos = context.origin();
+        BlockState stateBelow = worldIn.getBlockState(pos.below());
 
-        return !PosHelper.isFlying(pos, worldIn);
+
+        return (!PosHelper.isFlying(pos, worldIn))
+                && (
+                (stateBelow.is(BlockTags.DIRT))
+                        || (stateBelow.is(BlockTags.SAND))
+                        || (stateBelow.is(BlockTags.BASE_STONE_OVERWORLD))
+        );
     }
 
     @Override

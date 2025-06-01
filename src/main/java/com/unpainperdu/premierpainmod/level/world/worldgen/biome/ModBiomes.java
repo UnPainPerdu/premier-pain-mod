@@ -64,7 +64,7 @@ public class ModBiomes
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
         BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
         BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
-        addVillagerStatue(biomegenerationsettings$builder);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.FOREST_VILLAGER_STATUE_RUINS);
         addHouseFoundationRuins(biomegenerationsettings$builder);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.BUSH_AND_ROCK);
         addRuinsFlowers(biomegenerationsettings$builder);
@@ -279,11 +279,6 @@ public class ModBiomes
                 .mobSpawnSettings(mobspawnsettings$builder.build())
                 .generationSettings(biomegenerationsettings$builder.build())
                 .build();
-    }
-
-    public static void addVillagerStatue(BiomeGenerationSettings.Builder pBuilder)
-    {
-        pBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_STATUE_RUINS);
     }
 
     public static void addRuinsFlowers(BiomeGenerationSettings.Builder pBuilder)

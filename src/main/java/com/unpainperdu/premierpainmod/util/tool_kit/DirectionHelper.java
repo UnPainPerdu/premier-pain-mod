@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class DirectionHelper
 {
+    //todo it looks like DirectionHelper is duplicated with PosHelper
     private DirectionHelper(){}
 
     public static BlockPos getLeftPos(BlockPos pos, Direction direction)

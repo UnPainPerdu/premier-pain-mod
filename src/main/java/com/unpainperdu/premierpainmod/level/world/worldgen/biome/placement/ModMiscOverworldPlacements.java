@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ModMiscOverworldPlacements
 {
-    public static final ResourceKey<PlacedFeature> VILLAGER_STATUE_RUINS = ModPlacementUtil.createKey("villager_statue_ruins");
+    public static final ResourceKey<PlacedFeature> FOREST_VILLAGER_STATUE_RUINS = ModPlacementUtil.createKey("villager_statue_ruins");
     public static final ResourceKey<PlacedFeature> BUSH_AND_ROCK = ModPlacementUtil.createKey("bush_and_rock");
     public static final ResourceKey<PlacedFeature> HOUSE_FOUNDATION_RUINS = ModPlacementUtil.createKey("house_foundation_ruins");
     public static final ResourceKey<PlacedFeature> VILLAGER_PILLAR_RUINS_DESERT = ModPlacementUtil.createKey("villager_pillar_ruins_desert");
@@ -25,8 +25,8 @@ public class ModMiscOverworldPlacements
     {
         HolderGetter<ConfiguredFeature<?, ?>> holdergetter = pContext.lookup(Registries.CONFIGURED_FEATURE);
 
-        final Holder<ConfiguredFeature<?, ?>> VILLAGER_STATUE_RUINS_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.VILLAGER_STATUE_RUINS);
-        register(pContext, VILLAGER_STATUE_RUINS, VILLAGER_STATUE_RUINS_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        final Holder<ConfiguredFeature<?, ?>> FOREST_VILLAGER_STATUE_RUINS_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.FOREST_VILLAGER_STATUE_RUINS);
+        register(pContext, FOREST_VILLAGER_STATUE_RUINS, FOREST_VILLAGER_STATUE_RUINS_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> BUSH_AND_ROCK_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.BUSH_AND_ROCK);
         register(pContext, BUSH_AND_ROCK, BUSH_AND_ROCK_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
