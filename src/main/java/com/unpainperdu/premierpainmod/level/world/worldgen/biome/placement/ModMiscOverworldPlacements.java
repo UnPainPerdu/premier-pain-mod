@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ModMiscOverworldPlacements
 {
-    public static final ResourceKey<PlacedFeature> FOREST_VILLAGER_STATUE_RUINS = ModPlacementUtil.createKey("villager_statue_ruins");
+    public static final ResourceKey<PlacedFeature> FOREST_VILLAGER_STATUE_RUINS = ModPlacementUtil.createKey("forest_villager_statue_ruins");
     public static final ResourceKey<PlacedFeature> BUSH_AND_ROCK = ModPlacementUtil.createKey("bush_and_rock");
     public static final ResourceKey<PlacedFeature> HOUSE_FOUNDATION_RUINS = ModPlacementUtil.createKey("house_foundation_ruins");
     public static final ResourceKey<PlacedFeature> VILLAGER_PILLAR_RUINS_DESERT = ModPlacementUtil.createKey("villager_pillar_ruins_desert");
