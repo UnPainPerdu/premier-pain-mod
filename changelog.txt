@@ -224,4 +224,4 @@ What would be a world without bugs ?
     - villager statue ruins in forest premier pain ruins is more ruined now
 
 ## Note
-    - Feature in biome can have changed by accident, send these change in the issue page of my GitHub
+    - Feature in biome can have changed by accident because I rewrite some of them, send these change in the issue page of my GitHub
