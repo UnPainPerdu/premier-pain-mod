@@ -151,11 +151,11 @@ public class VillagerStatueRuinsFeature extends AbstractFeature<VillagerStatueRu
                 }
                 else if (i == 50)
                 {
-                    chance = 80;
+                    chance = 75;
                 }
                 else if (i == 80)
                 {
-                    chance = 75;
+                    chance = 60;
                 }
                 i++;
             }
