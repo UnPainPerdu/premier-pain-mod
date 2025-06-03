@@ -2,15 +2,18 @@ package com.unpainperdu.premierpainmod.integration.jei;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -43,9 +46,21 @@ public class VillagerWorkshoppingCategory implements IRecipeCategory<VillagerWor
     }
 
     @Override
-    public IDrawable getBackground()
+    public void draw(VillagerWorkshopRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY)
     {
-        return this.background;
+        this.background.draw(guiGraphics);
+    }
+
+    @Override
+    public int getWidth()
+    {
+        return this.background.getWidth();
+    }
+
+    @Override
+    public int getHeight()
+    {
+        return this.background.getHeight();
     }
 
     @Override
