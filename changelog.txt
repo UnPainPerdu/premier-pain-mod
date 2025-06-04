@@ -228,3 +228,7 @@ What would be a world without bugs ?
 --------------
 # 1.21.[0,1]-1.13
 
+## change :
+    - change made to villager brewing station :
+        - clean screen with little animation
+

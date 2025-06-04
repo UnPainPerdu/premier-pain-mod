@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.client.gui.screen.villager_workshop_recipe_screen;
+package com.unpainperdu.premierpainmod.client.gui.screen;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;

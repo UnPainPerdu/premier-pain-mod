@@ -1,7 +1,7 @@
-package com.unpainperdu.premierpainmod.client.gui.screen.villager_shelf_screen;
+package com.unpainperdu.premierpainmod.client.gui.screen;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_shelf_menu.VillagerShelfMenu;
+import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_drawer_menu.VillagerDrawerMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
@@ -9,10 +9,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class VillagerShelfScreen extends AbstractContainerScreen<VillagerShelfMenu> implements MenuAccess<VillagerShelfMenu>
+public class VillagerDrawerScreen extends AbstractContainerScreen<VillagerDrawerMenu> implements MenuAccess<VillagerDrawerMenu>
 {
 
-    public VillagerShelfScreen(VillagerShelfMenu pMenu, Inventory pPlayerInventory, Component pTitle)
+    public VillagerDrawerScreen(VillagerDrawerMenu pMenu, Inventory pPlayerInventory, Component pTitle)
     {
         super(pMenu, pPlayerInventory, pTitle);
 
@@ -31,11 +31,12 @@ public class VillagerShelfScreen extends AbstractContainerScreen<VillagerShelfMe
 
     protected ResourceLocation getBackgroundTexture()
     {
-        return loc("textures/gui/container/all_materials_block/villager_shelf/villager_shelf.png");
+        return loc("textures/gui/container/all_materials_block/villager_drawer.png");
     }
 
     @Override
-    public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+    public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick)
+    {
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         this.renderTooltip(pGuiGraphics, pMouseX, pMouseY);
     }
