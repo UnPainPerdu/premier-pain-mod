@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.client.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.client.gui.screen.villager_shelf_screen.VillagerShelfScreen;
-import com.unpainperdu.premierpainmod.client.gui.screen.villager_workshop_recipe_screen.VillagerWorkshopRecipeScreen;
-import com.unpainperdu.premierpainmod.client.gui.screen.villager_drawer_screen.VillagerDrawerScreen;
+import com.unpainperdu.premierpainmod.client.gui.screen.VillagerShelfScreen;
+import com.unpainperdu.premierpainmod.client.gui.screen.VillagerWorkshopRecipeScreen;
+import com.unpainperdu.premierpainmod.client.gui.screen.VillagerDrawerScreen;
 import com.unpainperdu.premierpainmod.client.gui.screen.VillagerBrewingStationScreen;
 import com.unpainperdu.premierpainmod.client.gui.screen.VillagerMusicalFridgeScreen;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;

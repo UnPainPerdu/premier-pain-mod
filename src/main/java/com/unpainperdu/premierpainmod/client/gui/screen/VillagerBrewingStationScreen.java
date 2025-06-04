@@ -18,14 +18,12 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
 {
     private FluidTankRenderer fluidRenderer;
 
+    private int itemOutputState = 0;
+    private int itemOutputStateTime = 0;
+
     public VillagerBrewingStationScreen(VillagerBrewingStationMenu menu, Inventory playerInventory, Component title)
     {
         super(menu, playerInventory, title);
-        assignFluidRenderer();
-    }
-
-    private void assignFluidRenderer()
-    {
         fluidRenderer = new FluidTankRenderer(1000, true, 16, 43);
     }
 
@@ -33,13 +31,49 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
     {
         guiGraphics.blit(getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, imageHeight);
-        renderBrewingProgress(guiGraphics, partialTick, mouseX, mouseY);
-        renderFluidStack(guiGraphics, partialTick, mouseX, mouseY);
+        renderOutputItems(guiGraphics, partialTick);
+        renderBrewingProgress(guiGraphics);
+        renderFluidStack(guiGraphics);
     }
 
     private static ResourceLocation loc(String path)
     {
         return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
+    }
+
+    @Override
+    protected void containerTick()
+    {
+        this.itemOutputStateTime ++;
+        if (this.itemOutputStateTime == 30)
+        {
+            this.itemOutputState = 1;
+        }
+        else if (this.itemOutputStateTime == 60)
+        {
+            this.itemOutputState = 2;
+        }
+        else if (this.itemOutputStateTime > 89)
+        {
+            this.itemOutputState = 0;
+            this.itemOutputStateTime = 0;
+        }
+        super.containerTick();
+    }
+
+    private void renderOutputItems(GuiGraphics guiGraphics, float partialTick)
+    {
+        ResourceLocation item;
+        switch (this.itemOutputState)
+        {
+            case 0 -> item = loc("container/functional_block/villager_brewing_station/bucket");
+            case 1 -> item = loc("container/functional_block/villager_brewing_station/bottle");
+            default -> item = loc("container/functional_block/villager_brewing_station/mug");
+        }
+        if (this.menu.villagerBrewingStationBlockEntity.getItems().get(13).isEmpty())
+        {
+            guiGraphics.blitSprite(item, 16,16, 0, 0, leftPos + 152,  topPos + 18, 16, 16);
+        }
     }
 
     protected ResourceLocation getBackgroundTexture()
@@ -59,7 +93,7 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
         this.renderTooltip(pGuiGraphics, pMouseX, pMouseY);
     }
 
-    private void renderBrewingProgress(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
+    private void renderBrewingProgress(GuiGraphics guiGraphics)
     {
         if (this.menu.isBrewing())
         {
@@ -68,7 +102,7 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
         }
     }
 
-    private void renderFluidStack(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
+    private void renderFluidStack(GuiGraphics guiGraphics)
     {
         FluidStack fluidStack = this.menu.villagerBrewingStationBlockEntity.getFluidTank().getFluid();
         fluidRenderer.render(guiGraphics, leftPos + 36, topPos + 27, fluidStack);
