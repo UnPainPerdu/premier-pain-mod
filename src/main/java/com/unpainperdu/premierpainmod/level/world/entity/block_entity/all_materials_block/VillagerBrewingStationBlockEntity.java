@@ -12,6 +12,8 @@ import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
@@ -21,6 +23,9 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -172,6 +177,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                 blockEntity.fluidTank.fill(new FluidStack(Fluids.WATER, 1000), IFluidHandler.FluidAction.EXECUTE);
                 itemStacks.set(WATER_INPUT_SLOT, new ItemStack(Items.BUCKET));
                 blockEntity.setItems(itemStacks);
+                playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.BUCKET_EMPTY);
                 flag1 = true;
             }
         }
@@ -222,6 +228,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                     itemList.set(OUTPUT_SLOT, bucket.copy());
                     blockEntity.setItems(itemList);
                     blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                    playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.BOTTLE_FILL);
                     flag1 = true;
                 }
             }
@@ -236,6 +243,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                         itemList.set(OUTPUT_SLOT, mug.copy());
                         blockEntity.setItems(itemList);
                         blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                        playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.BOTTLE_FILL);
                         flag1 = true;
                     }
                     else if (itemList.get(OUTPUT_SLOT).is(mug.getItem()) && itemList.get(OUTPUT_SLOT).getCount() < itemList.get(OUTPUT_SLOT).getMaxStackSize())
@@ -243,6 +251,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                         blockEntity.fluidTank.drain(250, IFluidHandler.FluidAction.EXECUTE);
                         blockEntity.items.get(OUTPUT_SLOT).grow(1);
                         blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                        playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.BOTTLE_FILL);
                         flag1 = true;
                     }
 
@@ -256,6 +265,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                         itemList.set(OUTPUT_SLOT, bottle.copy());
                         blockEntity.setItems(itemList);
                         blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                        playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.BOTTLE_FILL);
                         flag1 = true;
                     }
                     else if (itemList.get(OUTPUT_SLOT).is(bottle.getItem()) && itemList.get(OUTPUT_SLOT).getCount() < itemList.get(OUTPUT_SLOT).getMaxStackSize())
@@ -263,6 +273,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                         blockEntity.fluidTank.drain(250, IFluidHandler.FluidAction.EXECUTE);
                         blockEntity.items.get(OUTPUT_SLOT).grow(1);
                         blockEntity.items.get(GLASS_INPUT_SLOT_1).shrink(1);
+                        playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.BOTTLE_FILL);
                         flag1 = true;
                     }
                 }
@@ -398,8 +409,8 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         if (recipe != null && canBrew(registryAccess, recipe, fluidStackInput,ingredients, maxStackSize, brewingStation))
         {
             FluidStack fluidStackResult = ((RecipeHolder<? extends VillagerBrewingStationRecipe>) recipe).value().assembleFluidResult(new VillagerBrewingStationInput(fluidStackInput, ingredients), registryAccess);
-
             brewingStation.fluidTank.setFluid(fluidStackResult);
+            playSound(brewingStation.getLevel(), brewingStation.getBlockPos(), SoundEvents.BREWING_STAND_BREW);
             for (ItemStack itemStack : ingredients)
             {
                 itemStack.shrink(1);
@@ -499,5 +510,13 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
             serverLevel.getChunkSource().blockChanged(getBlockPos());
         }
         super.setChanged();
+    }
+
+    private static void playSound(Level level, BlockPos pos, SoundEvent pSound)
+    {
+        if (level !=null)
+        {
+            level.playSound(null, pos, pSound, SoundSource.BLOCKS, 1.0F, 1.0F);
+        }
     }
 }
