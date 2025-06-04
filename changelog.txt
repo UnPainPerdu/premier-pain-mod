@@ -231,4 +231,5 @@ What would be a world without bugs ?
 ## change :
     - change made to villager brewing station :
         - clean screen with little animation
+        - add sound when brew is done, when water is put in and when the liquid in is taken
 
