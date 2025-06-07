@@ -10,7 +10,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ParticleTypeRegister
 {
-    private ParticleTypeRegister(){}
+    private ParticleTypeRegister()
+    {
+    }
 
     //the rest of stuff in client part
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPE = DeferredRegister.create(Registries.PARTICLE_TYPE, PremierPainMod.MOD_ID);

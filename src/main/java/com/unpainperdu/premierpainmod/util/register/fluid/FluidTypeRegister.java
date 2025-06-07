@@ -11,7 +11,9 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class FluidTypeRegister
 {
-    private FluidTypeRegister(){}
+    private FluidTypeRegister()
+    {
+    }
 
     public static final DeferredRegister<FluidType> FLUID_TYPE = DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, PremierPainMod.MOD_ID);
 
@@ -28,10 +30,11 @@ public class FluidTypeRegister
 
     public static DeferredHolder<FluidType, BeerFluidType> beerRegister(String name, LiquidContent content)
     {
-        FluidType.Properties baseBeerProperties= FluidType.Properties.create().canConvertToSource(false).fallDistanceModifier(0F).canHydrate(false);
+        FluidType.Properties baseBeerProperties = FluidType.Properties.create().canConvertToSource(false).fallDistanceModifier(0F).canHydrate(false);
 
         return FLUID_TYPE.register(name, () -> new BeerFluidType(baseBeerProperties.descriptionId("premierpainmod.block.description." + name), content));
     }
+
     public static void register(IEventBus bus)
     {
         FLUID_TYPE.register(bus);

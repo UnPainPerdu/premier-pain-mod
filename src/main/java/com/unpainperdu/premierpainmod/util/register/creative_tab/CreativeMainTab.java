@@ -18,15 +18,18 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_hei
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
 import com.unpainperdu.premierpainmod.util.java_comparator.ItemComparator;
+import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DeadBushBlock;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.TallFlowerBlock;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,7 +37,9 @@ import java.util.List;
 
 public class CreativeMainTab
 {
-    private CreativeMainTab(){}
+    private CreativeMainTab()
+    {
+    }
 
     public static void generateCreativeMainTab(CreativeModeTab.ItemDisplayParameters param, CreativeModeTab.Output output)
     {
@@ -63,20 +68,21 @@ public class CreativeMainTab
         {
             orderedByListVegetation.add(new ArrayList<>());
         }
-        for(Block block : ModBLockList.ALL_BLOCKS)
+        for (Block block : ModBLockList.ALL_BLOCKS)
         {
             switch (block)
             {
-                case AbstractTallGrass t -> orderedByListVegetation.get(0).add(block);
-                case CactusFlowerBlock t -> orderedByListVegetation.get(1).add(block);
-                case FloweredCactusBlock t -> orderedByListVegetation.get(2).add(block);
-                case AbstractGrowingAboveVegetation t -> orderedByListVegetation.get(3).add(block);
-                case FlowerBlock t -> orderedByListVegetation.get(4).add(block);
-                case TallFlowerBlock t -> orderedByListVegetation.get(5).add(block);
-                case DeadBushBlock t -> orderedByListVegetation.get(6).add(block);
-                case SkySpearsFlower t -> orderedByListVegetation.get(7).add(block);
-                case JellyShroomBlock t -> orderedByListVegetation.get(8).add(block);
-                default -> {/*nothing to do*/}
+                case AbstractTallGrass ignored -> orderedByListVegetation.get(0).add(block);
+                case CactusFlowerBlock ignored -> orderedByListVegetation.get(1).add(block);
+                case FloweredCactusBlock ignored -> orderedByListVegetation.get(2).add(block);
+                case AbstractGrowingAboveVegetation ignored -> orderedByListVegetation.get(3).add(block);
+                case FlowerBlock ignored -> orderedByListVegetation.get(4).add(block);
+                case TallFlowerBlock ignored -> orderedByListVegetation.get(5).add(block);
+                case DeadBushBlock ignored -> orderedByListVegetation.get(6).add(block);
+                case SkySpearsFlower ignored -> orderedByListVegetation.get(7).add(block);
+                case JellyShroomBlock ignored -> orderedByListVegetation.get(8).add(block);
+                default ->
+                {/*nothing to do*/}
             }
             for (List<Block> lb : orderedByListVegetation)
             {
@@ -87,6 +93,7 @@ public class CreativeMainTab
             }
         }
     }
+
     private static void generateWood(CreativeModeTab.Output output)
     {
         List<String> woods = Arrays.asList(
@@ -121,9 +128,9 @@ public class CreativeMainTab
     private static void generateAllMaterials(CreativeModeTab.Output output)
     {
         List<Item> itemList = new ArrayList<>();
-        for(Block block : ModBLockList.ALL_BLOCKS)
+        for (Block block : ModBLockList.ALL_BLOCKS)
         {
-            if(block instanceof VillagerStatue
+            if (block instanceof VillagerStatue
                     || block instanceof VillagerPedestalBlock
                     || block instanceof VillagerBrazier
                     || block instanceof VillagerTableBlock
@@ -141,7 +148,7 @@ public class CreativeMainTab
             }
         }
 
-        for(Item item : ModItemList.ALL_ITEMS)
+        for (Item item : ModItemList.ALL_ITEMS)
         {
             if (item instanceof VillagerShelfItem)
             {
@@ -175,11 +182,11 @@ public class CreativeMainTab
 
     private static void generateFood(CreativeModeTab.Output output)
     {
-        for(Item item : ModItemList.ALL_ITEMS)
+        for (Item item : ModItemList.ALL_ITEMS)
         {
             if (
                     !(item instanceof DrinkableBeerItem)
-                    && item.getDefaultInstance().has(DataComponents.FOOD)
+                            && item.getDefaultInstance().has(DataComponents.FOOD)
             )
             {
                 output.accept(item);
@@ -189,7 +196,7 @@ public class CreativeMainTab
 
     private static void generateBucket(CreativeModeTab.Output output)
     {
-        for(Item item : ModItemList.ALL_ITEMS)
+        for (Item item : ModItemList.ALL_ITEMS)
         {
             if (item instanceof BucketItem)
             {
@@ -200,18 +207,18 @@ public class CreativeMainTab
 
     private static void generateMiscItems(CreativeModeTab.Output output)
     {
-        for(Item item : ModItemList.ALL_ITEMS)
+        for (Item item : ModItemList.ALL_ITEMS)
         {
-            if(
+            if (
                     !(
                             item instanceof VillagerShelfItem
-                            || item instanceof SignItem
-                            || item instanceof BucketItem
-                            || item instanceof BoatItem
-                            || item == ItemRegister.EMPTY_BOTTLE.get()
-                            || item == ItemRegister.EMPTY_GLASS.get()
-                            || item == ItemRegister.EMPTY_MUG.get()
-                            || item.getDefaultInstance().has(DataComponents.FOOD)
+                                    || item instanceof SignItem
+                                    || item instanceof BucketItem
+                                    || item instanceof BoatItem
+                                    || item == ItemRegister.EMPTY_BOTTLE.get()
+                                    || item == ItemRegister.EMPTY_GLASS.get()
+                                    || item == ItemRegister.EMPTY_MUG.get()
+                                    || item.getDefaultInstance().has(DataComponents.FOOD)
                     )
             )
             {
