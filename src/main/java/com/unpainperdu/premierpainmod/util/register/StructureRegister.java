@@ -14,7 +14,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class StructureRegister
 {
-    private StructureRegister(){}
+    private StructureRegister()
+    {
+    }
 
     /*
     See in data :

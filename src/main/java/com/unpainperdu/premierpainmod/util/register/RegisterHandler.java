@@ -14,7 +14,9 @@ import net.neoforged.bus.api.IEventBus;
 
 public class RegisterHandler
 {
-    private RegisterHandler(){}
+    private RegisterHandler()
+    {
+    }
 
     public static void globalRegister(IEventBus modEventBus)
     {

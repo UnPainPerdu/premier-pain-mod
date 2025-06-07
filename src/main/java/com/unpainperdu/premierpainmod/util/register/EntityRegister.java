@@ -11,11 +11,13 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class EntityRegister
 {
-    private EntityRegister(){}
+    private EntityRegister()
+    {
+    }
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, PremierPainMod.MOD_ID);
 
-    public static final DeferredHolder<EntityType<?>,EntityType<SeatEntity>> SEAT_ENTITY = ENTITY_TYPES.register("seat_entity",() -> EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC).setTrackingRange(256)
+    public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> SEAT_ENTITY = ENTITY_TYPES.register("seat_entity", () -> EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC).setTrackingRange(256)
             .setUpdateInterval(20)
             .sized(0.0001F, 0.0001F)
             .build(PremierPainMod.MOD_ID + ":seat_entity"));
