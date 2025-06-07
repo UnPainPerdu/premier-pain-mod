@@ -5,6 +5,7 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;
+import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -44,8 +45,8 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
         FluidState fluidstate = level.getFluidState(pos);
         Direction direction = pContext.getHorizontalDirection();
 
-        BlockPos leftPos = DirectionHelper.getLeftPos(pos, direction);
-        BlockPos rightPos = DirectionHelper.getRightPos(pos, direction);
+        BlockPos leftPos = PosHelper.getLeft(pos, direction);
+        BlockPos rightPos = PosHelper.getRight(pos, direction);
         boolean leftFlag = isWithSameDirection(level, leftPos, direction);
         boolean rightFlag = isWithSameDirection(level, rightPos, direction);
 
