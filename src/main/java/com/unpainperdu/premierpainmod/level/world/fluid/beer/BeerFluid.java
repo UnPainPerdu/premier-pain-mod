@@ -11,6 +11,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.WaterFluid;
+import net.neoforged.neoforge.fluids.FluidType;
+
+import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.*;
 
 public abstract class BeerFluid extends WaterFluid
 {
@@ -21,6 +24,34 @@ public abstract class BeerFluid extends WaterFluid
     public abstract Item getMug();
 
     public abstract ParticleOptions getFoam();
+
+    public abstract String getName();
+
+    @Override
+    public Fluid getFlowing()
+    {
+        String flowingFluidName = "flowing_" + getName() + "_fluid";
+        return FLUIDS.get(flowingFluidName).get();
+    }
+
+    @Override
+    public Fluid getSource()
+    {
+        String fluidName = getName() + "_fluid";
+        return FLUIDS.get(fluidName).get();
+    }
+
+    @Override
+    public FluidType getFluidType()
+    {
+        String fluidTypeName = getName() + "_type";
+        return FLUID_TYPES.get(fluidTypeName).get();
+    }
+
+    public Block getLiquidBlock()
+    {
+        return FLUID_BLOCKS.get(getName()).get();
+    }
 
     @Override
     protected boolean canConvertToSource(Level level)
@@ -62,6 +93,4 @@ public abstract class BeerFluid extends WaterFluid
     {
         return getLiquidBlock().defaultBlockState().setValue(LiquidBlock.LEVEL, Integer.valueOf(getLegacyLevel(state)));
     }
-
-    public abstract Block getLiquidBlock();
 }

@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public interface CarpetedBlock
 {
-    public VillagerCarpetColor getCarpetColor(BlockState state);
+    VillagerCarpetColor getCarpetColor(BlockState state);
 
-    public void setCarpetColor(Level level, BlockPos pos, BlockState state, VillagerCarpetColor newColor);
+    void setCarpetColor(Level level, BlockPos pos, BlockState state, VillagerCarpetColor newColor);
 }

@@ -10,7 +10,6 @@ import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItemType;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.fluid.FluidRegister;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
@@ -28,6 +27,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
+
+import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.FLUIDS;
 
 public class ItemRegister
 {
@@ -48,47 +49,47 @@ public class ItemRegister
     public static final DeferredItem<Item> EMPTY_BOTTLE = ITEMS.register("empty_bottle", () -> new Item(new Item.Properties().stacksTo(16)));
     public static final DeferredItem<Item> EMPTY_MUG = ITEMS.register("empty_mug", () -> new Item(new Item.Properties().stacksTo(16)));
     //PainDieux
-    public static final DeferredItem<Item> PAIN_DIEUX_BUCKET = ITEMS.register("pain_dieux_bucket", () -> new BucketItem(FluidRegister.PAIN_DIEUX_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> PAIN_DIEUX_BUCKET = ITEMS.register("pain_dieux_bucket", () -> new BucketItem(FLUIDS.get("pain_dieux_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> PAIN_DIEUX_GLASS = glassBeerRegister("pain_dieux_glass", MobEffects.DIG_SPEED, 2, 1);
     public static final DeferredItem<Item> PAIN_DIEUX_BOTTLE = bottleBeerRegister("pain_dieux_bottle", MobEffects.DIG_SPEED, 2, 1);
     public static final DeferredItem<Item> PAIN_DIEUX_MUG = mugBeerRegister("pain_dieux_mug", MobEffects.DIG_SPEED, 2, 1);
     //LA_CHATEAU
-    public static final DeferredItem<Item> LA_CHATEAU_BUCKET = ITEMS.register("la_chateau_bucket", () -> new BucketItem(FluidRegister.LA_CHATEAU_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> LA_CHATEAU_BUCKET = ITEMS.register("la_chateau_bucket", () -> new BucketItem(FLUIDS.get("la_chateau_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> LA_CHATEAU_GLASS = glassBeerRegister("la_chateau_glass", MobEffects.HEAL, 1, 0);
     public static final DeferredItem<Item> LA_CHATEAU_BOTTLE = bottleBeerRegister("la_chateau_bottle", MobEffects.HEAL, 1, 0);
     public static final DeferredItem<Item> LA_CHATEAU_MUG = mugBeerRegister("la_chateau_mug", MobEffects.HEAL, 1, 0);
     //DEBIER
-    public static final DeferredItem<Item> DEBIER_BUCKET = ITEMS.register("debier_bucket", () -> new BucketItem(FluidRegister.DEBIER_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> DEBIER_BUCKET = ITEMS.register("debier_bucket", () -> new BucketItem(FLUIDS.get("debier_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> DEBIER_GLASS = glassBeerRegister("debier_glass", MobEffects.LUCK, 2, 1);
     public static final DeferredItem<Item> DEBIER_BOTTLE = bottleBeerRegister("debier_bottle", MobEffects.LUCK, 2, 1);
     public static final DeferredItem<Item> DEBIER_MUG = mugBeerRegister("debier_mug", MobEffects.LUCK, 2, 1);
     //ENVAHISSEUR_ROUGE
-    public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_BUCKET = ITEMS.register("envahisseur_rouge_bucket", () -> new BucketItem(FluidRegister.ENVAHISSEUR_ROUGE_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_BUCKET = ITEMS.register("envahisseur_rouge_bucket", () -> new BucketItem(FLUIDS.get("envahisseur_rouge_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_GLASS = glassBeerRegister("envahisseur_rouge_glass", MobEffects.DAMAGE_BOOST, 2, 0.25f);
     public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_BOTTLE = bottleBeerRegister("envahisseur_rouge_bottle", MobEffects.DAMAGE_BOOST, 2, 0.25f);
     public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_MUG = mugBeerRegister("envahisseur_rouge_mug", MobEffects.DAMAGE_BOOST, 2, 0.25f);
     //RASPBUISSON
-    public static final DeferredItem<Item> RASPBUISSON_BUCKET = ITEMS.register("raspbuisson_bucket", () -> new BucketItem(FluidRegister.RASPBUISSON_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> RASPBUISSON_BUCKET = ITEMS.register("raspbuisson_bucket", () -> new BucketItem(FLUIDS.get("raspbuisson_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> RASPBUISSON_GLASS = glassBeerRegister("raspbuisson_glass", MobEffects.REGENERATION, 1, 0.8f);
     public static final DeferredItem<Item> RASPBUISSON_BOTTLE = bottleBeerRegister("raspbuisson_bottle", MobEffects.REGENERATION, 1, 0.8f);
     public static final DeferredItem<Item> RASPBUISSON_MUG = mugBeerRegister("raspbuisson_mug", MobEffects.REGENERATION, 1, 0.8f);
     //LA_BLANCHE_CITADINE
-    public static final DeferredItem<Item> LA_BLANCHE_CITADINE_BUCKET = ITEMS.register("la_blanche_citadine_bucket", () -> new BucketItem(FluidRegister.LA_BLANCHE_CITADINE_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> LA_BLANCHE_CITADINE_BUCKET = ITEMS.register("la_blanche_citadine_bucket", () -> new BucketItem(FLUIDS.get("la_blanche_citadine_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> LA_BLANCHE_CITADINE_GLASS = glassBeerRegister("la_blanche_citadine_glass", MobEffects.MOVEMENT_SPEED, 2, 1);
     public static final DeferredItem<Item> LA_BLANCHE_CITADINE_BOTTLE = bottleBeerRegister("la_blanche_citadine_bottle", MobEffects.MOVEMENT_SPEED, 2, 1);
     public static final DeferredItem<Item> LA_BLANCHE_CITADINE_MUG = mugBeerRegister("la_blanche_citadine_mug", MobEffects.MOVEMENT_SPEED, 2, 1);
     //CRANE_NOIR
-    public static final DeferredItem<Item> CRANE_NOIR_BUCKET = ITEMS.register("crane_noir_bucket", () -> new BucketItem(FluidRegister.CRANE_NOIR_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> CRANE_NOIR_BUCKET = ITEMS.register("crane_noir_bucket", () -> new BucketItem(FLUIDS.get("crane_noir_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> CRANE_NOIR_GLASS = glassBeerRegister("crane_noir_glass", MobEffects.DAMAGE_RESISTANCE, 1, 1.2f);
     public static final DeferredItem<Item> CRANE_NOIR_BOTTLE = bottleBeerRegister("crane_noir_bottle", MobEffects.DAMAGE_RESISTANCE, 1, 1.2f);
     public static final DeferredItem<Item> CRANE_NOIR_MUG = mugBeerRegister("crane_noir_mug", MobEffects.DAMAGE_RESISTANCE, 1, 1.2f);
     //TAK
-    public static final DeferredItem<Item> TAK_BUCKET = ITEMS.register("tak_bucket", () -> new BucketItem(FluidRegister.TAK_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> TAK_BUCKET = ITEMS.register("tak_bucket", () -> new BucketItem(FLUIDS.get("tak_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> TAK_GLASS = glassBeerRegister("tak_glass", MobEffects.FIRE_RESISTANCE, 1, 1);
     public static final DeferredItem<Item> TAK_BOTTLE = bottleBeerRegister("tak_bottle", MobEffects.FIRE_RESISTANCE, 1, 1);
     public static final DeferredItem<Item> TAK_MUG = mugBeerRegister("tak_mug", MobEffects.FIRE_RESISTANCE, 1, 1);
     //DISENDER
-    public static final DeferredItem<Item> DISENDER_BUCKET = ITEMS.register("disender_bucket", () -> new BucketItem(FluidRegister.DISENDER_FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredItem<Item> DISENDER_BUCKET = ITEMS.register("disender_bucket", () -> new BucketItem(FLUIDS.get("disender_fluid").get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> DISENDER_GLASS = glassBeerRegister("disender_glass", MobEffects.SLOW_FALLING, 2, 1);
     public static final DeferredItem<Item> DISENDER_BOTTLE = bottleBeerRegister("disender_bottle", MobEffects.SLOW_FALLING, 2, 1);
     public static final DeferredItem<Item> DISENDER_MUG = mugBeerRegister("disender_mug", MobEffects.SLOW_FALLING, 2, 1);

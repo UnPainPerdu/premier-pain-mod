@@ -1,10 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
-import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.BeerFluidType;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.VillagerBrewingStationMenu;
@@ -12,8 +9,6 @@ import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
@@ -30,17 +25,24 @@ import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.StackedContents;
-import net.minecraft.world.inventory.*;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.RecipeCraftingHolder;
+import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.*;
+import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +52,7 @@ import java.util.List;
 public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, RecipeCraftingHolder, StackedContentsCompatible
 {
     private static final int WATER_INPUT_SLOT = 0;
-    public static final int[] SLOTS_FOR_INGREDIENT = new int[]{1,2,3,4,5,6,7,8,9,10,11,12};
+    public static final int[] SLOTS_FOR_INGREDIENT = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     private static final int GLASS_INPUT_SLOT_1 = 13;
     private static final int OUTPUT_SLOT = 14;
     private static final int[] SIDE_SLOTS = new int[]{0, 13};
@@ -115,7 +117,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     @Override
     protected Component getDefaultName()
     {
-        return Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_brewing_station");
+        return Component.translatable("container." + PremierPainMod.MOD_ID + ".villager_brewing_station");
     }
 
     public int getBrewingProgress()
@@ -181,7 +183,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
                 flag1 = true;
             }
         }
-        List<ItemStack>  itemStacks = blockEntity.getIngredientItem();
+        List<ItemStack> itemStacks = blockEntity.getIngredientItem();
         FluidStack fluidStackInput = blockEntity.fluidTank.getFluid();
 
         if (blockEntity.hasEnoughItems(itemStacks) && blockEntity.fluidTank.getFluid().is(Fluids.WATER) && blockEntity.fluidTank.getFluidAmount() >= 1000)
@@ -189,7 +191,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
             RecipeHolder<?> recipeholder = blockEntity.quickCheck.getRecipeFor(new VillagerBrewingStationInput(fluidStackInput, itemStacks), level).orElse(null);
 
             int i = blockEntity.getMaxStackSize();
-            if (!canBrew(level.registryAccess(), recipeholder,fluidStackInput, blockEntity.getIngredientItem(), i, blockEntity))
+            if (!canBrew(level.registryAccess(), recipeholder, fluidStackInput, blockEntity.getIngredientItem(), i, blockEntity))
             {
                 blockEntity.brewingProgress = 0;
             }
@@ -294,7 +296,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         {
             if (!itemStack.isEmpty())
             {
-                i ++;
+                i++;
             }
         }
         return i >= 1;
@@ -344,9 +346,18 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     {
         switch (side)
         {
-            case Direction.DOWN -> {return SLOTS_FOR_OUTPUT;}
-            case Direction.UP -> {return SLOTS_FOR_INGREDIENT;}
-            default -> {return SIDE_SLOTS;}
+            case Direction.DOWN ->
+            {
+                return SLOTS_FOR_OUTPUT;
+            }
+            case Direction.UP ->
+            {
+                return SLOTS_FOR_INGREDIENT;
+            }
+            default ->
+            {
+                return SIDE_SLOTS;
+            }
         }
     }
 
@@ -404,9 +415,9 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         }
     }
 
-    private static boolean brew(RegistryAccess registryAccess, @javax.annotation.Nullable RecipeHolder<?> recipe,FluidStack fluidStackInput, NonNullList<ItemStack> ingredients, int maxStackSize, VillagerBrewingStationBlockEntity brewingStation)
+    private static boolean brew(RegistryAccess registryAccess, @javax.annotation.Nullable RecipeHolder<?> recipe, FluidStack fluidStackInput, NonNullList<ItemStack> ingredients, int maxStackSize, VillagerBrewingStationBlockEntity brewingStation)
     {
-        if (recipe != null && canBrew(registryAccess, recipe, fluidStackInput,ingredients, maxStackSize, brewingStation))
+        if (recipe != null && canBrew(registryAccess, recipe, fluidStackInput, ingredients, maxStackSize, brewingStation))
         {
             FluidStack fluidStackResult = ((RecipeHolder<? extends VillagerBrewingStationRecipe>) recipe).value().assembleFluidResult(new VillagerBrewingStationInput(fluidStackInput, ingredients), registryAccess);
             brewingStation.fluidTank.setFluid(fluidStackResult);
@@ -450,14 +461,14 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
         int m = 0;
         for (ItemStack item : this.items)
         {
-            if (i != 0 && i != 13 && i !=14)
+            if (i != 0 && i != 13 && i != 14)
             {
                 temp.set(m, item);
-                m ++;
+                m++;
             }
-            i ++;
+            i++;
         }
-        return temp ;
+        return temp;
     }
 
     @javax.annotation.Nullable
@@ -471,7 +482,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     @javax.annotation.Nullable
     public static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> serverType, BlockEntityType<E> clientType, BlockEntityTicker<? super E> ticker)
     {
-        return clientType == serverType ? (BlockEntityTicker<A>)ticker : null;
+        return clientType == serverType ? (BlockEntityTicker<A>) ticker : null;
     }
 
     @Override
@@ -514,7 +525,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
 
     private static void playSound(Level level, BlockPos pos, SoundEvent pSound)
     {
-        if (level !=null)
+        if (level != null)
         {
             level.playSound(null, pos, pSound, SoundSource.BLOCKS, 1.0F, 1.0F);
         }
