@@ -10,6 +10,8 @@ import com.unpainperdu.premierpainmod.client.particle.beer_particle.purple.Purpl
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.red.RedBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.white.WhiteBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
+import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
+import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.BeerFluidType;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.client.renderer.Sheets;
@@ -65,8 +67,10 @@ public class ClientRegisterHandler
         for (DeferredHolder<FluidType, FluidType> fluidTypeHolder : FLUID_TYPES.values())
         {
             FluidType fluidType = fluidTypeHolder.get();
-            event.registerFluidType(IClientFluidTypeExtensions.of(fluidType), fluidType);
-            event.registerFluidType(fluidType.register(), fluidType);
+            if (fluidType instanceof BeerFluidType beerFluidType)
+            {
+                event.registerFluidType(beerFluidType.register(), fluidType);
+            }
         }
     }
 

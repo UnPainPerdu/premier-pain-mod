@@ -228,8 +228,10 @@ What would be a world without bugs ?
 --------------
 # 1.21.[0,1]-1.13
 
-## change :
+## Change :
     - change made to villager brewing station :
         - clean screen with little animation
         - add sound when brew is done, when water is put in and when the liquid in is taken
 
+## Note :
+    - Fluids background code has been reworked, please report any change you notice
