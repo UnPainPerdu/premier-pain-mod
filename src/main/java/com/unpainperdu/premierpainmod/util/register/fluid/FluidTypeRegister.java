@@ -17,11 +17,12 @@ public class FluidTypeRegister
 
     public static void fluidTypeRegister(String name, String type, int tintColor, Vector3f fogColor)
     {
+        String fluidTypeName = name + "_type";
         switch (type)
         {
             case BEER_TYPE ->
             {
-                beerRegister(name, tintColor, fogColor);
+                beerRegister(fluidTypeName, tintColor, fogColor);
             }
         }
     }
@@ -29,7 +30,6 @@ public class FluidTypeRegister
     public static void beerRegister(String name, int tintColor, Vector3f fogColor)
     {
         FluidType.Properties baseBeerProperties = FluidType.Properties.create().canConvertToSource(false).fallDistanceModifier(0F).canHydrate(false);
-        String fluidTypeName = name + "_type";
-        FLUID_TYPES.put(fluidTypeName, FLUID_TYPE_REGISTRIES.register(fluidTypeName, () -> new BeerFluidType(baseBeerProperties.descriptionId("premierpainmod.block.description." + fluidTypeName), tintColor, fogColor)));
+        FLUID_TYPES.put(name, FLUID_TYPE_REGISTRIES.register(name, () -> new BeerFluidType(baseBeerProperties.descriptionId("premierpainmod.block.description." + name), tintColor, fogColor)));
     }
 }
