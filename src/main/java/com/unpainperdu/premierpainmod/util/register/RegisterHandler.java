@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.codec.CodecForGLMRegister;
 import com.unpainperdu.premierpainmod.util.register.creative_tab.CreativeTabRegister;
+import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.FluidRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.FluidTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
@@ -34,8 +35,7 @@ public class RegisterHandler
         StructureRegister.register(modEventBus);
         TrunkPlacerTypesRegister.register(modEventBus);
         FoliagePlacerTypesRegister.register(modEventBus);
-        FluidRegister.register(modEventBus);
-        FluidTypeRegister.register(modEventBus);
+        AllInOneFluidRegister.register(modEventBus);
         ParticleTypeRegister.register(modEventBus);
     }
 }

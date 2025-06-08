@@ -5,14 +5,12 @@ import com.unpainperdu.premierpainmod.client.particle.beer_particle.black.BlackB
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.blond.BlondBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.brown.BrownBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.dark_red.DarkRedBeerFoamProvider;
-import com.unpainperdu.premierpainmod.client.particle.beer_particle.green.GreenBeerFoamParticle;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.green.GreenBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.purple.PurpleBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.red.RedBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.white.WhiteBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
-import com.unpainperdu.premierpainmod.util.register.fluid.FluidTypeRegister;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -24,7 +22,12 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.registries.DeferredHolder;
+
+import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.FLUID_TYPES;
 
 @EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class ClientRegisterHandler
@@ -47,26 +50,24 @@ public class ClientRegisterHandler
             }
         });
     }
+
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event)
     {
         Sheets.addWoodType(ModWoodTypes.MOUNTAIN_CURRANT);
         Sheets.addWoodType(ModWoodTypes.MORICHE_PALM);
-        event.enqueueWork(() ->  FluidRender.setRenderLayerForFluid(event));
+        event.enqueueWork(() -> FluidRender.setRenderLayerForFluid(event));
     }
 
     @SubscribeEvent
     public static void registerClientExtensions(RegisterClientExtensionsEvent event)
     {
-        event.registerFluidType(FluidTypeRegister.PAIN_DIEUX_TYPE.get().register(), FluidTypeRegister.PAIN_DIEUX_TYPE.get());
-        event.registerFluidType(FluidTypeRegister.LA_CHATEAU_TYPE.get().register(), FluidTypeRegister.LA_CHATEAU_TYPE.get());
-        event.registerFluidType(FluidTypeRegister.DEBIER_TYPE.get().register(), FluidTypeRegister.DEBIER_TYPE.get());
-        event.registerFluidType(FluidTypeRegister.ENVAHISSEUR_ROUGE_TYPE.get().register(), FluidTypeRegister.ENVAHISSEUR_ROUGE_TYPE.get());
-        event.registerFluidType(FluidTypeRegister.RASPBUISSON_TYPE.get().register(), FluidTypeRegister.RASPBUISSON_TYPE.get());
-        event.registerFluidType(FluidTypeRegister.LA_BLANCHE_CITADINE_TYPE.get().register(), FluidTypeRegister.LA_BLANCHE_CITADINE_TYPE.get());
-        event.registerFluidType(FluidTypeRegister.CRANE_NOIR_TYPE.get().register(), FluidTypeRegister.CRANE_NOIR_TYPE.get());
-        event.registerFluidType(FluidTypeRegister.TAK_TYPE.get().register(), FluidTypeRegister.TAK_TYPE.get());
-        event.registerFluidType(FluidTypeRegister.DISENDER_TYPE.get().register(), FluidTypeRegister.DISENDER_TYPE.get());
+        for (DeferredHolder<FluidType, FluidType> fluidTypeHolder : FLUID_TYPES.values())
+        {
+            FluidType fluidType = fluidTypeHolder.get();
+            event.registerFluidType(IClientFluidTypeExtensions.of(fluidType), fluidType);
+            event.registerFluidType(fluidType.register(), fluidType);
+        }
     }
 
     @SubscribeEvent

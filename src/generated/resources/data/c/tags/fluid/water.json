@@ -1,22 +1,22 @@
 {
   "values": [
-    "premierpainmod:pain_dieux_fluid",
     "premierpainmod:flowing_pain_dieux_fluid",
-    "premierpainmod:la_chateau_fluid",
-    "premierpainmod:flowing_la_chateau_fluid",
-    "premierpainmod:debier_fluid",
-    "premierpainmod:flowing_debier_fluid",
-    "premierpainmod:envahisseur_rouge_fluid",
-    "premierpainmod:flowing_envahisseur_rouge_fluid",
-    "premierpainmod:raspbuisson_fluid",
     "premierpainmod:flowing_raspbuisson_fluid",
+    "premierpainmod:flowing_la_chateau_fluid",
+    "premierpainmod:flowing_debier_fluid",
+    "premierpainmod:flowing_envahisseur_rouge_fluid",
+    "premierpainmod:flowing_disender_fluid",
+    "premierpainmod:envahisseur_rouge_fluid",
     "premierpainmod:la_blanche_citadine_fluid",
-    "premierpainmod:flowing_la_blanche_citadine_fluid",
-    "premierpainmod:crane_noir_fluid",
+    "premierpainmod:tak_fluid",
     "premierpainmod:flowing_crane_noir_fluid",
-    "premierpainmod:crane_tak_fluid",
+    "premierpainmod:la_chateau_fluid",
+    "premierpainmod:raspbuisson_fluid",
+    "premierpainmod:debier_fluid",
+    "premierpainmod:pain_dieux_fluid",
+    "premierpainmod:crane_noir_fluid",
     "premierpainmod:flowing_tak_fluid",
-    "premierpainmod:crane_disender_fluid",
-    "premierpainmod:flowing_disender_fluid"
+    "premierpainmod:disender_fluid",
+    "premierpainmod:flowing_la_blanche_citadine_fluid"
   ]
 }

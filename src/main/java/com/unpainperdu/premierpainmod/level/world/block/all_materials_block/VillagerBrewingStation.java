@@ -1,8 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.block.all_materials_block;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
@@ -21,7 +19,9 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -77,7 +77,8 @@ public class VillagerBrewingStation extends BaseEntityBlock implements SimpleWat
         if (level.isClientSide)
         {
             return InteractionResult.SUCCESS;
-        } else
+        }
+        else
         {
             this.openContainer(level, pos, player);
             return InteractionResult.CONSUME;
@@ -90,7 +91,7 @@ public class VillagerBrewingStation extends BaseEntityBlock implements SimpleWat
         BlockEntity blockentity = level.getBlockEntity(pos);
         if (blockentity instanceof VillagerBrewingStationBlockEntity)
         {
-            player.openMenu((VillagerBrewingStationBlockEntity)blockentity, pos);
+            player.openMenu((VillagerBrewingStationBlockEntity) blockentity, pos);
         }
     }
 
@@ -113,7 +114,8 @@ public class VillagerBrewingStation extends BaseEntityBlock implements SimpleWat
     }
 
     @Override
-    protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
+    protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
+    {
         if (pState.getValue(WATERLOGGED))
         {
             pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
@@ -124,7 +126,7 @@ public class VillagerBrewingStation extends BaseEntityBlock implements SimpleWat
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add( WATERLOGGED, FACING);
+        pBuilder.add(WATERLOGGED, FACING);
     }
 
     @Override
@@ -156,7 +158,7 @@ public class VillagerBrewingStation extends BaseEntityBlock implements SimpleWat
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
             if (blockentity instanceof VillagerBrewingStationBlockEntity)
             {
-                Containers.dropContents(pLevel, pPos, ((VillagerBrewingStationBlockEntity)blockentity).getItems());
+                Containers.dropContents(pLevel, pPos, ((VillagerBrewingStationBlockEntity) blockentity).getItems());
             }
 
             super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);

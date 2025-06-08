@@ -2,7 +2,6 @@ package com.unpainperdu.premierpainmod.level.world.fluid.fluid_type;
 
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.LiquidContent;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
@@ -22,18 +21,16 @@ public class BeerFluidType extends FluidType
     private final ResourceLocation stillTexture = ResourceLocation.parse("block/water_still");;
     private final ResourceLocation flowingTexture = ResourceLocation.parse("block/water_flow");;
     private final ResourceLocation overlayTexture = ResourceLocation.parse("block/water_overlay");;
-    private final int tintColor;
-    private final Vector3f fogColor;
     private final float fogStart;
     private final float fogEnd;
-    private final LiquidContent liquidContent;
+    private final int tintColor;
+    private final Vector3f fogColor;
 
-    public BeerFluidType(Properties properties, LiquidContent liquidContent)
+    public BeerFluidType(Properties properties, int tintColor, Vector3f fogColor)
     {
         super(properties);
-        this.tintColor = liquidContent.getTintIndex();
-        this.fogColor = liquidContent.getFogColor();
-        this.liquidContent = liquidContent;
+        this.tintColor = tintColor;
+        this.fogColor = fogColor;
         this.fogStart = 1f;
         this.fogEnd = 3f;
     }
@@ -48,46 +45,6 @@ public class BeerFluidType extends FluidType
     public boolean canConvertToSource(FluidState state, LevelReader reader, BlockPos pos)
     {
         return false;
-    }
-
-    public LiquidContent getLiquidContent()
-    {
-        return liquidContent;
-    }
-
-    public ResourceLocation getStillTexture()
-    {
-        return this.stillTexture;
-    }
-
-    public ResourceLocation getFlowingTexture()
-    {
-        return this.flowingTexture;
-    }
-
-    public int getTintColor()
-    {
-        return this.tintColor;
-    }
-
-    public ResourceLocation getOverlayTexture()
-    {
-        return this.overlayTexture;
-    }
-
-    public Vector3f getFogColor()
-    {
-        return this.fogColor;
-    }
-
-    public float getFogStart()
-    {
-        return this.fogStart;
-    }
-
-    public float getFogEnd()
-    {
-        return this.fogEnd;
     }
 
     public IClientFluidTypeExtensions register()
