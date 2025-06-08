@@ -36,7 +36,7 @@ public class AllInOneFluidRegister
     public static final Map<String, DeferredBlock<Block>> FLUID_BLOCKS = new HashMap<>();
     private static final boolean INITIATOR = createFluids();
 
-    //don't forget blockstate json
+    //don't forget blockstate json and add type to FluidTypeRegister
     private static boolean createFluids()
     {
         registerNewFluid("pain_dieux", BEER_TYPE, PainDieuxFluid.Source::new, PainDieuxFluid.Flowing::new, 0xf1faa12d, new Vector3f(250f / 255f, 161f / 255f, 45f / 255f));
