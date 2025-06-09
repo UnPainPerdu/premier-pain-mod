@@ -45,7 +45,7 @@ public class VillagerTotemFeature extends Feature<NoneFeatureConfiguration>
 
         for (int i = 0; i < baseHeight; i++)
         {
-            ModFeatureUtils.generateBlock(worldIn, pos, rand, BlockRegister.STRIPPED_ACHIOTE_LOG.get().defaultBlockState(), false);
+            ModFeatureUtils.generateBlock(worldIn, pos, rand, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("stripped_log").get().defaultBlockState(), false);
             if (i == baseHeight - 1)
             {
                 BlockPos leftArmPos = PosHelper.getLeft(pos, direction);
@@ -53,16 +53,16 @@ public class VillagerTotemFeature extends Feature<NoneFeatureConfiguration>
                 generateConnectedFence(worldIn, rand, leftArmPos, direction, true);
                 generateConnectedFence(worldIn, rand, rightArmPos, direction, false);
                 leftArmPos = leftArmPos.above();
-                ModFeatureUtils.generateBlock(worldIn, leftArmPos, rand, BlockRegister.MORICHE_PALM_FENCE.get().defaultBlockState(), false);
+                ModFeatureUtils.generateBlock(worldIn, leftArmPos, rand, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("fence").get().defaultBlockState(), false);
                 rightArmPos = rightArmPos.above();
-                ModFeatureUtils.generateBlock(worldIn, rightArmPos, rand, BlockRegister.MORICHE_PALM_FENCE.get().defaultBlockState(), false);
+                ModFeatureUtils.generateBlock(worldIn, rightArmPos, rand, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("fence").get().defaultBlockState(), false);
             }
             pos = pos.above();
         }
 
         ModFeatureUtils.generateBlock(worldIn, pos, rand, ModFeatureUtils.getBlockFromId("moriche_palm_villager_chiseled_head").defaultBlockState().setValue(VillagerChiseledHead.LIT, (RandomUtil.getRandomPositiveIntInRange(2, rand) == 0)), false);
         pos = pos.above();
-        ModFeatureUtils.generateBlock(worldIn, pos, rand, BlockRegister.ACHIOTE_SLAB.get().defaultBlockState(), false);
+        ModFeatureUtils.generateBlock(worldIn, pos, rand, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("slab").get().defaultBlockState(), false);
         return true;
     }
 
@@ -87,7 +87,7 @@ public class VillagerTotemFeature extends Feature<NoneFeatureConfiguration>
         }
         BooleanProperty property = getPropertyFromDirection(direction1);
 
-        BlockState state = BlockRegister.MORICHE_PALM_FENCE.get().defaultBlockState().setValue(property, true);
+        BlockState state = BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("fence").get().defaultBlockState().setValue(property, true);
         ModFeatureUtils.generateBlock(worldIn, pos, rand, state, false);
     }
 

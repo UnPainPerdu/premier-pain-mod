@@ -108,21 +108,11 @@ public class ItemRegister
     public static final DeferredItem<Item> FRUITS_BOWL = stewFoodItemRegister("fruits_bowl", 9);
     //tree
     //mountain_currant
-    public static final DeferredItem<Item> MOUNTAIN_CURRANT_SIGN = signItemRegister("mountain_currant_sign", () -> BlockRegister.MOUNTAIN_CURRANT_SIGN, () -> BlockRegister.MOUNTAIN_CURRANT_WALL_SIGN);
-    public static final DeferredItem<Item> MOUNTAIN_CURRANT_HANGING_SIGN = hangingSignItemRegister("mountain_currant_hanging_sign", () -> BlockRegister.MOUNTAIN_CURRANT_HANGING_SIGN, () -> BlockRegister.MOUNTAIN_CURRANT_WALL_HANGING_SIGN);
-    public static final DeferredItem<Item> MOUNTAIN_CURRANT_BOAT = ITEMS.register("mountain_currant_boat", () -> new BoatItem(false, Boat.Type.valueOf("premierpainmod_MOUNTAIN_CURRANT"), new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> MOUNTAIN_CURRANT_CHEST_BOAT = ITEMS.register("mountain_currant_chest_boat", () -> new BoatItem(true, Boat.Type.valueOf("premierpainmod_MOUNTAIN_CURRANT"), new Item.Properties().stacksTo(1)));
+    public static final Map<String, DeferredItem<Item>> ITEM_MOUNTAIN_CURRANT_WOOD_TYPE_MAP = generateAllItemForWood("mountain_currant", () -> BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP);
     //moriche_palm
-    public static final DeferredItem<Item> MORICHE_PALM_SIGN = signItemRegister("moriche_palm_sign", () -> BlockRegister.MORICHE_PALM_SIGN, () -> BlockRegister.MORICHE_PALM_WALL_SIGN);
-    public static final DeferredItem<Item> MORICHE_PALM_HANGING_SIGN = hangingSignItemRegister("moriche_palm_hanging_sign", () -> BlockRegister.MORICHE_PALM_HANGING_SIGN, () -> BlockRegister.MORICHE_PALM_WALL_HANGING_SIGN);
-    public static final DeferredItem<Item> MORICHE_PALM_BOAT = ITEMS.register("moriche_palm_boat", () -> new BoatItem(false, Boat.Type.valueOf("premierpainmod_MORICHE_PALM"), new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> MORICHE_PALM_CHEST_BOAT = ITEMS.register("moriche_palm_chest_boat", () -> new BoatItem(true, Boat.Type.valueOf("premierpainmod_MORICHE_PALM"), new Item.Properties().stacksTo(1)));
+    public static final Map<String, DeferredItem<Item>> ITEM_MORICHE_PALM_WOOD_TYPE_MAP = generateAllItemForWood("moriche_palm", () -> BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP);
     //achiote
-    public static final DeferredItem<Item> ACHIOTE_SIGN = signItemRegister("achiote_sign", () -> BlockRegister.ACHIOTE_SIGN, () -> BlockRegister.ACHIOTE_WALL_SIGN);
-    public static final DeferredItem<Item> ACHIOTE_HANGING_SIGN = hangingSignItemRegister("achiote_hanging_sign", () -> BlockRegister.ACHIOTE_HANGING_SIGN, () -> BlockRegister.ACHIOTE_WALL_HANGING_SIGN);
-    public static final DeferredItem<Item> ACHIOTE_BOAT = ITEMS.register("achiote_boat", () -> new BoatItem(false, Boat.Type.valueOf("premierpainmod_ACHIOTE"), new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> ACHIOTE_CHEST_BOAT = ITEMS.register("achiote_chest_boat", () -> new BoatItem(true, Boat.Type.valueOf("premierpainmod_ACHIOTE"), new Item.Properties().stacksTo(1)));
-
+    public static final Map<String, DeferredItem<Item>> ITEM_ACHIOTE_WOOD_TYPE_MAP = generateAllItemForWood("achiote", () -> BlockRegister.ACHIOTE_WOOD_TYPE_MAP);
 
     private static Map<String, DeferredItem<Item>> createAllMaterialsItems()
     {
@@ -232,6 +222,16 @@ public class ItemRegister
                 )
                 .stacksTo(16)
                 , type, name, effect, potionLevel, timeMultiplicater));
+    }
+
+    private static Map<String, DeferredItem<Item>> generateAllItemForWood(String name, Supplier<Map<String, DeferredBlock<Block>>> woodTypeBlocks)
+    {
+        Map<String, DeferredItem<Item>> map = new HashMap<>();
+        map.put("sign", signItemRegister(name + "_sign", () -> woodTypeBlocks.get().get("sign"), () -> woodTypeBlocks.get().get("wall_sign")));
+        map.put("hanging_sign", hangingSignItemRegister(name + "_hanging_sign", () -> woodTypeBlocks.get().get("hanging_sign"), () -> woodTypeBlocks.get().get("wall_hanging_sign")));
+        map.put("boat", ITEMS.register(name + "_boat", () -> new BoatItem(false, Boat.Type.valueOf("premierpainmod_" + (name.toUpperCase())), new Item.Properties().stacksTo(1))));
+        map.put("chest_boat", ITEMS.register(name + "_chest_boat", () -> new BoatItem(true, Boat.Type.valueOf("premierpainmod_" + (name.toUpperCase())), new Item.Properties().stacksTo(1))));
+        return map;
     }
 
     public static void register(IEventBus modEventBus)

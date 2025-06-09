@@ -6,12 +6,15 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbility;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -57,14 +60,17 @@ public class LogBlock extends RotatedPillarBlock
 
     private Map<BlockState, BlockState> getLogAndWoodMap()
     {
+        List<Map<String, DeferredBlock<Block>>> l = List.of(
+                BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP,
+                BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP,
+                BlockRegister.ACHIOTE_WOOD_TYPE_MAP
+        );
         Map<BlockState, BlockState> logAndWoodMap = new HashMap<>();
-        logAndWoodMap.put(BlockRegister.MOUNTAIN_CURRANT_LOG.get().defaultBlockState(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get().defaultBlockState());
-        logAndWoodMap.put(BlockRegister.MOUNTAIN_CURRANT_WOOD.get().defaultBlockState(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get().defaultBlockState());
-        logAndWoodMap.put(BlockRegister.MORICHE_PALM_LOG.get().defaultBlockState(), BlockRegister.STRIPPED_MORICHE_PALM_LOG.get().defaultBlockState());
-        logAndWoodMap.put(BlockRegister.MORICHE_PALM_WOOD.get().defaultBlockState(), BlockRegister.STRIPPED_MORICHE_PALM_WOOD.get().defaultBlockState());
-        logAndWoodMap.put(BlockRegister.ACHIOTE_LOG.get().defaultBlockState(), BlockRegister.STRIPPED_ACHIOTE_LOG.get().defaultBlockState());
-        logAndWoodMap.put(BlockRegister.ACHIOTE_WOOD.get().defaultBlockState(), BlockRegister.STRIPPED_ACHIOTE_WOOD.get().defaultBlockState());
-
+        for (Map<String, DeferredBlock<Block>> m : l)
+        {
+            logAndWoodMap.put(m.get("log").get().defaultBlockState(), m.get("stripped_log").get().defaultBlockState());
+            logAndWoodMap.put(m.get("wood").get().defaultBlockState(), m.get("stripped_wood").get().defaultBlockState());
+        }
         return logAndWoodMap;
     }
 }

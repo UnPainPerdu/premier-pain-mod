@@ -25,9 +25,9 @@ public class CommonSetupEventPottedThing
         //crop
         setPottedThing(event, BlockRegister.JELLYSHROOM, BlockRegister.POTTED_JELLYSHROOM);
         //sapling
-        setPottedThing(event, BlockRegister.MOUNTAIN_CURRANT_SAPLING, BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING);
-        setPottedThing(event, BlockRegister.MORICHE_PALM_SAPLING, BlockRegister.POTTED_MORICHE_PALM_SAPLING);
-        setPottedThing(event, BlockRegister.ACHIOTE_SAPLING, BlockRegister.POTTED_ACHIOTE_SAPLING);
+        setPottedThing(event, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("sapling"), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("potted_sapling"));
+        setPottedThing(event, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("sapling"), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("potted_sapling"));
+        setPottedThing(event, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling"), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("potted_sapling"));
     }
 
     public static void setPottedThing(final FMLCommonSetupEvent event, DeferredBlock<Block> thingToPot, DeferredBlock<Block> thingPotted)

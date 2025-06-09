@@ -31,6 +31,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -87,7 +88,6 @@ public class BlockRegister
 
     public static final Map<String, DeferredBlock<Block>> AllMaterialsMap = createAllMaterialsBlocks();
 
-    //public static final DeferredBlock<Block> TEST_BLOCK = registerBlock("test_block", () -> new VillagerBrewingStation(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().noLootTable()));
     //WorkShopZone
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     //Villager Singing stone event block
@@ -122,68 +122,11 @@ public class BlockRegister
     public static final DeferredBlock<Block> POTTED_DEAD_RUINS_FLOWER = registerFlowerPot("potted_dead_ruins_flower", () -> DEAD_RUINS_FLOWER);
     //tree
     //mountain_currant
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_LOG = registerBlock("mountain_currant_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> STRIPPED_MOUNTAIN_CURRANT_LOG = registerBlock("stripped_mountain_currant_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WOOD = registerBlock("mountain_currant_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> STRIPPED_MOUNTAIN_CURRANT_WOOD = registerBlock("stripped_mountain_currant_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_PLANKS = registerBlock("mountain_currant_planks", () -> new FlammableBlock(20, 5, BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_LEAVES = registerBlock("mountain_currant_leaves", () -> new ModLeavesBlock(true, 60, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_STAIRS = registerBlock("mountain_currant_stairs", () -> registerStair(() -> MOUNTAIN_CURRANT_PLANKS));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_SLAB = registerBlock("mountain_currant_slab", () -> registerSlab(() -> MOUNTAIN_CURRANT_PLANKS));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_BUTTON = registerBlock("mountain_currant_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_PRESSURE_PLATE = registerBlock("mountain_currant_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_FENCE = registerBlock("mountain_currant_fence", () -> registerFence(() -> MOUNTAIN_CURRANT_PLANKS));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_FENCE_GATE = registerBlock("mountain_currant_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_DOOR = registerBlock("mountain_currant_door", () -> registerDoor(BlockSetType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_TRAPDOOR = registerBlock("mountain_currant_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> MOUNTAIN_CURRANT_PLANKS));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_SIGN = registerBlockOnly("mountain_currant_sign", () -> new ModStandingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_SIGN = registerBlockOnly("mountain_currant_wall_sign", () -> new ModWallSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_HANGING_SIGN = registerBlockOnly("mountain_currant_hanging_sign", () -> new ModHangingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_WALL_HANGING_SIGN = registerBlockOnly("mountain_currant_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MOUNTAIN_CURRANT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> MOUNTAIN_CURRANT_SAPLING = registerBlock("mountain_currant_sapling", () -> new SaplingBlock(ModTreeGrower.MOUNTAIN_CURRANT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final DeferredBlock<Block> POTTED_MOUNTAIN_CURRANT_SAPLING = registerFlowerPot("potted_mountain_currant_sapling", () -> MOUNTAIN_CURRANT_SAPLING);
+    public static final Map<String, DeferredBlock<Block>> MOUNTAIN_CURRANT_WOOD_TYPE_MAP = generateAllBlockForWood("mountain_currant", ModWoodTypes.MOUNTAIN_CURRANT, ModTreeGrower.MOUNTAIN_CURRANT);
     //moriche_palm
-    public static final DeferredBlock<Block> MORICHE_PALM_LOG = registerBlock("moriche_palm_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> STRIPPED_MORICHE_PALM_LOG = registerBlock("stripped_moriche_palm_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> MORICHE_PALM_WOOD = registerBlock("moriche_palm_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> STRIPPED_MORICHE_PALM_WOOD = registerBlock("stripped_moriche_palm_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> MORICHE_PALM_PLANKS = registerBlock("moriche_palm_planks", () -> new FlammableBlock(20, 5, BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> MORICHE_PALM_LEAVES = registerBlock("moriche_palm_leaves", () -> new ModLeavesBlock(false, 60, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
-    public static final DeferredBlock<Block> MORICHE_PALM_STAIRS = registerBlock("moriche_palm_stairs", () -> registerStair(() -> MORICHE_PALM_PLANKS));
-    public static final DeferredBlock<Block> MORICHE_PALM_SLAB = registerBlock("moriche_palm_slab", () -> registerSlab(() -> MORICHE_PALM_PLANKS));
-    public static final DeferredBlock<Block> MORICHE_PALM_BUTTON = registerBlock("moriche_palm_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30));
-    public static final DeferredBlock<Block> MORICHE_PALM_PRESSURE_PLATE = registerBlock("moriche_palm_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> MORICHE_PALM_PLANKS));
-    public static final DeferredBlock<Block> MORICHE_PALM_FENCE = registerBlock("moriche_palm_fence", () -> registerFence(() -> MORICHE_PALM_PLANKS));
-    public static final DeferredBlock<Block> MORICHE_PALM_FENCE_GATE = registerBlock("moriche_palm_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> MORICHE_PALM_PLANKS));
-    public static final DeferredBlock<Block> MORICHE_PALM_DOOR = registerBlock("moriche_palm_door", () -> registerDoor(BlockSetType.OAK, () -> MORICHE_PALM_PLANKS));
-    public static final DeferredBlock<Block> MORICHE_PALM_TRAPDOOR = registerBlock("moriche_palm_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> MORICHE_PALM_PLANKS));
-    public static final DeferredBlock<Block> MORICHE_PALM_SIGN = registerBlockOnly("moriche_palm_sign", () -> new ModStandingSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> MORICHE_PALM_WALL_SIGN = registerBlockOnly("moriche_palm_wall_sign", () -> new ModWallSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> MORICHE_PALM_HANGING_SIGN = registerBlockOnly("moriche_palm_hanging_sign", () -> new ModHangingSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> MORICHE_PALM_WALL_HANGING_SIGN = registerBlockOnly("moriche_palm_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.MORICHE_PALM, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> MORICHE_PALM_SAPLING = registerBlock("moriche_palm_sapling", () -> new SaplingBlock(ModTreeGrower.MORICHE_PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final DeferredBlock<Block> POTTED_MORICHE_PALM_SAPLING = registerFlowerPot("potted_moriche_palm_sapling", () -> MORICHE_PALM_SAPLING);
+    public static final Map<String, DeferredBlock<Block>> MORICHE_PALM_WOOD_TYPE_MAP = generateAllBlockForWood("moriche_palm", ModWoodTypes.MORICHE_PALM, ModTreeGrower.MORICHE_PALM);
     //achiote
-    public static final DeferredBlock<Block> ACHIOTE_LOG = registerBlock("achiote_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> STRIPPED_ACHIOTE_LOG = registerBlock("stripped_achiote_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> ACHIOTE_WOOD = registerBlock("achiote_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> STRIPPED_ACHIOTE_WOOD = registerBlock("stripped_achiote_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> ACHIOTE_PLANKS = registerBlock("achiote_planks", () -> new FlammableBlock(20, 5, BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> ACHIOTE_LEAVES = registerBlock("achiote_leaves", () -> new ModLeavesBlock(true, 60, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
-    public static final DeferredBlock<Block> ACHIOTE_STAIRS = registerBlock("achiote_stairs", () -> registerStair(() -> ACHIOTE_PLANKS));
-    public static final DeferredBlock<Block> ACHIOTE_SLAB = registerBlock("achiote_slab", () -> registerSlab(() -> ACHIOTE_PLANKS));
-    public static final DeferredBlock<Block> ACHIOTE_BUTTON = registerBlock("achiote_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30));
-    public static final DeferredBlock<Block> ACHIOTE_PRESSURE_PLATE = registerBlock("achiote_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> ACHIOTE_PLANKS));
-    public static final DeferredBlock<Block> ACHIOTE_FENCE = registerBlock("achiote_fence", () -> registerFence(() -> ACHIOTE_PLANKS));
-    public static final DeferredBlock<Block> ACHIOTE_FENCE_GATE = registerBlock("achiote_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> ACHIOTE_PLANKS));
-    public static final DeferredBlock<Block> ACHIOTE_DOOR = registerBlock("achiote_door", () -> registerDoor(BlockSetType.OAK, () -> ACHIOTE_PLANKS));
-    public static final DeferredBlock<Block> ACHIOTE_TRAPDOOR = registerBlock("achiote_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> ACHIOTE_PLANKS));
-    public static final DeferredBlock<Block> ACHIOTE_SIGN = registerBlockOnly("achiote_sign", () -> new ModStandingSignBlock(ModWoodTypes.ACHIOTE, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> ACHIOTE_WALL_SIGN = registerBlockOnly("achiote_wall_sign", () -> new ModWallSignBlock(ModWoodTypes.ACHIOTE, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> ACHIOTE_HANGING_SIGN = registerBlockOnly("achiote_hanging_sign", () -> new ModHangingSignBlock(ModWoodTypes.ACHIOTE, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> ACHIOTE_WALL_HANGING_SIGN = registerBlockOnly("achiote_wall_hanging_sign", () -> new ModWallHangingSignBlock(ModWoodTypes.ACHIOTE, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()));
-    public static final DeferredBlock<Block> ACHIOTE_SAPLING = registerBlock("achiote_sapling", () -> new SaplingBlock(ModTreeGrower.ACHIOTE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-    public static final DeferredBlock<Block> POTTED_ACHIOTE_SAPLING = registerFlowerPot("potted_achiote_sapling", () -> ACHIOTE_SAPLING);
+    public static final Map<String, DeferredBlock<Block>> ACHIOTE_WOOD_TYPE_MAP = generateAllBlockForWood("achiote", ModWoodTypes.ACHIOTE, ModTreeGrower.ACHIOTE);
 
     private static Map<String, DeferredBlock<Block>> createAllMaterialsBlocks()
     {
@@ -309,6 +252,32 @@ public class BlockRegister
                     registerBlock(name, () -> new VillagerChiseledHead(properties.lightLevel(litBlockEmission(13))));
             default -> null;
         };
+    }
+
+    private static Map<String, DeferredBlock<Block>> generateAllBlockForWood(String name, WoodType woodType, TreeGrower treeGrower)
+    {
+        Map<String, DeferredBlock<Block>> map = new HashMap<>();
+        map.put("log", registerBlock(name + "_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put("stripped_log", registerBlock("stripped_" + name + "_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put("wood", registerBlock(name + "_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put("stripped_wood", registerBlock("stripped_" + name + "_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put("planks", registerBlock(name + "_planks", () -> new FlammableBlock(20, 5, BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put("leaves", registerBlock(name + "_leaves", () -> new ModLeavesBlock(true, 60, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))));
+        map.put("stairs", registerBlock(name + "_stairs", () -> registerStair(() -> map.get("planks"))));
+        map.put("slab", registerBlock(name + "_slab", () -> registerSlab(() -> map.get("planks"))));
+        map.put("button", registerBlock(name + "_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30)));
+        map.put("pressure_plate", registerBlock(name + "_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> map.get("planks"))));
+        map.put("fence", registerBlock(name + "_fence", () -> registerFence(() -> map.get("planks"))));
+        map.put("fence_gate", registerBlock(name + "_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> map.get("planks"))));
+        map.put("door", registerBlock(name + "_door", () -> registerDoor(BlockSetType.OAK, () -> map.get("planks"))));
+        map.put("trapdoor", registerBlock(name + "_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> map.get("planks"))));
+        map.put("sign", registerBlockOnly(name + "_sign", () -> new ModStandingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
+        map.put("wall_sign", registerBlockOnly(name + "_wall_sign", () -> new ModWallSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
+        map.put("hanging_sign", registerBlockOnly(name + "_hanging_sign", () -> new ModHangingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
+        map.put("wall_hanging_sign", registerBlockOnly(name + "_wall_hanging_sign", () -> new ModWallHangingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
+        map.put("sapling", registerBlock(name + "_sapling", () -> new SaplingBlock(treeGrower, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))));
+        map.put("potted_sapling", registerFlowerPot("potted_" + name + "_sapling", () -> map.get("sapling")));
+        return map;
     }
 
     private static DeferredBlock<Block> registerFlowerPot(String name, Supplier<DeferredBlock<Block>> flowerBlock)
