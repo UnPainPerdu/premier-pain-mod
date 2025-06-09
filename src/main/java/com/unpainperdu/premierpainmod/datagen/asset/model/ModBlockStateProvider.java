@@ -247,7 +247,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .build();
         });
 
-        ModelFile brazierModel = models().withExistingParent(getKey(brazier).toString()+"_m","premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_m");
+        ModelFile brazierModel = models().withExistingParent(getKey(brazier)+"_m","premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_m");
         itemModels().getBuilder(getKey(brazier).getPath()).parent(brazierModel).texture("0", texture_bottom).texture("1", texture_upper);
     }
 
@@ -543,14 +543,12 @@ public class ModBlockStateProvider extends BlockStateProvider
         String material = chairName.replace("_chair","");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(chair);
         variantBuilder.forAllStates(state ->
-        {
-            return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(getKey(chair).toString(),"premierpainmod:block/all_materials_block/villager_chair/villager_chair")
-                            .texture("0","block/all_materials_block/multiple_use_texture/" + material)
-                            .texture("1", "block/all_materials_block/multiple_use_particle/" + material))
-                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                    .build();
-        });
+                ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(getKey(chair).toString(),"premierpainmod:block/all_materials_block/villager_chair/villager_chair")
+                                .texture("0","block/all_materials_block/multiple_use_texture/" + material)
+                                .texture("1", "block/all_materials_block/multiple_use_particle/" + material))
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build());
         ModelFile villagerChairModel = models().withExistingParent(getKey(chair).toString(),"premierpainmod:block/all_materials_block/villager_chair/villager_chair").texture("0","block/all_materials_block/multiple_use_texture/" + material);
         itemModels().getBuilder(getKey(chair).getPath()).parent(villagerChairModel);
     }
@@ -759,12 +757,12 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void flowerPotBlock(Block flowerPotBlock, Block flowerBlock)
     {
         String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-        pottedBlockWithBasicModel(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/one_block_flower/" + nameFlower);
+        pottedBlockWithBasicModel(flowerPotBlock,  "block/vegetation/flower_block/one_block_flower/" + nameFlower);
     }
     private void deadBushPotBlock(Block deadBushPotBlock, Block deadBushBlock)
     {
         String nameFlower = BuiltInRegistries.BLOCK.getKey(deadBushBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-        pottedBlockWithBasicModel(deadBushPotBlock, deadBushBlock, "block/vegetation/dead_bush/" + nameFlower);
+        pottedBlockWithBasicModel(deadBushPotBlock, "block/vegetation/dead_bush/" + nameFlower);
     }
 
     private void growingVegetationWithItem(Block block)
@@ -792,7 +790,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void flowerPotBlockForGrowingVegetation(Block flowerPotBlock, Block flowerBlock)
     {
         String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-        pottedBlockWithBasicModel(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/growing_flower_block/" + nameFlower);
+        pottedBlockWithBasicModel(flowerPotBlock, "block/vegetation/flower_block/growing_flower_block/" + nameFlower);
     }
 
     private void floweredCactusBlockWithItem()
@@ -846,8 +844,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void pottedFloweredCactus()
     {
         Block flowerPotBlock = BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get();
-        Block blockToPot = BlockRegister.CACTUS_FLOWER_BLOCK.get();
-        pottedBlockWithBasicModel(flowerPotBlock, blockToPot, "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
+        pottedBlockWithBasicModel(flowerPotBlock, "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
     }
 
     private void universalPottedBlockWithCustomModel(Block pottedBlock, String modelPath)
@@ -857,7 +854,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 .renderType("cutout");
         simpleBlock(pottedBlock, modelFile);
     }
-    private void pottedBlockWithBasicModel(Block pottedBlock, Block blockToPot, String folderOfPng)
+    private void pottedBlockWithBasicModel(Block pottedBlock, String folderOfPng)
     {
         String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID +":","");
 
@@ -1127,9 +1124,8 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void skySpearsFlowerPotBlock()
     {
-        Block block = BlockRegister.SKY_SPEARS_FLOWER.get();
         Block pottedBlock = BlockRegister.POTTED_SKY_SPEARS_FLOWER.get();
-        pottedBlockWithBasicModel(pottedBlock, block, "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
+        pottedBlockWithBasicModel(pottedBlock, "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
     }
 
     private void jellyshroomWithItem()
@@ -1139,7 +1135,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         variantBuilder.forAllStates(state ->
         {
             String modelPath = "premierpainmod:block/vegetation/crop/jellyshroom/jellyshroom_";
-            String modelName = getKey(block).toString() + "_";
+            String modelName = getKey(block) + "_";
             switch (state.getValue(JellyShroomBlock.AGE))
             {
                 case 1 :
@@ -1200,7 +1196,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void woodWithItem(Block log, String folderInTree)
     {
         String name = getName(log);
-        ResourceLocation side = createResourceLocation("block/tree/" + folderInTree + "/" + name.replace("wood", "log") + "_side");;
+        ResourceLocation side = createResourceLocation("block/tree/" + folderInTree + "/" + name.replace("wood", "log") + "_side");
         axisBlock((RotatedPillarBlock) log,
                 side,
                 side
@@ -1339,7 +1335,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
 
     /**
-    * @param treeId exemple : mountain_currant
+    * @param treeId example : mountain_currant
     **/
     private void allWoodBlocks(String treeId, boolean doesLeavesGrowFruit)
     {
@@ -1370,7 +1366,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         woodenSign(getBlockFromId(treeId + "_sign"), getBlockFromId(treeId + "_wall_sign"), planksTexture);
         woodenHangingSign(getBlockFromId(treeId + "_hanging_sign"), getBlockFromId(treeId + "_wall_hanging_sign"), planksTexture);
         saplingWithItem(getBlockFromId(treeId + "_sapling"), folder);
-        pottedBlockWithBasicModel(getBlockFromId("potted_" + treeId + "_sapling"), getBlockFromId(treeId + "_sapling"),"block/tree/" + folder + "/" + treeId + "_sapling");
+        pottedBlockWithBasicModel(getBlockFromId("potted_" + treeId + "_sapling"), "block/tree/" + folder + "/" + treeId + "_sapling");
     }
 
     private void tallFlower(Block block)
@@ -1498,25 +1494,25 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private String nameModelCarpetSelection(VillagerCarpetColor villagerCarpetColor)
     {
-        switch (villagerCarpetColor)
+        return switch (villagerCarpetColor)
         {
-            case WHITE: return "_white";
-            case LIGHT_GRAY: return "_light_gray";
-            case GRAY: return "_gray";
-            case BLACK: return "_black";
-            case BROWN: return "_brown";
-            case RED: return "_red";
-            case ORANGE: return "_orange";
-            case YELLOW: return "_yellow";
-            case LIME: return "_lime";
-            case GREEN: return "_green";
-            case CYAN: return "_cyan";
-            case LIGHT_BLUE: return "_light_blue";
-            case BLUE: return "_blue";
-            case PURPLE: return "_purple";
-            case MAGENTA: return "_magenta";
-            default: return "_pink";
-        }
+            case WHITE -> "_white";
+            case LIGHT_GRAY -> "_light_gray";
+            case GRAY -> "_gray";
+            case BLACK -> "_black";
+            case BROWN -> "_brown";
+            case RED -> "_red";
+            case ORANGE -> "_orange";
+            case YELLOW -> "_yellow";
+            case LIME -> "_lime";
+            case GREEN -> "_green";
+            case CYAN -> "_cyan";
+            case LIGHT_BLUE -> "_light_blue";
+            case BLUE -> "_blue";
+            case PURPLE -> "_purple";
+            case MAGENTA -> "_magenta";
+            default -> "_pink";
+        };
     }
 
 
