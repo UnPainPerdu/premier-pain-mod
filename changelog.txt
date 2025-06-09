@@ -235,3 +235,4 @@ What would be a world without bugs ?
 
 ## Note :
     - Fluids background code has been reworked, please report any change you notice
+    - all wood blocks background code has been reworked, please report any change you notice

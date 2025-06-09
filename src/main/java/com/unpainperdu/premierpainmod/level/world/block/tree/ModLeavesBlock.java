@@ -167,8 +167,8 @@ public class ModLeavesBlock extends LeavesBlock
     protected ItemLike getFruitForLeaves(BlockState state)
     {
         Map<BlockState, ItemLike> fruitAndLeavesMap = new HashMap<>();
-        fruitAndLeavesMap.put(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get().defaultBlockState(), ItemRegister.MOUNTAIN_CURRANT);
-        fruitAndLeavesMap.put(BlockRegister.ACHIOTE_LEAVES.get().defaultBlockState(), ItemRegister.ACHIOTE_FRUIT);
+        fruitAndLeavesMap.put(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get().defaultBlockState(), ItemRegister.MOUNTAIN_CURRANT);
+        fruitAndLeavesMap.put(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get().defaultBlockState(), ItemRegister.ACHIOTE_FRUIT);
 
         if (fruitAndLeavesMap.containsKey(state.getBlock().defaultBlockState()))
         {

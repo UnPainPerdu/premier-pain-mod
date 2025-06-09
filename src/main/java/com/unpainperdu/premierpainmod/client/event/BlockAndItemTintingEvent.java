@@ -1,9 +1,7 @@
 package com.unpainperdu.premierpainmod.client.event;
 
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockAndTintGetter;
@@ -22,19 +20,19 @@ public class BlockAndItemTintingEvent
     public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event)
     {
         //vegetation
-            //tree
-        setTintingForFruitLeaves(event, BlockRegister.MOUNTAIN_CURRANT_LEAVES.get());
-        setTintingForVegetation(event, BlockRegister.MORICHE_PALM_LEAVES.get());
-        setTintingForFruitLeaves(event, BlockRegister.ACHIOTE_LEAVES.get());
+        //tree
+        setTintingForFruitLeaves(event, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get());
+        setTintingForVegetation(event, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("leaves").get());
+        setTintingForFruitLeaves(event, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get());
     }
 
     @SubscribeEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event)
     {
         event.register((stack, tintIndex) -> 0x91BD59,
-                BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(),
-                BlockRegister.MORICHE_PALM_LEAVES.get(),
-                BlockRegister.ACHIOTE_LEAVES.get()
+                BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get(),
+                BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("leaves").get(),
+                BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get()
         );
     }
 
@@ -48,7 +46,7 @@ public class BlockAndItemTintingEvent
 
     private static void setTintingForFruitLeaves(RegisterColorHandlersEvent.Block event, Block block)
     {
-            event.register(BlockAndItemTintingEvent::getColorForFruitLeaves, block);
+        event.register(BlockAndItemTintingEvent::getColorForFruitLeaves, block);
     }
 
     private static int getColorForFruitLeaves(BlockState state, BlockAndTintGetter level, BlockPos pos, int tintIndex)

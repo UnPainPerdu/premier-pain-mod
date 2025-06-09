@@ -34,6 +34,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.FLUIDS;
@@ -74,7 +75,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //item
         //beer
         //empty
-        createEmptyContainer();
+        createEmptyBeerContainer();
         //Pain Dieux
         shapelessRecipeBuilder(ItemRegister.PAIN_DIEUX_BOTTLE, ItemRegister.PAIN_DIEUX_BUCKET, 4, ItemRegister.PAIN_DIEUX_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
         shapelessRecipeBuilder(ItemRegister.PAIN_DIEUX_GLASS, ItemRegister.PAIN_DIEUX_BOTTLE, 1, ItemRegister.PAIN_DIEUX_BOTTLE, ItemRegister.EMPTY_GLASS);
@@ -122,55 +123,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.FALLING_HELICON_FLOWER, Items.RED_DYE, 2);
         //wood
-        //mountain_currant
-        oneItemToAnotherOneRecipeBuilder(ModItemTags.MOUNTAIN_CURRANT_LOGS, BlockRegister.MOUNTAIN_CURRANT_PLANKS, 4);
-        fourSameIntoOneRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_WOOD.get(), BlockRegister.MOUNTAIN_CURRANT_LOG.get(), 3);
-        fourSameIntoOneRecipeBuilder(BlockRegister.STRIPPED_MOUNTAIN_CURRANT_WOOD.get(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get(), 3);
-        stairsRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_STAIRS.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        slabRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_SLAB.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        buttonRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_BUTTON.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        pressurePlateRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_PRESSURE_PLATE.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        fenceRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_FENCE.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        fenceGateRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_FENCE_GATE.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        doorRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_DOOR.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        trapdoorRecipeBuilder(BlockRegister.MOUNTAIN_CURRANT_TRAPDOOR.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        signRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_SIGN.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        hangingSignRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_HANGING_SIGN.get(), BlockRegister.STRIPPED_MOUNTAIN_CURRANT_LOG.get());
-        boatRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_BOAT.get(), BlockRegister.MOUNTAIN_CURRANT_PLANKS.get());
-        boatWithChestRecipeBuilder(ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT.get(), ItemRegister.MOUNTAIN_CURRANT_BOAT.get());
-        //moriche_palm
-        oneItemToAnotherOneRecipeBuilder(ModItemTags.MORICHE_PALM_LOGS, BlockRegister.MORICHE_PALM_PLANKS, 4);
-        fourSameIntoOneRecipeBuilder(BlockRegister.MORICHE_PALM_WOOD.get(), BlockRegister.MORICHE_PALM_LOG.get(), 3);
-        fourSameIntoOneRecipeBuilder(BlockRegister.STRIPPED_MORICHE_PALM_WOOD.get(), BlockRegister.STRIPPED_MORICHE_PALM_LOG.get(), 3);
-        stairsRecipeBuilder(BlockRegister.MORICHE_PALM_STAIRS.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        slabRecipeBuilder(BlockRegister.MORICHE_PALM_SLAB.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        buttonRecipeBuilder(BlockRegister.MORICHE_PALM_BUTTON.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        pressurePlateRecipeBuilder(BlockRegister.MORICHE_PALM_PRESSURE_PLATE.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        fenceRecipeBuilder(BlockRegister.MORICHE_PALM_FENCE.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        fenceGateRecipeBuilder(BlockRegister.MORICHE_PALM_FENCE_GATE.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        doorRecipeBuilder(BlockRegister.MORICHE_PALM_DOOR.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        trapdoorRecipeBuilder(BlockRegister.MORICHE_PALM_TRAPDOOR.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        signRecipeBuilder(ItemRegister.MORICHE_PALM_SIGN.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        hangingSignRecipeBuilder(ItemRegister.MORICHE_PALM_HANGING_SIGN.get(), BlockRegister.STRIPPED_MORICHE_PALM_LOG.get());
-        boatRecipeBuilder(ItemRegister.MORICHE_PALM_BOAT.get(), BlockRegister.MORICHE_PALM_PLANKS.get());
-        boatWithChestRecipeBuilder(ItemRegister.MORICHE_PALM_CHEST_BOAT.get(), ItemRegister.MORICHE_PALM_BOAT.get());
-        //achiote
-        oneItemToAnotherOneRecipeBuilder(ModItemTags.ACHIOTE_LOGS, BlockRegister.ACHIOTE_PLANKS, 4);
-        fourSameIntoOneRecipeBuilder(BlockRegister.ACHIOTE_WOOD.get(), BlockRegister.ACHIOTE_LOG.get(), 3);
-        fourSameIntoOneRecipeBuilder(BlockRegister.STRIPPED_ACHIOTE_WOOD.get(), BlockRegister.STRIPPED_ACHIOTE_LOG.get(), 3);
-        stairsRecipeBuilder(BlockRegister.ACHIOTE_STAIRS.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        slabRecipeBuilder(BlockRegister.ACHIOTE_SLAB.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        buttonRecipeBuilder(BlockRegister.ACHIOTE_BUTTON.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        pressurePlateRecipeBuilder(BlockRegister.ACHIOTE_PRESSURE_PLATE.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        fenceRecipeBuilder(BlockRegister.ACHIOTE_FENCE.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        fenceGateRecipeBuilder(BlockRegister.ACHIOTE_FENCE_GATE.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        doorRecipeBuilder(BlockRegister.ACHIOTE_DOOR.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        trapdoorRecipeBuilder(BlockRegister.ACHIOTE_TRAPDOOR.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        signRecipeBuilder(ItemRegister.ACHIOTE_SIGN.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        hangingSignRecipeBuilder(ItemRegister.ACHIOTE_HANGING_SIGN.get(), BlockRegister.STRIPPED_ACHIOTE_LOG.get());
-        boatRecipeBuilder(ItemRegister.ACHIOTE_BOAT.get(), BlockRegister.ACHIOTE_PLANKS.get());
-        boatWithChestRecipeBuilder(ItemRegister.ACHIOTE_CHEST_BOAT.get(), ItemRegister.ACHIOTE_BOAT.get());
-        //all materials recipes
+            //mountain_currant
+        generateWoodRecipe(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP, ItemRegister.ITEM_MOUNTAIN_CURRANT_WOOD_TYPE_MAP, ModItemTags.MOUNTAIN_CURRANT_LOGS);
+            //moriche_palm
+        generateWoodRecipe(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP, ItemRegister.ITEM_MORICHE_PALM_WOOD_TYPE_MAP, ModItemTags.MORICHE_PALM_LOGS);
+            //achiote
+        generateWoodRecipe(BlockRegister.ACHIOTE_WOOD_TYPE_MAP, ItemRegister.ITEM_ACHIOTE_WOOD_TYPE_MAP, ModItemTags.ACHIOTE_LOGS);
+            //all materials recipes
         for (Block block : ModBLockList.getAllMaterialsBlocks())
         {
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
@@ -208,15 +167,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 }
                 else if (blockName.contains("mountain_currant"))
                 {
-                    buildingBlocksRecipeBluilder(block, BlockRegister.MOUNTAIN_CURRANT_PLANKS);
+                    buildingBlocksRecipeBluilder(block, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("planks"));
                 }
                 else if (blockName.contains("moriche_palm"))
                 {
-                    buildingBlocksRecipeBluilder(block, BlockRegister.MORICHE_PALM_PLANKS);
+                    buildingBlocksRecipeBluilder(block, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("planks"));
                 }
                 else if (blockName.contains("achiote"))
                 {
-                    buildingBlocksRecipeBluilder(block, BlockRegister.ACHIOTE_PLANKS);
+                    buildingBlocksRecipeBluilder(block, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("planks"));
                 }
                 else if (blockName.contains("end_stone"))
                 {
@@ -401,11 +360,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 }
                 else if (itemName.contains("mountain_currant"))
                 {
-                    buildingBlocksRecipeBluilder(item, BlockRegister.MOUNTAIN_CURRANT_PLANKS);
+                    buildingBlocksRecipeBluilder(item, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("planks"));
                 }
                 else if (itemName.contains("moriche_palm"))
                 {
-                    buildingBlocksRecipeBluilder(item, BlockRegister.MORICHE_PALM_PLANKS);
+                    buildingBlocksRecipeBluilder(item, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("planks"));
+                }
+                else if (itemName.contains("achiote"))
+                {
+                    buildingBlocksRecipeBluilder(item, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("planks"));
                 }
                 else if (itemName.contains("end_stone"))
                 {
@@ -815,7 +778,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(ModRecipeProvider.recipeOutput, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "brewing_" + resultName));
     }
 
-    private void createEmptyContainer()
+    private void createEmptyBeerContainer()
     {
         TagKey<Item> wood = ItemTags.PLANKS;
         Item ironNugget = Items.IRON_NUGGET;
@@ -850,6 +813,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("###")
                 .unlockedBy("has_" + resultName, has(glass))
                 .save(ModRecipeProvider.recipeOutput);
+    }
+
+    private void generateWoodRecipe(Map<String, DeferredBlock<Block>> woodBlockMap, Map<String, DeferredItem<Item>> woodItemMap, TagKey<Item> logTag)
+    {
+        oneItemToAnotherOneRecipeBuilder(logTag, woodBlockMap.get("planks").get(), 4);
+        fourSameIntoOneRecipeBuilder(woodBlockMap.get("wood").get(), woodBlockMap.get("log").get(), 3);
+        fourSameIntoOneRecipeBuilder(woodBlockMap.get("stripped_wood").get(), woodBlockMap.get("stripped_log").get(), 3);
+        stairsRecipeBuilder(woodBlockMap.get("stairs").get(), woodBlockMap.get("planks").get());
+        slabRecipeBuilder(woodBlockMap.get("slab").get(), woodBlockMap.get("planks").get());
+        buttonRecipeBuilder(woodBlockMap.get("button").get(), woodBlockMap.get("planks").get());
+        pressurePlateRecipeBuilder(woodBlockMap.get("pressure_plate").get(), woodBlockMap.get("planks").get());
+        fenceRecipeBuilder(woodBlockMap.get("fence").get(), woodBlockMap.get("planks").get());
+        fenceGateRecipeBuilder(woodBlockMap.get("fence_gate").get(), woodBlockMap.get("planks").get());
+        doorRecipeBuilder(woodBlockMap.get("door").get(), woodBlockMap.get("planks").get());
+        trapdoorRecipeBuilder(woodBlockMap.get("trapdoor").get(), woodBlockMap.get("planks").get());
+        signRecipeBuilder(woodItemMap.get("sign").get(), woodBlockMap.get("planks").get());
+        hangingSignRecipeBuilder(woodItemMap.get("hanging_sign").get(), woodBlockMap.get("stripped_log").get());
+        boatRecipeBuilder(woodItemMap.get("boat").get(), woodBlockMap.get("planks").get());
+        boatWithChestRecipeBuilder(woodItemMap.get("chest_boat").get(), woodItemMap.get("boat").get());
     }
 
     private String getName(Block block)

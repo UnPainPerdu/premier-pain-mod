@@ -3,11 +3,11 @@ package com.unpainperdu.premierpainmod.datagen.data.loot_table;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.*;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.help_interface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.tree.FlammableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.LogBlock;
@@ -17,9 +17,9 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.growing_above
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.special_vegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.special_vegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_height.sky_spears.SkySpearsFlower;
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -60,16 +60,16 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     public ModBlockLootTableSubProvider(HolderLookup.Provider provider)
     {
-        super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(),provider);
+        super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(), provider);
     }
 
     @Override
     public void generate()
     {
-        for(Block block : ModBLockList.ALL_BLOCKS)
+        for (Block block : ModBLockList.ALL_BLOCKS)
         {
-            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
-            if(!blockName.contains("bedrock"))
+            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
+            if (!blockName.contains("bedrock"))
             {
                 if (isCarpetedThing(block))
                 {
@@ -83,44 +83,44 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 {
                     twoBlockWidthLootTableGenerator(block);
                 }
-                else if(isNormalLoot(block))
+                else if (isNormalLoot(block))
                 {
                     normalBlockLootTableGenerator(block);
                 }
-                else if(block instanceof DeadBushBlock)
+                else if (block instanceof DeadBushBlock)
                 {
                     itemOr2ndItemIfShearLootTableProvider(block, Items.STICK);
                 }
             }
         }
-    //manual thing
+        //manual thing
         //vegetation
-            //tall grass
+        //tall grass
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.SKY_SPEARS.get(), Items.STICK);
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_SKY_SPEARS_FLOWER.get(), BlockRegister.SKY_SPEARS_FLOWER.get());
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.DEAD_TALL_BUSH.get(), Items.STICK);
         itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(BlockRegister.OLD_WILD_WHEAT.get(), Items.WHEAT, 2.0f);
-            //crop
+        //crop
         jellyShroomLootTable();
         //potted thing
-            //flower
+        //flower
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_CIVILIZATIONS_FLOWER.get(), BlockRegister.CIVILIZATIONS_FLOWER.get());
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_CURIOSITY_FLOWER.get(), BlockRegister.CURIOSITY_FLOWER.get());
-            //dead bush
+        //dead bush
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_DEAD_RUINS_FLOWER.get(), BlockRegister.DEAD_RUINS_FLOWER.get());
-            //misc
+        //misc
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_CACTUS_FLOWER_BLOCK.get(), BlockRegister.CACTUS_FLOWER_BLOCK.get());
-            //crop
+        //crop
         pottedFlowerLootTableGenerator(BlockRegister.POTTED_JELLYSHROOM.get(), BlockRegister.JELLYSHROOM.get());
-            //sapling
-        pottedFlowerLootTableGenerator(BlockRegister.POTTED_MOUNTAIN_CURRANT_SAPLING.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get());
-        pottedFlowerLootTableGenerator(BlockRegister.POTTED_MORICHE_PALM_SAPLING.get(), BlockRegister.MORICHE_PALM_SAPLING.get());
-        pottedFlowerLootTableGenerator(BlockRegister.POTTED_ACHIOTE_SAPLING.get(), BlockRegister.ACHIOTE_SAPLING.get());
+        //sapling
+        pottedFlowerLootTableGenerator(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("potted_sapling").get(), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("sapling").get());
+        pottedFlowerLootTableGenerator(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("potted_sapling").get(), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("sapling").get());
+        pottedFlowerLootTableGenerator(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("potted_sapling").get(), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling").get());
         //leaves
-        leavesWithFruitRightClickLootTable(BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), BlockRegister.MOUNTAIN_CURRANT_SAPLING.get(), ItemRegister.MOUNTAIN_CURRANT.get());
-        leavesWithFruitLikeOakLootTable(BlockRegister.MORICHE_PALM_LEAVES.get(), BlockRegister.MORICHE_PALM_SAPLING.get(), ItemRegister.MORICHE_PALM_FRUIT.get());
-        leavesWithFruitRightClickLootTable(BlockRegister.ACHIOTE_LEAVES.get(), BlockRegister.ACHIOTE_SAPLING.get(), ItemRegister.ACHIOTE_FRUIT.get());
+        leavesWithFruitRightClickLootTable(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("sapling").get(), ItemRegister.MOUNTAIN_CURRANT.get());
+        leavesWithFruitLikeOakLootTable(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("sapling").get(), ItemRegister.MORICHE_PALM_FRUIT.get());
+        leavesWithFruitRightClickLootTable(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling").get(), ItemRegister.ACHIOTE_FRUIT.get());
     }
 
     private void carpetedBlockTableGenerator(Block block)
@@ -137,19 +137,19 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private LootTable.Builder create2BlockHeightCarpetDispatchTable(Block block)
     {
-        EnumProperty<VillagerCarpetColor> colorProperty = VillagerTableBlock.COLOR ;
+        EnumProperty<VillagerCarpetColor> colorProperty = VillagerTableBlock.COLOR;
 
         return LootTable.lootTable()
                 .withPool(
                         this.applyExplosionCondition(
                                 block
-                                ,LootPool.lootPool()
+                                , LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootItem.lootTableItem(block)
-                                            .when(
-                                                    LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
-                                            )
+                                                .when(
+                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VillagerStatue.HALF, DoubleBlockHalf.LOWER))
+                                                )
                                         )
                         )
                 )
@@ -293,87 +293,87 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private LootTable.Builder createSimpleCarpetDispatchTable(Block block)
     {
-        EnumProperty<VillagerCarpetColor> colorProperty = VillagerTableBlock.COLOR ;
+        EnumProperty<VillagerCarpetColor> colorProperty = VillagerTableBlock.COLOR;
 
         return LootTable.lootTable()
                 .withPool(
-                    this.applyExplosionCondition(
-                            block
-                            ,LootPool.lootPool()
-                                    .setRolls(ConstantValue.exactly(1.0F))
-                                    .add(LootItem.lootTableItem(block))
-                    )
+                        this.applyExplosionCondition(
+                                block
+                                , LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(block))
+                        )
                 )
                 .withPool(
-                    this.applyExplosionCondition(
-                            block
-                            ,LootPool.lootPool()
-                                    .setRolls(ConstantValue.exactly(1.0F))
-                                    .add(LootItem.lootTableItem(Blocks.WHITE_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.WHITE)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.LIGHT_GRAY_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIGHT_GRAY)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.GRAY_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.GRAY)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.BLACK_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BLACK)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.BROWN_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BROWN)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.RED_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.RED)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.ORANGE_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.ORANGE)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.YELLOW_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.YELLOW)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.LIME_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIME)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.GREEN_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.GREEN)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.CYAN_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.CYAN)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.LIGHT_BLUE_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIGHT_BLUE)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.BLUE_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BLUE)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.PURPLE_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.PURPLE)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.MAGENTA_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.MAGENTA)))
-                                    )
-                                    .add(LootItem.lootTableItem(Blocks.PINK_CARPET)
-                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.PINK)))
-                                    )
-                    )
+                        this.applyExplosionCondition(
+                                block
+                                , LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(Blocks.WHITE_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.WHITE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.LIGHT_GRAY_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIGHT_GRAY)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.GRAY_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.GRAY)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.BLACK_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BLACK)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.BROWN_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BROWN)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.RED_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.RED)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.ORANGE_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.ORANGE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.YELLOW_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.YELLOW)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.LIME_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIME)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.GREEN_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.GREEN)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.CYAN_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.CYAN)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.LIGHT_BLUE_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.LIGHT_BLUE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.BLUE_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.BLUE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.PURPLE_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.PURPLE)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.MAGENTA_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.MAGENTA)))
+                                        )
+                                        .add(LootItem.lootTableItem(Blocks.PINK_CARPET)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(colorProperty, VillagerCarpetColor.PINK)))
+                                        )
+                        )
                 )
                 ;
     }
@@ -409,7 +409,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private void itemOr2ndItemIfShearLootTableProvider(Block deadBush, ItemLike resultIfNotShear)
     {
-        super.add(deadBush, this.createShearsDispatchTable(deadBush, (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(deadBush, LootItem.lootTableItem(resultIfNotShear))));
+        super.add(deadBush, this.createShearsDispatchTable(deadBush, this.applyExplosionCondition(deadBush, LootItem.lootTableItem(resultIfNotShear))));
     }
 
     private void itemOr2ndItemIfShearTwoBlockHeightLootTableGenerator(Block block, ItemLike resultIfNotShear)
@@ -424,10 +424,10 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private <T extends Comparable<T> & StringRepresentable> LootTable.Builder createTallGrassDispatchTable(Block block, Property<T> property, T valueOfProperty, ItemLike resultIfNotShear, float numberNoShearItem)
     {
-        LootPoolEntryContainer.Builder<?> builder = (LootPoolSingletonContainer.Builder) this.applyExplosionCondition(block,
+        LootPoolEntryContainer.Builder<?> builder = this.applyExplosionCondition(block,
                         LootItem.lootTableItem(resultIfNotShear))
                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(numberNoShearItem))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty))));
@@ -435,14 +435,14 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         return LootTable.lootTable()
                 .withPool(
                         this.applyExplosionCondition(
-                            block
-                            ,LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(block)
-                                        .when(HAS_SHEARS)
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
-                                        .otherwise(builder))));
+                                block
+                                , LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(block)
+                                                .when(HAS_SHEARS)
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
+                                                .otherwise(builder))));
     }
 
     private void jellyShroomLootTable()
@@ -457,13 +457,13 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     private LootTable.Builder createJellyshroomDispatchTable()
     {
         Block block = BlockRegister.JELLYSHROOM.get();
-        IntegerProperty property = JellyShroomBlock.AGE ;
+        IntegerProperty property = JellyShroomBlock.AGE;
 
         return LootTable.lootTable()
                 .withPool(
                         this.applyExplosionCondition(
                                 block
-                                ,LootPool.lootPool()
+                                , LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootItem.lootTableItem(block)
                                                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
@@ -508,7 +508,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .when(this.doesNotHaveShearsOrSilkTouch())
                                 .add(
-                                        ((LootPoolSingletonContainer.Builder)this.applyExplosionCondition(leave, LootItem.lootTableItem(fruit)))
+                                        ((LootPoolSingletonContainer.Builder<?>) this.applyExplosionCondition(leave, LootItem.lootTableItem(fruit)))
                                                 .when(
                                                         BonusLevelTableCondition.bonusLevelFlatChance(
                                                                 this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE), 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F
@@ -531,7 +531,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
         return this.createSilkTouchOrShearsDispatchTable(
                         leavesBlock,
-                        ((LootPoolSingletonContainer.Builder)this.applyExplosionCondition(leavesBlock, LootItem.lootTableItem(saplingBlock)))
+                        ((LootPoolSingletonContainer.Builder<?>) this.applyExplosionCondition(leavesBlock, LootItem.lootTableItem(saplingBlock)))
                                 .when(BonusLevelTableCondition.bonusLevelFlatChance(registrylookup.getOrThrow(Enchantments.FORTUNE), chances))
                 )
                 .withPool(
@@ -543,7 +543,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ModLeavesBlock.HAS_FRUIT, true))))
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f)))
                                 .add(
-                                        ((LootPoolSingletonContainer.Builder)this.applyExplosionDecay(
+                                        ((LootPoolSingletonContainer.Builder<?>) this.applyExplosionDecay(
                                                 leavesBlock, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                                         ))
                                                 .when(BonusLevelTableCondition.bonusLevelFlatChance(registrylookup.getOrThrow(Enchantments.FORTUNE), NORMAL_LEAVES_STICK_CHANCES))
@@ -590,12 +590,13 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     private boolean is2HeightBlockLoot(Block block)
     {
         return block instanceof AbstractTwoBlockHeightBlock
-                        || block instanceof DoorBlock
-                        || block instanceof VillagerMusicalFridgeBlock
-                        || block instanceof TallFlowerBlock
+                || block instanceof DoorBlock
+                || block instanceof VillagerMusicalFridgeBlock
+                || block instanceof TallFlowerBlock
                 ;
 
     }
+
     private boolean is2WidthBlockLoot(Block block)
     {
         return (block instanceof AbstractTwoBlockWidth

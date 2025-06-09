@@ -49,8 +49,8 @@ public class JungleUndergroundPetraChestLootTable
     {
         return builder.add(LootItem.lootTableItem(ItemRegister.MORICHE_PALM_FRUIT).setWeight(25))
                 .add(LootItem.lootTableItem(ItemRegister.ACHIOTE_FRUIT).setWeight(25))
-                .add(LootItem.lootTableItem(BlockRegister.MORICHE_PALM_LOG).setWeight(25))
-                .add(LootItem.lootTableItem(BlockRegister.ACHIOTE_LOG).setWeight(25))
+                .add(LootItem.lootTableItem(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("log")).setWeight(25))
+                .add(LootItem.lootTableItem(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("log")).setWeight(25))
                 .add(LootItem.lootTableItem(Items.EMERALD).setWeight(25))
                 .add(LootItem.lootTableItem(Items.POTATO).setWeight(25))
                 .add(LootItem.lootTableItem(Items.POISONOUS_POTATO).setWeight(10))
@@ -64,8 +64,8 @@ public class JungleUndergroundPetraChestLootTable
                 .add(LootItem.lootTableItem(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE).setWeight(5))
                 .add(LootItem.lootTableItem(ItemRegister.DIGGY_VILLAGER_SINGING_STONE).setWeight(5))
                 .add(LootItem.lootTableItem(ItemRegister.MADNESS_VILLAGER_SINGING_STONE).setWeight(5))
-                .add(LootItem.lootTableItem(BlockRegister.MORICHE_PALM_SAPLING).setWeight(25))
-                .add(LootItem.lootTableItem(BlockRegister.ACHIOTE_SAPLING).setWeight(25))
+                .add(LootItem.lootTableItem(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("sapling")).setWeight(25))
+                .add(LootItem.lootTableItem(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling")).setWeight(25))
         ;
         lootPool = jungleUnderGroundPetraCommonLootTable(lootPool);
         return lootPool;

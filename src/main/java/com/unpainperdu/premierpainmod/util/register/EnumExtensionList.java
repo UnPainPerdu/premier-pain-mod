@@ -2,12 +2,8 @@ package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.fml.common.asm.enumextension.EnumProxy;
-
-import java.util.function.Supplier;
 
 public class EnumExtensionList
 {
@@ -16,28 +12,28 @@ public class EnumExtensionList
     }
 
     public static final EnumProxy<Boat.Type> MOUNTAIN_CURRANT_BOAT_TYPE = new EnumProxy<>(Boat.Type.class,
-            BlockRegister.MOUNTAIN_CURRANT_PLANKS,
+            BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("planks"),
             "premierpainmod:mountain_currant",
-            ItemRegister.MOUNTAIN_CURRANT_BOAT,
-            ItemRegister.MOUNTAIN_CURRANT_CHEST_BOAT,
+            ItemRegister.ITEM_MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("boat"),
+            ItemRegister.ITEM_MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("chest_boat"),
             Items.STICK,
             false
     );
 
     public static final EnumProxy<Boat.Type> MORICHE_PALM_BOAT_TYPE = new EnumProxy<>(Boat.Type.class,
-            BlockRegister.MORICHE_PALM_PLANKS,
+            BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("planks"),
             "premierpainmod:moriche_palm",
-            ItemRegister.MORICHE_PALM_BOAT,
-            ItemRegister.MORICHE_PALM_CHEST_BOAT,
+            ItemRegister.ITEM_MORICHE_PALM_WOOD_TYPE_MAP.get("boat"),
+            ItemRegister.ITEM_MORICHE_PALM_WOOD_TYPE_MAP.get("chest_boat"),
             Items.STICK,
             false
     );
 
     public static final EnumProxy<Boat.Type> ACHIOTE_BOAT_TYPE = new EnumProxy<>(Boat.Type.class,
-            BlockRegister.ACHIOTE_PLANKS,
+            BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("planks"),
             "premierpainmod:achiote",
-            ItemRegister.ACHIOTE_BOAT,
-            ItemRegister.ACHIOTE_CHEST_BOAT,
+            ItemRegister.ITEM_ACHIOTE_WOOD_TYPE_MAP.get("boat"),
+            ItemRegister.ITEM_ACHIOTE_WOOD_TYPE_MAP.get("chest_boat"),
             Items.STICK,
             false
     );

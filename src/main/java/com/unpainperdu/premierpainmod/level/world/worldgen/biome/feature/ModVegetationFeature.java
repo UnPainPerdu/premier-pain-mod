@@ -148,9 +148,9 @@ public class ModVegetationFeature
         //misc
         FeatureUtils.register(pContext, ModVegetationFeature.FLOWERED_CACTUS, FeatureRegister.FLOWERED_CACTUS.get(), NoneFeatureConfiguration.INSTANCE);
         //tree
-        FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createMountainCurrantTree(BlockRegister.MOUNTAIN_CURRANT_LOG.get(), BlockRegister.MOUNTAIN_CURRANT_LEAVES.get(), 3).build());
-        FeatureUtils.register(pContext, MORICHE_PALM, Feature.TREE, createMorichePalmTree(BlockRegister.MORICHE_PALM_LOG.get(), BlockRegister.MORICHE_PALM_LEAVES.get()).build());
-        FeatureUtils.register(pContext, ACHIOTE, Feature.TREE, createAchioteTree(BlockRegister.ACHIOTE_LOG.get(), BlockRegister.ACHIOTE_LEAVES.get()).build());
+        FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createMountainCurrantTree(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("log").get(), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get(), 3).build());
+        FeatureUtils.register(pContext, MORICHE_PALM, Feature.TREE, createMorichePalmTree(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("log").get(), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("leaves").get()).build());
+        FeatureUtils.register(pContext, ACHIOTE, Feature.TREE, createAchioteTree(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("log").get(), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get()).build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(
