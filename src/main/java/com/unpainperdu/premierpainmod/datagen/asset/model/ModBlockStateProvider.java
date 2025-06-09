@@ -771,8 +771,8 @@ public class ModBlockStateProvider extends BlockStateProvider
     {
         String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
 
-        ModelFile modelFile = models().withExistingParent(name, "block/cross").texture("cross", "block/vegetation/flower_block/growing_block_flower/" + name).renderType("cutout");
-        ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated").texture("layer0", "block/vegetation/flower_block/growing_block_flower/" + name);
+        ModelFile modelFile = models().withExistingParent(name, "block/cross").texture("cross", "block/vegetation/flower_block/growing_flower_block/" + name).renderType("cutout");
+        ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated").texture("layer0", "block/vegetation/flower_block/growing_flower_block/" + name);
 
         simpleBlock(block, modelFile);
         itemModels().getBuilder(getKey(block).getPath()).parent(itemModelFile);
@@ -792,7 +792,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void flowerPotBlockForGrowingVegetation(Block flowerPotBlock, Block flowerBlock)
     {
         String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-        pottedBlockWithBasicModel(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/growing_block_flower/" + nameFlower);
+        pottedBlockWithBasicModel(flowerPotBlock, flowerBlock, "block/vegetation/flower_block/growing_flower_block/" + nameFlower);
     }
 
     private void floweredCactusBlockWithItem()
