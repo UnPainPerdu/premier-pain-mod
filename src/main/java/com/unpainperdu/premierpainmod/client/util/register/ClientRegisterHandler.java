@@ -10,12 +10,15 @@ import com.unpainperdu.premierpainmod.client.particle.beer_particle.purple.Purpl
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.red.RedBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.white.WhiteBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
+import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem.MountainCurrantGolemRender;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
 import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.BeerFluidType;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
@@ -59,6 +62,8 @@ public class ClientRegisterHandler
         Sheets.addWoodType(ModWoodTypes.MOUNTAIN_CURRANT);
         Sheets.addWoodType(ModWoodTypes.MORICHE_PALM);
         event.enqueueWork(() -> FluidRender.setRenderLayerForFluid(event));
+
+        EntityRenderers.register(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get(), MountainCurrantGolemRender::new);
     }
 
     @SubscribeEvent

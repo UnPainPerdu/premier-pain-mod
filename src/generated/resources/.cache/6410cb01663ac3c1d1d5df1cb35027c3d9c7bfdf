@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-27T09:36:31.3563701	Item Models: premierpainmod
+// 1.21.1	2025-06-18T11:36:46.3658643	Item Models: premierpainmod
 8c73037c00ef33837d5eda43f190076431a19b74 assets/premierpainmod/models/item/acacia_villager_shelf.json
 d5046ad1543beffc09ef837fbb34a7f7a837d175 assets/premierpainmod/models/item/achiote_boat.json
 848f6b2a224aafca1816d6165076b96800f5dd61 assets/premierpainmod/models/item/achiote_chest_boat.json
@@ -75,6 +75,7 @@ d6bb1c85ef7f2f70128b6f92de8daa8f73d99472 assets/premierpainmod/models/item/mossy
 66795ea6759374606d86deee0a8b4592508cabdd assets/premierpainmod/models/item/mountain_currant.json
 94a1eb2a7a83f35ddcd369afc4b8769564c228be assets/premierpainmod/models/item/mountain_currant_boat.json
 06d58e0da4caf7739349d93fc0b1143fd564bc42 assets/premierpainmod/models/item/mountain_currant_chest_boat.json
+b166efa748e1bff7fd9ac16bfbb193bbf89b3804 assets/premierpainmod/models/item/mountain_currant_golem_egg.json
 b4c9706f0e9ab93c27e474d5baeb75469a1964ec assets/premierpainmod/models/item/mountain_currant_hanging_sign.json
 5109abef30f690ab388240877109c8ed16b336a9 assets/premierpainmod/models/item/mountain_currant_sign.json
 e0affea160d04cf315919e61711c8c6fc509254a assets/premierpainmod/models/item/mountain_currant_villager_shelf.json

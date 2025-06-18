@@ -1,7 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity;
 
 
-import com.unpainperdu.premierpainmod.util.register.EntityRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.EntityRegister;
 import com.unpainperdu.premierpainmod.util.seat.SeatUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -29,7 +30,7 @@ public class SeatEntity extends Entity
 
     public SeatEntity(Level level, BlockPos pos)
     {
-        super(EntityRegister.SEAT_ENTITY.get(), level);
+        super(AllInOneEntityRegister.SEAT_ENTITY.get(), level);
         setPos(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D);
         noPhysics = true;
     }

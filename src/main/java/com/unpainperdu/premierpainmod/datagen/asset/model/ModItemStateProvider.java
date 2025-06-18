@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -54,6 +55,9 @@ public class ModItemStateProvider extends ItemModelProvider
         woodItems("mountain_currant");
         woodItems("moriche_palm");
         woodItems("achiote");
+
+        //spawn_eggs
+        item(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_egg").get(),"spawn_egg/");
 
         for(Item item : ModItemList.ALL_ITEMS)
         {
