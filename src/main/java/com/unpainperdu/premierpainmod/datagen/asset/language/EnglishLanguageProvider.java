@@ -1,8 +1,9 @@
 package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -136,6 +137,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.CACTUS_STEW.get(), "Cactus Fruit Stew");
         add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Potatoes and Spear Fruit Bowl");
         add(ItemRegister.FRUITS_BOWL.get(), "Fruits Bowl");
+        //egg
+        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_egg").get(), "Mountain Currant Golem Egg");
         //block
             //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(),"HellPod");

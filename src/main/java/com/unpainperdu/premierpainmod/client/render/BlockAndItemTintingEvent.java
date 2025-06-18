@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.client.event;
+package com.unpainperdu.premierpainmod.client.render;
 
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;

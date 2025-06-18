@@ -1,7 +1,8 @@
-package com.unpainperdu.premierpainmod.client.event;
+package com.unpainperdu.premierpainmod.client.render.entity;
 
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.SeatEntity;
-import com.unpainperdu.premierpainmod.util.register.EntityRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.EntityRegister;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -14,14 +15,14 @@ import net.neoforged.fml.common.EventBusSubscriber.Bus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
 @EventBusSubscriber(bus = Bus.MOD, value = Dist.CLIENT)
-public class SeatClient
+public class SeatRender
 {
-    private SeatClient() {}
+    private SeatRender() {}
 
     @SubscribeEvent
     public static void onFMLCLientSetup(FMLClientSetupEvent event)
     {
-        EntityRenderers.register(EntityRegister.SEAT_ENTITY.get(), EmptyRenderer::new);
+        EntityRenderers.register(AllInOneEntityRegister.SEAT_ENTITY.get(), EmptyRenderer::new);
     }
 
     private static class EmptyRenderer extends EntityRenderer<SeatEntity>
