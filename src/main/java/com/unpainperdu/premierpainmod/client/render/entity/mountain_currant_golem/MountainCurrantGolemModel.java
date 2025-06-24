@@ -93,6 +93,7 @@ public class MountainCurrantGolemModel extends HierarchicalModel<MountainCurrant
         this.applyHeadRotation(netHeadYaw, headPitch);
 
         this.animateWalk(MountainCurrantGolemAnimation.WALK, limbSwing, limbSwingAmount, 2F, 2.5F);
+        this.animate(entity.boneMealingAnimationState, MountainCurrantGolemAnimation.BONEMEALING, ageInTicks, 1F);
     }
 
     private void applyHeadRotation(float headYaw, float headPitch)

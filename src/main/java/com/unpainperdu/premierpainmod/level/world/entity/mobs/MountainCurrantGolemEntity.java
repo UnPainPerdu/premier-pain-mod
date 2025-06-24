@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.goal.UseBoneMealOnCropGoal;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -7,6 +8,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.AbstractGolem;
+import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
@@ -14,8 +16,8 @@ import net.minecraft.world.level.Level;
 
 public class MountainCurrantGolemEntity extends AbstractGolem
 {
-    public final AnimationState walkAnimationState = new AnimationState();
-    private int walkAnimationTimeout = 0;
+    public final AnimationState boneMealingAnimationState = new AnimationState();
+    private int boneMealingAnimationTimeout = 0;
 
     public MountainCurrantGolemEntity(EntityType<? extends AbstractGolem> entityType, Level level)
     {
@@ -28,10 +30,12 @@ public class MountainCurrantGolemEntity extends AbstractGolem
     {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new TemptGoal(this, 1.25, s -> s.is(Items.EMERALD), false));
-        this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 6F));
-        this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Villager.class, 6F));
-        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(2, new UseBoneMealOnCropGoal(this));
+        this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6F));
+        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Villager.class, 6F));
+        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, IronGolem.class, 6F));
+        this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
     }
 
     public static AttributeSupplier.Builder createAttributes()
@@ -44,14 +48,35 @@ public class MountainCurrantGolemEntity extends AbstractGolem
 
     private void setupAnimationStates()
     {
-        if (this.walkAnimationTimeout <= 0)
+        if (this.boneMealingAnimationTimeout >= 61)
         {
-            this.walkAnimationTimeout = 20;
-            this.walkAnimationState.start(this.tickCount);
+            this.boneMealingAnimationTimeout--;
+            this.boneMealingAnimationState.start(this.tickCount);
+        }
+        else if (this.boneMealingAnimationTimeout >= 0)
+        {
+            this.boneMealingAnimationTimeout--;
+        }
+    }
+
+    @Override
+    public void handleEntityEvent(byte id)
+    {
+        if (id == 4)
+        {
+            this.boneMealingAnimationTimeout = 61;
         }
         else
         {
-            this.walkAnimationTimeout--;
+            super.handleEntityEvent(id);
+        }
+    }
+
+    public void isBoneMealing(boolean isBoneMealing)
+    {
+        if (isBoneMealing)
+        {
+            this.level().broadcastEntityEvent(this, (byte) 4);
         }
     }
 
