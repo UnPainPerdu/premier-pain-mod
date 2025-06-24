@@ -112,7 +112,7 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
     @Override
     protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType)
     {
-        return false;
+        return pathComputationType == PathComputationType.AIR && !this.hasCollision ? true : super.isPathfindable(state, pathComputationType);
     }
 
     @Override
@@ -144,4 +144,21 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
 
     @Override
     protected abstract VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context);
+
+    public final boolean isMaxAge(BlockState state) {
+        return this.getAge(state) >= this.getMaxAge();
+    }
+
+    public int getAge(BlockState state) {
+        return state.getValue(this.getAgeProperty());
+    }
+
+    protected IntegerProperty getAgeProperty() {
+        return AGE;
+    }
+
+    public int getMaxAge()
+    {
+        return MAX_AGE;
+    }
 }
