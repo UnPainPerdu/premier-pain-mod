@@ -1,6 +1,11 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.goal.UseBoneMealOnCropGoal;
+import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,6 +18,8 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.Nullable;
 
 public class MountainCurrantGolemEntity extends AbstractGolem
 {
@@ -95,5 +102,32 @@ public class MountainCurrantGolemEntity extends AbstractGolem
     protected int decreaseAirSupply(int air)
     {
         return air;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource)
+    {
+        return SoundEventRegister.MCG_HURT.get();
+    }
+
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state)
+    {
+        this.playSound(SoundEventRegister.MCG_WALK.get(), 1.0F, 1.0F);
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound()
+    {
+        return SoundEventRegister.MCG_DEATH.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound()
+    {
+        return SoundEventRegister.MCG_AMBIENT.get();
     }
 }
