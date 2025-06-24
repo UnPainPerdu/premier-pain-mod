@@ -236,6 +236,9 @@ What would be a world without bugs ?
         - clean screen with little animation
         - add sound when brew is done, when water is put in and when the liquid in is taken
 
+## Fix :
+    - Villager musical fridge has disc draw in disc slot now
+
 ## Note :
     - Fluids background code has been reworked, please report any change you notice
     - all wood blocks background code has been reworked, please report any change you notice
