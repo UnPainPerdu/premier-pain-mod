@@ -57,7 +57,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("pain_dieux_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.WHEAT);
         BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("la_chateau_fluid"), 1000)
-                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.GLISTERING_MELON_SLICE, Items.WHEAT);
+                , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.GLISTERING_MELON_SLICE, ItemRegister.ACHIOTE_FRUIT);
         BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("debier_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.RABBIT_FOOT, ItemRegister.MOUNTAIN_CURRANT.get());
         BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("envahisseur_rouge_fluid"), 1000)
@@ -764,6 +764,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(ModRecipeProvider.recipeOutput);
     }
 
+    /**
+     * @param itemLikes never reused existing recipe with more ingredients
+     */
     private void BrewingStationRecipeBuilder(FluidStack fluidInput, FluidStack fluidOutput, ItemLike... itemLikes)
     {
         String resultName = getName(fluidOutput);

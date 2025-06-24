@@ -239,6 +239,7 @@ What would be a world without bugs ?
 ## Fix :
     - Villager musical fridge has disc draw in disc slot now
     - Moriche palm and achiote brazero has metal top now
+    - La Chateau recipe is fixed
 
 ## Note :
     - Fluids background code has been reworked, please report any change you notice
