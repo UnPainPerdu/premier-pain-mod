@@ -16,8 +16,11 @@ public class ModLootTableProvider extends LootTableProvider
         super(
                 output,
                 Set.of(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableSubProvider::new, LootContextParamSets.BLOCK)
-                ,new LootTableProvider.SubProviderEntry(ModChestLootTableSubProvider::new, LootContextParamSets.CHEST)),
+                List.of(
+                        new LootTableProvider.SubProviderEntry(ModBlockLootTableSubProvider::new, LootContextParamSets.BLOCK),
+                        new LootTableProvider.SubProviderEntry(ModChestLootTableSubProvider::new, LootContextParamSets.CHEST),
+                        new LootTableProvider.SubProviderEntry(ModEntityLootTableSubProvider::new, LootContextParamSets.ENTITY)
+                ),
                 lookupProvider
         );
     }

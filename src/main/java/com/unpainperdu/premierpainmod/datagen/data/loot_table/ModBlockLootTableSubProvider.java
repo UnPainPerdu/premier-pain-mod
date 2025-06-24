@@ -64,6 +64,15 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
     }
 
     @Override
+    protected @NotNull Iterable<Block> getKnownBlocks()
+    {
+        return BuiltInRegistries.BLOCK.entrySet().stream()
+                .filter(e -> e.getKey().location().getNamespace().equals(PremierPainMod.MOD_ID))
+                .map(Map.Entry::getValue)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public void generate()
     {
         for (Block block : ModBLockList.ALL_BLOCKS)
@@ -376,15 +385,6 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                         )
                 )
                 ;
-    }
-
-    @Override
-    protected @NotNull Iterable<Block> getKnownBlocks()
-    {
-        return BuiltInRegistries.BLOCK.entrySet().stream()
-                .filter(e -> e.getKey().location().getNamespace().equals(PremierPainMod.MOD_ID))
-                .map(Map.Entry::getValue)
-                .collect(Collectors.toList());
     }
 
     private void normalBlockLootTableGenerator(Block block)
