@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.level.world.entity.mobs.goal;
 
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.MountainCurrantGolemEntity;
+import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -48,6 +49,7 @@ public class UseBoneMealOnCropGoal extends Goal
             if (blockIsBoneMeanable(state))
             {
                 this.isBoneMealing = true;
+                playBoneMealSound();
                 setClientState(true);
                 this.cropPosToBoneMeal = pos;
                 this.cooldown = 0;
@@ -123,5 +125,10 @@ public class UseBoneMealOnCropGoal extends Goal
         {
             golem.isBoneMealing(bool);
         }
+    }
+
+    private void playBoneMealSound()
+    {
+        this.mob.playSound(SoundEventRegister.MCG_BONE_MEALING.get(), 1F, 1F);
     }
 }
