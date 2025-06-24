@@ -228,6 +228,9 @@ What would be a world without bugs ?
 --------------
 # 1.21.[0,1]-1.13
 
+## Add :
+    - Mountain Currant Golem, a farm helper which randomly use fre bone meal on your crop, build it with 3 stripped log with a carved pumpkin on top
+
 ## Change :
     - change made to villager brewing station :
         - clean screen with little animation
