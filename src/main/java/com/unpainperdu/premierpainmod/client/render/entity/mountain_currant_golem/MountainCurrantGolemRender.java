@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.entity.mobs.MountainCurrantGol
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class MountainCurrantGolemRender extends MobRenderer<MountainCurrantGolemEntity, MountainCurrantGolemModel>
 {
@@ -15,8 +16,16 @@ public class MountainCurrantGolemRender extends MobRenderer<MountainCurrantGolem
     }
 
     @Override
-    public ResourceLocation getTextureLocation(MountainCurrantGolemEntity entity)
+    public @NotNull ResourceLocation getTextureLocation(@NotNull MountainCurrantGolemEntity entity)
     {
-        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/entity/mob/mountain_currant_golem.png");
+        ResourceLocation result = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/entity/mob/mountain_currant_golem/main.png");
+        if (entity.getCustomName() != null)
+        {
+            if (entity.getCustomName().getString().equals("Mr.Fruit"))
+            {
+                result = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/entity/mob/mountain_currant_golem/mr_fruit.png");
+            }
+        }
+        return result;
     }
 }
