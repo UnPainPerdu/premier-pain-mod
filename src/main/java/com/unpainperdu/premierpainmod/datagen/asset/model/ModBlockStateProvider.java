@@ -204,6 +204,8 @@ public class ModBlockStateProvider extends BlockStateProvider
                 ||material.equals("cherry_villager")
                 ||material.equals("bamboo_villager")
                 ||material.equals("mountain_currant_villager")
+                ||material.equals("moriche_palm_villager")
+                ||material.equals("achiote_villager")
         )
         {
             texture_upper = "block/all_materials_block/villager_brazier/wood_villager_brazier_upper";
