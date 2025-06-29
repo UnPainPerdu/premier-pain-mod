@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.util.register.recipe;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotRecipe;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.Recipe;
@@ -20,6 +21,7 @@ public class RecipeTypeRegister
 
     public static final DeferredHolder<RecipeType<?>, RecipeType<VillagerWorkshopRecipe>> VILLAGER_WORKSHOP_RECIPE_TYPE = registerType("villager_workshopping");
     public static final DeferredHolder<RecipeType<?>, RecipeType<VillagerBrewingStationRecipe>> VILLAGER_BREWING_STATION_RECIPE_TYPE = registerType("villager_brewing");
+    public static final DeferredHolder<RecipeType<?>, RecipeType<CookingPotRecipe>> COOKING_POT_RECIPE_TYPE = registerType("cooking_pot_cooking");
 
     private static <T extends Recipe<?>> DeferredHolder<RecipeType<?>, RecipeType<T>> registerType(String name)
     {

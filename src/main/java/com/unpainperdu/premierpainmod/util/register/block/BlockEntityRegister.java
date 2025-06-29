@@ -11,6 +11,7 @@ import com.unpainperdu.premierpainmod.level.world.block.tree.ModStandingSignBloc
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModWallHangingSignBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModWallSignBlock;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.*;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block.CookingPotBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.tree.ModHangingSignBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.tree.ModSignBlockEntity;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
@@ -55,6 +56,10 @@ public class BlockEntityRegister
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VillagerMusicalFridgeBlockEntity>> VILLAGER_MUSICAL_FRIDGE_ENTITY = BLOCK_ENTITY_TYPES.register(
             "villager_musical_fridge_entity",
             () -> BlockEntityType.Builder.of(VillagerMusicalFridgeBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerMusicalFridgeBlock.class).toArray(new Block[0])).build(null));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CookingPotBlockEntity>> COOKING_POT_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register(
+            "cooking_pot_block_entity",
+            () -> BlockEntityType.Builder.of(CookingPotBlockEntity::new, BlockRegister.COOKING_POT_BLOCK.get()).build(null));
+
 
     public static void register(IEventBus modEventBus)
     {

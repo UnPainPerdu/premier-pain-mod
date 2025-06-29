@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width;
+package com.unpainperdu.premierpainmod.level.world.block.crafting_block;
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.PremierPainMod;

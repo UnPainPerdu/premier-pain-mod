@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.CookingPotMenu;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.VillagerBrewingStationMenu;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.VillagerMusicalFridgeMenu;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_drawer_menu.VillagerDrawerMenu;
@@ -30,6 +31,7 @@ public class MenuTypesRegister
     public static final DeferredHolder<MenuType<?>, MenuType<VillagerShelfMenu>> VILLAGER_SHELF = register("villager_shelf", () -> new MenuType<>(VillagerShelfMenu::VillagerShelfMenu, FeatureFlags.DEFAULT_FLAGS));
     public static final DeferredHolder<MenuType<?>, MenuType<VillagerBrewingStationMenu>> VILLAGER_BREWING_STATION = register("villager_brewing_station", () -> IMenuTypeExtension.create((id, inv, data) -> (new VillagerBrewingStationMenu(id, inv, inv.player.level().getBlockEntity(data.readBlockPos())))));
     public static final DeferredHolder<MenuType<?>, MenuType<VillagerMusicalFridgeMenu>> VILLAGER_MUSICAL_FRIDGE = register("villager_musical_fridge", () -> new MenuType<>(VillagerMusicalFridgeMenu::new, FeatureFlags.DEFAULT_FLAGS));
+    public static final DeferredHolder<MenuType<?>, MenuType<CookingPotMenu>> COOKING_POT_BLOCK = register("cooking_pot_block", () -> IMenuTypeExtension.create((id, inv, data) -> (new CookingPotMenu(id, inv, inv.player.level().getBlockEntity(data.readBlockPos())))));
 
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>, MenuType<T>> register(final String name, final Supplier<MenuType<T>> menu)
     {

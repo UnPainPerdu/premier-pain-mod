@@ -2,6 +2,8 @@ package com.unpainperdu.premierpainmod.util.register.recipe;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotRecipe;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotSerializer;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationSerializer;
 import net.minecraft.core.registries.Registries;
@@ -19,7 +21,7 @@ public class RecipeSerializerRegister
 
     public static final DeferredHolder<net.minecraft.world.item.crafting.RecipeSerializer<?>, net.minecraft.world.item.crafting.RecipeSerializer<VillagerWorkshopRecipe>> VILLAGER_WORKSHOP_SERIALIZER = RECIPE_SERIALIZERS.register("villager_workshopping", () -> new VillagerWorkshopRecipe.Serializer<>(VillagerWorkshopRecipe::new));
     public static final DeferredHolder<net.minecraft.world.item.crafting.RecipeSerializer<?>, net.minecraft.world.item.crafting.RecipeSerializer<VillagerBrewingStationRecipe>> VILLAGER_BREWING_STATION_SERIALIZER = RECIPE_SERIALIZERS.register("villager_brewing", VillagerBrewingStationSerializer::new);
-
+    public static final DeferredHolder<net.minecraft.world.item.crafting.RecipeSerializer<?>, net.minecraft.world.item.crafting.RecipeSerializer<CookingPotRecipe>> COOKING_POT_SERIALIZER = RECIPE_SERIALIZERS.register("cooking_pot", CookingPotSerializer::new);
     public static void register(IEventBus modEventBus)
     {
         RECIPE_SERIALIZERS.register(modEventBus);
