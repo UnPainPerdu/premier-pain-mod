@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,hanging=false,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 270
+    },
+    "facing=east,hanging=false,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 270
+    },
+    "facing=east,hanging=false,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 270
+    },
+    "facing=east,hanging=false,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 270
+    },
+    "facing=east,hanging=true,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 270
+    },
+    "facing=east,hanging=true,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 270
+    },
+    "facing=east,hanging=true,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 270
+    },
+    "facing=east,hanging=true,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 270
+    },
+    "facing=north,hanging=false,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 180
+    },
+    "facing=north,hanging=false,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 180
+    },
+    "facing=north,hanging=false,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 180
+    },
+    "facing=north,hanging=false,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 180
+    },
+    "facing=north,hanging=true,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 180
+    },
+    "facing=north,hanging=true,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 180
+    },
+    "facing=north,hanging=true,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 180
+    },
+    "facing=north,hanging=true,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 180
+    },
+    "facing=south,hanging=false,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_base"
+    },
+    "facing=south,hanging=false,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_base"
+    },
+    "facing=south,hanging=false,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_base"
+    },
+    "facing=south,hanging=false,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_base"
+    },
+    "facing=south,hanging=true,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging"
+    },
+    "facing=south,hanging=true,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging"
+    },
+    "facing=south,hanging=true,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging"
+    },
+    "facing=south,hanging=true,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging"
+    },
+    "facing=west,hanging=false,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 90
+    },
+    "facing=west,hanging=false,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 90
+    },
+    "facing=west,hanging=false,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 90
+    },
+    "facing=west,hanging=false,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_base",
+      "y": 90
+    },
+    "facing=west,hanging=true,lit=false,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 90
+    },
+    "facing=west,hanging=true,lit=false,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 90
+    },
+    "facing=west,hanging=true,lit=true,waterlogged=false": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 90
+    },
+    "facing=west,hanging=true,lit=true,waterlogged=true": {
+      "model": "premierpainmod:block/cooking_pot_block_hanging",
+      "y": 90
+    }
+  }
+}

@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-24T15:37:40.2092292	Loot Tables
+// 1.21.1	2025-07-02T13:07:29.6783824	Loot Tables
 85e1b3be3a251346dee3b4a9e87e45d4d2a39670 data/premierpainmod/loot_table/blocks/acacia_standing_villager_shelf.json
 9aad298b58d17b0b5fe25d63ee29528f848013c4 data/premierpainmod/loot_table/blocks/acacia_villager_bench.json
 2fb10e5cf5f79a7045462e9fd6fd5bafd71b829a data/premierpainmod/loot_table/blocks/acacia_villager_brazier.json
@@ -158,6 +158,7 @@ ae7edfd13d8b79fe23173f61fe2e7aef0d705204 data/premierpainmod/loot_table/blocks/c
 782f71185fde28f7a08e49b998d29da2c4b81169 data/premierpainmod/loot_table/blocks/coal_block_villager_table.json
 19569a0f4ee5e84ab4a28373403ad563c11c9fdd data/premierpainmod/loot_table/blocks/coal_block_villager_throne_chair.json
 197e6bacee30b1b3938807a1b3547812bb4bb0ec data/premierpainmod/loot_table/blocks/coal_block_wall_villager_shelf.json
+11a307aef838e61e2423c588b83ba96c5a25686f data/premierpainmod/loot_table/blocks/cooking_pot_block.json
 f644296f1521645fdf8cb69baeace56f52b8d933 data/premierpainmod/loot_table/blocks/copper_block_standing_villager_shelf.json
 2bba42c05ed6fa3e3dd64af380a556955cd25dc4 data/premierpainmod/loot_table/blocks/copper_block_villager_bench.json
 06a91e799000e1d8e744f4b5891b86e612cb1bac data/premierpainmod/loot_table/blocks/copper_block_villager_brazier.json

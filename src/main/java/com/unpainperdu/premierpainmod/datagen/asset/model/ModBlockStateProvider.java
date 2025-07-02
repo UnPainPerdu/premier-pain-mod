@@ -5,17 +5,18 @@ import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractT
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
-import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growing_above_vegetation.AbstractGrowingAboveVegetation;
@@ -23,13 +24,16 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.special_veget
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.Direction;
-import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.neoforged.neoforge.client.model.generators.*;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import static java.lang.Boolean.FALSE;
@@ -46,7 +50,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        for(Block block : ModBLockList.ALL_BLOCKS)
+        for (Block block : ModBLockList.ALL_BLOCKS)
         {
             switch (block)
             {
@@ -70,92 +74,99 @@ public class ModBlockStateProvider extends BlockStateProvider
                 case VillagerMusicalFridgeBlock ignored -> villagerMusicalFridgeBlockWithItem(block);
                 case VillagerChiseledHead ignored -> villagerChiseledHeadBlockWithItem(block);
                 case TallFlowerBlock ignored -> tallFlower(block);
-                default -> {}
+                default ->
+                {
+                }
             }
         }
-    //manual
+        //manual
         //vegetation
-            //tall grass
+        //tall grass
         skySpearsFlowerWithItem();
         skySpearsFlowerPotBlock();
-            //crop
+        //crop
         jellyshroomWithItem();
-            //misc
+        //misc
         cactusFlowerBlockWithItem();
         floweredCactusBlockWithItem();
-            //potted thing
-                //flower
+        //potted thing
+        //flower
         flowerPotBlock(BlockRegister.POTTED_RUINS_FLOWER.get(), BlockRegister.RUINS_FLOWER.get());
         flowerPotBlockForGrowingVegetation(BlockRegister.POTTED_CIVILIZATIONS_FLOWER.get(), BlockRegister.CIVILIZATIONS_FLOWER.get());
         flowerPotBlock(BlockRegister.POTTED_CURIOSITY_FLOWER.get(), BlockRegister.CURIOSITY_FLOWER.get());
-                //dead bush
+        //dead bush
         deadBushPotBlock(BlockRegister.POTTED_DEAD_RUINS_FLOWER.get(), BlockRegister.DEAD_RUINS_FLOWER.get());
-                //misc
+        //misc
         pottedFloweredCactus();
-                //crop
+        //crop
         universalPottedBlockWithCustomModel(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
         //tree
         allWoodBlocks("mountain_currant", true);
         allWoodBlocks("moriche_palm", false);
         allWoodBlocks("achiote", true);
-
+        //crafting_block
+        cookingPotBlockWithItem();
         //event block
-        simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(),"premierpainmod:block/event_block/liberty_block/liberty_block");
+        simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(), "premierpainmod:block/event_block/liberty_block/liberty_block");
     }
 
     private void simpleBlockWithItem(Block block, String texturePath)
     {
         simpleBlockWithItem(block, models().cubeAll(getName(block), createResourceLocation(texturePath)));
     }
+
     private void simpleBlockWithItemWithCustomModel(Block block, String modelPath)
     {
-        ModelFile model = models().withExistingParent(getKey(block).toString(),modelPath);
+        ModelFile model = models().withExistingParent(getKey(block).toString(), modelPath);
         simpleBlock(block, model);
         itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
+
     private void villagerPedestalWithItem(Block pedestal)
     {
         String name = getName(pedestal);
-        String material = name.replace("_villager_pedestal","_villager");
-        ModelFile pedestalModel = models().withExistingParent(getKey(pedestal).toString(),"premierpainmod:block/all_materials_block/villager_pedestal/villager_pedestal").texture("0", "block/all_materials_block/multiple_use_texture/" + material).texture("1","block/all_materials_block/multiple_use_particle/" + material);
+        String material = name.replace("_villager_pedestal", "_villager");
+        ModelFile pedestalModel = models().withExistingParent(getKey(pedestal).toString(), "premierpainmod:block/all_materials_block/villager_pedestal/villager_pedestal").texture("0", "block/all_materials_block/multiple_use_texture/" + material).texture("1", "block/all_materials_block/multiple_use_particle/" + material);
         simpleBlock(pedestal, pedestalModel);
         itemModels().getBuilder(getKey(pedestal).getPath()).parent(pedestalModel);
     }
+
     private void villagerStatueWithItem(Block statue)
     {
         String name = getName(statue);
-        String material = name.replace("_villager_statue","_villager");
+        String material = name.replace("_villager_statue", "_villager");
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(statue);
         variantBuilder.forAllStates(state ->
+        {
+            String modelName = getKey(statue).toString();
+            String modelPath = "premierpainmod:block/all_materials_block/villager_statue/";
+            String texturePath = "block/all_materials_block/multiple_use_texture/" + material;
+            String particlePath = "block/all_materials_block/multiple_use_particle/" + material;
+            if (state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.LOWER)
             {
-                String modelName = getKey(statue).toString();
-                String modelPath = "premierpainmod:block/all_materials_block/villager_statue/";
-                String texturePath = "block/all_materials_block/multiple_use_texture/" + material;
-                String particlePath = "block/all_materials_block/multiple_use_particle/" + material;
-                if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
-                    {
-                        modelName += "_bottom";
-                        modelPath += "villager_statue_bottom";
-                    }
-                    else
-                    {
-                        modelName += "_upper";
-                        modelPath += "villager_statue_upper";
-                    }
-                return ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(modelName,modelPath)
-                                .texture("0", texturePath)
-                                .texture("1",particlePath))
-                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
-                        .build();
-            });
+                modelName += "_bottom";
+                modelPath += "villager_statue_bottom";
+            }
+            else
+            {
+                modelName += "_upper";
+                modelPath += "villager_statue_upper";
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("0", texturePath)
+                            .texture("1", particlePath))
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
+        });
 
-        itemModels().getBuilder((getKey(statue).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+        itemModels().getBuilder((getKey(statue).getPath()).replace("premierpainmod:block/", "premierpainmod:item/"))
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/all_materials_block_item/villager_statue/" + name);
+                .texture("layer0", "item/all_materials_block_item/villager_statue/" + name);
     }
+
     private void villagerWorkshopWithItem(Block villagerWorkshop)
     {
 
@@ -164,7 +175,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         {
             String modelName = getKey(villagerWorkshop).toString();
             String modelPath;
-            if(state.getValue(VillagerWorkshop.PART) == TwoBlockWidthPart.RIGHT)
+            if (state.getValue(VillagerWorkshop.PART) == TwoBlockWidthPart.RIGHT)
             {
                 modelName += "_right";
                 modelPath = "premierpainmod:block/functional_block/villager_workshop/villager_workshop_right_m";
@@ -176,36 +187,37 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
 
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(modelName,modelPath))
+                    .modelFile(models().withExistingParent(modelName, modelPath))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
 
-        ModelFile villagerWorkshopModel = models().withExistingParent(getKey(villagerWorkshop).toString(),"premierpainmod:block/functional_block/villager_workshop/villager_workshop_m");
+        ModelFile villagerWorkshopModel = models().withExistingParent(getKey(villagerWorkshop).toString(), "premierpainmod:block/functional_block/villager_workshop/villager_workshop_m");
         itemModels().getBuilder(getKey(villagerWorkshop).getPath()).parent(villagerWorkshopModel);
     }
+
     private void villagerBrazierWithItem(Block brazier)
     {
         String name = getName(brazier);
-        String material = name.replace("_villager_brazier","_villager");
+        String material = name.replace("_villager_brazier", "_villager");
 
         String texture_bottom = "block/all_materials_block/multiple_use_texture/" + material;
         String texture_upper;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
 
-        if(material.equals("oak_villager")
-                ||material.equals("pale_oak_villager")
-                ||material.equals("birch_villager")
-                ||material.equals("spruce_villager")
-                ||material.equals("jungle_villager")
-                ||material.equals("acacia_villager")
-                ||material.equals("dark_oak_villager")
-                ||material.equals("mangrove_villager")
-                ||material.equals("cherry_villager")
-                ||material.equals("bamboo_villager")
-                ||material.equals("mountain_currant_villager")
-                ||material.equals("moriche_palm_villager")
-                ||material.equals("achiote_villager")
+        if (material.equals("oak_villager")
+                || material.equals("pale_oak_villager")
+                || material.equals("birch_villager")
+                || material.equals("spruce_villager")
+                || material.equals("jungle_villager")
+                || material.equals("acacia_villager")
+                || material.equals("dark_oak_villager")
+                || material.equals("mangrove_villager")
+                || material.equals("cherry_villager")
+                || material.equals("bamboo_villager")
+                || material.equals("mountain_currant_villager")
+                || material.equals("moriche_palm_villager")
+                || material.equals("achiote_villager")
         )
         {
             texture_upper = "block/all_materials_block/villager_brazier/wood_villager_brazier_upper";
@@ -221,7 +233,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             String texture;
             String modelName = getKey(brazier).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_brazier/";
-            if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
+            if (state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.LOWER)
             {
                 modelName += "_bottom";
                 modelPath += "villager_brazier_bottom";
@@ -230,7 +242,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             else
             {
                 texture = texture_upper;
-                if(state.getValue(BlockStateProperties.LIT ) == TRUE)
+                if (state.getValue(BlockStateProperties.LIT) == TRUE)
                 {
                     modelName += "_upper_lit";
                     modelPath += "villager_brazier_upper_lit";
@@ -243,21 +255,21 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("0",texture)
+                            .texture("0", texture)
                             .texture("3", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
 
-        ModelFile brazierModel = models().withExistingParent(getKey(brazier)+"_m","premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_m");
+        ModelFile brazierModel = models().withExistingParent(getKey(brazier) + "_m", "premierpainmod:block/all_materials_block/villager_brazier/villager_brazier_m");
         itemModels().getBuilder(getKey(brazier).getPath()).parent(brazierModel).texture("0", texture_bottom).texture("1", texture_upper);
     }
 
     private void villagerTableWithItem(Block table)
     {
         String name = getName(table);
-        String material = name.replace("_villager_table","_villager");
-        String textureTable =  "block/all_materials_block/multiple_use_texture/" + material;
+        String material = name.replace("_villager_table", "_villager");
+        String textureTable = "block/all_materials_block/multiple_use_texture/" + material;
         String textureParticle = "block/all_materials_block/multiple_use_particle/" + material;
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(table);
@@ -269,12 +281,12 @@ public class ModBlockStateProvider extends BlockStateProvider
             int rotation;
             boolean flag = (state.getValue(VillagerTableBlock.COLOR) == VillagerCarpetColor.NONE);
             //Duo part
-                //North only
-            if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            //North only
+            if ((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
                 modelPath += "villager_table_duo/";
                 rotation = 270;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_duo_n";
                     modelPath += "villager_table_duo";
@@ -285,12 +297,12 @@ public class ModBlockStateProvider extends BlockStateProvider
                     modelPath += "villager_table_duo_carpeted";
                 }
             }
-                //West only
-            else if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            //West only
+            else if ((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
                 modelPath += "villager_table_duo/";
                 rotation = 180;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_duo_w";
                     modelPath += "villager_table_duo";
@@ -301,12 +313,12 @@ public class ModBlockStateProvider extends BlockStateProvider
                     modelPath += "villager_table_duo_carpeted";
                 }
             }
-                //South only
-            else if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            //South only
+            else if ((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
                 modelPath += "villager_table_duo/";
                 rotation = 90;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_duo_s";
                     modelPath += "villager_table_duo";
@@ -317,12 +329,12 @@ public class ModBlockStateProvider extends BlockStateProvider
                     modelPath += "villager_table_duo_carpeted";
                 }
             }
-                //East only
-            else if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            //East only
+            else if ((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
                 modelPath += "villager_table_duo/";
                 rotation = 0;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_duo_e";
                     modelPath += "villager_table_duo";
@@ -334,12 +346,12 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
             }
             //Trio Part
-                //N S
-            else if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            //N S
+            else if ((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
                 modelPath += "villager_table_trio/line/";
                 rotation = 90;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_trio_ns";
                     modelPath += "villager_table_trio_line";
@@ -350,28 +362,28 @@ public class ModBlockStateProvider extends BlockStateProvider
                     modelPath += "villager_table_trio_line_carpeted";
                 }
             }
-                //W E
-            else if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            //W E
+            else if ((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
                 modelPath += "villager_table_trio/line/";
                 rotation = 0;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_trio_we";
                     modelPath += "villager_table_trio_line";
                 }
                 else
                 {
-                    modelName += "_trio_we_c" +nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
+                    modelName += "_trio_we_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_trio_line_carpeted";
                 }
             }
-                //N W
-            else if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            //N W
+            else if ((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
                 modelPath += "villager_table_trio/angle/";
                 rotation = 180;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_trio_nw";
                     modelPath += "villager_table_trio_angle";
@@ -382,12 +394,12 @@ public class ModBlockStateProvider extends BlockStateProvider
                     modelPath += "villager_table_trio_angle_carpeted";
                 }
             }
-                //N E
-            else if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            //N E
+            else if ((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
                 modelPath += "villager_table_trio/angle/";
                 rotation = 270;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_trio_ne";
                     modelPath += "villager_table_trio_angle";
@@ -398,12 +410,12 @@ public class ModBlockStateProvider extends BlockStateProvider
                     modelPath += "villager_table_trio_angle_carpeted";
                 }
             }
-                //S W
-            else if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            //S W
+            else if ((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
                 modelPath += "villager_table_trio/angle/";
                 rotation = 90;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_trio_sw";
                     modelPath += "villager_table_trio_angle";
@@ -414,12 +426,12 @@ public class ModBlockStateProvider extends BlockStateProvider
                     modelPath += "villager_table_trio_angle_carpeted";
                 }
             }
-                //S E
-            else if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            //S E
+            else if ((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
                 modelPath += "villager_table_trio/angle/";
                 rotation = 0;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_trio_se";
                     modelPath += "villager_table_trio_angle";
@@ -431,76 +443,76 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
             }
             //Quatuor Part
-                //N E S
-            else if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            //N E S
+            else if ((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == FALSE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
                 modelPath += "villager_table_quatuor/";
                 rotation = 270;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_quatuor_nes";
                     modelPath += "villager_table_quatuor";
                 }
                 else
                 {
-                    modelName += "_quatuor_nes_c"+ nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
+                    modelName += "_quatuor_nes_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_quatuor_carpeted";
                 }
             }
-                //E S W
-            else if((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            //E S W
+            else if ((state.getValue(VillagerTableBlock.NORTH) == FALSE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
                 modelPath += "villager_table_quatuor/";
                 rotation = 0;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_quatuor_esw";
                     modelPath += "villager_table_quatuor";
                 }
                 else
                 {
-                    modelName += "_quatuor_esw_c"+ nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
+                    modelName += "_quatuor_esw_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_quatuor_carpeted";
                 }
             }
-                //S W N
-            else if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
+            //S W N
+            else if ((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == FALSE))
             {
                 modelPath += "villager_table_quatuor/";
                 rotation = 90;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_quatuor_swn";
                     modelPath += "villager_table_quatuor";
                 }
                 else
                 {
-                    modelName += "_quatuor_swn_c"+ nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
+                    modelName += "_quatuor_swn_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_quatuor_carpeted";
                 }
             }
-                //W N E
-            else if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            //W N E
+            else if ((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == FALSE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
                 modelPath += "villager_table_quatuor/";
                 rotation = 180;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_quatuor_wne";
                     modelPath += "villager_table_quatuor";
                 }
                 else
                 {
-                    modelName += "_quatuor_wne_c"+ nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
+                    modelName += "_quatuor_wne_c" + nameModelCarpetSelection(state.getValue(VillagerTableBlock.COLOR));
                     modelPath += "villager_table_quatuor_carpeted";
                 }
             }
             //total part
-            else if((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
+            else if ((state.getValue(VillagerTableBlock.NORTH) == TRUE) && (state.getValue(VillagerTableBlock.WEST) == TRUE) && (state.getValue(VillagerTableBlock.SOUTH) == TRUE) && (state.getValue(VillagerTableBlock.EAST) == TRUE))
             {
                 modelPath += "villager_table_pentuor/";
                 rotation = 0;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_pentuor";
                     modelPath += "villager_table_pentuor";
@@ -516,7 +528,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             {
                 modelPath += "villager_table_solo/";
                 rotation = 0;
-                if(flag)
+                if (flag)
                 {
                     modelName += "_solo";
                     modelPath += "villager_table_solo";
@@ -528,36 +540,37 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
             }
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(modelName , modelPath)
+                    .modelFile(models().withExistingParent(modelName, modelPath)
                             .texture("0", textureTable)
-                            .texture("1",carpetTexture)
-                            .texture("2",textureParticle))
+                            .texture("1", carpetTexture)
+                            .texture("2", textureParticle))
                     .rotationY(rotation)
                     .build();
         });
-        ModelFile villagerWorkshopModel = models().withExistingParent(getKey(table).toString(),"premierpainmod:block/all_materials_block/villager_table/villager_table_solo/villager_table_solo").texture("0", "block/all_materials_block/multiple_use_texture/" + material);
+        ModelFile villagerWorkshopModel = models().withExistingParent(getKey(table).toString(), "premierpainmod:block/all_materials_block/villager_table/villager_table_solo/villager_table_solo").texture("0", "block/all_materials_block/multiple_use_texture/" + material);
         itemModels().getBuilder(getKey(table).getPath()).parent(villagerWorkshopModel);
     }
 
     private void villagerChairWithItem(Block chair)
     {
-        String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MOD_ID +":","");
-        String material = chairName.replace("_chair","");
+        String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        String material = chairName.replace("_chair", "");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(chair);
         variantBuilder.forAllStates(state ->
                 ConfiguredModel.builder()
-                        .modelFile(models().withExistingParent(getKey(chair).toString(),"premierpainmod:block/all_materials_block/villager_chair/villager_chair")
-                                .texture("0","block/all_materials_block/multiple_use_texture/" + material)
+                        .modelFile(models().withExistingParent(getKey(chair).toString(), "premierpainmod:block/all_materials_block/villager_chair/villager_chair")
+                                .texture("0", "block/all_materials_block/multiple_use_texture/" + material)
                                 .texture("1", "block/all_materials_block/multiple_use_particle/" + material))
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                         .build());
-        ModelFile villagerChairModel = models().withExistingParent(getKey(chair).toString(),"premierpainmod:block/all_materials_block/villager_chair/villager_chair").texture("0","block/all_materials_block/multiple_use_texture/" + material);
+        ModelFile villagerChairModel = models().withExistingParent(getKey(chair).toString(), "premierpainmod:block/all_materials_block/villager_chair/villager_chair").texture("0", "block/all_materials_block/multiple_use_texture/" + material);
         itemModels().getBuilder(getKey(chair).getPath()).parent(villagerChairModel);
     }
+
     private void villagerThroneChairWithItem(Block throneChair)
     {
         String throneChairName = getName(throneChair);
-        String material = throneChairName.replace("_throne_chair","");
+        String material = throneChairName.replace("_throne_chair", "");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(throneChair);
         variantBuilder.forAllStates(state ->
         {
@@ -567,9 +580,9 @@ public class ModBlockStateProvider extends BlockStateProvider
             String texture1 = textureCarpetSelection(state.getValue(VillagerThroneChairBlock.COLOR));
             String particle = "block/all_materials_block/multiple_use_particle/" + material;
             boolean flag = (state.getValue(VillagerThroneChairBlock.COLOR) == VillagerCarpetColor.NONE);
-            if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
+            if (state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.LOWER)
             {
-                if(flag)
+                if (flag)
                 {
                     modelName += "_bottom";
                     modelPath += "wo_carpet/villager_throne_chair_bottom";
@@ -582,7 +595,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             else
             {
-                if(flag)
+                if (flag)
                 {
                     modelName += "_upper";
                     modelPath += "wo_carpet/villager_throne_chair_upper";
@@ -594,21 +607,21 @@ public class ModBlockStateProvider extends BlockStateProvider
                 }
             }
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(modelName , modelPath)
-                            .texture("0",texture0)
-                            .texture("1",texture1)
+                    .modelFile(models().withExistingParent(modelName, modelPath)
+                            .texture("0", texture0)
+                            .texture("1", texture1)
                             .texture("2", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile villagerChairModel = models().withExistingParent(getKey(throneChair).toString(),"premierpainmod:block/all_materials_block/villager_throne_chair/wo_carpet/villager_throne_chair_m").texture("0","block/all_materials_block/multiple_use_texture/" + material);
+        ModelFile villagerChairModel = models().withExistingParent(getKey(throneChair).toString(), "premierpainmod:block/all_materials_block/villager_throne_chair/wo_carpet/villager_throne_chair_m").texture("0", "block/all_materials_block/multiple_use_texture/" + material);
         itemModels().getBuilder(getKey(throneChair).getPath()).parent(villagerChairModel);
     }
 
     private void villagerDrawerWithItem(Block villagerDrawer)
     {
-        String villagerDrawerName = BuiltInRegistries.BLOCK.getKey(villagerDrawer).toString().replace(PremierPainMod.MOD_ID +":","");
-        String material = villagerDrawerName.replace("_drawer","");
+        String villagerDrawerName = BuiltInRegistries.BLOCK.getKey(villagerDrawer).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        String material = villagerDrawerName.replace("_drawer", "");
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
@@ -617,11 +630,11 @@ public class ModBlockStateProvider extends BlockStateProvider
         variantBuilder.forAllStates(state ->
         {
             String modelName = getKey(villagerDrawer).toString();
-            String modelPath = "premierpainmod:block/all_materials_block/villager_drawer/" ;
+            String modelPath = "premierpainmod:block/all_materials_block/villager_drawer/";
 
-            if(state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
+            if (state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
             {
-                if(state.getValue(VillagerDrawer.OPEN) == FALSE)
+                if (state.getValue(VillagerDrawer.OPEN) == FALSE)
                 {
                     modelName += "_right_closed";
                     modelPath += "villager_drawer_right_closed";
@@ -634,7 +647,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             else
             {
-                if(state.getValue(VillagerDrawer.OPEN) == FALSE)
+                if (state.getValue(VillagerDrawer.OPEN) == FALSE)
                 {
                     modelName += "_left_closed";
                     modelPath += "villager_drawer_left_closed";
@@ -647,19 +660,20 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("0",texture)
+                            .texture("0", texture)
                             .texture("1", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile villagerWorkshopModel = models().withExistingParent(getKey(villagerDrawer).toString(),"premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_m")
-                .texture("0",texture);
+        ModelFile villagerWorkshopModel = models().withExistingParent(getKey(villagerDrawer).toString(), "premierpainmod:block/all_materials_block/villager_drawer/villager_drawer_m")
+                .texture("0", texture);
         itemModels().getBuilder(getKey(villagerDrawer).getPath()).parent(villagerWorkshopModel);
     }
+
     private void wallVillagerShelf(Block villagerWallShelfWithItem)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID +":","");
-        String material = name.replace("_wall_villager_shelf","_villager");
+        String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        String material = name.replace("_wall_villager_shelf", "_villager");
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
@@ -669,7 +683,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         {
             String modelName = getKey(villagerWallShelfWithItem).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_shelf/wall/";
-            if(state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
+            if (state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
             {
                 modelName += "_right";
                 modelPath += "wall_villager_shelf_right";
@@ -681,16 +695,17 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("0",texture)
+                            .texture("0", texture)
                             .texture("1", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
     }
+
     private void standingVillagerShelf(Block villagerWallShelfWithItem)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID +":","");
-        String material = name.replace("_standing_villager_shelf","_villager");
+        String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        String material = name.replace("_standing_villager_shelf", "_villager");
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
@@ -701,9 +716,9 @@ public class ModBlockStateProvider extends BlockStateProvider
             String modelName = getKey(villagerWallShelfWithItem).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_shelf/standing/";
 
-            if(state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
+            if (state.getValue(VillagerDrawer.PART) == TwoBlockWidthPart.RIGHT)
             {
-                if((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && (state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
+                if ((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && (state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
                 {
                     modelName += "_right_middle";
                     modelPath += "middle_standing_villager_shelf_right";
@@ -721,7 +736,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             else
             {
-                if((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && (state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
+                if ((state.getValue(StandingVillagerShelf.HAS_SHELF_BELOW)) && (state.getValue(StandingVillagerShelf.HAS_SHELF_ON_TOP)))
                 {
                     modelName += "_left_middle";
                     modelPath += "middle_standing_villager_shelf_left";
@@ -730,7 +745,8 @@ public class ModBlockStateProvider extends BlockStateProvider
                 {
                     modelName += "_left_top";
                     modelPath += "top_standing_villager_shelf_left";
-                }else
+                }
+                else
                 {
                     modelName += "_left_base";
                     modelPath += "base_standing_villager_shelf_left";
@@ -738,7 +754,7 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("0",texture)
+                            .texture("0", texture)
                             .texture("1", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
@@ -747,7 +763,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void flowerBlockWithItem(Block block)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
 
         ModelFile modelFile = models().withExistingParent(name, "block/cross").texture("cross", "block/vegetation/flower_block/one_block_flower/" + name).renderType("cutout");
         ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated").texture("layer0", "block/vegetation/flower_block/one_block_flower/" + name);
@@ -758,18 +774,19 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void flowerPotBlock(Block flowerPotBlock, Block flowerBlock)
     {
-        String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
-        pottedBlockWithBasicModel(flowerPotBlock,  "block/vegetation/flower_block/one_block_flower/" + nameFlower);
+        String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        pottedBlockWithBasicModel(flowerPotBlock, "block/vegetation/flower_block/one_block_flower/" + nameFlower);
     }
+
     private void deadBushPotBlock(Block deadBushPotBlock, Block deadBushBlock)
     {
-        String nameFlower = BuiltInRegistries.BLOCK.getKey(deadBushBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+        String nameFlower = BuiltInRegistries.BLOCK.getKey(deadBushBlock).toString().replace(PremierPainMod.MOD_ID + ":", "");
         pottedBlockWithBasicModel(deadBushPotBlock, "block/vegetation/dead_bush/" + nameFlower);
     }
 
     private void growingVegetationWithItem(Block block)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
 
         ModelFile modelFile = models().withExistingParent(name, "block/cross").texture("cross", "block/vegetation/flower_block/growing_flower_block/" + name).renderType("cutout");
         ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated").texture("layer0", "block/vegetation/flower_block/growing_flower_block/" + name);
@@ -780,7 +797,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void deadBushWithItem(Block block)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
 
         ModelFile modelFile = models().withExistingParent(name, "block/cross").texture("cross", "block/vegetation/dead_bush/" + name).renderType("cutout");
         ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated").texture("layer0", "block/vegetation/dead_bush/" + name);
@@ -791,7 +808,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void flowerPotBlockForGrowingVegetation(Block flowerPotBlock, Block flowerBlock)
     {
-        String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+        String nameFlower = BuiltInRegistries.BLOCK.getKey(flowerBlock).toString().replace(PremierPainMod.MOD_ID + ":", "");
         pottedBlockWithBasicModel(flowerPotBlock, "block/vegetation/flower_block/growing_flower_block/" + nameFlower);
     }
 
@@ -803,17 +820,17 @@ public class ModBlockStateProvider extends BlockStateProvider
         {
             String modelName = getKey(block).toString();
             String modelPath = "premierpainmod:block/vegetation/misc/flowered_cactus/";
-            if(state.getValue(FloweredCactusBlock.PART_NUM ) == 1)
+            if (state.getValue(FloweredCactusBlock.PART_NUM) == 1)
             {
                 modelName += "_1";
                 modelPath += "flowered_cactus_1";
             }
-            else if (state.getValue(FloweredCactusBlock.PART_NUM ) == 2)
+            else if (state.getValue(FloweredCactusBlock.PART_NUM) == 2)
             {
                 modelName += "_2";
                 modelPath += "flowered_cactus_2";
             }
-            else if (state.getValue(FloweredCactusBlock.PART_NUM ) == 3)
+            else if (state.getValue(FloweredCactusBlock.PART_NUM) == 3)
             {
                 modelName += "_3";
                 modelPath += "flowered_cactus_3";
@@ -829,18 +846,18 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .build();
         });
         ModelFile model;
-        model = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0");
+        model = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/vegetation/misc/flowered_cactus/flowered_cactus_0");
         itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
 
     private void cactusFlowerBlockWithItem()
     {
         Block block = BlockRegister.CACTUS_FLOWER_BLOCK.get();
-        ModelFile pedestalModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower");
+        ModelFile pedestalModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower");
         simpleBlock(block, pedestalModel);
         itemModels().getBuilder(getKey(block).getPath()).parent(models()
-                .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0", "block/vegetation/misc/flowered_cactus/cactus_flower/cactus_flower_item");
     }
 
     private void pottedFloweredCactus()
@@ -851,14 +868,15 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void universalPottedBlockWithCustomModel(Block pottedBlock, String modelPath)
     {
-        String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+        String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID + ":", "");
         ModelFile modelFile = models().withExistingParent(namePottedBlock, modelPath)
                 .renderType("cutout");
         simpleBlock(pottedBlock, modelFile);
     }
+
     private void pottedBlockWithBasicModel(Block pottedBlock, String folderOfPng)
     {
-        String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID +":","");
+        String namePottedBlock = BuiltInRegistries.BLOCK.getKey(pottedBlock).toString().replace(PremierPainMod.MOD_ID + ":", "");
 
         ModelFile modelFile = models().withExistingParent(namePottedBlock, ResourceLocation.withDefaultNamespace("flower_pot_cross"))
                 .texture("plant", folderOfPng)
@@ -874,8 +892,8 @@ public class ModBlockStateProvider extends BlockStateProvider
         variantBuilder.forAllStates(state ->
         {
             String modelName = getKey(block).toString();
-            String texturePath = "block/vegetation/tall_grass/"+ name + "/";
-            if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF ) == DoubleBlockHalf.LOWER)
+            String texturePath = "block/vegetation/tall_grass/" + name + "/";
+            if (state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.LOWER)
             {
                 modelName += "_lower";
                 texturePath += name + "_lower";
@@ -886,22 +904,22 @@ public class ModBlockStateProvider extends BlockStateProvider
                 texturePath += name + "_upper";
             }
             return ConfiguredModel.builder()
-                    .modelFile(models().withExistingParent(modelName,"block/cross")
+                    .modelFile(models().withExistingParent(modelName, "block/cross")
                             .texture("cross", texturePath)
                             .renderType("cutout"))
                     .build();
         });
 
-        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/", "premierpainmod:item/"))
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","block/vegetation/tall_grass/"+ name + "/" + name + "_upper");
+                .texture("layer0", "block/vegetation/tall_grass/" + name + "/" + name + "_upper");
     }
 
     private void villagerBenchWithItem(Block block)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
-        String material = name.replace("_villager_bench","_villager");
+        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        String material = name.replace("_villager_bench", "_villager");
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
@@ -911,17 +929,17 @@ public class ModBlockStateProvider extends BlockStateProvider
         {
             String modelName = getKey(block).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_bench/";
-            if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.ALONE)
+            if (state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.ALONE)
             {
                 modelName += "_alone";
                 modelPath += "villager_bench_alone";
             }
-            else if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT_AND_RIGHT)
+            else if (state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT_AND_RIGHT)
             {
                 modelName += "_with_left_and_right";
                 modelPath += "villager_bench_with_left_and_right";
             }
-            else if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT)
+            else if (state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT)
             {
                 modelName += "_with_right";
                 modelPath += "villager_bench_with_right";
@@ -933,19 +951,19 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("0",texture)
+                            .texture("0", texture)
                             .texture("1", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile villagerBenchModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_bench/villager_bench_alone").texture("0","block/all_materials_block/multiple_use_texture/" + material);
+        ModelFile villagerBenchModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/all_materials_block/villager_bench/villager_bench_alone").texture("0", "block/all_materials_block/multiple_use_texture/" + material);
         itemModels().getBuilder(getKey(block).getPath()).parent(villagerBenchModel);
     }
 
     private void villagerCouchWithItem(Block block)
     {
-        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
-        String material = name.replace("_villager_couch","_villager");
+        String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        String material = name.replace("_villager_couch", "_villager");
 
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
@@ -958,17 +976,17 @@ public class ModBlockStateProvider extends BlockStateProvider
             String carpetTexture = textureCarpetSelection(villagerCarpetColor);
             String modelName = getKey(block).toString();
             String modelPath = "premierpainmod:block/all_materials_block/villager_couch/";
-            if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.ALONE)
+            if (state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.ALONE)
             {
                 modelName += "_alone" + nameModelCarpetSelection(villagerCarpetColor);
                 modelPath += "villager_couch_alone";
             }
-            else if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT_AND_RIGHT)
+            else if (state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_LEFT_AND_RIGHT)
             {
                 modelName += "_with_left_and_right" + nameModelCarpetSelection(villagerCarpetColor);
                 modelPath += "villager_couch_with_left_and_right";
             }
-            else if(state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_RIGHT)
+            else if (state.getValue(VillagerBench.ADAPTABLE_SIT) == AdaptableSitShape.WITH_RIGHT)
             {
                 modelName += "_with_right" + nameModelCarpetSelection(villagerCarpetColor);
                 modelPath += "villager_couch_with_right";
@@ -980,21 +998,22 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("0",texture)
+                            .texture("0", texture)
                             .texture("1", carpetTexture)
                             .texture("2", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile villagerBenchModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_couch/villager_couch_alone")
-                .texture("0","block/all_materials_block/multiple_use_texture/" + material)
+        ModelFile villagerBenchModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/all_materials_block/villager_couch/villager_couch_alone")
+                .texture("0", "block/all_materials_block/multiple_use_texture/" + material)
                 .texture("1", "premierpainmod:block/all_materials_block/multiple_use_carpet/villager_table_carpet_white");
         itemModels().getBuilder(getKey(block).getPath()).parent(villagerBenchModel);
     }
+
     private void villagerBrewingStationWithItem(Block block)
     {
         String name = getName(block);
-        String material = name.replace("_villager_brewing_station","_villager");
+        String material = name.replace("_villager_brewing_station", "_villager");
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
@@ -1005,18 +1024,19 @@ public class ModBlockStateProvider extends BlockStateProvider
 
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("1",texture)
+                            .texture("1", texture)
                             .texture("2", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station").texture("1", "block/all_materials_block/multiple_use_texture/" + material).texture("2","block/all_materials_block/multiple_use_particle/" + material);
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/all_materials_block/villager_brewing_station/villager_brewing_station").texture("1", "block/all_materials_block/multiple_use_texture/" + material).texture("2", "block/all_materials_block/multiple_use_particle/" + material);
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
+
     private void villagerMusicalFridgeBlockWithItem(Block block)
     {
         String name = getName(block);
-        String material = name.replace("_villager_musical_fridge","_villager");
+        String material = name.replace("_villager_musical_fridge", "_villager");
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
@@ -1048,20 +1068,20 @@ public class ModBlockStateProvider extends BlockStateProvider
 
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("1",texture)
+                            .texture("1", texture)
                             .texture("2", particle))
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_item")
-                .texture("2",texture);
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_item")
+                .texture("2", texture);
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
 
     private void villagerChiseledHeadBlockWithItem(Block block)
     {
         String name = getName(block);
-        String material = name.replace("_villager_chiseled_head","_villager");
+        String material = name.replace("_villager_chiseled_head", "_villager");
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
@@ -1100,28 +1120,28 @@ public class ModBlockStateProvider extends BlockStateProvider
 
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("1",texture)
+                            .texture("1", texture)
                             .texture("2", particle))
                     .rotationX(rotationX)
                     .rotationY(rotationY)
                     .build();
         });
 
-        ModelFile baseModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/all_materials_block/villager_chiseled_head/villager_chiseled_head_lit")
-                .texture("1",texture);
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/all_materials_block/villager_chiseled_head/villager_chiseled_head_lit")
+                .texture("1", texture);
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
 
     private void skySpearsFlowerWithItem()
     {
         Block block = BlockRegister.SKY_SPEARS_FLOWER.get();
-        ModelFile blockModel = models().withExistingParent(getKey(block).toString(),"premierpainmod:block/vegetation/tall_grass/sky_spears_flower")
+        ModelFile blockModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/vegetation/tall_grass/sky_spears_flower")
                 .texture("0", "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
         simpleBlock(block, blockModel);
-        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/", "premierpainmod:item/"))
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","block/vegetation/tall_grass/sky_spears/sky_spears_flower");
+                .texture("layer0", "block/vegetation/tall_grass/sky_spears/sky_spears_flower");
     }
 
     private void skySpearsFlowerPotBlock()
@@ -1140,32 +1160,32 @@ public class ModBlockStateProvider extends BlockStateProvider
             String modelName = getKey(block) + "_";
             switch (state.getValue(JellyShroomBlock.AGE))
             {
-                case 1 :
+                case 1:
                 {
                     modelPath += "1";
                     modelName += "1";
                     break;
                 }
 
-                case 2 :
+                case 2:
                 {
                     modelPath += "2";
                     modelName += "2";
                     break;
                 }
-                case 3 :
+                case 3:
                 {
                     modelPath += "3";
                     modelName += "3";
                     break;
                 }
-                case 4 :
+                case 4:
                 {
                     modelPath += "4";
                     modelName += "4";
                     break;
                 }
-                default :
+                default:
                 {
                     modelPath += "0";
                     modelName += "0";
@@ -1177,10 +1197,10 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
                     .build();
         });
-        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/", "premierpainmod:item/"))
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/vegetation/crop/jellyshroom");
+                .texture("layer0", "item/vegetation/crop/jellyshroom");
     }
 
     private void logWithItem(Block log, String folderInTree)
@@ -1224,26 +1244,27 @@ public class ModBlockStateProvider extends BlockStateProvider
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(leaves);
         variantBuilder.forAllStates(state ->
-                {
-                    if (state.getValue(ModLeavesBlock.HAS_FRUIT))
-                    {
-                        return ConfiguredModel.builder()
-                                .modelFile(models().withExistingParent(name + "_fruit", modelPath)
-                                        .texture("0",leavesTexture)
-                                        .texture("1", fruitLeavesTexture)
-                                        .renderType("cutout"))
-                                .build();
-                    }
-                    return ConfiguredModel.builder()
-                            .modelFile(baseModel)
-                            .build();
-                });
+        {
+            if (state.getValue(ModLeavesBlock.HAS_FRUIT))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(models().withExistingParent(name + "_fruit", modelPath)
+                                .texture("0", leavesTexture)
+                                .texture("1", fruitLeavesTexture)
+                                .renderType("cutout"))
+                        .build();
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(baseModel)
+                    .build();
+        });
         itemModels().getBuilder(getKey(leaves).getPath()).parent(baseModel);
     }
+
     private void stairWithItem(Block stairs, ResourceLocation texture)
     {
         stairsBlock((StairBlock) stairs, texture);
-        ModelFile model = models().stairs(getName(stairs) + "_item" ,texture, texture, texture);
+        ModelFile model = models().stairs(getName(stairs) + "_item", texture, texture, texture);
         itemModels().getBuilder(getKey(stairs).getPath()).parent(model);
     }
 
@@ -1267,6 +1288,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         ModelFile itemModel = models().withExistingParent(baseName + "_item", "block/button_inventory").texture("texture", texture);
         itemModels().getBuilder(getKey(block).getPath()).parent(itemModel);
     }
+
     private void pressurePlateWithItem(Block block, ResourceLocation texture)
     {
         ModelFile pressurePlate = models().pressurePlate(getName(block), texture);
@@ -1284,6 +1306,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         ModelFile itemModel = models().withExistingParent(baseName + "_item", "block/fence_inventory").texture("texture", texture);
         itemModels().getBuilder(getKey(block).getPath()).parent(itemModel);
     }
+
     private void fenceGateWithItem(Block block, ResourceLocation texture)
     {
         String baseName = getName(block);
@@ -1300,10 +1323,10 @@ public class ModBlockStateProvider extends BlockStateProvider
         String name = getName(door);
         doorBlockWithRenderType((DoorBlock) door, createResourceLocation("block/tree/" + folderInTree + "/" + name + "_bottom"), createResourceLocation("block/tree/" + folderInTree + "/" + name + "_top"), "cutout");
 
-        itemModels().getBuilder((getKey(door).getPath()).replace("premierpainmod:block/","premierpainmod:item/"))
+        itemModels().getBuilder((getKey(door).getPath()).replace("premierpainmod:block/", "premierpainmod:item/"))
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/tree/" + folderInTree + "/" + name);
+                .texture("layer0", "item/tree/" + folderInTree + "/" + name);
     }
 
     private void woodenTrapdoorWithItem(Block block, String folderInTree)
@@ -1337,17 +1360,17 @@ public class ModBlockStateProvider extends BlockStateProvider
     }
 
     /**
-    * @param treeId example : mountain_currant
-    **/
+     * @param treeId example : mountain_currant
+     **/
     private void allWoodBlocks(String treeId, boolean doesLeavesGrowFruit)
     {
         String folder = treeId + "_tree";
         ResourceLocation planksTexture = createResourceLocation("block/tree/" + folder + "/" + treeId + "_planks");
 
-        logWithItem(getBlockFromId(treeId + "_log"),folder);
-        logWithItem(getBlockFromId("stripped_" + treeId + "_log"),folder);
-        woodWithItem(getBlockFromId(treeId + "_wood"),folder);
-        woodWithItem(getBlockFromId("stripped_" + treeId + "_wood"),folder);
+        logWithItem(getBlockFromId(treeId + "_log"), folder);
+        logWithItem(getBlockFromId("stripped_" + treeId + "_log"), folder);
+        woodWithItem(getBlockFromId(treeId + "_wood"), folder);
+        woodWithItem(getBlockFromId("stripped_" + treeId + "_wood"), folder);
         simpleBlockWithItem(getBlockFromId(treeId + "_planks"), "block/tree/" + folder + "/" + treeId + "_planks");
         if (doesLeavesGrowFruit)
         {
@@ -1359,7 +1382,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         }
         stairWithItem(getBlockFromId(treeId + "_stairs"), planksTexture);
         slabWithItem(getBlockFromId(treeId + "_slab"), planksTexture);
-        buttonWithItem(getBlockFromId(treeId + "_button"),planksTexture);
+        buttonWithItem(getBlockFromId(treeId + "_button"), planksTexture);
         pressurePlateWithItem(getBlockFromId(treeId + "_pressure_plate"), planksTexture);
         fenceWithItem(getBlockFromId(treeId + "_fence"), planksTexture);
         fenceGateWithItem(getBlockFromId(treeId + "_fence_gate"), planksTexture);
@@ -1374,8 +1397,8 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void tallFlower(Block block)
     {
         String name = getName(block);
-        String top = "block/vegetation/flower_block/tall_flower/" + name + "/top" ;
-        String bottom = "block/vegetation/flower_block/tall_flower/" + name + "/bottom" ;
+        String top = "block/vegetation/flower_block/tall_flower/" + name + "/top";
+        String bottom = "block/vegetation/flower_block/tall_flower/" + name + "/bottom";
         String modelPath = "block/cross";
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
@@ -1396,13 +1419,39 @@ public class ModBlockStateProvider extends BlockStateProvider
             }
             return ConfiguredModel.builder()
                     .modelFile(models().withExistingParent(modelName, modelPath)
-                            .texture("cross",texture)
+                            .texture("cross", texture)
                             .renderType("cutout"))
                     .build();
         });
         ModelFile itemModelFile = models().withExistingParent(name + "_item", "item/generated")
                 .texture("layer0", top);
         itemModels().getBuilder(getKey(block).getPath()).parent(itemModelFile);
+    }
+
+    private void cookingPotBlockWithItem()
+    {
+        Block block = BlockRegister.COOKING_POT_BLOCK.get();
+        String name = getName(block);
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        ModelFile baseModel = models().withExistingParent(name + "_base", "premierpainmod:block/functional_block/cooking_pot/cooking_pot_base");
+        ModelFile hangingModel = models().withExistingParent(name + "_hanging", "premierpainmod:block/functional_block/cooking_pot/cooking_pot_hanging");
+        variantBuilder.forAllStates(state ->
+        {
+            ModelFile finalModel;
+            if (state.getValue(ModBlockStateProperties.HANGING))
+            {
+                finalModel = hangingModel;
+            }
+            else
+            {
+                finalModel = baseModel;
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(finalModel)
+                    .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                    .build();
+        });
+        itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)
@@ -1525,7 +1574,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private String getName(Block block)
     {
-        return getKey(block).toString().replace(PremierPainMod.MOD_ID +":","");
+        return getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
     }
 
     private ResourceLocation createResourceLocation(String path)

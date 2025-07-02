@@ -2,16 +2,20 @@ package com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block
 
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
-import com.unpainperdu.premierpainmod.level.world.menu.slot.MugAndBottleOnlySlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSlot;
-import com.unpainperdu.premierpainmod.level.world.menu.slot.WaterBucketSlot;
-import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
+import com.unpainperdu.premierpainmod.level.world.menu.slot.OnlyTheseItemsSlot;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.*;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.material.Fluid;
@@ -34,8 +38,8 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
         this.data = ((VillagerBrewingStationBlockEntity) entity).dataAccess;
         this.villagerBrewingStationBlockEntity = (VillagerBrewingStationBlockEntity) entity;
         this.container.startOpen(inv.player);
-        this.addSlot(new WaterBucketSlot(this.container, 0, 8, 18));
-        this.addSlot(new MugAndBottleOnlySlot(this.container, 13, 8 + 8 * 18, 18));
+        this.addSlot(new OnlyTheseItemsSlot(this.container, 0, 8, 18, Items.WATER_BUCKET));
+        this.addSlot(new OnlyTheseItemsSlot(this.container, 13, 8 + 8 * 18, 18, ItemRegister.EMPTY_MUG.get(), ItemRegister.EMPTY_BOTTLE.get(), Items.BUCKET));
         this.addSlot(new NoPlacementSlot(this.container, 14, 8 + 8 * 18, 18 + 2 * 18));
 
         int n = 1;
@@ -43,7 +47,7 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
         {
             for (int k = 0; k < 4; k++)
             {
-                this.addSlot(new Slot(this.container, n, 8 + (k+3) * 18, 18 + j * 18));
+                this.addSlot(new Slot(this.container, n, 8 + (k + 3) * 18, 18 + j * 18));
                 n++;
             }
         }
@@ -90,7 +94,8 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
             if (itemstack1.isEmpty())
             {
                 slot.setByPlayer(ItemStack.EMPTY);
-            } else
+            }
+            else
             {
                 slot.setChanged();
             }

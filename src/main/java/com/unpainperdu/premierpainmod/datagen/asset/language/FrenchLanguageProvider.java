@@ -143,8 +143,9 @@ public class FrenchLanguageProvider extends LanguageProvider
         //block
         //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");
-        // villager workshop
+        //crafting_block
         add(BlockRegister.VILLAGER_WORKSHOP.get(), "Atelier du villageois");
+        add(BlockRegister.COOKING_POT_BLOCK.get(), "Marmite");
         //vegetation
         //tall grass
         add(BlockRegister.SKY_SPEARS.get(), "Lances du ciel");
