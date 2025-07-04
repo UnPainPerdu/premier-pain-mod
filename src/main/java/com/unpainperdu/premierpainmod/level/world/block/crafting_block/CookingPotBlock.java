@@ -2,7 +2,6 @@ package com.unpainperdu.premierpainmod.level.world.block.crafting_block;
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block.CookingPotBlockEntity;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
@@ -10,8 +9,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -69,7 +71,35 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult)
+    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction direction, @NotNull BlockState neighborState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos)
+    {
+        if (state.getValue(WATERLOGGED))
+        {
+            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            state = state.setValue(BlockStateProperties.LIT, false);
+        }
+        if (canBeHanging(level, pos))
+        {
+            state = state.setValue(ModBlockStateProperties.HANGING, true);
+        }
+        else
+        {
+            state = state.setValue(ModBlockStateProperties.HANGING, false);
+        }
+        if (canBeLit(level, pos) && !state.getValue(WATERLOGGED))
+        {
+            state = state.setValue(BlockStateProperties.LIT, true);
+        }
+        else
+        {
+            state = state.setValue(BlockStateProperties.LIT, false);
+        }
+
+        return state;
+    }
+
+    @Override
+    protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult)
     {
         if (level.isClientSide)
         {
@@ -77,17 +107,12 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
         }
         else
         {
-            this.openContainer(level, pos, player);
+            BlockEntity blockentity = level.getBlockEntity(pos);
+            if (blockentity instanceof CookingPotBlockEntity pot)
+            {
+                player.openMenu(pot, pos);
+            }
             return InteractionResult.CONSUME;
-        }
-    }
-
-    protected void openContainer(Level level, BlockPos pos, Player player)
-    {
-        BlockEntity blockentity = level.getBlockEntity(pos);
-        if (blockentity instanceof CookingPotBlockEntity pot)
-        {
-            player.openMenu(pot, pos);
         }
     }
 
@@ -123,27 +148,27 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
         if (!state.is(newState.getBlock()))
         {
             BlockEntity blockentity = level.getBlockEntity(pos);
-            if (blockentity instanceof VillagerBrewingStationBlockEntity)
+            if (blockentity instanceof CookingPotBlockEntity)
             {
-                Containers.dropContents(level, pos, ((VillagerBrewingStationBlockEntity) blockentity).getItems());
+                Containers.dropContents(level, pos, ((CookingPotBlockEntity) blockentity).getItems());
             }
 
             super.onRemove(state, level, pos, newState, isMoving);
         }
     }
 
-    private boolean canBeLit(Level level, BlockPos potPos)
+    private boolean canBeLit(LevelAccessor level, BlockPos potPos)
     {
         boolean isFireBlockBehind = false;
         BlockPos belowPos = potPos.below();
-        BlockState state = level.getBlockState(belowPos);
-        Block block = state.getBlock();
-        if (block instanceof CampfireBlock)
+        BlockState stateBelow = level.getBlockState(belowPos);
+        Block block = stateBelow.getBlock();
+        if (block instanceof CampfireBlock && canBeHanging(level, potPos))
         {
-            isFireBlockBehind = state.getValue(BlockStateProperties.LIT);
+            isFireBlockBehind = stateBelow.getValue(BlockStateProperties.LIT);
         }
         if (block instanceof MagmaBlock
-            || block instanceof BaseFireBlock
+                || block instanceof BaseFireBlock
         )
         {
             isFireBlockBehind = true;
@@ -155,30 +180,85 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
                 isFireBlockBehind = true;
             }
         }
+        BlockState state = level.getBlockState(potPos);
+        if (state.hasProperty(BlockStateProperties.WATERLOGGED))
+        {
+            if (state.getValue(BlockStateProperties.WATERLOGGED))
+            {
+                isFireBlockBehind = false;
+            }
+        }
+
 
         return isFireBlockBehind;
     }
 
-    private boolean canBeHanging(Level level, BlockPos potPos)
+    private boolean canBeHanging(LevelAccessor level, BlockPos potPos)
     {
         boolean canBeHanging = false;
         BlockPos belowPos = potPos.below();
         BlockState state = level.getBlockState(belowPos);
         Block block = state.getBlock();
         if (block instanceof CampfireBlock
-            || block instanceof BaseFireBlock
-        )
+                || block instanceof BaseFireBlock)
         {
             canBeHanging = true;
         }
-        if (block instanceof LiquidBlock liquidBlock)
+        if (block instanceof LiquidBlock
+                || block instanceof AirBlock)
         {
-            if (liquidBlock.fluid instanceof LavaFluid)
+            BlockPos belowBelowPos = belowPos.below();
+            BlockState belowBelowState = level.getBlockState(belowBelowPos);
+            Block belowBelowBlock = belowBelowState.getBlock();
+            if (!(belowBelowBlock instanceof LiquidBlock
+                    || belowBelowBlock instanceof AirBlock))
             {
                 canBeHanging = true;
             }
         }
-
         return canBeHanging;
+    }
+
+    @Override
+    public boolean placeLiquid(@NotNull LevelAccessor level, @NotNull BlockPos pos, BlockState state, @NotNull FluidState fluidState)
+    {
+        if (!state.getValue(BlockStateProperties.WATERLOGGED) && fluidState.getType() == Fluids.WATER)
+        {
+            if (!level.isClientSide())
+            {
+                state = state.setValue(BlockStateProperties.WATERLOGGED, true).setValue(BlockStateProperties.LIT, false);
+                level.setBlock(pos, state, 3);
+                level.scheduleTick(pos, fluidState.getType(), fluidState.getType().getTickDelay(level));
+            }
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    @Override
+    public @NotNull ItemStack pickupBlock(@Nullable Player player, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockState state)
+    {
+        if (state.getValue(BlockStateProperties.WATERLOGGED))
+        {
+            level.setBlock(pos, state.setValue(BlockStateProperties.WATERLOGGED, false), 3);
+            if (canBeLit(level, pos))
+            {
+                level.setBlock(pos, state.setValue(BlockStateProperties.LIT, true), 3);
+            }
+            if (!state.canSurvive(level, pos))
+            {
+                level.destroyBlock(pos, true);
+            }
+
+            return new ItemStack(Items.WATER_BUCKET);
+        }
+        else
+        {
+            return ItemStack.EMPTY;
+        }
     }
 }

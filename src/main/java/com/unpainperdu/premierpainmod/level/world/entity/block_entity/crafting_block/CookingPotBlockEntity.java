@@ -166,13 +166,13 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
     }
 
     @Override
-    protected @NotNull NonNullList<ItemStack> getItems()
+    public @NotNull NonNullList<ItemStack> getItems()
     {
         return this.items;
     }
 
     @Override
-    protected void setItems(@NotNull NonNullList<ItemStack> items)
+    public void setItems(@NotNull NonNullList<ItemStack> items)
     {
         this.items = items;
     }
