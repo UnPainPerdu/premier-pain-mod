@@ -60,7 +60,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
     public static final int SLOT_NUMBER = 8;
     private NonNullList<ItemStack> items = NonNullList.withSize(SLOT_NUMBER, ItemStack.EMPTY);
     private final FluidTank fluidTank;
-    private static final int MAX_COOKING_TIME = 100;
+    public static final int MAX_COOKING_TIME = 100;
     public static final int MB_CONSUMED_BY_RECIPE = 10;
     private final List<Integer> cookingTime = setupCookingTimeList();
 

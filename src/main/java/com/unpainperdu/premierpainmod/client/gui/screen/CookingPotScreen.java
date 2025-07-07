@@ -10,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,6 +30,8 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
     {
         guiGraphics.blit(getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, 185);
+        renderLit(guiGraphics);
+        renderProgress(guiGraphics);
         renderFluidStack(guiGraphics);
     }
 
@@ -40,6 +43,47 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     protected ResourceLocation getBackgroundTexture()
     {
         return loc("textures/gui/container/functional_block/cooking_pot.png");
+    }
+
+    protected ResourceLocation getArrowTexture()
+    {
+        return loc("container/functional_block/cooking_pot/arrow");
+    }
+
+    protected ResourceLocation getLitTexture()
+    {
+        return loc("container/functional_block/cooking_pot/lit");
+    }
+
+    private void renderLit(GuiGraphics guiGraphics)
+    {
+        boolean isLit = this.menu.getState().getValue(BlockStateProperties.LIT);
+        if (isLit)
+        {
+            guiGraphics.blitSprite(getLitTexture(), 14, 14, 0, 0,leftPos + 58, topPos + 77, 14, 14);
+        }
+    }
+
+    private void renderProgress(GuiGraphics guiGraphics)
+    {
+        if (this.menu.isCooking(0))
+        {
+            renderArrow(0, guiGraphics);
+        }
+        if (this.menu.isCooking(1))
+        {
+            renderArrow(1, guiGraphics);
+        }
+        if (this.menu.isCooking(2))
+        {
+            renderArrow(2, guiGraphics);
+        }
+    }
+
+    private void renderArrow(int indexOfCookingTime, GuiGraphics guiGraphics)
+    {
+        int j = this.menu.getBrewingProgress(indexOfCookingTime);
+        guiGraphics.blitSprite(getArrowTexture(), 26, 10, 0, 0,leftPos + 113, topPos + 21 + (indexOfCookingTime*24), j, 10);
     }
 
     private void renderFluidStack(GuiGraphics guiGraphics)
@@ -59,7 +103,8 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     public void renderFluidTooltipArea(GuiGraphics guiGraphics, int pMouseX, int pMouseY, int x, int y,
                                        FluidStack stack, int offsetX, int offsetY, FluidTankRenderer renderer)
     {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, offsetX, offsetY, renderer)) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, offsetX, offsetY, renderer))
+        {
             guiGraphics.renderTooltip(this.font, renderer.getTooltip(stack, TooltipFlag.Default.NORMAL),
                     Optional.empty(), pMouseX - x, pMouseY - y);
         }

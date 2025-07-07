@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.OnlyTheseItemsSlot;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -16,7 +17,11 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 import static com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block.CookingPotBlockEntity.*;
 
@@ -108,5 +113,30 @@ public class CookingPotMenu extends AbstractContainerMenu
     {
         super.removed(pPlayer);
         this.container.stopOpen(pPlayer);
+    }
+
+    /**
+     * @param index must be 0, 1 or 2
+     */
+    public boolean isCooking(int index)
+    {
+        return this.data.get(index) > 0;
+    }
+
+    public int getBrewingProgress(int index)
+    {
+        int currentTime = this.data.get(index);
+        int arrowSize = 26;
+        return currentTime != 0 ? currentTime * arrowSize / CookingPotBlockEntity.MAX_COOKING_TIME : 0;
+    }
+
+    public BlockPos getPos()
+    {
+        return ((BlockEntity) this.container).getBlockPos();
+    }
+
+    public BlockState getState()
+    {
+        return Objects.requireNonNull(((BlockEntity) this.container).getLevel()).getBlockState(getPos());
     }
 }
