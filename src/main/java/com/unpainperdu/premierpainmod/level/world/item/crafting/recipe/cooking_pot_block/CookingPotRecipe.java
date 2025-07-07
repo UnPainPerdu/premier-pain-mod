@@ -48,7 +48,7 @@ public class CookingPotRecipe implements Recipe<CookingPotInput>
     @Override
     public @NotNull ItemStack assemble(@NotNull CookingPotInput input, HolderLookup.@NotNull Provider registries)
     {
-        return this.result;
+        return this.result.copy();
     }
 
     @Override

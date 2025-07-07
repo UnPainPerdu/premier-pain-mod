@@ -1,7 +1,5 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block;
 
-import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.crafting_block.CookingPotBlock;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotRecipe;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.CookingPotMenu;
@@ -9,10 +7,7 @@ import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.NonNullList;
+import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
@@ -44,7 +39,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
@@ -63,7 +60,8 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
     public static final int SLOT_NUMBER = 8;
     private NonNullList<ItemStack> items = NonNullList.withSize(SLOT_NUMBER, ItemStack.EMPTY);
     private final FluidTank fluidTank;
-    private static final int MAX_COOKING_TIME = 60;
+    private static final int MAX_COOKING_TIME = 100;
+    public static final int MB_CONSUMED_BY_RECIPE = 10;
     private final List<Integer> cookingTime = setupCookingTimeList();
 
     public final ContainerData dataAccess = new ContainerData()
@@ -106,7 +104,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
     {
         boolean hasChanged = false;
         FluidTank fluidTank = blockEntity.getFluidTank();
-        NonNullList<ItemStack> itemStacks = blockEntity.items;
+        NonNullList<ItemStack> itemStacks = blockEntity.getItems();
         //tank part
         //input
         if (fluidTank.isEmpty())
@@ -114,11 +112,14 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
             if (itemStacks.get(FLUID_INPUT).getItem() instanceof BucketItem bucket)
             {
                 Fluid fluidFromBucket = bucket.content;
-                blockEntity.fluidTank.fill(new FluidStack(fluidFromBucket, 1000), IFluidHandler.FluidAction.EXECUTE);
-                itemStacks.set(FLUID_INPUT, new ItemStack(Items.BUCKET));
-                blockEntity.setItems(itemStacks);
-                playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.BUCKET_EMPTY);
-                hasChanged = true;
+                if (fluidFromBucket != Fluids.EMPTY)
+                {
+                    blockEntity.fluidTank.fill(new FluidStack(fluidFromBucket, 1000), IFluidHandler.FluidAction.EXECUTE);
+                    itemStacks.set(FLUID_INPUT, new ItemStack(Items.BUCKET));
+                    blockEntity.setItems(itemStacks);
+                    playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.BUCKET_EMPTY);
+                    hasChanged = true;
+                }
             }
         }
         //output
@@ -133,11 +134,126 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
             hasChanged = true;
         }
         //craft part
+        boolean changedByCraft_0 = false;
+        boolean changedByCraft_1 = false;
+        boolean changedByCraft_2 = false;
+        if (!fluidTank.isEmpty() && fluidTank.getFluidAmount() >= MB_CONSUMED_BY_RECIPE)
+        {
+            changedByCraft_0 = handleCraft(1, level, blockEntity, fluidTank);
+        }
+        else
+        {
+            blockEntity.setCookingTime(0, 0);
+        }
+        if (!fluidTank.isEmpty() && fluidTank.getFluidAmount() >= MB_CONSUMED_BY_RECIPE)
+        {
+            changedByCraft_1 = handleCraft(2, level, blockEntity, fluidTank);
+        }
+        else
+        {
+            blockEntity.setCookingTime(1, 0);
+        }
+        if (!fluidTank.isEmpty() && fluidTank.getFluidAmount() >= MB_CONSUMED_BY_RECIPE)
+        {
+            changedByCraft_2 = handleCraft(3, level, blockEntity, fluidTank);
+        }
+        else
+        {
+            blockEntity.setCookingTime(2, 0);
+        }
+        if (changedByCraft_0||changedByCraft_1||changedByCraft_2)
+        {
+            hasChanged = true;
+        }
 
         //change part
         if (hasChanged)
         {
             blockEntity.setChanged();
+        }
+    }
+
+    private static boolean handleCraft(int currentInputItemIndex, Level level, CookingPotBlockEntity blockEntity, FluidTank fluidTank)
+    {
+        boolean hasChanged = false;
+        int currentIndexCookingTime = currentInputItemIndex - 1;
+        FluidStack fluidStackInput = fluidTank.getFluid();
+        ItemStack currentInputItem = blockEntity.getItem(currentInputItemIndex);
+        RecipeHolder<?> recipeholder = blockEntity.quickCheck.getRecipeFor(new CookingPotInput(fluidStackInput, currentInputItem), level).orElse(null);
+
+        if (!canCook(level.registryAccess(), recipeholder, fluidStackInput, currentInputItem, blockEntity, currentInputItemIndex))
+        {
+            blockEntity.setCookingTime(currentIndexCookingTime, 0);
+        }
+        else
+        {
+            int newProgress = blockEntity.getCookingTime(currentIndexCookingTime) + 1;
+            blockEntity.setCookingTime(currentIndexCookingTime, newProgress);
+            if (blockEntity.getCookingTime(currentIndexCookingTime) >= MAX_COOKING_TIME)
+            {
+                blockEntity.setCookingTime(currentIndexCookingTime, 0);
+                if (cook(level.registryAccess(), recipeholder, fluidStackInput, currentInputItem, blockEntity, currentInputItemIndex))
+                {
+                    blockEntity.setRecipeUsed(recipeholder);
+                }
+
+                hasChanged = true;
+            }
+        }
+
+        return hasChanged;
+    }
+
+    private static boolean canCook(RegistryAccess registryAccess, RecipeHolder<?> recipe, FluidStack fluidStackInput, ItemStack itemToCook, CookingPotBlockEntity blockEntity, int currentItemsIndex)
+    {
+        boolean canCook = false;
+
+        if (!itemToCook.isEmpty() && recipe != null && blockEntity.getBlockState().getValue(BlockStateProperties.LIT))
+        {
+            ItemStack itemResult = ((CookingPotRecipe) recipe.value()).assemble(new CookingPotInput(fluidStackInput, itemToCook), registryAccess);
+            if (!itemResult.isEmpty())
+            {
+                ItemStack itemAtResultSlot = blockEntity.getItem(currentItemsIndex + 3);
+                if (itemAtResultSlot.isEmpty())
+                {
+                    canCook = true;
+                }
+                else if (ItemStack.isSameItemSameComponents(itemResult, itemAtResultSlot))
+                {
+                    if (itemAtResultSlot.getCount() + itemResult.getCount() <= blockEntity.getMaxStackSize() && itemAtResultSlot.getCount() + itemResult.getCount() <= itemAtResultSlot.getMaxStackSize() || itemAtResultSlot.getCount() + itemResult.getCount() <= itemResult.getMaxStackSize())
+                    {
+                        canCook = true;
+                    }
+                }
+            }
+        }
+        return canCook;
+    }
+
+    private static boolean cook(RegistryAccess registryAccess, @Nullable RecipeHolder<?> recipe, FluidStack fluidStackInput, ItemStack itemToCook, CookingPotBlockEntity blockEntity, int currentItemsIndex)
+    {
+        if (recipe != null && canCook(registryAccess, recipe, fluidStackInput, itemToCook, blockEntity, currentItemsIndex))
+        {
+            int resultIndexInItems = currentItemsIndex + 3;
+            ItemStack itemResult = ((CookingPotRecipe) recipe.value()).assemble(new CookingPotInput(fluidStackInput, itemToCook), registryAccess);
+            ItemStack itemInResultSlot = blockEntity.getItem(resultIndexInItems);
+            blockEntity.fluidTank.getFluid().shrink(50);
+            itemToCook.shrink(1);
+            if (itemInResultSlot.isEmpty())
+            {
+                blockEntity.setItem(resultIndexInItems, itemResult);
+            }
+            else if (ItemStack.isSameItemSameComponents(itemResult, itemInResultSlot))
+            {
+                itemInResultSlot.grow(1);
+            }
+
+            playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.GENERIC_BURN);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

@@ -230,7 +230,6 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
                 level.setBlock(pos, state, 3);
                 level.scheduleTick(pos, fluidState.getType(), fluidState.getType().getTickDelay(level));
             }
-
             return true;
         }
         else

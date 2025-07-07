@@ -1,0 +1,16 @@
+{
+  "type": "premierpainmod:cooking_pot",
+  "fluidInput": {
+    "amount": 50,
+    "ingredient": {
+      "fluid": "minecraft:water"
+    }
+  },
+  "ingredient": {
+    "item": "minecraft:potato"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:baked_potato"
+  }
+}

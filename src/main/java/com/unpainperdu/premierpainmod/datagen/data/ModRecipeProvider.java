@@ -3,6 +3,8 @@ package com.unpainperdu.premierpainmod.datagen.data;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.VillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block.CookingPotBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.CookingPotRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerBrewingStationRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
@@ -24,6 +26,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -53,24 +56,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //testField
+        cookingPotRecipeBuilder(Fluids.WATER, Items.POTATO, Items.BAKED_POTATO);
         //fluid
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("pain_dieux_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("pain_dieux_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.WHEAT);
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("la_chateau_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("la_chateau_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.GLISTERING_MELON_SLICE, ItemRegister.ACHIOTE_FRUIT);
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("debier_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("debier_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.RABBIT_FOOT, ItemRegister.MOUNTAIN_CURRANT.get());
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("envahisseur_rouge_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("envahisseur_rouge_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.APPLE, Items.BLAZE_POWDER);
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("raspbuisson_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("raspbuisson_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.APPLE, Items.GLISTERING_MELON_SLICE, ItemRegister.CACTUS_FLOWER_FRUIT.get());
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("la_blanche_citadine_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("la_blanche_citadine_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.SUGAR_CANE, Items.BONE_MEAL);
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("crane_noir_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("crane_noir_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.IRON_INGOT, Items.INK_SAC);
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("tak_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("tak_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, ItemRegister.SKY_SPEARS_FRUIT.get(), Blocks.NETHERRACK.asItem());
-        BrewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("disender_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("disender_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.FEATHER, ItemRegister.JELLY_HAT.get());
         //item
         //beer
@@ -123,13 +127,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CURIOSITY_FLOWER, Items.MAGENTA_DYE);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.FALLING_HELICON_FLOWER, Items.RED_DYE, 2);
         //wood
-            //mountain_currant
+        //mountain_currant
         generateWoodRecipe(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP, ItemRegister.ITEM_MOUNTAIN_CURRANT_WOOD_TYPE_MAP, ModItemTags.MOUNTAIN_CURRANT_LOGS);
-            //moriche_palm
+        //moriche_palm
         generateWoodRecipe(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP, ItemRegister.ITEM_MORICHE_PALM_WOOD_TYPE_MAP, ModItemTags.MORICHE_PALM_LOGS);
-            //achiote
+        //achiote
         generateWoodRecipe(BlockRegister.ACHIOTE_WOOD_TYPE_MAP, ItemRegister.ITEM_ACHIOTE_WOOD_TYPE_MAP, ModItemTags.ACHIOTE_LOGS);
-            //all materials recipes
+        //all materials recipes
         for (Block block : ModBLockList.getAllMaterialsBlocks())
         {
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
@@ -767,7 +771,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     /**
      * @param itemLikes never reused existing recipe with more ingredients
      */
-    private void BrewingStationRecipeBuilder(FluidStack fluidInput, FluidStack fluidOutput, ItemLike... itemLikes)
+    private void brewingStationRecipeBuilder(FluidStack fluidInput, FluidStack fluidOutput, ItemLike... itemLikes)
     {
         String resultName = getName(fluidOutput);
         SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.single(fluidInput), 1000);
@@ -835,6 +839,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         hangingSignRecipeBuilder(woodItemMap.get("hanging_sign").get(), woodBlockMap.get("stripped_log").get());
         boatRecipeBuilder(woodItemMap.get("boat").get(), woodBlockMap.get("planks").get());
         boatWithChestRecipeBuilder(woodItemMap.get("chest_boat").get(), woodItemMap.get("boat").get());
+    }
+    private void cookingPotRecipeBuilder(Fluid fluidInput, ItemLike itemStackInput, ItemLike itemStackOutput)
+    {
+        cookingPotRecipeBuilder(fluidInput, itemStackInput, itemStackOutput, 1);
+    }
+    private void cookingPotRecipeBuilder(Fluid fluidInput, ItemLike itemStackInput, ItemLike itemStackOutput, int itemNumberOutput)
+    {
+        String resultName = getName(itemStackOutput.asItem());
+        SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.single(fluidInput), CookingPotBlockEntity.MB_CONSUMED_BY_RECIPE);
+        Ingredient ingredient = Ingredient.of(itemStackInput);
+        ItemStack itemStackResult = new ItemStack(itemStackOutput, itemNumberOutput);
+
+        new CookingPotRecipeBuilder(sizedFluidIngredient, ingredient, itemStackResult)
+                .unlockedBy("has_" + getName(itemStackInput.asItem()), has(itemStackInput))
+                .save(ModRecipeProvider.recipeOutput, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "cooking_pot_" + resultName));
     }
 
     private String getName(Block block)
