@@ -266,13 +266,13 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
     @Override
     public boolean canPlaceItemThroughFace(int index, @NotNull ItemStack itemStack, @Nullable Direction direction)
     {
-        return true;
+        return false;
     }
 
     @Override
     public boolean canTakeItemThroughFace(int index, @NotNull ItemStack stack, @NotNull Direction direction)
     {
-        return true;
+        return false;
     }
 
     @Override
