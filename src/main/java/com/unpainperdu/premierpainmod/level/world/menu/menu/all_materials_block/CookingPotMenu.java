@@ -7,6 +7,8 @@ import com.unpainperdu.premierpainmod.level.world.menu.slot.OnlyTheseItemsSlot;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -16,8 +18,12 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -138,5 +144,36 @@ public class CookingPotMenu extends AbstractContainerMenu
     public BlockState getState()
     {
         return Objects.requireNonNull(((BlockEntity) this.container).getLevel()).getBlockState(getPos());
+    }
+
+    @Override
+    public boolean clickMenuButton(@NotNull Player player, int id)
+    {
+        boolean isUsed = false;
+        if (id == 0)
+        {
+            Level level = this.entity.getLevel();
+            if (level != null)
+            {
+                FluidTank fluidTank = this.entity.getFluidTank();
+                if (level.isClientSide())
+                {
+                    fluidTank.setFluid(new FluidStack(Fluids.EMPTY, 0));
+                    level.playSound(player, this.entity.getBlockPos(), SoundEvents.UI_BUTTON_CLICK.value(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    isUsed = true;
+                }
+                else
+                {
+                    if (!fluidTank.isEmpty())
+                    {
+                        fluidTank.setFluid(new FluidStack(Fluids.EMPTY, 0));
+                        level.playSound(null, this.entity.getBlockPos(), SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        isUsed = true;
+                    }
+                }
+
+            }
+        }
+        return isUsed;
     }
 }

@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.client.gui.screen;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.client.gui.render.FluidTankRenderer;
+import com.unpainperdu.premierpainmod.client.util.tool_kit.MouseUtil;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.CookingPotMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -33,6 +34,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
         renderLit(guiGraphics);
         renderProgress(guiGraphics);
         renderFluidStack(guiGraphics);
+        renderButton(guiGraphics, mouseX, mouseY);
     }
 
     private static ResourceLocation loc(String path)
@@ -40,19 +42,33 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
         return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
     }
 
-    protected ResourceLocation getBackgroundTexture()
+    private ResourceLocation getBackgroundTexture()
     {
         return loc("textures/gui/container/functional_block/cooking_pot.png");
     }
 
-    protected ResourceLocation getArrowTexture()
+    private ResourceLocation getArrowTexture()
     {
         return loc("container/functional_block/cooking_pot/arrow");
     }
 
-    protected ResourceLocation getLitTexture()
+    private ResourceLocation getLitTexture()
     {
         return loc("container/functional_block/cooking_pot/lit");
+    }
+
+    private ResourceLocation getButtonTexture(boolean isHighlighted)
+    {
+        String path;
+        if (isHighlighted)
+        {
+            path = "container/functional_block/cooking_pot/button_lit";
+        }
+        else
+        {
+            path = "container/functional_block/cooking_pot/button_unlit";
+        }
+        return loc(path);
     }
 
     private void renderLit(GuiGraphics guiGraphics)
@@ -92,31 +108,58 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
         fluidRenderer.render(guiGraphics, leftPos + 58, topPos + 31, fluidStack);
     }
 
+    private void renderButton(GuiGraphics guiGraphics, int mouseX, int mouseY)
+    {
+        guiGraphics.blitSprite(getButtonTexture(isAboveBinButton(mouseX, mouseY)),  16, 16, 0, 0,leftPos + 28, topPos + 45, 16, 16);
+    }
+
     @Override
     protected void renderLabels(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY)
     {
         guiGraphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, 4210752, false);
         guiGraphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, 92, 4210752, false);
         renderFluidTooltipArea(guiGraphics, mouseX, mouseY, leftPos, topPos, menu.entity.getFluidTank().getFluid(), 58, 31, fluidRenderer);
+        renderBinButtonToolTipArea(guiGraphics, mouseX, mouseY);
     }
 
-    public void renderFluidTooltipArea(GuiGraphics guiGraphics, int pMouseX, int pMouseY, int x, int y,
+    private void renderFluidTooltipArea(GuiGraphics guiGraphics, int mouseX, int mouseY, int x, int y,
                                        FluidStack stack, int offsetX, int offsetY, FluidTankRenderer renderer)
     {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, offsetX, offsetY, renderer))
+        if (MouseUtil.isMouseAboveFluidArea(mouseX, mouseY, x, y, offsetX, offsetY, renderer))
         {
             guiGraphics.renderTooltip(this.font, renderer.getTooltip(stack, TooltipFlag.Default.NORMAL),
-                    Optional.empty(), pMouseX - x, pMouseY - y);
+                    Optional.empty(), mouseX - x, mouseY - y);
         }
     }
 
-    private static boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, FluidTankRenderer renderer)
+    private void renderBinButtonToolTipArea(GuiGraphics guiGraphics, int mouseX, int mouseY)
     {
-        return isMouseOver(pMouseX, pMouseY, x + offsetX, y + offsetY, renderer.getWidth(), renderer.getHeight());
+        if (isAboveBinButton(mouseX, mouseY))
+        {
+            Component component = Component.translatable("container.cooking_pot.bin_button");
+            guiGraphics.renderTooltip(this.font, component, mouseX - leftPos, mouseY - topPos);
+        }
     }
 
-    public static boolean isMouseOver(double mouseX, double mouseY, int x, int y, int sizeX, int sizeY)
+    @Override
+    public boolean mouseClicked(double mouseX, double mouseY, int button)
     {
-        return (mouseX >= x && mouseX <= x + sizeX) && (mouseY >= y && mouseY <= y + sizeY);
+        if (isAboveBinButton(mouseX, mouseY))
+        {
+            if (this.minecraft != null && this.minecraft.player != null && this.minecraft.gameMode != null)
+            {
+                if (this.menu.clickMenuButton(this.minecraft.player, 0))
+                {
+                    this.minecraft.gameMode.handleInventoryButtonClick(this.menu.containerId, 0);
+                    return true;
+                }
+            }
+        }
+        return super.mouseClicked(mouseX, mouseY, button);
+    }
+
+    private boolean isAboveBinButton(double mouseX, double mouseY)
+    {
+        return MouseUtil.isMouseOver(mouseX, mouseY, 28 + leftPos, 46 + topPos, 16 ,16);
     }
 }
