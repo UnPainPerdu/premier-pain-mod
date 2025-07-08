@@ -2,22 +2,25 @@ package com.unpainperdu.premierpainmod.integration.jei;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
-import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.helpers.IGuiHelper;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,29 +28,29 @@ import java.util.List;
 @JeiPlugin
 public class JEIPlugin implements IModPlugin
 {
-    private static final ResourceLocation PLUGIN_ID = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID,"jei_plugin");
+    private static final ResourceLocation PLUGIN_ID = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "jei_plugin");
+
     @Override
-    public ResourceLocation getPluginUid()
+    public @NotNull ResourceLocation getPluginUid()
     {
         return PLUGIN_ID;
     }
 
     @Override
-    public void registerRecipes(IRecipeRegistration registration)
+    public void registerRecipes(@NotNull IRecipeRegistration registration)
     {
-        RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
-        List<VillagerWorkshopRecipe> villagerWorkshopRecipes = holderToNotHolderVillagerWorkshop(manager.getAllRecipesFor(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE.get()));
-        registration.addRecipes(VillagerWorkshoppingCategory.VILLAGER_WORKSHOP_TYPE,villagerWorkshopRecipes);
-        List<VillagerBrewingStationRecipe> villagerBrewingStationRecipes = holderToNotHolderVillagerBrewingStation(manager.getAllRecipesFor(RecipeTypeRegister.VILLAGER_BREWING_STATION_RECIPE_TYPE.get()));
-        registration.addRecipes(VillagerBrewingStationCategory.VILLAGER_BREWING_STATION_TYPE, villagerBrewingStationRecipes);
-
+        register(registration, RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE.get(), JEIRecipeType.VILLAGER_WORKSHOP_TYPE);
+        register(registration, RecipeTypeRegister.VILLAGER_BREWING_STATION_RECIPE_TYPE.get(), JEIRecipeType.VILLAGER_BREWING_STATION_TYPE);
+        register(registration, RecipeTypeRegister.COOKING_POT_RECIPE_TYPE.get(), JEIRecipeType.COOKING_POT_STATION_TYPE);
     }
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration)
     {
-        registration.addRecipeCategories(new VillagerWorkshoppingCategory(registration.getJeiHelpers().getGuiHelper()));
-        registration.addRecipeCategories(new VillagerBrewingStationCategory(registration.getJeiHelpers().getGuiHelper()));
+        IGuiHelper helper = registration.getJeiHelpers().getGuiHelper();
+        registration.addRecipeCategories(new VillagerWorkshoppingCategory(helper));
+        registration.addRecipeCategories(new VillagerBrewingStationCategory(helper));
+        registration.addRecipeCategories(new CookingPotCategory(helper));
     }
 
     @Override
@@ -59,22 +62,22 @@ public class JEIPlugin implements IModPlugin
         {
             registration.addRecipeCatalyst(new ItemStack(block), JEIRecipeType.VILLAGER_BREWING_STATION_TYPE);
         }
+
+        registration.addRecipeCatalyst(new ItemStack(BlockRegister.COOKING_POT_BLOCK), JEIRecipeType.COOKING_POT_STATION_TYPE);
     }
 
-    private List<VillagerWorkshopRecipe> holderToNotHolderVillagerWorkshop(List<RecipeHolder<VillagerWorkshopRecipe>> list)
+    private <E extends RecipeInput, T extends Recipe<E>> void register(IRecipeRegistration registration, net.minecraft.world.item.crafting.RecipeType<T> vanillaRecipeType, RecipeType<T> jeiRecipeType)
     {
-        List<VillagerWorkshopRecipe> outputList = new ArrayList<>();
-        for(RecipeHolder<VillagerWorkshopRecipe> recipeHolder : list)
-        {
-            outputList.add(recipeHolder.value());
-        }
-        return outputList;
+        registration.addRecipes(jeiRecipeType, getAllRecipesFor(vanillaRecipeType));
     }
 
-    private List<VillagerBrewingStationRecipe> holderToNotHolderVillagerBrewingStation(List<RecipeHolder<VillagerBrewingStationRecipe>> list)
+    private <E extends RecipeInput, T extends Recipe<E>> List<T> getAllRecipesFor(net.minecraft.world.item.crafting.RecipeType<T> vanillaRecipeType)
     {
-        List<VillagerBrewingStationRecipe> outputList = new ArrayList<>();
-        for(RecipeHolder<VillagerBrewingStationRecipe> recipeHolder : list)
+        assert Minecraft.getInstance().level != null;
+        RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
+        List<T> outputList = new ArrayList<>();
+
+        for (RecipeHolder<T> recipeHolder : manager.getAllRecipesFor(vanillaRecipeType))
         {
             outputList.add(recipeHolder.value());
         }

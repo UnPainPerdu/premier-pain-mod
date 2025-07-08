@@ -17,37 +17,37 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.fluids.FluidStack;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class VillagerBrewingStationCategory implements IRecipeCategory<VillagerBrewingStationRecipe>
 {
-    public static ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID,"villager_brewing");
-    public static ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID,"textures/jei/gui/villager_brewing_station_jei.png");
-    public static final RecipeType<VillagerBrewingStationRecipe> VILLAGER_BREWING_STATION_TYPE = new RecipeType<>(UID, VillagerBrewingStationRecipe.class);
+
     private final IDrawable background;
     private final IDrawable icon;
 
     public VillagerBrewingStationCategory(IGuiHelper helper)
     {
-        this.background = helper.createDrawable(TEXTURE,0,0,146,69);
+        this.background = helper.createDrawable(getBackgroundTexture(), 0, 0, 146, 69);
         this.icon = helper.createDrawableItemStack(new ItemStack(ItemRegister.EMPTY_MUG.get()));
     }
+
     @Override
-    public RecipeType<VillagerBrewingStationRecipe> getRecipeType()
+    public @NotNull RecipeType<VillagerBrewingStationRecipe> getRecipeType()
     {
-        return VILLAGER_BREWING_STATION_TYPE;
+        return JEIRecipeType.VILLAGER_BREWING_STATION_TYPE;
     }
 
     @Override
-    public Component getTitle()
+    public @NotNull Component getTitle()
     {
-        return Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_brewing_station");
+        return Component.translatable("container." + PremierPainMod.MOD_ID + ".villager_brewing_station");
     }
 
     @Override
-    public void draw(VillagerBrewingStationRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY)
+    public void draw(@NotNull VillagerBrewingStationRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics guiGraphics, double mouseX, double mouseY)
     {
         this.background.draw(guiGraphics);
     }
@@ -71,18 +71,16 @@ public class VillagerBrewingStationCategory implements IRecipeCategory<VillagerB
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, VillagerBrewingStationRecipe recipe, IFocusGroup focuses)
+    public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull VillagerBrewingStationRecipe recipe, @NotNull IFocusGroup focuses)
     {
         int row = 3;
         int slotPerRow = 4;
-        for(int i = 0 ; i < row ; i++)
-        {
-            FluidStack inputFluid = recipe.getInputFluid().getFluids()[0];
-            builder.addSlot(RecipeIngredientRole.INPUT, 12 ,11 ).addFluidStack(inputFluid.getFluid(), inputFluid.getAmount());
-            builder.addSlot(RecipeIngredientRole.INPUT, 12 ,27 ).addFluidStack(inputFluid.getFluid(), inputFluid.getAmount());
-            builder.addSlot(RecipeIngredientRole.INPUT, 12 ,43 ).addFluidStack(inputFluid.getFluid(), inputFluid.getAmount());
 
-            for(int j = 0 ; j < slotPerRow ; j++)
+        FluidStack inputFluid = recipe.getInputFluid().getFluids()[0];
+        builder.addSlot(RecipeIngredientRole.INPUT, 12, 11).addFluidStack(inputFluid.getFluid(), inputFluid.getAmount()).setFluidRenderer(1000, true, 16, 48);
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < slotPerRow; j++)
             {
                 List<Ingredient> inputList = recipe.getInputItems();
                 Ingredient ingredient;
@@ -94,13 +92,15 @@ public class VillagerBrewingStationCategory implements IRecipeCategory<VillagerB
                 {
                     ingredient = Ingredient.of();
                 }
-                builder.addSlot(RecipeIngredientRole.INPUT,33 + j * 18 ,9 + i * 18).addIngredients(ingredient);
+                builder.addSlot(RecipeIngredientRole.INPUT, 33 + j * 18, 9 + i * 18).addIngredients(ingredient);
             }
-
-            FluidStack outputFluid = recipe.getResultFluid();
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 118 ,11 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 118 ,27 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 118 ,43 ).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount());
         }
+        FluidStack outputFluid = recipe.getResultFluid();
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 118, 11).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount()).setFluidRenderer(1000, true, 16, 48);
+    }
+
+    private static ResourceLocation getBackgroundTexture()
+    {
+        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/jei/gui/villager_brewing_station_jei.png");
     }
 }

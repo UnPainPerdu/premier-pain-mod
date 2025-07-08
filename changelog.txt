@@ -235,6 +235,7 @@ What would be a world without bugs ?
     - change made to villager brewing station :
         - clean screen with little animation
         - add sound when brew is done, when water is put in and when the liquid in is taken
+        - screen for JEI show the amount of fluid needed
 
 ## Fix :
     - Villager musical fridge has disc draw in disc slot now

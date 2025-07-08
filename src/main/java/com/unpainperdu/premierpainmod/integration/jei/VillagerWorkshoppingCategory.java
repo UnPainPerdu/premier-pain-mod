@@ -2,7 +2,6 @@ package com.unpainperdu.premierpainmod.integration.jei;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
-import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -17,36 +16,34 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class VillagerWorkshoppingCategory implements IRecipeCategory<VillagerWorkshopRecipe>
 {
-    public static ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID,"villager_workshopping");
-    public static ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID,"textures/jei/gui/villager_workshopping_jei.png");
-    public static final RecipeType<VillagerWorkshopRecipe> VILLAGER_WORKSHOP_TYPE = new RecipeType<>(UID, VillagerWorkshopRecipe.class);
     private final IDrawable background;
     private final IDrawable icon;
 
     public VillagerWorkshoppingCategory(IGuiHelper helper)
     {
-        this.background = helper.createDrawable(TEXTURE,0,0,76,18);
+        this.background = helper.createDrawable(getBackgroundTexture(), 0, 0, 76, 18);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BlockRegister.VILLAGER_WORKSHOP.get()));
     }
 
     @Override
-    public RecipeType<VillagerWorkshopRecipe> getRecipeType()
+    public @NotNull RecipeType<VillagerWorkshopRecipe> getRecipeType()
     {
-        return VILLAGER_WORKSHOP_TYPE;
+        return JEIRecipeType.VILLAGER_WORKSHOP_TYPE;
     }
 
     @Override
-    public Component getTitle()
+    public @NotNull Component getTitle()
     {
-        return Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_workshop");
+        return Component.translatable("container." + PremierPainMod.MOD_ID + ".villager_workshop");
     }
 
     @Override
-    public void draw(VillagerWorkshopRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY)
+    public void draw(@NotNull VillagerWorkshopRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics guiGraphics, double mouseX, double mouseY)
     {
         this.background.draw(guiGraphics);
     }
@@ -70,9 +67,14 @@ public class VillagerWorkshoppingCategory implements IRecipeCategory<VillagerWor
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, VillagerWorkshopRecipe recipe, IFocusGroup focuses)
+    public void setRecipe(IRecipeLayoutBuilder builder, VillagerWorkshopRecipe recipe, @NotNull IFocusGroup focuses)
     {
-        builder.addSlot(RecipeIngredientRole.INPUT,1,1).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.OUTPUT,59,1).addItemStack(recipe.getResultItem(null));
+        builder.addSlot(RecipeIngredientRole.INPUT, 1, 1).addIngredients(recipe.getIngredients().getFirst());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 59, 1).addItemStack(recipe.getResultItem(null));
+    }
+
+    private static ResourceLocation getBackgroundTexture()
+    {
+        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/jei/gui/villager_workshopping_jei.png");
     }
 }
