@@ -18,8 +18,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import java.util.Objects;
 
 public class PedestalBlockEntity extends BlockEntity implements Clearable
 {
@@ -41,14 +43,14 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
     }
 
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries)
+    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider pRegistries)
     {
         CompoundTag compoundtag = new CompoundTag();
         ContainerHelper.saveAllItems(compoundtag, this.items, true, pRegistries);
         return compoundtag;
     }
     @Override
-    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
+    protected void loadAdditional(@NotNull CompoundTag pTag, HolderLookup.@NotNull Provider pRegistries)
     {
         super.loadAdditional(pTag, pRegistries);
         this.items.clear();
@@ -56,24 +58,27 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
     }
 
     @Override
-    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
+    protected void saveAdditional(@NotNull CompoundTag pTag, HolderLookup.@NotNull Provider pRegistries)
     {
         super.saveAdditional(pTag, pRegistries);
         ContainerHelper.saveAllItems(pTag, this.items, true, pRegistries);
     }
     private void markUpdated()
     {
-        this.setChanged();
-        this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+        if (this.level != null)
+        {
+            this.setChanged();
+            this.level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+        }
     }
-    public boolean placeItem(@Nullable LivingEntity entity, ItemStack pstack)
+    public boolean placeItem(@Nullable LivingEntity entity, ItemStack itemStack)
     {
         for (int i = 0; i < this.items.size(); i++)
         {
             ItemStack itemstack = this.items.get(i);
-            if (itemstack.isEmpty())
+            if (itemstack.isEmpty() && this.level != null)
             {
-                this.items.set(i, pstack.consumeAndReturn(1, entity));
+                this.items.set(i, itemStack.consumeAndReturn(1, entity));
                 this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(entity, this.getBlockState()));
                 this.markUpdated();
                 return true;
@@ -81,16 +86,16 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
         }
         return false;
     }
-    public boolean removeItem(BlockPos pPos, Level level, @Nullable LivingEntity entity, ItemStack pstack)
+    public boolean removeItem(BlockPos pPos, Level level, @Nullable LivingEntity entity, ItemStack itemStack)
     {
         for (int i = 0; i < this.items.size(); i++)
         {
             ItemStack itemstack = this.items.get(i);
             if (!itemstack.isEmpty())
             {
-                Containers.dropContents(level, pPos, ((PedestalBlockEntity) level.getBlockEntity(pPos)).getItems());
-                this.items.set(i, pstack.consumeAndReturn(1, entity));
-                this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(entity, this.getBlockState()));
+                Containers.dropContents(level, pPos, ((PedestalBlockEntity) Objects.requireNonNull(level.getBlockEntity(pPos))).getItems());
+                this.items.set(i, itemStack.consumeAndReturn(1, entity));
+                level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(entity, this.getBlockState()));
                 this.markUpdated();
                 return true;
             }
@@ -107,21 +112,15 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
     }
 
     @Override
-    protected void applyImplicitComponents(BlockEntity.DataComponentInput pComponentInput) {
+    protected void applyImplicitComponents(BlockEntity.@NotNull DataComponentInput pComponentInput) {
         super.applyImplicitComponents(pComponentInput);
         pComponentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(this.getItems());
     }
 
     @Override
-    protected void collectImplicitComponents(DataComponentMap.Builder pComponents) {
+    protected void collectImplicitComponents(DataComponentMap.@NotNull Builder pComponents) {
         super.collectImplicitComponents(pComponents);
         pComponents.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItems()));
     }
-
-    @Override
-    public void removeComponentsFromTag(CompoundTag pTag) {
-        pTag.remove("Items");
-    }
-
 }
 
