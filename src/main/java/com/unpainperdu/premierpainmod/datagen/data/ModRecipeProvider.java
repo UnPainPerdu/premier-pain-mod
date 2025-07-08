@@ -56,7 +56,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //testField
-        cookingPotRecipeBuilder(Fluids.WATER, Items.POTATO, Items.BAKED_POTATO);
+        cookingPotRecipeBuilder(Fluids.WATER, 10, Items.POTATO, Items.BAKED_POTATO);
         //fluid
         brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("pain_dieux_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.WHEAT);
@@ -840,11 +840,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         boatRecipeBuilder(woodItemMap.get("boat").get(), woodBlockMap.get("planks").get());
         boatWithChestRecipeBuilder(woodItemMap.get("chest_boat").get(), woodItemMap.get("boat").get());
     }
-    private void cookingPotRecipeBuilder(Fluid fluidInput, ItemLike itemStackInput, ItemLike itemStackOutput)
+
+    private void cookingPotRecipeBuilder(Fluid fluidInput, int mBFluid, ItemLike itemStackInput, ItemLike itemStackOutput)
     {
-        cookingPotRecipeBuilder(fluidInput, itemStackInput, itemStackOutput, 1);
+        cookingPotRecipeBuilder(fluidInput, mBFluid, itemStackInput, itemStackOutput, 1);
     }
-    private void cookingPotRecipeBuilder(Fluid fluidInput, ItemLike itemStackInput, ItemLike itemStackOutput, int itemNumberOutput)
+
+    private void cookingPotRecipeBuilder(Fluid fluidInput, int mBFluid, ItemLike itemStackInput, ItemLike itemStackOutput, int itemNumberOutput)
     {
         String resultName = getName(itemStackOutput.asItem());
         SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.single(fluidInput), CookingPotBlockEntity.MB_CONSUMED_BY_RECIPE);

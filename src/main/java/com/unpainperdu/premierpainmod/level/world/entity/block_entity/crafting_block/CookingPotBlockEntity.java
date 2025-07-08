@@ -137,7 +137,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
         boolean changedByCraft_0 = false;
         boolean changedByCraft_1 = false;
         boolean changedByCraft_2 = false;
-        if (!fluidTank.isEmpty() && fluidTank.getFluidAmount() >= MB_CONSUMED_BY_RECIPE)
+        if (!fluidTank.isEmpty() && !blockEntity.getItem(1).isEmpty())
         {
             changedByCraft_0 = handleCraft(1, level, blockEntity, fluidTank);
         }
@@ -145,7 +145,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
         {
             blockEntity.setCookingTime(0, 0);
         }
-        if (!fluidTank.isEmpty() && fluidTank.getFluidAmount() >= MB_CONSUMED_BY_RECIPE)
+        if (!fluidTank.isEmpty() && !blockEntity.getItem(2).isEmpty())
         {
             changedByCraft_1 = handleCraft(2, level, blockEntity, fluidTank);
         }
@@ -153,7 +153,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
         {
             blockEntity.setCookingTime(1, 0);
         }
-        if (!fluidTank.isEmpty() && fluidTank.getFluidAmount() >= MB_CONSUMED_BY_RECIPE)
+        if (!fluidTank.isEmpty() && !blockEntity.getItem(3).isEmpty())
         {
             changedByCraft_2 = handleCraft(3, level, blockEntity, fluidTank);
         }
@@ -237,7 +237,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
             int resultIndexInItems = currentItemsIndex + 3;
             ItemStack itemResult = ((CookingPotRecipe) recipe.value()).assemble(new CookingPotInput(fluidStackInput, itemToCook), registryAccess);
             ItemStack itemInResultSlot = blockEntity.getItem(resultIndexInItems);
-            blockEntity.fluidTank.getFluid().shrink(50);
+            blockEntity.fluidTank.getFluid().shrink(((CookingPotRecipe) recipe.value()).getInputFluid().amount());
             itemToCook.shrink(1);
             if (itemInResultSlot.isEmpty())
             {
