@@ -25,7 +25,6 @@ import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
@@ -111,7 +110,7 @@ public class CookingPotMenu extends AbstractContainerMenu
     @Override
     public boolean stillValid(@NotNull Player player)
     {
-        return stillValid(ContainerLevelAccess.create(entity.getLevel(), entity.getBlockPos()), player, BlockRegister.COOKING_POT_BLOCK.get());
+        return stillValid(ContainerLevelAccess.create(Objects.requireNonNull(entity.getLevel()), entity.getBlockPos()), player, BlockRegister.COOKING_POT_BLOCK.get());
     }
 
     @Override
@@ -159,7 +158,7 @@ public class CookingPotMenu extends AbstractContainerMenu
                 if (level.isClientSide())
                 {
                     fluidTank.setFluid(new FluidStack(Fluids.EMPTY, 0));
-                    level.playSound(player, this.entity.getBlockPos(), SoundEvents.UI_BUTTON_CLICK.value(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.playSound(player, this.entity.getBlockPos(), SoundEvents.UI_BUTTON_CLICK.value(), SoundSource.BLOCKS, 0.5F, 1.0F);
                     isUsed = true;
                 }
                 else
