@@ -257,8 +257,6 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
             {
                 itemInResultSlot.grow(1);
             }
-
-            playSound(blockEntity.getLevel(), blockEntity.getBlockPos(), SoundEvents.GENERIC_BURN);
             return true;
         }
         else
