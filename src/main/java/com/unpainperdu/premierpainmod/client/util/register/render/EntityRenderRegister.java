@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.client.util.register.render.entity;
+package com.unpainperdu.premierpainmod.client.util.register.render;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem.MountainCurrantGolemModel;

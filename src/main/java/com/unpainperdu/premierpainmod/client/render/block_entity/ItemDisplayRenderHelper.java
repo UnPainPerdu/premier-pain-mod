@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.client.render.render_block_entity;
+package com.unpainperdu.premierpainmod.client.render.block_entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.core.Direction;

@@ -11,7 +11,7 @@ import com.unpainperdu.premierpainmod.client.particle.beer_particle.red.RedBeerF
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.white.WhiteBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
 import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem.MountainCurrantGolemRender;
-import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
+import com.unpainperdu.premierpainmod.client.util.register.render.BlockEntityRenderRegister;
 import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.BeerFluidType;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
@@ -27,7 +27,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
-import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredHolder;

@@ -1,7 +1,8 @@
-package com.unpainperdu.premierpainmod.client.render.render_block_entity;
+package com.unpainperdu.premierpainmod.client.render.block_entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.Direction;
 
 //xyz is the same as shape of block
@@ -193,5 +194,33 @@ public class FluidDisplayRenderHelper
                     packedLight, packedOverlay
             );
         }
+    }
+
+    /**
+     * drawFace relative to direction of block.
+     * xz1 is the first corner in coo pixel.
+     * xz2 is the second corner in coo pixel.
+     * y is the high
+     **/
+    public static void drawFaceRelativelyHorizontally(VertexConsumer builder, TextureAtlasSprite sprite, PoseStack poseStack,
+                                                      float x1, float y, float z1,
+                                                      float x2, float z2,
+                                                      int tintColor, int packedLight, int packedOverlay,
+                                                      Direction direction
+    )
+    {
+        float minU = sprite.getU(x1/16F);
+        float maxU = sprite.getU(x2/16F);
+        float minV = sprite.getV(z1/16F);
+        float maxV = sprite.getV(z2/16F);
+
+        FluidDisplayRenderHelper.drawFaceRelatively(builder, poseStack,
+                x1, y, z1,
+                x2, y, z2,
+                minU, minV,
+                maxU, maxV,
+                tintColor, packedLight,packedOverlay,
+                direction
+        );
     }
 }
