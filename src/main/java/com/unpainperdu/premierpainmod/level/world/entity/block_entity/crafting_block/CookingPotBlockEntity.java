@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
+import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
@@ -19,6 +20,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -64,6 +66,8 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
     public static final int MB_CONSUMED_BY_RECIPE = 10;
     private final List<Integer> cookingTime = setupCookingTimeList();
 
+    private static float soundInterval;
+
     public final ContainerData dataAccess = new ContainerData()
     {
         @Override
@@ -104,6 +108,12 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
     {
         boolean hasChanged = false;
         FluidTank fluidTank = blockEntity.getFluidTank();
+        //soundPart
+        if (canPlaySound(level, state, fluidTank))
+        {
+            RandomSource rand = level.getRandom();
+            playSound(level, pos, SoundEvents.BUBBLE_COLUMN_UPWARDS_AMBIENT, 0.5F + rand.nextFloat(), rand.nextFloat() * 0.7F + 0.6F);
+        }
         NonNullList<ItemStack> itemStacks = blockEntity.getItems();
         //tank part
         //input
@@ -161,7 +171,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
         {
             blockEntity.setCookingTime(2, 0);
         }
-        if (changedByCraft_0||changedByCraft_1||changedByCraft_2)
+        if (changedByCraft_0 || changedByCraft_1 || changedByCraft_2)
         {
             hasChanged = true;
         }
@@ -417,7 +427,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
     public void onDataPacket(@NotNull Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.@NotNull Provider lookupProvider)
     {
         CompoundTag tag = pkt.getTag();
-        loadAdditional(tag == null ? new CompoundTag() : tag, lookupProvider);
+        loadAdditional(tag, lookupProvider);
     }
 
     @Nullable
@@ -437,11 +447,35 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
         super.setChanged();
     }
 
-    private static void playSound(Level level, BlockPos pos, SoundEvent pSound)
+    private static void playSound(Level level, BlockPos pos, SoundEvent sound)
+    {
+        playSound(level, pos, sound, 1.0F, 1.0F);
+    }
+
+    private static void playSound(Level level, BlockPos pos, SoundEvent sound, float volume, float pitch)
     {
         if (level != null)
         {
-            level.playSound(null, pos, pSound, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.playSound(null, pos, sound, SoundSource.BLOCKS, volume, pitch);
         }
+    }
+
+    /**
+     * used to play sound when lit and full of fluid
+     */
+    private static boolean canPlaySound(Level level, BlockState state, FluidTank fluidTank)
+    {
+        boolean canPlaySound = false;
+        if (state.getValue(BlockStateProperties.LIT) && !fluidTank.isEmpty())
+        {
+            RandomSource rand = level.getRandom();
+            soundInterval += 1;
+            if (soundInterval >= (10 * (RandomUtil.getRandomPositiveIntInRange(3, rand) + 1)))
+            {
+                soundInterval = 0;
+                return true;
+            }
+        }
+        return canPlaySound;
     }
 }
