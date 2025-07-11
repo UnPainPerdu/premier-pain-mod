@@ -20,7 +20,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("itemGroup.premierpainmod", "Premier Pain mod");
         //gui
         add("container." + PremierPainMod.MOD_ID + ".villager_workshop", "Villager workshop");
-        //container
+        add("container." + PremierPainMod.MOD_ID + "cooking_pot.bin_button", "Empty fluid tank without refund");
         add("container." + PremierPainMod.MOD_ID + ".villager_drawer", "Villager drawer");
         add("container." + PremierPainMod.MOD_ID + ".villager_brewing_station", "Brewing station");
         add("container." + PremierPainMod.MOD_ID + ".villager_musical_fridge", "Musical fridge");

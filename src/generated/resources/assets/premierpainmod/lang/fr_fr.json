@@ -654,6 +654,7 @@
   "container.premierpainmod.villager_drawer": "Tiroir du villageois",
   "container.premierpainmod.villager_musical_fridge": "Frigo musical",
   "container.premierpainmod.villager_workshop": "Atelier du villageois",
+  "container.premierpainmodcooking_pot.bin_button": "Vide le réservoir sans récupérer le fluide",
   "death.attack.premierpainmod:liberty_damage1": "%s était un socialiste",
   "death.attack.premierpainmod:liberty_damage2": "%s voulait une tasse de LIBER-THÉ",
   "death.attack.premierpainmod:liberty_damage3": "%s n'a pas saluer le drapeau de la Super-Terre",

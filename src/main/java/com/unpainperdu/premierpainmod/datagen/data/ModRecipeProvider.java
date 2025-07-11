@@ -119,6 +119,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         shapelessRecipeBuilder(ItemRegister.FRUITS_BOWL, ItemRegister.CACTUS_FLOWER_FRUIT, 1, Items.BOWL, ItemRegister.CACTUS_FLOWER_FRUIT, Items.SWEET_BERRIES, Items.GLOW_BERRIES, Items.APPLE);
         //block
         villagerWorkshopRecipeBuilder();
+        cookingPotBlockRecipeBuilder();
         //misc
         oneItemToAnotherOneRecipeInFurnaceBuilder(BlockRegister.FLOWERED_CACTUS_BLOCK, Items.GREEN_DYE, RecipeCategory.MISC, 0.2f, 300);
         //flower to colorant
@@ -839,6 +840,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         hangingSignRecipeBuilder(woodItemMap.get("hanging_sign").get(), woodBlockMap.get("stripped_log").get());
         boatRecipeBuilder(woodItemMap.get("boat").get(), woodBlockMap.get("planks").get());
         boatWithChestRecipeBuilder(woodItemMap.get("chest_boat").get(), woodItemMap.get("boat").get());
+    }
+
+    private void cookingPotBlockRecipeBuilder()
+    {
+        Block craftedBlock = BlockRegister.COOKING_POT_BLOCK.get();
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(craftedBlock, 1))
+                .define('1', Items.IRON_INGOT)
+                .define('2', Items.WOODEN_SHOVEL)
+                .pattern("121")
+                .pattern("111")
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(ModRecipeProvider.recipeOutput);
     }
 
     private void cookingPotRecipeBuilder(Fluid fluidInput, int mBFluid, ItemLike itemStackInput, ItemLike itemStackOutput)

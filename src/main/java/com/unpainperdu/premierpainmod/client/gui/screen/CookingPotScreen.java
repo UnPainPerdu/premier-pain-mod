@@ -76,7 +76,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
         boolean isLit = this.menu.getState().getValue(BlockStateProperties.LIT);
         if (isLit)
         {
-            guiGraphics.blitSprite(getLitTexture(), 14, 14, 0, 0,leftPos + 58, topPos + 77, 14, 14);
+            guiGraphics.blitSprite(getLitTexture(), 14, 14, 0, 0, leftPos + 58, topPos + 77, 14, 14);
         }
     }
 
@@ -99,7 +99,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     private void renderArrow(int indexOfCookingTime, GuiGraphics guiGraphics)
     {
         int j = this.menu.getBrewingProgress(indexOfCookingTime);
-        guiGraphics.blitSprite(getArrowTexture(), 26, 10, 0, 0,leftPos + 113, topPos + 21 + (indexOfCookingTime*24), j, 10);
+        guiGraphics.blitSprite(getArrowTexture(), 26, 10, 0, 0, leftPos + 113, topPos + 21 + (indexOfCookingTime * 24), j, 10);
     }
 
     private void renderFluidStack(GuiGraphics guiGraphics)
@@ -110,7 +110,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
 
     private void renderButton(GuiGraphics guiGraphics, int mouseX, int mouseY)
     {
-        guiGraphics.blitSprite(getButtonTexture(isAboveBinButton(mouseX, mouseY)),  16, 16, 0, 0,leftPos + 28, topPos + 45, 16, 16);
+        guiGraphics.blitSprite(getButtonTexture(isAboveBinButton(mouseX, mouseY)), 16, 16, 0, 0, leftPos + 28, topPos + 45, 16, 16);
     }
 
     @Override
@@ -123,7 +123,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     }
 
     private void renderFluidTooltipArea(GuiGraphics guiGraphics, int mouseX, int mouseY, int x, int y,
-                                       FluidStack stack, int offsetX, int offsetY, FluidTankRenderer renderer)
+                                        FluidStack stack, int offsetX, int offsetY, FluidTankRenderer renderer)
     {
         if (MouseUtil.isMouseAboveFluidArea(mouseX, mouseY, x, y, offsetX, offsetY, renderer))
         {
@@ -136,7 +136,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     {
         if (isAboveBinButton(mouseX, mouseY))
         {
-            Component component = Component.translatable("container.cooking_pot.bin_button");
+            Component component = Component.translatable("container." + PremierPainMod.MOD_ID + "cooking_pot.bin_button");
             guiGraphics.renderTooltip(this.font, component, mouseX - leftPos, mouseY - topPos);
         }
     }
@@ -160,6 +160,6 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
 
     private boolean isAboveBinButton(double mouseX, double mouseY)
     {
-        return MouseUtil.isMouseOver(mouseX, mouseY, 28 + leftPos, 46 + topPos, 16 ,16);
+        return MouseUtil.isMouseOver(mouseX, mouseY, 28 + leftPos, 46 + topPos, 16, 16);
     }
 }
