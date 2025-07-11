@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.client.render.block_entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.unpainperdu.premierpainmod.client.util.tool_kit.render.FluidDisplayRenderHelper;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
 import net.minecraft.client.Minecraft;
@@ -19,11 +20,12 @@ import net.minecraft.world.level.material.FluidState;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
+import org.jetbrains.annotations.NotNull;
 
 public class VillagerBrewingStationRender implements BlockEntityRenderer<VillagerBrewingStationBlockEntity>
 {
     @Override
-    public void render(VillagerBrewingStationBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay)
+    public void render(VillagerBrewingStationBlockEntity blockEntity, float partialTick, @NotNull PoseStack poseStack, @NotNull MultiBufferSource buffer, int packedLight, int packedOverlay)
     {
 
         FluidTank tank = blockEntity.getFluidTank();
@@ -34,10 +36,6 @@ public class VillagerBrewingStationRender implements BlockEntityRenderer<Village
         }
         IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid.getFluid());
         ResourceLocation stillTexture = fluidTypeExtensions.getStillTexture(fluid);
-        if (stillTexture == null)
-        {
-            return;
-        }
         Level level = blockEntity.getLevel();
         if (level == null)
         {

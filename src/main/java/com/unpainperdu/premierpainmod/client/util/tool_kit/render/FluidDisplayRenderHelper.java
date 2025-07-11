@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.client.render.block_entity;
+package com.unpainperdu.premierpainmod.client.util.tool_kit.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
