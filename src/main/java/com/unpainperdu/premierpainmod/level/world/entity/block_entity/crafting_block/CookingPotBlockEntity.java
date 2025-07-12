@@ -13,7 +13,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -394,22 +393,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements R
     @Override
     public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider registries)
     {
-        CompoundTag tag = new CompoundTag();
-        saveAdditional(tag, registries);
-        return tag;
-    }
-
-    @Override
-    public void handleUpdateTag(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider lookupProvider)
-    {
-        loadAdditional(tag, lookupProvider);
-    }
-
-    @Override
-    public void onDataPacket(@NotNull Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.@NotNull Provider lookupProvider)
-    {
-        CompoundTag tag = pkt.getTag();
-        loadAdditional(tag, lookupProvider);
+        return saveWithoutMetadata(registries);
     }
 
     @Nullable
