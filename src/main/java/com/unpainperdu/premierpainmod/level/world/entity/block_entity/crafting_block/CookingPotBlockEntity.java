@@ -25,6 +25,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
@@ -103,6 +104,12 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements R
     protected @NotNull AbstractContainerMenu createMenu(int containerId, @NotNull Inventory inventory)
     {
         return new CookingPotMenu(containerId, inventory, this);
+    }
+
+    @Override
+    public boolean canOpen(@NotNull Player player)
+    {
+        return !player.isSpectator();
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, CookingPotBlockEntity blockEntity)

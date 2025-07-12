@@ -241,6 +241,7 @@ What would be a world without bugs ?
     - Villager musical fridge has disc draw in disc slot now
     - Moriche palm and achiote brazero has metal top now
     - La Chateau recipe is fixed
+    - Block entity with fluid can no longer be open in spectator to avoid connection crash (no better fix than that for now)
 
 ## Note :
     - Fluids background code has been reworked, please report any change you notice
