@@ -230,6 +230,8 @@ What would be a world without bugs ?
 
 ## Add :
     - Mountain Currant Golem, a farm helper which randomly use fre bone meal on your crop, build it with 3 stripped log with a carved pumpkin on top
+    - Cooking pot, a crafting block which take fluid and 1 item to craft an another
+    - moriche palm oil, the bucket is crafted with 4 moriche palm fruit and a bucket
 
 ## Change :
     - change made to villager brewing station :
