@@ -8,7 +8,10 @@ import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import net.minecraft.core.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
@@ -22,7 +25,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -53,7 +55,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CookingPotBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, RecipeCraftingHolder, StackedContentsCompatible
+public class CookingPotBlockEntity extends BaseContainerBlockEntity implements RecipeCraftingHolder, StackedContentsCompatible
 {
     public static final int FLUID_INPUT = 0;
     public static final int[] ITEM_INPUT = new int[]{1, 2, 3};
@@ -263,24 +265,6 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements W
         {
             return false;
         }
-    }
-
-    @Override
-    public int @NotNull [] getSlotsForFace(@NotNull Direction side)
-    {
-        return new int[0];
-    }
-
-    @Override
-    public boolean canPlaceItemThroughFace(int index, @NotNull ItemStack itemStack, @Nullable Direction direction)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean canTakeItemThroughFace(int index, @NotNull ItemStack stack, @NotNull Direction direction)
-    {
-        return false;
     }
 
     @Override
