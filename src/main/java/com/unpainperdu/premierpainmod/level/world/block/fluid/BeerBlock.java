@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.block;
+package com.unpainperdu.premierpainmod.level.world.block.fluid;
 
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.FlowingFluid;

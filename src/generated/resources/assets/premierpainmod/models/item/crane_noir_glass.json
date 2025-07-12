@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/beer/glass/crane_noir_glass"
+    "layer0": "premierpainmod:item/fluid/beer/glass/crane_noir_glass"
   }
 }

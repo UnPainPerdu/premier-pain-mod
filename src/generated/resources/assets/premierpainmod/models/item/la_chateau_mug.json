@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/beer/mug/la_chateau_mug"
+    "layer0": "premierpainmod:item/fluid/beer/mug/la_chateau_mug"
   }
 }

@@ -1,13 +1,13 @@
 package com.unpainperdu.premierpainmod.datagen.asset.model;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
+import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
-import net.minecraft.data.PackOutput;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
@@ -23,11 +23,14 @@ public class ModItemStateProvider extends ItemModelProvider
     @Override
     protected void registerModels()
     {
+        //fluid
+        //oil
+        item(ItemRegister.MORICHE_PALM_OIL_BUCKET.get(), "fluid/");
         //beer
-            //empty
-        item(ItemRegister.EMPTY_GLASS.get(),"beer/glass/");
-        item(ItemRegister.EMPTY_BOTTLE.get(),"beer/bottle/");
-        item(ItemRegister.EMPTY_MUG.get(),"beer/mug/");
+        //empty
+        item(ItemRegister.EMPTY_GLASS.get(), "fluid/beer/glass/");
+        item(ItemRegister.EMPTY_BOTTLE.get(), "fluid/beer/bottle/");
+        item(ItemRegister.EMPTY_MUG.get(), "fluid/beer/mug/");
         beerItems("la_chateau");
         beerItems("debier");
         beerItems("envahisseur_rouge");
@@ -39,14 +42,13 @@ public class ModItemStateProvider extends ItemModelProvider
         beerItems("tak");
         beerItems("disender");
         //food
-            //item
         vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());
         vegetationFoodItem(ItemRegister.CACTUS_FLOWER_FRUIT.get());
         vegetationFoodItem(ItemRegister.JELLY_HAT.get());
         vegetationFoodItem(ItemRegister.MOUNTAIN_CURRANT.get());
         vegetationFoodItem(ItemRegister.MORICHE_PALM_FRUIT.get());
         vegetationFoodItem(ItemRegister.ACHIOTE_FRUIT.get());
-            //stew
+        //stew
         stewFoodItem(ItemRegister.JELLYSHROOM_STEW.get());
         stewFoodItem(ItemRegister.CACTUS_STEW.get());
         stewFoodItem(ItemRegister.POTATOES_AND_SPEARS_BOWL.get());
@@ -57,12 +59,18 @@ public class ModItemStateProvider extends ItemModelProvider
         woodItems("achiote");
 
         //spawn_eggs
-        item(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_egg").get(),"spawn_egg/");
+        item(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_egg").get(), "spawn_egg/");
 
-        for(Item item : ModItemList.ALL_ITEMS)
+        for (Item item : ModItemList.ALL_ITEMS)
         {
-            if(item instanceof VillagerShelfItem) {villagerShelfItem(item);}
-            if(item instanceof VillagerSingingStone){villagerSingingStone(item);}
+            if (item instanceof VillagerShelfItem)
+            {
+                villagerShelfItem(item);
+            }
+            if (item instanceof VillagerSingingStone)
+            {
+                villagerSingingStone(item);
+            }
         }
     }
 
@@ -71,9 +79,10 @@ public class ModItemStateProvider extends ItemModelProvider
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/"+ folder + name);
+                .texture("layer0", "item/" + folder + name);
     }
-     /***
+
+    /***
      * path with /textures/ as root
      ***/
     private void itemWithTexturePath(Item item, String path)
@@ -81,7 +90,7 @@ public class ModItemStateProvider extends ItemModelProvider
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0",path);
+                .texture("layer0", path);
     }
 
     private void villagerShelfItem(Item item)
@@ -89,7 +98,7 @@ public class ModItemStateProvider extends ItemModelProvider
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/all_materials_block_item/villager_shelf/" + name);
+                .texture("layer0", "item/all_materials_block_item/villager_shelf/" + name);
     }
 
     private void villagerSingingStone(Item item)
@@ -97,32 +106,32 @@ public class ModItemStateProvider extends ItemModelProvider
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0","item/villager_singing_stone/" + name);
+                .texture("layer0", "item/villager_singing_stone/" + name);
     }
 
     private void vegetationFoodItem(Item item)
     {
-        item(item,"food/vegetation/");
+        item(item, "food/vegetation/");
     }
 
     private void stewFoodItem(Item item)
     {
-        item(item,"food/stew/");
+        item(item, "food/stew/");
     }
 
     /**
      * will generate item state
      * for beerId_bucket
-     *     beerId_glass
-     *     beerId_bottle
-     *     beerId_mug
-     * */
+     * beerId_glass
+     * beerId_bottle
+     * beerId_mug
+     */
     private void beerItems(String beerId)
     {
-        item(getItemFromId(beerId + "_bucket"),"beer/bucket/");
-        item(getItemFromId(beerId + "_glass"),"beer/glass/");
-        item(getItemFromId(beerId + "_bottle"),"beer/bottle/");
-        item(getItemFromId(beerId + "_mug"),"beer/mug/");
+        item(getItemFromId(beerId + "_bucket"), "fluid/beer/bucket/");
+        item(getItemFromId(beerId + "_glass"), "fluid/beer/glass/");
+        item(getItemFromId(beerId + "_bottle"), "fluid/beer/bottle/");
+        item(getItemFromId(beerId + "_mug"), "fluid/beer/mug/");
     }
 
     private void woodItems(String woodId)
@@ -145,6 +154,6 @@ public class ModItemStateProvider extends ItemModelProvider
 
     private String getName(Item item)
     {
-        return BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID +":","");
+        return BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
     }
 }

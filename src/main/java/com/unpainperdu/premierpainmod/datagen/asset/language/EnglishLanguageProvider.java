@@ -39,6 +39,10 @@ public class EnglishLanguageProvider extends LanguageProvider
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(), "Don't fear the depth");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Madness");
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(), "Enough! I have endured more than enough...");
+        //fluid
+        //oil
+        add(PremierPainMod.MOD_ID + ".block.description.moriche_palm_oil_type", "Moriche Palm Oil");
+        add(ItemRegister.MORICHE_PALM_OIL_BUCKET.get(), "Moriche Palm Oil Bucket");
         //beer
         //empty
         add(ItemRegister.EMPTY_GLASS.get(), "Empty Polymorphic Glass");

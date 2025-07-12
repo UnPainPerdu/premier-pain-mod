@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/beer/mug/envahisseur_rouge_mug"
+    "layer0": "premierpainmod:item/fluid/beer/mug/envahisseur_rouge_mug"
   }
 }

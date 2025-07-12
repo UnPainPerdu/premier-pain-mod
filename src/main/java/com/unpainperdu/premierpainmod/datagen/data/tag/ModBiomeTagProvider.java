@@ -58,6 +58,7 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
         super.addTags(pProvider);
     }
 
+    @SafeVarargs
     private void generateTagsForOverWorldBiome(ResourceKey<Biome> biome, TagKey<Biome> ... tags)
     {
         for(TagKey<Biome> tag : tags)

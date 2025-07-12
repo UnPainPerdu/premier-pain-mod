@@ -13,10 +13,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.BoatItem;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -93,6 +90,10 @@ public class ModItemTagProvider extends ItemTagsProvider
             if (item.components().has(DataComponents.FOOD))
             {
                 this.tag(Tags.Items.FOODS).add(item);
+            }
+            if (item instanceof BucketItem)
+            {
+                this.tag(Tags.Items.BUCKETS);
             }
         }
 

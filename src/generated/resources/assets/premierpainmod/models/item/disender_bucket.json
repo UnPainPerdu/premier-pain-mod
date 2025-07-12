@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/beer/bucket/disender_bucket"
+    "layer0": "premierpainmod:item/fluid/beer/bucket/disender_bucket"
   }
 }

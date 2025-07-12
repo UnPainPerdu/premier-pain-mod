@@ -43,7 +43,7 @@ public class DataGatherer
         generator.addProvider(event.includeServer(), new ModSoundProvider(packOutput,fileHelper));
         generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModDataMap(packOutput, lookupProvider));
-        generator.addProvider(event.includeServer(), new ModFluidTag(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModFluidTag(packOutput, lookupProvider, fileHelper));
         generator.addProvider(event.includeClient(), new ModParticleDescriptionProvider(packOutput, fileHelper));
 
         ModDataPackProvider.onGatherData(event);

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_flowered_cactus_block": {
+    "has_green_dye": {
       "conditions": {
         "items": [
           {
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:flowered_cactus_block_furnace"
+        "recipe": "premierpainmod:green_dye_furnace"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_flowered_cactus_block"
+      "has_green_dye"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:flowered_cactus_block_furnace"
+      "premierpainmod:green_dye_furnace"
     ]
   }
 }

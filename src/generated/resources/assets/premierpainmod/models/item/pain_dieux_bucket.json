@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/beer/bucket/pain_dieux_bucket"
+    "layer0": "premierpainmod:item/fluid/beer/bucket/pain_dieux_bucket"
   }
 }

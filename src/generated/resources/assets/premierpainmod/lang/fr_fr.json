@@ -730,6 +730,7 @@
   "item.premierpainmod.moriche_palm_boat": "Bateau en palmier-bâche",
   "item.premierpainmod.moriche_palm_chest_boat": "Bateau de stockage en palmier-bâche",
   "item.premierpainmod.moriche_palm_fruit": "Fruit de palmier-bâche",
+  "item.premierpainmod.moriche_palm_oil_bucket": "Seau d'huile de palmier-bâche",
   "item.premierpainmod.mountain_currant": "Groseille des montagnes",
   "item.premierpainmod.mountain_currant_boat": "Bateau en groseillier des montagnes",
   "item.premierpainmod.mountain_currant_chest_boat": "Bateau de stockage en groseillier des montagnes",
@@ -755,6 +756,7 @@
   "premierpainmod.block.description.envahisseur_rouge_type": "Envahisseur Rouge",
   "premierpainmod.block.description.la_blanche_citadine_type": "La Blanche Citadine",
   "premierpainmod.block.description.la_chateau_type": "La Chateau",
+  "premierpainmod.block.description.moriche_palm_oil_type": "Huile de palmier-bâche",
   "premierpainmod.block.description.pain_dieux_type": "Pain Dieux",
   "premierpainmod.block.description.raspbuisson_type": "RaspBuisson",
   "premierpainmod.block.description.tak_type": "Tak"

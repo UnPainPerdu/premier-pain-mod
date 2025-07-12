@@ -14,7 +14,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 
-public class BeerFluidType extends AbstractFluidType
+public class OilFluidType extends AbstractFluidType
 {
     private final ResourceLocation stillTexture = ResourceLocation.parse("block/water_still");
     private final ResourceLocation flowingTexture = ResourceLocation.parse("block/water_flow");
@@ -24,13 +24,13 @@ public class BeerFluidType extends AbstractFluidType
     private final int tintColor;
     private final Vector3f fogColor;
 
-    public BeerFluidType(Properties properties, int tintColor, Vector3f fogColor)
+    public OilFluidType(Properties properties, int tintColor, Vector3f fogColor)
     {
         super(properties);
         this.tintColor = tintColor;
         this.fogColor = fogColor;
-        this.fogStart = 3f;
-        this.fogEnd = 5f;
+        this.fogStart = 1f;
+        this.fogEnd = 3f;
     }
 
     @Override
@@ -45,7 +45,6 @@ public class BeerFluidType extends AbstractFluidType
         return false;
     }
 
-    @Override
     public IClientFluidTypeExtensions register()
     {
         return new IClientFluidTypeExtensions()

@@ -58,6 +58,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //testField
         cookingPotRecipeBuilder(Fluids.WATER, 10, Items.POTATO, Items.BAKED_POTATO);
         //fluid
+        //beer
         brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("pain_dieux_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.WHEAT);
         brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("la_chateau_fluid"), 1000)
@@ -77,6 +78,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("disender_fluid"), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.FEATHER, ItemRegister.JELLY_HAT.get());
         //item
+        //fluid
+        //oil
+        shapelessRecipeBuilder(ItemRegister.MORICHE_PALM_OIL_BUCKET, ItemRegister.MORICHE_PALM_FRUIT, 1, Items.BUCKET, ItemRegister.MORICHE_PALM_FRUIT, ItemRegister.MORICHE_PALM_FRUIT, ItemRegister.MORICHE_PALM_FRUIT, ItemRegister.MORICHE_PALM_FRUIT);
         //beer
         //empty
         createEmptyBeerContainer();
@@ -571,8 +575,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     /**
      * Use it if the recipe may result a vanilla item
-     *
-     * @name add itself at the name of folder name
+     * add "x from y" to json name
      **/
     private void oneItemToAnotherOneRecipeBuilder(ItemLike resource, ItemLike result)
     {
@@ -595,8 +598,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     */
     private void oneItemToAnotherOneRecipeInFurnaceBuilder(ItemLike resource, ItemLike result, RecipeCategory recipeCategory, float exp, int cookingTime)
     {
-        String resultName = BuiltInRegistries.BLOCK.getKey((Block) ((DeferredBlock<Block>) resource).get()).toString().replace(PremierPainMod.MOD_ID + ":", "");
-
+        String resultName = getName(result.asItem());
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(resource), recipeCategory, result, exp, cookingTime)
                 .unlockedBy("has_" + resultName, has(resource))
                 .save(ModRecipeProvider.recipeOutput, "premierpainmod:" + resultName + "_furnace");
@@ -604,7 +606,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private void shapelessRecipeBuilder(ItemLike result, ItemLike unlockItem, int numberOutput, ItemLike... resource)
     {
-        String resultName = BuiltInRegistries.ITEM.getKey((Item) ((DeferredItem<Item>) result).get()).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        String resultName = getName(result.asItem());
 
         ShapelessRecipeBuilder shapelessRecipeBuilder = ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput);
         for (ItemLike r : resource)

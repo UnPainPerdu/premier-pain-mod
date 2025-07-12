@@ -39,6 +39,10 @@ public class FrenchLanguageProvider extends LanguageProvider
         descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(), "N'ais pas peur des profondeurs");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(), "Pierre chantante du villageois foux");
         descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(), "Assez! J'en ai enduré bien assez...");
+        //fluid
+        //oil
+        add(PremierPainMod.MOD_ID + ".block.description.moriche_palm_oil_type", "Huile de palmier-bâche");
+        add(ItemRegister.MORICHE_PALM_OIL_BUCKET.get(), "Seau d'huile de palmier-bâche");
         //beer
         //empty
         add(ItemRegister.EMPTY_GLASS.get(), "Verre vide polymorphe");

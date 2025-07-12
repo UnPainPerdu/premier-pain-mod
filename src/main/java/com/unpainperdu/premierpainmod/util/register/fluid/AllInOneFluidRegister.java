@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.util.register.fluid;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.*;
+import com.unpainperdu.premierpainmod.level.world.fluid.oil.MorichePalmOilFluid;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
@@ -18,6 +19,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 import static com.unpainperdu.premierpainmod.util.register.fluid.FluidTypeRegister.BEER_TYPE;
+import static com.unpainperdu.premierpainmod.util.register.fluid.FluidTypeRegister.OIL_TYPE;
 
 public class AllInOneFluidRegister
 {
@@ -48,10 +50,11 @@ public class AllInOneFluidRegister
         registerNewFluid("crane_noir", BEER_TYPE, CraneNoirFluid.Source::new, CraneNoirFluid.Flowing::new, 0xf12c1a04, new Vector3f(44f / 255f, 26f / 255f, 04f / 255f));
         registerNewFluid("tak", BEER_TYPE, TakFluid.Source::new, TakFluid.Flowing::new, 0xf1fa7700, new Vector3f(250f / 255f, 119f / 255f, 0));
         registerNewFluid("disender", BEER_TYPE, DisEnderFluid.Source::new, DisEnderFluid.Flowing::new, 0xf1ac08cc, new Vector3f(172f / 255f, 8f / 255f, 204f / 255f));
+        registerNewFluid(MorichePalmOilFluid.NAME, OIL_TYPE, MorichePalmOilFluid.Source::new, MorichePalmOilFluid.Flowing::new, 0xff1e1700, new Vector3f(14f / 255f, 23f/255f, 0f));
         return true;
     }
 
-    private static <T extends Fluid> void registerNewFluid(String name, String type, Supplier<Fluid> source, Supplier<Fluid> flowing, int tintColor, Vector3f fogColor)
+    private static void registerNewFluid(String name, String type, Supplier<Fluid> source, Supplier<Fluid> flowing, int tintColor, Vector3f fogColor)
     {
         FluidRegister.registerFluid(name, source, flowing);
         FluidTypeRegister.fluidTypeRegister(name, type, tintColor, fogColor);

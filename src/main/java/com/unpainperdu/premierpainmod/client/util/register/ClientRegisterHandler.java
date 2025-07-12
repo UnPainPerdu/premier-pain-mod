@@ -12,6 +12,7 @@ import com.unpainperdu.premierpainmod.client.particle.beer_particle.white.WhiteB
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
 import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem.MountainCurrantGolemRender;
 import com.unpainperdu.premierpainmod.client.util.register.render.BlockEntityRenderRegister;
+import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.AbstractFluidType;
 import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.BeerFluidType;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
@@ -71,9 +72,9 @@ public class ClientRegisterHandler
         for (DeferredHolder<FluidType, FluidType> fluidTypeHolder : FLUID_TYPES.values())
         {
             FluidType fluidType = fluidTypeHolder.get();
-            if (fluidType instanceof BeerFluidType beerFluidType)
+            if (fluidType instanceof AbstractFluidType abstractFluidType)
             {
-                event.registerFluidType(beerFluidType.register(), fluidType);
+                event.registerFluidType(abstractFluidType.register(), fluidType);
             }
         }
     }

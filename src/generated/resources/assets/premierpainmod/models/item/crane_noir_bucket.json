@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/beer/bucket/crane_noir_bucket"
+    "layer0": "premierpainmod:item/fluid/beer/bucket/crane_noir_bucket"
   }
 }

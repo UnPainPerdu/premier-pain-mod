@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "premierpainmod:moriche_palm_fruit"
+    },
+    {
+      "item": "premierpainmod:moriche_palm_fruit"
+    },
+    {
+      "item": "premierpainmod:moriche_palm_fruit"
+    },
+    {
+      "item": "premierpainmod:moriche_palm_fruit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:moriche_palm_oil_bucket"
+  }
+}
