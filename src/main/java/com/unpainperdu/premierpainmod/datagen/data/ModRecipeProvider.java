@@ -57,7 +57,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //cooking_pot
-        cookingPotRecipeBuilder(FLUIDS.get(MorichePalmOilFluid.NAME + "_fluid").get(), 10, Items.POTATO, ItemRegister.FRIES);
+        cookingPotRecipeBuilder(FLUIDS.get(MorichePalmOilFluid.NAME + "_fluid").get(), 10, Items.POTATO, ItemRegister.HALF_COOKED_FRIES);
+        cookingPotRecipeBuilder(FLUIDS.get(MorichePalmOilFluid.NAME + "_fluid").get(), 10, ItemRegister.HALF_COOKED_FRIES, ItemRegister.FRIES);
         cookingPotRecipeBuilder(Fluids.WATER, 10, Items.POTATO, Items.BAKED_POTATO);
         //fluid
         //beer

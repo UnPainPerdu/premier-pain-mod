@@ -7,10 +7,10 @@
     }
   },
   "ingredient": {
-    "item": "premierpainmod:half_cooked_fries"
+    "item": "minecraft:potato"
   },
   "result": {
     "count": 1,
-    "id": "premierpainmod:fries"
+    "id": "premierpainmod:half_cooked_fries"
   }
 }

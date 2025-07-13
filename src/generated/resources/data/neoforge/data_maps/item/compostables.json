@@ -78,6 +78,9 @@
     "premierpainmod:fruits_bowl": {
       "chance": 0.1
     },
+    "premierpainmod:half_cooked_fries": {
+      "chance": 0.1
+    },
     "premierpainmod:jelly_hat": {
       "chance": 0.1
     },

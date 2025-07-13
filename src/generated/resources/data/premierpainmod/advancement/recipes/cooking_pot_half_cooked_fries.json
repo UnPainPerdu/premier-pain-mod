@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_half_cooked_fries": {
+    "has_potato": {
       "conditions": {
         "items": [
           {
-            "items": "premierpainmod:half_cooked_fries"
+            "items": "minecraft:potato"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "premierpainmod:cooking_pot_fries"
+        "recipe": "premierpainmod:cooking_pot_half_cooked_fries"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_half_cooked_fries"
+      "has_potato"
     ]
   ],
   "rewards": {
     "recipes": [
-      "premierpainmod:cooking_pot_fries"
+      "premierpainmod:cooking_pot_half_cooked_fries"
     ]
   }
 }
