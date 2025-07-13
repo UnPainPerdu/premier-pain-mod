@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block.CookingPotBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.fluid.oil.MorichePalmOilFluid;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.CookingPotRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerBrewingStationRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
@@ -55,7 +56,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(@NotNull RecipeOutput pRecipeOutput)
     {
         ModRecipeProvider.recipeOutput = pRecipeOutput;
-        //testField
+        //cooking_pot
+        cookingPotRecipeBuilder(FLUIDS.get(MorichePalmOilFluid.NAME + "_fluid").get(), 10, Items.POTATO, ItemRegister.FRIES);
         cookingPotRecipeBuilder(Fluids.WATER, 10, Items.POTATO, Items.BAKED_POTATO);
         //fluid
         //beer
@@ -112,6 +114,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         shapelessRecipeBuilder(ItemRegister.DISENDER_BOTTLE, ItemRegister.DISENDER_BUCKET, 4, ItemRegister.DISENDER_BUCKET, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE, ItemRegister.EMPTY_BOTTLE);
         shapelessRecipeBuilder(ItemRegister.DISENDER_GLASS, ItemRegister.DISENDER_BOTTLE, 1, ItemRegister.DISENDER_BOTTLE, ItemRegister.EMPTY_GLASS);
         //food
+        shapelessRecipeBuilder(ItemRegister.FRIES_CONE, ItemRegister.FRIES, 1, Items.PAPER, ItemRegister.FRIES, ItemRegister.FRIES, ItemRegister.FRIES);
         //vegetation
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CACTUS_FLOWER_BLOCK, ItemRegister.CACTUS_FLOWER_FRUIT);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.SKY_SPEARS_FLOWER, ItemRegister.SKY_SPEARS_FRUIT);

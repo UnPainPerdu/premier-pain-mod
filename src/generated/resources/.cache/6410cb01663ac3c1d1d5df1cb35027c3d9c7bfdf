@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-12T21:36:16.3334784	Item Models: premierpainmod
+// 1.21.1	2025-07-13T11:08:14.2093695	Item Models: premierpainmod
 8c73037c00ef33837d5eda43f190076431a19b74 assets/premierpainmod/models/item/acacia_villager_shelf.json
 d5046ad1543beffc09ef837fbb34a7f7a837d175 assets/premierpainmod/models/item/achiote_boat.json
 848f6b2a224aafca1816d6165076b96800f5dd61 assets/premierpainmod/models/item/achiote_chest_boat.json
@@ -46,6 +46,8 @@ e4856cbef9c9e32fef6b28f81821ad0b39da47d2 assets/premierpainmod/models/item/envah
 5b1cb6d5287e706a24d35c3e6d07ffcd6254f25f assets/premierpainmod/models/item/envahisseur_rouge_bucket.json
 4e21f4d572767575eb5b87a120f8cec7947e4b27 assets/premierpainmod/models/item/envahisseur_rouge_glass.json
 2fd5d0e9eac8f9f0a9ed67a7076be467ecfc5cfb assets/premierpainmod/models/item/envahisseur_rouge_mug.json
+f00d63ebc9e567d46e0c22c687a3027c4af4f8e2 assets/premierpainmod/models/item/fries.json
+55c8e6881e4628ef2786a5b811574556f8c5f90a assets/premierpainmod/models/item/fries_cone.json
 ede00b82cf8e686e6e9bf70e1f7b3063901132a7 assets/premierpainmod/models/item/fruits_bowl.json
 010629db075e523a2ea8fcc17089c53b3da7aea4 assets/premierpainmod/models/item/gold_block_villager_shelf.json
 6ad87a51f9d85100f08148850f2b3ec791630e24 assets/premierpainmod/models/item/granite_villager_shelf.json

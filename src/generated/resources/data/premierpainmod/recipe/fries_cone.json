@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "premierpainmod:fries"
+    },
+    {
+      "item": "premierpainmod:fries"
+    },
+    {
+      "item": "premierpainmod:fries"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:fries_cone"
+  }
+}

@@ -130,6 +130,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.disender_bottle", "It's special but tasty.");
         add("item.description.disender_mug", "Fresh and foamy");
         //food
+        add(ItemRegister.FRIES.get(), "Fries");
+        add(ItemRegister.FRIES_CONE.get(), "Fries Cone");
         //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky Spears Fruit");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Cactus Flower Fruit");

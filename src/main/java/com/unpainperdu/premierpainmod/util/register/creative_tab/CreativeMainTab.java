@@ -55,8 +55,10 @@ public class CreativeMainTab
         generateVegetation(output);
         //wood and tree
         generateWood(output);
-        //all materials
+        //crafting machine
         output.accept(BlockRegister.VILLAGER_WORKSHOP.get());
+        output.accept(BlockRegister.COOKING_POT_BLOCK.get());
+        //all materials
         generateAllMaterials(output);
 
     }
