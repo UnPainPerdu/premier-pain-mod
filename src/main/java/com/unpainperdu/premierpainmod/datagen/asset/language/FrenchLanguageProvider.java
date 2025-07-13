@@ -130,6 +130,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("item.description.disender_bottle", "C'est spécial mais gouteux.");
         add("item.description.disender_mug", "Fraix et mousseux");
         //food
+        add(ItemRegister.FRIES.get(), "Frites");
+        add(ItemRegister.FRIES_CONE.get(), "Cornet de frites");
         //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Fruit de lances du ciel");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Fruit de fleure de cactus");

@@ -97,6 +97,8 @@ public class ItemRegister
     public static final DeferredItem<Item> DISENDER_BOTTLE = bottleBeerRegister("disender_bottle", MobEffects.SLOW_FALLING, 2, 1);
     public static final DeferredItem<Item> DISENDER_MUG = mugBeerRegister("disender_mug", MobEffects.SLOW_FALLING, 2, 1);
     //food
+    public static final DeferredItem<Item> FRIES = basicFoodItemRegister("fries", 64, 5, 0.6f);
+    public static final DeferredItem<Item> FRIES_CONE = basicFoodItemRegister("fries_cone", 1, 15, 1f);
     //vegetation
     public static final DeferredItem<Item> CACTUS_FLOWER_FRUIT = basicFoodItemRegister("cactus_flower_fruit", 64, 4, 0.3f);
     public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit", 64, 4, 0.3f);

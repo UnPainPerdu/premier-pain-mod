@@ -42,6 +42,8 @@ public class ModItemStateProvider extends ItemModelProvider
         beerItems("tak");
         beerItems("disender");
         //food
+        item(ItemRegister.FRIES.asItem(), "food/");
+        item(ItemRegister.FRIES_CONE.asItem(), "food/");
         vegetationFoodItem(ItemRegister.SKY_SPEARS_FRUIT.get());
         vegetationFoodItem(ItemRegister.CACTUS_FLOWER_FRUIT.get());
         vegetationFoodItem(ItemRegister.JELLY_HAT.get());

@@ -10,6 +10,7 @@ import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
@@ -66,6 +67,10 @@ public class ModCompostableProvider
                     || block instanceof SaplingBlock)
         {
             addToCompostable(item, 0.3f);
+        }
+        else if (item.components().has(DataComponents.FOOD))
+        {
+            addToCompostable(item, 0.1f);
         }
     }
 
