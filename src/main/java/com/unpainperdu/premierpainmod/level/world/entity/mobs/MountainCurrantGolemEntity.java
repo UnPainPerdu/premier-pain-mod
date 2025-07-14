@@ -1,24 +1,32 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
+import com.mojang.serialization.Dynamic;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.brain.MountainCurrantGolemBrain;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.goal.UseBoneMealOnCropGoal;
 import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.animal.armadillo.Armadillo;
+import net.minecraft.world.entity.animal.armadillo.ArmadilloAi;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MountainCurrantGolemEntity extends AbstractGolem
@@ -32,6 +40,7 @@ public class MountainCurrantGolemEntity extends AbstractGolem
     }
 
     //TODO transform it into new brain system
+    /*
     @Override
     protected void registerGoals()
     {
@@ -45,12 +54,39 @@ public class MountainCurrantGolemEntity extends AbstractGolem
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
     }
 
+     */
+
+    @Override
+    protected Brain.@NotNull Provider<MountainCurrantGolemEntity> brainProvider()
+    {
+        return MountainCurrantGolemBrain.brainProvider();
+    }
+
+    @Override
+    protected @NotNull Brain<?> makeBrain(@NotNull Dynamic<?> dynamic)
+    {
+        return MountainCurrantGolemBrain.makeBrain(this.brainProvider().makeBrain(dynamic));
+    }
+
     public static AttributeSupplier.Builder createAttributes()
     {
         return LivingEntity.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 50)
                 .add(Attributes.MOVEMENT_SPEED, 0.25)
                 .add(Attributes.FOLLOW_RANGE, 24);
+    }
+
+    @Override
+    protected void customServerAiStep()
+    {
+        this.level().getProfiler().push("mountainCurrantGolemBrain");
+        ((Brain<MountainCurrantGolemEntity>)this.brain).tick((ServerLevel)this.level(), this);
+        this.level().getProfiler().pop();
+        this.level().getProfiler().push("mountainCurrantGolemActivityUpdate");
+        MountainCurrantGolemBrain.updateActivity(this);
+        this.level().getProfiler().pop();
+
+        super.customServerAiStep();
     }
 
     private void setupAnimationStates()
