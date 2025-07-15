@@ -1,13 +1,12 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
-import com.mojang.serialization.Dynamic;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.brain.MountainCurrantGolemBrain;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.goal.UseBoneMealOnCropGoal;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.InvalidLookTargetMemory;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
 import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
+import com.unpainperdu.premierpainmod.util.tool_kit.BrainActivityCreator;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
@@ -15,24 +14,38 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.armadillo.Armadillo;
-import net.minecraft.world.entity.animal.armadillo.ArmadilloAi;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.entity.schedule.Activity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
+import net.tslat.smartbrainlib.api.SmartBrainOwner;
+import net.tslat.smartbrainlib.api.core.BrainActivityGroup;
+import net.tslat.smartbrainlib.api.core.SmartBrainProvider;
+import net.tslat.smartbrainlib.api.core.behaviour.FirstApplicableBehaviour;
+import net.tslat.smartbrainlib.api.core.behaviour.OneRandomBehaviour;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.look.LookAtTarget;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.misc.Idle;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.misc.InvalidateMemory;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.move.MoveToWalkTarget;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.path.SetRandomWalkTarget;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetPlayerLookTarget;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetRandomLookTarget;
+import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
+import net.tslat.smartbrainlib.api.core.sensor.custom.NearbyBlocksSensor;
+import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class MountainCurrantGolemEntity extends AbstractGolem
+import java.util.List;
+import java.util.Map;
+
+public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBrainOwner<MountainCurrantGolemEntity>
 {
     public final AnimationState boneMealingAnimationState = new AnimationState();
-    private int boneMealingAnimationTimeout = 0;
 
     public MountainCurrantGolemEntity(EntityType<? extends AbstractGolem> entityType, Level level)
     {
@@ -55,17 +68,72 @@ public class MountainCurrantGolemEntity extends AbstractGolem
     }
 
      */
+    //https://github.com/Tslat/SmartBrainLib/wiki/Making-an-Entity-With-SmartBrainLib
+    @Override
+    public List<ExtendedSensor<MountainCurrantGolemEntity>> getSensors()
+    {
+        return ObjectArrayList.of(
+                new NearbyLivingEntitySensor<MountainCurrantGolemEntity>()    // Keep track of nearby entities the golem is interested in
+                        .setPredicate((target, entity) ->
+                                target instanceof Player ||
+                                        target instanceof Villager ||
+                                        target instanceof IronGolem),
+                new NearbyBlocksSensor<MountainCurrantGolemEntity>().setRadius(15) // Keep track of nearby block the golem is interested in
+        );
+    }
+
+    @Override
+    public BrainActivityGroup<MountainCurrantGolemEntity> getCoreTasks() // These are the tasks that run all the time (usually)
+    {
+        return BrainActivityGroup.coreTasks(
+                new LookAtTarget<>(),// Have the entity turn to face and look at its current look target
+                new MoveToWalkTarget<>()// Walk towards the current walk target
+        );
+    }
+
+    @Override
+    public BrainActivityGroup<MountainCurrantGolemEntity> getIdleTasks() // These are the tasks that run when the mob isn't doing anything else (usually)
+    {
+        return BrainActivityGroup.idleTasks(
+                new FirstApplicableBehaviour<MountainCurrantGolemEntity>(      // Run only one of the below behaviours, trying each one in order. Include the generic type because JavaC is silly
+                        new SetEntityLookTarget<>(5),
+                        new SetRandomLookTarget<>()),         // Set a random look target
+                new OneRandomBehaviour<>(                 // Run a random task from the below options
+                        new SetRandomWalkTarget<>(),          // Set a random walk target to a nearby position
+                        new Idle<>().runFor(entity -> entity.getRandom().nextInt(90, 200))), // Do nothing in tick
+                new InvalidLookTargetMemory<>(5)
+        );
+    }
+
+    private BrainActivityGroup<MountainCurrantGolemEntity> getWorkTasks()
+    {
+        return BrainActivityCreator.workTasks(
+
+        );
+    }
+
+    @Override
+    public Map<Activity, BrainActivityGroup<? extends MountainCurrantGolemEntity>> getAdditionalTasks()
+    {
+        return Map.of(Activity.WORK, getWorkTasks());
+    }
+
+    @Override
+    public List<Activity> getActivityPriorities()
+    {
+        return ObjectArrayList.of(Activity.WORK, Activity.IDLE);
+    }
 
     @Override
     protected Brain.@NotNull Provider<MountainCurrantGolemEntity> brainProvider()
     {
-        return MountainCurrantGolemBrain.brainProvider();
+        return new SmartBrainProvider<>(this);
     }
 
     @Override
-    protected @NotNull Brain<?> makeBrain(@NotNull Dynamic<?> dynamic)
+    protected void customServerAiStep()
     {
-        return MountainCurrantGolemBrain.makeBrain(this.brainProvider().makeBrain(dynamic));
+        tickBrain(this);
     }
 
     public static AttributeSupplier.Builder createAttributes()
@@ -77,37 +145,11 @@ public class MountainCurrantGolemEntity extends AbstractGolem
     }
 
     @Override
-    protected void customServerAiStep()
-    {
-        this.level().getProfiler().push("mountainCurrantGolemBrain");
-        ((Brain<MountainCurrantGolemEntity>)this.brain).tick((ServerLevel)this.level(), this);
-        this.level().getProfiler().pop();
-        this.level().getProfiler().push("mountainCurrantGolemActivityUpdate");
-        MountainCurrantGolemBrain.updateActivity(this);
-        this.level().getProfiler().pop();
-
-        super.customServerAiStep();
-    }
-
-    private void setupAnimationStates()
-    {
-        if (this.boneMealingAnimationTimeout >= 61)
-        {
-            this.boneMealingAnimationTimeout--;
-            this.boneMealingAnimationState.start(this.tickCount);
-        }
-        else if (this.boneMealingAnimationTimeout >= 0)
-        {
-            this.boneMealingAnimationTimeout--;
-        }
-    }
-
-    @Override
     public void handleEntityEvent(byte id)
     {
         if (id == 4)
         {
-            this.boneMealingAnimationTimeout = 61;
+            this.boneMealingAnimationState.start(this.tickCount);
         }
         else
         {
@@ -134,6 +176,10 @@ public class MountainCurrantGolemEntity extends AbstractGolem
         }
     }
 
+    private void setupAnimationStates()
+    {
+    }
+
     @Override
     protected int decreaseAirSupply(int air)
     {
@@ -142,13 +188,13 @@ public class MountainCurrantGolemEntity extends AbstractGolem
 
     @Nullable
     @Override
-    protected SoundEvent getHurtSound(DamageSource damageSource)
+    protected SoundEvent getHurtSound(@NotNull DamageSource damageSource)
     {
         return SoundEventRegister.MCG_HURT.get();
     }
 
     @Override
-    protected void playStepSound(BlockPos pos, BlockState state)
+    protected void playStepSound(@NotNull BlockPos pos, @NotNull BlockState state)
     {
         this.playSound(SoundEventRegister.MCG_WALK.get(), 1.0F, 1.0F);
     }
