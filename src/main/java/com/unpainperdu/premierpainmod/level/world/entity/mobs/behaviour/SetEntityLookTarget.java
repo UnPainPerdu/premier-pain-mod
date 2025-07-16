@@ -13,6 +13,7 @@ import net.tslat.smartbrainlib.util.BrainUtils;
 
 import java.util.List;
 import java.util.function.BiPredicate;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -27,6 +28,7 @@ public class SetEntityLookTarget<E extends LivingEntity> extends ExtendedBehavio
     protected Predicate<LivingEntity> predicate = pl -> true;
     protected LivingEntity target = null;
     private final double maxDistanceSight;
+    protected Function<E, Integer> lookTime = entity -> entity.getRandom().nextInt(40) + 20;
 
     public SetEntityLookTarget(double maxDistanceSight)
     {
@@ -79,7 +81,7 @@ public class SetEntityLookTarget<E extends LivingEntity> extends ExtendedBehavio
     @Override
     protected void start(E entity)
     {
-        BrainUtils.setMemory(entity, MemoryModuleType.LOOK_TARGET, new EntityTracker(this.target, true));
+        BrainUtils.setForgettableMemory(entity, MemoryModuleType.LOOK_TARGET, new EntityTracker(this.target, true),this.lookTime.apply(entity));
     }
 
     @Override
