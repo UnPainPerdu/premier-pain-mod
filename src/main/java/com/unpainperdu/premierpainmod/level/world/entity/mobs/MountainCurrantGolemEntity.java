@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
+import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityFollowTargetWhenItemInHand;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
 import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
@@ -7,6 +8,7 @@ import com.unpainperdu.premierpainmod.util.tool_kit.BrainActivityCreator;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
@@ -21,6 +23,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.schedule.Activity;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.tslat.smartbrainlib.api.SmartBrainOwner;
 import net.tslat.smartbrainlib.api.core.BrainActivityGroup;
@@ -76,7 +80,7 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
                                 target instanceof Player ||
                                         target instanceof Villager ||
                                         target instanceof IronGolem),
-                new NearbyBlocksSensor<MountainCurrantGolemEntity>().setRadius(15) // Keep track of nearby block the golem is interested in
+                new NearbyBlocksSensor<MountainCurrantGolemEntity>().setRadius(15).setPredicate(this::isValidBlockToBoneMeal) // Keep track of nearby block the golem is interested in
         );
     }
 
@@ -119,7 +123,10 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
     @Override
     public List<Activity> getActivityPriorities()
     {
-        return ObjectArrayList.of(Activity.WORK, Activity.IDLE);
+        return ObjectArrayList.of(
+                //Activity.WORK,
+                Activity.IDLE
+        );
     }
 
     @Override
@@ -155,12 +162,9 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
         }
     }
 
-    public void isBoneMealing(boolean isBoneMealing)
+    public void StartBoneMealing()
     {
-        if (isBoneMealing)
-        {
-            this.level().broadcastEntityEvent(this, (byte) 4);
-        }
+        this.level().broadcastEntityEvent(this, (byte) 4);
     }
 
     @Override
@@ -209,5 +213,20 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
     protected SoundEvent getAmbientSound()
     {
         return SoundEventRegister.MCG_AMBIENT.get();
+    }
+
+    private boolean isValidBlockToBoneMeal(BlockState state, LivingEntity livingEntity)
+    {
+        boolean isValidBlockToBoneMeal = false;
+        Block block = state.getBlock();
+        if (block instanceof AbstractCropLikeBlock crop)
+        {
+            isValidBlockToBoneMeal = !crop.isMaxAge(state);
+        }
+        else if (block instanceof CropBlock crop)
+        {
+            isValidBlockToBoneMeal = !crop.isMaxAge(state);
+        }
+        return state.is(BlockTags.BEE_GROWABLES) && isValidBlockToBoneMeal;
     }
 }

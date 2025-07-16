@@ -15,6 +15,6 @@ public class BrainActivityCreator
     @SafeVarargs
     public static  <T extends LivingEntity & SmartBrainOwner<T>>BrainActivityGroup<T> workTasks(Behavior<T>... behaviours)
     {
-        return new BrainActivityGroup<T>(Activity.CORE).priority(10).behaviours(behaviours);
+        return new BrainActivityGroup<T>(Activity.WORK).priority(10).behaviours(behaviours);
     }
 }

@@ -123,7 +123,7 @@ public class UseBoneMealOnCropGoal extends Goal
     {
         if (this.mob instanceof MountainCurrantGolemEntity golem)
         {
-            golem.isBoneMealing(bool);
+            //golem.isBoneMealing(bool);
         }
     }
 

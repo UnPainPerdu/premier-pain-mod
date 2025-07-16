@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModTerraBlender;
+import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
+import com.unpainperdu.premierpainmod.util.register.ai.SensorsTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.codec.CodecForGLMRegister;
@@ -37,5 +39,7 @@ public class RegisterHandler
         FoliagePlacerTypesRegister.register(modEventBus);
         AllInOneFluidRegister.register(modEventBus);
         ParticleTypeRegister.register(modEventBus);
+        MemoryModuleTypeRegister.register(modEventBus);
+        SensorsTypeRegister.register(modEventBus);
     }
 }
