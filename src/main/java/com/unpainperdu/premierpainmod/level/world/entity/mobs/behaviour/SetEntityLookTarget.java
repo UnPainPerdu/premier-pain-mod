@@ -58,7 +58,7 @@ public class SetEntityLookTarget<E extends LivingEntity> extends ExtendedBehavio
         return this.target != null;
     }
 
-    protected boolean defaultPredicate(E entity, LivingEntity livingEntity)
+    private boolean defaultPredicate(E entity, LivingEntity livingEntity)
     {
         if (entity.hasPassenger(livingEntity))
             return false;

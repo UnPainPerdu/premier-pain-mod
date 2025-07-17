@@ -1,10 +1,12 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.BoneMealingField;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityFollowTargetWhenItemInHand;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityGoToBlockAndMemorizeIt;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
 import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
-import com.unpainperdu.premierpainmod.util.tool_kit.BrainActivityCreator;
+import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
@@ -16,6 +18,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
+import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
@@ -54,22 +58,6 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
         super(entityType, level);
     }
 
-    //TODO transform it into new brain system
-    /*
-    @Override
-    protected void registerGoals()
-    {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new TemptGoal(this, 1.25, s -> s.is(Items.EMERALD), false));
-        this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
-        this.goalSelector.addGoal(2, new UseBoneMealOnCropGoal(this));
-        this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6F));
-        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Villager.class, 6F));
-        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, IronGolem.class, 6F));
-        this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-    }
-
-     */
     //https://github.com/Tslat/SmartBrainLib/wiki/Making-an-Entity-With-SmartBrainLib
     @Override
     public List<ExtendedSensor<MountainCurrantGolemEntity>> getSensors()
@@ -98,20 +86,27 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
     {
         return BrainActivityGroup.idleTasks(
                 new FirstApplicableBehaviour<MountainCurrantGolemEntity>(      // Run only one of the below behaviours, trying each one in order. Include the generic type because JavaC is silly
+                        new SetEntityGoToBlockAndMemorizeIt<>().closeEnoughWhen((e, p) -> 0),
                         new SetEntityFollowTargetWhenItemInHand<>(Items.EMERALD, 10),
                         new SetEntityLookTarget<>(5),
                         new SetRandomLookTarget<>()),         // Set a random look target
                 new OneRandomBehaviour<>(                 // Run a random task from the below options
                         new SetRandomWalkTarget<>(),          // Set a random walk target to a nearby position
-                        new Idle<>().runFor(entity -> entity.getRandom().nextInt(90, 100))) // Do nothing in tick
+                        new Idle<>().runFor(entity -> entity.getRandom().nextInt(60, 100))) // Do nothing in tick
         );
     }
 
     private BrainActivityGroup<MountainCurrantGolemEntity> getWorkTasks()
     {
-        return BrainActivityCreator.workTasks(
-
-        );
+        return new BrainActivityGroup<MountainCurrantGolemEntity>(Activity.WORK)
+                .priority(10)
+                .behaviours(
+                        new BoneMealingField<>()
+                )
+                .requireAndWipeMemoriesOnUse(MemoryModuleTypeRegister.CHOSEN_BLOCK.get())
+                .onlyStartWithMemoryStatus(MemoryModuleTypeRegister.BONE_MEALING_CD.get(), MemoryStatus.VALUE_ABSENT)
+                .onlyStartWithMemoryStatus(MemoryModuleType.WALK_TARGET, MemoryStatus.VALUE_ABSENT)
+                ;
     }
 
     @Override
@@ -124,7 +119,7 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
     public List<Activity> getActivityPriorities()
     {
         return ObjectArrayList.of(
-                //Activity.WORK,
+                Activity.WORK,
                 Activity.IDLE
         );
     }
@@ -160,11 +155,6 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
         {
             super.handleEntityEvent(id);
         }
-    }
-
-    public void StartBoneMealing()
-    {
-        this.level().broadcastEntityEvent(this, (byte) 4);
     }
 
     @Override
