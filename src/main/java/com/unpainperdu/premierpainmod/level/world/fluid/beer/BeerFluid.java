@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.fluid.beer;
 
+import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.util.RandomSource;
@@ -12,8 +13,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.WaterFluid;
 import net.neoforged.neoforge.fluids.FluidType;
-
-import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.*;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class BeerFluid extends WaterFluid
 {
@@ -28,45 +28,42 @@ public abstract class BeerFluid extends WaterFluid
     public abstract String getName();
 
     @Override
-    public Fluid getFlowing()
+    public @NotNull Fluid getFlowing()
     {
-        String flowingFluidName = "flowing_" + getName() + "_fluid";
-        return FLUIDS.get(flowingFluidName).get();
+        return AllInOneFluidRegister.getFluidFromRegisteredFluidName(getName()).getSecond().get();
     }
 
     @Override
-    public Fluid getSource()
+    public @NotNull Fluid getSource()
     {
-        String fluidName = getName() + "_fluid";
-        return FLUIDS.get(fluidName).get();
+        return AllInOneFluidRegister.getFluidFromRegisteredFluidName(getName()).getFirst().get();
     }
 
     @Override
-    public FluidType getFluidType()
+    public @NotNull FluidType getFluidType()
     {
-        String fluidTypeName = getName() + "_type";
-        return FLUID_TYPES.get(fluidTypeName).get();
+        return AllInOneFluidRegister.getFluidTypeFromRegisteredFluidName(getName()).get();
     }
 
     public Block getLiquidBlock()
     {
-        return FLUID_BLOCKS.get(getName()).get();
+        return AllInOneFluidRegister.getBlockFromRegisteredFluidName(getName()).get();
     }
 
     @Override
-    protected boolean canConvertToSource(Level level)
+    protected boolean canConvertToSource(@NotNull Level level)
     {
         return false;
     }
 
     @Override
-    public boolean canConvertToSource(FluidState state, Level level, BlockPos pos)
+    public boolean canConvertToSource(@NotNull FluidState state, @NotNull Level level, @NotNull BlockPos pos)
     {
         return false;
     }
 
     @Override
-    public void animateTick(Level level, BlockPos pos, FluidState state, RandomSource random)
+    public void animateTick(Level level, BlockPos pos, @NotNull FluidState state, @NotNull RandomSource random)
     {
         BlockPos blockpos = pos.above();
         if (level.getBlockState(blockpos).isAir() && !level.getBlockState(blockpos).isSolidRender(level, blockpos))
@@ -83,14 +80,14 @@ public abstract class BeerFluid extends WaterFluid
     }
 
     @Override
-    public boolean isSame(Fluid fluid)
+    public boolean isSame(@NotNull Fluid fluid)
     {
         return fluid == getSource() || fluid == getFlowing();
     }
 
     @Override
-    public BlockState createLegacyBlock(FluidState state)
+    public @NotNull BlockState createLegacyBlock(@NotNull FluidState state)
     {
-        return getLiquidBlock().defaultBlockState().setValue(LiquidBlock.LEVEL, Integer.valueOf(getLegacyLevel(state)));
+        return getLiquidBlock().defaultBlockState().setValue(LiquidBlock.LEVEL, getLegacyLevel(state));
     }
 }

@@ -10,7 +10,7 @@ import net.minecraft.world.level.material.FluidState;
 
 public abstract class PainDieuxFluid extends BeerFluid
 {
-    private final String NAME = "pain_dieux";
+    public static final String NAME = "pain_dieux";
 
     @Override
     public ParticleOptions getFoam()

@@ -9,10 +9,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class CraneNoirFluid extends BeerFluid
 {
-    private final String NAME = "crane_noir";
+    public static final String NAME = "crane_noir";
 
     @Override
     public ParticleOptions getFoam()
@@ -39,7 +40,7 @@ public abstract class CraneNoirFluid extends BeerFluid
     }
 
     @Override
-    public Item getBucket()
+    public @NotNull Item getBucket()
     {
         return ItemRegister.CRANE_NOIR_BUCKET.get();
     }
@@ -53,7 +54,7 @@ public abstract class CraneNoirFluid extends BeerFluid
     public static class Flowing extends CraneNoirFluid
     {
         @Override
-        protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder)
+        protected void createFluidStateDefinition(StateDefinition.@NotNull Builder<Fluid, FluidState> builder)
         {
             super.createFluidStateDefinition(builder);
             builder.add(LEVEL);
@@ -66,7 +67,7 @@ public abstract class CraneNoirFluid extends BeerFluid
         }
 
         @Override
-        public boolean isSource(FluidState state)
+        public boolean isSource(@NotNull FluidState state)
         {
             return false;
         }
@@ -75,13 +76,13 @@ public abstract class CraneNoirFluid extends BeerFluid
     public static class Source extends CraneNoirFluid
     {
         @Override
-        public int getAmount(FluidState state)
+        public int getAmount(@NotNull FluidState state)
         {
             return 8;
         }
 
         @Override
-        public boolean isSource(FluidState state)
+        public boolean isSource(@NotNull FluidState state)
         {
             return true;
         }

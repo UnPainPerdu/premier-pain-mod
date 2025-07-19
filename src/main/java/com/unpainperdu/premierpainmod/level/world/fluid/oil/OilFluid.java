@@ -1,9 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.fluid.oil;
 
+import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -14,8 +12,6 @@ import net.minecraft.world.level.material.WaterFluid;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
 
-import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.*;
-
 public abstract class OilFluid extends WaterFluid
 {
     public abstract String getName();
@@ -23,27 +19,24 @@ public abstract class OilFluid extends WaterFluid
     @Override
     public @NotNull Fluid getFlowing()
     {
-        String flowingFluidName = "flowing_" + getName() + "_fluid";
-        return FLUIDS.get(flowingFluidName).get();
+        return AllInOneFluidRegister.getFluidFromRegisteredFluidName(getName()).getSecond().get();
     }
 
     @Override
     public @NotNull Fluid getSource()
     {
-        String fluidName = getName() + "_fluid";
-        return FLUIDS.get(fluidName).get();
+        return AllInOneFluidRegister.getFluidFromRegisteredFluidName(getName()).getFirst().get();
     }
 
     @Override
     public @NotNull FluidType getFluidType()
     {
-        String fluidTypeName = getName() + "_type";
-        return FLUID_TYPES.get(fluidTypeName).get();
+        return AllInOneFluidRegister.getFluidTypeFromRegisteredFluidName(getName()).get();
     }
 
     public Block getLiquidBlock()
     {
-        return FLUID_BLOCKS.get(getName()).get();
+        return AllInOneFluidRegister.getBlockFromRegisteredFluidName(getName()).get();
     }
 
     @Override
