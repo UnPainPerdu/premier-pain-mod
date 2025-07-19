@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block.CookingPotBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.fluid.beer.*;
 import com.unpainperdu.premierpainmod.level.world.fluid.oil.MorichePalmOilFluid;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.CookingPotRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerBrewingStationRecipeBuilder;
@@ -41,7 +42,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.FLUIDS;
+import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.getFluid;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder
 {
@@ -57,28 +58,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         ModRecipeProvider.recipeOutput = pRecipeOutput;
         //cooking_pot
-        cookingPotRecipeBuilder(FLUIDS.get(MorichePalmOilFluid.NAME + "_fluid").get(), 10, Items.POTATO, ItemRegister.HALF_COOKED_FRIES);
-        cookingPotRecipeBuilder(FLUIDS.get(MorichePalmOilFluid.NAME + "_fluid").get(), 10, ItemRegister.HALF_COOKED_FRIES, ItemRegister.FRIES);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, Items.POTATO, ItemRegister.HALF_COOKED_FRIES);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.HALF_COOKED_FRIES, ItemRegister.FRIES);
         cookingPotRecipeBuilder(Fluids.WATER, 10, Items.POTATO, Items.BAKED_POTATO);
         //fluid
         //beer
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("pain_dieux_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(PainDieuxFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.WHEAT);
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("la_chateau_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(LaChateauFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.GLISTERING_MELON_SLICE, ItemRegister.ACHIOTE_FRUIT);
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("debier_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(DeBierFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.RABBIT_FOOT, ItemRegister.MOUNTAIN_CURRANT.get());
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("envahisseur_rouge_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(EnvahisseurRougeFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.APPLE, Items.BLAZE_POWDER);
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("raspbuisson_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(RaspBuissonFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.APPLE, Items.GLISTERING_MELON_SLICE, ItemRegister.CACTUS_FLOWER_FRUIT.get());
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("la_blanche_citadine_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(LaBlancheCitadineFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.SUGAR_CANE, Items.BONE_MEAL);
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("crane_noir_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(CraneNoirFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.IRON_INGOT, Items.INK_SAC);
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("tak_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(TakFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, ItemRegister.SKY_SPEARS_FRUIT.get(), Blocks.NETHERRACK.asItem());
-        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(FLUIDS.get("disender_fluid"), 1000)
+        brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(DisEnderFluid.NAME), 1000)
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.FEATHER, ItemRegister.JELLY_HAT.get());
         //item
         //fluid
