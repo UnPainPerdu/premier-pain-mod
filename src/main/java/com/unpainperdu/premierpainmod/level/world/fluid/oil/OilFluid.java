@@ -19,24 +19,24 @@ public abstract class OilFluid extends WaterFluid
     @Override
     public @NotNull Fluid getFlowing()
     {
-        return AllInOneFluidRegister.getFluidFromRegisteredFluidName(getName()).getSecond().get();
+        return AllInOneFluidRegister.getFlowingFluid(getName()).get();
     }
 
     @Override
     public @NotNull Fluid getSource()
     {
-        return AllInOneFluidRegister.getFluidFromRegisteredFluidName(getName()).getFirst().get();
+        return AllInOneFluidRegister.getFluid(getName()).get();
     }
 
     @Override
     public @NotNull FluidType getFluidType()
     {
-        return AllInOneFluidRegister.getFluidTypeFromRegisteredFluidName(getName()).get();
+        return AllInOneFluidRegister.getFluidType(getName()).get();
     }
 
     public Block getLiquidBlock()
     {
-        return AllInOneFluidRegister.getBlockFromRegisteredFluidName(getName()).get();
+        return AllInOneFluidRegister.getBlock(getName()).get();
     }
 
     @Override

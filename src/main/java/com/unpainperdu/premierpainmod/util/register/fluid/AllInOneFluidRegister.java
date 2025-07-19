@@ -1,6 +1,5 @@
 package com.unpainperdu.premierpainmod.util.register.fluid;
 
-import com.mojang.datafixers.util.Pair;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.*;
 import com.unpainperdu.premierpainmod.level.world.fluid.oil.MorichePalmOilFluid;
@@ -70,18 +69,27 @@ public class AllInOneFluidRegister
 
     /**
      * @param name the id use in AllInOneFluidRegister to register
-     * @return pair of fluid registered as first and flowing fluid registered as second
+     * @return fluid registered
      */
-    public static Pair<DeferredHolder<Fluid, Fluid>, DeferredHolder<Fluid, Fluid>> getFluidFromRegisteredFluidName(String name)
+    public static DeferredHolder<Fluid, Fluid> getFluid(String name)
     {
-        return Pair.of(FLUIDS.get(name + "_fluid"), FLUIDS.get("flowing_" + name + "_fluid"));
+        return FLUIDS.get(name + "_fluid");
+    }
+
+    /**
+     * @param name the id use in AllInOneFluidRegister to register
+     * @return flowing fluid registered
+     */
+    public static DeferredHolder<Fluid, Fluid> getFlowingFluid(String name)
+    {
+        return FLUIDS.get("flowing_" + name + "_fluid");
     }
 
     /**
      * @param name the id use in AllInOneFluidRegister to register
      * @return fluid type registered
      */
-    public static DeferredHolder<FluidType, FluidType> getFluidTypeFromRegisteredFluidName(String name)
+    public static DeferredHolder<FluidType, FluidType> getFluidType(String name)
     {
         return FLUID_TYPES.get(name + "_type");
     }
@@ -90,7 +98,7 @@ public class AllInOneFluidRegister
      * @param name the id use in AllInOneFluidRegister to register
      * @return block registered
      */
-    public static DeferredBlock<Block> getBlockFromRegisteredFluidName(String name)
+    public static DeferredBlock<Block> getBlock(String name)
     {
         return FLUID_BLOCKS.get(name);
     }
