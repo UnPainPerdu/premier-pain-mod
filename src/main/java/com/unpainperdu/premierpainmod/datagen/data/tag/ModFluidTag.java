@@ -10,6 +10,7 @@ import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -24,7 +25,7 @@ public class ModFluidTag extends FluidTagsProvider
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider)
+    protected void addTags(HolderLookup.@NotNull Provider provider)
     {
         for (DeferredHolder<Fluid, Fluid> fluidHolder : FLUIDS.values())
         {
