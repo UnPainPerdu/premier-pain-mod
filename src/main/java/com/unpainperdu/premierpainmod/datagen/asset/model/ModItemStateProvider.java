@@ -51,6 +51,14 @@ public class ModItemStateProvider extends ItemModelProvider
         vegetationFoodItem(ItemRegister.MOUNTAIN_CURRANT.get());
         vegetationFoodItem(ItemRegister.MORICHE_PALM_FRUIT.get());
         vegetationFoodItem(ItemRegister.ACHIOTE_FRUIT.get());
+        item(ItemRegister.BREADING.asItem(), "food/");
+        item(ItemRegister.UNCOOKED_BREADED_CHICKEN_WING.asItem(), "food/");
+        item(ItemRegister.BREADED_CHICKEN_WING.asItem(), "food/");
+        item(ItemRegister.UNCOOKED_BREADED_FISH.asItem(), "food/");
+        item(ItemRegister.BREADED_FISH.asItem(), "food/");
+        item(ItemRegister.UNCOOKED_SCHNITZEL.asItem(), "food/");
+        item(ItemRegister.SCHNITZEL.asItem(), "food/");
+        item(ItemRegister.HARD_BOILED_EGG.asItem(), "food/");
         //stew
         stewFoodItem(ItemRegister.JELLYSHROOM_STEW.get());
         stewFoodItem(ItemRegister.CACTUS_STEW.get());
@@ -62,7 +70,7 @@ public class ModItemStateProvider extends ItemModelProvider
         woodItems("achiote");
 
         //spawn_eggs
-        item(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_egg").get(), "spawn_egg/");
+        item(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "spawn_egg/");
 
         for (Item item : ModItemList.ALL_ITEMS)
         {

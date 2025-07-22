@@ -101,7 +101,16 @@ public class ItemRegister
     //food
     public static final DeferredItem<Item> HALF_COOKED_FRIES = basicFoodItemRegister("half_cooked_fries", 64, 4, 0.3f);
     public static final DeferredItem<Item> FRIES = basicFoodItemRegister("fries", 64, 6, 0.6f);
-    public static final DeferredItem<Item> FRIES_CONE = basicFoodItemRegister("fries_cone", 1, 15, 1f);
+    public static final DeferredItem<Item> FRIES_CONE = basicFoodItemRegister("fries_cone", 1, 15, 0.8f);
+    public static final DeferredItem<Item> BREADING = basicFoodItemRegister("breading", 64, 1, 0.1f);
+    public static final DeferredItem<Item> UNCOOKED_BREADED_CHICKEN_WING = basicFoodItemRegister("uncooked_breaded_chicken_wing", 64, 3, 0.1F);
+    public static final DeferredItem<Item> BREADED_CHICKEN_WING = basicFoodItemRegister("breaded_chicken_wing", 64, 8, 0.6f);
+    public static final DeferredItem<Item> UNCOOKED_BREADED_FISH = basicFoodItemRegister("uncooked_breaded_fish", 64, 3, 0.1f);
+    public static final DeferredItem<Item> BREADED_FISH = basicFoodItemRegister("breaded_fish", 64, 8, 0.6f);
+    public static final DeferredItem<Item> UNCOOKED_SCHNITZEL = basicFoodItemRegister("uncooked_schnitzel", 64, 4, 0.3f);
+    public static final DeferredItem<Item> SCHNITZEL = basicFoodItemRegister("schnitzel", 64, 10, 0.8f);
+    public static final DeferredItem<Item> HARD_BOILED_EGG = basicFoodItemRegister("hard_boiled_egg", 16, 6, 0.9f);
+
     //vegetation
     public static final DeferredItem<Item> CACTUS_FLOWER_FRUIT = basicFoodItemRegister("cactus_flower_fruit", 64, 4, 0.3f);
     public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit", 64, 4, 0.3f);

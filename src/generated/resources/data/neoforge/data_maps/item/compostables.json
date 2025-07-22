@@ -9,6 +9,15 @@
     "premierpainmod:achiote_sapling": {
       "chance": 0.3
     },
+    "premierpainmod:breaded_chicken_wing": {
+      "chance": 0.1
+    },
+    "premierpainmod:breaded_fish": {
+      "chance": 0.1
+    },
+    "premierpainmod:breading": {
+      "chance": 0.1
+    },
     "premierpainmod:cactus_flower_block": {
       "chance": 0.65
     },
@@ -79,6 +88,9 @@
       "chance": 0.1
     },
     "premierpainmod:half_cooked_fries": {
+      "chance": 0.1
+    },
+    "premierpainmod:hard_boiled_egg": {
       "chance": 0.1
     },
     "premierpainmod:jelly_hat": {
@@ -153,6 +165,9 @@
     "premierpainmod:ruins_flower": {
       "chance": 0.65
     },
+    "premierpainmod:schnitzel": {
+      "chance": 0.1
+    },
     "premierpainmod:sky_spears": {
       "chance": 0.65
     },
@@ -169,6 +184,15 @@
       "chance": 0.1
     },
     "premierpainmod:tak_mug": {
+      "chance": 0.1
+    },
+    "premierpainmod:uncooked_breaded_chicken_wing": {
+      "chance": 0.1
+    },
+    "premierpainmod:uncooked_breaded_fish": {
+      "chance": 0.1
+    },
+    "premierpainmod:uncooked_schnitzel": {
       "chance": 0.1
     }
   }

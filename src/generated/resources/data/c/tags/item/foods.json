@@ -1,6 +1,9 @@
 {
   "values": [
     "premierpainmod:achiote_fruit",
+    "premierpainmod:breaded_chicken_wing",
+    "premierpainmod:breaded_fish",
+    "premierpainmod:breading",
     "premierpainmod:cactus_flower_fruit",
     "premierpainmod:cactus_stew",
     "premierpainmod:crane_noir_bottle",
@@ -19,6 +22,7 @@
     "premierpainmod:fries_cone",
     "premierpainmod:fruits_bowl",
     "premierpainmod:half_cooked_fries",
+    "premierpainmod:hard_boiled_egg",
     "premierpainmod:jelly_hat",
     "premierpainmod:jellyshroom_stew",
     "premierpainmod:la_blanche_citadine_bottle",
@@ -36,9 +40,13 @@
     "premierpainmod:raspbuisson_bottle",
     "premierpainmod:raspbuisson_glass",
     "premierpainmod:raspbuisson_mug",
+    "premierpainmod:schnitzel",
     "premierpainmod:sky_spears_fruit",
     "premierpainmod:tak_bottle",
     "premierpainmod:tak_glass",
-    "premierpainmod:tak_mug"
+    "premierpainmod:tak_mug",
+    "premierpainmod:uncooked_breaded_chicken_wing",
+    "premierpainmod:uncooked_breaded_fish",
+    "premierpainmod:uncooked_schnitzel"
   ]
 }

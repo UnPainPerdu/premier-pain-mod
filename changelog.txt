@@ -233,6 +233,8 @@ What would be a world without bugs ?
     - Cooking pot, a crafting block which take fluid and 1 item to craft an another
     - moriche palm oil, the bucket is crafted with 4 moriche palm fruit and a bucket
     - fries crafted with potato and moriche palm oil in a cooking pot cooked 2 times and fries cone crafted with 3 fries and a paper
+    - some foods cooked with cooking pot : schnitzel, breaded fish, breaded chicken wing and hard boiled egg
+    - breading to craft uncooked version of cooking pot food
 
 ## Change :
     - change made to villager brewing station :

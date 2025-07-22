@@ -45,7 +45,7 @@ public class AllInOneEntityRegister
      */
     public static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> registerEntityWithEggs(String name, EntityType.Builder<T> entityBuilder)
     {
-        String eggName = name.replace("_entity", "_egg");
+        String eggName = name.replace("_entity", "_spawn_egg");
         DeferredHolder<EntityType<?>, EntityType<T>> entity = EntityRegister.registerEntity(name, entityBuilder);
         EGG_ITEM_MAP.put(eggName, EggItemRegister.generateEgg(eggName, entity));
         return entity;

@@ -1,0 +1,16 @@
+{
+  "type": "premierpainmod:cooking_pot",
+  "fluidInput": {
+    "amount": 10,
+    "ingredient": {
+      "fluid": "premierpainmod:moriche_palm_oil_fluid"
+    }
+  },
+  "ingredient": {
+    "item": "premierpainmod:uncooked_schnitzel"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:schnitzel"
+  }
+}

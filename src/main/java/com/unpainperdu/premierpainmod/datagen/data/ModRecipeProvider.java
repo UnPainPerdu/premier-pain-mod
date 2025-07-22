@@ -38,6 +38,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -61,6 +62,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, Items.POTATO, ItemRegister.HALF_COOKED_FRIES);
         cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.HALF_COOKED_FRIES, ItemRegister.FRIES);
         cookingPotRecipeBuilder(Fluids.WATER, 10, Items.POTATO, Items.BAKED_POTATO);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.UNCOOKED_BREADED_CHICKEN_WING, ItemRegister.BREADED_CHICKEN_WING);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.UNCOOKED_BREADED_FISH, ItemRegister.BREADED_FISH);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.UNCOOKED_SCHNITZEL, ItemRegister.SCHNITZEL);
+        cookingPotRecipeBuilder(Fluids.WATER, 10, Items.EGG, ItemRegister.HARD_BOILED_EGG);
         //fluid
         //beer
         brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(PainDieuxFluid.NAME), 1000)
@@ -117,6 +122,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         shapelessRecipeBuilder(ItemRegister.DISENDER_GLASS, ItemRegister.DISENDER_BOTTLE, 1, ItemRegister.DISENDER_BOTTLE, ItemRegister.EMPTY_GLASS);
         //food
         shapelessRecipeBuilder(ItemRegister.FRIES_CONE, ItemRegister.FRIES, 1, Items.PAPER, ItemRegister.FRIES, ItemRegister.FRIES, ItemRegister.FRIES);
+        shapelessRecipeBuilder(ItemRegister.BREADING, Items.BREAD, 3, Items.BREAD);
+        shapelessRecipeBuilder(ItemRegister.UNCOOKED_BREADED_CHICKEN_WING, Items.CHICKEN, 2, Items.CHICKEN, ItemRegister.BREADING);
+        shapelessRecipeBuilder(ItemRegister.UNCOOKED_BREADED_FISH, Items.SALMON, 1, Items.SALMON, ItemRegister.BREADING);
+        shapelessRecipeBuilder(ItemRegister.UNCOOKED_BREADED_FISH, Items.COD, 1, Items.COD, ItemRegister.BREADING);
+        shapelessRecipeBuilder(ItemRegister.UNCOOKED_SCHNITZEL, Items.BEEF, 1, Items.BEEF, ItemRegister.BREADING);
+        shapelessRecipeBuilder(ItemRegister.UNCOOKED_SCHNITZEL, Items.PORKCHOP, 1, Items.PORKCHOP, ItemRegister.BREADING);
         //vegetation
         oneItemToAnotherOneRecipeBuilder(BlockRegister.CACTUS_FLOWER_BLOCK, ItemRegister.CACTUS_FLOWER_FRUIT);
         oneItemToAnotherOneRecipeBuilder(BlockRegister.SKY_SPEARS_FLOWER, ItemRegister.SKY_SPEARS_FRUIT);
@@ -609,17 +620,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(ModRecipeProvider.recipeOutput, "premierpainmod:" + resultName + "_furnace");
     }
 
+
     private void shapelessRecipeBuilder(ItemLike result, ItemLike unlockItem, int numberOutput, ItemLike... resource)
     {
         String resultName = getName(result.asItem());
+
+        String ingredientName = getName(unlockItem.asItem());
 
         ShapelessRecipeBuilder shapelessRecipeBuilder = ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput);
         for (ItemLike r : resource)
         {
             shapelessRecipeBuilder = shapelessRecipeBuilder.requires(r);
         }
-
-        shapelessRecipeBuilder.unlockedBy("has_" + resultName, has(unlockItem)).save(ModRecipeProvider.recipeOutput);
+        shapelessRecipeBuilder.unlockedBy("has_" + resultName, has(unlockItem)).save(ModRecipeProvider.recipeOutput, resultName + "_from_" + ingredientName);
     }
 
     private void stairsRecipeBuilder(Block result, Block blockNeeded)

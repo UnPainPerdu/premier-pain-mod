@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:cooking_pot_schnitzel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_uncooked_schnitzel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:uncooked_schnitzel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_uncooked_schnitzel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:cooking_pot_schnitzel"
+    ]
+  }
+}

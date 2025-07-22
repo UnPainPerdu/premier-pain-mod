@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crane_noir_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:crane_noir_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:crane_noir_bottle_from_crane_noir_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crane_noir_bottle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:crane_noir_bottle_from_crane_noir_bucket"
+    ]
+  }
+}

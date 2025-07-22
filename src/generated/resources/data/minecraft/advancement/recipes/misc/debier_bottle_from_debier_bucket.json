@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_debier_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:debier_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:debier_bottle_from_debier_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_debier_bottle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:debier_bottle_from_debier_bucket"
+    ]
+  }
+}

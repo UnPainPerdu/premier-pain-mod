@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raspbuisson_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:raspbuisson_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:raspbuisson_glass_from_raspbuisson_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raspbuisson_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:raspbuisson_glass_from_raspbuisson_bottle"
+    ]
+  }
+}

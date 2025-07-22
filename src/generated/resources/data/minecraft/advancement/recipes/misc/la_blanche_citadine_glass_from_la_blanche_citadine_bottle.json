@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_la_blanche_citadine_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:la_blanche_citadine_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:la_blanche_citadine_glass_from_la_blanche_citadine_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_la_blanche_citadine_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:la_blanche_citadine_glass_from_la_blanche_citadine_bottle"
+    ]
+  }
+}

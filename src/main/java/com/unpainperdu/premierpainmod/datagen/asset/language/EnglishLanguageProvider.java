@@ -133,6 +133,14 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.HALF_COOKED_FRIES.get(), "Simple backed Fries");
         add(ItemRegister.FRIES.get(), "Fries");
         add(ItemRegister.FRIES_CONE.get(), "Fries Cone");
+        add(ItemRegister.BREADING.get(), "Breading");
+        add(ItemRegister.UNCOOKED_BREADED_CHICKEN_WING.get(), "Uncooked Breaded Chicken Wing");
+        add(ItemRegister.BREADED_CHICKEN_WING.get(), "Breaded Chicken Wing");
+        add(ItemRegister.UNCOOKED_BREADED_FISH.get(), "Uncooked Breaded Fish");
+        add(ItemRegister.BREADED_FISH.get(), "Breaded Fish");
+        add(ItemRegister.UNCOOKED_SCHNITZEL.get(), "Uncooked Schnitzel");
+        add(ItemRegister.SCHNITZEL.get(), "Schnitzel");
+        add(ItemRegister.HARD_BOILED_EGG.get(), "Hard Boiled Egg");
         //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky Spears Fruit");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Cactus Flower Fruit");
@@ -146,7 +154,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Potatoes and Spear Fruit Bowl");
         add(ItemRegister.FRUITS_BOWL.get(), "Fruits Bowl");
         //egg
-        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_egg").get(), "Mountain Currant Golem Egg");
+        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Mountain Currant Golem Spawn Egg");
         //block
         //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");

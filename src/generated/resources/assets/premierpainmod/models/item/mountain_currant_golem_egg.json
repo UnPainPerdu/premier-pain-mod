@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "premierpainmod:item/spawn_egg/mountain_currant_golem_egg"
-  }
-}

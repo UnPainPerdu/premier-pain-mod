@@ -133,6 +133,14 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.HALF_COOKED_FRIES.get(), "Frites à simple cuisson");
         add(ItemRegister.FRIES.get(), "Frites");
         add(ItemRegister.FRIES_CONE.get(), "Cornet de frites");
+        add(ItemRegister.BREADING.get(), "Panure");
+        add(ItemRegister.UNCOOKED_BREADED_CHICKEN_WING.get(), "Aile de poulet panées non-cuites");
+        add(ItemRegister.BREADED_CHICKEN_WING.get(), "Aile de poulet panées");
+        add(ItemRegister.UNCOOKED_BREADED_FISH.get(), "Poisson pané non-cuit");
+        add(ItemRegister.BREADED_FISH.get(), "Poisson pané");
+        add(ItemRegister.UNCOOKED_SCHNITZEL.get(), "Schnitzel non-cuit");
+        add(ItemRegister.SCHNITZEL.get(), "Schnitzel");
+        add(ItemRegister.HARD_BOILED_EGG.get(), "Oeuf cuit dur");
         //vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Fruit de lances du ciel");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Fruit de fleure de cactus");
@@ -146,7 +154,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Bol de patates et de fruit de lance");
         add(ItemRegister.FRUITS_BOWL.get(), "Bol de fruits");
         //egg
-        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_egg").get(), "Oeuf de golem en groseillier des montagnes");
+        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Oeuf d'apparition de golem en groseillier des montagnes");
         //block
         //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");
