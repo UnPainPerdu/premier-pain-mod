@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_sapling"
+    "cross": "premierpainmod:block/tree/mountain_currant/sapling"
   }
 }

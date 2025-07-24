@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/fence_post",
   "textures": {
-    "texture": "premierpainmod:block/tree/achiote_tree/achiote_planks"
+    "texture": "premierpainmod:block/tree/achiote/planks"
   }
 }

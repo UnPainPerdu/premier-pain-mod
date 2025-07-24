@@ -194,6 +194,12 @@
     },
     "premierpainmod:uncooked_schnitzel": {
       "chance": 0.1
+    },
+    "premierpainmod:weeping_willow_leaves": {
+      "chance": 0.3
+    },
+    "premierpainmod:weeping_willow_sapling": {
+      "chance": 0.3
     }
   }
 }

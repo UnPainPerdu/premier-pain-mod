@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/button",
   "textures": {
-    "texture": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_planks"
+    "texture": "premierpainmod:block/tree/moriche_palm/planks"
   }
 }

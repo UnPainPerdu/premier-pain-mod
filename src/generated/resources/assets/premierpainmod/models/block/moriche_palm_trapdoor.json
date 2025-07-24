@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_trapdoor_bottom",
   "textures": {
-    "texture": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_trapdoor"
+    "texture": "premierpainmod:block/tree/moriche_palm/trapdoor"
   }
 }

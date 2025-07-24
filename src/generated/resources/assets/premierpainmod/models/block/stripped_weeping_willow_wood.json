@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "premierpainmod:block/tree/weeping_willow/stripped_log_side",
+    "side": "premierpainmod:block/tree/weeping_willow/stripped_log_side"
+  }
+}

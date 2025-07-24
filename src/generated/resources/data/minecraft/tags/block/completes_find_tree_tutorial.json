@@ -3,6 +3,7 @@
     "premierpainmod:achiote_leaves",
     "premierpainmod:moriche_palm_leaves",
     "premierpainmod:mountain_currant_leaves",
+    "premierpainmod:weeping_willow_leaves",
     "premierpainmod:achiote_log",
     "premierpainmod:achiote_wood",
     "premierpainmod:moriche_palm_log",
@@ -14,6 +15,10 @@
     "premierpainmod:stripped_moriche_palm_log",
     "premierpainmod:stripped_moriche_palm_wood",
     "premierpainmod:stripped_mountain_currant_log",
-    "premierpainmod:stripped_mountain_currant_wood"
+    "premierpainmod:stripped_mountain_currant_wood",
+    "premierpainmod:stripped_weeping_willow_log",
+    "premierpainmod:stripped_weeping_willow_wood",
+    "premierpainmod:weeping_willow_log",
+    "premierpainmod:weeping_willow_wood"
   ]
 }

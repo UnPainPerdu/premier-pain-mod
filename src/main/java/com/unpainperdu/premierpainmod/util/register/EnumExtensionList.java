@@ -37,4 +37,13 @@ public class EnumExtensionList
             Items.STICK,
             false
     );
+
+    public static final EnumProxy<Boat.Type> WEEPING_WILLOW_BOAT_TYPE = new EnumProxy<>(Boat.Type.class,
+            BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("planks"),
+            "premierpainmod:weeping_willow",
+            ItemRegister.ITEM_WEEPING_WILLOW_WOOD_TYPE_MAP.get("boat"),
+            ItemRegister.ITEM_WEEPING_WILLOW_WOOD_TYPE_MAP.get("chest_boat"),
+            Items.STICK,
+            false
+    );
 }

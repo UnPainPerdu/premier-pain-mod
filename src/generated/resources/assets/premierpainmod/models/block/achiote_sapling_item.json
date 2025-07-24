@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:block/tree/achiote_tree/achiote_sapling"
+    "layer0": "premierpainmod:block/tree/achiote/sapling"
   }
 }

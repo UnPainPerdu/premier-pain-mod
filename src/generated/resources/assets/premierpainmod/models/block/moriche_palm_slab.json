@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab",
   "textures": {
-    "bottom": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_planks",
-    "side": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_planks",
-    "top": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_planks"
+    "bottom": "premierpainmod:block/tree/moriche_palm/planks",
+    "side": "premierpainmod:block/tree/moriche_palm/planks",
+    "top": "premierpainmod:block/tree/moriche_palm/planks"
   }
 }

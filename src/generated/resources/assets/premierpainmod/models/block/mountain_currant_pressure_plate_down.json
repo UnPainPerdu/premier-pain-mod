@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/pressure_plate_down",
   "textures": {
-    "texture": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks"
+    "texture": "premierpainmod:block/tree/mountain_currant/planks"
   }
 }

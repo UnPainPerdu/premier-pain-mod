@@ -187,6 +187,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         treeTranslator("mountain_currant", "Mountain Currant");
         treeTranslator("moriche_palm", "Moriche Palm");
         treeTranslator("achiote", "Achiote");
+        treeTranslator("weeping_willow", "Weeping Willow");
+        add(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get(), "Falling Weeping Willow Leaves");
         // "All material"
         globalAllMaterialTranslation("oak", "Oak");
         globalAllMaterialTranslation("birch", "Birch");
@@ -233,6 +235,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("mountain_currant", "Mountain Currant");
         globalAllMaterialTranslation("moriche_palm", "Moriche Palm");
         globalAllMaterialTranslation("achiote", "Achiote");
+        globalAllMaterialTranslation("weeping_willow", "Weeping Willow");
     }
 
     //Only use for "all material" blocks

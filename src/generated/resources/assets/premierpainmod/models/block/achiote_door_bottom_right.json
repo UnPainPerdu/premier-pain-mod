@@ -2,7 +2,7 @@
   "parent": "minecraft:block/door_bottom_right",
   "render_type": "minecraft:cutout",
   "textures": {
-    "bottom": "premierpainmod:block/tree/achiote_tree/achiote_door_bottom",
-    "top": "premierpainmod:block/tree/achiote_tree/achiote_door_top"
+    "bottom": "premierpainmod:block/tree/achiote/door_bottom",
+    "top": "premierpainmod:block/tree/achiote/door_top"
   }
 }

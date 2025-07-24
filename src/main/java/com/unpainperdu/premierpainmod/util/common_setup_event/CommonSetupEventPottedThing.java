@@ -28,6 +28,7 @@ public class CommonSetupEventPottedThing
         setPottedThing(event, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("sapling"), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("potted_sapling"));
         setPottedThing(event, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("sapling"), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("potted_sapling"));
         setPottedThing(event, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling"), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("potted_sapling"));
+        setPottedThing(event, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("sapling"), BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("potted_sapling"));
     }
 
     public static void setPottedThing(final FMLCommonSetupEvent event, DeferredBlock<Block> thingToPot, DeferredBlock<Block> thingPotted)

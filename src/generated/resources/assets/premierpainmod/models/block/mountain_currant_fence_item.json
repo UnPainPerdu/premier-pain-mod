@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/fence_inventory",
   "textures": {
-    "texture": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks"
+    "texture": "premierpainmod:block/tree/mountain_currant/planks"
   }
 }

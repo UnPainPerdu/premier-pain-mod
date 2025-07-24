@@ -2,6 +2,6 @@
   "parent": "minecraft:block/template_orientable_trapdoor_bottom",
   "render_type": "minecraft:cutout",
   "textures": {
-    "texture": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_trapdoor"
+    "texture": "premierpainmod:block/tree/mountain_currant/trapdoor"
   }
 }

@@ -2,7 +2,7 @@
   "parent": "minecraft:block/door_top_left",
   "render_type": "minecraft:cutout",
   "textures": {
-    "bottom": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_door_bottom",
-    "top": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_door_top"
+    "bottom": "premierpainmod:block/tree/moriche_palm/door_bottom",
+    "top": "premierpainmod:block/tree/moriche_palm/door_top"
   }
 }

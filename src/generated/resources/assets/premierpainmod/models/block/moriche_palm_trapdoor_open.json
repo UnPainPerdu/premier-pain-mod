@@ -2,6 +2,6 @@
   "parent": "minecraft:block/template_orientable_trapdoor_open",
   "render_type": "minecraft:cutout",
   "textures": {
-    "texture": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_trapdoor"
+    "texture": "premierpainmod:block/tree/moriche_palm/trapdoor"
   }
 }

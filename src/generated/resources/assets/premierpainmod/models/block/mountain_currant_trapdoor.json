@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_trapdoor_bottom",
   "textures": {
-    "texture": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_trapdoor"
+    "texture": "premierpainmod:block/tree/mountain_currant/trapdoor"
   }
 }

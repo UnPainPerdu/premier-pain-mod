@@ -187,6 +187,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         treeTranslator("mountain_currant", "groseillier des montagnes");
         treeTranslator("moriche_palm", "palmier-bâche");
         treeTranslator("achiote", "roucou");
+        treeTranslator("weeping_willow", "saule pleureur");
+        add(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get(), "Feuilles tombantes de saule pleureur");
         // "All material"
         globalAllMaterialTranslation("oak", "chêne");
         globalAllMaterialTranslation("birch", "bouleau");
@@ -233,6 +235,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("mountain_currant", "groseillier des montagnes");
         globalAllMaterialTranslation("moriche_palm", "Palmier-bâche");
         globalAllMaterialTranslation("achiote", "roucou");
+        globalAllMaterialTranslation("weeping_willow", "saule pleureur");
     }
 
     //Only use for "all material" blocks

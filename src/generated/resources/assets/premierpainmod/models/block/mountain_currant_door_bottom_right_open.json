@@ -2,7 +2,7 @@
   "parent": "minecraft:block/door_bottom_right_open",
   "render_type": "minecraft:cutout",
   "textures": {
-    "bottom": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_door_bottom",
-    "top": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_door_top"
+    "bottom": "premierpainmod:block/tree/mountain_currant/door_bottom",
+    "top": "premierpainmod:block/tree/mountain_currant/door_top"
   }
 }

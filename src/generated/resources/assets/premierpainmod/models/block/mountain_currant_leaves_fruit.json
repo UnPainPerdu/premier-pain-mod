@@ -2,7 +2,7 @@
   "parent": "premierpainmod:block/vegetation/tree/leaves_with_fruit",
   "render_type": "minecraft:cutout",
   "textures": {
-    "0": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_leaves",
-    "1": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_leaves_fruit"
+    "0": "premierpainmod:block/tree/mountain_currant/leaves",
+    "1": "premierpainmod:block/tree/mountain_currant/leaves_fruit"
   }
 }

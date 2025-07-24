@@ -208,9 +208,14 @@
     "premierpainmod:stripped_moriche_palm_wood",
     "premierpainmod:stripped_mountain_currant_log",
     "premierpainmod:stripped_mountain_currant_wood",
+    "premierpainmod:stripped_weeping_willow_log",
+    "premierpainmod:stripped_weeping_willow_wood",
+    "premierpainmod:weeping_willow_log",
+    "premierpainmod:weeping_willow_wood",
     "premierpainmod:achiote_planks",
     "premierpainmod:moriche_palm_planks",
     "premierpainmod:mountain_currant_planks",
+    "premierpainmod:weeping_willow_planks",
     "premierpainmod:achiote_button",
     "premierpainmod:achiote_door",
     "premierpainmod:achiote_fence_gate",
@@ -250,6 +255,7 @@
     "premierpainmod:achiote_sapling",
     "premierpainmod:moriche_palm_sapling",
     "premierpainmod:mountain_currant_sapling",
+    "premierpainmod:weeping_willow_sapling",
     "premierpainmod:jellyshroom"
   ]
 }

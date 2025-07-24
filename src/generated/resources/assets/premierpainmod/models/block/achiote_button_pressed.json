@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/button_pressed",
   "textures": {
-    "texture": "premierpainmod:block/tree/achiote_tree/achiote_planks"
+    "texture": "premierpainmod:block/tree/achiote/planks"
   }
 }

@@ -2,7 +2,7 @@
   "parent": "premierpainmod:block/vegetation/tree/leaves_with_fruit",
   "render_type": "minecraft:cutout",
   "textures": {
-    "0": "premierpainmod:block/tree/achiote_tree/achiote_leaves",
-    "1": "premierpainmod:block/tree/achiote_tree/achiote_leaves_fruit"
+    "0": "premierpainmod:block/tree/achiote/leaves",
+    "1": "premierpainmod:block/tree/achiote/leaves_fruit"
   }
 }

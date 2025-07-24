@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab",
   "textures": {
-    "bottom": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks",
-    "side": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks",
-    "top": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_planks"
+    "bottom": "premierpainmod:block/tree/mountain_currant/planks",
+    "side": "premierpainmod:block/tree/mountain_currant/planks",
+    "top": "premierpainmod:block/tree/mountain_currant/planks"
   }
 }

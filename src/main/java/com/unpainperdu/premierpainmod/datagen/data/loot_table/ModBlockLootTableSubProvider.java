@@ -127,10 +127,13 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         pottedFlowerLootTableGenerator(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("potted_sapling").get(), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("sapling").get());
         pottedFlowerLootTableGenerator(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("potted_sapling").get(), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("sapling").get());
         pottedFlowerLootTableGenerator(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("potted_sapling").get(), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling").get());
+        pottedFlowerLootTableGenerator(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("potted_sapling").get(), BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("sapling").get());
         //leaves
         leavesWithFruitRightClickLootTable(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("sapling").get(), ItemRegister.MOUNTAIN_CURRANT.get());
         leavesWithFruitLikeOakLootTable(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("sapling").get(), ItemRegister.MORICHE_PALM_FRUIT.get());
         leavesWithFruitRightClickLootTable(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling").get(), ItemRegister.ACHIOTE_FRUIT.get());
+        leavesLootTable(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("sapling").get());
+        leavesLootTable(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get(), BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("sapling").get());
     }
 
     private void carpetedBlockTableGenerator(Block block)

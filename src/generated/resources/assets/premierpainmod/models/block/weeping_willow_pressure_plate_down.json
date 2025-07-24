@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "premierpainmod:block/tree/weeping_willow/planks"
+  }
+}

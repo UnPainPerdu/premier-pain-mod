@@ -3,7 +3,7 @@ package com.unpainperdu.premierpainmod.datagen;
 import com.unpainperdu.premierpainmod.datagen.asset.ModParticleDescriptionProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.ModSoundProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.language.ModLanguageProvider;
-import com.unpainperdu.premierpainmod.datagen.asset.model.ModBlockStateProvider;
+import com.unpainperdu.premierpainmod.datagen.asset.model.block.ModBlockStateProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.model.ModItemStateProvider;
 import com.unpainperdu.premierpainmod.datagen.data.*;
 import com.unpainperdu.premierpainmod.datagen.data.data_pack_registries.ModDataPackProvider;

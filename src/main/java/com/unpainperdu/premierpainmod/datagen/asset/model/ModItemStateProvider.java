@@ -68,6 +68,7 @@ public class ModItemStateProvider extends ItemModelProvider
         woodItems("mountain_currant");
         woodItems("moriche_palm");
         woodItems("achiote");
+        woodItems("weeping_willow");
 
         //spawn_eggs
         item(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "spawn_egg/");
@@ -93,15 +94,12 @@ public class ModItemStateProvider extends ItemModelProvider
                 .texture("layer0", "item/" + folder + name);
     }
 
-    /***
-     * path with /textures/ as root
-     ***/
-    private void itemWithTexturePath(Item item, String path)
+    private void itemWithFullPath(Item item, String path)
     {
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0", path);
+                .texture("layer0", "item/"+ path);
     }
 
     private void villagerShelfItem(Item item)
@@ -147,10 +145,10 @@ public class ModItemStateProvider extends ItemModelProvider
 
     private void woodItems(String woodId)
     {
-        item(getItemFromId(woodId + "_sign"), "tree/" + woodId + "_tree/");
-        item(getItemFromId(woodId + "_hanging_sign"), "tree/" + woodId + "_tree/");
-        itemWithTexturePath(getItemFromId(woodId + "_boat"), "item/tree/" + woodId + "_tree/" + woodId + "_boat");
-        itemWithTexturePath(getItemFromId(woodId + "_chest_boat"), "item/tree/" + woodId + "_tree/" + woodId + "_chest_boat");
+        itemWithFullPath(getItemFromId(woodId + "_sign"), "tree/" + woodId + "/sign");
+        itemWithFullPath(getItemFromId(woodId + "_hanging_sign"), "tree/" + woodId + "/hanging_sign");
+        itemWithFullPath(getItemFromId(woodId + "_boat"), "tree/" + woodId + "/boat");
+        itemWithFullPath(getItemFromId(woodId + "_chest_boat"), "tree/" + woodId + "/chest_boat");
     }
 
     private static Item getItemFromId(String path)

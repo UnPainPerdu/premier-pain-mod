@@ -2,6 +2,6 @@
   "parent": "minecraft:block/leaves",
   "render_type": "minecraft:cutout",
   "textures": {
-    "all": "premierpainmod:block/tree/moriche_palm_tree/moriche_palm_leaves"
+    "all": "premierpainmod:block/tree/moriche_palm/leaves"
   }
 }

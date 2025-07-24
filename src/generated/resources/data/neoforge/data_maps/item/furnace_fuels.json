@@ -551,6 +551,21 @@
     },
     "premierpainmod:stripped_mountain_currant_wood": {
       "burn_time": 300
+    },
+    "premierpainmod:stripped_weeping_willow_log": {
+      "burn_time": 300
+    },
+    "premierpainmod:stripped_weeping_willow_wood": {
+      "burn_time": 300
+    },
+    "premierpainmod:weeping_willow_log": {
+      "burn_time": 300
+    },
+    "premierpainmod:weeping_willow_planks": {
+      "burn_time": 300
+    },
+    "premierpainmod:weeping_willow_wood": {
+      "burn_time": 300
     }
   }
 }

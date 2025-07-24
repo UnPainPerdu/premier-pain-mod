@@ -2,6 +2,6 @@
   "parent": "minecraft:block/leaves",
   "render_type": "minecraft:cutout",
   "textures": {
-    "all": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_leaves"
+    "all": "premierpainmod:block/tree/mountain_currant/leaves"
   }
 }

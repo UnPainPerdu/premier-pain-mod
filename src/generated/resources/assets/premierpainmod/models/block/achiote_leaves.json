@@ -2,6 +2,6 @@
   "parent": "minecraft:block/leaves",
   "render_type": "minecraft:cutout",
   "textures": {
-    "all": "premierpainmod:block/tree/achiote_tree/achiote_leaves"
+    "all": "premierpainmod:block/tree/achiote/leaves"
   }
 }

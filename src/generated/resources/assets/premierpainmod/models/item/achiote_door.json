@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:item/tree/achiote_tree/achiote_door"
+    "layer0": "premierpainmod:item/tree/achiote/door"
   }
 }

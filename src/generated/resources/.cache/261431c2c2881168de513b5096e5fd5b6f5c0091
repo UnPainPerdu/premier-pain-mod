@@ -1,24 +1,24 @@
-// 1.21.1	2025-07-22T20:03:51.1823605	Tags for minecraft:item mod id premierpainmod
+// 1.21.1	2025-07-24T17:28:45.8324916	Tags for minecraft:item mod id premierpainmod
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/c/tags/item/buckets.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/item/fence_gates.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/item/fence_gates/wooden.json
 0f00f7f49a43ea21e385eba6dd6fb0990bbb36bb data/c/tags/item/foods.json
 f6c5482ff430875bf018bdde73ccbb1216c18ddf data/c/tags/item/foods/fruit.json
-2181dd8782c677483a7a0439bb2684850b63f493 data/c/tags/item/stripped_logs.json
-7ac2ef101278002136be9744b3297d3893abc5da data/c/tags/item/stripped_woods.json
-06d05902a33f2a6b231f64cbff69773721b3f121 data/minecraft/tags/item/boats.json
+71c93c6b79a63160b21044f92b3c4b3c7ca1ad95 data/c/tags/item/stripped_logs.json
+b9dc877125359ddd63f908ee6d81a60fe4c13388 data/c/tags/item/stripped_woods.json
+437b8bc7635ae2f22ff1f3e86b1d66e999240de8 data/minecraft/tags/item/boats.json
 639a49ebf59f50b8c4394ec1ebffe045e665d51b data/minecraft/tags/item/buttons.json
-fe5151cb57d39f9316accfceebc19de4adac7388 data/minecraft/tags/item/chest_boats.json
+97fee58a068150478dca4859bc9faaaba1aae836 data/minecraft/tags/item/chest_boats.json
 3f5efd47cd7468d6a072cd9fc2a277ffe2af96cd data/minecraft/tags/item/doors.json
 7f17a84c5867cc54c0582449818379348abefb56 data/minecraft/tags/item/fences.json
 f999c4cc0482667908be53c0d728201e56227a51 data/minecraft/tags/item/fence_gates.json
 783dacd06c51a103e4bbee284d88aca67f55bf9d data/minecraft/tags/item/flowers.json
-06483178ee26b94a1fa11dbcbc1907ad89d2377e data/minecraft/tags/item/hanging_signs.json
-f41e258c75a2646f0812a670c39dda35127ed183 data/minecraft/tags/item/logs.json
-f41e258c75a2646f0812a670c39dda35127ed183 data/minecraft/tags/item/logs_that_burn.json
-0cb4969f244c75619f66c9214ac4bdc10e177dac data/minecraft/tags/item/planks.json
-c449e797733f08287ce073a791b8a0588c14ec07 data/minecraft/tags/item/saplings.json
-2def6de778db2080ef9fecaad3b4046e2f593f96 data/minecraft/tags/item/signs.json
+d4f08a4a10e0436e31175da745b73cae063e9337 data/minecraft/tags/item/hanging_signs.json
+0ab56d45d7b5f725a23e44b36ae187b22a4a9f23 data/minecraft/tags/item/logs.json
+0ab56d45d7b5f725a23e44b36ae187b22a4a9f23 data/minecraft/tags/item/logs_that_burn.json
+59e0253d3eeceafbf1a09a3c5205b4d808bacacb data/minecraft/tags/item/planks.json
+3fc6849c34c11d713ab9021c50acc62e237ef861 data/minecraft/tags/item/saplings.json
+572341ff0a62815e9f80903cf90101e4ffbbd445 data/minecraft/tags/item/signs.json
 89522bff8ce7ca88f628c3224c9ae1850dd300a8 data/minecraft/tags/item/slabs.json
 9d8ffe6b1d04ba11c9d9dc4f5eff1d5acaee72c0 data/minecraft/tags/item/stairs.json
 75e9c8973323bdfe8a73516c2883bef9982f76cb data/minecraft/tags/item/tall_flowers.json

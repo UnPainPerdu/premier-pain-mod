@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "premierpainmod:block/weeping_willow_slab"
+    },
+    "type=double": {
+      "model": "premierpainmod:block/weeping_willow_slab_full"
+    },
+    "type=top": {
+      "model": "premierpainmod:block/weeping_willow_slab_top"
+    }
+  }
+}

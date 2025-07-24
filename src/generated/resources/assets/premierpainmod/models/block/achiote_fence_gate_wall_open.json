@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_fence_gate_wall_open",
   "textures": {
-    "texture": "premierpainmod:block/tree/achiote_tree/achiote_planks"
+    "texture": "premierpainmod:block/tree/achiote/planks"
   }
 }

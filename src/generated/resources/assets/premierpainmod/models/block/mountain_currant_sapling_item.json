@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "premierpainmod:block/tree/mountain_currant_tree/mountain_currant_sapling"
+    "layer0": "premierpainmod:block/tree/mountain_currant/sapling"
   }
 }
