@@ -63,7 +63,8 @@ public class LogBlock extends RotatedPillarBlock
         List<Map<String, DeferredBlock<Block>>> l = List.of(
                 BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP,
                 BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP,
-                BlockRegister.ACHIOTE_WOOD_TYPE_MAP
+                BlockRegister.ACHIOTE_WOOD_TYPE_MAP,
+                BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP
         );
         Map<BlockState, BlockState> logAndWoodMap = new HashMap<>();
         for (Map<String, DeferredBlock<Block>> m : l)

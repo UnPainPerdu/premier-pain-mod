@@ -130,6 +130,8 @@ public class ItemRegister
     public static final Map<String, DeferredItem<Item>> ITEM_MORICHE_PALM_WOOD_TYPE_MAP = generateAllItemForWood("moriche_palm", () -> BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP);
     //achiote
     public static final Map<String, DeferredItem<Item>> ITEM_ACHIOTE_WOOD_TYPE_MAP = generateAllItemForWood("achiote", () -> BlockRegister.ACHIOTE_WOOD_TYPE_MAP);
+    //achiote
+    public static final Map<String, DeferredItem<Item>> ITEM_WEEPING_WILLOW_WOOD_TYPE_MAP = generateAllItemForWood("weeping_willow", () -> BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP);
 
     private static Map<String, DeferredItem<Item>> createAllMaterialsItems()
     {

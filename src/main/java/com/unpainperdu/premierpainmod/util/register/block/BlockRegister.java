@@ -75,7 +75,7 @@ public class BlockRegister
             "diamond_block", "copper_block", "lapis_block",
             "netherite_block", "obsidian", "amethyst_block",
             "dripstone_block", "bedrock", "mountain_currant",
-            "moriche_palm", "achiote"
+            "moriche_palm", "achiote", "weeping_willow"
 
     );
 
@@ -129,6 +129,9 @@ public class BlockRegister
     public static final Map<String, DeferredBlock<Block>> MORICHE_PALM_WOOD_TYPE_MAP = generateAllBlockForWood("moriche_palm", ModWoodTypes.MORICHE_PALM, ModTreeGrower.MORICHE_PALM);
     //achiote
     public static final Map<String, DeferredBlock<Block>> ACHIOTE_WOOD_TYPE_MAP = generateAllBlockForWood("achiote", ModWoodTypes.ACHIOTE, ModTreeGrower.ACHIOTE);
+    //weeping_willow
+    public static final Map<String, DeferredBlock<Block>> WEEPING_WILLOW_WOOD_TYPE_MAP = generateAllBlockForWood("weeping_willow", ModWoodTypes.WEEPING_WILLOW, ModTreeGrower.ACHIOTE);
+    public static final DeferredBlock<Block> FALLING_WEEPING_WILLOW_LEAVES = registerBlock("falling_weeping_willow_leaves", () -> new FallingLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
 
     private static Map<String, DeferredBlock<Block>> createAllMaterialsBlocks()
     {
