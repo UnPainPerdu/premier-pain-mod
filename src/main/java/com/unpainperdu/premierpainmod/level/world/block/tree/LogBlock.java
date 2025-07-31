@@ -1,6 +1,5 @@
 package com.unpainperdu.premierpainmod.level.world.block.tree;
 
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;
@@ -11,15 +10,21 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum.*;
+
 
 public class LogBlock extends RotatedPillarBlock
 {
+    private static final List<Map<String, DeferredBlock<Block>>> woodTypeList = new ArrayList<>();
+
 
     public LogBlock(Properties properties)
     {
@@ -27,32 +32,33 @@ public class LogBlock extends RotatedPillarBlock
     }
 
     @Override
-    public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction)
+    public boolean isFlammable(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull Direction direction)
     {
         return true;
     }
 
     @Override
-    public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction)
+    public int getFlammability(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull Direction direction)
     {
         return 5;
     }
 
     @Override
-    public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction)
+    public int getFireSpreadSpeed(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull Direction direction)
     {
         return 5;
     }
 
     @Override
-    public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate)
+    public @Nullable BlockState getToolModifiedState(@NotNull BlockState state, UseOnContext context, @NotNull ItemAbility itemAbility, boolean simulate)
     {
         if (context.getItemInHand().getItem() instanceof AxeItem)
         {
-            Map<BlockState, BlockState> logAndWoodMap = getLogAndWoodMap();
-            if (logAndWoodMap.containsKey(state.getBlock().defaultBlockState()))
+            Map<BlockState, BlockState> logAndWood = getLogAndWoodMap();
+
+            if (logAndWood.containsKey(state.getBlock().defaultBlockState()))
             {
-                return  logAndWoodMap.get(state.getBlock().defaultBlockState()).setValue(LogBlock.AXIS, state.getValue(LogBlock.AXIS));
+                return logAndWood.get(state.getBlock().defaultBlockState()).setValue(LogBlock.AXIS, state.getValue(LogBlock.AXIS));
             }
         }
         return super.getToolModifiedState(state, context, itemAbility, simulate);
@@ -60,18 +66,17 @@ public class LogBlock extends RotatedPillarBlock
 
     private Map<BlockState, BlockState> getLogAndWoodMap()
     {
-        List<Map<String, DeferredBlock<Block>>> l = List.of(
-                BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP,
-                BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP,
-                BlockRegister.ACHIOTE_WOOD_TYPE_MAP,
-                BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP
-        );
         Map<BlockState, BlockState> logAndWoodMap = new HashMap<>();
-        for (Map<String, DeferredBlock<Block>> m : l)
+        for (Map<String, DeferredBlock<Block>> m : woodTypeList)
         {
-            logAndWoodMap.put(m.get("log").get().defaultBlockState(), m.get("stripped_log").get().defaultBlockState());
-            logAndWoodMap.put(m.get("wood").get().defaultBlockState(), m.get("stripped_wood").get().defaultBlockState());
+            logAndWoodMap.put(m.get(LOG.toString()).get().defaultBlockState(), m.get(STRIPPED_LOG.toString()).get().defaultBlockState());
+            logAndWoodMap.put(m.get(WOOD.toString()).get().defaultBlockState(), m.get(STRIPPED_WOOD.toString()).get().defaultBlockState());
         }
         return logAndWoodMap;
+    }
+
+    public static void registerNewWoodType(Map<String, DeferredBlock<Block>> woodType)
+    {
+        woodTypeList.add(woodType);
     }
 }

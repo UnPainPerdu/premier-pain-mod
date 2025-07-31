@@ -284,6 +284,7 @@ public class BlockRegister
         map.put(WALL_HANGING_SIGN.toString(), registerBlockOnly(name + "_wall_hanging_sign", () -> new ModWallHangingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
         map.put(SAPLING.toString(), registerBlock(name + "_sapling", () -> new SaplingBlock(treeGrower, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))));
         map.put(POTTED_SAPLING.toString(), registerFlowerPot("potted_" + name + "_sapling", () -> map.get(SAPLING.toString())));
+        LogBlock.registerNewWoodType(map);
         return map;
     }
 
