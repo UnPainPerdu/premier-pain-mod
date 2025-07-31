@@ -8,11 +8,11 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
-import com.unpainperdu.premierpainmod.level.world.block.crafting_block.CookingPotBlock;
-import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.crafting_block.CookingPotBlock;
+import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.event_block.LibertyBlock;
 import com.unpainperdu.premierpainmod.level.world.block.tree.*;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.basicFlower.CuriosityFlower;
@@ -51,6 +51,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
+
+import static com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum.*;
 
 public class BlockRegister
 {
@@ -262,26 +264,26 @@ public class BlockRegister
     private static Map<String, DeferredBlock<Block>> generateAllBlockForWood(String name, WoodType woodType, TreeGrower treeGrower)
     {
         Map<String, DeferredBlock<Block>> map = new HashMap<>();
-        map.put("log", registerBlock(name + "_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
-        map.put("stripped_log", registerBlock("stripped_" + name + "_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
-        map.put("wood", registerBlock(name + "_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
-        map.put("stripped_wood", registerBlock("stripped_" + name + "_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
-        map.put("planks", registerBlock(name + "_planks", () -> new FlammableBlock(20, 5, BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava())));
-        map.put("leaves", registerBlock(name + "_leaves", () -> new ModLeavesBlock(true, 60, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))));
-        map.put("stairs", registerBlock(name + "_stairs", () -> registerStair(() -> map.get("planks"))));
-        map.put("slab", registerBlock(name + "_slab", () -> registerSlab(() -> map.get("planks"))));
-        map.put("button", registerBlock(name + "_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30)));
-        map.put("pressure_plate", registerBlock(name + "_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> map.get("planks"))));
-        map.put("fence", registerBlock(name + "_fence", () -> registerFence(() -> map.get("planks"))));
-        map.put("fence_gate", registerBlock(name + "_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> map.get("planks"))));
-        map.put("door", registerBlock(name + "_door", () -> registerDoor(BlockSetType.OAK, () -> map.get("planks"))));
-        map.put("trapdoor", registerBlock(name + "_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> map.get("planks"))));
-        map.put("sign", registerBlockOnly(name + "_sign", () -> new ModStandingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
-        map.put("wall_sign", registerBlockOnly(name + "_wall_sign", () -> new ModWallSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
-        map.put("hanging_sign", registerBlockOnly(name + "_hanging_sign", () -> new ModHangingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
-        map.put("wall_hanging_sign", registerBlockOnly(name + "_wall_hanging_sign", () -> new ModWallHangingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
-        map.put("sapling", registerBlock(name + "_sapling", () -> new SaplingBlock(treeGrower, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))));
-        map.put("potted_sapling", registerFlowerPot("potted_" + name + "_sapling", () -> map.get("sapling")));
+        map.put(LOG.toString(), registerBlock(name + "_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put(STRIPPED_LOG.toString(), registerBlock("stripped_" + name + "_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put(WOOD.toString(), registerBlock(name + "_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put(STRIPPED_WOOD.toString(), registerBlock("stripped_" + name + "_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put(PLANKS.toString(), registerBlock(name + "_planks", () -> new FlammableBlock(20, 5, BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava())));
+        map.put(LEAVES.toString(), registerBlock(name + "_leaves", () -> new ModLeavesBlock(true, 60, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))));
+        map.put(STAIRS.toString(), registerBlock(name + "_stairs", () -> registerStair(() -> map.get(PLANKS.toString()))));
+        map.put(SLAB.toString(), registerBlock(name + "_slab", () -> registerSlab(() -> map.get(PLANKS.toString()))));
+        map.put(BUTTON.toString(), registerBlock(name + "_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30)));
+        map.put(PRESSURE_PLATE.toString(), registerBlock(name + "_pressure_plate", () -> registerPressurePlate(BlockSetType.OAK, () -> map.get(PLANKS.toString()))));
+        map.put(FENCE.toString(), registerBlock(name + "_fence", () -> registerFence(() -> map.get(PLANKS.toString()))));
+        map.put(FENCE_GATE.toString(), registerBlock(name + "_fence_gate", () -> registerFenceGate(WoodType.OAK, () -> map.get(PLANKS.toString()))));
+        map.put(DOOR.toString(), registerBlock(name + "_door", () -> registerDoor(BlockSetType.OAK, () -> map.get(PLANKS.toString()))));
+        map.put(TRAPDOOR.toString(), registerBlock(name + "_trapdoor", () -> registerTrapdoor(BlockSetType.OAK, () -> map.get(PLANKS.toString()))));
+        map.put(SIGN.toString(), registerBlockOnly(name + "_sign", () -> new ModStandingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
+        map.put(WALL_SIGN.toString(), registerBlockOnly(name + "_wall_sign", () -> new ModWallSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
+        map.put(HANGING_SIGN.toString(), registerBlockOnly(name + "_hanging_sign", () -> new ModHangingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
+        map.put(WALL_HANGING_SIGN.toString(), registerBlockOnly(name + "_wall_hanging_sign", () -> new ModWallHangingSignBlock(woodType, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava())));
+        map.put(SAPLING.toString(), registerBlock(name + "_sapling", () -> new SaplingBlock(treeGrower, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))));
+        map.put(POTTED_SAPLING.toString(), registerFlowerPot("potted_" + name + "_sapling", () -> map.get(SAPLING.toString())));
         return map;
     }
 
