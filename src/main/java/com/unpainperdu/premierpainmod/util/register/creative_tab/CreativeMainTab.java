@@ -26,14 +26,17 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.TallFlowerBlock;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class CreativeMainTab
 {
@@ -98,31 +101,24 @@ public class CreativeMainTab
 
     private static void generateWood(CreativeModeTab.Output output)
     {
-        List<String> woods = Arrays.asList(
-                "mountain_currant", "moriche_palm", "achiote"
-        );
+        generateWood(output, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP);
+        generateWood(output, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP);
+        generateWood(output, BlockRegister.ACHIOTE_WOOD_TYPE_MAP);
+        generateWood(output, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP, BlockRegister.FALLING_WEEPING_WILLOW_LEAVES);
+    }
 
-        for (String wood : woods)
+    private static void generateWood(CreativeModeTab.Output output, Map<String, DeferredBlock<Block>> woodType, ItemLike... extra)
+    {
+        for (DeferredBlock<Block> block : woodType.values())
         {
-            output.accept(getItemFromId(wood + "_log"));
-            output.accept(getItemFromId(wood + "_wood"));
-            output.accept(getItemFromId("stripped_" + wood + "_log"));
-            output.accept(getItemFromId("stripped_" + wood + "_wood"));
-            output.accept(getItemFromId(wood + "_planks"));
-            output.accept(getItemFromId(wood + "_stairs"));
-            output.accept(getItemFromId(wood + "_slab"));
-            output.accept(getItemFromId(wood + "_fence"));
-            output.accept(getItemFromId(wood + "_fence_gate"));
-            output.accept(getItemFromId(wood + "_door"));
-            output.accept(getItemFromId(wood + "_trapdoor"));
-            output.accept(getItemFromId(wood + "_pressure_plate"));
-            output.accept(getItemFromId(wood + "_button"));
-            output.accept(getItemFromId(wood + "_sign"));
-            output.accept(getItemFromId(wood + "_hanging_sign"));
-            output.accept(getItemFromId(wood + "_leaves"));
-            output.accept(getItemFromId(wood + "_sapling"));
-            output.accept(getItemFromId(wood + "_boat"));
-            output.accept(getItemFromId(wood + "_chest_boat"));
+            if (!block.asItem().getDefaultInstance().isEmpty())
+            {
+                output.accept(block);
+            }
+        }
+        for (ItemLike item : extra)
+        {
+            output.accept(item);
         }
 
     }
@@ -230,16 +226,6 @@ public class CreativeMainTab
                 }
             }
         }
-    }
-
-    private static Item getItemFromId(String path)
-    {
-        return getItemFromId(PremierPainMod.MOD_ID, path);
-    }
-
-    private static Item getItemFromId(String nameSpace, String path)
-    {
-        return BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(nameSpace, path));
     }
 }
 

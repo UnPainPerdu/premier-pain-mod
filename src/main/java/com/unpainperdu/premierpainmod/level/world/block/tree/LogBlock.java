@@ -23,7 +23,7 @@ import static com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum.*
 
 public class LogBlock extends RotatedPillarBlock
 {
-    private static final List<Map<String, DeferredBlock<Block>>> woodTypeList = new ArrayList<>();
+    private static final List<Map<String, DeferredBlock<Block>>> WOOD_TYPE_LIST = new ArrayList<>();
 
 
     public LogBlock(Properties properties)
@@ -67,7 +67,7 @@ public class LogBlock extends RotatedPillarBlock
     private Map<BlockState, BlockState> getLogAndWoodMap()
     {
         Map<BlockState, BlockState> logAndWoodMap = new HashMap<>();
-        for (Map<String, DeferredBlock<Block>> m : woodTypeList)
+        for (Map<String, DeferredBlock<Block>> m : WOOD_TYPE_LIST)
         {
             logAndWoodMap.put(m.get(LOG.toString()).get().defaultBlockState(), m.get(STRIPPED_LOG.toString()).get().defaultBlockState());
             logAndWoodMap.put(m.get(WOOD.toString()).get().defaultBlockState(), m.get(STRIPPED_WOOD.toString()).get().defaultBlockState());
@@ -77,6 +77,7 @@ public class LogBlock extends RotatedPillarBlock
 
     public static void registerNewWoodType(Map<String, DeferredBlock<Block>> woodType)
     {
-        woodTypeList.add(woodType);
+        WOOD_TYPE_LIST.add(woodType);
+
     }
 }
