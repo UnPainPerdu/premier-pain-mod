@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.util.tool_kit;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class ResourceUtil
@@ -14,6 +15,11 @@ public class ResourceUtil
     public static ResourceLocation createResourceLocation(String path)
     {
         return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
+    }
+
+    public static Item getModItemFromId(String path)
+    {
+        return BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path));
     }
 
     public static Block getModBlockFromId(String path)

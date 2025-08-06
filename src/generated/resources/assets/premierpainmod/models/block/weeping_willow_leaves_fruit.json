@@ -1,8 +1,0 @@
-{
-  "parent": "premierpainmod:block/vegetation/tree/leaves_with_fruit",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "0": "premierpainmod:block/tree/weeping_willow/leaves",
-    "1": "premierpainmod:block/tree/weeping_willow/leaves_fruit"
-  }
-}

@@ -12,4 +12,5 @@ public class ModBlockStateProperties
     public static final EnumProperty<TwoBlockWidthPart> TWO_BLOCK_WIDTH_PART = EnumProperty.create("two_block_width_part", TwoBlockWidthPart.class);
     public static final EnumProperty<VillagerCarpetColor> VILLAGER_CARPET_COLOR = EnumProperty.create("villager_carpet_color", VillagerCarpetColor.class);
     public static final BooleanProperty HANGING = BooleanProperty.create("hanging");
+    public static final BooleanProperty BOTTOM_PART = BooleanProperty.create("bottom_part");
 }

@@ -1,7 +1,7 @@
 {
   "parent": "premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_upper_opened",
   "textures": {
-    "1": "premierpainmod:block/all_materials_block/multiple_use_texture/bamboo_villager",
-    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/bamboo_villager"
+    "1": "premierpainmod:block/all_materials_block/multiple_use_texture/bamboo",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/bamboo"
   }
 }

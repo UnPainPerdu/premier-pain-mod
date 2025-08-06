@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.asset.model.block;
 
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.tree.ModLeavesBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -151,5 +152,29 @@ public class WoodSetBlockStateProviderMethod
 
         this.bs.simpleBlock(sapling, modelFile);
         this.bs.itemModels().getBuilder(getKey(sapling).getPath()).parent(itemModelFile);
+    }
+
+    public void fallingLeaves(Block fallingLeaves, String treeId)
+    {
+        String name = getModName(fallingLeaves);
+        ResourceLocation topTexture = createResourceLocation("block/tree/" + treeId + "/leaves");
+        ResourceLocation bottomTexture = createResourceLocation("block/tree/" + treeId + "/falling_leaves");
+        ModelFile baseModel = this.bs.models().withExistingParent(name, "block/cross").texture("cross", topTexture).renderType("cutout");
+        ModelFile bottomModel = this.bs.models().withExistingParent(name, "block/cross").texture("cross", bottomTexture).renderType("cutout");
+        ModelFile itemModelFile = this.bs.models().withExistingParent(name + "_item", "item/generated").texture("layer0", bottomTexture);
+        VariantBlockStateBuilder variantBuilder = this.bs.getVariantBuilder(fallingLeaves);
+        variantBuilder.forAllStates(state ->
+        {
+            if (state.getValue(ModBlockStateProperties.BOTTOM_PART))
+            {
+                return ConfiguredModel.builder()
+                        .modelFile(bottomModel)
+                        .build();
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(baseModel)
+                    .build();
+        });
+        this.bs.itemModels().getBuilder(getKey(fallingLeaves).getPath()).parent(itemModelFile);
     }
 }

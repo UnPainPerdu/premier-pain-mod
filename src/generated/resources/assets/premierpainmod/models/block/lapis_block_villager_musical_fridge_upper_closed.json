@@ -1,7 +1,7 @@
 {
   "parent": "premierpainmod:block/all_materials_block/villager_musical_fridge/villager_musical_fridge_upper_closed",
   "textures": {
-    "1": "premierpainmod:block/all_materials_block/multiple_use_texture/lapis_block_villager",
-    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/lapis_block_villager"
+    "1": "premierpainmod:block/all_materials_block/multiple_use_texture/lapis_block",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/lapis_block"
   }
 }

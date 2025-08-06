@@ -13,26 +13,34 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
+import static com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum.LEAVES;
+
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class BlockAndItemTintingEvent
 {
     @SubscribeEvent
     public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event)
     {
+        String leaves = LEAVES.toString();
         //vegetation
         //tree
-        setTintingForFruitLeaves(event, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get());
-        setTintingForVegetation(event, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("leaves").get());
-        setTintingForFruitLeaves(event, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get());
+        setTintingForFruitLeaves(event, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(leaves).get());
+        setTintingForVegetation(event, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(leaves).get());
+        setTintingForFruitLeaves(event, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(leaves).get());
+        setTintingForVegetation(event, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(leaves).get());
+        setTintingForVegetation(event, BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get());
     }
 
     @SubscribeEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event)
     {
+        String leaves = LEAVES.toString();
         event.register((stack, tintIndex) -> 0x91BD59,
-                BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get(),
-                BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("leaves").get(),
-                BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get()
+                BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(leaves).get(),
+                BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(leaves).get(),
+                BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(leaves).get(),
+                BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(leaves).get(),
+                BlockRegister.FALLING_WEEPING_WILLOW_LEAVES
         );
     }
 

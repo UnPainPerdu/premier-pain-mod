@@ -54,7 +54,6 @@ public class ModBlockStateProvider extends BlockStateProvider
         {
             switch (block)
             {
-                case VillagerWorkshop ignored -> villagerWorkshopWithItem(block);
                 case VillagerStatue ignored -> villagerStatueWithItem(block);
                 case VillagerPedestalBlock ignored -> villagerPedestalWithItem(block);
                 case VillagerBrazier ignored -> villagerBrazierWithItem(block);
@@ -101,12 +100,14 @@ public class ModBlockStateProvider extends BlockStateProvider
         //crop
         universalPottedBlockWithCustomModel(BlockRegister.POTTED_JELLYSHROOM.get(), "premierpainmod:block/vegetation/crop/jellyshroom/potted_jellyshroom");
         //tree
-        WoodSetBlockStateProviderMethod provider = new WoodSetBlockStateProviderMethod(this);
-        provider.allWoodBlocks("mountain_currant", true);
-        provider.allWoodBlocks("moriche_palm", false);
-        provider.allWoodBlocks("achiote", true);
-        provider.allWoodBlocks("weeping_willow", true);
+        WoodSetBlockStateProviderMethod woodProvider = new WoodSetBlockStateProviderMethod(this);
+        woodProvider.allWoodBlocks("mountain_currant", true);
+        woodProvider.allWoodBlocks("moriche_palm", false);
+        woodProvider.allWoodBlocks("achiote", true);
+        woodProvider.allWoodBlocks("weeping_willow", false);
+        woodProvider.fallingLeaves(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get(), "weeping_willow");
         //crafting_block
+        villagerWorkshopWithItem();
         cookingPotBlockWithItem();
         //event block
         simpleBlockWithItemWithCustomModel(BlockRegister.LIBERTY_BLOCK.get(), "premierpainmod:block/event_block/liberty_block/liberty_block");
@@ -127,7 +128,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerPedestalWithItem(Block pedestal)
     {
         String name = getModName(pedestal);
-        String material = name.replace("_villager_pedestal", "_villager");
+        String material = name.replace("_villager_pedestal", "");
         ModelFile pedestalModel = models().withExistingParent(getKey(pedestal).toString(), "premierpainmod:block/all_materials_block/villager_pedestal/villager_pedestal").texture("0", "block/all_materials_block/multiple_use_texture/" + material).texture("1", "block/all_materials_block/multiple_use_particle/" + material);
         simpleBlock(pedestal, pedestalModel);
         itemModels().getBuilder(getKey(pedestal).getPath()).parent(pedestalModel);
@@ -136,7 +137,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerStatueWithItem(Block statue)
     {
         String name = getModName(statue);
-        String material = name.replace("_villager_statue", "_villager");
+        String material = name.replace("_villager_statue", "");
 
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(statue);
         variantBuilder.forAllStates(state ->
@@ -166,12 +167,12 @@ public class ModBlockStateProvider extends BlockStateProvider
         itemModels().getBuilder((getKey(statue).getPath()).replace("premierpainmod:block/", "premierpainmod:item/"))
                 .parent(models()
                         .getExistingFile(mcLoc("item/generated")))
-                .texture("layer0", "item/all_materials_block_item/villager_statue/" + name);
+                .texture("layer0", "item/all_materials_block_item/villager_statue/" + material);
     }
 
-    private void villagerWorkshopWithItem(Block villagerWorkshop)
+    private void villagerWorkshopWithItem()
     {
-
+        Block villagerWorkshop = BlockRegister.VILLAGER_WORKSHOP.get();
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(villagerWorkshop);
         variantBuilder.forAllStates(state ->
         {
@@ -201,25 +202,26 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerBrazierWithItem(Block brazier)
     {
         String name = getModName(brazier);
-        String material = name.replace("_villager_brazier", "_villager");
+        String material = name.replace("_villager_brazier", "");
 
         String texture_bottom = "block/all_materials_block/multiple_use_texture/" + material;
         String texture_upper;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
 
-        if (material.equals("oak_villager")
-                || material.equals("pale_oak_villager")
-                || material.equals("birch_villager")
-                || material.equals("spruce_villager")
-                || material.equals("jungle_villager")
-                || material.equals("acacia_villager")
-                || material.equals("dark_oak_villager")
-                || material.equals("mangrove_villager")
-                || material.equals("cherry_villager")
-                || material.equals("bamboo_villager")
-                || material.equals("mountain_currant_villager")
-                || material.equals("moriche_palm_villager")
-                || material.equals("achiote_villager")
+        if (material.equals("oak")
+                || material.equals("pale_oak")
+                || material.equals("birch")
+                || material.equals("spruce")
+                || material.equals("jungle")
+                || material.equals("acacia")
+                || material.equals("dark_oak")
+                || material.equals("mangrove")
+                || material.equals("cherry")
+                || material.equals("bamboo")
+                || material.equals("mountain_currant")
+                || material.equals("moriche_palm")
+                || material.equals("achiote")
+                || material.equals("weeping_willow")
         )
         {
             texture_upper = "block/all_materials_block/villager_brazier/wood_villager_brazier_upper";
@@ -270,7 +272,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerTableWithItem(Block table)
     {
         String name = getModName(table);
-        String material = name.replace("_villager_table", "_villager");
+        String material = name.replace("_villager_table", "");
         String textureTable = "block/all_materials_block/multiple_use_texture/" + material;
         String textureParticle = "block/all_materials_block/multiple_use_particle/" + material;
 
@@ -556,7 +558,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerChairWithItem(Block chair)
     {
         String chairName = BuiltInRegistries.BLOCK.getKey(chair).toString().replace(PremierPainMod.MOD_ID + ":", "");
-        String material = chairName.replace("_chair", "");
+        String material = chairName.replace("_villager_chair", "");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(chair);
         variantBuilder.forAllStates(state ->
                 ConfiguredModel.builder()
@@ -572,7 +574,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerThroneChairWithItem(Block throneChair)
     {
         String throneChairName = getModName(throneChair);
-        String material = throneChairName.replace("_throne_chair", "");
+        String material = throneChairName.replace("_villager_throne_chair", "");
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(throneChair);
         variantBuilder.forAllStates(state ->
         {
@@ -623,7 +625,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerDrawerWithItem(Block villagerDrawer)
     {
         String villagerDrawerName = BuiltInRegistries.BLOCK.getKey(villagerDrawer).toString().replace(PremierPainMod.MOD_ID + ":", "");
-        String material = villagerDrawerName.replace("_drawer", "");
+        String material = villagerDrawerName.replace("_villager_drawer", "");
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
@@ -675,7 +677,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void wallVillagerShelf(Block villagerWallShelfWithItem)
     {
         String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID + ":", "");
-        String material = name.replace("_wall_villager_shelf", "_villager");
+        String material = name.replace("_wall_villager_shelf", "");
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
@@ -707,7 +709,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void standingVillagerShelf(Block villagerWallShelfWithItem)
     {
         String name = BuiltInRegistries.BLOCK.getKey(villagerWallShelfWithItem).toString().replace(PremierPainMod.MOD_ID + ":", "");
-        String material = name.replace("_standing_villager_shelf", "_villager");
+        String material = name.replace("_standing_villager_shelf", "");
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
@@ -921,7 +923,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerBenchWithItem(Block block)
     {
         String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
-        String material = name.replace("_villager_bench", "_villager");
+        String material = name.replace("_villager_bench", "");
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
@@ -965,7 +967,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerCouchWithItem(Block block)
     {
         String name = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
-        String material = name.replace("_villager_couch", "_villager");
+        String material = name.replace("_villager_couch", "");
 
 
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
@@ -1015,7 +1017,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerBrewingStationWithItem(Block block)
     {
         String name = getModName(block);
-        String material = name.replace("_villager_brewing_station", "_villager");
+        String material = name.replace("_villager_brewing_station", "");
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
@@ -1038,7 +1040,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerMusicalFridgeBlockWithItem(Block block)
     {
         String name = getModName(block);
-        String material = name.replace("_villager_musical_fridge", "_villager");
+        String material = name.replace("_villager_musical_fridge", "");
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
@@ -1083,7 +1085,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void villagerChiseledHeadBlockWithItem(Block block)
     {
         String name = getModName(block);
-        String material = name.replace("_villager_chiseled_head", "_villager");
+        String material = name.replace("_villager_chiseled_head", "");
         String texture = "block/all_materials_block/multiple_use_texture/" + material;
         String particle = "block/all_materials_block/multiple_use_particle/" + material;
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);

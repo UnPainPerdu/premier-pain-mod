@@ -1,7 +1,7 @@
 {
   "parent": "premierpainmod:block/achiote_villager_brazier_m",
   "textures": {
-    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/achiote_villager",
+    "0": "premierpainmod:block/all_materials_block/multiple_use_texture/achiote",
     "1": "premierpainmod:block/all_materials_block/villager_brazier/wood_villager_brazier_upper"
   }
 }

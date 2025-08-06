@@ -13,6 +13,8 @@ import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
+import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.getModItemFromId;
+
 public class ModItemStateProvider extends ItemModelProvider
 {
     public ModItemStateProvider(PackOutput output, ExistingFileHelper existingFileHelper)
@@ -99,7 +101,7 @@ public class ModItemStateProvider extends ItemModelProvider
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0", "item/"+ path);
+                .texture("layer0", "item/" + path);
     }
 
     private void villagerShelfItem(Item item)
@@ -107,7 +109,7 @@ public class ModItemStateProvider extends ItemModelProvider
         String name = getName(item);
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("layer0", "item/all_materials_block_item/villager_shelf/" + name);
+                .texture("layer0", "item/all_materials_block_item/villager_shelf/" + name.replace("_villager_shelf", ""));
     }
 
     private void villagerSingingStone(Item item)
@@ -137,28 +139,18 @@ public class ModItemStateProvider extends ItemModelProvider
      */
     private void beerItems(String beerId)
     {
-        item(getItemFromId(beerId + "_bucket"), "fluid/beer/bucket/");
-        item(getItemFromId(beerId + "_glass"), "fluid/beer/glass/");
-        item(getItemFromId(beerId + "_bottle"), "fluid/beer/bottle/");
-        item(getItemFromId(beerId + "_mug"), "fluid/beer/mug/");
+        item(getModItemFromId(beerId + "_bucket"), "fluid/beer/bucket/");
+        item(getModItemFromId(beerId + "_glass"), "fluid/beer/glass/");
+        item(getModItemFromId(beerId + "_bottle"), "fluid/beer/bottle/");
+        item(getModItemFromId(beerId + "_mug"), "fluid/beer/mug/");
     }
 
     private void woodItems(String woodId)
     {
-        itemWithFullPath(getItemFromId(woodId + "_sign"), "tree/" + woodId + "/sign");
-        itemWithFullPath(getItemFromId(woodId + "_hanging_sign"), "tree/" + woodId + "/hanging_sign");
-        itemWithFullPath(getItemFromId(woodId + "_boat"), "tree/" + woodId + "/boat");
-        itemWithFullPath(getItemFromId(woodId + "_chest_boat"), "tree/" + woodId + "/chest_boat");
-    }
-
-    private static Item getItemFromId(String path)
-    {
-        return getItemFromId(PremierPainMod.MOD_ID, path);
-    }
-
-    private static Item getItemFromId(String nameSpace, String path)
-    {
-        return BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(nameSpace, path));
+        itemWithFullPath(getModItemFromId(woodId + "_sign"), "tree/" + woodId + "/sign");
+        itemWithFullPath(getModItemFromId(woodId + "_hanging_sign"), "tree/" + woodId + "/hanging_sign");
+        itemWithFullPath(getModItemFromId(woodId + "_boat"), "tree/" + woodId + "/boat");
+        itemWithFullPath(getModItemFromId(woodId + "_chest_boat"), "tree/" + woodId + "/chest_boat");
     }
 
     private String getName(Item item)
