@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "bottom_part=false,waterlogged=false": {
+      "model": "premierpainmod:block/falling_weeping_willow_leaves"
+    },
+    "bottom_part=false,waterlogged=true": {
+      "model": "premierpainmod:block/falling_weeping_willow_leaves"
+    },
+    "bottom_part=true,waterlogged=false": {
+      "model": "premierpainmod:block/falling_weeping_willow_leaves"
+    },
+    "bottom_part=true,waterlogged=true": {
+      "model": "premierpainmod:block/falling_weeping_willow_leaves"
+    }
+  }
+}
