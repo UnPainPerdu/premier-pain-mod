@@ -28,7 +28,7 @@ public class BlockAndItemTintingEvent
         setTintingForVegetation(event, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(leaves).get());
         setTintingForFruitLeaves(event, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(leaves).get());
         setTintingForVegetation(event, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(leaves).get());
-        setTintingForVegetation(event, BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get());
+        setTintingForTintedCrossModel(event, BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get());
     }
 
     @SubscribeEvent
@@ -36,10 +36,10 @@ public class BlockAndItemTintingEvent
     {
         String leaves = LEAVES.toString();
         event.register((stack, tintIndex) -> 0x91BD59,
-                BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(leaves).get(),
-                BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(leaves).get(),
-                BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(leaves).get(),
-                BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(leaves).get(),
+                BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(leaves),
+                BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(leaves),
+                BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(leaves),
+                BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(leaves),
                 BlockRegister.FALLING_WEEPING_WILLOW_LEAVES
         );
     }
@@ -62,6 +62,25 @@ public class BlockAndItemTintingEvent
         int color = 0xFFFFFF;
 
         if ((tintIndex == 0 || tintIndex == 5) || !state.getValue(ModLeavesBlock.HAS_FRUIT))
+        {
+            color = level != null && pos != null
+                    ? BiomeColors.getAverageFoliageColor(level, pos)
+                    : FoliageColor.getDefaultColor();
+        }
+
+        return color;
+    }
+
+    private static void setTintingForTintedCrossModel(RegisterColorHandlersEvent.Block event, Block block)
+    {
+        event.register(BlockAndItemTintingEvent::getColorForTintedCrossModel, block);
+    }
+
+    private static int getColorForTintedCrossModel(BlockState state, BlockAndTintGetter level, BlockPos pos, int tintIndex)
+    {
+        int color = 0xFFFFFF;
+
+        if (tintIndex == 0 || tintIndex == 5)
         {
             color = level != null && pos != null
                     ? BiomeColors.getAverageFoliageColor(level, pos)

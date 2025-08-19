@@ -2,6 +2,6 @@
   "parent": "premierpainmod:block/tintable_cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "0": "premierpainmod:block/tree/weeping_willow/leaves"
+    "0": "premierpainmod:block/tree/weeping_willow/falling_leaves"
   }
 }

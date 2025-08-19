@@ -157,10 +157,11 @@ public class WoodSetBlockStateProviderMethod
     public void fallingLeaves(Block fallingLeaves, String treeId)
     {
         String name = getModName(fallingLeaves);
+        String modelLoc = "premierpainmod:block/tintable_cross";
         ResourceLocation topTexture = createResourceLocation("block/tree/" + treeId + "/leaves");
         ResourceLocation bottomTexture = createResourceLocation("block/tree/" + treeId + "/falling_leaves");
-        ModelFile baseModel = this.bs.models().withExistingParent(name, "block/cross").texture("cross", topTexture).renderType("cutout");
-        ModelFile bottomModel = this.bs.models().withExistingParent(name, "block/cross").texture("cross", bottomTexture).renderType("cutout");
+        ModelFile baseModel = this.bs.models().withExistingParent(name, modelLoc).texture("0", topTexture).renderType("cutout");
+        ModelFile bottomModel = this.bs.models().withExistingParent(name + "_bottom", modelLoc).texture("0", bottomTexture).renderType("cutout");
         ModelFile itemModelFile = this.bs.models().withExistingParent(name + "_item", "item/generated").texture("layer0", bottomTexture);
         VariantBlockStateBuilder variantBuilder = this.bs.getVariantBuilder(fallingLeaves);
         variantBuilder.forAllStates(state ->
