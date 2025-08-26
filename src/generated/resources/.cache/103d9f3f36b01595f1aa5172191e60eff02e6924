@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-08T11:19:50.6808482	Registries
+// 1.21.1	2025-08-26T11:28:43.1161923	Registries
 63d2cd84592b995a3ce73462b559593e7a2a164e data/premierpainmod/damage_type/liberty_damage1.json
 e4c65cca9906f71a9dfd94e94036944699324e30 data/premierpainmod/damage_type/liberty_damage2.json
 8283944b0f92a90b6b18f28a91a729de32298bfd data/premierpainmod/damage_type/liberty_damage3.json
@@ -27,6 +27,7 @@ a9d3109c068e72b67c32faee152659b18aca7492 data/premierpainmod/worldgen/configured
 0109c06411f80270467f94f60f85c0f5a6061641 data/premierpainmod/worldgen/configured_feature/tree_oak_swamp.json
 956452e127a387988ea99990fd9f5ecce315abf6 data/premierpainmod/worldgen/configured_feature/villager_pillar_ruins_desert.json
 628467cdfca1fc1c78b3cbaca22e09009119d7c4 data/premierpainmod/worldgen/configured_feature/villager_totem.json
+60f3c8254647b2a18f36a6c69601c77aed84ba29 data/premierpainmod/worldgen/configured_feature/weeping_willow.json
 746a40225622a851a6cd24740d7c366a57ed7387 data/premierpainmod/worldgen/placed_feature/achiote.json
 8efc96d1d269e8faf64e3015f1e7b131e4fa1982 data/premierpainmod/worldgen/placed_feature/bush_and_rock.json
 e8f05a809b997fd472683f40000ace710979aa7e data/premierpainmod/worldgen/placed_feature/flowered_cactus.json
@@ -47,3 +48,4 @@ e991f220c358b1d7a15cd0cd36f39405e9b0f4bb data/premierpainmod/worldgen/placed_fea
 f32e5301c0d419af9849339dc4d50db49230388e data/premierpainmod/worldgen/placed_feature/tree_oak_swamp.json
 9b58f4225784f260c695968df707411eb146facb data/premierpainmod/worldgen/placed_feature/villager_pillar_ruins_desert.json
 4aef1386b3c9dfb0636a507d54d073330408c0f6 data/premierpainmod/worldgen/placed_feature/villager_totem.json
+5e5902d2ee2ca4fbf37c49f7637cb9d420376807 data/premierpainmod/worldgen/placed_feature/weeping_willow.json

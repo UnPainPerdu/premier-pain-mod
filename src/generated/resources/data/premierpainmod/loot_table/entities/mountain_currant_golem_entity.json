@@ -9,11 +9,11 @@
           "functions": [
             {
               "add": false,
-              "count": 6.0,
+              "count": 4.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "premierpainmod:mountain_currant_planks"
+          "name": "minecraft:stick"
         }
       ],
       "rolls": 1.0
@@ -26,11 +26,11 @@
           "functions": [
             {
               "add": false,
-              "count": 4.0,
+              "count": 6.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:stick"
+          "name": "premierpainmod:mountain_currant_planks"
         }
       ],
       "rolls": 1.0

@@ -126,13 +126,13 @@ public class BlockRegister
     public static final DeferredBlock<Block> POTTED_DEAD_RUINS_FLOWER = registerFlowerPot("potted_dead_ruins_flower", () -> DEAD_RUINS_FLOWER);
     //tree
     //mountain_currant
-    public static final Map<String, DeferredBlock<Block>> MOUNTAIN_CURRANT_WOOD_TYPE_MAP = generateAllBlockForWood("mountain_currant", ModWoodTypes.MOUNTAIN_CURRANT, ModTreeGrower.MOUNTAIN_CURRANT);
+    public static final Map<String, DeferredBlock<Block>> MOUNTAIN_CURRANT_WOOD_TYPE_MAP = generateAllBlockForWood("mountain_currant", ModWoodTypes.MOUNTAIN_CURRANT, ModTreeGrower.MOUNTAIN_CURRANT, true);
     //moriche_palm
-    public static final Map<String, DeferredBlock<Block>> MORICHE_PALM_WOOD_TYPE_MAP = generateAllBlockForWood("moriche_palm", ModWoodTypes.MORICHE_PALM, ModTreeGrower.MORICHE_PALM);
+    public static final Map<String, DeferredBlock<Block>> MORICHE_PALM_WOOD_TYPE_MAP = generateAllBlockForWood("moriche_palm", ModWoodTypes.MORICHE_PALM, ModTreeGrower.MORICHE_PALM, false);
     //achiote
-    public static final Map<String, DeferredBlock<Block>> ACHIOTE_WOOD_TYPE_MAP = generateAllBlockForWood("achiote", ModWoodTypes.ACHIOTE, ModTreeGrower.ACHIOTE);
+    public static final Map<String, DeferredBlock<Block>> ACHIOTE_WOOD_TYPE_MAP = generateAllBlockForWood("achiote", ModWoodTypes.ACHIOTE, ModTreeGrower.ACHIOTE, true);
     //weeping_willow
-    public static final Map<String, DeferredBlock<Block>> WEEPING_WILLOW_WOOD_TYPE_MAP = generateAllBlockForWood("weeping_willow", ModWoodTypes.WEEPING_WILLOW, ModTreeGrower.ACHIOTE);
+    public static final Map<String, DeferredBlock<Block>> WEEPING_WILLOW_WOOD_TYPE_MAP = generateAllBlockForWood("weeping_willow", ModWoodTypes.WEEPING_WILLOW, ModTreeGrower.WEEPING_WILLOW, false);
     public static final DeferredBlock<Block> FALLING_WEEPING_WILLOW_LEAVES = registerBlock("falling_weeping_willow_leaves", () -> new FallingLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission()));
 
     private static Map<String, DeferredBlock<Block>> createAllMaterialsBlocks()
@@ -261,7 +261,7 @@ public class BlockRegister
         };
     }
 
-    private static Map<String, DeferredBlock<Block>> generateAllBlockForWood(String name, WoodType woodType, TreeGrower treeGrower)
+    private static Map<String, DeferredBlock<Block>> generateAllBlockForWood(String name, WoodType woodType, TreeGrower treeGrower, boolean canHaveFruit)
     {
         Map<String, DeferredBlock<Block>> map = new HashMap<>();
         map.put(LOG.toString(), registerBlock(name + "_log", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
@@ -269,7 +269,7 @@ public class BlockRegister
         map.put(WOOD.toString(), registerBlock(name + "_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
         map.put(STRIPPED_WOOD.toString(), registerBlock("stripped_" + name + "_wood", () -> new LogBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava())));
         map.put(PLANKS.toString(), registerBlock(name + "_planks", () -> new FlammableBlock(20, 5, BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava())));
-        map.put(LEAVES.toString(), registerBlock(name + "_leaves", () -> new ModLeavesBlock(true, 60, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))));
+        map.put(LEAVES.toString(), registerBlock(name + "_leaves", () -> new ModLeavesBlock(canHaveFruit, 60, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))));
         map.put(STAIRS.toString(), registerBlock(name + "_stairs", () -> registerStair(() -> map.get(PLANKS.toString()))));
         map.put(SLAB.toString(), registerBlock(name + "_slab", () -> registerSlab(() -> map.get(PLANKS.toString()))));
         map.put(BUTTON.toString(), registerBlock(name + "_button", () -> registerButton(Blocks.OAK_BUTTON, BlockSetType.OAK, 30)));

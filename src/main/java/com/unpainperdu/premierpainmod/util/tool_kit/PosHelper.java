@@ -14,7 +14,9 @@ import java.util.List;
 
 public class PosHelper
 {
-    private PosHelper(){}
+    private PosHelper()
+    {
+    }
 
     public static BlockPos getLeft(BlockPos pos, Direction direction)
     {
@@ -50,10 +52,12 @@ public class PosHelper
         }
         return pos;
     }
+
     public static BlockPos getRight(BlockPos pos, Direction direction)
     {
         return getRight(pos, direction, 1);
     }
+
     public static BlockPos getRight(BlockPos pos, Direction direction, int howMuch)
     {
         for (int i = 0; i < howMuch; i++)
@@ -83,10 +87,12 @@ public class PosHelper
         }
         return pos;
     }
+
     public static BlockPos getBehind(BlockPos pos, Direction direction)
     {
         return getBehind(pos, direction, 1);
     }
+
     public static BlockPos getBehind(BlockPos pos, Direction direction, int howMuch)
     {
         for (int i = 0; i < howMuch; i++)
@@ -116,10 +122,12 @@ public class PosHelper
         }
         return pos;
     }
+
     public static BlockPos getFront(BlockPos pos, Direction direction)
     {
         return getFront(pos, direction, 1);
     }
+
     public static BlockPos getFront(BlockPos pos, Direction direction, int howMuch)
     {
         for (int i = 0; i < howMuch; i++)
@@ -153,7 +161,7 @@ public class PosHelper
     public static boolean isPosInList(BlockPos pos, List<BlockPos> posList)
     {
         boolean flag = false;
-        for(BlockPos pos1 : posList)
+        for (BlockPos pos1 : posList)
         {
             if (pos1.equals(pos))
             {
@@ -166,8 +174,8 @@ public class PosHelper
 
     /**
      * spread = max value in x and z that pos is far
-     * */
-    public static ArrayList<BlockPos> getRandomPosWithSameY (BlockPos pos,int minNumberOfPos, int maxNumberOfPos,int spread, RandomSource rand)
+     */
+    public static ArrayList<BlockPos> getRandomPosWithSameY(BlockPos pos, int minNumberOfPos, int maxNumberOfPos, int spread, RandomSource rand)
     {
         int random = RandomUtil.getRandomPositiveIntInRange(maxNumberOfPos - minNumberOfPos, rand) + minNumberOfPos;
         ArrayList<BlockPos> list = new ArrayList<>();
@@ -184,7 +192,7 @@ public class PosHelper
 
             BlockPos tempPos = new BlockPos(newPosX, previousPosY, newPosZ);
 
-            if(!(isPosInList(tempPos, list)))
+            if (!(isPosInList(tempPos, list)))
             {
                 list.add(tempPos);
 
@@ -197,7 +205,7 @@ public class PosHelper
     public static ArrayList<BlockPos> setAllPosToTheGround(List<BlockPos> list, WorldGenLevel worldIn)
     {
         ArrayList<BlockPos> tempList = new ArrayList<>();
-        for(BlockPos pos1 : list)
+        for (BlockPos pos1 : list)
         {
             int i = 0;
             boolean flag = false;
@@ -205,7 +213,7 @@ public class PosHelper
             {
                 BlockPos belowPos = pos1.below();
                 Block block = worldIn.getBlockState(belowPos).getBlock();
-                if(!(block instanceof AirBlock) && !(block instanceof LiquidBlock) && !(block instanceof LeavesBlock))
+                if (!(block instanceof AirBlock) && !(block instanceof LiquidBlock) && !(block instanceof LeavesBlock))
                 {
                     flag = true;
                     tempList.add(pos1);
@@ -218,7 +226,7 @@ public class PosHelper
                 {
                     flag = true;
                 }
-                i ++;
+                i++;
             }
         }
         return tempList;
@@ -232,6 +240,7 @@ public class PosHelper
 
     /**
      * set all pos in the list above their current pos
+     *
      * @param howMuch is for how much block above you want to set the pos
      **/
     public static ArrayList<BlockPos> setPosAboveForAll(List<BlockPos> list, int howMuch)
@@ -248,7 +257,99 @@ public class PosHelper
     {
         int i = RandomUtil.getRandomPositiveIntInRange(2, rand);
         int yChange = RandomUtil.getRandomPositiveIntInRange(maxOffSet - minOffset + 1, rand) + minOffset;
-        int y =  pos.getY() + (yChange * (i == 0 ? -1 : 1));
+        int y = pos.getY() + (yChange * (i == 0 ? -1 : 1));
         return new BlockPos(pos.getX(), y, pos.getZ());
+    }
+
+    /**
+     * See Bresenham 3D
+     * @return list of point on segment define by 2 BlockPos
+     **/
+    public static List<BlockPos> getBlockPosLine(BlockPos startPos, BlockPos endPos)
+    {
+        List<BlockPos> finalPosList = new ArrayList<>();
+        int startPosX = startPos.getX();
+        int startPosY = startPos.getY();
+        int startPosZ = startPos.getZ();
+        int endPosX = endPos.getX();
+        int endPosY = endPos.getY();
+        int endPosZ = endPos.getZ();
+
+        int dx = Math.abs(endPosX - startPosX);
+        int dy = Math.abs(endPosY - startPosY);
+        int dz = Math.abs(endPosZ - startPosZ);
+
+        int xs = (endPosX > startPosX) ? 1 : -1;
+        int ys = (endPosY > startPosY) ? 1 : -1;
+        int zs = (endPosZ > startPosZ) ? 1 : -1;
+
+        if (dx >= dy && dx >= dz)
+        {
+            int p1_err = 2 * dy - dx;
+            int p2_err = 2 * dz - dx;
+            while (startPosX != endPosX)
+            {
+                finalPosList.add(new BlockPos(startPosX, startPosY, startPosZ));
+                startPosX += xs;
+                if (p1_err >= 0)
+                {
+                    startPosY += ys;
+                    p1_err -= 2 * dx;
+                }
+                if (p2_err >= 0)
+                {
+                    startPosZ += zs;
+                    p2_err -= 2 * dx;
+                }
+                p1_err += 2 * dy;
+                p2_err += 2 * dz;
+            }
+        }
+        else if (dy >= dx && dy >= dz)
+        {
+            int p1_err = 2 * dx - dy;
+            int p2_err = 2 * dz - dy;
+            while (startPosY != endPosY)
+            {
+                finalPosList.add(new BlockPos(startPosX, startPosY, startPosZ));
+                startPosY += ys;
+                if (p1_err >= 0)
+                {
+                    startPosX += xs;
+                    p1_err -= 2 * dy;
+                }
+                if (p2_err >= 0)
+                {
+                    startPosZ += zs;
+                    p2_err -= 2 * dy;
+                }
+                p1_err += 2 * dx;
+                p2_err += 2 * dz;
+            }
+        }
+        else
+        {
+            int p1_err = 2 * dy - dz;
+            int p2_err = 2 * dx - dz;
+            while (startPosZ != endPosZ)
+            {
+                finalPosList.add(new BlockPos(startPosX, startPosY, startPosZ));
+                startPosZ += zs;
+                if (p1_err >= 0)
+                {
+                    startPosY += ys;
+                    p1_err -= 2 * dz;
+                }
+                if (p2_err >= 0)
+                {
+                    startPosX += xs;
+                    p2_err -= 2 * dz;
+                }
+                p1_err += 2 * dy;
+                p2_err += 2 * dx;
+            }
+        }
+        finalPosList.add(new BlockPos(endPosX, endPosY, endPosZ));
+        return finalPosList;
     }
 }

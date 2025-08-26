@@ -2,14 +2,18 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
 
 import com.google.common.collect.ImmutableList;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.PatchConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.decorator.FallingLeavesDecorator;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.AchioteFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MorichePalmFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MountainCurrantFoliagePlacer;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.WeepingWillowFoliagePlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.AchioteTrunkPlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MorichePalmTrunkPlacer;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MountainCurrantTrunkPlacer;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.WeepingWillowTrunkPlacer;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.FeatureRegister;
+import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -31,6 +35,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TrunkVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
@@ -59,6 +64,7 @@ public class ModVegetationFeature
     public static final ResourceKey<ConfiguredFeature<?, ?>> MOUNTAIN_CURRANT = ModFeatureUtil.createKey("mountain_currant");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MORICHE_PALM = ModFeatureUtil.createKey("moriche_palm");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ACHIOTE = ModFeatureUtil.createKey("achiote");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WEEPING_WILLOW = ModFeatureUtil.createKey("weeping_willow");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> pContext)
     {
@@ -148,9 +154,13 @@ public class ModVegetationFeature
         //misc
         FeatureUtils.register(pContext, ModVegetationFeature.FLOWERED_CACTUS, FeatureRegister.FLOWERED_CACTUS.get(), NoneFeatureConfiguration.INSTANCE);
         //tree
-        FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createMountainCurrantTree(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("log").get(), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("leaves").get(), 3).build());
-        FeatureUtils.register(pContext, MORICHE_PALM, Feature.TREE, createMorichePalmTree(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("log").get(), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("leaves").get()).build());
-        FeatureUtils.register(pContext, ACHIOTE, Feature.TREE, createAchioteTree(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("log").get(), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get()).build());
+        FeatureUtils.register(pContext, MOUNTAIN_CURRANT, Feature.TREE, createMountainCurrantTree(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.LOG.toString()).get(), BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.LEAVES.toString()).get()).build());
+        FeatureUtils.register(pContext, MORICHE_PALM, Feature.TREE, createMorichePalmTree(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.LOG.toString()).get(), BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.LEAVES.toString()).get()).build());
+        FeatureUtils.register(pContext, ACHIOTE, Feature.TREE, createAchioteTree(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.LOG.toString()).get(), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.LEAVES.toString()).get()).build());
+        FeatureUtils.register(pContext, WEEPING_WILLOW, Feature.TREE,
+                createWeepingWillowTree(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.LOG.toString()).get(), BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.LEAVES.toString()).get())
+                        .decorators(ImmutableList.of(new FallingLeavesDecorator(0.9F, BlockStateProvider.simple(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get()))))
+                        .build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(
@@ -165,39 +175,46 @@ public class ModVegetationFeature
         );
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder createMountainCurrantTree(
-            Block pLogBlock, Block pLeavesBlock, int pRadius
-    )
+    private static TreeConfiguration.TreeConfigurationBuilder createMountainCurrantTree(Block logBlock, Block leavesBlock)
     {
         return new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(pLogBlock),
+                BlockStateProvider.simple(logBlock),
                 new MountainCurrantTrunkPlacer(2, 1, 0),
-                BlockStateProvider.simple(pLeavesBlock),
-                new MountainCurrantFoliagePlacer(ConstantInt.of(pRadius), ConstantInt.of(0), 2),
+                BlockStateProvider.simple(leavesBlock),
+                new MountainCurrantFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 1)
         );
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder createMorichePalmTree(
-            Block pLogBlock, Block pLeavesBlock)
+    private static TreeConfiguration.TreeConfigurationBuilder createMorichePalmTree(Block logBlock, Block leavesBlock)
     {
         return new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(pLogBlock),
+                BlockStateProvider.simple(logBlock),
                 new MorichePalmTrunkPlacer(13, 10, 7),
-                BlockStateProvider.simple(pLeavesBlock),
+                BlockStateProvider.simple(leavesBlock),
                 new MorichePalmFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 1)
         );
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder createAchioteTree(
-            Block pLogBlock, Block pLeavesBlock)
+    private static TreeConfiguration.TreeConfigurationBuilder createAchioteTree(Block logBlock, Block leavesBlock)
     {
         return new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(pLogBlock),
+                BlockStateProvider.simple(logBlock),
                 new AchioteTrunkPlacer(3, 2, 2),
-                BlockStateProvider.simple(pLeavesBlock),
+                BlockStateProvider.simple(leavesBlock),
                 new AchioteFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 0, 1)
+        );
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createWeepingWillowTree(Block logBlock, Block leavesBlock)
+    {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(logBlock),
+                new WeepingWillowTrunkPlacer(6, 2, 1),
+                BlockStateProvider.simple(leavesBlock),
+                new WeepingWillowFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(1, 0, 1)
         );
     }

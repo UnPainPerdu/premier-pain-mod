@@ -1,7 +1,9 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement;
 
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModFeatureUtil;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModVegetationFeature;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -38,6 +40,7 @@ public class ModVegetationPlacement
     public static final ResourceKey<PlacedFeature> MOUNTAIN_CURRANT = ModPlacementUtil.createKey("mountain_currant");
     public static final ResourceKey<PlacedFeature> MORICHE_PALM = ModPlacementUtil.createKey("moriche_palm");
     public static final ResourceKey<PlacedFeature> ACHIOTE = ModPlacementUtil.createKey("achiote");
+    public static final ResourceKey<PlacedFeature> WEEPING_WILLOW = ModPlacementUtil.createKey("weeping_willow");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
@@ -71,11 +74,13 @@ public class ModVegetationPlacement
                 BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> MOUNTAIN_CURRANT_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.MOUNTAIN_CURRANT);
-        register(pContext, ModVegetationPlacement.MOUNTAIN_CURRANT, MOUNTAIN_CURRANT_HOLDER, RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("sapling").get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(pContext, ModVegetationPlacement.MOUNTAIN_CURRANT, MOUNTAIN_CURRANT_HOLDER, RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> MORICHE_PALM_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.MORICHE_PALM);
-        register(pContext, ModVegetationPlacement.MORICHE_PALM, MORICHE_PALM_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 40, 40), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get("sapling").get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(pContext, ModVegetationPlacement.MORICHE_PALM, MORICHE_PALM_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 40, 40), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> ACHIOTE_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.ACHIOTE);
-        register(pContext, ModVegetationPlacement.ACHIOTE, ACHIOTE_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling").get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(pContext, ModVegetationPlacement.ACHIOTE, ACHIOTE_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        final Holder<ConfiguredFeature<?, ?>> WEEPING_WILLOW_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.WEEPING_WILLOW);
+        register(pContext, ModVegetationPlacement.WEEPING_WILLOW, WEEPING_WILLOW_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         //misc
         final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
         register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());

@@ -12,6 +12,7 @@ import com.unpainperdu.premierpainmod.util.register.entity.EntityRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.tree.FoliagePlacerTypesRegister;
+import com.unpainperdu.premierpainmod.util.register.tree.TreeDecoratorTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.tree.TrunkPlacerTypesRegister;
 import net.neoforged.bus.api.IEventBus;
 
@@ -37,6 +38,7 @@ public class RegisterHandler
         StructureRegister.register(modEventBus);
         TrunkPlacerTypesRegister.register(modEventBus);
         FoliagePlacerTypesRegister.register(modEventBus);
+        TreeDecoratorTypeRegister.register(modEventBus);
         AllInOneFluidRegister.register(modEventBus);
         ParticleTypeRegister.register(modEventBus);
         MemoryModuleTypeRegister.register(modEventBus);
