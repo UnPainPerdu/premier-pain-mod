@@ -11,9 +11,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.List;
 
@@ -70,6 +72,7 @@ public class ModVegetationPlacement
                 RarityFilter.onAverageOnceEvery(1),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(2),
+                BlockPredicateFilter.forPredicate(BlockPredicate.matchesTag(BlockTags.DIRT)),
                 PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
                 BiomeFilter.biome());
 
@@ -80,7 +83,7 @@ public class ModVegetationPlacement
         final Holder<ConfiguredFeature<?, ?>> ACHIOTE_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.ACHIOTE);
         register(pContext, ModVegetationPlacement.ACHIOTE, ACHIOTE_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> WEEPING_WILLOW_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.WEEPING_WILLOW);
-        register(pContext, ModVegetationPlacement.WEEPING_WILLOW, WEEPING_WILLOW_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(pContext, ModVegetationPlacement.WEEPING_WILLOW, WEEPING_WILLOW_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         //misc
         final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
         register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
