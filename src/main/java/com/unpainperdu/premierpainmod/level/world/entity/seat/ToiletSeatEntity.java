@@ -1,14 +1,24 @@
 package com.unpainperdu.premierpainmod.level.world.entity.seat;
 
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
+import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 
 public class ToiletSeatEntity extends SeatEntity
 {
+    private int timeWithPassengerInTick;
+
     public ToiletSeatEntity(EntityType<SeatEntity> type, Level level)
     {
         super(type, level);
@@ -33,5 +43,62 @@ public class ToiletSeatEntity extends SeatEntity
         }
         setPos(xPos, yPos, zPos);
         noPhysics = true;
+    }
+
+    @Override
+    public void tick()
+    {
+        super.tick();
+        if (!level().isClientSide())
+        {
+            if (!this.getPassengers().isEmpty())
+            {
+                this.timeWithPassengerInTick += 1;
+            }
+            else
+            {
+                this.timeWithPassengerInTick = 0;
+                return;
+            }
+
+            if (timeWithPassengerInTick / 20 > RandomUtil.getRandomPositiveIntInRange(10, this.random) + 20)
+            {
+                this.fart();
+                this.timeWithPassengerInTick = 0;
+            }
+        }
+    }
+
+    @Override
+    protected void readAdditionalSaveData(@NotNull CompoundTag tag)
+    {
+        this.timeWithPassengerInTick = tag.getInt("time_with_passenger_in_tick");
+    }
+
+    @Override
+    protected void addAdditionalSaveData(@NotNull CompoundTag tag)
+    {
+        tag.putInt("time_with_passenger_in_tick", this.timeWithPassengerInTick);
+    }
+
+    private void fart()
+    {
+        int randomChance = RandomUtil.getRandomPositiveIntInRange(100, this.random);
+
+        if (randomChance < 95)
+        {
+            playSound(SoundEvents.BLAZE_HURT);
+        }
+        else
+        {
+            playSound(SoundEvents.VILLAGER_HURT);
+            Entity passenger = this.getFirstPassenger();
+            if (passenger instanceof LivingEntity livingPassenger)
+            {
+                int randomTimeEffect = (RandomUtil.getRandomPositiveIntInRange(30, this.random) + 30) * 20;
+                livingPassenger.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, randomTimeEffect, 1));
+                livingPassenger.addEffect(new MobEffectInstance(MobEffects.JUMP, randomTimeEffect, 1));
+            }
+        }
     }
 }
