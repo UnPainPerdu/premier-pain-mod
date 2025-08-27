@@ -235,12 +235,17 @@ What would be a world without bugs ?
     - fries crafted with potato and moriche palm oil in a cooking pot cooked 2 times and fries cone crafted with 3 fries and a paper
     - some foods cooked with cooking pot : schnitzel, breaded fish, breaded chicken wing and hard boiled egg
     - breading to craft uncooked version of cooking pot food
+    - Weeping willow tree with its own wood set
+    - Villager Dry Toilet, a block which make you lighter
 
 ## Change :
     - change made to villager brewing station :
         - clean screen with little animation
         - add sound when brew is done, when water is put in and when the liquid in is taken
         - screen for JEI show the amount of fluid needed
+    - Add to swamp premier pain ruins biome :
+        - Weeping willow tree
+        - Outsite toilet structure
 
 ## Fix :
     - Villager musical fridge has disc draw in disc slot now
