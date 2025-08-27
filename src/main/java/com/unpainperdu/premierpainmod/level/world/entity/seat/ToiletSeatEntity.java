@@ -61,7 +61,7 @@ public class ToiletSeatEntity extends SeatEntity
                 return;
             }
 
-            if (timeWithPassengerInTick / 20 > RandomUtil.getRandomPositiveIntInRange(10, this.random) + 20)
+            if (timeWithPassengerInTick / 20 > RandomUtil.getRandomPositiveIntInRange(15, this.random) + 10)
             {
                 this.fart();
                 this.timeWithPassengerInTick = 0;

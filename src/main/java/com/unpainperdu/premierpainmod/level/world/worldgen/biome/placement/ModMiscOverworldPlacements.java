@@ -20,6 +20,8 @@ public class ModMiscOverworldPlacements
     public static final ResourceKey<PlacedFeature> VILLAGER_PILLAR_RUINS_DESERT = ModPlacementUtil.createKey("villager_pillar_ruins_desert");
     public static final ResourceKey<PlacedFeature> MUD_PACK = ModPlacementUtil.createKey("mud_pack");
     public static final ResourceKey<PlacedFeature> VILLAGER_TOTEM = ModPlacementUtil.createKey("villager_totem");
+    public static final ResourceKey<PlacedFeature> SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET = ModPlacementUtil.createKey("swamp_weeping_willow_outside_dry_toilet");
+    public static final ResourceKey<PlacedFeature> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET = ModPlacementUtil.createKey("swamp_mangrove_outside_dry_toilet");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
     {
@@ -42,6 +44,12 @@ public class ModMiscOverworldPlacements
 
         final Holder<ConfiguredFeature<?, ?>> VILLAGER_TOTEM_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.VILLAGER_TOTEM);
         register(pContext, VILLAGER_TOTEM, VILLAGER_TOTEM_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
+        final Holder<ConfiguredFeature<?, ?>> SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET);
+        register(pContext, SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET, SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET_HOLDER, RarityFilter.onAverageOnceEvery(45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
+        final Holder<ConfiguredFeature<?, ?>> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.SWAMP_MANGROVE_OUTSIDE_DRY_TOILET);
+        register(pContext, SWAMP_MANGROVE_OUTSIDE_DRY_TOILET, SWAMP_MANGROVE_OUTSIDE_DRY_TOILET_HOLDER, RarityFilter.onAverageOnceEvery(45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
     }
 

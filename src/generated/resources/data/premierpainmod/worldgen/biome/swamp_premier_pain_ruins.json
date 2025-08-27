@@ -35,7 +35,9 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "premierpainmod:mud_pack"
+      "premierpainmod:mud_pack",
+      "premierpainmod:swamp_mangrove_outside_dry_toilet",
+      "premierpainmod:swamp_weeping_willow_outside_dry_toilet"
     ],
     [
       "minecraft:fossil_upper",

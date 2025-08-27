@@ -5,6 +5,8 @@ import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configu
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.outside_dry_toilet.OutsideDryToiletConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.outside_dry_toilet.OutsideDryToiletFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.random_ruins_state.villager_statue_ruins.VillagerStatueRuinsConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.random_ruins_state.villager_statue_ruins.VillagerStatueRuinsFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.BasicFlowerPatchFeature;
@@ -36,6 +38,7 @@ public class FeatureRegister
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> VILLAGER_PILLAR_RUINS_DESERT = FEATURES.register("villager_pillar_ruins_desert", () -> new VillagerPillarRuinsFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> MUD_PACK = FEATURES.register("mud_pack", () -> new MudPackFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> VILLAGER_TOTEM = FEATURES.register("villager_totem", () -> new VillagerTotemFeature(NoneFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<OutsideDryToiletConfiguration>> OUTSIDE_DRY_TOILET = FEATURES.register("outside_dry_toilet", () -> new OutsideDryToiletFeature(OutsideDryToiletConfiguration.CODEC));
     //vegetation
     //flower
     public static final DeferredHolder<Feature<?>, Feature<PatchConfiguration>> BASIC_VEGETATION_PATCH = FEATURES.register("basic_vegetation_flower", () -> new BasicFlowerPatchFeature(PatchConfiguration.CODEC));

@@ -1,0 +1,19 @@
+{
+  "feature": "premierpainmod:swamp_mangrove_outside_dry_toilet",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 45
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -19,10 +19,12 @@ import java.util.List;
 
 public class ModFeatureUtils
 {
-    private ModFeatureUtils(){}
+    private ModFeatureUtils()
+    {
+    }
 
     /**
-     *  @param isReplacing is for let block replace non-air block
+     * @param isReplacing is for let block replace non-air block
      **/
     public static void generateBlock(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, BlockState block, boolean isReplacing)
     {
@@ -30,48 +32,41 @@ public class ModFeatureUtils
     }
 
     /**
-     *  @param isReplacing is for let block replace non-air block
-     *  @param randomizedBlocks is a list of possible state which one of them will be chosen randomly
+     * @param isReplacing      is for let block replace non-air block
+     * @param randomizedBlocks is a list of possible state which one of them will be chosen randomly
      **/
     public static void generateBlock(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, List<BlockState> randomizedBlocks, boolean isReplacing)
     {
         int listSize = randomizedBlocks.size();
-        if (listSize == 1)
+        if (isReplacing || worldIn.getBlockState(pos).getBlock() instanceof AirBlock)
         {
-            if (isReplacing || worldIn.getBlockState(pos).getBlock() instanceof AirBlock)
+            if (listSize == 1)
             {
                 worldIn.setBlock(pos, randomizedBlocks.getFirst(), 2);
             }
-        }
-        else if (listSize > 1)
-        {
-            if (isReplacing || worldIn.getBlockState(pos).getBlock() instanceof AirBlock)
+            else if (listSize > 1)
             {
                 int randomInt = RandomUtil.getRandomPositiveIntInRange(randomizedBlocks.size(), rand);
                 worldIn.setBlock(pos, randomizedBlocks.get(randomInt), 2);
             }
         }
-        else
-        {
-            System.out.println("Warning : failed to generated block at " + pos);
-        }
     }
 
     /**
-     *  @param isReplacing is for let block replace non-air block
-     *  @param randomizedBlocks is a list of possible state which one of them will be chosen randomly
+     * @param isReplacing      is for let block replace non-air block
+     * @param randomizedBlocks is a list of possible state which one of them will be chosen randomly
      **/
     public static void placeBlockAroundOne(WorldGenLevel worldIn, BlockPos pos, RandomSource rand, List<BlockState> randomizedBlocks, boolean isReplacing)
     {
         ArrayList<BlockPos> posAround = new ArrayList<>(Arrays.asList(pos.above(), pos.north(), pos.east(), pos.south(), pos.west()));
-        PosHelper.setAllPosToTheGround( posAround, worldIn);
+        PosHelper.setAllPosToTheGround(posAround, worldIn);
 
-        for(BlockPos pos1 : posAround)
+        for (BlockPos pos1 : posAround)
         {
-           if(worldIn.getBlockState(pos1).getBlock() instanceof AirBlock)
-           {
-               generateBlock(worldIn, pos1, rand, randomizedBlocks, isReplacing);
-           }
+            if (worldIn.getBlockState(pos1).getBlock() instanceof AirBlock)
+            {
+                generateBlock(worldIn, pos1, rand, randomizedBlocks, isReplacing);
+            }
         }
     }
 

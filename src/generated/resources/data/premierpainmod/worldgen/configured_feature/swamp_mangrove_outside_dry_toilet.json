@@ -1,0 +1,72 @@
+{
+  "type": "premierpainmod:outside_dry_toilet",
+  "config": {
+    "ground_states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mud"
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:grass_block",
+          "Properties": {
+            "snowy": "false"
+          }
+        }
+      }
+    ],
+    "material_states": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mangrove_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mangrove_planks"
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mangrove_slab",
+          "Properties": {
+            "type": "bottom",
+            "waterlogged": "false"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mangrove_door",
+          "Properties": {
+            "facing": "north",
+            "half": "lower",
+            "hinge": "left",
+            "open": "false",
+            "powered": "false"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:mangrove_villager_dry_toilet",
+          "Properties": {
+            "facing": "north",
+            "waterlogged": "false"
+          }
+        }
+      }
+    ]
+  }
+}

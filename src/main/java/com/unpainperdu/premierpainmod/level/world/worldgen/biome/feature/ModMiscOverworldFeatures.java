@@ -2,8 +2,11 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
 
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.outside_dry_toilet.OutsideDryToiletConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.random_ruins_state.villager_statue_ruins.VillagerStatueRuinsConfiguration;
 import com.unpainperdu.premierpainmod.util.register.FeatureRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.ResourceKey;
@@ -25,6 +28,8 @@ public class ModMiscOverworldFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> VILLAGER_PILLAR_RUINS_DESERT = ModFeatureUtil.createKey("villager_pillar_ruins_desert");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MUD_PACK = ModFeatureUtil.createKey("mud_pack");
     public static final ResourceKey<ConfiguredFeature<?, ?>> VILLAGER_TOTEM = ModFeatureUtil.createKey("villager_totem");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET = ModFeatureUtil.createKey("swamp_weeping_willow_outside_dry_toilet");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET = ModFeatureUtil.createKey("swamp_mangrove_outside_dry_toilet");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> pContext)
     {
@@ -57,5 +62,36 @@ public class ModMiscOverworldFeatures
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.VILLAGER_PILLAR_RUINS_DESERT, FeatureRegister.VILLAGER_PILLAR_RUINS_DESERT.get(), NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.MUD_PACK, FeatureRegister.MUD_PACK.get(), NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.VILLAGER_TOTEM, FeatureRegister.VILLAGER_TOTEM.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(pContext, ModMiscOverworldFeatures.SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET, FeatureRegister.OUTSIDE_DRY_TOILET.get(),
+                new OutsideDryToiletConfiguration.Builder()
+                        .groundStates(List.of(
+                                BlockStateProvider.simple(Blocks.MUD.defaultBlockState()),
+                                BlockStateProvider.simple(Blocks.GRASS_BLOCK.defaultBlockState())
+                        ))
+                        .materialStates(List.of(
+                                BlockStateProvider.simple(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.LOG.toString()).get()),
+                                BlockStateProvider.simple(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()).get()),
+                                BlockStateProvider.simple(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SLAB.toString()).get()),
+                                BlockStateProvider.simple(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.DOOR.toString()).get()),
+                                BlockStateProvider.simple(BlockRegister.AllMaterialsMap.get("weeping_willow_villager_dry_toilet").get())
+                        ))
+                        .build()
+        );
+
+        FeatureUtils.register(pContext, ModMiscOverworldFeatures.SWAMP_MANGROVE_OUTSIDE_DRY_TOILET, FeatureRegister.OUTSIDE_DRY_TOILET.get(),
+                new OutsideDryToiletConfiguration.Builder()
+                        .groundStates(List.of(
+                                BlockStateProvider.simple(Blocks.MUD.defaultBlockState()),
+                                BlockStateProvider.simple(Blocks.GRASS_BLOCK.defaultBlockState())
+                        ))
+                        .materialStates(List.of(
+                                BlockStateProvider.simple(Blocks.MANGROVE_LOG),
+                                BlockStateProvider.simple(Blocks.MANGROVE_PLANKS),
+                                BlockStateProvider.simple(Blocks.MANGROVE_SLAB),
+                                BlockStateProvider.simple(Blocks.MANGROVE_DOOR),
+                                BlockStateProvider.simple(BlockRegister.AllMaterialsMap.get("mangrove_villager_dry_toilet").get())
+                        ))
+                        .build()
+        );
     }
 }
