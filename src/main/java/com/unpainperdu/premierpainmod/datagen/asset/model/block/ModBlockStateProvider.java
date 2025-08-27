@@ -2,12 +2,17 @@ package com.unpainperdu.premierpainmod.datagen.asset.model.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChiseledHead;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerDryToiletBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerBench;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerCouch;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
@@ -72,6 +77,7 @@ public class ModBlockStateProvider extends BlockStateProvider
                 case VillagerBrewingStation ignored -> villagerBrewingStationWithItem(block);
                 case VillagerMusicalFridgeBlock ignored -> villagerMusicalFridgeBlockWithItem(block);
                 case VillagerChiseledHead ignored -> villagerChiseledHeadBlockWithItem(block);
+                case VillagerDryToiletBlock ignored -> villagerDryToiletBlockWithItem(block);
                 case TallFlowerBlock ignored -> tallFlower(block);
                 default ->
                 {
@@ -1133,6 +1139,24 @@ public class ModBlockStateProvider extends BlockStateProvider
 
         ModelFile baseModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/all_materials_block/villager_chiseled_head/villager_chiseled_head_lit")
                 .texture("1", texture);
+        itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
+    }
+
+    private void villagerDryToiletBlockWithItem(Block block)
+    {
+        String name = getModName(block);
+        String material = name.replace("_villager_dry_toilet", "");
+        String texture = "block/all_materials_block/multiple_use_texture/" + material;
+        String particle = "block/all_materials_block/multiple_use_particle/" + material;
+        ModelFile baseModel = models().withExistingParent(getKey(block).toString(), "premierpainmod:block/all_materials_block/villager_dry_toilet/villager_dry_toilet")
+                .texture("1", texture)
+                .texture("2", particle);
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+                ConfiguredModel.builder()
+                        .modelFile(baseModel)
+                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot())
+                        .build());
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
     }
 

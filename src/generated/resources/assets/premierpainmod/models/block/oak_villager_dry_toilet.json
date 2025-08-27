@@ -1,0 +1,7 @@
+{
+  "parent": "premierpainmod:block/all_materials_block/villager_dry_toilet/villager_dry_toilet",
+  "textures": {
+    "1": "premierpainmod:block/all_materials_block/multiple_use_texture/oak",
+    "2": "premierpainmod:block/all_materials_block/multiple_use_particle/oak"
+  }
+}

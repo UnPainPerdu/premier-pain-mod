@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_achiote_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:achiote_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:achiote_villager_dry_toilet_villagerworkshopping"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_achiote_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:achiote_villager_dry_toilet_villagerworkshopping"
+    ]
+  }
+}

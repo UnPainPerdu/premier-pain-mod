@@ -3,7 +3,7 @@ package com.unpainperdu.premierpainmod.util.seat;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.SeatEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.seat.SeatEntity;
 import org.apache.commons.lang3.tuple.Pair;
 
 import net.minecraft.core.BlockPos;

@@ -14,6 +14,7 @@ import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -38,7 +39,6 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -201,6 +201,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 else if (blockName.contains("achiote"))
                 {
                     buildingBlocksRecipeBluilder(block, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("planks"));
+                }
+                else if (blockName.contains("weeping_willow"))
+                {
+                    buildingBlocksRecipeBluilder(block, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()));
                 }
                 else if (blockName.contains("end_stone"))
                 {
@@ -394,6 +398,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 else if (itemName.contains("achiote"))
                 {
                     buildingBlocksRecipeBluilder(item, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("planks"));
+                }
+                else if (itemName.contains("weeping_willow"))
+                {
+                    buildingBlocksRecipeBluilder(item, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()));
                 }
                 else if (itemName.contains("end_stone"))
                 {

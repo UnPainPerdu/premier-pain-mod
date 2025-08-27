@@ -254,6 +254,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         brewingStationTranslation(suffix, translationSuffix);
         villagerMusicalFridgeTranslation(suffix, translationSuffix);
         villagerChiseledHeadTranslation(suffix, translationSuffix);
+        villagerDryToiletTranslation(suffix, translationSuffix);
     }
 
     // will create translation : "block.premierpainmod.suffix_villager_statue": "Statue de villageois 'Suffix'"
@@ -346,6 +347,13 @@ public class FrenchLanguageProvider extends LanguageProvider
     {
         String fridge = "_villager_chiseled_head";
         String translationFridge = "Tête sculptée de villageois en ";
+        add("block." + PremierPainMod.MOD_ID + "." + suffix + fridge, translationFridge + translation);
+    }
+
+    private void villagerDryToiletTranslation(String suffix, String translation)
+    {
+        String fridge = "_villager_dry_toilet";
+        String translationFridge = "Toilette sèche de villageois en ";
         add("block." + PremierPainMod.MOD_ID + "." + suffix + fridge, translationFridge + translation);
     }
 

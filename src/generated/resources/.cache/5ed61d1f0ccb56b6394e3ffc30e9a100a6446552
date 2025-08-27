@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-24T17:28:45.8299798	Tags for minecraft:block mod id premierpainmod
+// 1.21.1	2025-08-27T10:41:10.7685985	Tags for minecraft:block mod id premierpainmod
 7f17a84c5867cc54c0582449818379348abefb56 data/c/tags/block/fences.json
 7f17a84c5867cc54c0582449818379348abefb56 data/c/tags/block/fences/wooden.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/block/fence_gates.json
@@ -21,13 +21,13 @@ d452b5b9a69f440ded382d5f4ecc42555102fe47 data/minecraft/tags/block/lava_pool_sto
 f50c631b284f62b40ebd484f83e46eddbbd4f149 data/minecraft/tags/block/leaves.json
 0ab56d45d7b5f725a23e44b36ae187b22a4a9f23 data/minecraft/tags/block/logs.json
 0ab56d45d7b5f725a23e44b36ae187b22a4a9f23 data/minecraft/tags/block/logs_that_burn.json
-32fecd10185414ba6a3468fb392b4277635660ee data/minecraft/tags/block/mineable/axe.json
+dda99b986eca06f6b46bca276e9aa97f625c23da data/minecraft/tags/block/mineable/axe.json
 f50c631b284f62b40ebd484f83e46eddbbd4f149 data/minecraft/tags/block/mineable/hoe.json
-a6fa565dca5abd3b0c655238f88a5e90e3024ca9 data/minecraft/tags/block/mineable/pickaxe.json
+84f16c4d6fece9c85999362d4c33466b08d35e16 data/minecraft/tags/block/mineable/pickaxe.json
 3f5efd47cd7468d6a072cd9fc2a277ffe2af96cd data/minecraft/tags/block/mob_interactable_doors.json
-37a6ad83ba4053db62b1418bd5abfc953751a3c7 data/minecraft/tags/block/needs_diamond_tool.json
-d2cca225cccdaa536d37cf885dd359747c3506cf data/minecraft/tags/block/needs_iron_tool.json
-16d118575b47e44f377752fa5de4cae17f7ccfee data/minecraft/tags/block/needs_stone_tool.json
+cde6a5aacf6ed7020478f40d295360cb3bca5993 data/minecraft/tags/block/needs_diamond_tool.json
+b50bdda69d7342170366d302856013a102876fee data/minecraft/tags/block/needs_iron_tool.json
+29473aa946647ebd04f507daa4c0f1dca4076b4d data/minecraft/tags/block/needs_stone_tool.json
 0063e0561e80328f17591011c8a024d73bae74b3 data/minecraft/tags/block/overworld_natural_logs.json
 d452b5b9a69f440ded382d5f4ecc42555102fe47 data/minecraft/tags/block/parrots_spawnable_on.json
 59e0253d3eeceafbf1a09a3c5205b4d808bacacb data/minecraft/tags/block/planks.json

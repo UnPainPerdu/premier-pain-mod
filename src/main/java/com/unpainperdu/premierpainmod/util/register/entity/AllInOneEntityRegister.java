@@ -1,8 +1,9 @@
 package com.unpainperdu.premierpainmod.util.register.entity;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.SeatEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.seat.SeatEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.MountainCurrantGolemEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.seat.ToiletSeatEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -31,6 +32,12 @@ public class AllInOneEntityRegister
 
     public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> SEAT_ENTITY = registerEntity("seat_entity",
             EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC)
+                    .setTrackingRange(256)
+                    .setUpdateInterval(20)
+                    .sized(0.0001F, 0.0001F));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> TOILET_SEAT_ENTITY = registerEntity("toilet_seat_entity",
+            EntityType.Builder.<SeatEntity>of(ToiletSeatEntity::new, MobCategory.MISC)
                     .setTrackingRange(256)
                     .setUpdateInterval(20)
                     .sized(0.0001F, 0.0001F));

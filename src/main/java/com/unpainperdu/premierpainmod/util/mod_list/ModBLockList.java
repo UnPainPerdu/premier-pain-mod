@@ -1,11 +1,13 @@
 package com.unpainperdu.premierpainmod.util.mod_list;
 
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerDryToiletBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerBench;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerCouch;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
@@ -63,7 +65,8 @@ public class ModBLockList
                 VillagerCouch.class,
                 VillagerBrewingStation.class,
                 VillagerMusicalFridgeBlock.class,
-                VillagerChiseledHead.class
+                VillagerChiseledHead.class,
+                VillagerDryToiletBlock.class
         );
     }
 

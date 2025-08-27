@@ -21,6 +21,9 @@
     "premierpainmod:acacia_villager_drawer": {
       "burn_time": 300
     },
+    "premierpainmod:acacia_villager_dry_toilet": {
+      "burn_time": 300
+    },
     "premierpainmod:acacia_villager_musical_fridge": {
       "burn_time": 300
     },
@@ -66,6 +69,9 @@
     "premierpainmod:achiote_villager_drawer": {
       "burn_time": 300
     },
+    "premierpainmod:achiote_villager_dry_toilet": {
+      "burn_time": 300
+    },
     "premierpainmod:achiote_villager_musical_fridge": {
       "burn_time": 300
     },
@@ -108,6 +114,9 @@
     "premierpainmod:bamboo_villager_drawer": {
       "burn_time": 300
     },
+    "premierpainmod:bamboo_villager_dry_toilet": {
+      "burn_time": 300
+    },
     "premierpainmod:bamboo_villager_musical_fridge": {
       "burn_time": 300
     },
@@ -145,6 +154,9 @@
       "burn_time": 300
     },
     "premierpainmod:birch_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:birch_villager_dry_toilet": {
       "burn_time": 300
     },
     "premierpainmod:birch_villager_musical_fridge": {
@@ -186,6 +198,9 @@
     "premierpainmod:cherry_villager_drawer": {
       "burn_time": 300
     },
+    "premierpainmod:cherry_villager_dry_toilet": {
+      "burn_time": 300
+    },
     "premierpainmod:cherry_villager_musical_fridge": {
       "burn_time": 300
     },
@@ -223,6 +238,9 @@
       "burn_time": 300
     },
     "premierpainmod:dark_oak_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:dark_oak_villager_dry_toilet": {
       "burn_time": 300
     },
     "premierpainmod:dark_oak_villager_musical_fridge": {
@@ -264,6 +282,9 @@
     "premierpainmod:jungle_villager_drawer": {
       "burn_time": 300
     },
+    "premierpainmod:jungle_villager_dry_toilet": {
+      "burn_time": 300
+    },
     "premierpainmod:jungle_villager_musical_fridge": {
       "burn_time": 300
     },
@@ -301,6 +322,9 @@
       "burn_time": 300
     },
     "premierpainmod:mangrove_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:mangrove_villager_dry_toilet": {
       "burn_time": 300
     },
     "premierpainmod:mangrove_villager_musical_fridge": {
@@ -346,6 +370,9 @@
       "burn_time": 300
     },
     "premierpainmod:moriche_palm_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:moriche_palm_villager_dry_toilet": {
       "burn_time": 300
     },
     "premierpainmod:moriche_palm_villager_musical_fridge": {
@@ -396,6 +423,9 @@
     "premierpainmod:mountain_currant_villager_drawer": {
       "burn_time": 300
     },
+    "premierpainmod:mountain_currant_villager_dry_toilet": {
+      "burn_time": 300
+    },
     "premierpainmod:mountain_currant_villager_musical_fridge": {
       "burn_time": 300
     },
@@ -438,6 +468,9 @@
     "premierpainmod:oak_villager_drawer": {
       "burn_time": 300
     },
+    "premierpainmod:oak_villager_dry_toilet": {
+      "burn_time": 300
+    },
     "premierpainmod:oak_villager_musical_fridge": {
       "burn_time": 300
     },
@@ -477,6 +510,9 @@
     "premierpainmod:pale_oak_villager_drawer": {
       "burn_time": 300
     },
+    "premierpainmod:pale_oak_villager_dry_toilet": {
+      "burn_time": 300
+    },
     "premierpainmod:pale_oak_villager_musical_fridge": {
       "burn_time": 300
     },
@@ -514,6 +550,9 @@
       "burn_time": 300
     },
     "premierpainmod:spruce_villager_drawer": {
+      "burn_time": 300
+    },
+    "premierpainmod:spruce_villager_dry_toilet": {
       "burn_time": 300
     },
     "premierpainmod:spruce_villager_musical_fridge": {

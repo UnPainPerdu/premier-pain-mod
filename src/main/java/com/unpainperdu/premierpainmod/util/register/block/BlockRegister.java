@@ -2,11 +2,13 @@ package com.unpainperdu.premierpainmod.util.register.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerBench;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.adaptable_sit.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerDryToiletBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerBench;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerCouch;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
@@ -86,7 +88,7 @@ public class BlockRegister
             "villager_table", "villager_chair", "villager_throne_chair",
             "villager_drawer", "standing_villager_shelf", "wall_villager_shelf",
             "villager_bench", "villager_couch", "villager_brewing_station",
-            "villager_musical_fridge", "villager_chiseled_head"
+            "villager_musical_fridge", "villager_chiseled_head", "villager_dry_toilet"
     );
 
     public static final Map<String, DeferredBlock<Block>> AllMaterialsMap = createAllMaterialsBlocks();
@@ -257,6 +259,7 @@ public class BlockRegister
             case "villager_musical_fridge" -> registerBlock(name, () -> new VillagerMusicalFridgeBlock(properties));
             case "villager_chiseled_head" ->
                     registerBlock(name, () -> new VillagerChiseledHead(properties.lightLevel(litBlockEmission(13))));
+            case "villager_dry_toilet" -> registerBlock(name, () -> new VillagerDryToiletBlock(properties));
             default -> null;
         };
     }

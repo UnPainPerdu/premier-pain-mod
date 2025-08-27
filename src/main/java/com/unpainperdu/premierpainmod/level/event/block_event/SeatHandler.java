@@ -2,9 +2,11 @@ package com.unpainperdu.premierpainmod.level.event.block_event;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractAdaptableSit;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerThroneChairBlock;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.SeatEntity;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerDryToiletBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.entity.seat.SeatEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.seat.ToiletSeatEntity;
 import com.unpainperdu.premierpainmod.util.seat.SeatUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
@@ -45,7 +47,16 @@ public class SeatHandler
             }
             if (isValidBlock(level, pos, state, block) && isPlayerInRange(player, pos) && !SeatUtil.isOccupied(level, pos) && player.getMainHandItem().isEmpty())
             {
-                SeatEntity sit = new SeatEntity(level, pos);
+                SeatEntity sit;
+                if (block instanceof VillagerDryToiletBlock)
+                {
+                    sit = new ToiletSeatEntity(level, pos);
+                }
+                else
+                {
+                    sit = new SeatEntity(level, pos);
+                }
+
                 if (SeatUtil.addSitEntity(level, pos, sit, player.position()))
                 {
                     level.addFreshEntity(sit);
@@ -88,11 +99,10 @@ public class SeatHandler
      */
     private static boolean isValidBlock(Level level, BlockPos pos, BlockState state, Block block)
     {
-        boolean isValid = (block instanceof VillagerChairBlock)
+        return (block instanceof VillagerChairBlock)
                         || (block instanceof VillagerThroneChairBlock)
                         || (block instanceof AbstractAdaptableSit)
-                ;
-        return isValid;
+                        || (block instanceof VillagerDryToiletBlock);
     }
     /**
      * Returns whether or not the player is close enough to the block to be able to sit on it
