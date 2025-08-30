@@ -18,6 +18,9 @@ public class EnglishLanguageProvider extends LanguageProvider
     protected void addTranslations()
     {
         add("itemGroup.premierpainmod", "Premier Pain mod");
+        //text_display
+        //toilet_seat
+        add("entity.toilet_seat.not_only_fart", "You feel lighter !");
         //gui
         add("container." + PremierPainMod.MOD_ID + ".villager_workshop", "Villager workshop");
         add("container." + PremierPainMod.MOD_ID + "cooking_pot.bin_button", "Empty fluid tank without refund");

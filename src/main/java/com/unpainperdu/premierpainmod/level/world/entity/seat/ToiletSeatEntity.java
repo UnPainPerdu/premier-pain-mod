@@ -3,14 +3,17 @@ package com.unpainperdu.premierpainmod.level.world.entity.seat;
 import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -99,6 +102,10 @@ public class ToiletSeatEntity extends SeatEntity
                 int randomTimeEffect = (RandomUtil.getRandomPositiveIntInRange(30, this.random) + 30) * 20;
                 livingPassenger.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, randomTimeEffect, 1));
                 livingPassenger.addEffect(new MobEffectInstance(MobEffects.JUMP, randomTimeEffect, 1));
+                if (livingPassenger instanceof Player player)
+                {
+                    player.displayClientMessage(Component.translatable("entity.toilet_seat.not_only_fart").withStyle(ChatFormatting.WHITE), true);
+                }
             }
         }
     }
