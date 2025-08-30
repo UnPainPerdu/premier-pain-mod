@@ -247,6 +247,7 @@ What would be a world without bugs ?
         - Weeping willow tree
         - Outsite toilet feature
     - Tweak a bit spawn rate of my biomes
+    - Villager singing stone has lower chance to play the event by default (35%) but with effect "hero of the villager" (rename of hero of the village) it reach 95 % now
 
 ## Fix :
     - Villager musical fridge has disc draw in disc slot now

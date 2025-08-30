@@ -14,6 +14,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Random;
@@ -25,9 +26,9 @@ public class VillagerSingingStone extends Item
     private final AbstractVillagerSingingStoneEvent event;
     private final int delayInSecond;
 
-    public VillagerSingingStone(Properties pProperties, SoundEvent soundPlayed, String translatableDescriptionId, AbstractVillagerSingingStoneEvent event, int delayInSecond)
+    public VillagerSingingStone(Properties properties, SoundEvent soundPlayed, String translatableDescriptionId, AbstractVillagerSingingStoneEvent event, int delayInSecond)
     {
-        super(pProperties);
+        super(properties);
         this.soundPlayed = soundPlayed;
         this.translatableDescriptionId = translatableDescriptionId;
         this.event = event;
@@ -35,31 +36,31 @@ public class VillagerSingingStone extends Item
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
+    public void appendHoverText(@NotNull ItemStack itemStack, Item.@NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag)
     {
-        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+        super.appendHoverText(itemStack, context, tooltipComponents, tooltipFlag);
             MutableComponent mutablecomponent = Component.translatable("item.description."+this.translatableDescriptionId);
-            pTooltipComponents.add(mutablecomponent.withStyle(ChatFormatting.GRAY));
+            tooltipComponents.add(mutablecomponent.withStyle(ChatFormatting.GRAY));
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand)
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand)
     {
-        ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
-        pPlayer.startUsingItem(pUsedHand);
-        play(pLevel, pPlayer, this.soundPlayed);
-        pPlayer.getCooldowns().addCooldown(this, this.delayInSecond*20);
-        pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        int randomNumber = new Random().nextInt(10);
-        if((randomNumber == 4 || (pPlayer.getName().getString().equals("Dev") && pPlayer.isCreative())) || ((randomNumber < 8) && (pPlayer.hasEffect(MobEffects.HERO_OF_THE_VILLAGE))))
+        ItemStack itemstack = player.getItemInHand(usedHand);
+        player.startUsingItem(usedHand);
+        play(level, player, this.soundPlayed);
+        player.getCooldowns().addCooldown(this, this.delayInSecond*20);
+        player.awardStat(Stats.ITEM_USED.get(this));
+        int randomNumber = new Random().nextInt(100);
+        if((player.isCreative()) || (randomNumber < 35) || ((randomNumber < 95) && (player.hasEffect(MobEffects.HERO_OF_THE_VILLAGE))))
         {
-            this.getEvent().castEvent(pLevel, pPlayer, pUsedHand);
+            this.getEvent().castEvent(level, player, usedHand);
         }
         return InteractionResultHolder.consume(itemstack);
     }
 
     @Override
-    public int getUseDuration(ItemStack pStack, LivingEntity pEntity)
+    public int getUseDuration(@NotNull ItemStack itemStack, @NotNull LivingEntity entity)
     {
         return this.delayInSecond*20;
     }
