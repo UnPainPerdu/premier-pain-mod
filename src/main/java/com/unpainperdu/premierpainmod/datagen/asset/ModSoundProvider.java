@@ -35,6 +35,9 @@ public class ModSoundProvider extends SoundDefinitionsProvider
         add(SoundEventRegister.MCG_DEATH, SoundDefinition.definition().with(sound("premierpainmod:entity/mountain_currant_golem/death")));
         add(SoundEventRegister.MCG_BONE_MEALING, SoundDefinition.definition().with(sound("premierpainmod:entity/mountain_currant_golem/use_bone_meal")));
         addMultipleSoundToEvent(SoundEventRegister.MCG_AMBIENT, "premierpainmod:entity/mountain_currant_golem/", "ambient_01", "ambient_02");
+        //toilet_seat
+        addMultipleSoundToEvent(SoundEventRegister.TOILET_SEAT_FART, "premierpainmod:entity/toilet_seat/", "fart01", "fart02", "fart03", "fart04", "fart05");
+        add(SoundEventRegister.TOILET_SEAT_NOT_ONLY_FART, SoundDefinition.definition().with(sound("premierpainmod:entity/toilet_seat/not_only_fart")));
     }
 
     private void addMultipleSoundToEvent(Supplier<SoundEvent> soundEvent, String folder, String... soundNames)

@@ -30,6 +30,20 @@
       "premierpainmod:entity/mountain_currant_golem/walk_04"
     ]
   },
+  "entity.toilet_seat.fart": {
+    "sounds": [
+      "premierpainmod:entity/toilet_seat/fart01",
+      "premierpainmod:entity/toilet_seat/fart02",
+      "premierpainmod:entity/toilet_seat/fart03",
+      "premierpainmod:entity/toilet_seat/fart04",
+      "premierpainmod:entity/toilet_seat/fart05"
+    ]
+  },
+  "entity.toilet_seat.not_only_fart": {
+    "sounds": [
+      "premierpainmod:entity/toilet_seat/not_only_fart"
+    ]
+  },
   "item.villager_singing_stone.diggy_sound": {
     "sounds": [
       "premierpainmod:item/villager_singing_stone/diggy_sound"

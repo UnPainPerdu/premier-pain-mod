@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.entity.seat;
 
+import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
@@ -87,11 +88,11 @@ public class ToiletSeatEntity extends SeatEntity
 
         if (randomChance < 95)
         {
-            playSound(SoundEvents.BLAZE_HURT);
+            playSound(SoundEventRegister.TOILET_SEAT_FART.get());
         }
         else
         {
-            playSound(SoundEvents.VILLAGER_HURT);
+            playSound(SoundEventRegister.TOILET_SEAT_NOT_ONLY_FART.get());
             Entity passenger = this.getFirstPassenger();
             if (passenger instanceof LivingEntity livingPassenger)
             {

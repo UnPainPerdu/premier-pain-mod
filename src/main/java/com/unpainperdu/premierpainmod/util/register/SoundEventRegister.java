@@ -31,6 +31,9 @@ public class SoundEventRegister
     public static final DeferredHolder<SoundEvent, SoundEvent> MCG_DEATH = register("entity.mountain_currant_golem.death");
     public static final DeferredHolder<SoundEvent, SoundEvent> MCG_BONE_MEALING = register("entity.mountain_currant_golem.bone_mealing");
     public static final DeferredHolder<SoundEvent, SoundEvent> MCG_AMBIENT = register("entity.mountain_currant_golem.ambient");
+    //toilet_seat
+    public static final DeferredHolder<SoundEvent, SoundEvent> TOILET_SEAT_FART = register("entity.toilet_seat.fart");
+    public static final DeferredHolder<SoundEvent, SoundEvent> TOILET_SEAT_NOT_ONLY_FART = register("entity.toilet_seat.not_only_fart");
 
     //Method register
     private static DeferredHolder<SoundEvent, SoundEvent> register(String soundName)
