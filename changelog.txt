@@ -228,6 +228,9 @@ What would be a world without bugs ?
 --------------
 # 1.21.[0,1]-1.13
 
+## Warning :
+    - SmartBrainLib is now a Dependency
+
 ## Add :
     - Mountain Currant Golem, a farm helper which randomly use fre bone meal on your crop, build it with 3 stripped log with a carved pumpkin on top
     - Cooking pot, a crafting block which take fluid and 1 item to craft an another
