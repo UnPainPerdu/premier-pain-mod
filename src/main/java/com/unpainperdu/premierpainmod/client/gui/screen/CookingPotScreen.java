@@ -162,4 +162,11 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     {
         return MouseUtil.isMouseOver(mouseX, mouseY, 28 + leftPos, 46 + topPos, 16, 16);
     }
+
+    @Override
+    public void render(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick)
+    {
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
+        this.renderTooltip(guiGraphics, mouseX, mouseY);
+    }
 }
