@@ -261,3 +261,12 @@ What would be a world without bugs ?
 ## Note :
     - Fluids background code has been reworked, please report any change you notice
     - all wood blocks background code has been reworked, please report any change you notice
+
+--------------
+# 1.21.[0,1]-1.13.1
+
+## Fix :
+    - Weeping willow sign has its correct texture now
+
+## Change :
+    - the light effect on dry toilet persist until you get up
