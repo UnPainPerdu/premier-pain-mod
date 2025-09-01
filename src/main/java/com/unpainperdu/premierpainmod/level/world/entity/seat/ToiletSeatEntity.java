@@ -22,6 +22,8 @@ public class ToiletSeatEntity extends SeatEntity
 {
     private int timeWithPassengerInTick;
 
+    private boolean passengerHasNotOnlyFarted;
+
     public ToiletSeatEntity(EntityType<SeatEntity> type, Level level)
     {
         super(type, level);
@@ -61,6 +63,7 @@ public class ToiletSeatEntity extends SeatEntity
             else
             {
                 this.timeWithPassengerInTick = 0;
+                this.passengerHasNotOnlyFarted = false;
                 return;
             }
 
@@ -68,6 +71,11 @@ public class ToiletSeatEntity extends SeatEntity
             {
                 this.fart();
                 this.timeWithPassengerInTick = 0;
+
+                if (this.passengerHasNotOnlyFarted && this.getFirstPassenger() instanceof LivingEntity livingEntity)
+                {
+                    this.setLighter(livingEntity);
+                }
             }
         }
     }
@@ -76,12 +84,14 @@ public class ToiletSeatEntity extends SeatEntity
     protected void readAdditionalSaveData(@NotNull CompoundTag tag)
     {
         this.timeWithPassengerInTick = tag.getInt("time_with_passenger_in_tick");
+        this.passengerHasNotOnlyFarted = tag.getBoolean("passenger_has_not_only_farted");
     }
 
     @Override
     protected void addAdditionalSaveData(@NotNull CompoundTag tag)
     {
         tag.putInt("time_with_passenger_in_tick", this.timeWithPassengerInTick);
+        tag.putBoolean("passenger_has_not_only_farted", this.passengerHasNotOnlyFarted);
     }
 
     private void fart()
@@ -98,14 +108,20 @@ public class ToiletSeatEntity extends SeatEntity
             Entity passenger = this.getFirstPassenger();
             if (passenger instanceof LivingEntity livingPassenger)
             {
-                int randomTimeEffect = (RandomUtil.getRandomPositiveIntInRange(30, this.random) + 30) * 20;
-                livingPassenger.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, randomTimeEffect, 1));
-                livingPassenger.addEffect(new MobEffectInstance(MobEffects.JUMP, randomTimeEffect, 1));
+                this.setLighter(livingPassenger);
+                this.passengerHasNotOnlyFarted = true;
                 if (livingPassenger instanceof Player player)
                 {
                     player.displayClientMessage(Component.translatable("entity.toilet_seat.not_only_fart").withStyle(ChatFormatting.WHITE), true);
                 }
             }
         }
+    }
+
+    private void setLighter(LivingEntity livingPassenger)
+    {
+        int randomTimeEffect = (RandomUtil.getRandomPositiveIntInRange(30, this.random) + 30) * 20;
+        livingPassenger.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, randomTimeEffect, 1));
+        livingPassenger.addEffect(new MobEffectInstance(MobEffects.JUMP, randomTimeEffect, 1));
     }
 }
