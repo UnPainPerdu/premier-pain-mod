@@ -1,0 +1,36 @@
+{
+  "criteria": {
+    "craft_crafting_table": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:crafting_table"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "premierpainmod:textures/gui/advancements/backgrounds/main.png",
+    "description": {
+      "translate": "advancements.premierpainmod.main.root.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "premierpainmod:villager_workshop"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.premierpainmod.main.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "craft_crafting_table"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

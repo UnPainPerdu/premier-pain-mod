@@ -1,4 +1,8 @@
 {
+  "advancements.premierpainmod.main.root.description": "Aime tu les villageois ?",
+  "advancements.premierpainmod.main.root.title": "PremierPainMod",
+  "advancements.premierpainmod.villager_workshop.description": "Craft ton premier atelier du villageois",
+  "advancements.premierpainmod.villager_workshop.title": "Un block juste incroyable",
   "block.premierpainmod.acacia_standing_villager_shelf": "Etagère du villageois en acacia",
   "block.premierpainmod.acacia_villager_bench": "Banc du villageois en acacia",
   "block.premierpainmod.acacia_villager_brazier": "Brazero en acacia",

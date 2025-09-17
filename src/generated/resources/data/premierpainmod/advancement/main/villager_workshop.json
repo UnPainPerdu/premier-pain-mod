@@ -1,0 +1,33 @@
+{
+  "parent": "premierpainmod:main/root",
+  "criteria": {
+    "has_villager_workshop": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:villager_workshop"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.premierpainmod.villager_workshop.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "premierpainmod:villager_workshop"
+    },
+    "title": {
+      "translate": "advancements.premierpainmod.villager_workshop.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_villager_workshop"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

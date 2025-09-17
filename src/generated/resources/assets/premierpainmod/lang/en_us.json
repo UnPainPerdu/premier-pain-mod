@@ -1,4 +1,8 @@
 {
+  "advancements.premierpainmod.main.root.description": "Do you like villager ?",
+  "advancements.premierpainmod.main.root.title": "PremierPainMod",
+  "advancements.premierpainmod.villager_workshop.description": "Craft your first villager workshop",
+  "advancements.premierpainmod.villager_workshop.title": "A Wonderfull Block",
   "block.premierpainmod.acacia_standing_villager_shelf": "Acacia villager shelf",
   "block.premierpainmod.acacia_villager_bench": "Acacia villager bench",
   "block.premierpainmod.acacia_villager_brazier": "Acacia villager brazier",

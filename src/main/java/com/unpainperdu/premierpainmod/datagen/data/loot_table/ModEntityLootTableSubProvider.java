@@ -17,7 +17,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -44,7 +44,7 @@ public class ModEntityLootTableSubProvider extends EntityLootSubProvider
 
     private void generateMountainCurrantLootTable()
     {
-        Map<ItemLike, Integer> mountainCurrantItemLootMap = new HashMap<>();
+        Map<ItemLike, Integer> mountainCurrantItemLootMap = new LinkedHashMap<>();
         mountainCurrantItemLootMap.put(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get("planks"), 6);
         mountainCurrantItemLootMap.put(Items.STICK, 4);
         generateConstantLootTable(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get(), mountainCurrantItemLootMap);

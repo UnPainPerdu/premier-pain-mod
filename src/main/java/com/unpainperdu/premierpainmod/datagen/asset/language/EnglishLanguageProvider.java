@@ -17,6 +17,8 @@ public class EnglishLanguageProvider extends LanguageProvider
     @Override
     protected void addTranslations()
     {
+        CommonLanguageProvider clp = new CommonLanguageProvider(this);
+
         add("itemGroup.premierpainmod", "Premier Pain mod");
         //text_display
         //toilet_seat
@@ -28,20 +30,23 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("container." + PremierPainMod.MOD_ID + ".villager_brewing_station", "Brewing station");
         add("container." + PremierPainMod.MOD_ID + ".villager_musical_fridge", "Musical fridge");
         add(PremierPainMod.MOD_ID + ".tooltip.liquid.amount.with.capacity", "%s / %s mB");
+        //advancements
+        clp.generateRootAdvancementTranslation("main", "PremierPainMod", "Do you like villager ?");
+        clp.generateAdvancementTranslation("villager_workshop", "A Wonderfull Block", "Craft your first villager workshop");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Hero of villagers");
         //death message
-        deathTranslation("liberty_damage1", "%s was a socialist");
-        deathTranslation("liberty_damage2", "%s wanted a cup of LIBER-TEA");
-        deathTranslation("liberty_damage3", "%s didn't give honor to a Super-Earth flag");
+        clp.deathTranslation("liberty_damage1", "%s was a socialist");
+        clp.deathTranslation("liberty_damage2", "%s wanted a cup of LIBER-TEA");
+        clp.deathTranslation("liberty_damage3", "%s didn't give honor to a Super-Earth flag");
         //item
         //villagerSingingStone
         add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Liberty");
-        descriptionMaker(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get().toString(), "Are you a true patriot ?");
+        clp.descriptionMaker(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get().toString(), "Are you a true patriot ?");
         add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Digging");
-        descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(), "Don't fear the depth");
+        clp.descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(), "Don't fear the depth");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Madness");
-        descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(), "Enough! I have endured more than enough...");
+        clp.descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(), "Enough! I have endured more than enough...");
         //fluid
         //oil
         add(PremierPainMod.MOD_ID + ".block.description.moriche_palm_oil_type", "Moriche Palm Oil");
@@ -358,21 +363,6 @@ public class EnglishLanguageProvider extends LanguageProvider
         String chiseledHead = "_villager_dry_toilet";
         String translationChiseledHead = " Villager Dry Toilet";
         add("block." + PremierPainMod.MOD_ID + "." + suffix + chiseledHead, translationSuffix + translationChiseledHead);
-    }
-
-    private void deathTranslation(String id, String translation)
-    {
-        add("death.attack." + PremierPainMod.MOD_ID + ":" + id, translation);
-    }
-
-    private void descriptionMakerWIP(String idOfItem, String translation)
-    {
-        descriptionMaker(idOfItem, translation + " !!!Sound in WIP, will be more villager like when i will know how to do");
-    }
-
-    private void descriptionMaker(String idOfItem, String translation)
-    {
-        add("item.description." + idOfItem.replace(PremierPainMod.MOD_ID + ":", ""), translation);
     }
 
     /***
