@@ -32,6 +32,11 @@ public class ResourceUtil
         return BuiltInRegistries.BLOCK.getKey(block);
     }
 
+    public static ResourceLocation getKey(Item item)
+    {
+        return BuiltInRegistries.ITEM.getKey(item);
+    }
+
     public static String getModName(Block block)
     {
         return getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");

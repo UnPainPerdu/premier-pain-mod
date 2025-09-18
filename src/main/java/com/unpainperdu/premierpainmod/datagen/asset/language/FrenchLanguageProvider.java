@@ -32,6 +32,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         //advancements
         clp.generateRootAdvancementTranslation("main", "PremierPainMod", "Aime tu les villageois ?");
         clp.generateAdvancementTranslation("villager_workshop", "Un block juste incroyable", "Craft ton premier atelier du villageois");
+        clp.generateAdvancementTranslation("first_beer", "Vachement frais", "Obtiens ta première chope au fut");
+        clp.generateAdvancementTranslation("civilization_flower", "La fondation de tous les empires", "Récolte une fleur de civilisation");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Héro des villageois");
         //death message

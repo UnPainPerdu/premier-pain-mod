@@ -33,6 +33,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         //advancements
         clp.generateRootAdvancementTranslation("main", "PremierPainMod", "Do you like villager ?");
         clp.generateAdvancementTranslation("villager_workshop", "A Wonderfull Block", "Craft your first villager workshop");
+        clp.generateAdvancementTranslation("first_beer", "Fresh Enough", "Get your first mug from Villager Brewing Station");
+        clp.generateAdvancementTranslation("civilization_flower", "Foundation of Every Empire", "Harvest a civilization flower");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Hero of villagers");
         //death message

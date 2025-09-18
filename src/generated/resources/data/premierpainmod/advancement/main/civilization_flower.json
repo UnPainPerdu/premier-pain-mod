@@ -1,0 +1,33 @@
+{
+  "parent": "premierpainmod:main/root",
+  "criteria": {
+    "has_civilization_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:civilizations_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.premierpainmod.civilization_flower.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "premierpainmod:civilizations_flower"
+    },
+    "title": {
+      "translate": "advancements.premierpainmod.civilization_flower.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_civilization_flower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

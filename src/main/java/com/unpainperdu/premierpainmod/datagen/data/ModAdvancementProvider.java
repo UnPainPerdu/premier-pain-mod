@@ -1,13 +1,18 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
+import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
+import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
+import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
@@ -44,11 +49,24 @@ public class ModAdvancementProvider extends AdvancementProvider
             //root
             generateRootAdvancement("main", BlockRegister.VILLAGER_WORKSHOP);
             //main
-            generateAdvancementWithMainAsRoot(BlockRegister.VILLAGER_WORKSHOP, "villager_workshop", AdvancementType.TASK,
+            generateAdvancementWithMainAsRoot(BlockRegister.VILLAGER_WORKSHOP, "villager_workshop" ,"root", AdvancementType.TASK,
                     Map.of(
                             "has_villager_workshop", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegister.VILLAGER_WORKSHOP)
-                    ),
-                    null);
+                    ));
+            generateAdvancementWithMainAsRoot(BlockRegister.CIVILIZATIONS_FLOWER, "civilization_flower", "root", AdvancementType.TASK,
+                    Map.of(
+                            "has_civilization_flower", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegister.CIVILIZATIONS_FLOWER)
+                    ));
+            generateAdvancementWithMainAsRoot(ItemRegister.PAIN_DIEUX_MUG, "first_beer","civilization_flower", AdvancementType.TASK,
+                    Map.of(
+                            "has_beer", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(
+                                            ModItemList.getAllItemsFromClass(DrinkableBeerItem.class).stream()
+                                                    .filter(item -> ResourceUtil.getKey(item).toString().contains("mug"))
+                                                    .toList()
+                                                    .toArray(new Item[0])
+                                    )
+                            )
+                    ));
         }
 
         /**
@@ -79,12 +97,12 @@ public class ModAdvancementProvider extends AdvancementProvider
          * description component will be "advancements.premierpainmod.\advancementName/.description"
          * title component will be "advancements.premierpainmod.\advancementName/.title"
          */
-        private void generateAdvancementWithMainAsRoot(ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, Map<String, Criterion<?>> condition, @Nullable List<String> requiredAdvancement)
+        private void generateAdvancementWithMainAsRoot(ItemLike itemToDisplay, String advancementName, String parentName, AdvancementType advancementType, Map<String, Criterion<?>> condition)
         {
-            generateAdvancement("main", "premierpainmod:main/root", itemToDisplay, advancementName, advancementType, condition, requiredAdvancement);
+            generateAdvancement("main", "premierpainmod:main/" + parentName, itemToDisplay, advancementName, advancementType, condition);
         }
 
-        private void generateAdvancement(String page, String parent, ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, Map<String, Criterion<?>> condition, @Nullable List<String> requiredAdvancement)
+        private void generateAdvancement(String page, String parent, ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, Map<String, Criterion<?>> condition)
         {
             Advancement.Builder builder = Advancement.Builder.advancement();
             builder.parent(AdvancementSubProvider.createPlaceholder(parent));
@@ -100,10 +118,6 @@ public class ModAdvancementProvider extends AdvancementProvider
             );
             condition.forEach(builder::addCriterion);
             List<String> requirement = new ArrayList<>(condition.keySet());
-            if (requiredAdvancement != null)
-            {
-                requirement.addAll(requiredAdvancement);
-            }
             builder.requirements(AdvancementRequirements.allOf(requirement));
             builder.save(saver, ResourceUtil.createResourceLocation(page + "/" + advancementName), existingFileHelper);
         }

@@ -1,0 +1,43 @@
+{
+  "parent": "premierpainmod:main/civilization_flower",
+  "criteria": {
+    "has_beer": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "premierpainmod:crane_noir_mug",
+              "premierpainmod:debier_mug",
+              "premierpainmod:disender_mug",
+              "premierpainmod:envahisseur_rouge_mug",
+              "premierpainmod:la_blanche_citadine_mug",
+              "premierpainmod:la_chateau_mug",
+              "premierpainmod:pain_dieux_mug",
+              "premierpainmod:raspbuisson_mug",
+              "premierpainmod:tak_mug"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.premierpainmod.first_beer.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "premierpainmod:pain_dieux_mug"
+    },
+    "title": {
+      "translate": "advancements.premierpainmod.first_beer.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_beer"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
