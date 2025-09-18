@@ -43,5 +43,6 @@ public class RegisterHandler
         ParticleTypeRegister.register(modEventBus);
         MemoryModuleTypeRegister.register(modEventBus);
         SensorsTypeRegister.register(modEventBus);
+        CriterionRegister.register(modEventBus);
     }
 }

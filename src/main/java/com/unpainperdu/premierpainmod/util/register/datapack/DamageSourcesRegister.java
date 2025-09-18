@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.datapack_register;
+package com.unpainperdu.premierpainmod.util.register.datapack;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
