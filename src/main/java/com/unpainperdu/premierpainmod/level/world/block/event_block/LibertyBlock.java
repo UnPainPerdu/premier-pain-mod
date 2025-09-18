@@ -1,8 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.block.event_block;
 
-import com.unpainperdu.premierpainmod.util.datapack_register.DamageSourcesRegister;
+import com.unpainperdu.premierpainmod.util.register.datapack.DamageSourcesRegister;
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.util.datapack_register.DamageTypesRegister;
+import com.unpainperdu.premierpainmod.util.register.datapack.DamageTypesRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
