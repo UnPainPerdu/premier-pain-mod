@@ -1,0 +1,57 @@
+{
+  "parent": "premierpainmod:main/first_beer",
+  "criteria": {
+    "has_all_beer_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:crane_noir_bottle"
+          },
+          {
+            "items": "premierpainmod:debier_bottle"
+          },
+          {
+            "items": "premierpainmod:disender_bottle"
+          },
+          {
+            "items": "premierpainmod:envahisseur_rouge_bottle"
+          },
+          {
+            "items": "premierpainmod:la_blanche_citadine_bottle"
+          },
+          {
+            "items": "premierpainmod:la_chateau_bottle"
+          },
+          {
+            "items": "premierpainmod:pain_dieux_bottle"
+          },
+          {
+            "items": "premierpainmod:raspbuisson_bottle"
+          },
+          {
+            "items": "premierpainmod:tak_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.premierpainmod.all_beer_bottle.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "premierpainmod:pain_dieux_bottle"
+    },
+    "title": {
+      "translate": "advancements.premierpainmod.all_beer_bottle.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_all_beer_bottle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

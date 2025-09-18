@@ -47,7 +47,7 @@ public class ModAdvancementProvider extends AdvancementProvider
             this.existingFileHelper = existingFileHelper;
             this.registries = registries;
             //root
-            generateRootAdvancement("main", BlockRegister.VILLAGER_WORKSHOP);
+            generateRootAdvancement("main", Items.EMERALD);
             //main
             generateAdvancementWithMainAsRoot(BlockRegister.VILLAGER_WORKSHOP, "villager_workshop" ,"root", AdvancementType.TASK,
                     Map.of(
@@ -65,6 +65,16 @@ public class ModAdvancementProvider extends AdvancementProvider
                                                     .toList()
                                                     .toArray(new Item[0])
                                     )
+                            )
+                    ));
+
+            generateAdvancementWithMainAsRoot(ItemRegister.PAIN_DIEUX_BOTTLE, "all_beer_bottle","first_beer", AdvancementType.TASK,
+                    Map.of(
+                            "has_all_beer_bottle", InventoryChangeTrigger.TriggerInstance.hasItems(
+                                            ModItemList.getAllItemsFromClass(DrinkableBeerItem.class).stream()
+                                                    .filter(item -> ResourceUtil.getKey(item).toString().contains("bottle"))
+                                                    .toList()
+                                                    .toArray(new Item[0])
                             )
                     ));
         }

@@ -35,6 +35,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         clp.generateAdvancementTranslation("villager_workshop", "A Wonderfull Block", "Craft your first villager workshop");
         clp.generateAdvancementTranslation("first_beer", "Fresh Enough", "Get your first mug from Villager Brewing Station");
         clp.generateAdvancementTranslation("civilization_flower", "Foundation of Every Empire", "Harvest a civilization flower");
+        clp.generateAdvancementTranslation("all_beer_bottle", "Brew Them All !", "Brew all beers and put it them in bottle");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Hero of villagers");
         //death message
