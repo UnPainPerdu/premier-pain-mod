@@ -28,11 +28,10 @@ public class DataGatherer
     {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = ModDataPackProvider.onGatherData(event);
 
         BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider, fileHelper);
-
         new ModLanguageProvider(event, generator, packOutput);
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput, lookupProvider));
@@ -47,7 +46,5 @@ public class DataGatherer
         generator.addProvider(event.includeServer(), new ModFluidTag(packOutput, lookupProvider, fileHelper));
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(event.includeClient(), new ModParticleDescriptionProvider(packOutput, fileHelper));
-
-        ModDataPackProvider.onGatherData(event);
     }
 }

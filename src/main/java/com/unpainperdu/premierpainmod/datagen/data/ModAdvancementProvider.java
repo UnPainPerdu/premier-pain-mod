@@ -1,26 +1,36 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.LocationPredicate;
+import net.minecraft.advancements.critereon.PlayerTrigger;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -77,6 +87,8 @@ public class ModAdvancementProvider extends AdvancementProvider
                                                     .toArray(new Item[0])
                             )
                     ));
+
+            generateBiomesAdvancement("main", "root", BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()), "visit_all_biomes", AdvancementType.CHALLENGE, ModBiomes.OVERWORLD_BIOMES);
         }
 
         /**
@@ -129,6 +141,40 @@ public class ModAdvancementProvider extends AdvancementProvider
             condition.forEach(builder::addCriterion);
             List<String> requirement = new ArrayList<>(condition.keySet());
             builder.requirements(AdvancementRequirements.allOf(requirement));
+            builder.save(saver, ResourceUtil.createResourceLocation(page + "/" + advancementName), existingFileHelper);
+        }
+
+        private void generateBiomesAdvancement(String page, String parent, ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, List<ResourceKey<Biome>> biomeKeysToVisit)
+        {
+            if (biomeKeysToVisit.isEmpty())
+            {
+                throw new RuntimeException("generateBiomesAdvancement need atleast 1 ResourceKey<Biome>");
+            }
+            HolderGetter<Biome> holdergetter = registries.lookupOrThrow(Registries.BIOME);
+
+            Advancement.Builder builder = Advancement.Builder.advancement();
+            builder.parent(AdvancementSubProvider.createPlaceholder("premierpainmod:" + page + "/" + parent));
+            builder.display(
+                    itemToDisplay,
+                    Component.translatable("advancements.premierpainmod." + advancementName + ".title"),
+                    Component.translatable("advancements.premierpainmod." + advancementName + ".description"),
+                    null,
+                    advancementType,
+                    true,
+                    true,
+                    false
+            );
+            List<String> criterionName = new ArrayList<>();
+            biomeKeysToVisit.forEach(biomeKey ->
+            {
+                String name = "has_visited_" + biomeKey.location().toString().replace("premierpainmod:", "").replace("/", "_");
+                criterionName.add(name);
+                builder.addCriterion(name,
+                        PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(holdergetter.getOrThrow(biomeKey))));
+            });
+            List<String> requirement = new ArrayList<>(criterionName);
+            builder.requirements(AdvancementRequirements.allOf(requirement));
+            builder.rewards(AdvancementRewards.Builder.experience(500));
             builder.save(saver, ResourceUtil.createResourceLocation(page + "/" + advancementName), existingFileHelper);
         }
     }

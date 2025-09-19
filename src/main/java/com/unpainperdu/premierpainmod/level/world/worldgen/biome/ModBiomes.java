@@ -19,6 +19,8 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
+import java.util.List;
+
 public class ModBiomes
 {
     public static final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = createKey("forest_premier_pain_ruins");
@@ -26,6 +28,8 @@ public class ModBiomes
     public static final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = createKey("swamp_premier_pain_ruins");
     public static final ResourceKey<Biome> OLD_GREAT_FIELD = createKey("old_great_field");
     public static final ResourceKey<Biome> JUNGLE_PREMIER_PAIN_RUINS = createKey("jungle_premier_pain_ruins");
+
+    public static final List<ResourceKey<Biome>> OVERWORLD_BIOMES = List.of(FOREST_PREMIER_PAIN_RUINS, SAND_DESERT_PREMIER_PAIN_RUINS, SWAMP_PREMIER_PAIN_RUINS, OLD_GREAT_FIELD, JUNGLE_PREMIER_PAIN_RUINS);
 
     private static ResourceKey<Biome> createKey(String path)
     {

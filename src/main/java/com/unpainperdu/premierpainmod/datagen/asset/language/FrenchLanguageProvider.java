@@ -35,6 +35,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         clp.generateAdvancementTranslation("first_beer", "Vachement frais", "Obtiens ta première chope au fut");
         clp.generateAdvancementTranslation("civilization_flower", "La fondation de tous les empires", "Récolte une fleur de civilisation");
         clp.generateAdvancementTranslation("all_beer_bottle", "Brassez les tous !", "Brasse toutes les bières et mets les en bouteilles");
+        clp.generateAdvancementTranslation("visit_all_biomes", "Pèlerinage des villageois", "Visite tous les biomes ajoutés dans Premier Pain Mod");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Héro des villageois");
         //death message

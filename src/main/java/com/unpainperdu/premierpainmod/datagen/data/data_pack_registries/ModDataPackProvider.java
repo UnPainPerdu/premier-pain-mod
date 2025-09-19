@@ -22,11 +22,11 @@ import java.util.concurrent.CompletableFuture;
 public class ModDataPackProvider
 {
 
-    public static void onGatherData(GatherDataEvent event)
+    public static CompletableFuture<HolderLookup.Provider> onGatherData(GatherDataEvent event)
     {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        event.getGenerator().addProvider(event.includeServer(),
+        return event.getGenerator().addProvider(event.includeServer(),
                 (DataProvider.Factory<DatapackBuiltinEntriesProvider>) output -> new DatapackBuiltinEntriesProvider(
                         output,
                         lookupProvider,
@@ -54,6 +54,6 @@ public class ModDataPackProvider
                             .add(Registries.CONFIGURED_FEATURE, ModFeatureUtil::bootstrap)
                         ,
                         Set.of(PremierPainMod.MOD_ID))
-        );
+        ).getRegistryProvider();
     }
 }
