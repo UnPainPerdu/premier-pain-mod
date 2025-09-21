@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
+import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
@@ -19,18 +20,18 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -89,6 +90,15 @@ public class ModAdvancementProvider extends AdvancementProvider
                     ));
 
             generateBiomesAdvancement("main", "root", BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()), "visit_all_biomes", AdvancementType.CHALLENGE, ModBiomes.OVERWORLD_BIOMES);
+
+            Map<String, Criterion<?>> conditions = new HashMap<>();
+            for (TagKey<Item> tagKey : ModItemTags.ALL_MATERIALS_TAGS)
+            {
+                conditions.put(tagKey.toString(), InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(tagKey)));
+            }
+            generateAdvancementWithMainAsRoot(BlockRegister.ALL_MATERIALS_MAP.get("emerald_block_villager_statue"), "full_set_all_material","villager_workshop", AdvancementType.CHALLENGE,
+                    conditions,
+                    AdvancementRewards.Builder.experience(250));
         }
 
         /**
@@ -121,10 +131,15 @@ public class ModAdvancementProvider extends AdvancementProvider
          */
         private void generateAdvancementWithMainAsRoot(ItemLike itemToDisplay, String advancementName, String parentName, AdvancementType advancementType, Map<String, Criterion<?>> condition)
         {
-            generateAdvancement("main", "premierpainmod:main/" + parentName, itemToDisplay, advancementName, advancementType, condition);
+            generateAdvancement("main", "premierpainmod:main/" + parentName, itemToDisplay, advancementName, advancementType, condition, null);
         }
 
-        private void generateAdvancement(String page, String parent, ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, Map<String, Criterion<?>> condition)
+        private void generateAdvancementWithMainAsRoot(ItemLike itemToDisplay, String advancementName, String parentName, AdvancementType advancementType, Map<String, Criterion<?>> condition,  AdvancementRewards.Builder rewardsBuilder)
+        {
+            generateAdvancement("main", "premierpainmod:main/" + parentName, itemToDisplay, advancementName, advancementType, condition, null);
+        }
+
+        private void generateAdvancement(String page, String parent, ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, Map<String, Criterion<?>> condition, @Nullable AdvancementRewards.Builder rewardsBuilder)
         {
             Advancement.Builder builder = Advancement.Builder.advancement();
             builder.parent(AdvancementSubProvider.createPlaceholder(parent));
@@ -141,6 +156,10 @@ public class ModAdvancementProvider extends AdvancementProvider
             condition.forEach(builder::addCriterion);
             List<String> requirement = new ArrayList<>(condition.keySet());
             builder.requirements(AdvancementRequirements.allOf(requirement));
+            if (rewardsBuilder != null)
+            {
+                builder.rewards(rewardsBuilder);
+            }
             builder.save(saver, ResourceUtil.createResourceLocation(page + "/" + advancementName), existingFileHelper);
         }
 

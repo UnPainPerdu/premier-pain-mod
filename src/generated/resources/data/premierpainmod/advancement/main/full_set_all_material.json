@@ -1,0 +1,203 @@
+{
+  "parent": "premierpainmod:main/villager_workshop",
+  "criteria": {
+    "TagKey[minecraft:item / premierpainmod:villager_bench]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_bench"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_brazier]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_brazier"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_brewing_station]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_brewing_station"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_chair]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_chair"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_chiseled_head]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_chiseled_head"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_couch]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_couch"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_drawer]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_drawer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_dry_toilet]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_dry_toilet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_musical_fridge]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_musical_fridge"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_pedestal]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_pedestal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_shelf]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_shelf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_statue]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_statue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_table]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_table"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "TagKey[minecraft:item / premierpainmod:villager_throne_chair]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#premierpainmod:villager_throne_chair"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.premierpainmod.full_set_all_material.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "premierpainmod:emerald_block_villager_statue"
+    },
+    "title": {
+      "translate": "advancements.premierpainmod.full_set_all_material.title"
+    }
+  },
+  "requirements": [
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_statue]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_chair]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_pedestal]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_brazier]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_drawer]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_shelf]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_dry_toilet]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_chiseled_head]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_couch]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_brewing_station]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_musical_fridge]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_table]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_throne_chair]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_bench]"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

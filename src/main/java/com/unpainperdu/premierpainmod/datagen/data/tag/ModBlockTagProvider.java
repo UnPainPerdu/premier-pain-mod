@@ -3,13 +3,27 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChiseledHead;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerDryToiletBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerThroneChairBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerBench;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerCouch;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.tree.*;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growing_above_vegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.special_vegetation.CactusFloweredBlock.CactusFlowerBlock;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_height.sky_spears.SkySpearsFlower;
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -21,6 +35,8 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
+
+import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.getModName;
 
 public class ModBlockTagProvider extends BlockTagsProvider
 {
@@ -35,7 +51,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         //villager workshop
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BlockRegister.VILLAGER_WORKSHOP.get());
 
-        for(Block block : ModBLockList.getAllMaterialsBlocks())
+        for (Block block : ModBLockList.getAllMaterialsBlocks())
         {
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
             addTagForAllMaterialsBlock(block, blockName);
@@ -62,7 +78,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         //logs
         for (Block block : ModBLockList.getAllBlocksFromClass(LogBlock.class))
         {
-            String blockName = getName(block);
+            String blockName = getModName(block);
             this.tag(BlockTags.LOGS).add(block);
             this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
             this.tag(BlockTags.LOGS_THAT_BURN).add(block);
@@ -98,12 +114,16 @@ public class ModBlockTagProvider extends BlockTagsProvider
             {
                 tag(ModBlockTags.ACHIOTE_LOGS).add(block);
             }
+            if (blockName.contains("weeping_willow"))
+            {
+                tag(ModBlockTags.WEEPING_WILLOW_LOGS).add(block);
+            }
         }
 
         //planks
         for (Block block : ModBLockList.getAllBlocksFromClass(FlammableBlock.class))
         {
-            String blockName = getName(block);
+            String blockName = getModName(block);
             if (blockName.contains("planks"))
             {
                 this.tag(BlockTags.PLANKS).add(block);
@@ -124,90 +144,94 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 SignBlock.class
         ))
         {
-            String blockName = getName(block);
+            String blockName = getModName(block);
             if (blockName.contains("mountain_currant")
-                || blockName.contains("moriche_palm")
-                || blockName.contains("achiote")
+                    || blockName.contains("moriche_palm")
+                    || blockName.contains("achiote")
             )
             {
                 this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
                 switch (block)
                 {
-                    case StairBlock stairBlock ->
+                    case StairBlock ignored ->
                     {
                         this.tag(BlockTags.STAIRS).add(block);
                         this.tag(BlockTags.WOODEN_STAIRS).add(block);
                     }
-                    case SlabBlock slabBlock ->
+                    case SlabBlock ignored ->
                     {
                         this.tag(BlockTags.SLABS).add(block);
                         this.tag(BlockTags.WOODEN_SLABS).add(block);
                     }
-                    case ButtonBlock buttonBlock ->
+                    case ButtonBlock ignored ->
                     {
                         this.tag(BlockTags.BUTTONS).add(block);
                         this.tag(BlockTags.WOODEN_BUTTONS).add(block);
                     }
-                    case PressurePlateBlock pressurePlateBlock ->
+                    case PressurePlateBlock ignored ->
                     {
                         this.tag(BlockTags.PRESSURE_PLATES).add(block);
                         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(block);
                         this.tag(BlockTags.WALL_POST_OVERRIDE).add(block);
                     }
-                    case FenceBlock fenceBlock ->
+                    case FenceBlock ignored ->
                     {
                         this.tag(BlockTags.FENCES).add(block);
                         this.tag(BlockTags.WOODEN_FENCES).add(block);
                         this.tag(Tags.Blocks.FENCES).add(block);
                         this.tag(Tags.Blocks.FENCES_WOODEN).add(block);
                     }
-                    case FenceGateBlock fenceGateBlock ->
+                    case FenceGateBlock ignored ->
                     {
                         this.tag(BlockTags.FENCE_GATES).add(block);
                         this.tag(BlockTags.UNSTABLE_BOTTOM_CENTER).add(block);
                         this.tag(Tags.Blocks.FENCE_GATES).add(block);
                         this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(block);
                     }
-                    case DoorBlock doorBlock ->
+                    case DoorBlock ignored ->
                     {
                         this.tag(BlockTags.WOODEN_DOORS).add(block);
                         this.tag(BlockTags.DOORS).add(block);
                         this.tag(BlockTags.MOB_INTERACTABLE_DOORS).add(block);
                     }
-                    case TrapDoorBlock trapDoorBlock ->
+                    case TrapDoorBlock ignored ->
                     {
                         this.tag(BlockTags.WOODEN_TRAPDOORS).add(block);
                         this.tag(BlockTags.TRAPDOORS).add(block);
                     }
-                    case SignBlock signBlock ->
+                    case SignBlock ignored ->
                     {
                         this.tag(BlockTags.ALL_SIGNS).add(block);
                         switch (block)
                         {
-                            case ModStandingSignBlock modStandingSignBlock ->
+                            case ModStandingSignBlock ignored1 ->
                             {
                                 this.tag(BlockTags.STANDING_SIGNS).add(block);
                                 this.tag(BlockTags.SIGNS).add(block);
                             }
-                            case ModWallSignBlock modWallSignBlock ->
+                            case ModWallSignBlock ignored1 ->
                             {
                                 this.tag(BlockTags.WALL_SIGNS).add(block);
                                 this.tag(BlockTags.SIGNS).add(block);
                             }
-                            case ModHangingSignBlock modHangingSignBlock ->
+                            case ModHangingSignBlock ignored1 ->
                             {
                                 this.tag(BlockTags.ALL_HANGING_SIGNS).add(block);
                                 this.tag(BlockTags.CEILING_HANGING_SIGNS).add(block);
                             }
-                            case ModWallHangingSignBlock modWallHangingSignBlock ->
+                            case ModWallHangingSignBlock ignored1 ->
                             {
                                 this.tag(BlockTags.ALL_HANGING_SIGNS).add(block);
                                 this.tag(BlockTags.WALL_HANGING_SIGNS).add(block);
                             }
-                            default -> {}
+                            default ->
+                            {
+                            }
                         }
                     }
-                    default -> {}
+                    default ->
+                    {
+                    }
                 }
             }
         }
@@ -238,7 +262,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
         {
             this.tag(BlockTags.FLOWERS).add(block);
         }
-            //tall flower
+        //tall flower
         for (Block block : ModBLockList.getAllBlocksFromClass(TallFlowerBlock.class))
         {
             this.tag(BlockTags.SWORD_EFFICIENT).add(block);
@@ -336,10 +360,27 @@ public class ModBlockTagProvider extends BlockTagsProvider
         {
             this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
         }
-    }
 
-    private String getName(Block block)
-    {
-        return BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        //type tag
+        switch (block)
+        {
+            case VillagerStatue ignored -> this.tag(ModBlockTags.VILLAGER_STATUE).add(block);
+            case VillagerPedestalBlock ignored -> this.tag(ModBlockTags.VILLAGER_PEDESTAL).add(block);
+            case VillagerBrazier ignored -> this.tag(ModBlockTags.VILLAGER_BRAZIER).add(block);
+            case VillagerTableBlock ignored -> this.tag(ModBlockTags.VILLAGER_TABLE).add(block);
+            case VillagerChairBlock ignored -> this.tag(ModBlockTags.VILLAGER_CHAIR).add(block);
+            case VillagerThroneChairBlock ignored -> this.tag(ModBlockTags.VILLAGER_THRONE_CHAIR).add(block);
+            case VillagerDrawer ignored -> this.tag(ModBlockTags.VILLAGER_DRAWER).add(block);
+            case VillagerShelf ignored -> this.tag(ModBlockTags.VILLAGER_SHELF).add(block);
+            case VillagerBench ignored -> this.tag(ModBlockTags.VILLAGER_BENCH).add(block);
+            case VillagerCouch ignored -> this.tag(ModBlockTags.VILLAGER_COUCH).add(block);
+            case VillagerBrewingStation ignored -> this.tag(ModBlockTags.VILLAGER_BREWING_STATION).add(block);
+            case VillagerMusicalFridgeBlock ignored -> this.tag(ModBlockTags.VILLAGER_MUSICAL_FRIDGE).add(block);
+            case VillagerChiseledHead ignored -> this.tag(ModBlockTags.VILLAGER_CHISELED_HEAD).add(block);
+            case VillagerDryToiletBlock ignored -> this.tag(ModBlockTags.VILLAGER_DRY_TOILET).add(block);
+            default ->
+            {
+            }
+        }
     }
 }

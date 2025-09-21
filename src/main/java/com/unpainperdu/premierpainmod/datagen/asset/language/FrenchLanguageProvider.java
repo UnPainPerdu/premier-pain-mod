@@ -31,11 +31,12 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("container." + PremierPainMod.MOD_ID + ".villager_musical_fridge", "Frigo musical");
         //advancements
         clp.generateRootAdvancementTranslation("main", "PremierPainMod", "Aime tu les villageois ?");
-        clp.generateAdvancementTranslation("villager_workshop", "Un block juste incroyable", "Craft ton premier atelier du villageois");
+        clp.generateAdvancementTranslation("villager_workshop", "Un block juste incroyable", "Fabrique ton premier atelier du villageois");
         clp.generateAdvancementTranslation("first_beer", "Vachement frais", "Obtiens ta première chope au fut");
         clp.generateAdvancementTranslation("civilization_flower", "La fondation de tous les empires", "Récolte une fleur de civilisation");
         clp.generateAdvancementTranslation("all_beer_bottle", "Brassez les tous !", "Brasse toutes les bières et mets les en bouteilles");
         clp.generateAdvancementTranslation("visit_all_biomes", "Pèlerinage des villageois", "Visite tous les biomes ajoutés dans Premier Pain Mod");
+        clp.generateAdvancementTranslation("full_set_all_material", "La collection du villageois", "Obtiens un bloc de chaque type de bloc fabriquable dans l'atelier du villageois");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Héro des villageois");
         //death message

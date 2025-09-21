@@ -73,7 +73,7 @@ public class ModMiscOverworldFeatures
                                 BlockStateProvider.simple(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()).get()),
                                 BlockStateProvider.simple(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SLAB.toString()).get()),
                                 BlockStateProvider.simple(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.DOOR.toString()).get()),
-                                BlockStateProvider.simple(BlockRegister.AllMaterialsMap.get("weeping_willow_villager_dry_toilet").get())
+                                BlockStateProvider.simple(BlockRegister.ALL_MATERIALS_MAP.get("weeping_willow_villager_dry_toilet").get())
                         ))
                         .build()
         );
@@ -89,7 +89,7 @@ public class ModMiscOverworldFeatures
                                 BlockStateProvider.simple(Blocks.MANGROVE_PLANKS),
                                 BlockStateProvider.simple(Blocks.MANGROVE_SLAB),
                                 BlockStateProvider.simple(Blocks.MANGROVE_DOOR),
-                                BlockStateProvider.simple(BlockRegister.AllMaterialsMap.get("mangrove_villager_dry_toilet").get())
+                                BlockStateProvider.simple(BlockRegister.ALL_MATERIALS_MAP.get("mangrove_villager_dry_toilet").get())
                         ))
                         .build()
         );

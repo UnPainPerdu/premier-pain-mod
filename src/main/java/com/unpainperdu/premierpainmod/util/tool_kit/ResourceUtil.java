@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
 public class ResourceUtil
@@ -37,8 +38,19 @@ public class ResourceUtil
         return BuiltInRegistries.ITEM.getKey(item);
     }
 
-    public static String getModName(Block block)
+    public static String getModName(ItemLike itemLike)
     {
-        return getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        if (itemLike instanceof Block block)
+        {
+            return getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        }
+        else if (itemLike instanceof Item item)
+        {
+            return BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        }
+        else
+        {
+            throw new RuntimeException("the itemlike \" "+ itemLike +"\" is not an item or a block");
+        }
     }
 }

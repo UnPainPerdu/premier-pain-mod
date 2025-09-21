@@ -3,12 +3,11 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
+import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
-import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
@@ -17,9 +16,11 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredItem;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
+
+import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.getModName;
 
 public class ModItemTagProvider extends ItemTagsProvider
 {
@@ -32,7 +33,7 @@ public class ModItemTagProvider extends ItemTagsProvider
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider pProvider)
+    protected void addTags(HolderLookup.@NotNull Provider provider)
     {
         copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
         copy(BlockTags.TALL_FLOWERS, ItemTags.TALL_FLOWERS);
@@ -57,11 +58,25 @@ public class ModItemTagProvider extends ItemTagsProvider
         copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
         copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
         copy(Tags.Blocks.STRIPPED_WOODS, Tags.Items.STRIPPED_WOODS);
-        copy(Tags.Blocks.STRIPPED_LOGS,Tags.Items.STRIPPED_LOGS);
+        copy(Tags.Blocks.STRIPPED_LOGS, Tags.Items.STRIPPED_LOGS);
         //mod
         copy(ModBlockTags.MOUNTAIN_CURRANT_LOGS, ModItemTags.MOUNTAIN_CURRANT_LOGS);
         copy(ModBlockTags.MORICHE_PALM_LOGS, ModItemTags.MORICHE_PALM_LOGS);
         copy(ModBlockTags.ACHIOTE_LOGS, ModItemTags.ACHIOTE_LOGS);
+        copy(ModBlockTags.WEEPING_WILLOW_LOGS, ModItemTags.WEEPING_WILLOW_LOGS);
+        copy(ModBlockTags.VILLAGER_STATUE, ModItemTags.VILLAGER_STATUE);
+        copy(ModBlockTags.VILLAGER_PEDESTAL, ModItemTags.VILLAGER_PEDESTAL);
+        copy(ModBlockTags.VILLAGER_BRAZIER, ModItemTags.VILLAGER_BRAZIER);
+        copy(ModBlockTags.VILLAGER_TABLE, ModItemTags.VILLAGER_TABLE);
+        copy(ModBlockTags.VILLAGER_CHAIR, ModItemTags.VILLAGER_CHAIR);
+        copy(ModBlockTags.VILLAGER_THRONE_CHAIR, ModItemTags.VILLAGER_THRONE_CHAIR);
+        copy(ModBlockTags.VILLAGER_DRAWER, ModItemTags.VILLAGER_DRAWER);
+        copy(ModBlockTags.VILLAGER_BENCH, ModItemTags.VILLAGER_BENCH);
+        copy(ModBlockTags.VILLAGER_COUCH, ModItemTags.VILLAGER_COUCH);
+        copy(ModBlockTags.VILLAGER_BREWING_STATION, ModItemTags.VILLAGER_BREWING_STATION);
+        copy(ModBlockTags.VILLAGER_MUSICAL_FRIDGE, ModItemTags.VILLAGER_MUSICAL_FRIDGE);
+        copy(ModBlockTags.VILLAGER_CHISELED_HEAD, ModItemTags.VILLAGER_CHISELED_HEAD);
+        copy(ModBlockTags.VILLAGER_DRY_TOILET, ModItemTags.VILLAGER_DRY_TOILET);
 
         for (Item item : ModItemList.getAllItemsFromClass(SignItem.class))
         {
@@ -78,7 +93,7 @@ public class ModItemTagProvider extends ItemTagsProvider
         for (Item item : ModItemList.getAllItemsFromClass(BoatItem.class))
         {
             this.tag(ItemTags.BOATS).add(item);
-            String name = getName(item);
+            String name = getModName(item);
             if (name.contains("chest_boat"))
             {
                 this.tag(ItemTags.CHEST_BOATS).add(item);
@@ -93,7 +108,7 @@ public class ModItemTagProvider extends ItemTagsProvider
             }
             if (item instanceof BucketItem)
             {
-                this.tag(Tags.Items.BUCKETS);
+                this.tag(Tags.Items.BUCKETS).add(item);
             }
         }
 
@@ -103,11 +118,14 @@ public class ModItemTagProvider extends ItemTagsProvider
                 ItemRegister.SKY_SPEARS_FRUIT.get(),
                 ItemRegister.MORICHE_PALM_FRUIT.get(),
                 ItemRegister.ACHIOTE_FRUIT.get()
-                );
-    }
+        );
 
-    private String getName(Item item)
-    {
-        return BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
+        for (Item item : ModItemList.ALL_ITEMS)
+        {
+            if (item instanceof VillagerShelfItem)
+            {
+                this.tag(ModItemTags.VILLAGER_SHELF).add(item);
+            }
+        }
     }
 }

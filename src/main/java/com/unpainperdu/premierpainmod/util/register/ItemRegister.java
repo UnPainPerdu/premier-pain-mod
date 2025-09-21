@@ -139,7 +139,7 @@ public class ItemRegister
         for (String material : BlockRegister.MATERIALS)
         {
             String id = material + "_villager_shelf";
-            map.put(id, villagerShelfRegister(id, () -> BlockRegister.AllMaterialsMap.get(material + "_standing_villager_shelf"), () -> BlockRegister.AllMaterialsMap.get(material + "_wall_villager_shelf")));
+            map.put(id, villagerShelfRegister(id, () -> BlockRegister.ALL_MATERIALS_MAP.get(material + "_standing_villager_shelf"), () -> BlockRegister.ALL_MATERIALS_MAP.get(material + "_wall_villager_shelf")));
         }
         return map;
     }

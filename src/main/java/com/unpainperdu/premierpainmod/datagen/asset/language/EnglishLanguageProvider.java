@@ -37,6 +37,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         clp.generateAdvancementTranslation("civilization_flower", "Foundation of Every Empire", "Harvest a civilization flower");
         clp.generateAdvancementTranslation("all_beer_bottle", "Brew Them All !", "Brew all beers and put it them in bottle");
         clp.generateAdvancementTranslation("visit_all_biomes", "Villager pilgrimage", "Visit all the biomes added by Premier Pain Mod");
+        clp.generateAdvancementTranslation("full_set_all_material", "The Villager Collection", "Get one block of each block's type craftable from villager workshop");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Hero of villagers");
         //death message

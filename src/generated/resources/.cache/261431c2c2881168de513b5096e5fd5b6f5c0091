@@ -1,5 +1,5 @@
-// 1.21.1	2025-07-24T17:28:45.8324916	Tags for minecraft:item mod id premierpainmod
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/c/tags/item/buckets.json
+// 1.21.1	2025-09-21T20:20:21.5767339	Tags for minecraft:item mod id premierpainmod
+c62386c681e815d41f2c3f42ebd16f0db592952f data/c/tags/item/buckets.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/item/fence_gates.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/item/fence_gates/wooden.json
 0f00f7f49a43ea21e385eba6dd6fb0990bbb36bb data/c/tags/item/foods.json
@@ -33,3 +33,18 @@ c9dbfb509ac30964c62321b866bc99ac29e12cd4 data/minecraft/tags/item/wooden_pressur
 0f2d22db5ed2ef47d3a9f9ef7e0309b57dc86de8 data/premierpainmod/tags/item/achiote_logs.json
 4142cf164df7095eb85135b75c685735116f73b8 data/premierpainmod/tags/item/moriche_palm_logs.json
 42af769f30598361a3ec9358563efb7116ca9510 data/premierpainmod/tags/item/mountain_currant_logs.json
+45b7604d84730aa70de2b47f1fa507724715334c data/premierpainmod/tags/item/villager_bench.json
+0a0ec72c4c39a453c9494655db4cc5090176d112 data/premierpainmod/tags/item/villager_brazier.json
+718d578d43c831cdddc1c3ff4370ca70f9ec8b7e data/premierpainmod/tags/item/villager_brewing_station.json
+8cde92d462df7d32fb7d808b9f8a0fb351799ea4 data/premierpainmod/tags/item/villager_chair.json
+af103074f168c99c82a068ff84a580fd6b275b15 data/premierpainmod/tags/item/villager_chiseled_head.json
+cf309ce9f38b1f5c810d46be4fca6b63b4f22f06 data/premierpainmod/tags/item/villager_couch.json
+cc53e0d7be39d11787534f490079644f5382793c data/premierpainmod/tags/item/villager_drawer.json
+67588cdfab36de59498f5315306102ee95144030 data/premierpainmod/tags/item/villager_dry_toilet.json
+d06bf37a13a1108c6e5f41de7920015abd4bc546 data/premierpainmod/tags/item/villager_musical_fridge.json
+1247c77bcb05b39ef27f29ff27a136b99601c8d7 data/premierpainmod/tags/item/villager_pedestal.json
+1ae013414a08dace2c9147fd285c6ad4d407630d data/premierpainmod/tags/item/villager_shelf.json
+0a123f0376f888d22132265803576ee2625c51f1 data/premierpainmod/tags/item/villager_statue.json
+4b83116e238e77b9f16178209e97012639db6947 data/premierpainmod/tags/item/villager_table.json
+204d8ed3954c87af2b5606a48046f9595357f278 data/premierpainmod/tags/item/villager_throne_chair.json
+2f181e8f6cb685487d401c17f4db2d30ab8ebb89 data/premierpainmod/tags/item/weeping_willow_logs.json

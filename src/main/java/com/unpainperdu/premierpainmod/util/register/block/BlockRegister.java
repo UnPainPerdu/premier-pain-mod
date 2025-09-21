@@ -91,7 +91,7 @@ public class BlockRegister
             "villager_musical_fridge", "villager_chiseled_head", "villager_dry_toilet"
     );
 
-    public static final Map<String, DeferredBlock<Block>> AllMaterialsMap = createAllMaterialsBlocks();
+    public static final Map<String, DeferredBlock<Block>> ALL_MATERIALS_MAP = createAllMaterialsBlocks();
 
     //crafting_block
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));

@@ -1,3 +1,14 @@
 {
-  "values": []
+  "values": [
+    "premierpainmod:crane_noir_bucket",
+    "premierpainmod:debier_bucket",
+    "premierpainmod:disender_bucket",
+    "premierpainmod:envahisseur_rouge_bucket",
+    "premierpainmod:la_blanche_citadine_bucket",
+    "premierpainmod:la_chateau_bucket",
+    "premierpainmod:moriche_palm_oil_bucket",
+    "premierpainmod:pain_dieux_bucket",
+    "premierpainmod:raspbuisson_bucket",
+    "premierpainmod:tak_bucket"
+  ]
 }
