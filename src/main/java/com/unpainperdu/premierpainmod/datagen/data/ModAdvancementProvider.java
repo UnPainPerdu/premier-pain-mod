@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
@@ -36,6 +37,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
+
+import static com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum.*;
 
 public class ModAdvancementProvider extends AdvancementProvider
 {
@@ -96,7 +99,7 @@ public class ModAdvancementProvider extends AdvancementProvider
             {
                 conditions.put(tagKey.toString(), InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(tagKey)));
             }
-            generateAdvancementWithMainAsRoot(BlockRegister.ALL_MATERIALS_MAP.get("emerald_block_villager_statue"), "full_set_all_material","villager_workshop", AdvancementType.CHALLENGE,
+            generateAdvancementWithMainAsRoot(getAllMaterialBlock(Type.VILLAGER_STATUE, Material.EMERALD_BLOCK), "full_set_all_material","villager_workshop", AdvancementType.CHALLENGE,
                     conditions,
                     AdvancementRewards.Builder.experience(250));
         }

@@ -1,18 +1,6 @@
 package com.unpainperdu.premierpainmod.util.register.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerDryToiletBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerBench;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerCouch;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerThroneChairBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.crafting_block.CookingPotBlock;
 import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.event_block.LibertyBlock;
@@ -47,9 +35,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
@@ -63,33 +49,6 @@ public class BlockRegister
     }
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(PremierPainMod.MOD_ID);
-
-    public static final List<String> MATERIALS = Arrays.asList("oak",
-            "birch", "spruce", "jungle",
-            "acacia", "dark_oak", "mangrove",
-            "cherry", "bamboo", "crimson",
-            "warped", "pale_oak", "stone",
-            "mossy_stone", "andesite", "diorite",
-            "granite", "prismarine", "blackstone",
-            "purpur_block", "deepslate", "tuff",
-            "packed_mud", "sandstone", "red_sandstone",
-            "quartz_block", "nether_bricks", "basalt",
-            "end_stone", "coal_block", "iron_block",
-            "gold_block", "redstone_block", "emerald_block",
-            "diamond_block", "copper_block", "lapis_block",
-            "netherite_block", "obsidian", "amethyst_block",
-            "dripstone_block", "bedrock", "mountain_currant",
-            "moriche_palm", "achiote", "weeping_willow"
-
-    );
-
-
-    private static final List<String> BLOCKTYPES = Arrays.asList("villager_statue", "villager_pedestal", "villager_brazier",
-            "villager_table", "villager_chair", "villager_throne_chair",
-            "villager_drawer", "standing_villager_shelf", "wall_villager_shelf",
-            "villager_bench", "villager_couch", "villager_brewing_station",
-            "villager_musical_fridge", "villager_chiseled_head", "villager_dry_toilet"
-    );
 
     public static final Map<String, DeferredBlock<Block>> ALL_MATERIALS_MAP = createAllMaterialsBlocks();
 
@@ -141,46 +100,15 @@ public class BlockRegister
     {
         Map<String, DeferredBlock<Block>> map = new HashMap<>();
 
-        for (String blockType : BLOCKTYPES)
+        for (AllMaterialsBlockEnum.Type blockType : AllMaterialsBlockEnum.getAllTypeValues())
         {
-            for (String material : MATERIALS)
+            for (AllMaterialsBlockEnum.Material material : AllMaterialsBlockEnum.getAllMaterialValues())
             {
-                String id = material + "_" + blockType;
-                map.put(id, allMaterialsBlockRegister(blockType, id, getMaterialType(material)));
+                String id = material.toString() + "_" + blockType;
+                map.put(id, registerBlock(id, () -> blockType.getBlock(material.getProperties())));
             }
         }
-
         return map;
-    }
-
-    private static String getMaterialType(String material)
-    {
-
-        return switch (material)
-        {
-            case "cherry" -> "cherry";
-            case "bamboo" -> "bamboo";
-            case "crimson", "warped" -> "netherwood";
-            case "stone", "mossy_stone", "andesite", "diorite", "granite", "prismarine", "blackstone", "purpur",
-                 "quartz_block" -> "stone";
-            case "deepslate" -> "deepslate";
-            case "tuff" -> "tuff";
-            case "sandstone", "red_sandstone" -> "sandstone";
-            case "nether_bricks" -> "nether_bricks";
-            case "basalt" -> "basalt";
-            case "end_stone" -> "endstone";
-            case "coal_block" -> "mineral_strong";
-            case "iron_block", "gold_block", "redstone_block", "emerald_block", "diamond_block" -> "metal";
-            case "copper_block" -> "copper";
-            case "lapis_block" -> "mineral_weak";
-            case "netherite_block" -> "netherite";
-            case "obsidian" -> "obsidian";
-            case "amethyst_block" -> "amethyst";
-            case "dripstone_block" -> "dripstone";
-            case "bedrock" -> "bedrock";
-            case "packed_mud" -> "mud";
-            default -> "wood";
-        };
     }
 
     //create the block with a name and the factory (factory include properties)
@@ -202,65 +130,21 @@ public class BlockRegister
         ItemRegister.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    private static ToIntFunction<BlockState> litBlockEmission(int lightValue)
+    public static ToIntFunction<BlockState> litBlockEmission(int lightValue)
     {
-        return state -> state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
-    }
-
-    private static DeferredBlock<Block> allMaterialsBlockRegister(String block, String name, String type)
-    {
-
-        BlockBehaviour.Properties properties;
-        /*
-          wood as default
-        */
-        switch (type)
+        return state ->
         {
-            case "stone" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion();
-            case "cobblestone" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE).noOcclusion();
-            case "deepslate" ->
-                    properties = BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE).noOcclusion();
-            case "tuff" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF).noOcclusion();
-            case "mud" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_MUD).noOcclusion();
-            case "sandstone" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion();
-            case "nether_bricks" ->
-                    properties = BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS).noOcclusion();
-            case "mineral_weak" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK).noOcclusion();
-            case "mineral_strong" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_BLOCK).noOcclusion();
-            case "metal" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion();
-            case "copper" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion();
-            case "basalt" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT).noOcclusion();
-            case "endstone" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion();
-            case "obsidian" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion();
-            case "netherite" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK).noOcclusion();
-            case "amethyst" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion();
-            case "dripstone" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK).noOcclusion();
-            case "bedrock" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion();
-            case "netherwood" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion();
-            case "cherry" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).noOcclusion();
-            case "bamboo" -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion();
-            default -> properties = BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion();
-        }
-        return switch (block)
-        {
-            case "villager_statue" -> registerBlock(name, () -> new VillagerStatue(properties));
-            case "villager_pedestal" -> registerBlock(name, () -> new VillagerPedestalBlock(properties));
-            case "villager_brazier" ->
-                    registerBlock(name, () -> new VillagerBrazier(Boolean.TRUE, 1, properties.lightLevel(litBlockEmission(15))));
-            case "villager_table" -> registerBlock(name, () -> new VillagerTableBlock(properties));
-            case "villager_chair" -> registerBlock(name, () -> new VillagerChairBlock(properties));
-            case "villager_throne_chair" -> registerBlock(name, () -> new VillagerThroneChairBlock(properties));
-            case "villager_drawer" -> registerBlock(name, () -> new VillagerDrawer(properties));
-            case "standing_villager_shelf" -> registerBlockOnly(name, () -> new StandingVillagerShelf(properties));
-            case "wall_villager_shelf" -> registerBlockOnly(name, () -> new WallVillagerShelf(properties));
-            case "villager_bench" -> registerBlock(name, () -> new VillagerBench(properties));
-            case "villager_couch" -> registerBlock(name, () -> new VillagerCouch(properties));
-            case "villager_brewing_station" -> registerBlock(name, () -> new VillagerBrewingStation(properties));
-            case "villager_musical_fridge" -> registerBlock(name, () -> new VillagerMusicalFridgeBlock(properties));
-            case "villager_chiseled_head" ->
-                    registerBlock(name, () -> new VillagerChiseledHead(properties.lightLevel(litBlockEmission(13))));
-            case "villager_dry_toilet" -> registerBlock(name, () -> new VillagerDryToiletBlock(properties));
-            default -> null;
+            int finalLightValue = 0;
+            if (!state.hasProperty(BlockStateProperties.LIT))
+            {
+                finalLightValue = lightValue;
+
+            }
+            else if (state.getValue(BlockStateProperties.LIT))
+            {
+                finalLightValue = lightValue;
+            }
+            return finalLightValue;
         };
     }
 

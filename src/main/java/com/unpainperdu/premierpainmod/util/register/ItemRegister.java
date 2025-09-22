@@ -11,6 +11,7 @@ import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingSton
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItemType;
+import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
@@ -136,7 +137,7 @@ public class ItemRegister
     private static Map<String, DeferredItem<Item>> createAllMaterialsItems()
     {
         Map<String, DeferredItem<Item>> map = new HashMap<>();
-        for (String material : BlockRegister.MATERIALS)
+        for (String material : AllMaterialsBlockEnum.getAllMaterialName())
         {
             String id = material + "_villager_shelf";
             map.put(id, villagerShelfRegister(id, () -> BlockRegister.ALL_MATERIALS_MAP.get(material + "_standing_villager_shelf"), () -> BlockRegister.ALL_MATERIALS_MAP.get(material + "_wall_villager_shelf")));
