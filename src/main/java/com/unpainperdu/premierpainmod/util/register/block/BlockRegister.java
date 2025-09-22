@@ -105,7 +105,14 @@ public class BlockRegister
             for (AllMaterialsBlockEnum.Material material : AllMaterialsBlockEnum.getAllMaterialValues())
             {
                 String id = material.toString() + "_" + blockType;
-                map.put(id, registerBlock(id, () -> blockType.getBlock(material.getProperties())));
+                if (blockType == AllMaterialsBlockEnum.Type.WALL_VILLAGER_SHELF ||blockType == AllMaterialsBlockEnum.Type.STANDING_VILLAGER_SHELF)
+                {
+                    map.put(id, registerBlockOnly(id, () -> blockType.getBlock(material.getProperties())));
+                }
+                else
+                {
+                    map.put(id, registerBlock(id, () -> blockType.getBlock(material.getProperties())));
+                }
             }
         }
         return map;

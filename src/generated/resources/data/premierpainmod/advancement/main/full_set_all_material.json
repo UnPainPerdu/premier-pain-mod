@@ -160,13 +160,19 @@
       "TagKey[minecraft:item / premierpainmod:villager_statue]"
     ],
     [
-      "TagKey[minecraft:item / premierpainmod:villager_chair]"
-    ],
-    [
       "TagKey[minecraft:item / premierpainmod:villager_pedestal]"
     ],
     [
       "TagKey[minecraft:item / premierpainmod:villager_brazier]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_table]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_chair]"
+    ],
+    [
+      "TagKey[minecraft:item / premierpainmod:villager_throne_chair]"
     ],
     [
       "TagKey[minecraft:item / premierpainmod:villager_drawer]"
@@ -175,10 +181,7 @@
       "TagKey[minecraft:item / premierpainmod:villager_shelf]"
     ],
     [
-      "TagKey[minecraft:item / premierpainmod:villager_dry_toilet]"
-    ],
-    [
-      "TagKey[minecraft:item / premierpainmod:villager_chiseled_head]"
+      "TagKey[minecraft:item / premierpainmod:villager_bench]"
     ],
     [
       "TagKey[minecraft:item / premierpainmod:villager_couch]"
@@ -190,14 +193,14 @@
       "TagKey[minecraft:item / premierpainmod:villager_musical_fridge]"
     ],
     [
-      "TagKey[minecraft:item / premierpainmod:villager_table]"
+      "TagKey[minecraft:item / premierpainmod:villager_chiseled_head]"
     ],
     [
-      "TagKey[minecraft:item / premierpainmod:villager_throne_chair]"
-    ],
-    [
-      "TagKey[minecraft:item / premierpainmod:villager_bench]"
+      "TagKey[minecraft:item / premierpainmod:villager_dry_toilet]"
     ]
   ],
+  "rewards": {
+    "experience": 250
+  },
   "sends_telemetry_event": true
 }

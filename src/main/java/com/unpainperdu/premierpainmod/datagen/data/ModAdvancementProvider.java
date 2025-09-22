@@ -5,7 +5,6 @@ import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
-import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
@@ -32,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -60,10 +59,11 @@ public class ModAdvancementProvider extends AdvancementProvider
             this.saver = saver;
             this.existingFileHelper = existingFileHelper;
             this.registries = registries;
+            HolderGetter<Biome> holdergetter = this.registries.lookupOrThrow(Registries.BIOME);
             //root
             generateRootAdvancement("main", Items.EMERALD);
             //main
-            generateAdvancementWithMainAsRoot(BlockRegister.VILLAGER_WORKSHOP, "villager_workshop" ,"root", AdvancementType.TASK,
+            generateAdvancementWithMainAsRoot(BlockRegister.VILLAGER_WORKSHOP, "villager_workshop", "root", AdvancementType.TASK,
                     Map.of(
                             "has_villager_workshop", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegister.VILLAGER_WORKSHOP)
                     ));
@@ -71,7 +71,7 @@ public class ModAdvancementProvider extends AdvancementProvider
                     Map.of(
                             "has_civilization_flower", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegister.CIVILIZATIONS_FLOWER)
                     ));
-            generateAdvancementWithMainAsRoot(ItemRegister.PAIN_DIEUX_MUG, "first_beer","civilization_flower", AdvancementType.TASK,
+            generateAdvancementWithMainAsRoot(ItemRegister.PAIN_DIEUX_MUG, "first_beer", "civilization_flower", AdvancementType.TASK,
                     Map.of(
                             "has_beer", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(
                                             ModItemList.getAllItemsFromClass(DrinkableBeerItem.class).stream()
@@ -82,24 +82,33 @@ public class ModAdvancementProvider extends AdvancementProvider
                             )
                     ));
 
-            generateAdvancementWithMainAsRoot(ItemRegister.PAIN_DIEUX_BOTTLE, "all_beer_bottle","first_beer", AdvancementType.TASK,
+            generateAdvancementWithMainAsRoot(ItemRegister.PAIN_DIEUX_BOTTLE, "all_beer_bottle", "first_beer", AdvancementType.TASK,
                     Map.of(
                             "has_all_beer_bottle", InventoryChangeTrigger.TriggerInstance.hasItems(
-                                            ModItemList.getAllItemsFromClass(DrinkableBeerItem.class).stream()
-                                                    .filter(item -> ResourceUtil.getKey(item).toString().contains("bottle"))
-                                                    .toList()
-                                                    .toArray(new Item[0])
+                                    ModItemList.getAllItemsFromClass(DrinkableBeerItem.class).stream()
+                                            .filter(item -> ResourceUtil.getKey(item).toString().contains("bottle"))
+                                            .toList()
+                                            .toArray(new Item[0])
                             )
                     ));
 
-            generateBiomesAdvancement("main", "root", BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()), "visit_all_biomes", AdvancementType.CHALLENGE, ModBiomes.OVERWORLD_BIOMES);
+            Map<String, Criterion<?>> conditions = new LinkedHashMap<>();
+            for (ResourceKey<Biome> biome : ModBiomes.OVERWORLD_BIOMES)
+            {
+                String name = "has_visited_" + biome.location().toString().replace("premierpainmod:", "").replace("/", "_");
+                conditions.put(name, PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(holdergetter.getOrThrow(biome))));
+            }
+            generateAdvancementWithMainAsRoot(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()), "visit_all_biomes", "root", AdvancementType.CHALLENGE,
+                    conditions,
+                    AdvancementRewards.Builder.experience(500));
 
-            Map<String, Criterion<?>> conditions = new HashMap<>();
+            conditions = new LinkedHashMap<>();
             for (TagKey<Item> tagKey : ModItemTags.ALL_MATERIALS_TAGS)
             {
                 conditions.put(tagKey.toString(), InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(tagKey)));
             }
-            generateAdvancementWithMainAsRoot(getAllMaterialBlock(Type.VILLAGER_STATUE, Material.EMERALD_BLOCK), "full_set_all_material","villager_workshop", AdvancementType.CHALLENGE,
+
+            generateAdvancementWithMainAsRoot(getAllMaterialBlock(Type.VILLAGER_STATUE, Material.EMERALD_BLOCK), "full_set_all_material", "villager_workshop", AdvancementType.CHALLENGE,
                     conditions,
                     AdvancementRewards.Builder.experience(250));
         }
@@ -137,12 +146,12 @@ public class ModAdvancementProvider extends AdvancementProvider
             generateAdvancement("main", "premierpainmod:main/" + parentName, itemToDisplay, advancementName, advancementType, condition, null);
         }
 
-        private void generateAdvancementWithMainAsRoot(ItemLike itemToDisplay, String advancementName, String parentName, AdvancementType advancementType, Map<String, Criterion<?>> condition,  AdvancementRewards.Builder rewardsBuilder)
+        private void generateAdvancementWithMainAsRoot(ItemLike itemToDisplay, String advancementName, String parentName, AdvancementType advancementType, Map<String, Criterion<?>> condition, AdvancementRewards.Builder rewardsBuilder)
         {
-            generateAdvancement("main", "premierpainmod:main/" + parentName, itemToDisplay, advancementName, advancementType, condition, null);
+            generateAdvancement("main", "premierpainmod:main/" + parentName, itemToDisplay, advancementName, advancementType, condition, rewardsBuilder);
         }
 
-        private void generateAdvancement(String page, String parent, ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, Map<String, Criterion<?>> condition, @Nullable AdvancementRewards.Builder rewardsBuilder)
+        private void generateAdvancement(String page, String parent, ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, Map<String, Criterion<?>> conditions, @Nullable AdvancementRewards.Builder rewardsBuilder)
         {
             Advancement.Builder builder = Advancement.Builder.advancement();
             builder.parent(AdvancementSubProvider.createPlaceholder(parent));
@@ -156,47 +165,13 @@ public class ModAdvancementProvider extends AdvancementProvider
                     true,
                     false
             );
-            condition.forEach(builder::addCriterion);
-            List<String> requirement = new ArrayList<>(condition.keySet());
+            conditions.forEach(builder::addCriterion);
+            List<String> requirement = new ArrayList<>(conditions.keySet());
             builder.requirements(AdvancementRequirements.allOf(requirement));
             if (rewardsBuilder != null)
             {
                 builder.rewards(rewardsBuilder);
             }
-            builder.save(saver, ResourceUtil.createResourceLocation(page + "/" + advancementName), existingFileHelper);
-        }
-
-        private void generateBiomesAdvancement(String page, String parent, ItemLike itemToDisplay, String advancementName, AdvancementType advancementType, List<ResourceKey<Biome>> biomeKeysToVisit)
-        {
-            if (biomeKeysToVisit.isEmpty())
-            {
-                throw new RuntimeException("generateBiomesAdvancement need atleast 1 ResourceKey<Biome>");
-            }
-            HolderGetter<Biome> holdergetter = registries.lookupOrThrow(Registries.BIOME);
-
-            Advancement.Builder builder = Advancement.Builder.advancement();
-            builder.parent(AdvancementSubProvider.createPlaceholder("premierpainmod:" + page + "/" + parent));
-            builder.display(
-                    itemToDisplay,
-                    Component.translatable("advancements.premierpainmod." + advancementName + ".title"),
-                    Component.translatable("advancements.premierpainmod." + advancementName + ".description"),
-                    null,
-                    advancementType,
-                    true,
-                    true,
-                    false
-            );
-            List<String> criterionName = new ArrayList<>();
-            biomeKeysToVisit.forEach(biomeKey ->
-            {
-                String name = "has_visited_" + biomeKey.location().toString().replace("premierpainmod:", "").replace("/", "_");
-                criterionName.add(name);
-                builder.addCriterion(name,
-                        PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(holdergetter.getOrThrow(biomeKey))));
-            });
-            List<String> requirement = new ArrayList<>(criterionName);
-            builder.requirements(AdvancementRequirements.allOf(requirement));
-            builder.rewards(AdvancementRewards.Builder.experience(500));
             builder.save(saver, ResourceUtil.createResourceLocation(page + "/" + advancementName), existingFileHelper);
         }
     }
