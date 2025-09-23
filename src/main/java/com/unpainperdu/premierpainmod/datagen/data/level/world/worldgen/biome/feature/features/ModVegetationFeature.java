@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.features;
+package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features;
 
 import com.google.common.collect.ImmutableList;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.PatchConfiguration;

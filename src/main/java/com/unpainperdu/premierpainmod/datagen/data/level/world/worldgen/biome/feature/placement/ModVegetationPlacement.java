@@ -1,6 +1,6 @@
-package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.placement;
+package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.placement;
 
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.features.ModVegetationFeature;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features.ModVegetationFeature;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.core.BlockPos;

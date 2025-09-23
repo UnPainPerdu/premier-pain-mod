@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree;
 
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.features.ModVegetationFeature;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features.ModVegetationFeature;
 import net.minecraft.world.level.block.grower.TreeGrower;
 
 import java.util.Optional;

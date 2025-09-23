@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.features;
+package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features;
 
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
