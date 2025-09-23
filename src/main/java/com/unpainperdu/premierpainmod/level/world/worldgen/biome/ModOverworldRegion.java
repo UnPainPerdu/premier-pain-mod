@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome;
 
 import com.mojang.datafixers.util.Pair;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

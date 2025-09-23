@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.datagen.data.data_pack_registries;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.ModFeatureUtil;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement.ModPlacementUtil;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.features.ModFeatureUtil;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.placement.ModPlacementUtil;
 import com.unpainperdu.premierpainmod.util.register.datapack.DamageTypesRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;

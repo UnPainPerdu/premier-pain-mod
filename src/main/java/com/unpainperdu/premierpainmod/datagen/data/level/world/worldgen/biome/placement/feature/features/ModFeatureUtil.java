@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature;
+package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.features;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.core.registries.Registries;

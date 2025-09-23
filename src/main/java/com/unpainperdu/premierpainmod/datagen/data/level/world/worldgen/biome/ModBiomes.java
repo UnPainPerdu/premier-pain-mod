@@ -1,8 +1,8 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome;
+package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement.ModMiscOverworldPlacements;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.placement.ModVegetationPlacement;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.placement.ModMiscOverworldPlacements;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.placement.feature.placement.ModVegetationPlacement;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;

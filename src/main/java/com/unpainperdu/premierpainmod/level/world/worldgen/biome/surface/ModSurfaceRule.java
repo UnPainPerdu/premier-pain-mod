@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.surface;
 
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModBiomes;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
