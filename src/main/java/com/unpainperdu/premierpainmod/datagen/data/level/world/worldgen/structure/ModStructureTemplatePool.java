@@ -19,6 +19,7 @@ public class ModStructureTemplatePool
      *   Check PlainVillagePools.java for example.
      **/
     public static final ResourceKey<StructureTemplatePool> FOREST_PREMIER_PAIN_TEMPLE_POOL = register("forest_premier_pain_temple_pool");
+    public static final ResourceKey<StructureTemplatePool> SAND_DESERT_PREMIER_PAIN_TEMPLE_POOL = register("sand_desert_premier_pain_temple");
 
     private static ResourceKey<StructureTemplatePool> register(String path)
     {
@@ -36,6 +37,17 @@ public class ModStructureTemplatePool
                         EmptyStructureTemplatePool,
                         ImmutableList.of(
                                 Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/forest_premier_pain_temple_structure"), 1)
+                        ),
+                        StructureTemplatePool.Projection.RIGID
+                )
+        );
+
+        context.register(
+                SAND_DESERT_PREMIER_PAIN_TEMPLE_POOL,
+                new StructureTemplatePool(
+                        EmptyStructureTemplatePool,
+                        ImmutableList.of(
+                                Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/sand_desert_premier_pain_temple_structure"), 1)
                         ),
                         StructureTemplatePool.Projection.RIGID
                 )

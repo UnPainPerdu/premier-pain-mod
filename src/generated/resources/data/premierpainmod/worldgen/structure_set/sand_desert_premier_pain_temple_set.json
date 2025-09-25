@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1642136474,
+    "separation": 45,
+    "spacing": 50
+  },
+  "structures": [
+    {
+      "structure": "premierpainmod:sand_desert_premier_pain_temple",
+      "weight": 1
+    }
+  ]
+}

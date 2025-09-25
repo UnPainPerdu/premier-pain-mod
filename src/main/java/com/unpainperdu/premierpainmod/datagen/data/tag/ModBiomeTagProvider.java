@@ -44,7 +44,8 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
         generateTagsForOverWorldBiome(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS,
                 Tags.Biomes.IS_DESERT,
                 Tags.Biomes.IS_HOT,
-                BiomeTags.SNOW_GOLEM_MELTS
+                BiomeTags.SNOW_GOLEM_MELTS,
+                ModBiomeTags.HAS_SAND_DESERT_PREMIER_PAIN_TEMPLE
         );
             //jungle
         generateTagsForOverWorldBiome(ModBiomes.JUNGLE_PREMIER_PAIN_RUINS,

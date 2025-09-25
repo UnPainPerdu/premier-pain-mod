@@ -23,8 +23,9 @@ import java.util.Optional;
 public class ModStructure
 {
     public static final ResourceKey<Structure> FOREST_PREMIER_PAIN_TEMPLE = register("forest_premier_pain_temple");
+    public static final ResourceKey<Structure> SAND_DESERT_PREMIER_PAIN_TEMPLE = register("sand_desert_premier_pain_temple");
 
-    public static final List<ResourceKey<Structure>> ALL_STRUCTURES = List.of(FOREST_PREMIER_PAIN_TEMPLE);
+    public static final List<ResourceKey<Structure>> ALL_STRUCTURES = List.of(FOREST_PREMIER_PAIN_TEMPLE, SAND_DESERT_PREMIER_PAIN_TEMPLE);
 
     private static ResourceKey<Structure> register(String path)
     {
@@ -46,6 +47,22 @@ public class ModStructure
                         Optional.empty(),
                         1,
                         ConstantHeight.of(VerticalAnchor.absolute(-13)),
+                        Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+                        80,
+                        new DimensionPadding(0),
+                        LiquidSettings.IGNORE_WATERLOGGING
+                )
+        );
+        context.register(
+                SAND_DESERT_PREMIER_PAIN_TEMPLE,
+                new PremierPainTempleStructures(
+                        new Structure.StructureSettings.Builder(biomeHoldergetter.getOrThrow(ModBiomeTags.HAS_SAND_DESERT_PREMIER_PAIN_TEMPLE))
+                                .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                                .build(),
+                        STPHoldergetter.getOrThrow(ModStructureTemplatePool.SAND_DESERT_PREMIER_PAIN_TEMPLE_POOL),
+                        Optional.empty(),
+                        1,
+                        ConstantHeight.of(VerticalAnchor.absolute(-15)),
                         Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                         80,
                         new DimensionPadding(0),
