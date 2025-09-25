@@ -9,6 +9,9 @@ public class ModBiomeTags
 {
     public static final TagKey<Biome> HAS_FOREST_PREMIER_PAIN_TEMPLE = create("has_forest_premier_pain_temple");
     public static final TagKey<Biome> HAS_SAND_DESERT_PREMIER_PAIN_TEMPLE = create("has_sand_desert_premier_pain_temple");
+    public static final TagKey<Biome> HAS_SWAMP_PREMIER_PAIN_TEMPLE = create("has_swamp_premier_pain_temple");
+    public static final TagKey<Biome> HAS_JUNGLE_PREMIER_PAIN_TEMPLE = create("has_jungle_premier_pain_temple");
+    public static final TagKey<Biome> HAS_OLD_GREAT_FIELD = create("has_old_great_field");
 
     public static TagKey<Biome> create(String name)
     {

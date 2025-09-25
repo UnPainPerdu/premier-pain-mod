@@ -34,12 +34,6 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
                 Tags.Biomes.IS_DENSE_VEGETATION,
                 ModBiomeTags.HAS_FOREST_PREMIER_PAIN_TEMPLE
         );
-            //swamp
-        generateTagsForOverWorldBiome(ModBiomes.SWAMP_PREMIER_PAIN_RUINS,
-                Tags.Biomes.IS_SWAMP,
-                Tags.Biomes.IS_WET,
-                BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS
-        );
             //desert
         generateTagsForOverWorldBiome(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS,
                 Tags.Biomes.IS_DESERT,
@@ -47,16 +41,25 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
                 BiomeTags.SNOW_GOLEM_MELTS,
                 ModBiomeTags.HAS_SAND_DESERT_PREMIER_PAIN_TEMPLE
         );
+        //swamp
+        generateTagsForOverWorldBiome(ModBiomes.SWAMP_PREMIER_PAIN_RUINS,
+                Tags.Biomes.IS_SWAMP,
+                Tags.Biomes.IS_WET,
+                BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS,
+                ModBiomeTags.HAS_SWAMP_PREMIER_PAIN_TEMPLE
+        );
             //jungle
         generateTagsForOverWorldBiome(ModBiomes.JUNGLE_PREMIER_PAIN_RUINS,
                 Tags.Biomes.IS_JUNGLE,
                 Tags.Biomes.IS_WET,
                 Tags.Biomes.IS_HOT,
-                Tags.Biomes.IS_DENSE_VEGETATION
+                Tags.Biomes.IS_DENSE_VEGETATION,
+                ModBiomeTags.HAS_JUNGLE_PREMIER_PAIN_TEMPLE
         );
         //old great field
         generateTagsForOverWorldBiome(ModBiomes.OLD_GREAT_FIELD,
-                Tags.Biomes.IS_PLAINS
+                Tags.Biomes.IS_PLAINS,
+                ModBiomeTags.HAS_OLD_GREAT_FIELD
         );
 
         super.addTags(provider);
