@@ -1,8 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.block.event_block;
 
-import com.unpainperdu.premierpainmod.util.register.datapack.DamageSourcesRegister;
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.util.register.datapack.DamageTypesRegister;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
+import com.unpainperdu.premierpainmod.util.tool_kit.DamageSourcesCreator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -38,36 +38,37 @@ public class LibertyBlock extends FallingBlock implements SimpleWaterloggedBlock
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 1, 16);
 
-    public LibertyBlock(Properties pProperties)
+    public LibertyBlock(Properties properties)
     {
-        super(pProperties);
+        super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE).setValue(FACING, Direction.NORTH));
     }
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
-        pBuilder.add( WATERLOGGED, FACING);
+        builder.add(WATERLOGGED, FACING);
     }
 
     @Override
-    protected MapCodec<? extends FallingBlock> codec()
+    protected @NotNull MapCodec<? extends FallingBlock> codec()
     {
         return CODEC;
     }
 
     @Override
-    protected @NotNull FluidState getFluidState(BlockState pState)
+    protected @NotNull FluidState getFluidState(BlockState state)
     {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
     @Override
-    protected void falling(FallingBlockEntity pFallingEntity)
+    protected void falling(FallingBlockEntity fallingEntity)
     {
-        pFallingEntity.setHurtsEntities(100.0F, 1000);
+        fallingEntity.setHurtsEntities(100.0F, 1000);
     }
 
     @Override
-    public DamageSource getFallDamageSource(Entity pEntity)
+    public @NotNull DamageSource getFallDamageSource(@NotNull Entity entity)
     {
         DamageSource damageSource;
         int randomNumber = new Random().nextInt(3);
@@ -75,17 +76,17 @@ public class LibertyBlock extends FallingBlock implements SimpleWaterloggedBlock
         {
             case 1:
             {
-                damageSource = DamageSourcesRegister.damageSourcesCreator(DamageTypesRegister.LIBERTY_DAMAGE1,pEntity.level(),pEntity);
+                damageSource = DamageSourcesCreator.create(ModDamageType.LIBERTY_DAMAGE1, entity.level(), entity);
                 break;
             }
             case 2:
             {
-                damageSource = DamageSourcesRegister.damageSourcesCreator(DamageTypesRegister.LIBERTY_DAMAGE2,pEntity.level(),pEntity);
+                damageSource = DamageSourcesCreator.create(ModDamageType.LIBERTY_DAMAGE2, entity.level(), entity);
                 break;
             }
             default:
             {
-                damageSource = DamageSourcesRegister.damageSourcesCreator(DamageTypesRegister.LIBERTY_DAMAGE3,pEntity.level(),pEntity);
+                damageSource = DamageSourcesCreator.create(ModDamageType.LIBERTY_DAMAGE3, entity.level(), entity);
                 break;
             }
         }
@@ -93,34 +94,36 @@ public class LibertyBlock extends FallingBlock implements SimpleWaterloggedBlock
     }
 
     @Override
-    public void onLand(Level pLevel, BlockPos pPos, BlockState pState, BlockState pReplaceableState, FallingBlockEntity pFallingBlock)
+    public void onLand(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull BlockState replaceableState, FallingBlockEntity fallingBlock)
     {
-        if (!pFallingBlock.isSilent())
+        if (!fallingBlock.isSilent())
         {
-            pLevel.playSound( null, pPos,SoundEvents.WITHER_BREAK_BLOCK, SoundSource.RECORDS, 16f, 1.0F);
+            level.playSound(null, pos, SoundEvents.WITHER_BREAK_BLOCK, SoundSource.RECORDS, 16f, 1.0F);
         }
     }
 
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         return SHAPE;
     }
 
     @Override
-    protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos)
+    {
+        if (state.getValue(WATERLOGGED))
+        {
+            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
-        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+        return super.updateShape(state, facing, facingState, level, currentPos, facingPos);
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
-        BlockState blockstate = this.defaultBlockState()
-                .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER)).setValue(FACING, pContext.getHorizontalDirection());
-        return blockstate;
+    public BlockState getStateForPlacement(BlockPlaceContext context)
+    {
+        FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+        return this.defaultBlockState().setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER).setValue(FACING, context.getHorizontalDirection());
     }
 }
+

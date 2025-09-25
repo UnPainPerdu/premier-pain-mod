@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.register.datapack;
+package com.unpainperdu.premierpainmod.util.tool_kit;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -8,21 +8,21 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 
 
-public class DamageSourcesRegister
+public class DamageSourcesCreator
 {
-    private DamageSourcesRegister(){}
+    private DamageSourcesCreator(){}
 
-    public static DamageSource damageSourcesCreator (ResourceKey<DamageType> damageType, Level level)
+    public static DamageSource create (ResourceKey<DamageType> damageType, Level level)
     {
-        return damageSourcesCreator(damageType,level, null);
+        return create(damageType,level, null);
     }
-    public static DamageSource damageSourcesCreator (ResourceKey<DamageType> damageType, Level level, Entity pEntity)
+    public static DamageSource create(ResourceKey<DamageType> damageType, Level level, Entity entity)
     {
 
         return new DamageSource(
                 level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(damageType),
-                pEntity,
-                pEntity,
+                entity,
+                entity,
                 null
         );
     }

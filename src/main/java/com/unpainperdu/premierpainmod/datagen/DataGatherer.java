@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen;
 
+import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.asset.ModParticleDescriptionProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.ModSoundProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.language.ModLanguageProvider;
@@ -8,16 +9,24 @@ import com.unpainperdu.premierpainmod.datagen.asset.model.block.ModBlockStatePro
 import com.unpainperdu.premierpainmod.datagen.data.ModAdvancementProvider;
 import com.unpainperdu.premierpainmod.datagen.data.ModGlobalLootModifierProvider;
 import com.unpainperdu.premierpainmod.datagen.data.ModRecipeProvider;
-import com.unpainperdu.premierpainmod.datagen.data.data_pack_registries.ModDataPackProvider;
 import com.unpainperdu.premierpainmod.datagen.data.datamap.ModDataMap;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features.ModFeatureUtil;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.placement.ModPlacementUtil;
 import com.unpainperdu.premierpainmod.datagen.data.loot_table.ModLootTableProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModTagSpliter;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class DataGatherer
@@ -27,7 +36,7 @@ public class DataGatherer
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = ModDataPackProvider.onGatherData(event);
+        CompletableFuture<HolderLookup.Provider> lookupProvider = onGatherData(event);
 
         ModLanguageProvider.spliter(event, generator, packOutput);
         ModTagSpliter.spliter(event.includeServer(), generator, packOutput, fileHelper, lookupProvider);
@@ -40,5 +49,23 @@ public class DataGatherer
         generator.addProvider(event.includeServer(), new ModDataMap(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(event.includeClient(), new ModParticleDescriptionProvider(packOutput, fileHelper));
+    }
+
+    private static CompletableFuture<HolderLookup.Provider> onGatherData(GatherDataEvent event)
+    {
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+        return event.getGenerator().addProvider(event.includeServer(),
+                (DataProvider.Factory<DatapackBuiltinEntriesProvider>) output -> new DatapackBuiltinEntriesProvider(
+                        output,
+                        lookupProvider,
+                        new RegistrySetBuilder()
+                                .add(Registries.DAMAGE_TYPE, ModDamageType::boostrap)
+                                .add(Registries.BIOME, ModBiomes::boostrap)
+                                .add(Registries.PLACED_FEATURE, ModPlacementUtil::bootstrap)
+                                .add(Registries.CONFIGURED_FEATURE, ModFeatureUtil::bootstrap)
+                        ,
+                        Set.of(PremierPainMod.MOD_ID))
+        ).getRegistryProvider();
     }
 }
