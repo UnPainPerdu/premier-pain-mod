@@ -46,7 +46,7 @@ public class PremierPainTempleStructures extends Structure
     private final DimensionPadding dimensionPadding;
     private final LiquidSettings liquidSettings;
 
-    protected PremierPainTempleStructures(Structure.StructureSettings config,
+    public PremierPainTempleStructures(Structure.StructureSettings config,
                                           Holder<StructureTemplatePool> startPool,
                                           Optional<ResourceLocation> startJigsawName,
                                           int size,
