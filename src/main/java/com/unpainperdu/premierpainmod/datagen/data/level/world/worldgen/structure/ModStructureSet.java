@@ -15,6 +15,7 @@ public class ModStructureSet
 {
     public static final ResourceKey<StructureSet> FOREST_PREMIER_PAIN_TEMPLE_SET = register("forest_premier_pain_temple_set");
     public static final ResourceKey<StructureSet> SAND_DESERT_PREMIER_PAIN_TEMPLE_SET = register("sand_desert_premier_pain_temple_set");
+    public static final ResourceKey<StructureSet> SWAMP_PREMIER_PAIN_TEMPLE_SET = register("swamp_premier_pain_temple_set");
 
     private static ResourceKey<StructureSet> register(String path)
     {
@@ -37,6 +38,12 @@ public class ModStructureSet
                 SAND_DESERT_PREMIER_PAIN_TEMPLE_SET,
                 new StructureSet(
                         structureHoldergetter.getOrThrow(ModStructure.SAND_DESERT_PREMIER_PAIN_TEMPLE), new RandomSpreadStructurePlacement(50, 45, RandomSpreadType.LINEAR, 1642136474)
+                )
+        );
+        context.register(
+                SWAMP_PREMIER_PAIN_TEMPLE_SET,
+                new StructureSet(
+                        structureHoldergetter.getOrThrow(ModStructure.SWAMP_PREMIER_PAIN_TEMPLE), new RandomSpreadStructurePlacement(50, 45, RandomSpreadType.LINEAR, 1642136474)
                 )
         );
     }

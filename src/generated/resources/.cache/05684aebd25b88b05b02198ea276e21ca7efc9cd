@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-25T16:32:12.7322974	Tags for minecraft:worldgen/biome mod id premierpainmod
+// 1.21.1	2025-09-25T18:40:53.6168193	Tags for minecraft:worldgen/biome mod id premierpainmod
 37ed70eafde47ee48561d5cb9862c7d9c8a675b4 data/c/tags/worldgen/biome/is_dense_vegetation.json
 603eb2ab5ca19aa3dd6c8e65fb8c387c71c90a17 data/c/tags/worldgen/biome/is_desert.json
 0fe1b00a967f53eb9ef055fc1003af35da7a7d85 data/c/tags/worldgen/biome/is_hot.json
@@ -16,7 +16,7 @@ f3ef2895c49e29111297e950661e5bc71a79989e data/minecraft/tags/worldgen/biome/has_
 91b0eb2c9a1bca9eaa7aeb065cf6566cc9ef4ef6 data/minecraft/tags/worldgen/biome/has_structure/end_city.json
 080d246ec6009090db8d9470d55c3ec78f26eced data/minecraft/tags/worldgen/biome/has_structure/igloo.json
 4515b902a2803d77400aa33b8a3a7751bcaf389a data/minecraft/tags/worldgen/biome/has_structure/jungle_temple.json
-7809c5ba84c60282981187ad150072ebf81a41eb data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
+087723e891ce8c5e7c5316d5840a52cd2b5bc593 data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
 45707864d688ef531d52bd0287366ea1e7736874 data/minecraft/tags/worldgen/biome/has_structure/mineshaft_mesa.json
 a24545b58f3f91c6c033586e2b2ae12f1e8131b1 data/minecraft/tags/worldgen/biome/has_structure/nether_fortress.json
 15343ca7e7931ca3b093f52c77b5d7fae920fed9 data/minecraft/tags/worldgen/biome/has_structure/nether_fossil.json
@@ -54,7 +54,7 @@ f85bfa0d4b462706e486bac541e720ebc630330c data/minecraft/tags/worldgen/biome/is_j
 3173072176fa45f6ebdee6c273ff17a6ede1aa72 data/minecraft/tags/worldgen/biome/is_mountain.json
 e986c1b86e1b4d4abe4912ecfcabc31d8d7d576e data/minecraft/tags/worldgen/biome/is_nether.json
 068e9616fd14b1280352ffc9d66cc3846c00a5e4 data/minecraft/tags/worldgen/biome/is_ocean.json
-0351daf69520828fa6cf7929d164abcf7625ff31 data/minecraft/tags/worldgen/biome/is_overworld.json
+c450dff350be313c9326cb057ba2600787f07d2b data/minecraft/tags/worldgen/biome/is_overworld.json
 3437f146e7780b8779e1617366226f1892d8a533 data/minecraft/tags/worldgen/biome/is_river.json
 562853abe345ceeddc3931331c8cdb3aa0fbe085 data/minecraft/tags/worldgen/biome/is_savanna.json
 f3dc9f00fb98a763e374de9b2aa55e6707d3a6f3 data/minecraft/tags/worldgen/biome/is_taiga.json
@@ -77,4 +77,7 @@ e230510c9f5c1188c61cd1ad728a3d9a6bd3125f data/minecraft/tags/worldgen/biome/with
 378840c455ad2277df61b86384bba36f3ec8b253 data/minecraft/tags/worldgen/biome/without_wandering_trader_spawns.json
 e230510c9f5c1188c61cd1ad728a3d9a6bd3125f data/minecraft/tags/worldgen/biome/without_zombie_sieges.json
 14411d360efc913d158f4d490950b2efe799120c data/premierpainmod/tags/worldgen/biome/has_forest_premier_pain_temple.json
+6d6881d4a958ef4c4fc8e076ccd3b0d0d6dfbc3e data/premierpainmod/tags/worldgen/biome/has_jungle_premier_pain_temple.json
+65bbf320b095faa0f21ce9d5651f928154303a60 data/premierpainmod/tags/worldgen/biome/has_old_great_field.json
 603eb2ab5ca19aa3dd6c8e65fb8c387c71c90a17 data/premierpainmod/tags/worldgen/biome/has_sand_desert_premier_pain_temple.json
+a990e9c62bc2b461097bc6f26728f2e15c06617d data/premierpainmod/tags/worldgen/biome/has_swamp_premier_pain_temple.json

@@ -1,5 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure;
 
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.ModStructureTemplatePool;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.SwampPremierPainTempleTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBiomeTags;
 import com.unpainperdu.premierpainmod.level.world.worldgen.structure.PremierPainTempleStructures;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
@@ -24,8 +26,9 @@ public class ModStructure
 {
     public static final ResourceKey<Structure> FOREST_PREMIER_PAIN_TEMPLE = register("forest_premier_pain_temple");
     public static final ResourceKey<Structure> SAND_DESERT_PREMIER_PAIN_TEMPLE = register("sand_desert_premier_pain_temple");
+    public static final ResourceKey<Structure> SWAMP_PREMIER_PAIN_TEMPLE = register("swamp_premier_pain_temple");
 
-    public static final List<ResourceKey<Structure>> ALL_STRUCTURES = List.of(FOREST_PREMIER_PAIN_TEMPLE, SAND_DESERT_PREMIER_PAIN_TEMPLE);
+    public static final List<ResourceKey<Structure>> ALL_STRUCTURES = List.of(FOREST_PREMIER_PAIN_TEMPLE, SAND_DESERT_PREMIER_PAIN_TEMPLE,SWAMP_PREMIER_PAIN_TEMPLE);
 
     private static ResourceKey<Structure> register(String path)
     {
@@ -63,6 +66,23 @@ public class ModStructure
                         Optional.empty(),
                         1,
                         ConstantHeight.of(VerticalAnchor.absolute(-15)),
+                        Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+                        80,
+                        new DimensionPadding(0),
+                        LiquidSettings.IGNORE_WATERLOGGING
+                )
+        );
+
+        context.register(
+                SWAMP_PREMIER_PAIN_TEMPLE,
+                new PremierPainTempleStructures(
+                        new Structure.StructureSettings.Builder(biomeHoldergetter.getOrThrow(ModBiomeTags.HAS_SWAMP_PREMIER_PAIN_TEMPLE))
+                                .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                                .build(),
+                        STPHoldergetter.getOrThrow(SwampPremierPainTempleTemplatePool.START),
+                        Optional.empty(),
+                        1,
+                        ConstantHeight.of(VerticalAnchor.absolute(-14)),
                         Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                         80,
                         new DimensionPadding(0),

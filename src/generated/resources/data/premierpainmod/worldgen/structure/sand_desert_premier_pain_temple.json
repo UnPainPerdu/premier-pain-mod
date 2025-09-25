@@ -9,6 +9,6 @@
   "start_height": {
     "absolute": -15
   },
-  "start_pool": "premierpainmod:sand_desert_premier_pain_temple",
+  "start_pool": "premierpainmod:premier_pain_temple/sand_desert_premier_pain_temple",
   "step": "surface_structures"
 }
