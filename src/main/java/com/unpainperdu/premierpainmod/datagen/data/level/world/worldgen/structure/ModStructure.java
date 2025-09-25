@@ -8,9 +8,9 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 
 public class ModStructure
 {
-    public static final ResourceKey<Structure> FOREST_PREMIER_PAIN_TEMPLE = damageTypesRegister("forest_premier_pain_temple");
+    public static final ResourceKey<Structure> FOREST_PREMIER_PAIN_TEMPLE = register("forest_premier_pain_temple");
 
-    private static ResourceKey<Structure> damageTypesRegister(String path)
+    private static ResourceKey<Structure> register(String path)
     {
         return ResourceKey.create(Registries.STRUCTURE, ResourceUtil.createResourceLocation(path));
     }

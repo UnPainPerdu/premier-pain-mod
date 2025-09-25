@@ -18,9 +18,9 @@ public class ModStructureTemplatePool
      *   If pool = 1 element, in this class.
      *   Check PlainVillagePools.java for example.
      **/
-    public static final ResourceKey<StructureTemplatePool> FOREST_PREMIER_PAIN_TEMPLE_POOL = damageTypesRegister("forest_premier_pain_temple_pool");
+    public static final ResourceKey<StructureTemplatePool> FOREST_PREMIER_PAIN_TEMPLE_POOL = register("forest_premier_pain_temple_pool");
 
-    private static ResourceKey<StructureTemplatePool> damageTypesRegister(String path)
+    private static ResourceKey<StructureTemplatePool> register(String path)
     {
         return ResourceKey.create(Registries.TEMPLATE_POOL, ResourceUtil.createResourceLocation(path));
     }
