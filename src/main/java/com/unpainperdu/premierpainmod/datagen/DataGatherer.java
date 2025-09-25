@@ -15,6 +15,7 @@ import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.Mo
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features.ModFeatureUtil;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.placement.ModPlacementUtil;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.ModStructure;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.ModStructureSet;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.ModStructureTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.loot_table.ModLootTableProvider;
 import com.unpainperdu.premierpainmod.datagen.data.tag.ModTagSpliter;
@@ -68,6 +69,7 @@ public class DataGatherer
                                 .add(Registries.CONFIGURED_FEATURE, ModFeatureUtil::bootstrap)
                                 .add(Registries.STRUCTURE, ModStructure::boostrap)
                                 .add(Registries.TEMPLATE_POOL, ModStructureTemplatePool::boostrap)
+                                .add(Registries.STRUCTURE_SET, ModStructureSet::boostrap)
                         ,
                         Set.of(PremierPainMod.MOD_ID))
         ).getRegistryProvider();
