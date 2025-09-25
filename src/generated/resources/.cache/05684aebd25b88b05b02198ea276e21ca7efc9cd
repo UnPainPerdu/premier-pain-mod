@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-25T18:06:46.008678	Tags for minecraft:worldgen/biome mod id premierpainmod
+// 1.21.1	2025-09-25T15:45:44.3395878	Tags for minecraft:worldgen/biome mod id premierpainmod
 37ed70eafde47ee48561d5cb9862c7d9c8a675b4 data/c/tags/worldgen/biome/is_dense_vegetation.json
 603eb2ab5ca19aa3dd6c8e65fb8c387c71c90a17 data/c/tags/worldgen/biome/is_desert.json
 0fe1b00a967f53eb9ef055fc1003af35da7a7d85 data/c/tags/worldgen/biome/is_hot.json
@@ -76,3 +76,4 @@ de5384c32afb2e47687069231890d76a1c6681c4 data/minecraft/tags/worldgen/biome/stro
 e230510c9f5c1188c61cd1ad728a3d9a6bd3125f data/minecraft/tags/worldgen/biome/without_patrol_spawns.json
 378840c455ad2277df61b86384bba36f3ec8b253 data/minecraft/tags/worldgen/biome/without_wandering_trader_spawns.json
 e230510c9f5c1188c61cd1ad728a3d9a6bd3125f data/minecraft/tags/worldgen/biome/without_zombie_sieges.json
+14411d360efc913d158f4d490950b2efe799120c data/premierpainmod/tags/worldgen/biome/has_forest_premier_pain_temple.json

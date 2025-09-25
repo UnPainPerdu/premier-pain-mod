@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.datagen.data.tag;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
+import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBiomeTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
@@ -11,25 +12,27 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
 public class ModBiomeTagProvider extends BiomeTagsProvider
 {
-    public ModBiomeTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, @Nullable ExistingFileHelper existingFileHelper)
+    public ModBiomeTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper)
     {
-        super(pOutput, pProvider, PremierPainMod.MOD_ID, existingFileHelper);
+        super(pOutput, provider, PremierPainMod.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider pProvider)
+    protected void addTags(HolderLookup.@NotNull Provider provider)
     {
         //Premier Pain ruins
             //forest
         generateTagsForOverWorldBiome(ModBiomes.FOREST_PREMIER_PAIN_RUINS,
                 BiomeTags.IS_FOREST,
-                Tags.Biomes.IS_DENSE_VEGETATION
+                Tags.Biomes.IS_DENSE_VEGETATION,
+                ModBiomeTags.HAS_FOREST_PREMIER_PAIN_TEMPLE
         );
             //swamp
         generateTagsForOverWorldBiome(ModBiomes.SWAMP_PREMIER_PAIN_RUINS,
@@ -55,7 +58,7 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
                 Tags.Biomes.IS_PLAINS
         );
 
-        super.addTags(pProvider);
+        super.addTags(provider);
     }
 
     @SafeVarargs
