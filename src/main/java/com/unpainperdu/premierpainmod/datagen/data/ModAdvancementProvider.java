@@ -1,10 +1,12 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.ModStructure;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
@@ -25,6 +27,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +62,8 @@ public class ModAdvancementProvider extends AdvancementProvider
             this.saver = saver;
             this.existingFileHelper = existingFileHelper;
             this.registries = registries;
-            HolderGetter<Biome> holdergetter = this.registries.lookupOrThrow(Registries.BIOME);
+            HolderGetter<Biome> biomeHoldergetter = this.registries.lookupOrThrow(Registries.BIOME);
+            HolderGetter<Structure> structureHolderGetter = this.registries.lookupOrThrow(Registries.STRUCTURE);
             //root
             generateRootAdvancement("main", Items.EMERALD);
             //main
@@ -96,11 +100,21 @@ public class ModAdvancementProvider extends AdvancementProvider
             for (ResourceKey<Biome> biome : ModBiomes.OVERWORLD_BIOMES)
             {
                 String name = "has_visited_" + biome.location().toString().replace("premierpainmod:", "").replace("/", "_");
-                conditions.put(name, PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(holdergetter.getOrThrow(biome))));
+                conditions.put(name, PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeHoldergetter.getOrThrow(biome))));
             }
             generateAdvancementWithMainAsRoot(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()), "visit_all_biomes", "root", AdvancementType.CHALLENGE,
                     conditions,
-                    AdvancementRewards.Builder.experience(500));
+                    AdvancementRewards.Builder.experience(350));
+
+            conditions = new LinkedHashMap<>();
+            for (ResourceKey<Structure> structure : ModStructure.ALL_STRUCTURES)
+            {
+                String name = "has_visited_" + structure.location().toString().replace("premierpainmod:", "").replace("/", "_");
+                conditions.put(name, PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structureHolderGetter.getOrThrow(structure))));
+            }
+            generateAdvancementWithMainAsRoot(AllMaterialsBlockEnum.getAllMaterialBlock(Type.VILLAGER_CHISELED_HEAD, Material.OAK).get(), "visit_all_structures", "visit_all_biomes", AdvancementType.CHALLENGE,
+                    conditions,
+                    AdvancementRewards.Builder.experience(550));
 
             conditions = new LinkedHashMap<>();
             for (TagKey<Item> tagKey : ModItemTags.ALL_MATERIALS_TAGS)

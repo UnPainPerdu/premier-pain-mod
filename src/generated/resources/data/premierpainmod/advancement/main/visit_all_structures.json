@@ -1,7 +1,7 @@
 {
-  "parent": "premierpainmod:main/root",
+  "parent": "premierpainmod:main/visit_all_biomes",
   "criteria": {
-    "has_visited_forest_premier_pain_ruins": {
+    "has_visited_forest_premier_pain_temple": {
       "conditions": {
         "player": [
           {
@@ -9,7 +9,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "premierpainmod:forest_premier_pain_ruins"
+                "structures": "premierpainmod:forest_premier_pain_temple"
               }
             }
           }
@@ -17,7 +17,7 @@
       },
       "trigger": "minecraft:location"
     },
-    "has_visited_jungle_premier_pain_ruins": {
+    "has_visited_jungle_underground_petra": {
       "conditions": {
         "player": [
           {
@@ -25,7 +25,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "premierpainmod:jungle_premier_pain_ruins"
+                "structures": "premierpainmod:jungle_underground_petra"
               }
             }
           }
@@ -33,7 +33,7 @@
       },
       "trigger": "minecraft:location"
     },
-    "has_visited_old_great_field": {
+    "has_visited_old_great_path": {
       "conditions": {
         "player": [
           {
@@ -41,7 +41,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "premierpainmod:old_great_field"
+                "structures": "premierpainmod:old_great_path"
               }
             }
           }
@@ -49,7 +49,7 @@
       },
       "trigger": "minecraft:location"
     },
-    "has_visited_sand_desert_premier_pain_ruins": {
+    "has_visited_sand_desert_premier_pain_temple": {
       "conditions": {
         "player": [
           {
@@ -57,7 +57,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "premierpainmod:sand_desert_premier_pain_ruins"
+                "structures": "premierpainmod:sand_desert_premier_pain_temple"
               }
             }
           }
@@ -65,7 +65,7 @@
       },
       "trigger": "minecraft:location"
     },
-    "has_visited_swamp_premier_pain_ruins": {
+    "has_visited_swamp_premier_pain_temple": {
       "conditions": {
         "player": [
           {
@@ -73,7 +73,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "premierpainmod:swamp_premier_pain_ruins"
+                "structures": "premierpainmod:swamp_premier_pain_temple"
               }
             }
           }
@@ -84,36 +84,36 @@
   },
   "display": {
     "description": {
-      "translate": "advancements.premierpainmod.visit_all_biomes.description"
+      "translate": "advancements.premierpainmod.visit_all_structures.description"
     },
     "frame": "challenge",
     "icon": {
       "count": 1,
-      "id": "premierpainmod:weeping_willow_sapling"
+      "id": "premierpainmod:oak_villager_chiseled_head"
     },
     "title": {
-      "translate": "advancements.premierpainmod.visit_all_biomes.title"
+      "translate": "advancements.premierpainmod.visit_all_structures.title"
     }
   },
   "requirements": [
     [
-      "has_visited_forest_premier_pain_ruins"
+      "has_visited_forest_premier_pain_temple"
     ],
     [
-      "has_visited_sand_desert_premier_pain_ruins"
+      "has_visited_sand_desert_premier_pain_temple"
     ],
     [
-      "has_visited_swamp_premier_pain_ruins"
+      "has_visited_swamp_premier_pain_temple"
     ],
     [
-      "has_visited_old_great_field"
+      "has_visited_old_great_path"
     ],
     [
-      "has_visited_jungle_premier_pain_ruins"
+      "has_visited_jungle_underground_petra"
     ]
   ],
   "rewards": {
-    "experience": 350
+    "experience": 550
   },
   "sends_telemetry_event": true
 }
