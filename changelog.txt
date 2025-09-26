@@ -277,3 +277,6 @@ What would be a world without bugs ?
 ## Add :
     - Advancement to orientate player in the mod
     - more item and block tags
+
+## Note :
+    - Structure is now data generated, nothing should have changed in game, plz report if so
