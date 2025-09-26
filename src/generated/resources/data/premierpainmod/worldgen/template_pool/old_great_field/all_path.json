@@ -1,0 +1,41 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/straight_path",
+        "processors": "premierpainmod:old_great_field_structure_path",
+        "projection": "terrain_matching"
+      },
+      "weight": 50
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/l_left_path",
+        "processors": "premierpainmod:old_great_field_structure_path",
+        "projection": "terrain_matching"
+      },
+      "weight": 20
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/l_right_path",
+        "processors": "premierpainmod:old_great_field_structure_path",
+        "projection": "terrain_matching"
+      },
+      "weight": 20
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/cross_path",
+        "processors": "premierpainmod:old_great_field_structure_path",
+        "projection": "terrain_matching"
+      },
+      "weight": 15
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1642136474,
+    "separation": 20,
+    "spacing": 25
+  },
+  "structures": [
+    {
+      "structure": "premierpainmod:old_great_path",
+      "weight": 1
+    }
+  ]
+}

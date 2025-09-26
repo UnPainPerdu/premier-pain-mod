@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structu
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.JungleUnderGroundPetraTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.SwampPremierPainTempleTemplatePool;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.core.Holder;
@@ -64,5 +65,7 @@ public class ModStructureTemplatePool
         );
 
         SwampPremierPainTempleTemplatePool.boostrap(context, EmptyStructureTemplatePool);
+        OldGreatPahtTemplatePool.boostrap(context, EmptyStructureTemplatePool);
+        JungleUnderGroundPetraTemplatePool.boostrap(context, EmptyStructureTemplatePool);
     }
 }

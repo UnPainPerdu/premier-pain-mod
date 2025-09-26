@@ -1,16 +1,14 @@
 {
-  "name": "premierpainmod:jungle_underground_petra",
-  "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 100,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/main",
-        "projection": "rigid",
         "processors": "premierpainmod:bedrock_to_air",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 100
     }
-  ]
+  ],
+  "fallback": "minecraft:empty"
 }

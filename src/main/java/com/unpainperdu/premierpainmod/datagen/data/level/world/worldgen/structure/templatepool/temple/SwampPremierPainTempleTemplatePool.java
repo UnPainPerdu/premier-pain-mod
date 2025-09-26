@@ -34,7 +34,7 @@ public class SwampPremierPainTempleTemplatePool
                 new StructureTemplatePool(
                         emptyFallBack,
                         ImmutableList.of(
-                                Pair.of(StructurePoolElement.legacy("premierpainmod:premier_pain_temple/swamp_premier_pain_temple_structure/top_swamp_premier_pain_temple_structure"), 1)
+                                Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/swamp_premier_pain_temple_structure/top_swamp_premier_pain_temple_structure"), 1)
 
                         ),
                         StructureTemplatePool.Projection.RIGID

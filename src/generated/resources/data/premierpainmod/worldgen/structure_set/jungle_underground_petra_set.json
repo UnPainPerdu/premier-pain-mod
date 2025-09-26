@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1642136474,
+    "separation": 8,
+    "spacing": 20
+  },
+  "structures": [
+    {
+      "structure": "premierpainmod:jungle_underground_petra",
+      "weight": 1
+    }
+  ]
+}

@@ -1,136 +1,122 @@
 {
-  "name": "premierpainmod:jungle_underground_petra",
-  "fallback": "premierpainmod:jungle_underground_petra/room_wall",
   "elements": [
     {
-      "weight": 130,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/house_s_0",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 130
     },
     {
-      "weight": 130,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/house_s_1",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 130
     },
     {
-      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:jungle_underground_petra/house_l_0",
+        "processors": "premierpainmod:jungle_underground_petra",
+        "projection": "rigid"
+      },
+      "weight": 100
+    },
+    {
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/house_l_1",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 100
     },
     {
-      "weight": 100,
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "premierpainmod:jungle_underground_petra/house_l_1",
-        "projection": "rigid",
-        "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
-    },
-    {
-      "weight": 110,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/field_0",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 110
     },
     {
-      "weight": 110,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/field_1",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 110
     },
     {
-      "weight": 90,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/smithy",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 90
     },
     {
-      "weight": 90,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/church",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 90
     },
     {
-      "weight": 90,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/mason",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 90
     },
     {
-      "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/house_xs_0",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 1
     },
     {
-      "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/house_xs_1",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 1
     },
     {
-      "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/house_xs_2",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 1
     },
     {
-      "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/house_xs_3",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 1
     }
-  ]
+  ],
+  "fallback": "premierpainmod:jungle_underground_petra/room_wall"
 }

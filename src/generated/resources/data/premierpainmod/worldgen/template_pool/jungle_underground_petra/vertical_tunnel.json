@@ -3,10 +3,8 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "premierpainmod:premier_pain_temple/swamp_premier_pain_temple_structure/top_swamp_premier_pain_temple_structure",
-        "processors": {
-          "processors": []
-        },
+        "location": "premierpainmod:jungle_underground_petra/vertical_tunnel",
+        "processors": "premierpainmod:jungle_underground_petra",
         "projection": "rigid"
       },
       "weight": 1

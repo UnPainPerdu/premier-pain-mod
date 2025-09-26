@@ -1,0 +1,14 @@
+{
+  "type": "premierpainmod:underground_vertical_surface_access_structure",
+  "biomes": "#premierpainmod:has_jungle_premier_pain_temple",
+  "liquid_settings": "ignore_waterlogging",
+  "max_distance_from_center": 511,
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "size": 127,
+  "spawn_overrides": {},
+  "start_height": {
+    "absolute": -20
+  },
+  "start_pool": "premierpainmod:jungle_underground_petra/vertical_tunnel",
+  "step": "surface_structures"
+}

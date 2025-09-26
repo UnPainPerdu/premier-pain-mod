@@ -46,7 +46,7 @@ public class OldGreatFieldStructures extends Structure
     private final DimensionPadding dimensionPadding;
     private final LiquidSettings liquidSettings;
 
-    protected OldGreatFieldStructures(Structure.StructureSettings config,
+    public OldGreatFieldStructures(Structure.StructureSettings config,
                                           Holder<StructureTemplatePool> startPool,
                                           Optional<ResourceLocation> startJigsawName,
                                           int size,

@@ -1,16 +1,14 @@
 {
-  "name": "premierpainmod:jungle_underground_petra",
-  "fallback": "premierpainmod:jungle_underground_petra/wall_l_fallback",
   "elements": [
     {
-      "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/corridor_entrance",
-        "projection": "rigid",
         "processors": "premierpainmod:jungle_underground_petra",
-        "override_liquid_settings": "ignore_waterlogging"
-      }
+        "projection": "rigid"
+      },
+      "weight": 1
     }
-  ]
+  ],
+  "fallback": "premierpainmod:jungle_underground_petra/wall_l_fallback"
 }

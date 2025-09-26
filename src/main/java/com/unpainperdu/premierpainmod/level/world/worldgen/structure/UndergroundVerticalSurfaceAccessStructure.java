@@ -46,7 +46,7 @@ public class UndergroundVerticalSurfaceAccessStructure extends Structure
     private final DimensionPadding dimensionPadding;
     private final LiquidSettings liquidSettings;
 
-    protected UndergroundVerticalSurfaceAccessStructure(StructureSettings config,
+    public UndergroundVerticalSurfaceAccessStructure(StructureSettings config,
                                                         Holder<StructureTemplatePool> startPool,
                                                         Optional<ResourceLocation> startJigsawName,
                                                         int size,

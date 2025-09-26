@@ -1,0 +1,47 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/ruin_bat_01",
+        "processors": "premierpainmod:jellyshroom_farm",
+        "projection": "rigid"
+      },
+      "weight": 10
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/ruin_bat_02",
+        "processors": "premierpainmod:jellyshroom_farm",
+        "projection": "rigid"
+      },
+      "weight": 10
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/ruin_bat_03",
+        "processors": "premierpainmod:jellyshroom_farm",
+        "projection": "rigid"
+      },
+      "weight": 10
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:old_great_field/jellyshroom_farm",
+        "processors": "premierpainmod:jellyshroom_farm",
+        "projection": "rigid"
+      },
+      "weight": 10
+    },
+    {
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      },
+      "weight": 90
+    }
+  ],
+  "fallback": "minecraft:empty"
+}
