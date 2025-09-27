@@ -11,6 +11,7 @@ import com.unpainperdu.premierpainmod.datagen.data.ModGlobalLootModifierProvider
 import com.unpainperdu.premierpainmod.datagen.data.ModRecipeProvider;
 import com.unpainperdu.premierpainmod.datagen.data.datamap.ModDataMap;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.block.entity.ModPaintingVariant;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features.ModFeatureUtil;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.placement.ModPlacementUtil;
@@ -72,6 +73,7 @@ public class DataGatherer
                                 .add(Registries.STRUCTURE, ModStructure::boostrap)
                                 .add(Registries.STRUCTURE_SET, ModStructureSet::boostrap)
                                 .add(Registries.PROCESSOR_LIST, ModStructureProcessorList::boostrap)
+                                .add(Registries.PAINTING_VARIANT, ModPaintingVariant::boostrap)
                         ,
                         Set.of(PremierPainMod.MOD_ID))
         ).getRegistryProvider();

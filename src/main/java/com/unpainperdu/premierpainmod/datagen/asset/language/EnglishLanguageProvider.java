@@ -53,6 +53,12 @@ public class EnglishLanguageProvider extends LanguageProvider
         clp.descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(), "Don't fear the depth");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Madness");
         clp.descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(), "Enough! I have endured more than enough...");
+        //paint
+        clp.generatePaintingTranslation("landscape_0", "Forest LandScape", "UnPainPerdu");
+        clp.generatePaintingTranslation("landscape_1", "Swamp LandScape", "UnPainPerdu");
+        clp.generatePaintingTranslation("landscape_2", "Field LandScape", "UnPainPerdu");
+        clp.generatePaintingTranslation("flowered_cactus", "Flowered Cactus", "UnPainPerdu");
+        clp.generatePaintingTranslation("underground_gate", "UnderGround Gate", "UnPainPerdu");
         //fluid
         //oil
         add(PremierPainMod.MOD_ID + ".block.description.moriche_palm_oil_type", "Moriche Palm Oil");

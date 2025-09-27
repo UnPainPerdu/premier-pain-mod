@@ -38,4 +38,10 @@ public class CommonLanguageProvider
         this.languageProvider.add("advancements.premierpainmod." + advancementPageName + ".root.title", titleTranslation);
         this.languageProvider.add("advancements.premierpainmod." + advancementPageName + ".root.description", descriptionTranslation);
     }
+
+    public void generatePaintingTranslation(String name, String titleTranslation, String author)
+    {
+        this.languageProvider.add("painting.premierpainmod." + name + ".title", titleTranslation);
+        this.languageProvider.add("painting.premierpainmod." + name + ".author", author);
+    }
 }

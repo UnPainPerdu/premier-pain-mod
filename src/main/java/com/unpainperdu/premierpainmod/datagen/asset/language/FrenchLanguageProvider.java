@@ -53,6 +53,12 @@ public class FrenchLanguageProvider extends LanguageProvider
         clp.descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(), "N'ais pas peur des profondeurs");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(), "Pierre chantante du villageois foux");
         clp.descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(), "Assez! J'en ai enduré bien assez...");
+        //paint
+        clp.generatePaintingTranslation("landscape_0", "Paysage forestier", "UnPainPerdu");
+        clp.generatePaintingTranslation("landscape_1", "Paysage marécageux", "UnPainPerdu");
+        clp.generatePaintingTranslation("landscape_2", "Paysage de champ", "UnPainPerdu");
+        clp.generatePaintingTranslation("flowered_cactus", "Cactus flori", "UnPainPerdu");
+        clp.generatePaintingTranslation("underground_gate", "Porte souterraine", "UnPainPerdu");
         //fluid
         //oil
         add(PremierPainMod.MOD_ID + ".block.description.moriche_palm_oil_type", "Huile de palmier-bâche");
