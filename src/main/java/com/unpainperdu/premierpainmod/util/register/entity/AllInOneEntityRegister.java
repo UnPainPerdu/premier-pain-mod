@@ -1,8 +1,9 @@
 package com.unpainperdu.premierpainmod.util.register.entity;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.entity.seat.SeatEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.MountainCurrantGolemEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.WoolGolemEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.seat.SeatEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.seat.ToiletSeatEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
@@ -45,6 +46,11 @@ public class AllInOneEntityRegister
     public static final DeferredHolder<EntityType<?>, EntityType<MountainCurrantGolemEntity>> MOUNTAIN_CURRANT_GOLEM_ENTITY = registerEntityWithEggs("mountain_currant_golem_entity",
             EntityType.Builder.of(MountainCurrantGolemEntity::new, MobCategory.CREATURE)
                     .sized(0.6F, 3.6F)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<WoolGolemEntity>> WOOL_GOLEM_ENTITY = registerEntityWithEggs("wool_golem_entity",
+            EntityType.Builder.of(WoolGolemEntity::new, MobCategory.CREATURE)
+                    .sized(1.66F, 3.0F)
     );
 
     /**

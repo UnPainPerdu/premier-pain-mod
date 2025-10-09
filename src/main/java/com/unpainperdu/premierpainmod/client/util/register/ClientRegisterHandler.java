@@ -11,6 +11,7 @@ import com.unpainperdu.premierpainmod.client.particle.beer_particle.red.RedBeerF
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.white.WhiteBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
 import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem.MountainCurrantGolemRender;
+import com.unpainperdu.premierpainmod.client.render.entity.wool_golem.WoolGolemRender;
 import com.unpainperdu.premierpainmod.client.util.register.render.BlockEntityRenderRegister;
 import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.AbstractFluidType;
 import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.BeerFluidType;
@@ -64,6 +65,7 @@ public class ClientRegisterHandler
         event.enqueueWork(() -> FluidRender.setRenderLayerForFluid(event));
 
         EntityRenderers.register(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get(), MountainCurrantGolemRender::new);
+        EntityRenderers.register(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get(), WoolGolemRender::new);
     }
 
     @SubscribeEvent
