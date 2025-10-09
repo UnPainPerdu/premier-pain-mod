@@ -175,6 +175,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.FRUITS_BOWL.get(), "Fruits Bowl");
         //egg
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Mountain Currant Golem Spawn Egg");
+        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "Wool Golem Spawn Egg");
         //block
         //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");

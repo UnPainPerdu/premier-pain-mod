@@ -175,6 +175,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.FRUITS_BOWL.get(), "Bol de fruits");
         //egg
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Oeuf d'apparition de golem en groseillier des montagnes");
+        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "Oeuf d'apparition de golem en laine");
         //block
         //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");

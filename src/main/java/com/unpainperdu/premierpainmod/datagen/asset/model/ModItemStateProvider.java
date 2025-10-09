@@ -74,6 +74,7 @@ public class ModItemStateProvider extends ItemModelProvider
 
         //spawn_eggs
         item(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "spawn_egg/");
+        item(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "spawn_egg/");
 
         for (Item item : ModItemList.ALL_ITEMS)
         {

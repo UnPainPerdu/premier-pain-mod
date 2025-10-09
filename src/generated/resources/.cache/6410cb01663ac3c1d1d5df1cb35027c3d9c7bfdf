@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-06T11:55:07.4821991	Item Models: premierpainmod
+// 1.21.1	2025-10-09T15:57:16.8264852	Item Models: premierpainmod
 2a502a92574e29da258b543bbb828355e51af2e8 assets/premierpainmod/models/item/acacia_villager_shelf.json
 ff0517561b9f1d2db5e334037757b9c62d936e6d assets/premierpainmod/models/item/achiote_boat.json
 ef22b5b135b4311ca498ecc77ccb22a14bfeca00 assets/premierpainmod/models/item/achiote_chest_boat.json
@@ -126,3 +126,4 @@ b1126829d9d76d5946db9a8905bb1da007b92f4b assets/premierpainmod/models/item/weepi
 d5a742d9ee9e3bca31b63fe279d2304bb6715ca2 assets/premierpainmod/models/item/weeping_willow_hanging_sign.json
 2df14e402ec75e21129f28fbf94e4b961e98c743 assets/premierpainmod/models/item/weeping_willow_sign.json
 3e0748845584d19d7d810b13f41a08fb59de9958 assets/premierpainmod/models/item/weeping_willow_villager_shelf.json
+ed2faa207773801c6d01e8f96991a468276896d8 assets/premierpainmod/models/item/wool_golem_spawn_egg.json
