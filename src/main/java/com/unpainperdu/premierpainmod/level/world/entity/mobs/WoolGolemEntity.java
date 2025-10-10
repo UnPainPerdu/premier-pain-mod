@@ -1,22 +1,39 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
+import com.google.common.collect.Maps;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.BoneMealingField;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityFollowTargetWhenItemInHand;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
+import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.Util;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
+import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.minecraft.world.entity.animal.AbstractGolem;
-import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Shulker;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.schedule.Activity;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.tslat.smartbrainlib.api.SmartBrainOwner;
 import net.tslat.smartbrainlib.api.core.BrainActivityGroup;
 import net.tslat.smartbrainlib.api.core.SmartBrainProvider;
@@ -29,15 +46,62 @@ import net.tslat.smartbrainlib.api.core.behaviour.custom.path.SetRandomWalkTarge
 import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetRandomLookTarget;
 import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
+import net.tslat.smartbrainlib.util.BrainUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
 public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<WoolGolemEntity>
 {
     public final AnimationState HUG = new AnimationState();
     public final AnimationState SIT = new AnimationState();
     public final AnimationState GETUP = new AnimationState();
+
+    private static final EntityDataAccessor<Byte> DATA_WOOL_ID = SynchedEntityData.defineId(WoolGolemEntity.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Boolean> DATA_IS_SAT = SynchedEntityData.defineId(WoolGolemEntity.class, EntityDataSerializers.BOOLEAN);
+    private int satCD;
+    private int hugCD;
+
+    private static final Map<ItemLike, DyeColor> DYE_BY_ITEM = Util.make(Maps.newHashMap(), map ->
+    {
+        map.put(Blocks.WHITE_WOOL, DyeColor.WHITE);
+        map.put(Blocks.ORANGE_WOOL, DyeColor.ORANGE);
+        map.put(Blocks.MAGENTA_WOOL, DyeColor.MAGENTA);
+        map.put(Blocks.LIGHT_BLUE_WOOL, DyeColor.LIGHT_BLUE);
+        map.put(Blocks.YELLOW_WOOL, DyeColor.YELLOW);
+        map.put(Blocks.LIME_WOOL, DyeColor.LIME);
+        map.put(Blocks.PINK_WOOL, DyeColor.PINK);
+        map.put(Blocks.GRAY_WOOL, DyeColor.GRAY);
+        map.put(Blocks.LIGHT_GRAY_WOOL, DyeColor.LIGHT_GRAY);
+        map.put(Blocks.CYAN_WOOL, DyeColor.CYAN);
+        map.put(Blocks.PURPLE_WOOL, DyeColor.PURPLE);
+        map.put(Blocks.BLUE_WOOL, DyeColor.BLUE);
+        map.put(Blocks.BROWN_WOOL, DyeColor.BROWN);
+        map.put(Blocks.GREEN_WOOL, DyeColor.GREEN);
+        map.put(Blocks.RED_WOOL, DyeColor.RED);
+        map.put(Blocks.BLACK_WOOL, DyeColor.BLACK);
+    });
+
+    private static final Map<Integer, DyeColor> DYE_BY_BYTE = Util.make(Maps.newHashMap(), map ->
+    {
+        map.put(0, DyeColor.WHITE);
+        map.put(1, DyeColor.ORANGE);
+        map.put(2, DyeColor.MAGENTA);
+        map.put(3, DyeColor.LIGHT_BLUE);
+        map.put(4, DyeColor.YELLOW);
+        map.put(5, DyeColor.LIME);
+        map.put(6, DyeColor.PINK);
+        map.put(7, DyeColor.GRAY);
+        map.put(8, DyeColor.LIGHT_GRAY);
+        map.put(9, DyeColor.CYAN);
+        map.put(10, DyeColor.PURPLE);
+        map.put(11, DyeColor.BLUE);
+        map.put(12, DyeColor.BROWN);
+        map.put(13, DyeColor.GREEN);
+        map.put(14, DyeColor.RED);
+        map.put(15, DyeColor.BLACK);
+    });
 
     public WoolGolemEntity(EntityType<? extends AbstractGolem> entityType, Level level)
     {
@@ -52,7 +116,7 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
                         .setPredicate((target, entity) ->
                                 target instanceof Player ||
                                         target instanceof Villager ||
-                                        target instanceof IronGolem ||
+                                        (target instanceof AbstractGolem && !(target instanceof Shulker)) ||
                                         target instanceof Monster)
         );
     }
@@ -80,10 +144,31 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         );
     }
 
+    private BrainActivityGroup<WoolGolemEntity> getWorkTasks()
+    {
+        return new BrainActivityGroup<WoolGolemEntity>(Activity.WORK)
+                .priority(10)
+                .behaviours(
+                        new BoneMealingField<>()
+                )
+                .requireAndWipeMemoriesOnUse(MemoryModuleTypeRegister.CHOSEN_BLOCK.get())
+                .onlyStartWithMemoryStatus(MemoryModuleTypeRegister.BONE_MEALING_CD.get(), MemoryStatus.VALUE_ABSENT)
+                .onlyStartWithMemoryStatus(MemoryModuleType.WALK_TARGET, MemoryStatus.VALUE_ABSENT)
+                ;
+    }
+
+    @Override
+    public Map<Activity, BrainActivityGroup<? extends WoolGolemEntity>> getAdditionalTasks()
+    {
+        return Map.of(Activity.WORK, getWorkTasks());
+    }
+
+
     @Override
     public List<Activity> getActivityPriorities()
     {
         return ObjectArrayList.of(
+                Activity.WORK,
                 Activity.IDLE
         );
     }
@@ -97,7 +182,18 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     @Override
     protected void customServerAiStep()
     {
-        tickBrain(this);
+        if (!isSat())
+        {
+            tickBrain(this);
+        }
+        if (this.satCD > 0)
+        {
+            this.satCD--;
+        }
+        if (this.hugCD > 0)
+        {
+            this.hugCD--;
+        }
     }
 
     public static AttributeSupplier.Builder createAttributes()
@@ -112,5 +208,162 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     protected int decreaseAirSupply(int air)
     {
         return air;
+    }
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder)
+    {
+        super.defineSynchedData(builder);
+        builder.define(DATA_IS_SAT, false);
+        builder.define(DATA_WOOL_ID, (byte) 0);
+    }
+
+    @Override
+    public void addAdditionalSaveData(@NotNull CompoundTag compound)
+    {
+        super.addAdditionalSaveData(compound);
+        compound.putBoolean("IsSat", this.isSat());
+        compound.putByte("DataWool", this.getWoolDyeByte());
+        compound.putInt("SatCD", this.getSatCD());
+        compound.putInt("HugCD", this.getHugCD());
+    }
+
+    @Override
+    public void readAdditionalSaveData(@NotNull CompoundTag compound)
+    {
+        super.readAdditionalSaveData(compound);
+        this.setIsSat(compound.getBoolean("IsSat"));
+        this.setWoolDyeByte(compound.getByte("DataWool"));
+        this.setSatCD(compound.getInt("SatCD"));
+        this.setHugCD(compound.getInt("HugCD"));
+    }
+
+    public DyeColor getWoolDye()
+    {
+        return DYE_BY_BYTE.get((int) getWoolDyeByte());
+    }
+
+    public byte getWoolDyeByte()
+    {
+        return this.entityData.get(DATA_WOOL_ID);
+    }
+
+    public void setWoolDye(DyeColor dyeColor)
+    {
+        setWoolDyeByte((byte) DYE_BY_BYTE.entrySet()
+                .stream()
+                .filter(entry -> entry.getValue().equals(dyeColor))
+                .map(Map.Entry::getKey)
+                .toList().getFirst().intValue());
+    }
+
+    public void setWoolDyeByte(byte b)
+    {
+        this.entityData.set(DATA_WOOL_ID, b);
+    }
+
+    public Boolean isSat()
+    {
+        return this.entityData.get(DATA_IS_SAT);
+    }
+
+    public void setIsSat(boolean isSat)
+    {
+        this.entityData.set(DATA_IS_SAT, isSat);
+    }
+
+    public int getSatCD()
+    {
+        return satCD;
+    }
+
+    public void setSatCD(int satCD)
+    {
+        this.satCD = satCD;
+    }
+
+    public int getHugCD()
+    {
+        return this.hugCD;
+    }
+
+    public void setHugCD(int hugCD)
+    {
+        this.hugCD = hugCD;
+    }
+
+    public void switchIsSat()
+    {
+        if (isSat())
+        {
+            setIsSat(false);
+            startGettingUpAnimation();
+        }
+        else
+        {
+            setIsSat(true);
+            startSittingAnimation();
+        }
+        this.satCD = 60;
+    }
+
+    @Override
+    protected @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand)
+    {
+        if (!level().isClientSide())
+        {
+            ItemStack itemstack = player.getItemInHand(hand);
+            if (player.isCrouching() && itemstack.isEmpty() && this.satCD == 0)
+            {
+                switchIsSat();
+                return InteractionResult.CONSUME;
+            }
+            else if (itemstack.getItem() instanceof DyeItem dye)
+            {
+                this.setWoolDye(dye.getDyeColor());
+                itemstack.shrink(1);
+                return InteractionResult.CONSUME;
+            }
+            return InteractionResult.PASS;
+        }
+        return InteractionResult.PASS;
+    }
+
+    private void startHugAnimation()
+    {
+        this.level().broadcastEntityEvent(this, (byte) 100);
+    }
+
+    private void startSittingAnimation()
+    {
+        BrainUtils.clearMemory(this, MemoryModuleType.WALK_TARGET);
+        this.level().broadcastEntityEvent(this, (byte) 101);
+    }
+
+    private void startGettingUpAnimation()
+    {
+        this.level().broadcastEntityEvent(this, (byte) 102);
+    }
+
+    @Override
+    public void handleEntityEvent(byte id)
+    {
+        if (id == 100)//hug
+        {
+            this.HUG.start(this.tickCount);
+        }
+        else if (id == 101)//sit
+        {
+            this.SIT.start(this.tickCount);
+        }
+        else if (id == 102)//get up
+        {
+            this.SIT.stop();
+            this.GETUP.start(this.tickCount);
+        }
+        else
+        {
+            super.handleEntityEvent(id);
+        }
     }
 }
