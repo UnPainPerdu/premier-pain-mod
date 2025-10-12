@@ -16,6 +16,9 @@ import org.jetbrains.annotations.NotNull;
 public class WoolGolemModel extends HierarchicalModel<WoolGolemEntity>
 {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "wool_golem"), "main");
+
+    private final ModelPart root;
+
     private final ModelPart Body;
     private final ModelPart bodyTop;
     private final ModelPart Head;
@@ -31,6 +34,7 @@ public class WoolGolemModel extends HierarchicalModel<WoolGolemEntity>
     private final ModelPart LegL;
 
     public WoolGolemModel(ModelPart root) {
+        this.root = root;
         this.Body = root.getChild("Body");
         this.bodyTop = this.Body.getChild("bodyTop");
         this.Head = this.bodyTop.getChild("Head");
@@ -104,12 +108,12 @@ public class WoolGolemModel extends HierarchicalModel<WoolGolemEntity>
     @Override
     public @NotNull ModelPart root()
     {
-        return this.Body;
+        return this.root;
     }
 
     @Override
     public void renderToBuffer(@NotNull PoseStack poseStack, @NotNull VertexConsumer buffer, int packedLight, int packedOverlay, int color)
     {
-        this.Body.render(poseStack, buffer, packedLight, packedOverlay, color);
+        this.root.render(poseStack, buffer, packedLight, packedOverlay, color);
     }
 }
