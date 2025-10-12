@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.BoneMeal
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityFollowTargetWhenItemInHand;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
 import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
@@ -13,9 +14,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.AnimationState;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -62,6 +61,12 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     private static final EntityDataAccessor<Boolean> DATA_IS_SAT = SynchedEntityData.defineId(WoolGolemEntity.class, EntityDataSerializers.BOOLEAN);
     private int satCD;
     private int hugCD;
+
+    private boolean clientSideOnlyAsRefreshPose = false;
+
+    private static final EntityDimensions SITTING_DIMENSIONS = EntityDimensions.scalable(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().getWidth(),
+                    AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().getHeight() - 0.33F)
+            .withEyeHeight(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().getDimensions().eyeHeight() - 0.33F);
 
     private static final Map<ItemLike, DyeColor> DYE_BY_ITEM = Util.make(Maps.newHashMap(), map ->
     {
@@ -180,19 +185,35 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     }
 
     @Override
+    public void tick()
+    {
+        super.tick();
+        if (!level().isClientSide)
+        {
+            if (this.satCD > 0)
+            {
+                this.satCD--;
+            }
+            if (this.hugCD > 0)
+            {
+                this.hugCD--;
+            }
+        }
+        else
+        {
+            if (!this.clientSideOnlyAsRefreshPose && isSat())
+            {
+                startSittingAnimation();
+            }
+        }
+    }
+
+    @Override
     protected void customServerAiStep()
     {
         if (!isSat())
         {
             tickBrain(this);
-        }
-        if (this.satCD > 0)
-        {
-            this.satCD--;
-        }
-        if (this.hugCD > 0)
-        {
-            this.hugCD--;
         }
     }
 
@@ -270,6 +291,19 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     public void setIsSat(boolean isSat)
     {
         this.entityData.set(DATA_IS_SAT, isSat);
+        refreshSatPose();
+    }
+
+    private void refreshSatPose()
+    {
+        if (isSat())
+        {
+            this.setPose(Pose.SITTING);
+        }
+        else
+        {
+            this.setPose(Pose.STANDING);
+        }
     }
 
     public int getSatCD()
@@ -302,9 +336,16 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         else
         {
             setIsSat(true);
+            BrainUtils.clearMemory(this, MemoryModuleType.WALK_TARGET);
             startSittingAnimation();
         }
         this.satCD = 60;
+    }
+
+    @Override
+    protected @NotNull EntityDimensions getDefaultDimensions(@NotNull Pose pose)
+    {
+        return pose == Pose.SITTING ? SITTING_DIMENSIONS : super.getDefaultDimensions(pose);
     }
 
     @Override
@@ -329,20 +370,42 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         return InteractionResult.PASS;
     }
 
-    private void startHugAnimation()
-    {
-        this.level().broadcastEntityEvent(this, (byte) 100);
-    }
-
     private void startSittingAnimation()
     {
-        BrainUtils.clearMemory(this, MemoryModuleType.WALK_TARGET);
-        this.level().broadcastEntityEvent(this, (byte) 101);
+        if (level().isClientSide)
+        {
+            this.SIT.start(this.tickCount);
+            this.clientSideOnlyAsRefreshPose = true;
+        }
+        else
+        {
+            this.level().broadcastEntityEvent(this, (byte) 101);
+        }
     }
 
     private void startGettingUpAnimation()
     {
-        this.level().broadcastEntityEvent(this, (byte) 102);
+        if (level().isClientSide)
+        {
+            this.SIT.stop();
+            this.GETUP.start(this.tickCount);
+        }
+        else
+        {
+            this.level().broadcastEntityEvent(this, (byte) 102);
+        }
+    }
+
+    private void startHugAnimation()
+    {
+        if (level().isClientSide)
+        {
+            this.HUG.start(this.tickCount);
+        }
+        else
+        {
+            this.level().broadcastEntityEvent(this, (byte) 100);
+        }
     }
 
     @Override
@@ -350,16 +413,15 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     {
         if (id == 100)//hug
         {
-            this.HUG.start(this.tickCount);
+            startHugAnimation();
         }
         else if (id == 101)//sit
         {
-            this.SIT.start(this.tickCount);
+            startSittingAnimation();
         }
         else if (id == 102)//get up
         {
-            this.SIT.stop();
-            this.GETUP.start(this.tickCount);
+            startGettingUpAnimation();
         }
         else
         {
