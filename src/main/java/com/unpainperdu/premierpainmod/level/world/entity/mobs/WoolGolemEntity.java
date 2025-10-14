@@ -270,6 +270,11 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         return DYE_BY_BYTE.get((int) getWoolDyeByte());
     }
 
+    public static DyeColor getWoolDyeFromBlock(ItemLike wool)
+    {
+        return DYE_BY_ITEM.get(wool);
+    }
+
     public static int getColor(DyeColor dyeColor)
     {
         return COLOR_BY_DYE.get(dyeColor);
