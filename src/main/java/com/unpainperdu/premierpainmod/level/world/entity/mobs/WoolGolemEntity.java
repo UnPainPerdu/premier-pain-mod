@@ -12,6 +12,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.util.FastColor;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
@@ -48,8 +50,10 @@ import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
 import net.tslat.smartbrainlib.util.BrainUtils;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<WoolGolemEntity>
 {
@@ -107,6 +111,8 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         map.put(14, DyeColor.RED);
         map.put(15, DyeColor.BLACK);
     });
+
+    private static final Map<DyeColor, Integer> COLOR_BY_DYE = Maps.newHashMap(Arrays.stream(DyeColor.values()).collect(Collectors.toMap(dyeColor -> dyeColor, WoolGolemEntity::createWoolColor)));
 
     public WoolGolemEntity(EntityType<? extends AbstractGolem> entityType, Level level)
     {
@@ -262,6 +268,11 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     public DyeColor getWoolDye()
     {
         return DYE_BY_BYTE.get((int) getWoolDyeByte());
+    }
+
+    public static int getColor(DyeColor dyeColor)
+    {
+        return COLOR_BY_DYE.get(dyeColor);
     }
 
     public byte getWoolDyeByte()
@@ -426,6 +437,25 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         else
         {
             super.handleEntityEvent(id);
+        }
+    }
+
+    private static int createWoolColor(DyeColor dyeColor)
+    {
+        if (dyeColor == DyeColor.WHITE)
+        {
+            return -1644826;
+        }
+        else
+        {
+            int i = dyeColor.getTextureDiffuseColor();
+            float f = 0.75F;
+            return FastColor.ARGB32.color(
+                    255,
+                    Mth.floor((float) FastColor.ARGB32.red(i) * 0.75F),
+                    Mth.floor((float) FastColor.ARGB32.green(i) * 0.75F),
+                    Mth.floor((float) FastColor.ARGB32.blue(i) * 0.75F)
+            );
         }
     }
 }

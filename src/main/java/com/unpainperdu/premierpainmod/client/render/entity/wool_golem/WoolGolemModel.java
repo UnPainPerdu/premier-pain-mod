@@ -20,14 +20,16 @@ public class WoolGolemModel extends HierarchicalModel<WoolGolemEntity>
     private final ModelPart root;
     private final ModelPart head;
 
-    public WoolGolemModel(ModelPart root) {
+    public WoolGolemModel(ModelPart root)
+    {
         this.root = root;
         ModelPart body = root.getChild("Body");
         ModelPart bodyTop = body.getChild("bodyTop");
         this.head = bodyTop.getChild("Head");
     }
 
-    public static LayerDefinition createBodyLayer() {
+    public static LayerDefinition createBodyLayer()
+    {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
@@ -43,7 +45,7 @@ public class WoolGolemModel extends HierarchicalModel<WoolGolemEntity>
 
         ArmR.addOrReplaceChild("upAR", CubeListBuilder.create().texOffs(64, 76).addBox(2.0F, -4.0F, -4.5F, 7.0F, 11.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, -1.0F, 0.0F));
 
-         ArmR.addOrReplaceChild("bottomAR", CubeListBuilder.create().texOffs(32, 56).addBox(-1.0F, 0.0F, -4.5F, 7.0F, 18.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 6.0F, 0.0F));
+        ArmR.addOrReplaceChild("bottomAR", CubeListBuilder.create().texOffs(32, 56).addBox(-1.0F, 0.0F, -4.5F, 7.0F, 18.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 6.0F, 0.0F));
 
         PartDefinition ArmL = bodyTop.addOrReplaceChild("ArmL", CubeListBuilder.create(), PartPose.offset(-13.0F, -10.0F, 0.0F));
 
