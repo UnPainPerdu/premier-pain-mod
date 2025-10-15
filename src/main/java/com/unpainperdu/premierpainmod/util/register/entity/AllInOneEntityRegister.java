@@ -25,7 +25,7 @@ public class AllInOneEntityRegister
     {
     }
 
-    //always mob_name_egg
+    //always mob_name_spawn_egg
     public static final Map<String, DeferredItem<Item>> EGG_ITEM_MAP = new HashMap<>();
 
     //All entity must end with _entity

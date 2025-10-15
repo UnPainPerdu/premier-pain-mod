@@ -38,6 +38,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         clp.generateAdvancementTranslation("visit_all_biomes", "Pèlerinage des villageois", "Visite tous les biomes ajoutés dans Premier Pain Mod");
         clp.generateAdvancementTranslation("visit_all_structures", "Aventurier éternel", "Visite toutes les structures ajoutées dans Premier Pain Mod");
         clp.generateAdvancementTranslation("full_set_all_material", "La collection du villageois", "Obtiens un bloc de chaque type de bloc fabriquable dans l'atelier du villageois");
+        clp.generateAdvancementTranslation("get_them_all", "Attrapez les tous !", "Invoquez tous les golems (vanilla y compris)");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Héro des villageois");
         //death message

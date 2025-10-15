@@ -9,12 +9,10 @@ import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
+import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.advancements.*;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.LocationPredicate;
-import net.minecraft.advancements.critereon.PlayerTrigger;
+import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -23,6 +21,7 @@ import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -125,6 +124,14 @@ public class ModAdvancementProvider extends AdvancementProvider
             generateAdvancementWithMainAsRoot(getAllMaterialBlock(Type.VILLAGER_STATUE, Material.EMERALD_BLOCK), "full_set_all_material", "villager_workshop", AdvancementType.CHALLENGE,
                     conditions,
                     AdvancementRewards.Builder.experience(250));
+
+            conditions = new LinkedHashMap<>();
+            conditions.put("has_build_iron_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(EntityType.IRON_GOLEM)));
+            conditions.put("has_build_snow_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(EntityType.SNOW_GOLEM)));
+            conditions.put("has_build_mountain_currant_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get())));
+            conditions.put("has_build_wool_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get())));
+
+            generateAdvancementWithMainAsRoot(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "get_them_all", "root", AdvancementType.GOAL, conditions);
         }
 
         /**

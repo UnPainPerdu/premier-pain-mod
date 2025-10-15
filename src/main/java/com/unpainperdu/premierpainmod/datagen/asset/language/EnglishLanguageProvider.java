@@ -39,6 +39,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         clp.generateAdvancementTranslation("visit_all_biomes", "Villager pilgrimage", "Visit all the Biomes added by Premier Pain Mod");
         clp.generateAdvancementTranslation("visit_all_structures", "Eternal Adventurer", "Visit all the Structures added by Premier Pain Mod");
         clp.generateAdvancementTranslation("full_set_all_material", "The Villager Collection", "Get one block of each block's type craftable from villager workshop");
+        clp.generateAdvancementTranslation("get_them_all", "Get Them All !", "Build all golems (vanilla inclued)");
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Hero of villagers");
         //death message

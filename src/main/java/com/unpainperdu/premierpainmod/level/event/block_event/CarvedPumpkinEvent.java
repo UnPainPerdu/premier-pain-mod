@@ -4,10 +4,13 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.WoolGolemEntity;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
@@ -39,7 +42,7 @@ public class CarvedPumpkinEvent
         Level level = event.getLevel();
         BlockPos pos = event.getPos();
         Direction faceInteractionDirection = event.getFace();
-        Direction pumpkinDirection = (Direction.orderedByNearest(player)[0] == Direction.DOWN) || (Direction.orderedByNearest(player)[0] == Direction.UP)? Direction.orderedByNearest(player)[1] : Direction.orderedByNearest(player)[0];
+        Direction pumpkinDirection = (Direction.orderedByNearest(player)[0] == Direction.DOWN) || (Direction.orderedByNearest(player)[0] == Direction.UP) ? Direction.orderedByNearest(player)[1] : Direction.orderedByNearest(player)[0];
         ItemStack itemStack = player.getMainHandItem();
 
         if ((!level.isClientSide()))
@@ -150,13 +153,18 @@ public class CarvedPumpkinEvent
 
     private static void generateGolem(Level level, Player player, BlockPos pos, ItemStack itemStack, Pair<Entity, List<BlockPos>> entityAndPos, int golemHeight)
     {
-        pos = pos.below(golemHeight-2);
+        AbstractGolem golem = (AbstractGolem) entityAndPos.getA();
+        pos = pos.below(golemHeight - 2);
         entityAndPos.getB().forEach(posF -> level.setBlock(posF, Blocks.AIR.defaultBlockState(), 2));
-        entityAndPos.getA().moveTo(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+        golem.moveTo(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
         level.addFreshEntity(entityAndPos.getA());
         if (!player.isCreative())
         {
             itemStack.shrink(1);
+        }
+        for (ServerPlayer serverplayer : level.getEntitiesOfClass(ServerPlayer.class, golem.getBoundingBox().inflate(5.0)))
+        {
+            CriteriaTriggers.SUMMONED_ENTITY.trigger(serverplayer, golem);
         }
     }
 }
