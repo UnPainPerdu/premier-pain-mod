@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour;
+package com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.mountain_currant_golem;
 
 import com.mojang.datafixers.util.Pair;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;

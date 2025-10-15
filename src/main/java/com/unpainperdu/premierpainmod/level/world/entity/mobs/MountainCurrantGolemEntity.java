@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.BoneMealingField;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.mountain_currant_golem.BoneMealingField;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityFollowTargetWhenItemInHand;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityGoToBlockAndMemorizeIt;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;

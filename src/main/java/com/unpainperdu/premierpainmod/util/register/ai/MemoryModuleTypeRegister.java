@@ -5,11 +5,13 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.Unit;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.Optional;
 
 public class MemoryModuleTypeRegister
@@ -18,7 +20,11 @@ public class MemoryModuleTypeRegister
 
     public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<BlockPos>> CHOSEN_BLOCK = register("chosen_block");
     public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Unit>> BONE_MEALING_CD = register("bone_mealing_cd", Unit.CODEC);
+    public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Unit>> TARGET_CD = register("target_cd", Unit.CODEC);
     public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Unit>> FAIL_CD = register("fail_cd", Unit.CODEC);
+    public static final DeferredHolder<MemoryModuleType<?>,MemoryModuleType<LivingEntity>> TARGET = register("target");
+    public static final DeferredHolder<MemoryModuleType<?>,MemoryModuleType<Unit>> HAS_CHANGED_HITBOX = register("has_changed_hitbox", Unit.CODEC);
+    public static final DeferredHolder<MemoryModuleType<?>,MemoryModuleType<Unit>> HAS_CHANGED_HITBOX_TIMER = register("has_changed_hitbox_timer", Unit.CODEC);
 
     private static <T> DeferredHolder<MemoryModuleType<?>, MemoryModuleType<T>> register(String id)
     {
