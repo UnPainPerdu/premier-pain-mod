@@ -372,13 +372,25 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     @Override
     protected @NotNull EntityDimensions getDefaultDimensions(@NotNull Pose pose)
     {
-        return switch(pose)
-        {
-            case SITTING -> SITTING_DIMENSIONS;
-            case SHOOTING -> HUG_DIMENSIONS;
-            default -> super.getDefaultDimensions(pose);
-        };
+        return pose == Pose.SITTING ? SITTING_DIMENSIONS : super.getDefaultDimensions(pose);
+    }
 
+    @Override
+    public void push(@NotNull Entity entity)
+    {
+        if (this.getPose() != Pose.SHOOTING)
+        {
+            super.push(entity);
+        }
+    }
+
+    @Override
+    protected void doPush(@NotNull Entity entity)
+    {
+        if (this.getPose() != Pose.SHOOTING)
+        {
+            super.doPush(entity);
+        }
     }
 
     @Override
