@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-09T15:57:16.8194803	Loot Tables
+// 1.21.1	2025-10-20T19:59:59.6788932	Loot Tables
 85e1b3be3a251346dee3b4a9e87e45d4d2a39670 data/premierpainmod/loot_table/blocks/acacia_standing_villager_shelf.json
 9aad298b58d17b0b5fe25d63ee29528f848013c4 data/premierpainmod/loot_table/blocks/acacia_villager_bench.json
 2fb10e5cf5f79a7045462e9fd6fd5bafd71b829a data/premierpainmod/loot_table/blocks/acacia_villager_brazier.json
@@ -784,5 +784,5 @@ ef280f9758ac3bb2a5b72d9390cc797bc863834d data/premierpainmod/loot_table/chests/j
 947f847cb464e949029aa1e6bcfe6d1978390a61 data/premierpainmod/loot_table/chests/premier_pain_temple.json
 bb921e373ea0b71587c8f7b82e313e32cc4d4b43 data/premierpainmod/loot_table/chests/sand_desert_premier_pain_temple.json
 583bf0ef65fa719646995a88cf3892b07a1c3e8f data/premierpainmod/loot_table/chests/swamp_premier_pain_temple.json
-a09ee259176713a6edfbfaf2436512ed2eea3d04 data/premierpainmod/loot_table/entities/mountain_currant_golem_entity.json
-c318f522ab4e860cbfe2f71abc8f04a3c082c596 data/premierpainmod/loot_table/entities/wool_golem_entity.json
+58452d76ea0b0151c7a06cd02484be30900646fd data/premierpainmod/loot_table/entities/mountain_currant_golem_entity.json
+13100487efc4967236def03afc7af5f3793b50e7 data/premierpainmod/loot_table/entities/wool_golem_entity.json

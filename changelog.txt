@@ -278,6 +278,10 @@ What would be a world without bugs ?
     - Advancement to orientate player in the mod
     - more item and block tags
     - Some Paint
+    - wool golem, a peacefull huger
+
+## Change :
+    - rebalance of mountain currant golem loot table
 
 ## Note :
     - Structure is now data generated, nothing should have changed in game, plz report if so
