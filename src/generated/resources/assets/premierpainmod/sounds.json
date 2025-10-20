@@ -44,6 +44,32 @@
       "premierpainmod:entity/toilet_seat/not_only_fart"
     ]
   },
+  "entity.wool_golem.ambient": {
+    "sounds": [
+      "premierpainmod:entity/wool_golem/ambient_01",
+      "premierpainmod:entity/wool_golem/ambient_02",
+      "premierpainmod:entity/wool_golem/ambient_03"
+    ]
+  },
+  "entity.wool_golem.death": {
+    "sounds": [
+      "premierpainmod:entity/wool_golem/death_01"
+    ]
+  },
+  "entity.wool_golem.hurt": {
+    "sounds": [
+      "premierpainmod:entity/wool_golem/hurt_01",
+      "premierpainmod:entity/wool_golem/hurt_02",
+      "premierpainmod:entity/wool_golem/hurt_03"
+    ]
+  },
+  "entity.wool_golem.walk": {
+    "sounds": [
+      "premierpainmod:entity/wool_golem/walk_01",
+      "premierpainmod:entity/wool_golem/walk_02",
+      "premierpainmod:entity/wool_golem/walk_03"
+    ]
+  },
   "item.villager_singing_stone.diggy_sound": {
     "sounds": [
       "premierpainmod:item/villager_singing_stone/diggy_sound"

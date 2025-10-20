@@ -34,6 +34,11 @@ public class SoundEventRegister
     //toilet_seat
     public static final DeferredHolder<SoundEvent, SoundEvent> TOILET_SEAT_FART = register("entity.toilet_seat.fart");
     public static final DeferredHolder<SoundEvent, SoundEvent> TOILET_SEAT_NOT_ONLY_FART = register("entity.toilet_seat.not_only_fart");
+    //wool_golem
+    public static final DeferredHolder<SoundEvent, SoundEvent> WG_WALK = register("entity.wool_golem.walk");
+    public static final DeferredHolder<SoundEvent, SoundEvent> WG_HURT = register("entity.wool_golem.hurt");
+    public static final DeferredHolder<SoundEvent, SoundEvent> WG_DEATH = register("entity.wool_golem.death");
+    public static final DeferredHolder<SoundEvent, SoundEvent> WG_AMBIENT = register("entity.wool_golem.ambient");
 
     //Method register
     private static DeferredHolder<SoundEvent, SoundEvent> register(String soundName)

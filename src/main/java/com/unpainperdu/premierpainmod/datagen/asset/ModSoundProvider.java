@@ -38,6 +38,12 @@ public class ModSoundProvider extends SoundDefinitionsProvider
         //toilet_seat
         addMultipleSoundToEvent(SoundEventRegister.TOILET_SEAT_FART, "premierpainmod:entity/toilet_seat/", "fart01", "fart02", "fart03", "fart04", "fart05");
         add(SoundEventRegister.TOILET_SEAT_NOT_ONLY_FART, SoundDefinition.definition().with(sound("premierpainmod:entity/toilet_seat/not_only_fart")));
+        //wool_golem
+        addMultipleSoundToEvent(SoundEventRegister.WG_WALK, "premierpainmod:entity/wool_golem/", "walk_01", "walk_02", "walk_03");
+        addMultipleSoundToEvent(SoundEventRegister.WG_HURT, "premierpainmod:entity/wool_golem/", "hurt_01", "hurt_02", "hurt_03");
+        add(SoundEventRegister.WG_DEATH, SoundDefinition.definition().with(sound("premierpainmod:entity/wool_golem/death_01")));
+        addMultipleSoundToEvent(SoundEventRegister.WG_AMBIENT, "premierpainmod:entity/wool_golem/", "ambient_01", "ambient_02", "ambient_03");
+
     }
 
     private void addMultipleSoundToEvent(Supplier<SoundEvent> soundEvent, String folder, String... soundNames)

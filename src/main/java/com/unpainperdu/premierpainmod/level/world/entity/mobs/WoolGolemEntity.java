@@ -6,18 +6,22 @@ import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntit
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.wool_golem.Huging;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.wool_golem.SetHugTarget;
+import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.FastColor;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -37,6 +41,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.tslat.smartbrainlib.api.SmartBrainOwner;
 import net.tslat.smartbrainlib.api.core.BrainActivityGroup;
 import net.tslat.smartbrainlib.api.core.SmartBrainProvider;
@@ -51,6 +56,7 @@ import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
 import net.tslat.smartbrainlib.util.BrainUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.List;
@@ -74,7 +80,6 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     private static final EntityDimensions SITTING_DIMENSIONS = EntityDimensions.scalable(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().getWidth(),
                     AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().getHeight() - 0.33F)
             .withEyeHeight(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().getDimensions().eyeHeight() - 0.33F);
-    private static final EntityDimensions HUG_DIMENSIONS = EntityDimensions.scalable(0.5F, AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().getHeight());
 
     private static final Map<ItemLike, DyeColor> DYE_BY_ITEM = Util.make(Maps.newHashMap(), map ->
     {
@@ -215,7 +220,7 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
             }
             if (clientSideHugTick > 0)
             {
-                clientSideHugTick --;
+                clientSideHugTick--;
             }
             else if (this.HUG.isStarted())
             {
@@ -491,5 +496,32 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
                     Mth.floor((float) FastColor.ARGB32.blue(i) * 0.75F)
             );
         }
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound()
+    {
+        return SoundEventRegister.WG_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound()
+    {
+        return SoundEventRegister.WG_DEATH.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(@NotNull DamageSource damageSource)
+    {
+        return SoundEventRegister.WG_HURT.get();
+    }
+
+    @Override
+    protected void playStepSound(@NotNull BlockPos pos, @NotNull BlockState state)
+    {
+        this.playSound(SoundEventRegister.WG_WALK.get(), 1.0F, 1.0F);
     }
 }

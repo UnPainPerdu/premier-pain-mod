@@ -65,7 +65,7 @@ public class Huging<E extends LivingEntity> extends ExtendedBehaviour<E>
         {
             if (target instanceof Monster)
             {
-                target.hurt(entity.damageSources().genericKill(), Float.MAX_VALUE);
+                target.kill();
             }
             else
             {
