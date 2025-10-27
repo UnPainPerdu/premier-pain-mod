@@ -1,7 +1,9 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.wool_golem;
 
 import com.mojang.datafixers.util.Pair;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
 import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
+import com.unpainperdu.premierpainmod.util.tool_kit.DamageSourcesCreator;
 import net.minecraft.util.Unit;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -50,7 +52,7 @@ public class Huging<E extends LivingEntity> extends ExtendedBehaviour<E>
         if (target != null)
         {
             PositionTracker positionTracker = new EntityTracker(target, false);
-            if (positionTracker.currentBlockPosition().distManhattan(entity.blockPosition()) <= 1)
+            if (positionTracker.currentBlockPosition().distManhattan(entity.blockPosition()) <= 1.6)
             {
                 return true;
             }
@@ -65,7 +67,7 @@ public class Huging<E extends LivingEntity> extends ExtendedBehaviour<E>
         {
             if (target instanceof Monster)
             {
-                target.kill();
+                target.hurt(DamageSourcesCreator.create(ModDamageType.HUG_TO_DEATH, entity.level(), entity), Float.MAX_VALUE);
             }
             else
             {

@@ -14,6 +14,7 @@ public class ModDamageType
     public static final ResourceKey<DamageType> LIBERTY_DAMAGE1 = damageTypesRegister("liberty_damage1");
     public static final ResourceKey<DamageType> LIBERTY_DAMAGE2 = damageTypesRegister("liberty_damage2");
     public static final ResourceKey<DamageType> LIBERTY_DAMAGE3 = damageTypesRegister("liberty_damage3");
+    public static final ResourceKey<DamageType> HUG_TO_DEATH = damageTypesRegister("hug_to_death");
 
     private static ResourceKey<DamageType> damageTypesRegister(String path)
     {
@@ -33,6 +34,11 @@ public class ModDamageType
                 DamageEffects.HURT,
                 DeathMessageType.DEFAULT));
         context.register(ModDamageType.LIBERTY_DAMAGE3, new DamageType(ModDamageType.LIBERTY_DAMAGE3.location().toString(),
+                DamageScaling.WHEN_CAUSED_BY_LIVING_NON_PLAYER,
+                0.1f,
+                DamageEffects.HURT,
+                DeathMessageType.DEFAULT));
+        context.register(ModDamageType.HUG_TO_DEATH, new DamageType(ModDamageType.HUG_TO_DEATH.location().toString(),
                 DamageScaling.WHEN_CAUSED_BY_LIVING_NON_PLAYER,
                 0.1f,
                 DamageEffects.HURT,

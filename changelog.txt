@@ -278,7 +278,7 @@ What would be a world without bugs ?
     - Advancement to orientate player in the mod
     - more item and block tags
     - Some Paint
-    - wool golem, a peacefull huger
+    - wool golem, a peacefull huger. he can heal some entiy like player, golem and villager and will kill monster (this way of killing will never loot monster's loot tables)
 
 ## Change :
     - rebalance of mountain currant golem loot table
