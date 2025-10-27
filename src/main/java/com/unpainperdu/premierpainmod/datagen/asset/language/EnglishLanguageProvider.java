@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
@@ -43,9 +44,10 @@ public class EnglishLanguageProvider extends LanguageProvider
         //potion effect
         add("effect.minecraft.hero_of_the_village", "Hero of villagers");
         //death message
-        clp.deathTranslation("liberty_damage1", "%s was a socialist");
-        clp.deathTranslation("liberty_damage2", "%s wanted a cup of LIBER-TEA");
-        clp.deathTranslation("liberty_damage3", "%s didn't give honor to a Super-Earth flag");
+        clp.deathTranslation(ModDamageType.LIBERTY_DAMAGE1, "%s was a socialist");
+        clp.deathTranslation(ModDamageType.LIBERTY_DAMAGE2, "%s wanted a cup of LIBER-TEA");
+        clp.deathTranslation(ModDamageType.LIBERTY_DAMAGE3, "%s didn't give honor to a Super-Earth flag");
+        clp.deathTranslation(ModDamageType.HUG_TO_DEATH, "%s has been huged to death");
         //item
         //villagerSingingStone
         add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Liberty");

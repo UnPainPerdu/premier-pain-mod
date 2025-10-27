@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.damagesource.DamageType;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class CommonLanguageProvider
@@ -12,9 +14,9 @@ public class CommonLanguageProvider
         this.languageProvider = languageProvider;
     }
 
-    public void deathTranslation(String id, String translation)
+    public void deathTranslation(ResourceKey<DamageType> dammageType, String translation)
     {
-        this.languageProvider.add("death.attack." + PremierPainMod.MOD_ID + ":" + id, translation);
+        this.languageProvider.add("death.attack." + PremierPainMod.MOD_ID + ":" + dammageType.location().toString().replace("premierpainmod:", ""), translation);
     }
 
     public void descriptionMakerWIP(String idOfItem, String translation)

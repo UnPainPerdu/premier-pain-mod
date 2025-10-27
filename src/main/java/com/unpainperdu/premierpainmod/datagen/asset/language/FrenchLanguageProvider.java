@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
@@ -43,9 +44,10 @@ public class FrenchLanguageProvider extends LanguageProvider
         add("effect.minecraft.hero_of_the_village", "Héro des villageois");
         //death message
         //%s to get player name
-        clp.deathTranslation("liberty_damage1", "%s était un socialiste");
-        clp.deathTranslation("liberty_damage2", "%s voulait une tasse de LIBER-THÉ");
-        clp.deathTranslation("liberty_damage3", "%s n'a pas saluer le drapeau de la Super-Terre");
+        clp.deathTranslation(ModDamageType.LIBERTY_DAMAGE1, "%s était un socialiste");
+        clp.deathTranslation(ModDamageType.LIBERTY_DAMAGE2, "%s voulait une tasse de LIBER-THÉ");
+        clp.deathTranslation(ModDamageType.LIBERTY_DAMAGE3, "%s n'a pas saluer le drapeau de la Super-Terre");
+        clp.deathTranslation(ModDamageType.HUG_TO_DEATH, "%s s'est fait calliner à mort");
         //item
         //villagerSingingStone
         add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(), "Pierre chantante du villageois de la liberté");

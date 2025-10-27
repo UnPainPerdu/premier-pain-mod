@@ -750,6 +750,7 @@
   "container.premierpainmod.villager_musical_fridge": "Musical fridge",
   "container.premierpainmod.villager_workshop": "Villager workshop",
   "container.premierpainmodcooking_pot.bin_button": "Empty fluid tank without refund",
+  "death.attack.premierpainmod:hug_to_death": "%s has been huged to death",
   "death.attack.premierpainmod:liberty_damage1": "%s was a socialist",
   "death.attack.premierpainmod:liberty_damage2": "%s wanted a cup of LIBER-TEA",
   "death.attack.premierpainmod:liberty_damage3": "%s didn't give honor to a Super-Earth flag",
