@@ -1,0 +1,33 @@
+{
+  "parent": "premierpainmod:main/root",
+  "criteria": {
+    "cooking_pot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:cooking_pot_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.premierpainmod.cooking_pot.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "premierpainmod:cooking_pot_block"
+    },
+    "title": {
+      "translate": "advancements.premierpainmod.cooking_pot.title"
+    }
+  },
+  "requirements": [
+    [
+      "cooking_pot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

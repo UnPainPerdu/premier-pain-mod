@@ -95,6 +95,9 @@ public class ModAdvancementProvider extends AdvancementProvider
                             )
                     ));
 
+            generateAdvancementWithMainAsRoot(BlockRegister.COOKING_POT_BLOCK, "cooking_pot", "root", AdvancementType.TASK,
+                    Map.of("cooking_pot", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegister.COOKING_POT_BLOCK)));
+
             Map<String, Criterion<?>> conditions = new LinkedHashMap<>();
             for (ResourceKey<Biome> biome : ModBiomes.OVERWORLD_BIOMES)
             {
