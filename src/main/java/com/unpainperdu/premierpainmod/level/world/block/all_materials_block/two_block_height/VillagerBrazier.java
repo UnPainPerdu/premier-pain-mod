@@ -29,6 +29,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -39,23 +40,22 @@ import static net.minecraft.world.level.material.Fluids.WATER;
 public class VillagerBrazier extends AbstractTwoBlockHeightBlock
 {
     public static final MapCodec<VillagerBrazier> CODEC = RecordCodecBuilder.mapCodec(
-            p_308808_ -> p_308808_.group(
-                            Codec.BOOL.fieldOf("spawn_particles").forGetter(p_304361_ -> p_304361_.spawnParticles),
-                            Codec.intRange(0, 1000).fieldOf("fire_damage").forGetter(p_304360_ -> p_304360_.fireDamage),
-                            propertiesCodec()
-                    )
-                    .apply(p_308808_, VillagerBrazier::new));
+            instance -> instance.group(
+                    Codec.BOOL.fieldOf("spawn_particles").forGetter(villagerBrazier -> villagerBrazier.spawnParticles),
+                    Codec.intRange(0, 1000).fieldOf("fire_damage").forGetter(villagerBrazier -> villagerBrazier.fireDamage),
+                    propertiesCodec()
+            ).apply(instance, VillagerBrazier::new));
 
     private final boolean spawnParticles;
     private final int fireDamage;
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
 
-    public VillagerBrazier(boolean p_51236_, int p_51237_,Properties pProperties)
+    public VillagerBrazier(boolean isSpawningParticle, int fireDamage, Properties properties)
     {
-        super(pProperties);
-        this.spawnParticles = p_51236_;
-        this.fireDamage = p_51237_;
+        super(properties);
+        this.spawnParticles = isSpawningParticle;
+        this.fireDamage = fireDamage;
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
                 .setValue(HALF, DoubleBlockHalf.LOWER)
                 .setValue(WATERLOGGED, FALSE)
@@ -64,7 +64,8 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
 
 
     @Override
-    public MapCodec<VillagerBrazier> codec() {
+    public @NotNull MapCodec<VillagerBrazier> codec()
+    {
         return CODEC;
     }
 
@@ -74,40 +75,40 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
 
 
     @Nullable
-    public BlockState getStateForPlacement(BlockPlaceContext pContext)
+    public BlockState getStateForPlacement(BlockPlaceContext context)
     {
-        BlockPos blockpos = pContext.getClickedPos();
-        Level level = pContext.getLevel();
+        BlockPos blockpos = context.getClickedPos();
+        Level level = context.getLevel();
         FluidState fluidstateDown = level.getFluidState(blockpos);
-        FluidState fluidstateUp = level.getFluidState(blockpos.above());
         boolean flag = fluidstateDown.getType() == WATER;
-        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(pContext))
+        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(context))
         {
             return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER)
                     .setValue(WATERLOGGED, flag)
                     .setValue(LIT, FALSE)
-                    .setValue(FACING, pContext.getHorizontalDirection());
-
-        } else {
+                    .setValue(FACING, context.getHorizontalDirection());
+        }
+        else
+        {
             return null;
         }
     }
 
     // Pose le bloc du dessus
-    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack)
+    public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity placer, @NotNull ItemStack stack)
     {
-        FluidState fluidstateUp = pLevel.getFluidState(pPos.above());
+        FluidState fluidstateUp = level.getFluidState(pos.above());
         boolean flag = fluidstateUp.getType() == WATER;
-        pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER)
+        level.setBlock(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER)
                 .setValue(WATERLOGGED, flag)
                 .setValue(LIT, !flag), 3);
     }
 
     //Applique la hit-box
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter p_60556_, BlockPos bPos, CollisionContext p_60558_)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter blockGetter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
-        DoubleBlockHalf doubleblockhalf = pState.getValue(HALF);
+        DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
         if (doubleblockhalf == DoubleBlockHalf.UPPER)
         {
             return UPPER_SHAPE;
@@ -117,74 +118,76 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
             return BELOW_SHAPE;
         }
     }
+
     @Override
-    protected void onProjectileHit(Level pLevel, BlockState pState, BlockHitResult pHit, Projectile pProjectile)
+    protected void onProjectileHit(Level level, @NotNull BlockState state, BlockHitResult pHit, @NotNull Projectile projectile)
     {
         BlockPos blockpos = pHit.getBlockPos();
-        if (!pLevel.isClientSide
-                && pProjectile.isOnFire()
-                && pProjectile.mayInteract(pLevel, blockpos)
-                && !pState.getValue(LIT)
-                && !pState.getValue(WATERLOGGED)
-                && !(pState.getValue(HALF) == DoubleBlockHalf.LOWER)
+        if (!level.isClientSide
+                && projectile.isOnFire()
+                && projectile.mayInteract(level, blockpos)
+                && !state.getValue(LIT)
+                && !state.getValue(WATERLOGGED)
+                && !(state.getValue(HALF) == DoubleBlockHalf.LOWER)
         )
         {
-            pLevel.setBlock(blockpos, pState.setValue(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
+            level.setBlock(blockpos, state.setValue(BlockStateProperties.LIT, Boolean.TRUE), 11);
         }
     }
 
     @Override
-    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom)
+    public void animateTick(BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull RandomSource random)
     {
-        if (pState.getValue(LIT))
+        if (state.getValue(LIT))
         {
-            if (pRandom.nextInt(10) == 0)
+            if (random.nextInt(10) == 0)
             {
-                pLevel.playLocalSound(
-                        (double)pPos.getX() + 0.5,
-                        (double)pPos.getY() + 0.5,
-                        (double)pPos.getZ() + 0.5,
+                level.playLocalSound(
+                        (double) pos.getX() + 0.5,
+                        (double) pos.getY() + 0.5,
+                        (double) pos.getZ() + 0.5,
                         SoundEvents.CAMPFIRE_CRACKLE,
                         SoundSource.BLOCKS,
-                        0.5F + pRandom.nextFloat(),
-                        pRandom.nextFloat() * 0.7F + 0.6F,
+                        0.5F + random.nextFloat(),
+                        random.nextFloat() * 0.7F + 0.6F,
                         false
                 );
             }
 
-            if (this.spawnParticles && pRandom.nextInt(5) == 0)
+            if (this.spawnParticles && random.nextInt(5) == 0)
             {
-                for (int i = 0; i < pRandom.nextInt(1) + 1; i++)
+                for (int i = 0; i < random.nextInt(1) + 1; i++)
                 {
-                    pLevel.addParticle(
+                    level.addParticle(
                             ParticleTypes.LAVA,
-                            (double)pPos.getX() + 0.5,
-                            (double)pPos.getY() + 0.5,
-                            (double)pPos.getZ() + 0.5,
-                            (double)(pRandom.nextFloat() / 2.0F),
+                            (double) pos.getX() + 0.5,
+                            (double) pos.getY() + 0.5,
+                            (double) pos.getZ() + 0.5,
+                            random.nextFloat() / 2.0F,
                             5.0E-5,
-                            (double)(pRandom.nextFloat() / 2.0F)
+                            random.nextFloat() / 2.0F
                     );
                 }
             }
         }
     }
+
     @Override
-    public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState)
+    public boolean placeLiquid(@NotNull LevelAccessor level, @NotNull BlockPos pos, BlockState state, @NotNull FluidState fluidState)
     {
-        if (!pState.getValue(BlockStateProperties.WATERLOGGED) && pFluidState.getType() == WATER)
+        if (!state.getValue(BlockStateProperties.WATERLOGGED) && fluidState.getType() == WATER)
         {
-            boolean flag = pState.getValue(LIT);
+            boolean flag = state.getValue(LIT);
             if (flag)
             {
-                if (!pLevel.isClientSide() && pState.getValue(HALF) == DoubleBlockHalf.UPPER)
+                if (!level.isClientSide() && state.getValue(HALF) == DoubleBlockHalf.UPPER)
                 {
-                    pLevel.playSound(null, pPos, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.playSound(null, pos, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 1.0F, 1.0F);
                 }
             }
 
-            pLevel.setBlock(pPos, pState.setValue(WATERLOGGED, TRUE).setValue(LIT, FALSE), 3);
-            pLevel.scheduleTick(pPos, pFluidState.getType(), pFluidState.getType().getTickDelay(pLevel));
+            level.setBlock(pos, state.setValue(WATERLOGGED, TRUE).setValue(LIT, FALSE), 3);
+            level.scheduleTick(pos, fluidState.getType(), fluidState.getType().getTickDelay(level));
             return true;
         }
         else
@@ -192,27 +195,28 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
             return false;
         }
     }
+
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
-        pBuilder.add(HALF,LIT, WATERLOGGED, FACING);
-    }
-    
-    @Override
-    public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity)
-    {
-        if(pState.getValue(LIT))
-        {
-            if (!pEntity.isSteppingCarefully() && pEntity instanceof LivingEntity)
-            {
-                pEntity.hurt(pLevel.damageSources().hotFloor(), 1.0F);
-            }
-        }
-        super.stepOn(pLevel, pPos, pState, pEntity);
+        builder.add(HALF, LIT, WATERLOGGED, FACING);
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType)
+    public void stepOn(@NotNull Level level, @NotNull BlockPos pos, BlockState state, @NotNull Entity entity)
+    {
+        if (state.getValue(LIT))
+        {
+            if (!entity.isSteppingCarefully() && entity instanceof LivingEntity)
+            {
+                entity.hurt(level.damageSources().hotFloor(), 1.0F);
+            }
+        }
+        super.stepOn(level, pos, state, entity);
+    }
+
+    @Override
+    protected boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType pathComputationType)
     {
         return false;
     }

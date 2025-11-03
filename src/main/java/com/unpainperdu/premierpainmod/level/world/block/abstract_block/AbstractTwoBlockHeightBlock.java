@@ -27,102 +27,101 @@ public abstract class AbstractTwoBlockHeightBlock extends Block implements Simpl
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    public AbstractTwoBlockHeightBlock(Properties pProperties)
+    public AbstractTwoBlockHeightBlock(Properties properties)
     {
-        super(pProperties);
+        super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.FALSE));
     }
 
     //Applique la hit-box
     @Override
-    public abstract VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_);
+    public abstract @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter blockGetter, @NotNull BlockPos pos, @NotNull CollisionContext context);
 
     //check si le dessus est libre
     @Nullable
-    public BlockState getStateForPlacement(BlockPlaceContext pContext)
+    public BlockState getStateForPlacement(BlockPlaceContext context)
     {
-        BlockPos blockpos = pContext.getClickedPos();
-        Level level = pContext.getLevel();
+        BlockPos blockpos = context.getClickedPos();
+        Level level = context.getLevel();
         FluidState fluidstateDown = level.getFluidState(blockpos);
-        FluidState fluidstateUp = level.getFluidState(blockpos.above());
         boolean flag = fluidstateDown.getType() == Fluids.WATER;
-        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(pContext))
+        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(context))
         {
-            return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(FACING, pContext.getHorizontalDirection());
+            return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, flag).setValue(FACING, context.getHorizontalDirection());
         } else {
             return null;
         }
     }
     @Override
-    protected @NotNull FluidState getFluidState(BlockState pState)
+    protected @NotNull FluidState getFluidState(BlockState state)
     {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
     // Pose le bloc du dessus
-    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack)
+    public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity placer, @NotNull ItemStack stack)
     {
-        FluidState fluidstateUp = pLevel.getFluidState(pPos.above());
+        FluidState fluidstateUp = level.getFluidState(pos.above());
         boolean flag = fluidstateUp.getType() == Fluids.WATER;
-        pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER).setValue(WATERLOGGED, Boolean.valueOf(flag)), 3);
+        level.setBlock(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(WATERLOGGED, flag), 3);
     }
 
     //Si dessous pété, péte le dessus
-    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        DoubleBlockHalf doubleblockhalf = pState.getValue(HALF);
-        if (pState.getValue(WATERLOGGED))
+    public @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos) {
+        DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
+        if (state.getValue(WATERLOGGED))
         {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        if (pFacing.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (pFacing == Direction.UP)) {
-            return pFacingState.is(this) && pFacingState.getValue(HALF) != doubleblockhalf
-                    ? pState.setValue(FACING, pFacingState.getValue(FACING))
+        if (facing.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (facing == Direction.UP)) {
+            return facingState.is(this) && facingState.getValue(HALF) != doubleblockhalf
+                    ? state.setValue(FACING, facingState.getValue(FACING))
                     : Blocks.AIR.defaultBlockState();
         }
         else
         {
-            return doubleblockhalf == DoubleBlockHalf.LOWER && pFacing == Direction.DOWN && !pState.canSurvive(pLevel, pCurrentPos)
+            return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN && !state.canSurvive(level, currentPos)
                     ? Blocks.AIR.defaultBlockState()
-                    : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+                    : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
         }
     }
     //créé un nouveau BlockState nommé HALF
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
-        pBuilder.add(HALF, FACING, WATERLOGGED);
+        builder.add(HALF, FACING, WATERLOGGED);
     }
 
     //quand le bloc est pété
-    public BlockState playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
+    public @NotNull BlockState playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Player player)
     {
-        if (!pLevel.isClientSide && (pPlayer.isCreative() || !pPlayer.hasCorrectToolForDrops(pState, pLevel, pPos)))
+        if (!level.isClientSide && (player.isCreative() || !player.hasCorrectToolForDrops(state, level, pos)))
         {
-            preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
+            preventCreativeDropFromBottomPart(level, pos, state, player);
         }
 
-        super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
-        return pState;
+        super.playerWillDestroy(level, pos, state, player);
+        return state;
     }
 
     //Pète le bloc du dessous si dessus cassé
-    protected static void preventCreativeDropFromBottomPart(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
+    protected static void preventCreativeDropFromBottomPart(Level level, BlockPos pos, BlockState state, Player player)
     {
-        DoubleBlockHalf doubleblockhalf = pState.getValue(HALF);
+        DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
         if (doubleblockhalf == DoubleBlockHalf.UPPER)
         {
-            BlockPos blockpos = pPos.below();
-            BlockState blockstate = pLevel.getBlockState(blockpos);
-            if (blockstate.is(pState.getBlock()) && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER)
+            BlockPos blockpos = pos.below();
+            BlockState blockstate = level.getBlockState(blockpos);
+            if (blockstate.is(state.getBlock()) && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER)
             {
                 BlockState blockstate1 = blockstate.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
-                pLevel.setBlock(blockpos, blockstate1, 35);
-                pLevel.levelEvent(pPlayer, 2001, blockpos, Block.getId(blockstate));
+                level.setBlock(blockpos, blockstate1, 35);
+                level.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
             }
         }
     }
     @Override
-    protected BlockState rotate(BlockState pState, Rotation pRot)
+    protected @NotNull BlockState rotate(BlockState state, Rotation rot)
     {
-        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
     }
 }

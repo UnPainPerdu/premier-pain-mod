@@ -19,34 +19,35 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock implements CarpetedBlock
 {
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
     public static final EnumProperty<VillagerCarpetColor> COLOR = ModBlockStateProperties.VILLAGER_CARPET_COLOR;
 
-    public VillagerThroneChairBlock(Properties pProperties)
+    public VillagerThroneChairBlock(Properties properties)
     {
-        super(pProperties);
+        super(properties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(HALF, DoubleBlockHalf.LOWER)
                 .setValue(WATERLOGGED, Boolean.FALSE)
                 .setValue(COLOR, VillagerCarpetColor.NONE));
     }
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
-        pBuilder.add(HALF, FACING, WATERLOGGED, COLOR);
+        builder.add(HALF, FACING, WATERLOGGED, COLOR);
     }
 
     @Override
-    public MapCodec<VillagerStatue> codec()
+    public @NotNull MapCodec<VillagerStatue> codec()
     {
         return CODEC;
     }
 
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter p_60556_, BlockPos bPos, CollisionContext p_60558_)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter blockGetter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         VoxelShape COMMON_SHAPE = Block.box(3, 1, 3, 13, 8, 13);
 
@@ -72,8 +73,8 @@ public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock implem
 
         VoxelShape FEETS = Shapes.or(NW_FOOT_SHAPE,NE_FOOT_SHAPE,SW_FOOT_SHAPE,SE_FOOT_SHAPE);
 
-        DoubleBlockHalf doubleblockhalf = pState.getValue(HALF);
-        Direction direction = pState.getValue(FACING);
+        DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
+        Direction direction = state.getValue(FACING);
         switch (direction)
         {
 
@@ -145,7 +146,7 @@ public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock implem
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType)
+    protected boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType pathComputationType)
     {
         return false;
     }

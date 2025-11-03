@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class VillagerStatue extends AbstractTwoBlockHeightBlock
 {
@@ -25,7 +26,7 @@ public class VillagerStatue extends AbstractTwoBlockHeightBlock
                 .setValue(WATERLOGGED, Boolean.FALSE));
     }
     @Override
-    public MapCodec<VillagerStatue> codec() {
+    public @NotNull MapCodec<VillagerStatue> codec() {
         return CODEC;
     }
     private static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 16, 12);
@@ -33,13 +34,13 @@ public class VillagerStatue extends AbstractTwoBlockHeightBlock
 
     //Applique la hit-box
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter blockGetter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         return SHAPE;
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType)
+    protected boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType pathComputationType)
     {
         return false;
     }
