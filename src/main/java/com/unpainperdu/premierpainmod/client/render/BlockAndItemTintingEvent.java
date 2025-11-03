@@ -15,7 +15,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
 import static com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum.LEAVES;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(value = Dist.CLIENT)
 public class BlockAndItemTintingEvent
 {
     @SubscribeEvent

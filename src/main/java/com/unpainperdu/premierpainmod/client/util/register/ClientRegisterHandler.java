@@ -14,7 +14,6 @@ import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_gole
 import com.unpainperdu.premierpainmod.client.render.entity.wool_golem.WoolGolemRender;
 import com.unpainperdu.premierpainmod.client.util.register.render.BlockEntityRenderRegister;
 import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.AbstractFluidType;
-import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.BeerFluidType;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
@@ -35,7 +34,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.FLUID_TYPES;
 
-@EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(value = Dist.CLIENT)
 public class ClientRegisterHandler
 {
     @FunctionalInterface
