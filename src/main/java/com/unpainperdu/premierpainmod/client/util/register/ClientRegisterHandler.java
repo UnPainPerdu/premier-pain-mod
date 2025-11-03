@@ -10,16 +10,13 @@ import com.unpainperdu.premierpainmod.client.particle.beer_particle.purple.Purpl
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.red.RedBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.particle.beer_particle.white.WhiteBeerFoamProvider;
 import com.unpainperdu.premierpainmod.client.render.FluidRender;
-import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem.MountainCurrantGolemRender;
-import com.unpainperdu.premierpainmod.client.render.entity.wool_golem.WoolGolemRender;
 import com.unpainperdu.premierpainmod.client.util.register.render.BlockEntityRenderRegister;
+import com.unpainperdu.premierpainmod.client.util.register.render.EntityRenderRegister;
 import com.unpainperdu.premierpainmod.level.world.fluid.fluid_type.AbstractFluidType;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
-import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
@@ -29,6 +26,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -63,8 +61,19 @@ public class ClientRegisterHandler
         Sheets.addWoodType(ModWoodTypes.MORICHE_PALM);
         event.enqueueWork(() -> FluidRender.setRenderLayerForFluid(event));
 
-        EntityRenderers.register(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get(), MountainCurrantGolemRender::new);
-        EntityRenderers.register(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get(), WoolGolemRender::new);
+        EntityRenderRegister.registerEntityRender();
+    }
+
+    @SubscribeEvent
+    public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event)
+    {
+        EntityRenderRegister.registerEntityLayers(event);
+    }
+
+    @SubscribeEvent
+    public static void registerEntityAttributes(EntityAttributeCreationEvent event)
+    {
+        EntityRenderRegister.registerEntityAttributes(event);
     }
 
     @SubscribeEvent
