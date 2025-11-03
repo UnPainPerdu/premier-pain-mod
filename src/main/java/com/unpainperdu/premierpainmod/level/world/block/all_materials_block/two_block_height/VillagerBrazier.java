@@ -1,8 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTwoBlockHeightBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -39,23 +37,13 @@ import static net.minecraft.world.level.material.Fluids.WATER;
 
 public class VillagerBrazier extends AbstractTwoBlockHeightBlock
 {
-    public static final MapCodec<VillagerBrazier> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(
-                    Codec.BOOL.fieldOf("spawn_particles").forGetter(villagerBrazier -> villagerBrazier.spawnParticles),
-                    Codec.intRange(0, 1000).fieldOf("fire_damage").forGetter(villagerBrazier -> villagerBrazier.fireDamage),
-                    propertiesCodec()
-            ).apply(instance, VillagerBrazier::new));
-
-    private final boolean spawnParticles;
-    private final int fireDamage;
+    public static final MapCodec<VillagerBrazier> CODEC = simpleCodec(VillagerBrazier::new);
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
 
-    public VillagerBrazier(boolean isSpawningParticle, int fireDamage, Properties properties)
+    public VillagerBrazier(Properties properties)
     {
         super(properties);
-        this.spawnParticles = isSpawningParticle;
-        this.fireDamage = fireDamage;
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
                 .setValue(HALF, DoubleBlockHalf.LOWER)
                 .setValue(WATERLOGGED, FALSE)
@@ -154,7 +142,7 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
                 );
             }
 
-            if (this.spawnParticles && random.nextInt(5) == 0)
+            if (random.nextInt(5) == 0)
             {
                 for (int i = 0; i < random.nextInt(1) + 1; i++)
                 {

@@ -105,7 +105,7 @@ public class AllMaterialsBlockEnum
     {
         VILLAGER_STATUE(VillagerStatue::new),
         VILLAGER_PEDESTAL(VillagerPedestalBlock::new),
-        VILLAGER_BRAZIER(properties -> new VillagerBrazier(Boolean.TRUE, 1, properties.lightLevel(litBlockEmission(15)))),
+        VILLAGER_BRAZIER(properties -> new VillagerBrazier(properties.lightLevel(litBlockEmission(15)))),
         VILLAGER_TABLE(VillagerTableBlock::new),
         VILLAGER_CHAIR(VillagerChairBlock::new),
         VILLAGER_THRONE_CHAIR(VillagerThroneChairBlock::new),
