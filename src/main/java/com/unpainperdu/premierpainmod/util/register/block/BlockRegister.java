@@ -107,11 +107,11 @@ public class BlockRegister
                 String id = material.toString() + "_" + blockType;
                 if (blockType == AllMaterialsBlockEnum.Type.WALL_VILLAGER_SHELF ||blockType == AllMaterialsBlockEnum.Type.STANDING_VILLAGER_SHELF)
                 {
-                    map.put(id, registerBlockOnly(id, () -> blockType.getBlock(material.getProperties())));
+                    map.put(id, registerBlockOnly(id, () -> blockType.getBlock(BlockBehaviour.Properties.ofFullCopy(material.getBaseBlockBehaviour()))));
                 }
                 else
                 {
-                    map.put(id, registerBlock(id, () -> blockType.getBlock(material.getProperties())));
+                    map.put(id, registerBlock(id, () -> blockType.getBlock(BlockBehaviour.Properties.ofFullCopy(material.getBaseBlockBehaviour()))));
                 }
             }
         }

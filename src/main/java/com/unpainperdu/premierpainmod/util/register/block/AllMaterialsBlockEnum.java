@@ -35,63 +35,63 @@ public class AllMaterialsBlockEnum
 
     public enum Material
     {
-        OAK(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()),
-        BIRCH(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS).noOcclusion()),
-        SPRUCE(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS).noOcclusion()),
-        JUNGLE(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS).noOcclusion()),
-        ACACIA(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS).noOcclusion()),
-        DARK_OAK(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS).noOcclusion()),
-        MANGROVE(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS).noOcclusion()),
-        CHERRY(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).noOcclusion()),
-        BAMBOO(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion()),
-        CRIMSON(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion()),
-        WARPED(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS).noOcclusion()),
-        PALE_OAK(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()),
-        STONE(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()),
-        MOSSY_STONE(BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_COBBLESTONE).noOcclusion()),
-        ANDESITE(BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).noOcclusion()),
-        DIORITE(BlockBehaviour.Properties.ofFullCopy(Blocks.DIORITE).noOcclusion()),
-        GRANITE(BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE).noOcclusion()),
-        PRISMARINE(BlockBehaviour.Properties.ofFullCopy(Blocks.PRISMARINE).noOcclusion()),
-        BLACKSTONE(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE).noOcclusion()),
-        PURPUR_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.PURPUR_BLOCK).noOcclusion()),
-        DEEPSLATE(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).noOcclusion()),
-        TUFF(BlockBehaviour.Properties.ofFullCopy(Blocks.TUFF).noOcclusion()),
-        PACKED_MUD(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_MUD).noOcclusion()),
-        SANDSTONE(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion()),
-        RED_SANDSTONE(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_SANDSTONE).noOcclusion()),
-        QUARTZ_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK).noOcclusion()),
-        NETHER_BRICKS(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS).noOcclusion()),
-        BASALT(BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT).noOcclusion()),
-        END_STONE(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion()),
-        COAL_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.COAL_BLOCK).noOcclusion()),
-        IRON_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()),
-        GOLD_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK).noOcclusion()),
-        REDSTONE_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_BLOCK).noOcclusion()),
-        EMERALD_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_BLOCK).noOcclusion()),
-        DIAMOND_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).noOcclusion()),
-        COPPER_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion()),
-        LAPIS_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK).noOcclusion()),
-        NETHERITE_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK).noOcclusion()),
-        OBSIDIAN(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()),
-        AMETHYST_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()),
-        DRIPSTONE_BLOCK(BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK).noOcclusion()),
-        BEDROCK(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noOcclusion()),
-        MOUNTAIN_CURRANT(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()),
-        MORICHE_PALM(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()),
-        ACHIOTE(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()),
-        WEEPING_WILLOW(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion());
+        OAK(Blocks.OAK_PLANKS),
+        BIRCH(Blocks.BIRCH_PLANKS),
+        SPRUCE(Blocks.SPRUCE_PLANKS),
+        JUNGLE(Blocks.JUNGLE_PLANKS),
+        ACACIA(Blocks.ACACIA_PLANKS),
+        DARK_OAK(Blocks.DARK_OAK_PLANKS),
+        MANGROVE(Blocks.MANGROVE_PLANKS),
+        CHERRY(Blocks.CHERRY_PLANKS),
+        BAMBOO(Blocks.BAMBOO_PLANKS),
+        CRIMSON(Blocks.CRIMSON_PLANKS),
+        WARPED(Blocks.WARPED_PLANKS),
+        PALE_OAK(Blocks.OAK_PLANKS),
+        STONE(Blocks.STONE),
+        MOSSY_STONE(Blocks.MOSSY_COBBLESTONE),
+        ANDESITE(Blocks.ANDESITE),
+        DIORITE(Blocks.DIORITE),
+        GRANITE(Blocks.GRANITE),
+        PRISMARINE(Blocks.PRISMARINE),
+        BLACKSTONE(Blocks.BLACKSTONE),
+        PURPUR_BLOCK(Blocks.PURPUR_BLOCK),
+        DEEPSLATE(Blocks.DEEPSLATE),
+        TUFF(Blocks.TUFF),
+        PACKED_MUD(Blocks.PACKED_MUD),
+        SANDSTONE(Blocks.SANDSTONE),
+        RED_SANDSTONE(Blocks.RED_SANDSTONE),
+        QUARTZ_BLOCK(Blocks.QUARTZ_BLOCK),
+        NETHER_BRICKS(Blocks.NETHER_BRICKS),
+        BASALT(Blocks.BASALT),
+        END_STONE(Blocks.END_STONE),
+        COAL_BLOCK(Blocks.COAL_BLOCK),
+        IRON_BLOCK(Blocks.IRON_BLOCK),
+        GOLD_BLOCK(Blocks.GOLD_BLOCK),
+        REDSTONE_BLOCK(Blocks.REDSTONE_BLOCK),
+        EMERALD_BLOCK(Blocks.EMERALD_BLOCK),
+        DIAMOND_BLOCK(Blocks.DIAMOND_BLOCK),
+        COPPER_BLOCK(Blocks.COPPER_BLOCK),
+        LAPIS_BLOCK(Blocks.LAPIS_BLOCK),
+        NETHERITE_BLOCK(Blocks.NETHERITE_BLOCK),
+        OBSIDIAN(Blocks.OBSIDIAN),
+        AMETHYST_BLOCK(Blocks.AMETHYST_BLOCK),
+        DRIPSTONE_BLOCK(Blocks.DRIPSTONE_BLOCK),
+        BEDROCK(Blocks.BEDROCK),
+        MOUNTAIN_CURRANT(Blocks.OAK_PLANKS),
+        MORICHE_PALM(Blocks.OAK_PLANKS),
+        ACHIOTE(Blocks.OAK_PLANKS),
+        WEEPING_WILLOW(Blocks.OAK_PLANKS);
 
-        private final BlockBehaviour.Properties properties;
+        private final BlockBehaviour baseBlockBehaviour;
 
-        Material(BlockBehaviour.Properties properties)
+        Material(BlockBehaviour baseBlockBehaviour)
         {
-            this.properties = properties;
+            this.baseBlockBehaviour = baseBlockBehaviour;
         }
 
-        public BlockBehaviour.Properties getProperties()
+        public BlockBehaviour getBaseBlockBehaviour()
         {
-            return this.properties;
+            return this.baseBlockBehaviour;
         }
 
         @Override
