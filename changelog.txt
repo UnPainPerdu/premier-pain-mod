@@ -287,3 +287,4 @@ What would be a world without bugs ?
     - Structure is now data generated, nothing should have changed in game, plz report if so
 --------------
 # 1.21.[0,1]-1.15
+    - Update neoforge and requerement to 21.1.213
