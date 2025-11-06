@@ -291,3 +291,4 @@ What would be a world without bugs ?
 
 ## Fix :
     - Fix properties overflow for all materials block
+    - Fix wool golem not always stopping walking when sitting

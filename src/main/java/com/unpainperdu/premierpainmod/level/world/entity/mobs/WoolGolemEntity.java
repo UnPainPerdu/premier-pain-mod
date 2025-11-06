@@ -367,6 +367,7 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         else
         {
             setIsSat(true);
+            this.getNavigation().stop();
             BrainUtils.clearMemory(this, MemoryModuleType.WALK_TARGET);
             BrainUtils.clearMemory(this, MemoryModuleTypeRegister.TARGET.get());
             startSittingAnimation();
