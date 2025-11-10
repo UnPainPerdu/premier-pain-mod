@@ -3,7 +3,11 @@ package com.unpainperdu.premierpainmod.datagen.asset.language;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.ai.village.poi.PoiType;
+import net.minecraft.world.entity.ai.village.poi.PoiTypes;
+import net.minecraft.world.entity.npc.VillagerProfession;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class CommonLanguageProvider
 {
@@ -45,5 +49,10 @@ public class CommonLanguageProvider
     {
         this.languageProvider.add("painting.premierpainmod." + name + ".title", titleTranslation);
         this.languageProvider.add("painting.premierpainmod." + name + ".author", author);
+    }
+
+    public void generateVillagerProfessionTranslation(DeferredHolder<VillagerProfession, VillagerProfession> profession, String translation)
+    {
+        this.languageProvider.add("entity.mincecraft.villager." + PremierPainMod.MOD_ID + "." + profession.get().name(), translation);
     }
 }

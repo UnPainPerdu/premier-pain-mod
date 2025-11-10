@@ -289,6 +289,9 @@ What would be a world without bugs ?
 # 1.21.[0,1]-1.15
     - Update neoforge and requerement to 21.1.213
 
+## Add :
+    - add villager profession : the brewer, the work block is a villager brewing station
+
 ## Fix :
     - Fix properties overflow for all materials block
     - Fix wool golem not always stopping walking when sitting

@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
 import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerProfessionRegister;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -180,6 +181,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         //egg
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Mountain Currant Golem Spawn Egg");
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "Wool Golem Spawn Egg");
+        //entity
+        clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brewer");
         //block
         //blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");

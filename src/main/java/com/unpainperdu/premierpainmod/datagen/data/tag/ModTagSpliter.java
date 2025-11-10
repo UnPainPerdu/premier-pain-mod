@@ -22,5 +22,6 @@ public class ModTagSpliter
         generator.addProvider(run, new ModBiomeTagProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(run, new ModFluidTag(packOutput, lookupProvider, fileHelper));
         generator.addProvider(run, new ModPaintingVariantTagsProvider(packOutput, lookupProvider, fileHelper));
+        generator.addProvider(run, new ModPoiTag(packOutput, lookupProvider, fileHelper));
     }
 }

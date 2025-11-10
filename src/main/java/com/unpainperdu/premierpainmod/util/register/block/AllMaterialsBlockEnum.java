@@ -166,4 +166,14 @@ public class AllMaterialsBlockEnum
     {
         return BlockRegister.ALL_MATERIALS_MAP.get(material.toString() + "_" + type.toString());
     }
+
+    public static List<DeferredBlock<Block>> getAllMaterialBlocks(Type type)
+    {
+        return Arrays.stream(Material.values()).map(mat -> BlockRegister.ALL_MATERIALS_MAP.get(mat.toString() + "_" + type.toString())).toList();
+    }
+
+    public static List<DeferredBlock<Block>> getAllMaterialBlocks(Material material)
+    {
+        return Arrays.stream(Material.values()).map(type -> BlockRegister.ALL_MATERIALS_MAP.get(material.toString() + "_" + type.toString())).toList();
+    }
 }

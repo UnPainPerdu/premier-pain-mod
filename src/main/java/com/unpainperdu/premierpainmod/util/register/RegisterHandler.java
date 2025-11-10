@@ -9,6 +9,8 @@ import com.unpainperdu.premierpainmod.util.register.codec.CodecForGLMRegister;
 import com.unpainperdu.premierpainmod.util.register.creative_tab.CreativeTabRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.EntityRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerPointOfInterestRegister;
+import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerProfessionRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.tree.FoliagePlacerTypesRegister;
@@ -44,5 +46,7 @@ public class RegisterHandler
         MemoryModuleTypeRegister.register(modEventBus);
         SensorsTypeRegister.register(modEventBus);
         CriterionRegister.register(modEventBus);
+        VillagerProfessionRegister.register(modEventBus);
+        VillagerPointOfInterestRegister.register(modEventBus);
     }
 }
