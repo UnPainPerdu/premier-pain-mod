@@ -53,6 +53,6 @@ public class CommonLanguageProvider
 
     public void generateVillagerProfessionTranslation(DeferredHolder<VillagerProfession, VillagerProfession> profession, String translation)
     {
-        this.languageProvider.add("entity.mincecraft.villager." + PremierPainMod.MOD_ID + "." + profession.get().name(), translation);
+        this.languageProvider.add("entity.minecraft.villager." + PremierPainMod.MOD_ID + "." + profession.get().name(), translation);
     }
 }
