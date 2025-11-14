@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.event.item_event.villager_singing_stone_event;
+package com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;

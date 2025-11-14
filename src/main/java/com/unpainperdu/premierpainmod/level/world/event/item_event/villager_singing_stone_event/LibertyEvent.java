@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.event.item_event.villager_singing_stone_event;
+package com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event;
 
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;

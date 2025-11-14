@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.event.entity_event;
+package com.unpainperdu.premierpainmod.neo_event.entity_event;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;

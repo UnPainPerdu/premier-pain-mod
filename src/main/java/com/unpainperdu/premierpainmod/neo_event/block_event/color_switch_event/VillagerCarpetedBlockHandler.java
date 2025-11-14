@@ -1,7 +1,7 @@
-package com.unpainperdu.premierpainmod.level.event.block_event.color_switch_event;
+package com.unpainperdu.premierpainmod.neo_event.block_event.color_switch_event;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.event.block_event.color_switch_event.util.DropEventColorHelper;
+import com.unpainperdu.premierpainmod.neo_event.block_event.color_switch_event.util.DropEventColorHelper;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.help_interface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;

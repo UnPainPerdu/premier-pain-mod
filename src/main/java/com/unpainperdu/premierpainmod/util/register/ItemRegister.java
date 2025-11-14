@@ -1,10 +1,10 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.event.item_event.villager_singing_stone_event.AbstractVillagerSingingStoneEvent;
-import com.unpainperdu.premierpainmod.level.event.item_event.villager_singing_stone_event.DiggyEvent;
-import com.unpainperdu.premierpainmod.level.event.item_event.villager_singing_stone_event.LibertyEvent;
-import com.unpainperdu.premierpainmod.level.event.item_event.villager_singing_stone_event.MadnessEvent;
+import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.AbstractVillagerSingingStoneEvent;
+import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.DiggyEvent;
+import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.LibertyEvent;
+import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.MadnessEvent;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.*;
 import com.unpainperdu.premierpainmod.level.world.fluid.oil.MorichePalmOilFluid;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;

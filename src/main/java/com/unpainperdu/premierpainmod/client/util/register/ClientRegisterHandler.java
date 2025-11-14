@@ -26,7 +26,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -62,18 +61,6 @@ public class ClientRegisterHandler
         event.enqueueWork(() -> FluidRender.setRenderLayerForFluid(event));
 
         EntityRenderRegister.registerEntityRender();
-    }
-
-    @SubscribeEvent
-    public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event)
-    {
-        EntityRenderRegister.registerEntityLayers(event);
-    }
-
-    @SubscribeEvent
-    public static void registerEntityAttributes(EntityAttributeCreationEvent event)
-    {
-        EntityRenderRegister.registerEntityAttributes(event);
     }
 
     @SubscribeEvent

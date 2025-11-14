@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.event.block_event;
+package com.unpainperdu.premierpainmod.neo_event.block_event;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractAdaptableSit;
