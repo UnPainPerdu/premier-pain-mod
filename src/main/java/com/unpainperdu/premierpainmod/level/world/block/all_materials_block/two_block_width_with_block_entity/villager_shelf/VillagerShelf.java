@@ -21,6 +21,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class VillagerShelf extends AbstractTwoBlockWidthWithBlockEntity
@@ -32,12 +33,12 @@ public abstract class VillagerShelf extends AbstractTwoBlockWidthWithBlockEntity
     }
 
     @Override
-    protected abstract MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec();
+    protected abstract @NotNull MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec();
 
     @Override
-    public abstract VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_);
+    public abstract @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context);
 
-    protected abstract void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder);
+    protected abstract void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder);
 
     @Nullable
     @Override

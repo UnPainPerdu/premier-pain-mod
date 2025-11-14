@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class JellyShroomBlock extends AbstractCropLikeBlock
@@ -29,13 +30,13 @@ public class JellyShroomBlock extends AbstractCropLikeBlock
 
 
     @Override
-    protected MapCodec<? extends AbstractCropLikeBlock> codec()
+    protected @NotNull MapCodec<? extends AbstractCropLikeBlock> codec()
     {
         return CODEC;
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
+    protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         //offset type declared at registration
         Vec3 vec3 = state.getOffset(level, pos);

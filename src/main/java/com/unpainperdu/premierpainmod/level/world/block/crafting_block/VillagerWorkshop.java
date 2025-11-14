@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -38,7 +39,7 @@ public class VillagerWorkshop extends AbstractTwoBlockWidth
     }
 
     @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec()
+    protected @NotNull MapCodec<? extends HorizontalDirectionalBlock> codec()
     {
         return CODEC;
     }
@@ -54,7 +55,7 @@ public class VillagerWorkshop extends AbstractTwoBlockWidth
 
     //Applique la hit-box
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         return SHAPE;
     }
@@ -71,9 +72,9 @@ public class VillagerWorkshop extends AbstractTwoBlockWidth
         return twoBlockWidthPart == TwoBlockWidthPart.LEFT ? DoubleBlockCombiner.BlockType.FIRST : DoubleBlockCombiner.BlockType.SECOND;
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder)
     {
-        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED});
+        builder.add(new Property[]{FACING, PART, WATERLOGGED});
     }
 
 
@@ -98,8 +99,8 @@ public class VillagerWorkshop extends AbstractTwoBlockWidth
         return new SimpleMenuProvider((pContainerId, pPlayerInventory, pAccess) -> new VillagerWorkshopMenu(pContainerId, pPlayerInventory, ContainerLevelAccess.create(pLevel, pPos)), CONTAINER_TITLE);
     }
     @Override
-    protected BlockState rotate(BlockState pState, Rotation pRot)
+    protected @NotNull BlockState rotate(BlockState state, Rotation rot)
     {
-        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
     }
 }

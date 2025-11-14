@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class StandingVillagerShelf extends VillagerShelf
 {
@@ -46,16 +47,16 @@ public class StandingVillagerShelf extends VillagerShelf
     }
 
     @Override
-    protected MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec()
+    protected @NotNull MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec()
     {
         return CODEC;
     }
 
     @Override
-    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
-        TwoBlockWidthPart twoBlockWidthPart = blockState.getValue(PART);
-        Direction direction = blockState.getValue(FACING);
+        TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
+        Direction direction = state.getValue(FACING);
 
         if(direction == Direction.SOUTH)
         {
@@ -92,9 +93,9 @@ public class StandingVillagerShelf extends VillagerShelf
         }
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder)
     {
-        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED, HAS_SHELF_ON_TOP, HAS_SHELF_BELOW});
+        builder.add(new Property[]{FACING, PART, WATERLOGGED, HAS_SHELF_ON_TOP, HAS_SHELF_BELOW});
     }
 
     @Override
@@ -104,39 +105,39 @@ public class StandingVillagerShelf extends VillagerShelf
     }
 
     @Override
-    protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
+    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos)
     {
-        if (pState.getValue(WATERLOGGED))
+        if (state.getValue(WATERLOGGED))
         {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
-        TwoBlockWidthPart twoBlockWidthPart = pState.getValue(PART);
-        if (pFacing != getNeighbourDirection(twoBlockWidthPart, DirectionSwitcher(pState.getValue(FACING))))
+        TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
+        if (facing != getNeighbourDirection(twoBlockWidthPart, DirectionSwitcher(state.getValue(FACING))))
         {
-            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT && pFacing == reverseDirectionSwitcher(pState.getValue(FACING)) && !pState.canSurvive(pLevel, pCurrentPos))
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT && facing == reverseDirectionSwitcher(state.getValue(FACING)) && !state.canSurvive(level, currentPos))
             {
                 return Blocks.AIR.defaultBlockState();
             }
             else
             {
-                if(pFacing == Direction.UP)
+                if(facing == Direction.UP)
                 {
-                    return pState.setValue(HAS_SHELF_ON_TOP, this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite()));
-                } else if (pFacing == Direction.DOWN)
+                    return state.setValue(HAS_SHELF_ON_TOP, this.connectsTo(facingState, facingState.isFaceSturdy(level, facingPos, facing.getOpposite()), facing.getOpposite()));
+                } else if (facing == Direction.DOWN)
                 {
-                    return pState.setValue(HAS_SHELF_BELOW, this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite()));
+                    return state.setValue(HAS_SHELF_BELOW, this.connectsTo(facingState, facingState.isFaceSturdy(level, facingPos, facing.getOpposite()), facing.getOpposite()));
                 } else
                 {
-                    return super.superUpdateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+                    return super.superUpdateShape(state, facing, facingState, level, currentPos, facingPos);
                 }
             }
         }
         else
         {
-            if (pFacingState.is(this) && pFacingState.getValue(PART) != pState.getValue(PART))
+            if (facingState.is(this) && facingState.getValue(PART) != state.getValue(PART))
             {
-                return (BlockState) pState;
+                return (BlockState) state;
             }
             else
             {

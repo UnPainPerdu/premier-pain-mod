@@ -59,6 +59,7 @@ public abstract class AbstractTwoBlockHeightBlock extends Block implements Simpl
     }
 
     // Pose le bloc du dessus
+    @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity placer, @NotNull ItemStack stack)
     {
         FluidState fluidstateUp = level.getFluidState(pos.above());
@@ -67,6 +68,7 @@ public abstract class AbstractTwoBlockHeightBlock extends Block implements Simpl
     }
 
     //Si dessous pété, péte le dessus
+    @Override
     public @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos) {
         DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
         if (state.getValue(WATERLOGGED))
@@ -86,12 +88,14 @@ public abstract class AbstractTwoBlockHeightBlock extends Block implements Simpl
         }
     }
     //créé un nouveau BlockState nommé HALF
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
         builder.add(HALF, FACING, WATERLOGGED);
     }
 
     //quand le bloc est pété
+    @Override
     public @NotNull BlockState playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Player player)
     {
         if (!level.isClientSide && (player.isCreative() || !player.hasCorrectToolForDrops(state, level, pos)))

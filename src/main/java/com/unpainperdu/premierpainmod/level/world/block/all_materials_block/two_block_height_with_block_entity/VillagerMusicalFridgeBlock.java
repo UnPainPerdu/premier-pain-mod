@@ -28,6 +28,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithBlockEntity
@@ -49,7 +50,7 @@ public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithB
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         VoxelShape shape;
         switch (state.getValue(FACING))

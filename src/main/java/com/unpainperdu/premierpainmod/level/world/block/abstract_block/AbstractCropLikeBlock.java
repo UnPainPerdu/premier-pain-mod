@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractCropLikeBlock extends Block implements BonemealableBlock
 {
@@ -49,7 +50,7 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
     }
 
     @Override
-    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
+    protected void randomTick(@NotNull BlockState state, ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random)
     {
         if (!level.isAreaLoaded(pos, 1)) return;
         if (state.getValue(AbstractCropLikeBlock.AGE) < MAX_AGE)
@@ -61,24 +62,25 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
         }
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
         pBuilder.add(AGE);
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, Direction direction, BlockState pFacingState, LevelAccessor level, BlockPos pos, BlockPos pFacingPos)
+    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction direction, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos facingPos)
     {
         if (!state.canSurvive(level, pos))
         {
             level.scheduleTick(pos, this, 1);
         }
 
-        return super.updateShape(state, direction, pFacingState, level, pos, pFacingPos);
+        return super.updateShape(state, direction, facingState, level, pos, facingPos);
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos)
+    protected boolean canSurvive(@NotNull BlockState state, LevelReader level, @NotNull BlockPos pos)
     {
         boolean flag = false;
         state = level.getBlockState(pos);
@@ -101,7 +103,7 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
     }
 
     @Override
-    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
+    protected void tick(BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random)
     {
         if (!state.canSurvive(level, pos))
         {
@@ -110,25 +112,25 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType)
+    protected boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType pathComputationType)
     {
-        return pathComputationType == PathComputationType.AIR && !this.hasCollision ? true : super.isPathfindable(state, pathComputationType);
+        return pathComputationType == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, pathComputationType);
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state)
+    public boolean isValidBonemealTarget(LevelReader level, @NotNull BlockPos pos, @NotNull BlockState state)
     {
         return (level.getBlockState(pos).getValue(AGE) < MAX_AGE) && (!(isLightNeeded) || level.getRawBrightness(pos, 0) >= MIN_LIGHT_NEEDED);
     }
 
     @Override
-    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state)
+    public boolean isBonemealSuccess(@NotNull Level level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state)
     {
         return true;
     }
 
     @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state)
+    public void performBonemeal(@NotNull ServerLevel level, @NotNull RandomSource random, @NotNull BlockPos pos, BlockState state)
     {
         int ageAdd = RandomUtil.getRandomPositiveIntInRange(4, random);
         int newAge = state.getValue(AGE) + ageAdd;
@@ -140,10 +142,10 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
     }
 
     @Override
-    protected abstract MapCodec<? extends AbstractCropLikeBlock> codec();
+    protected abstract @NotNull MapCodec<? extends AbstractCropLikeBlock> codec();
 
     @Override
-    protected abstract VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context);
+    protected abstract @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context);
 
     public final boolean isMaxAge(BlockState state) {
         return this.getAge(state) >= this.getMaxAge();

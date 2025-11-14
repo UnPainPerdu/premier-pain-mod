@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class WallVillagerShelf extends VillagerShelf
 {
@@ -40,16 +41,16 @@ public class WallVillagerShelf extends VillagerShelf
     }
 
     @Override
-    protected MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec()
+    protected @NotNull MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec()
     {
         return CODEC;
     }
 
     @Override
-    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos pos, CollisionContext collisionContext)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
-        TwoBlockWidthPart twoBlockWidthPart = blockState.getValue(PART);
-        Direction direction = blockState.getValue(FACING);
+        TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
+        Direction direction = state.getValue(FACING);
 
         if(direction == Direction.SOUTH)
         {
@@ -86,9 +87,9 @@ public class WallVillagerShelf extends VillagerShelf
         }
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder)
     {
-        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED});
+        builder.add(new Property[]{FACING, PART, WATERLOGGED});
     }
 
     @Override

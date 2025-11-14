@@ -73,7 +73,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     }
 
     @Override
-    protected BlockState updateShape(BlockState selfState, Direction direction, BlockState facingState, LevelAccessor level, BlockPos selfPos, BlockPos facingPos)
+    protected @NotNull BlockState updateShape(BlockState selfState, @NotNull Direction direction, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos selfPos, @NotNull BlockPos facingPos)
     {
         if (selfState.getValue(WATERLOGGED))
         {
@@ -150,7 +150,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context)
+    public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         VoxelShape shape;
         if(state.getValue(FACING) == Direction.NORTH)
@@ -179,7 +179,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     }
 
     @Override
-    protected BlockState rotate(BlockState pState, Rotation pRot)
+    protected @NotNull BlockState rotate(BlockState pState, Rotation pRot)
     {
         return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
     }
@@ -191,7 +191,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     }
 
     @Override
-    public abstract MapCodec<? extends AbstractAdaptableSit> codec();
+    public abstract @NotNull MapCodec<? extends AbstractAdaptableSit> codec();
 
     protected boolean isWithSameDirection(LevelAccessor level, BlockPos pos, Direction directionWanted)
     {

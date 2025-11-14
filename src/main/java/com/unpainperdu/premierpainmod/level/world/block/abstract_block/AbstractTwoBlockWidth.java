@@ -36,148 +36,132 @@ public abstract class AbstractTwoBlockWidth extends HorizontalDirectionalBlock i
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE));
     }
-    @Override
-    protected abstract MapCodec<? extends HorizontalDirectionalBlock> codec();
 
-    protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
+    @Override
+    protected abstract @NotNull MapCodec<? extends HorizontalDirectionalBlock> codec();
+
+    @Override
+    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos)
     {
-        if (pState.getValue(WATERLOGGED))
+        if (state.getValue(WATERLOGGED))
         {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        TwoBlockWidthPart twoBlockWidthPart = pState.getValue(PART);
-        if (pFacing != getNeighbourDirection((TwoBlockWidthPart) pState.getValue(PART), DirectionSwitcher(pState.getValue(FACING))))
+        TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
+        if (facing != getNeighbourDirection(state.getValue(PART), DirectionSwitcher(state.getValue(FACING))))
         {
-            return twoBlockWidthPart == TwoBlockWidthPart.RIGHT && pFacing == reverseDirectionSwitcher(pState.getValue(FACING)) && !pState.canSurvive(pLevel, pCurrentPos)
+            return twoBlockWidthPart == TwoBlockWidthPart.RIGHT && facing == reverseDirectionSwitcher(state.getValue(FACING)) && !state.canSurvive(level, currentPos)
                     ? Blocks.AIR.defaultBlockState()
-                    : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+                    : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
         }
         else
         {
-            return pFacingState.is(this) && pFacingState.getValue(PART) != pState.getValue(PART)
-                    ? (BlockState)pState
+            return facingState.is(this) && facingState.getValue(PART) != state.getValue(PART)
+                    ? state
                     : Blocks.AIR.defaultBlockState();
         }
     }
+
     @Override
-    protected @NotNull FluidState getFluidState(BlockState pState)
+    protected @NotNull FluidState getFluidState(BlockState state)
     {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
-    private static Direction getNeighbourDirection(TwoBlockWidthPart pPart, Direction pDirection)
+    private static Direction getNeighbourDirection(TwoBlockWidthPart part, Direction direction)
     {
-        return pPart == TwoBlockWidthPart.RIGHT ? pDirection : pDirection.getOpposite();
+        return part == TwoBlockWidthPart.RIGHT ? direction : direction.getOpposite();
     }
 
-    public BlockState playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
+    @Override
+    public @NotNull BlockState playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Player player)
     {
-        if (!pLevel.isClientSide && (pPlayer.isCreative() || !pPlayer.hasCorrectToolForDrops(pState, pLevel, pPos)))
+        if (!level.isClientSide && (player.isCreative() || !player.hasCorrectToolForDrops(state, level, pos)))
         {
-            preventCreativeDropFromRightPart(pLevel, pPos, pState, pPlayer);
+            preventCreativeDropFromRightPart(level, pos, state, player);
         }
 
-        super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
-        return pState;
+        super.playerWillDestroy(level, pos, state, player);
+        return state;
     }
+
     //Pète le bloc de droite si gauche cassé
-    protected static void preventCreativeDropFromRightPart(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer)
+    protected static void preventCreativeDropFromRightPart(Level level, BlockPos pos, BlockState state, Player player)
     {
-        TwoBlockWidthPart twoBlockWidthPart = (TwoBlockWidthPart)pState.getValue(PART);
+        TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
         if (twoBlockWidthPart == TwoBlockWidthPart.LEFT)
         {
-            BlockPos blockpos = pPos.relative(reverseDirectionSwitcher(pState.getValue(FACING)));
-            BlockState blockstate = pLevel.getBlockState(blockpos);
-            if (blockstate.is(pState.getBlock()) && blockstate.getValue(PART) == TwoBlockWidthPart.RIGHT)
+            BlockPos blockpos = pos.relative(reverseDirectionSwitcher(state.getValue(FACING)));
+            BlockState blockstate = level.getBlockState(blockpos);
+            if (blockstate.is(state.getBlock()) && blockstate.getValue(PART) == TwoBlockWidthPart.RIGHT)
             {
                 BlockState blockstate1 = blockstate.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
-                pLevel.setBlock(blockpos, blockstate1, 35);
-                pLevel.levelEvent(pPlayer, 2001, blockpos, Block.getId(blockstate));
+                level.setBlock(blockpos, blockstate1, 35);
+                level.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
             }
         }
     }
 
     @Nullable
-    public BlockState getStateForPlacement(BlockPlaceContext pContext)
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context)
     {
-        Level level = pContext.getLevel();
-        Direction direction = pContext.getHorizontalDirection();
-        BlockPos blockpos = pContext.getClickedPos();
+        Level level = context.getLevel();
+        Direction direction = context.getHorizontalDirection();
+        BlockPos blockpos = context.getClickedPos();
         BlockPos blockpos1 = blockpos.relative(DirectionSwitcher(direction));
         FluidState fluidstateDown = level.getFluidState(blockpos);
         boolean flag = fluidstateDown.getType() == Fluids.WATER;
 
-        return level.getBlockState(blockpos1).canBeReplaced(pContext) && level.getWorldBorder().isWithinBounds(blockpos1) ? (BlockState)this.defaultBlockState().setValue(FACING, direction).setValue(WATERLOGGED, Boolean.valueOf(flag)) : null;
+        return level.getBlockState(blockpos1).canBeReplaced(context) && level.getWorldBorder().isWithinBounds(blockpos1) ? this.defaultBlockState().setValue(FACING, direction).setValue(WATERLOGGED, flag) : null;
     }
 
     @Override
-    public abstract VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_);
+    public abstract @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context);
 
     protected static Direction DirectionSwitcher(Direction direction)
     {
-        switch (direction)
+        return switch (direction)
         {
-            case Direction.WEST:
-            {
-                return Direction.SOUTH;
-            }
-            case Direction.EAST:
-            {
-                return Direction.NORTH;
-            }
-            case Direction.SOUTH:
-            {
-                return Direction.EAST;
-            }
-            default:
-            {
-                return Direction.WEST;
-            }
-        }
+            case Direction.WEST -> Direction.SOUTH;
+            case Direction.EAST -> Direction.NORTH;
+            case Direction.SOUTH -> Direction.EAST;
+            default -> Direction.WEST;
+        };
     }
+
     protected static Direction reverseDirectionSwitcher(Direction direction)
     {
-        switch (direction)
+        return switch (direction)
         {
-            case Direction.WEST:
-            {
-                return Direction.NORTH;
-            }
-            case Direction.EAST:
-            {
-                return Direction.SOUTH;
-            }
-            case Direction.SOUTH:
-            {
-                return Direction.WEST;
-            }
-            default:
-            {
-                return Direction.EAST;
-            }
-        }
+            case Direction.WEST -> Direction.NORTH;
+            case Direction.EAST -> Direction.SOUTH;
+            case Direction.SOUTH -> Direction.WEST;
+            default -> Direction.EAST;
+        };
     }
 
 
-    protected abstract void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder);
+    protected abstract void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder);
 
-    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack)
+    public void setPlacedBy(@NotNull Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, @NotNull ItemStack stack)
     {
-        BlockPos blockpos1 = pPos.relative(DirectionSwitcher(pState.getValue(FACING)));
-        super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
-        if (!pLevel.isClientSide)
+        BlockPos blockpos1 = pos.relative(DirectionSwitcher(state.getValue(FACING)));
+        super.setPlacedBy(level, pos, state, placer, stack);
+        if (!level.isClientSide)
         {
-            FluidState fluidstateUp = pLevel.getFluidState(blockpos1);
+            FluidState fluidstateUp = level.getFluidState(blockpos1);
             boolean flag = fluidstateUp.getType() == Fluids.WATER;
-            BlockPos blockpos = pPos.relative(DirectionSwitcher(pState.getValue(FACING)));
-            pLevel.setBlock(blockpos, (BlockState)pState.setValue(PART, TwoBlockWidthPart.LEFT).setValue(WATERLOGGED, Boolean.valueOf(flag)), 3);
-            pLevel.blockUpdated(pPos, Blocks.AIR);
-            pState.updateNeighbourShapes(pLevel, pPos, 3);
+            BlockPos blockpos = pos.relative(DirectionSwitcher(state.getValue(FACING)));
+            level.setBlock(blockpos, state.setValue(PART, TwoBlockWidthPart.LEFT).setValue(WATERLOGGED, flag), 3);
+            level.blockUpdated(pos, Blocks.AIR);
+            state.updateNeighbourShapes(level, pos, 3);
         }
     }
+
     @Override
-    protected BlockState rotate(BlockState pState, Rotation pRot)
+    protected @NotNull BlockState rotate(BlockState state, Rotation rot)
     {
-        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
     }
 }

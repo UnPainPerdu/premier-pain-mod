@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
@@ -50,16 +51,16 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
     }
 
     @Override
-    protected MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec()
+    protected @NotNull MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec()
     {
         return CODEC;
     }
 
     @Override
-    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext)
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
-        TwoBlockWidthPart twoBlockWidthPart = blockState.getValue(PART);
-        Direction direction = blockState.getValue(FACING);
+        TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
+        Direction direction = state.getValue(FACING);
 
         if(direction == Direction.SOUTH)
         {
@@ -96,9 +97,9 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
         }
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder)
     {
-        pBuilder.add(new Property[]{FACING, PART, WATERLOGGED, OPEN});
+        builder.add(new Property[]{FACING, PART, WATERLOGGED, OPEN});
     }
 
     @Nullable

@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import org.jetbrains.annotations.NotNull;
 
 public class VillagerCouch extends AbstractAdaptableSit
 {
@@ -31,7 +32,7 @@ public class VillagerCouch extends AbstractAdaptableSit
     }
 
     @Override
-    public MapCodec<? extends AbstractAdaptableSit> codec()
+    public @NotNull MapCodec<? extends AbstractAdaptableSit> codec()
     {
         return CODEC;
     }

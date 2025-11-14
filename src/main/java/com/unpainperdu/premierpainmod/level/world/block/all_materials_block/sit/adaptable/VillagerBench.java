@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properti
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import org.jetbrains.annotations.NotNull;
 
 public class VillagerBench extends AbstractAdaptableSit
 {
@@ -24,7 +25,7 @@ public class VillagerBench extends AbstractAdaptableSit
 
 
     @Override
-    public MapCodec<? extends AbstractAdaptableSit> codec()
+    public @NotNull MapCodec<? extends AbstractAdaptableSit> codec()
     {
         return CODEC;
     }
