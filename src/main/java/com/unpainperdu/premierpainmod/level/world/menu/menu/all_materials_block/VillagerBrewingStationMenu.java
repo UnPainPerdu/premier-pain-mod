@@ -5,7 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materi
 import com.unpainperdu.premierpainmod.level.world.menu.slot.NoPlacementSlot;
 import com.unpainperdu.premierpainmod.level.world.menu.slot.OnlyTheseItemsSlot;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;

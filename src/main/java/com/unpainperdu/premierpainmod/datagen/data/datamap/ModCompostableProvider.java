@@ -8,7 +8,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.special_veget
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_height.sky_spears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Item;

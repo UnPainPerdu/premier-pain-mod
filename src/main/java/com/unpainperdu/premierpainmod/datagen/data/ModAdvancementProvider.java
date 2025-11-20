@@ -5,7 +5,7 @@ import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;

@@ -12,7 +12,7 @@ import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.Village
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.core.HolderLookup;

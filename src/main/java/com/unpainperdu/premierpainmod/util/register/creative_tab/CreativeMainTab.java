@@ -21,7 +21,7 @@ import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item
 import com.unpainperdu.premierpainmod.util.java_comparator.ItemComparator;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;

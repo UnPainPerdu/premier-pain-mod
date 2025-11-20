@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.fluid.oil;
 
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;

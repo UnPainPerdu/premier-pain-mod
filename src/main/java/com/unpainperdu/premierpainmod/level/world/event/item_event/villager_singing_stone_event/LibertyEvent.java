@@ -1,5 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event;
 
+import com.unpainperdu.premierpainmod.level.world.event.item_event.ItemEvent;
+import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -13,19 +15,21 @@ import net.minecraft.world.level.block.Blocks;
 
 import java.util.Random;
 
-public class LibertyEvent extends AbstractVillagerSingingStoneEvent
+public class LibertyEvent extends ItemEvent
 {
     private static int heightOfSpawn;
+
     public LibertyEvent()
     {
-        super("LibertyEvent");
+        super("liberty");
     }
 
     @Override
     public void castEvent(Level level, Player player, InteractionHand usedHand)
     {
         heightOfSpawn = 90;
-        if(IsOnlyAirUpper(level,player))
+        playSound(level, player, SoundEventRegister.LIBERTY_SOUND.get());
+        if (IsOnlyAirUpper(level, player))
         {
             BlockPos pos = player.getBlockPosBelowThatAffectsMyMovement();
             BlockPos posSpawnBlock = pos.above(heightOfSpawn);
@@ -51,9 +55,9 @@ public class LibertyEvent extends AbstractVillagerSingingStoneEvent
         BlockPos posPlayer = player.getBlockPosBelowThatAffectsMyMovement().above(2);
         boolean flag = true;
         BlockPos tempPos = posPlayer;
-        for(int i = 0; i<= heightOfSpawn; i++)
+        for (int i = 0; i <= heightOfSpawn; i++)
         {
-            if(!(level.getBlockState(tempPos).getBlock() instanceof AirBlock))
+            if (!(level.getBlockState(tempPos).getBlock() instanceof AirBlock))
             {
                 flag = false;
             }

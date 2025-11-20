@@ -5,7 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
 import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.VillagerBrewingStationMenu;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;

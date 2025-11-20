@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.fluid.beer;
 
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.world.item.Item;

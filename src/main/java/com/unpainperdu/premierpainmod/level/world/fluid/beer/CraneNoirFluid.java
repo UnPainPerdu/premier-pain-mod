@@ -1,11 +1,9 @@
 package com.unpainperdu.premierpainmod.level.world.fluid.beer;
 
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;

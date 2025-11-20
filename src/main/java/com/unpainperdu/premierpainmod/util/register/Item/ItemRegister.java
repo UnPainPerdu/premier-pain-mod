@@ -1,10 +1,7 @@
-package com.unpainperdu.premierpainmod.util.register;
+package com.unpainperdu.premierpainmod.util.register.Item;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.AbstractVillagerSingingStoneEvent;
-import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.DiggyEvent;
-import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.LibertyEvent;
-import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.MadnessEvent;
+import com.unpainperdu.premierpainmod.level.world.event.item_event.ItemEvent;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.*;
 import com.unpainperdu.premierpainmod.level.world.fluid.oil.MorichePalmOilFluid;
 import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingStone;
@@ -14,7 +11,6 @@ import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item
 import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.Holder;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.vehicle.Boat;
@@ -43,9 +39,9 @@ public class ItemRegister
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PremierPainMod.MOD_ID);
     public static final Map<String, DeferredItem<Item>> AllMaterialsMap = createAllMaterialsItems();
     //villager's singing stone
-    public static final DeferredItem<Item> LIBERTY_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("liberty_villager_singing_stone", 10, () -> SoundEventRegister.LIBERTY_SOUND, new LibertyEvent());
-    public static final DeferredItem<Item> DIGGY_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("diggy_villager_singing_stone", 10, () -> SoundEventRegister.DIGGY_SOUND, new DiggyEvent());
-    public static final DeferredItem<Item> MADNESS_VILLAGER_SINGING_STONE = villagerSingingStoneRegister("madness_villager_singing_stone", 20, () -> SoundEventRegister.MADNESS_SOUND, new MadnessEvent());
+    public static final DeferredItem<Item> LIBERTY_VILLAGER_SINGING_STONE = registerVillagerSingingStone("liberty_villager_singing_stone", () -> ItemEventRegister.LIBERTY, 200);
+    public static final DeferredItem<Item> DIGGY_VILLAGER_SINGING_STONE = registerVillagerSingingStone("diggy_villager_singing_stone", () -> ItemEventRegister.DIGGY, 200);
+    public static final DeferredItem<Item> MADNESS_VILLAGER_SINGING_STONE = registerVillagerSingingStone("madness_villager_singing_stone", () -> ItemEventRegister.MADNESS, 400);
     //fluid
     //oil
     public static final DeferredItem<Item> MORICHE_PALM_OIL_BUCKET = ITEMS.register("moriche_palm_oil_bucket", () -> new BucketItem(getFluid(MorichePalmOilFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
@@ -145,14 +141,14 @@ public class ItemRegister
         return map;
     }
 
+    private static DeferredItem<Item> registerVillagerSingingStone(String name, Supplier<DeferredHolder<ItemEvent, ItemEvent>> itemEventSupplier, int delay)
+    {
+        return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties().stacksTo(1), itemEventSupplier.get(), delay));
+    }
+
     private static DeferredItem<Item> villagerShelfRegister(String name, Supplier<DeferredBlock<Block>> standingBlock, Supplier<DeferredBlock<Block>> wallBlock)
     {
         return ITEMS.register(name, () -> new VillagerShelfItem(new Item.Properties(), standingBlock.get().get(), wallBlock.get().get()));
-    }
-
-    private static DeferredItem<Item> villagerSingingStoneRegister(String name, int delayInSecond, Supplier<DeferredHolder<SoundEvent, SoundEvent>> soundEvent, AbstractVillagerSingingStoneEvent event)
-    {
-        return ITEMS.register(name, () -> new VillagerSingingStone(new Item.Properties().stacksTo(1), soundEvent.get().get(), name, event, delayInSecond));
     }
 
     /*

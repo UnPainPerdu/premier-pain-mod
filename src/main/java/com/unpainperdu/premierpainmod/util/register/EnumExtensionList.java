@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.util.register;
 
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Items;

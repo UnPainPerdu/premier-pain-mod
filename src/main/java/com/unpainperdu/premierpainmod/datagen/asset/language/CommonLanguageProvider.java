@@ -1,10 +1,9 @@
 package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.event.item_event.ItemEvent;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.entity.ai.village.poi.PoiType;
-import net.minecraft.world.entity.ai.village.poi.PoiTypes;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -23,14 +22,14 @@ public class CommonLanguageProvider
         this.languageProvider.add("death.attack." + PremierPainMod.MOD_ID + ":" + dammageType.location().toString().replace("premierpainmod:", ""), translation);
     }
 
-    public void descriptionMakerWIP(String idOfItem, String translation)
+    public void itemEventDescriptionMakerWIP(ItemEvent itemEvent, String translation)
     {
-        descriptionMaker(idOfItem, translation + " !!!Sound in WIP, will be more villager like when i will know how to do");
+        itemEventDescriptionMaker(itemEvent, translation + " !!!Sound in WIP, will be more villager like when i will know how to do");
     }
 
-    public void descriptionMaker(String idOfItem, String translation)
+    public void itemEventDescriptionMaker(ItemEvent itemEvent, String translation)
     {
-        this.languageProvider.add("item.description." + idOfItem.replace(PremierPainMod.MOD_ID + ":", ""), translation);
+        this.languageProvider.add(itemEvent.getDescription().getString(), translation);
     }
 
     public void generateAdvancementTranslation(String advancementName, String titleTranslation, String descriptionTranslation)

@@ -1,7 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.data.loot_table;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;

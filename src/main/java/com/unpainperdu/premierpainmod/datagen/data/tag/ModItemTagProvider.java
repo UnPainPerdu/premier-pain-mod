@@ -5,7 +5,7 @@ import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.PackOutput;

@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.tree;
 
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

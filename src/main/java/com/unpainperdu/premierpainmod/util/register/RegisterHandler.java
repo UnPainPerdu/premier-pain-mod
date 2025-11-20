@@ -1,6 +1,8 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModTerraBlender;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemEventRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.ai.SensorsTypeRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
@@ -8,7 +10,6 @@ import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.codec.CodecForGLMRegister;
 import com.unpainperdu.premierpainmod.util.register.creative_tab.CreativeTabRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
-import com.unpainperdu.premierpainmod.util.register.entity.EntityRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerPointOfInterestRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerProfessionRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
@@ -48,5 +49,6 @@ public class RegisterHandler
         CriterionRegister.register(modEventBus);
         VillagerProfessionRegister.register(modEventBus);
         VillagerPointOfInterestRegister.register(modEventBus);
+        ItemEventRegister.register(modEventBus);
     }
 }

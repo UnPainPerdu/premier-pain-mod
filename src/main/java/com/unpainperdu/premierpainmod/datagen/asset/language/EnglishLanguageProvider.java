@@ -2,7 +2,8 @@ package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemEventRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerProfessionRegister;
@@ -53,11 +54,11 @@ public class EnglishLanguageProvider extends LanguageProvider
         //item
         //villagerSingingStone
         add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Liberty");
-        clp.descriptionMaker(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get().toString(), "Are you a true patriot ?");
+        clp.itemEventDescriptionMaker(ItemEventRegister.LIBERTY.get(), "Are you a true patriot ?");
         add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Digging");
-        clp.descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(), "Don't fear the depth");
+        clp.itemEventDescriptionMaker(ItemEventRegister.DIGGY.get(), "Don't fear the depth");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Madness");
-        clp.descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(), "Enough! I have endured more than enough...");
+        clp.itemEventDescriptionMakerWIP(ItemEventRegister.MADNESS.get(), "Enough! I have endured more than enough...");
         //paint
         clp.generatePaintingTranslation("landscape_0", "Forest LandScape", "UnPainPerdu");
         clp.generatePaintingTranslation("landscape_1", "Swamp LandScape", "UnPainPerdu");

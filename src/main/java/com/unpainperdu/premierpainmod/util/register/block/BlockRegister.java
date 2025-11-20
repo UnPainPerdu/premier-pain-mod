@@ -15,7 +15,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_hei
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_height.sky_spears.SkySpears;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_height.sky_spears.SkySpearsFlower;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.ModTreeGrower;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.type.ModWoodTypes;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;

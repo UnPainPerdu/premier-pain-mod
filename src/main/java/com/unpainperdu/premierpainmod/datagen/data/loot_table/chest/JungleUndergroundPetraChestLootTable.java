@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.data.loot_table.chest;
 
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;

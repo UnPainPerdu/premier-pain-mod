@@ -2,7 +2,8 @@ package com.unpainperdu.premierpainmod.datagen.asset.language;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemEventRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerProfessionRegister;
@@ -53,11 +54,11 @@ public class FrenchLanguageProvider extends LanguageProvider
         //item
         //villagerSingingStone
         add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(), "Pierre chantante du villageois de la liberté");
-        clp.descriptionMaker(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get().toString(), "Est-tu un vrai patriote ?");
+        clp.itemEventDescriptionMaker(ItemEventRegister.LIBERTY.get(), "Est-tu un vrai patriote ?");
         add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(), "Pierre chantante du villageois des mines");
-        clp.descriptionMaker(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get().toString(), "N'ais pas peur des profondeurs");
+        clp.itemEventDescriptionMaker(ItemEventRegister.DIGGY.get(), "N'ais pas peur des profondeurs");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(), "Pierre chantante du villageois foux");
-        clp.descriptionMakerWIP(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get().toString(), "Assez! J'en ai enduré bien assez...");
+        clp.itemEventDescriptionMakerWIP(ItemEventRegister.MADNESS.get(), "Assez! J'en ai enduré bien assez...");
         //paint
         clp.generatePaintingTranslation("landscape_0", "Paysage forestier", "UnPainPerdu");
         clp.generatePaintingTranslation("landscape_1", "Paysage marécageux", "UnPainPerdu");

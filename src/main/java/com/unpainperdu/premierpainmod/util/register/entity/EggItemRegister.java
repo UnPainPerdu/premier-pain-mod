@@ -7,7 +7,7 @@ import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 
-import static com.unpainperdu.premierpainmod.util.register.ItemRegister.ITEMS;
+import static com.unpainperdu.premierpainmod.util.register.Item.ItemRegister.ITEMS;
 
 public class EggItemRegister
 {

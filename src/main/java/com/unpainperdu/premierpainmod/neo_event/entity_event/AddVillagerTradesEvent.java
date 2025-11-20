@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.neo_event.entity_event;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
-import com.unpainperdu.premierpainmod.util.register.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerProfessionRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
