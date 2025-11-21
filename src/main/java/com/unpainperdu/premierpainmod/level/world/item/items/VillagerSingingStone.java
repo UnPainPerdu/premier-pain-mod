@@ -2,6 +2,8 @@ package com.unpainperdu.premierpainmod.level.world.item.items;
 
 import com.unpainperdu.premierpainmod.level.world.event.item_event.ItemEvent;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -37,8 +39,9 @@ public class VillagerSingingStone extends Item
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand)
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand usedHand)
     {
+        playSound(level, player, getEvent().getMusicEvent());
         ItemStack itemstack = player.getItemInHand(usedHand);
         player.startUsingItem(usedHand);
         player.getCooldowns().addCooldown(this, this.delay);
@@ -60,5 +63,10 @@ public class VillagerSingingStone extends Item
     private ItemEvent getEvent()
     {
         return this.eventSupplier.get();
+    }
+
+    public void playSound(Level level, Player player, SoundEvent soundEvent)
+    {
+        level.playSound(player, player, soundEvent, SoundSource.RECORDS, 16f, 1.0F);
     }
 }

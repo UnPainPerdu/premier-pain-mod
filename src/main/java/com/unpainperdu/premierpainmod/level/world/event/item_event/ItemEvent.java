@@ -45,8 +45,5 @@ public abstract class ItemEvent
 
     public abstract void castEvent(Level level, Player player, InteractionHand usedHand);
 
-    public void playSound(Level level, Player player, SoundEvent soundEvent)
-    {
-        level.playSound(player, player, soundEvent, SoundSource.RECORDS, 16f, 1.0F);
-    }
+    public abstract SoundEvent getMusicEvent();
 }

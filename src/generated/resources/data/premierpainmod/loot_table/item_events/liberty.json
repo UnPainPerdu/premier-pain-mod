@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:empty",
+  "functions": [
+    {
+      "add": false,
+      "count": 1.0,
+      "function": "minecraft:set_count"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_block"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 999
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "premierpainmod:item_events/liberty"
+}
