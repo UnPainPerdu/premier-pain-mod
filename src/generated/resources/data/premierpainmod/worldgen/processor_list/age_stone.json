@@ -1,0 +1,8 @@
+{
+  "processors": [
+    {
+      "mossiness": 0.7,
+      "processor_type": "premierpainmod:extended_age"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-29T08:50:03.9630159	Advancements
+// 1.21.1	2025-12-07T22:19:35.8756309	Advancements
 a24bb993362eb9e89c00b127b76d45278c1591cb data/premierpainmod/advancement/main/all_beer_bottle.json
 d04aeb4f1a6104dc96ee9ebf7ccbacd9d4249def data/premierpainmod/advancement/main/civilization_flower.json
 e79a000c209553adc9e03459e429c6628a96301f data/premierpainmod/advancement/main/cooking_pot.json
@@ -8,4 +8,4 @@ e79a000c209553adc9e03459e429c6628a96301f data/premierpainmod/advancement/main/co
 204fe2b891df628635ff5900e3e10eb3d1549fc4 data/premierpainmod/advancement/main/root.json
 4e874b69b3db811f3e9f672d169a300d132f6024 data/premierpainmod/advancement/main/villager_workshop.json
 30f31a0d5dddbc2aee44b3ab71d71136fabafb37 data/premierpainmod/advancement/main/visit_all_biomes.json
-0cc31a75be26d396877dd106ae1097de94cfc0a5 data/premierpainmod/advancement/main/visit_all_structures.json
+1285e12ce4575aea38f181c07288bc9f4d2ce55b data/premierpainmod/advancement/main/visit_all_structures.json

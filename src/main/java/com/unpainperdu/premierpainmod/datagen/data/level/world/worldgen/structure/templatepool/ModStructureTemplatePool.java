@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structu
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.JungleUnderGroundPetraTemplatePool;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.ForestTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.SwampPremierPainTempleTemplatePool;
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.core.Holder;
@@ -24,7 +24,6 @@ public class ModStructureTemplatePool
      *   If pool = 1 element, in this class.
      *   Check PlainVillagePools.java for example.
      **/
-    public static final ResourceKey<StructureTemplatePool> FOREST_PREMIER_PAIN_TEMPLE_POOL = register("premier_pain_temple/forest_premier_pain_temple_pool");
     public static final ResourceKey<StructureTemplatePool> SAND_DESERT_PREMIER_PAIN_TEMPLE_POOL = register("premier_pain_temple/sand_desert_premier_pain_temple");
 
     public static ResourceKey<StructureTemplatePool> register(String path)
@@ -43,17 +42,6 @@ public class ModStructureTemplatePool
         Holder<StructureTemplatePool> EmptyStructureTemplatePool = vanillaTemplatePoolHolderGetter.getOrThrow(Pools.EMPTY);
 
         context.register(
-                FOREST_PREMIER_PAIN_TEMPLE_POOL,
-                new StructureTemplatePool(
-                        EmptyStructureTemplatePool,
-                        ImmutableList.of(
-                                Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/forest_premier_pain_temple_structure"), 1)
-                        ),
-                        StructureTemplatePool.Projection.RIGID
-                )
-        );
-
-        context.register(
                 SAND_DESERT_PREMIER_PAIN_TEMPLE_POOL,
                 new StructureTemplatePool(
                         EmptyStructureTemplatePool,
@@ -63,7 +51,7 @@ public class ModStructureTemplatePool
                         StructureTemplatePool.Projection.RIGID
                 )
         );
-
+        ForestTemplatePool.boostrap(context, EmptyStructureTemplatePool);
         SwampPremierPainTempleTemplatePool.boostrap(context, EmptyStructureTemplatePool);
         OldGreatPahtTemplatePool.boostrap(context, EmptyStructureTemplatePool);
         JungleUnderGroundPetraTemplatePool.boostrap(context, EmptyStructureTemplatePool);

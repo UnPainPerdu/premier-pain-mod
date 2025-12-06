@@ -298,3 +298,5 @@ What would be a world without bugs ?
 --------------
 # 1.21.[0,1]-1.15
     - Update neoforge and requerement to 21.1.215
+    ## Change :
+        - forest premier pain temple has now 27 forms, better balance in loot chest and better generation

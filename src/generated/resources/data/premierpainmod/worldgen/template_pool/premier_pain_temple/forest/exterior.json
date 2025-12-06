@@ -1,0 +1,32 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:premier_pain_temple/forest/exterior_0",
+        "processors": "premierpainmod:age_stone",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:premier_pain_temple/forest/exterior_1",
+        "processors": "premierpainmod:age_stone",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:premier_pain_temple/forest/exterior_2",
+        "processors": "premierpainmod:age_stone",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

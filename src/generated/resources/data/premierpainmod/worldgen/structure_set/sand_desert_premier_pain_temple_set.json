@@ -7,7 +7,7 @@
   },
   "structures": [
     {
-      "structure": "premierpainmod:sand_desert_premier_pain_temple",
+      "structure": "premierpainmod:premier_pain_temple/sand_desert",
       "weight": 1
     }
   ]

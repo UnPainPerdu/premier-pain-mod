@@ -3,10 +3,8 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "premierpainmod:premier_pain_temple/forest_premier_pain_temple_structure",
-        "processors": {
-          "processors": []
-        },
+        "location": "premierpainmod:premier_pain_temple/forest/main",
+        "processors": "premierpainmod:forest_temple_processor",
         "projection": "rigid"
       },
       "weight": 1

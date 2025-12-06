@@ -3,7 +3,7 @@ package com.unpainperdu.premierpainmod.level.world.worldgen.structure;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.unpainperdu.premierpainmod.util.register.StructureRegister;
+import com.unpainperdu.premierpainmod.util.register.structure.StructureRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;

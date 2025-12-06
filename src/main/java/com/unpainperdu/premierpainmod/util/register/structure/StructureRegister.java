@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.util.register;
+package com.unpainperdu.premierpainmod.util.register.structure;
 
 import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.PremierPainMod;

@@ -7,7 +7,7 @@
   },
   "structures": [
     {
-      "structure": "premierpainmod:forest_premier_pain_temple",
+      "structure": "premierpainmod:premier_pain_temple/forest",
       "weight": 1
     }
   ]

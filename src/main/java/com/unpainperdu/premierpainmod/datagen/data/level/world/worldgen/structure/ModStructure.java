@@ -1,8 +1,9 @@
 package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure;
 
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.JungleUnderGroundPetraTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.ModStructureTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.OldGreatPahtTemplatePool;
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.JungleUnderGroundPetraTemplatePool;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.ForestTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.SwampPremierPainTempleTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBiomeTags;
 import com.unpainperdu.premierpainmod.level.world.worldgen.structure.OldGreatFieldStructures;
@@ -19,6 +20,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 import net.minecraft.world.level.levelgen.structure.pools.DimensionPadding;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
@@ -28,13 +30,13 @@ import java.util.Optional;
 
 public class ModStructure
 {
-    public static final ResourceKey<Structure> FOREST_PREMIER_PAIN_TEMPLE = register("forest_premier_pain_temple");
-    public static final ResourceKey<Structure> SAND_DESERT_PREMIER_PAIN_TEMPLE = register("sand_desert_premier_pain_temple");
-    public static final ResourceKey<Structure> SWAMP_PREMIER_PAIN_TEMPLE = register("swamp_premier_pain_temple");
+    public static final ResourceKey<Structure> FOREST_PREMIER_PAIN_TEMPLE = register("premier_pain_temple/forest");
+    public static final ResourceKey<Structure> SAND_DESERT_PREMIER_PAIN_TEMPLE = register("premier_pain_temple/sand_desert");
+    public static final ResourceKey<Structure> SWAMP_PREMIER_PAIN_TEMPLE = register("premier_pain_temple/swamp");
     public static final ResourceKey<Structure> OLD_GREAT_PATH = register("old_great_path");
     public static final ResourceKey<Structure> JUNGLE_UNDERGROUND_PETRA = register("jungle_underground_petra");
 
-    public static final List<ResourceKey<Structure>> ALL_STRUCTURES = List.of(FOREST_PREMIER_PAIN_TEMPLE, SAND_DESERT_PREMIER_PAIN_TEMPLE,SWAMP_PREMIER_PAIN_TEMPLE, OLD_GREAT_PATH, JUNGLE_UNDERGROUND_PETRA);
+    public static final List<ResourceKey<Structure>> ALL_STRUCTURES = List.of(FOREST_PREMIER_PAIN_TEMPLE, SAND_DESERT_PREMIER_PAIN_TEMPLE, SWAMP_PREMIER_PAIN_TEMPLE, OLD_GREAT_PATH, JUNGLE_UNDERGROUND_PETRA);
 
     private static ResourceKey<Structure> register(String path)
     {
@@ -51,11 +53,12 @@ public class ModStructure
                 new PremierPainTempleStructures(
                         new Structure.StructureSettings.Builder(biomeHoldergetter.getOrThrow(ModBiomeTags.HAS_FOREST_PREMIER_PAIN_TEMPLE))
                                 .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                                .terrainAdapation(TerrainAdjustment.BEARD_THIN)
                                 .build(),
-                        STPHoldergetter.getOrThrow(ModStructureTemplatePool.FOREST_PREMIER_PAIN_TEMPLE_POOL),
+                        STPHoldergetter.getOrThrow(ForestTemplatePool.START),
                         Optional.empty(),
                         1,
-                        ConstantHeight.of(VerticalAnchor.absolute(-13)),
+                        ConstantHeight.of(VerticalAnchor.absolute(0)),
                         Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                         80,
                         new DimensionPadding(0),

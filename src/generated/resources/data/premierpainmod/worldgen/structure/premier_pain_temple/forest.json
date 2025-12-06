@@ -7,8 +7,9 @@
   "size": 1,
   "spawn_overrides": {},
   "start_height": {
-    "absolute": -13
+    "absolute": 0
   },
-  "start_pool": "premierpainmod:premier_pain_temple/forest_premier_pain_temple_pool",
-  "step": "surface_structures"
+  "start_pool": "premierpainmod:premier_pain_temple/forest/main",
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin"
 }

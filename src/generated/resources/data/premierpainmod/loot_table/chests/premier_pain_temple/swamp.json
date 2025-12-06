@@ -17,7 +17,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "premierpainmod:dead_ruins_flower",
+          "name": "minecraft:mangrove_propagule",
           "weight": 75
         },
         {
@@ -52,7 +52,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:dead_bush",
+          "name": "minecraft:potato",
           "weight": 50
         },
         {
@@ -62,17 +62,17 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:copper_ingot",
+          "name": "minecraft:arrow",
           "weight": 50
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:wheat",
+          "name": "minecraft:carrot",
           "weight": 100
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:wheat_seeds",
+          "name": "minecraft:poisonous_potato",
           "weight": 100
         }
       ],
@@ -83,5 +83,5 @@
       }
     }
   ],
-  "random_sequence": "premierpainmod:chests/sand_desert_premier_pain_temple"
+  "random_sequence": "premierpainmod:chests/premier_pain_temple/swamp"
 }
