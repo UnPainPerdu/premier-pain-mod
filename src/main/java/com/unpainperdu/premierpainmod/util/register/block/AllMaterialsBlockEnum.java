@@ -117,7 +117,7 @@ public class AllMaterialsBlockEnum
         VILLAGER_BREWING_STATION(VillagerBrewingStation::new),
         VILLAGER_MUSICAL_FRIDGE(VillagerMusicalFridgeBlock::new),
         VILLAGER_CHISELED_HEAD(properties -> new VillagerChiseledHead(properties.lightLevel(litBlockEmission(13)))),
-        VILLAGER_DRY_TOILET(VillagerDryToiletBlock::new);
+        VILLAGER_DRY_TOILET(properties -> new VillagerDryToiletBlock(properties.noOcclusion()));
 
         private final Function<BlockBehaviour.Properties, Block> block;
 
