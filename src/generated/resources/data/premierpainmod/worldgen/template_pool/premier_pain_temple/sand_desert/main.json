@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "premierpainmod:premier_pain_temple/sand_desert_premier_pain_temple_structure",
+        "location": "premierpainmod:premier_pain_temple/sand_desert/main",
         "processors": {
           "processors": []
         },

@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure;
 
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.JungleUnderGroundPetraTemplatePool;
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.ModStructureTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.OldGreatPahtTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.ForestTemplatePool;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.SandDesertTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.temple.SwampPremierPainTempleTemplatePool;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBiomeTags;
 import com.unpainperdu.premierpainmod.level.world.worldgen.structure.OldGreatFieldStructures;
@@ -70,11 +70,12 @@ public class ModStructure
                 new PremierPainTempleStructures(
                         new Structure.StructureSettings.Builder(biomeHoldergetter.getOrThrow(ModBiomeTags.HAS_SAND_DESERT_PREMIER_PAIN_TEMPLE))
                                 .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                                .terrainAdapation(TerrainAdjustment.BEARD_THIN)
                                 .build(),
-                        STPHoldergetter.getOrThrow(ModStructureTemplatePool.SAND_DESERT_PREMIER_PAIN_TEMPLE_POOL),
+                        STPHoldergetter.getOrThrow(SandDesertTemplatePool.START),
                         Optional.empty(),
-                        1,
-                        ConstantHeight.of(VerticalAnchor.absolute(-15)),
+                        3,
+                        ConstantHeight.of(VerticalAnchor.absolute(0)),
                         Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                         80,
                         new DimensionPadding(0),
