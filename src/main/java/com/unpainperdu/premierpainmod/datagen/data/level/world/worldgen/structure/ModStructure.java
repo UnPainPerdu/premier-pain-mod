@@ -88,11 +88,12 @@ public class ModStructure
                 new PremierPainTempleStructures(
                         new Structure.StructureSettings.Builder(biomeHoldergetter.getOrThrow(ModBiomeTags.HAS_SWAMP_PREMIER_PAIN_TEMPLE))
                                 .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                                .terrainAdapation(TerrainAdjustment.BEARD_THIN)
                                 .build(),
                         STPHoldergetter.getOrThrow(SwampPremierPainTempleTemplatePool.START),
                         Optional.empty(),
-                        1,
-                        ConstantHeight.of(VerticalAnchor.absolute(-14)),
+                        7,
+                        ConstantHeight.of(VerticalAnchor.absolute(0)),
                         Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                         80,
                         new DimensionPadding(0),

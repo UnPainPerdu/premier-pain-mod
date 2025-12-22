@@ -9,22 +9,6 @@
           "functions": [
             {
               "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "premierpainmod:civilizations_flower",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
             }
@@ -52,6 +36,22 @@
             }
           ],
           "name": "premierpainmod:madness_villager_singing_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 6.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "premierpainmod:civilizations_flower",
+          "weight": 3
         },
         {
           "type": "minecraft:item",

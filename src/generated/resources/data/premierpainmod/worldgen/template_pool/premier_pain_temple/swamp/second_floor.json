@@ -3,10 +3,8 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "premierpainmod:premier_pain_temple/swamp_premier_pain_temple_structure/bottom_swamp_premier_pain_temple_structure",
-        "processors": {
-          "processors": []
-        },
+        "location": "premierpainmod:premier_pain_temple/swamp/second_floor",
+        "processors": "premierpainmod:random_block_remover",
         "projection": "rigid"
       },
       "weight": 1
