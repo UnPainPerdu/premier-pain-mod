@@ -303,6 +303,7 @@ What would be a world without bugs ?
         - forest premier pain temple has now multiples forms, better balance in loot chest and better generation
         - sand desert premier pain temple has now multiples forms, better balance in loot chest and better generation
         - swamp premier pain temple has now multiples forms, better balance in loot chest and better generation
+        - old great path are full stone when generate on river
 
     ## Fix :
         - fix occlusion on dry toilet All material block

@@ -40,7 +40,8 @@
             "probability": 0.6
           },
           "location_predicate": {
-            "predicate_type": "minecraft:always_true"
+            "block": "minecraft:water",
+            "predicate_type": "premierpainmod:block_not_match"
           },
           "output_state": {
             "Name": "minecraft:mossy_cobblestone"
@@ -53,7 +54,8 @@
             "probability": 0.2
           },
           "location_predicate": {
-            "predicate_type": "minecraft:always_true"
+            "block": "minecraft:water",
+            "predicate_type": "premierpainmod:block_not_match"
           },
           "output_state": {
             "Name": "minecraft:air"
@@ -66,7 +68,8 @@
             "probability": 0.15
           },
           "location_predicate": {
-            "predicate_type": "minecraft:always_true"
+            "block": "minecraft:water",
+            "predicate_type": "premierpainmod:block_not_match"
           },
           "output_state": {
             "Name": "minecraft:air"
@@ -79,7 +82,8 @@
             "probability": 0.1
           },
           "location_predicate": {
-            "predicate_type": "minecraft:always_true"
+            "block": "minecraft:water",
+            "predicate_type": "premierpainmod:block_not_match"
           },
           "output_state": {
             "Name": "minecraft:air"

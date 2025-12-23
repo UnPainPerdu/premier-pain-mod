@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structu
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.ModStructureProcessorList;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.processorlist.ModStructureProcessorList;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.templatepool.ModStructureTemplatePool;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;

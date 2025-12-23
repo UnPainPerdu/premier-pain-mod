@@ -14,6 +14,7 @@ import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerPoin
 import com.unpainperdu.premierpainmod.util.register.entity.villager.VillagerProfessionRegister;
 import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
+import com.unpainperdu.premierpainmod.util.register.structure.RuleTestRegister;
 import com.unpainperdu.premierpainmod.util.register.structure.StructureProcessorRegister;
 import com.unpainperdu.premierpainmod.util.register.structure.StructureRegister;
 import com.unpainperdu.premierpainmod.util.register.tree.FoliagePlacerTypesRegister;
@@ -53,5 +54,6 @@ public class RegisterHandler
         VillagerPointOfInterestRegister.register(modEventBus);
         ItemEventRegister.register(modEventBus);
         StructureProcessorRegister.register(modEventBus);
+        RuleTestRegister.register(modEventBus);
     }
 }

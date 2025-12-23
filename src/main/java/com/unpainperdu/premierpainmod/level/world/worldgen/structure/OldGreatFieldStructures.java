@@ -20,6 +20,7 @@ import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.pools.alias.PoolAliasLookup;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
@@ -47,14 +48,14 @@ public class OldGreatFieldStructures extends Structure
     private final LiquidSettings liquidSettings;
 
     public OldGreatFieldStructures(Structure.StructureSettings config,
-                                          Holder<StructureTemplatePool> startPool,
-                                          Optional<ResourceLocation> startJigsawName,
-                                          int size,
-                                          HeightProvider startHeight,
-                                          Optional<Heightmap.Types> projectStartToHeightmap,
-                                          int maxDistanceFromCenter,
-                                          DimensionPadding dimensionPadding,
-                                          LiquidSettings liquidSettings)
+                                   Holder<StructureTemplatePool> startPool,
+                                   Optional<ResourceLocation> startJigsawName,
+                                   int size,
+                                   HeightProvider startHeight,
+                                   Optional<Heightmap.Types> projectStartToHeightmap,
+                                   int maxDistanceFromCenter,
+                                   DimensionPadding dimensionPadding,
+                                   LiquidSettings liquidSettings)
     {
         super(config);
         this.startPool = startPool;
@@ -66,48 +67,41 @@ public class OldGreatFieldStructures extends Structure
         this.dimensionPadding = dimensionPadding;
         this.liquidSettings = liquidSettings;
     }
+
     private static boolean isSpawnable(Structure.GenerationContext context, int posY)
     {
         ChunkGenerator chunkGenerator = context.chunkGenerator();
-        boolean flag = true;
-        if (chunkGenerator.getSeaLevel() <= posY)
-        {
-            flag = false;
-        }
-        return flag;
+        return chunkGenerator.getSeaLevel() > posY;
     }
 
     @Override
-    protected Optional<GenerationStub> findGenerationPoint(GenerationContext context)
+    protected @NotNull Optional<GenerationStub> findGenerationPoint(GenerationContext context)
     {
         int startY = this.startHeight.sample(context.random(), new WorldGenerationContext(context.chunkGenerator(), context.heightAccessor()));
-        if (!OldGreatFieldStructures.isSpawnable(context,startY))
+        if (!OldGreatFieldStructures.isSpawnable(context, startY))
         {
             return Optional.empty();
         }
         ChunkPos chunkPos = context.chunkPos();
         BlockPos blockPos = new BlockPos(chunkPos.getMinBlockX(), startY, chunkPos.getMinBlockZ());
 
-        Optional<Structure.GenerationStub> structurePiecesGenerator =
-                JigsawPlacement.addPieces(
-                        context,
-                        this.startPool,
-                        this.startJigsawName,
-                        this.size,
-                        blockPos,
-                        false,
-                        this.projectStartToHeightmap,
-                        this.maxDistanceFromCenter,
-                        PoolAliasLookup.EMPTY,
-                        this.dimensionPadding,
-                        this.liquidSettings);
-
-        return structurePiecesGenerator;
+        return JigsawPlacement.addPieces(
+                context,
+                this.startPool,
+                this.startJigsawName,
+                this.size,
+                blockPos,
+                false,
+                this.projectStartToHeightmap,
+                this.maxDistanceFromCenter,
+                PoolAliasLookup.EMPTY,
+                this.dimensionPadding,
+                this.liquidSettings);
     }
 
     @Override
-    public StructureType<?> type()
+    public @NotNull StructureType<?> type()
     {
-        return StructureRegister.OLD_GREAT_FIELD_STRUCTURE.get(); // Helps the game know how to turn this structure back to json to save to chunks
+        return StructureRegister.OLD_GREAT_FIELD_STRUCTURE.get();
     }
 }
