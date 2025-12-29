@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.neo_event.block_event;
+package com.unpainperdu.premierpainmod.neo_event.block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;

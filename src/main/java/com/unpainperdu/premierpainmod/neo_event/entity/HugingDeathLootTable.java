@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.neo_event.entity_event;
+package com.unpainperdu.premierpainmod.neo_event.entity;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;

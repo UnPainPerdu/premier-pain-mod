@@ -11,6 +11,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
@@ -41,30 +42,32 @@ public class ModVegetationPlacement
     public static final ResourceKey<PlacedFeature> MORICHE_PALM = ModPlacementUtil.createKey("moriche_palm");
     public static final ResourceKey<PlacedFeature> ACHIOTE = ModPlacementUtil.createKey("achiote");
     public static final ResourceKey<PlacedFeature> WEEPING_WILLOW = ModPlacementUtil.createKey("weeping_willow");
+    //vanilla enhanced
+    public static final ResourceKey<PlacedFeature> OAK_1 = ModPlacementUtil.createKey("oak_1");
 
-    public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
+    public static void bootstrap(BootstrapContext<PlacedFeature> context)
     {
-        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureGetter = pContext.lookup(Registries.CONFIGURED_FEATURE);
+        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureGetter = context.lookup(Registries.CONFIGURED_FEATURE);
 
         //flower
         final Holder<ConfiguredFeature<?, ?>> PATCH_RUINS_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_RUINS_FLOWER);
-        register(pContext, ModVegetationPlacement.PATCH_RUINS_FLOWER, PATCH_RUINS_FLOWER_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.PATCH_RUINS_FLOWER, PATCH_RUINS_FLOWER_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> PATCH_CIVILIZATIONS_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_CIVILIZATIONS_FLOWER);
-        register(pContext, ModVegetationPlacement.PATCH_CIVILIZATIONS_FLOWER, PATCH_CIVILIZATIONS_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.PATCH_CIVILIZATIONS_FLOWER, PATCH_CIVILIZATIONS_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> PATCH_CURIOSITY_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_CURIOSITY_FLOWER);
-        register(pContext, ModVegetationPlacement.PATCH_CURIOSITY_FLOWER, PATCH_CURIOSITY_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 5, 10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.PATCH_CURIOSITY_FLOWER, PATCH_CURIOSITY_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 5, 10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         //tall_flower
         final Holder<ConfiguredFeature<?, ?>> FALLING_HELICON_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_FALLING_HELICON_FLOWER);
-        register(pContext, ModVegetationPlacement.PATCH_FALLING_HELICON_FLOWER, FALLING_HELICON_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 10, 25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.PATCH_FALLING_HELICON_FLOWER, FALLING_HELICON_FLOWER_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 10, 25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         //dead bush
         final Holder<ConfiguredFeature<?, ?>> PATCH_DEAD_RUINS_FLOWER_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.PATCH_DEAD_RUINS_FLOWER);
-        register(pContext, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER, PATCH_DEAD_RUINS_FLOWER_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER, PATCH_DEAD_RUINS_FLOWER_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         //tree
         final Holder<ConfiguredFeature<?, ?>> TREE_MANGROVE_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.TREE_MANGROVE);
-        register(pContext, ModVegetationPlacement.TREE_MANGROVE, TREE_MANGROVE_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.TREE_MANGROVE, TREE_MANGROVE_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> TREE_OAK_SWAMP_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.TREE_OAK_SWAMP);
         register(
-                pContext,
+                context,
                 ModVegetationPlacement.TREE_OAK_SWAMP,
                 TREE_OAK_SWAMP_HOLDER,
                 RarityFilter.onAverageOnceEvery(1),
@@ -75,23 +78,25 @@ public class ModVegetationPlacement
                 BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> MOUNTAIN_CURRANT_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.MOUNTAIN_CURRANT);
-        register(pContext, ModVegetationPlacement.MOUNTAIN_CURRANT, MOUNTAIN_CURRANT_HOLDER, RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(context, ModVegetationPlacement.MOUNTAIN_CURRANT, MOUNTAIN_CURRANT_HOLDER, RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> MORICHE_PALM_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.MORICHE_PALM);
-        register(pContext, ModVegetationPlacement.MORICHE_PALM, MORICHE_PALM_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 40, 40), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(context, ModVegetationPlacement.MORICHE_PALM, MORICHE_PALM_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 40, 40), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> ACHIOTE_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.ACHIOTE);
-        register(pContext, ModVegetationPlacement.ACHIOTE, ACHIOTE_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(context, ModVegetationPlacement.ACHIOTE, ACHIOTE_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 15, 15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> WEEPING_WILLOW_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.WEEPING_WILLOW);
-        register(pContext, ModVegetationPlacement.WEEPING_WILLOW, WEEPING_WILLOW_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        register(context, ModVegetationPlacement.WEEPING_WILLOW, WEEPING_WILLOW_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        final Holder<ConfiguredFeature<?, ?>> OAK_1_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.OAK_1);
+        register(context, ModVegetationPlacement.OAK_1, OAK_1_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         //misc
         final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
-        register(pContext, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         //tall grass
         final Holder<ConfiguredFeature<?, ?>> SKY_SPEARS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.SKY_SPEARS);
-        register(pContext, ModVegetationPlacement.PATCH_SKY_SPEARS, SKY_SPEARS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.PATCH_SKY_SPEARS, SKY_SPEARS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> DEAD_TALL_BUSH_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.DEAD_TALL_BUSH);
-        register(pContext, ModVegetationPlacement.PATCH_DEAD_TALL_BUSH, DEAD_TALL_BUSH_HOLDER, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.PATCH_DEAD_TALL_BUSH, DEAD_TALL_BUSH_HOLDER, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> OLD_WILD_WHEAT_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.OLD_WILD_WHEAT);
-        register(pContext, ModVegetationPlacement.PATCH_OLD_WILD_WHEAT, OLD_WILD_WHEAT_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 45, 45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, ModVegetationPlacement.PATCH_OLD_WILD_WHEAT, OLD_WILD_WHEAT_HOLDER, NoiseThresholdCountPlacement.of(-0.8, 45, 45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }
 
     protected static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedFeatureKey, Holder<ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... modifiers)

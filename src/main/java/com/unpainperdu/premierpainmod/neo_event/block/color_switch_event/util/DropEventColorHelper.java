@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.neo_event.block_event.color_switch_event.util;
+package com.unpainperdu.premierpainmod.neo_event.block.color_switch_event.util;
 
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;

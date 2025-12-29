@@ -305,6 +305,7 @@ What would be a world without bugs ?
         - swamp premier pain temple has now multiples forms, better balance in loot chest and better generation
         - old great path are full stone when generate on river
         - jungle underground petra can be bigger now
+        - forest premier pain ruins has better feature balance, add new oak variant also growable from sapling
 
     ## Fix :
         - fix occlusion on dry toilet All material block

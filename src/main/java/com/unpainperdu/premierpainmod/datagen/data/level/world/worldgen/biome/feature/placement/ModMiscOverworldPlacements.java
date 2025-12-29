@@ -28,13 +28,13 @@ public class ModMiscOverworldPlacements
         HolderGetter<ConfiguredFeature<?, ?>> holdergetter = pContext.lookup(Registries.CONFIGURED_FEATURE);
 
         final Holder<ConfiguredFeature<?, ?>> FOREST_VILLAGER_STATUE_RUINS_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.FOREST_VILLAGER_STATUE_RUINS);
-        register(pContext, FOREST_VILLAGER_STATUE_RUINS, FOREST_VILLAGER_STATUE_RUINS_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(pContext, FOREST_VILLAGER_STATUE_RUINS, FOREST_VILLAGER_STATUE_RUINS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> BUSH_AND_ROCK_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.BUSH_AND_ROCK);
         register(pContext, BUSH_AND_ROCK, BUSH_AND_ROCK_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> HOUSE_FOUNDATION_RUINS_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.HOUSE_FOUNDATION_RUINS);
-        register(pContext, HOUSE_FOUNDATION_RUINS, HOUSE_FOUNDATION_RUINS_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(pContext, HOUSE_FOUNDATION_RUINS, HOUSE_FOUNDATION_RUINS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> VILLAGER_PILLAR_RUINS_DESERT_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.VILLAGER_PILLAR_RUINS_DESERT);
         register(pContext, VILLAGER_PILLAR_RUINS_DESERT, VILLAGER_PILLAR_RUINS_DESERT_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
