@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.AirBlock;
@@ -47,12 +48,15 @@ public abstract class AbstractPatch extends AbstractFeature<PatchConfiguration>
         RandomSource rand = context.random();
         BlockPos pos = context.origin();
 
+        ChunkPos originChunk = new ChunkPos(pos);
+
         ArrayList<BlockPos> listPos = PosHelper.getRandomPosWithSameY(pos, minFlowerNumber, maxFlowerNumber, spread, rand);
         listPos = PosHelper.setAllPosToTheGround(listPos, worldIn);
 
         for (BlockPos pos1 : listPos)
         {
-            if (isValidPlacementLocation(worldIn, pos1, groundAllowed))
+            ChunkPos placementChunk = new ChunkPos(pos1);
+            if (isValidPlacementLocation(worldIn, pos1, groundAllowed) && placementChunk.equals(originChunk))
             {
                 placeFeature(context, pos1);
             }
