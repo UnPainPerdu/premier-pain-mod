@@ -62,7 +62,16 @@ public class FallingLeavesDecorator extends TreeDecorator
 
         for (int i = 0; i < fallingLeavesHeight; i++)
         {
-            if (context.isAir(firstFallingLeavesPos.below(i)) && !(i == fallingLeavesHeight - 1))
+            if (!context.isAir(firstFallingLeavesPos.below(i)))
+            {
+                fallingLeavesHeight = i - 1;
+                break;
+            }
+        }
+
+        for (int i = 0; i < fallingLeavesHeight; i++)
+        {
+            if (!(i == fallingLeavesHeight - 1))
             {
                 context.setBlock(firstFallingLeavesPos.below(i), this.fallingLeaves.getState(rand, firstFallingLeavesPos.below(i)).setValue(ModBlockStateProperties.BOTTOM_PART, false));
             }

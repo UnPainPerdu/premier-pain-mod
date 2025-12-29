@@ -85,7 +85,6 @@ public class WeepingWillowFoliagePlacer extends FoliagePlacer
     @Override
     protected boolean shouldSkipLocation(RandomSource random, int localX, int localY, int localZ, int range, boolean large)
     {
-
         return random.nextInt(100) < 5;
     }
 
