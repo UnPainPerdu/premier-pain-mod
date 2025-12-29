@@ -67,9 +67,15 @@ public class JungleUnderGroundPetraTemplatePool
                 new StructureTemplatePool(
                         emptyFallBack,
                         ImmutableList.of(
+                                //end
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/corridor_end_0", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 3),
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/corridor_end_1", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 3),
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/corridor_end_2", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 3),
+                                //middle
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/corridor_0", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1),
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/corridor_1", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1),
-                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/corridor_2", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1)
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/corridor_2", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1),
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/corridor_3", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1)
                         ),
                         StructureTemplatePool.Projection.RIGID
                 )
@@ -108,6 +114,7 @@ public class JungleUnderGroundPetraTemplatePool
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/smithy", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 90),
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/church", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 90),
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/mason", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 90),
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/beerhouse", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 90),
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/house_xs_0", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1),
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/house_xs_1", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1),
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/house_xs_2", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1),
@@ -134,6 +141,21 @@ public class JungleUnderGroundPetraTemplatePool
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/wall_s_0", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1),
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/wall_s_1", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1),
                                 Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/wall_s_2", processorListHolderGetter.getOrThrow(ModStructureProcessorList.JUNGLE_UNDERGROUND_PETRA)), 1)
+                        ),
+                        StructureTemplatePool.Projection.RIGID
+                )
+        );
+
+        //must be MAX l3xL4xh4 without wall
+        ModStructureTemplatePool.registerPool(context, "jungle_underground_petra/intern_shop",
+                new StructureTemplatePool(
+                        emptyFallBack,
+                        ImmutableList.of(
+                                Pair.of(StructurePoolElement.single(emptyFallBack.getRegisteredName()), 2),
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/intern_shop_0"), 1),
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/intern_shop_1"), 1),
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/intern_shop_2"), 1),
+                                Pair.of(StructurePoolElement.single("premierpainmod:jungle_underground_petra/intern_shop_3"), 1)
                         ),
                         StructureTemplatePool.Projection.RIGID
                 )

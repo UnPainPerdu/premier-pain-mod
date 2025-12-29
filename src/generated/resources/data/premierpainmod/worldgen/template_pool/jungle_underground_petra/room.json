@@ -84,6 +84,15 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:jungle_underground_petra/beerhouse",
+        "processors": "premierpainmod:jungle_underground_petra",
+        "projection": "rigid"
+      },
+      "weight": 90
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/house_xs_0",
         "processors": "premierpainmod:jungle_underground_petra",
         "projection": "rigid"

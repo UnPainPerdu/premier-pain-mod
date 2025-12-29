@@ -3,6 +3,33 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:jungle_underground_petra/corridor_end_0",
+        "processors": "premierpainmod:jungle_underground_petra",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:jungle_underground_petra/corridor_end_1",
+        "processors": "premierpainmod:jungle_underground_petra",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:jungle_underground_petra/corridor_end_2",
+        "processors": "premierpainmod:jungle_underground_petra",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/corridor_0",
         "processors": "premierpainmod:jungle_underground_petra",
         "projection": "rigid"
@@ -22,6 +49,15 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "premierpainmod:jungle_underground_petra/corridor_2",
+        "processors": "premierpainmod:jungle_underground_petra",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "premierpainmod:jungle_underground_petra/corridor_3",
         "processors": "premierpainmod:jungle_underground_petra",
         "projection": "rigid"
       },
