@@ -37,7 +37,7 @@ public class ModMiscOverworldPlacements
         register(pContext, HOUSE_FOUNDATION_RUINS, HOUSE_FOUNDATION_RUINS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> VILLAGER_PILLAR_RUINS_DESERT_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.VILLAGER_PILLAR_RUINS_DESERT);
-        register(pContext, VILLAGER_PILLAR_RUINS_DESERT, VILLAGER_PILLAR_RUINS_DESERT_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(pContext, VILLAGER_PILLAR_RUINS_DESERT, VILLAGER_PILLAR_RUINS_DESERT_HOLDER, RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> MUD_PACK_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.MUD_PACK);
         register(pContext, MUD_PACK, MUD_PACK_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
@@ -49,7 +49,7 @@ public class ModMiscOverworldPlacements
         register(pContext, SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET, SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET_HOLDER, RarityFilter.onAverageOnceEvery(45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.SWAMP_MANGROVE_OUTSIDE_DRY_TOILET);
-        register(pContext, SWAMP_MANGROVE_OUTSIDE_DRY_TOILET, SWAMP_MANGROVE_OUTSIDE_DRY_TOILET_HOLDER, RarityFilter.onAverageOnceEvery(45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(pContext, SWAMP_MANGROVE_OUTSIDE_DRY_TOILET, SWAMP_MANGROVE_OUTSIDE_DRY_TOILET_HOLDER, RarityFilter.onAverageOnceEvery(60), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
     }
 

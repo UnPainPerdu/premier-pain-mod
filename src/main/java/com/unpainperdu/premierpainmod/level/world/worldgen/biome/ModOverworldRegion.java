@@ -30,12 +30,12 @@ public class ModOverworldRegion extends Region
         super(name, RegionType.OVERWORLD, weight);
     }
     /*
-    * Erosion ajuste si plaine ou montagne :  montagne -> 0, plaine -> 6
-    *
-    * Weirdness aussi :
-    *
-    * -1 et 1 = montagne, 0 = vallaie,
-    * */
+     * Erosion ajuste si plaine ou montagne :  montagne -> 0, plaine -> 6
+     *
+     * Weirdness aussi :
+     *
+     * -1 et 1 = montagne, 0 = vallaie,
+     * */
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper)
@@ -43,17 +43,17 @@ public class ModOverworldRegion extends Region
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.NEUTRAL)
-                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
-                .continentalness(Climate.Parameter.span(midInland, farInland))
-                .erosion(ParameterUtils.Erosion.EROSION_1)
+                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.WET))
+                .continentalness(Climate.Parameter.span(inland, farInland))
+                .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_2, ParameterUtils.Erosion.EROSION_5))
                 .depth(ParameterUtils.Depth.SURFACE)
-                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING, ParameterUtils.Weirdness.MID_SLICE_VARIANT_ASCENDING)
                 .build().forEach(point -> builder.add(point, ModBiomes.FOREST_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.NEUTRAL)
-                .humidity(ParameterUtils.Humidity.NEUTRAL)
-                .continentalness(Climate.Parameter.span(midInland, farInland))
+                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.NEUTRAL))
+                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.DRY, ParameterUtils.Humidity.NEUTRAL))
+                .continentalness(Climate.Parameter.span(inland, farInland))
                 .erosion(ParameterUtils.Erosion.EROSION_6)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(Climate.Parameter.span(-0.17F, 0.17F))
@@ -62,26 +62,26 @@ public class ModOverworldRegion extends Region
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.HOT))
                 .humidity(ParameterUtils.Humidity.ARID)
-                .continentalness(Climate.Parameter.span(midInland, farInland))
-                .erosion(ParameterUtils.Erosion.EROSION_1)
+                .continentalness(Climate.Parameter.span(nearInland, farInland))
+                .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_3, ParameterUtils.Erosion.EROSION_5))
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.HOT))
-                .humidity(ParameterUtils.Humidity.HUMID)
+                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.HOT))
+                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.WET, ParameterUtils.Humidity.HUMID))
                 .continentalness(Climate.Parameter.span(coast, midInland))
-                .erosion(ParameterUtils.Erosion.EROSION_6)
+                .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_5, ParameterUtils.Erosion.EROSION_6))
                 .depth(ParameterUtils.Depth.SURFACE)
-                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                .weirdness(ParameterUtils.Weirdness.LOW_SLICE_NORMAL_DESCENDING, ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING)
                 .build().forEach(point -> builder.add(point, ModBiomes.SWAMP_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.HOT))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.WET, ParameterUtils.Humidity.HUMID))
                 .continentalness(Climate.Parameter.span(midInland, farInland))
-                .erosion(ParameterUtils.Erosion.EROSION_6)
+                .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_4, ParameterUtils.Erosion.EROSION_6))
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, ModBiomes.JUNGLE_PREMIER_PAIN_RUINS));

@@ -164,28 +164,29 @@ public class ModBiomes
         float temperature = 2.0F;
         float downfall = 0.0f;
 
-        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
-        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        MobSpawnSettings.Builder mobBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder featureBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
-        BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.desertSpawns(mobspawnsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_PILLAR_RUINS_DESERT);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.FLOWERED_CACTUS);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_TALL_BUSH);
-        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultFlowers(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultGrass(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDesertVegetation(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDesertExtraVegetation(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDesertExtraDecoration(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(featureBuilder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(featureBuilder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(featureBuilder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(featureBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
+        BiomeDefaultFeatures.addSurfaceFreezing(featureBuilder);
+        BiomeDefaultFeatures.desertSpawns(mobBuilder);
+        mobBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.CAMEL, 1, 1, 3));
+        featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_PILLAR_RUINS_DESERT);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_RUINS_FLOWER);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.FLOWERED_CACTUS);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_DEAD_TALL_BUSH);
+        BiomeDefaultFeatures.addDefaultOres(featureBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(featureBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(featureBuilder);
+        BiomeDefaultFeatures.addDefaultGrass(featureBuilder);
+        BiomeDefaultFeatures.addDesertVegetation(featureBuilder);
+        BiomeDefaultFeatures.addDefaultMushrooms(featureBuilder);
+        BiomeDefaultFeatures.addDesertExtraVegetation(featureBuilder);
+        BiomeDefaultFeatures.addDesertExtraDecoration(featureBuilder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(false)
@@ -201,8 +202,8 @@ public class ModBiomes
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
                                 .build()
                 )
-                .mobSpawnSettings(mobspawnsettings$builder.build())
-                .generationSettings(biomegenerationsettings$builder.build())
+                .mobSpawnSettings(mobBuilder.build())
+                .generationSettings(featureBuilder.build())
                 .build();
     }
 
