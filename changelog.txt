@@ -310,6 +310,7 @@ What would be a world without bugs ?
         - better placement related to continentaleness and climate
         - forest premier pain ruins has better feature balance, add new oak variant and birch variant also growable from sapling
         - sand desert premier pain ruins has better feature balance, add camel to natural spawn
+        - swamp premier pain ruins has better feature balance, add water swamp patch
 
     ## Fix :
         - fix occlusion on dry toilet All material block

@@ -57,31 +57,31 @@ public class ModBiomes
         float temperature = 0.8F;
         float downfall = 0.4f;
 
-        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
-        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        MobSpawnSettings.Builder mobBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder featureBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
         //must be in vanilla order
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
-        BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.FOREST_VILLAGER_STATUE_RUINS);
-        addHouseFoundationRuins(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.BUSH_AND_ROCK);
-        addRuinsFlowers(biomegenerationsettings$builder);
-        addCivilizationsFlowers(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addPlainVegetation(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_BIRCH_AND_OAK);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.OAK_1);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.BIRCH_1);
-        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(featureBuilder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(featureBuilder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(featureBuilder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(featureBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
+        BiomeDefaultFeatures.addSurfaceFreezing(featureBuilder);
+        BiomeDefaultFeatures.plainsSpawns(mobBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.FOREST_VILLAGER_STATUE_RUINS);
+        addHouseFoundationRuins(featureBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.BUSH_AND_ROCK);
+        addRuinsFlowers(featureBuilder);
+        addCivilizationsFlowers(featureBuilder);
+        BiomeDefaultFeatures.addPlainGrass(featureBuilder);
+        BiomeDefaultFeatures.addDefaultOres(featureBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(featureBuilder);
+        BiomeDefaultFeatures.addPlainVegetation(featureBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_BIRCH_AND_OAK);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.OAK_1);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.BIRCH_1);
+        BiomeDefaultFeatures.addDefaultMushrooms(featureBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(featureBuilder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -99,8 +99,8 @@ public class ModBiomes
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
                                 .build()
                 )
-                .mobSpawnSettings(mobspawnsettings$builder.build())
-                .generationSettings(biomegenerationsettings$builder.build())
+                .mobSpawnSettings(mobBuilder.build())
+                .generationSettings(featureBuilder.build())
                 .build();
     }
 
@@ -110,33 +110,33 @@ public class ModBiomes
         float downfall = 0.9f;
         //must be in vanilla order
 
-        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
-        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        MobSpawnSettings.Builder mobBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder featureBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
         //mob spawn
-        BiomeDefaultFeatures.commonSpawns(mobspawnsettings$builder, 70);
-        mobspawnsettings$builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1));
-        mobspawnsettings$builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.BOGGED, 30, 4, 4));
-        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 10, 2, 5));
-        mobspawnsettings$builder.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8));
+        BiomeDefaultFeatures.commonSpawns(mobBuilder, 70);
+        mobBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1));
+        mobBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.BOGGED, 30, 4, 4));
+        mobBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 10, 2, 5));
+        mobBuilder.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8));
 
         //block spawn
-        BiomeDefaultFeatures.addFossilDecoration(biomegenerationsettings$builder);
-        globalOverworldGeneration(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addMangroveSwampDisks(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.MUD_PACK);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.SWAMP_MANGROVE_OUTSIDE_DRY_TOILET);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.WEEPING_WILLOW);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.TREE_OAK_SWAMP);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.TREE_MANGROVE);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_CURIOSITY_FLOWER);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_SKY_SPEARS);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
+        BiomeDefaultFeatures.addFossilDecoration(featureBuilder);
+        globalOverworldGeneration(featureBuilder);
+        BiomeDefaultFeatures.addDefaultOres(featureBuilder);
+        BiomeDefaultFeatures.addMangroveSwampDisks(featureBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.MUD_PACK);
+        featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.SWAMP_MANGROVE_OUTSIDE_DRY_TOILET);
+        featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.WEEPING_WILLOW);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.TREE_OAK_SWAMP);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.TREE_MANGROVE);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_CURIOSITY_FLOWER);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_SKY_SPEARS);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -154,8 +154,8 @@ public class ModBiomes
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP))
                                 .build()
                 )
-                .mobSpawnSettings(mobspawnsettings$builder.build())
-                .generationSettings(biomegenerationsettings$builder.build())
+                .mobSpawnSettings(mobBuilder.build())
+                .generationSettings(featureBuilder.build())
                 .build();
     }
 
@@ -212,16 +212,17 @@ public class ModBiomes
         float temperature = 0.8F;
         float downfall = 0.4f;
 
-        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
-        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
-        globalOverworldGeneration(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.plainsSpawns(mobspawnsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.MOUNTAIN_CURRANT);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_OLD_WILD_WHEAT);
-        BiomeDefaultFeatures.addPlainGrass(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addPlainVegetation(biomegenerationsettings$builder);
+        MobSpawnSettings.Builder mobBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder featureBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(featureBuilder);
+        BiomeDefaultFeatures.plainsSpawns(mobBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.MOUNTAIN_CURRANT);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_OLD_WILD_WHEAT);
+        BiomeDefaultFeatures.addPlainGrass(featureBuilder);
+        BiomeDefaultFeatures.addDefaultOres(featureBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(featureBuilder);
+        BiomeDefaultFeatures.addPlainVegetation(featureBuilder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -239,8 +240,8 @@ public class ModBiomes
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
                                 .build()
                 )
-                .mobSpawnSettings(mobspawnsettings$builder.build())
-                .generationSettings(biomegenerationsettings$builder.build())
+                .mobSpawnSettings(mobBuilder.build())
+                .generationSettings(featureBuilder.build())
                 .build();
     }
 
@@ -249,26 +250,27 @@ public class ModBiomes
         float temperature = 0.95F;
         float downfall = 0.9F;
 
-        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
-        BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
-        BiomeDefaultFeatures.baseJungleSpawns(mobspawnsettings$builder);
-        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2))
+        MobSpawnSettings.Builder mobBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder featureBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        BiomeDefaultFeatures.baseJungleSpawns(mobBuilder);
+        mobBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2))
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3));
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_TOTEM);
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultCrystalFormations(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
-        BiomeDefaultFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.MORICHE_PALM);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.ACHIOTE);
-        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_FALLING_HELICON_FLOWER);
-        BiomeDefaultFeatures.addWarmFlowers(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addJungleGrass(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addJungleMelons(biomegenerationsettings$builder);
+        featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_TOTEM);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(featureBuilder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(featureBuilder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(featureBuilder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(featureBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
+        BiomeDefaultFeatures.addSurfaceFreezing(featureBuilder);
+        BiomeDefaultFeatures.addDefaultOres(featureBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(featureBuilder);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.MORICHE_PALM);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.ACHIOTE);
+        featureBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.PATCH_FALLING_HELICON_FLOWER);
+        BiomeDefaultFeatures.addWarmFlowers(featureBuilder);
+        BiomeDefaultFeatures.addJungleGrass(featureBuilder);
+        BiomeDefaultFeatures.addJungleMelons(featureBuilder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -286,8 +288,8 @@ public class ModBiomes
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE))
                                 .build()
                 )
-                .mobSpawnSettings(mobspawnsettings$builder.build())
-                .generationSettings(biomegenerationsettings$builder.build())
+                .mobSpawnSettings(mobBuilder.build())
+                .generationSettings(featureBuilder.build())
                 .build();
     }
 
