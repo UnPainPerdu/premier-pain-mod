@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.util.tool_kit;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
@@ -77,5 +78,26 @@ public class DirectionHelper
     {
         Direction facing = state.getValue(BlockStateProperties.FACING);
         return facing == Direction.UP || facing == Direction.DOWN;
+    }
+
+    public static Direction.Axis getLogAxisFromPos(BlockPos pos, BlockPos otherPos)
+    {
+        Direction.Axis direction$axis = Direction.Axis.Y;
+        int i = Math.abs(otherPos.getX() - pos.getX());
+        int j = Math.abs(otherPos.getZ() - pos.getZ());
+        int k = Math.max(i, j);
+        if (k > 0)
+        {
+            if (i == k)
+            {
+                direction$axis = Direction.Axis.X;
+            }
+            else
+            {
+                direction$axis = Direction.Axis.Z;
+            }
+        }
+
+        return direction$axis;
     }
 }

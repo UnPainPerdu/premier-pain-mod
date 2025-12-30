@@ -16,5 +16,6 @@ public class FeatureEvent
     public static void blockGrowFeatureEvent(BlockGrowFeatureEvent event)
     {
         VanillaOakReplacer.event(event);
+        VanillaBirchReplacer.event(event);
     }
 }

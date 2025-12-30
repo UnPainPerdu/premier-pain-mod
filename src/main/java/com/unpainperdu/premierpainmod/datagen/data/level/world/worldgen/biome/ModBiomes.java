@@ -79,6 +79,7 @@ public class ModBiomes
         BiomeDefaultFeatures.addPlainVegetation(biomegenerationsettings$builder);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_BIRCH_AND_OAK);
         biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.OAK_1);
+        biomegenerationsettings$builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacement.BIRCH_1);
         BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomegenerationsettings$builder);
 

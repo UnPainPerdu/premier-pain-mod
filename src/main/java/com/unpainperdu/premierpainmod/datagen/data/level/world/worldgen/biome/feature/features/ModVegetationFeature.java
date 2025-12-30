@@ -3,14 +3,8 @@ package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.f
 import com.google.common.collect.ImmutableList;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.vegetation.patch.PatchConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.decorator.FallingLeavesDecorator;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.AchioteFoliagePlacer;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MorichePalmFoliagePlacer;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.MountainCurrantFoliagePlacer;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.WeepingWillowFoliagePlacer;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.AchioteTrunkPlacer;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MorichePalmTrunkPlacer;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.MountainCurrantTrunkPlacer;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.WeepingWillowTrunkPlacer;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.folliage_placer.*;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.tree.trunk_placer.*;
 import com.unpainperdu.premierpainmod.util.register.FeatureRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
@@ -66,6 +60,7 @@ public class ModVegetationFeature
     public static final ResourceKey<ConfiguredFeature<?, ?>> WEEPING_WILLOW = ModFeatureUtil.createKey("weeping_willow");
     //vanilla enhanced
     public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_1 = ModFeatureUtil.createKey("oak_1");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BIRCH_1 = ModFeatureUtil.createKey("birch_1");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context)
     {
@@ -163,6 +158,7 @@ public class ModVegetationFeature
                         .decorators(ImmutableList.of(new FallingLeavesDecorator(0.9F, BlockStateProvider.simple(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get()))))
                         .build());
         FeatureUtils.register(context, OAK_1, Feature.TREE, createAchioteTree(Blocks.OAK_LOG, Blocks.OAK_LEAVES, 5 ,4).build());
+        FeatureUtils.register(context, BIRCH_1, Feature.TREE, createEnhancedBirchTree(Blocks.BIRCH_LOG, Blocks.BIRCH_LEAVES).build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(
@@ -227,5 +223,15 @@ public class ModVegetationFeature
         );
     }
 
+    private static TreeConfiguration.TreeConfigurationBuilder createEnhancedBirchTree(Block logBlock, Block leavesBlock)
+    {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(logBlock),
+                new EnhancedBirchTrunkPlacer(4, 4, 4),
+                BlockStateProvider.simple(leavesBlock),
+                new EnhancedBirchFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 0, 1)
+        );
+    }
 }
 

@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.placement;
 
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features.ModFeatureUtil;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features.ModVegetationFeature;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
@@ -44,6 +45,7 @@ public class ModVegetationPlacement
     public static final ResourceKey<PlacedFeature> WEEPING_WILLOW = ModPlacementUtil.createKey("weeping_willow");
     //vanilla enhanced
     public static final ResourceKey<PlacedFeature> OAK_1 = ModPlacementUtil.createKey("oak_1");
+    public static final ResourceKey<PlacedFeature> BIRCH_1 = ModPlacementUtil.createKey("birch_1");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context)
     {
@@ -87,6 +89,8 @@ public class ModVegetationPlacement
         register(context, ModVegetationPlacement.WEEPING_WILLOW, WEEPING_WILLOW_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SAPLING.toString()).get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         final Holder<ConfiguredFeature<?, ?>> OAK_1_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.OAK_1);
         register(context, ModVegetationPlacement.OAK_1, OAK_1_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
+        final Holder<ConfiguredFeature<?, ?>> BIRCH_1_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.BIRCH_1);
+        register(context, ModVegetationPlacement.BIRCH_1, BIRCH_1_HOLDER, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.BIRCH_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         //misc
         final Holder<ConfiguredFeature<?, ?>> FLOWERED_CACTUS_HOLDER = configuredFeatureGetter.getOrThrow(ModVegetationFeature.FLOWERED_CACTUS);
         register(context, ModVegetationPlacement.FLOWERED_CACTUS, FLOWERED_CACTUS_HOLDER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());

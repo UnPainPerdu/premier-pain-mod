@@ -6,9 +6,9 @@ import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.util.RandomSource;
 import net.neoforged.neoforge.event.level.BlockGrowFeatureEvent;
 
-public class VanillaOakReplacer
+public class VanillaBirchReplacer
 {
-    private VanillaOakReplacer()
+    private VanillaBirchReplacer()
     {
     }
 
@@ -17,11 +17,11 @@ public class VanillaOakReplacer
         RandomSource rand = event.getRandom();
         if (event.getFeature() != null)
         {
-            if (event.getFeature().unwrapKey().isPresent() && event.getFeature().unwrapKey().get().equals(TreeFeatures.OAK))
+            if (event.getFeature().unwrapKey().isPresent() && event.getFeature().unwrapKey().get().equals(TreeFeatures.BIRCH))
             {
                 if (RandomUtil.getRandomPositiveIntInRange(2, rand) == 0)
                 {
-                    event.setFeature(ModVegetationFeature.OAK_1);
+                    event.setFeature(ModVegetationFeature.BIRCH_1);
                 }
             }
         }
