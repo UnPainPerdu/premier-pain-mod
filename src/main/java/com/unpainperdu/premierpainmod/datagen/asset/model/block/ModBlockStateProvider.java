@@ -18,8 +18,11 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.geology.GrowingCrystalCluster;
+import com.unpainperdu.premierpainmod.level.world.block.geology.PointedCrystalBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.PointedCrystalState;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
@@ -27,6 +30,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.growing_above
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.special_vegetation.CactusFloweredBlock.FloweredCactusBlock;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -112,6 +116,20 @@ public class ModBlockStateProvider extends BlockStateProvider
         woodProvider.allWoodBlocks("achiote", true);
         woodProvider.allWoodBlocks("weeping_willow", false);
         woodProvider.fallingLeaves(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get(), "weeping_willow");
+        //geology
+        ResourceLocation gypsumTexture = createResourceLocation("block/geology/gypsum/gypsum");
+        simpleBlockWithItem(BlockRegister.GYPSUM.get(), this.models().cubeAll(getModName(BlockRegister.GYPSUM.get()), gypsumTexture));
+        stairWithItem(BlockRegister.GYPSUM_STAIRS.get(), gypsumTexture);
+        slabWithItem(BlockRegister.GYPSUM_SLAB.get(), gypsumTexture);
+        wallBlockWithItem(BlockRegister.GYPSUM_WALL.get(), gypsumTexture);
+        ResourceLocation polishedGypsumTexture = createResourceLocation("block/geology/gypsum/polished_gypsum");
+        simpleBlockWithItem(BlockRegister.POLISHED_GYPSUM.get(), this.models().cubeAll(getModName(BlockRegister.POLISHED_GYPSUM.get()), polishedGypsumTexture));
+        stairWithItem(BlockRegister.POLISHED_GYPSUM_STAIRS.get(), polishedGypsumTexture);
+        slabWithItem(BlockRegister.POLISHED_GYPSUM_SLAB.get(), polishedGypsumTexture);
+        wallBlockWithItem(BlockRegister.POLISHED_GYPSUM_WALL.get(), polishedGypsumTexture);
+        cuttedBlockWithItem(BlockRegister.CUTTED_GYPSUM.get(), "block/geology/gypsum/cutted_gypsum", "block/geology/gypsum/polished_gypsum");
+        crystalClusterWithItem((GrowingCrystalCluster) BlockRegister.GYPSUM_CLUSTER.get(), "block/geology/gypsum/");
+        pointedCrystalWithItem((PointedCrystalBlock) BlockRegister.POINTED_GYPSUM.get(), "block/geology/gypsum");
         //crafting_block
         villagerWorkshopWithItem();
         cookingPotBlockWithItem();
@@ -127,6 +145,11 @@ public class ModBlockStateProvider extends BlockStateProvider
     private void simpleBlockWithItemWithCustomModel(Block block, String modelPath)
     {
         ModelFile model = models().withExistingParent(getKey(block).toString(), modelPath);
+        this.simpleBlockWithItemWithCustomModel(block, model);
+    }
+
+    private void simpleBlockWithItemWithCustomModel(Block block, ModelFile model)
+    {
         simpleBlock(block, model);
         itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
@@ -1313,6 +1336,22 @@ public class ModBlockStateProvider extends BlockStateProvider
         itemModels().getBuilder(getKey(block).getPath()).parent(model);
     }
 
+    protected void wallBlockWithItem(Block block, ResourceLocation texture)
+    {
+        String name = getModName(block);
+        wallBlockWithRenderType((WallBlock) block, texture, "cutout");
+        ModelFile model = models().wallInventory(name, texture);
+        itemModels().getBuilder(getKey(block).getPath()).parent(model);
+    }
+
+    protected void cuttedBlockWithItem(Block block, String side, String topAndBottom)
+    {
+        String name = getModName(block);
+        ModelFile model = models().cubeColumn(name, ResourceUtil.createResourceLocation(side), ResourceUtil.createResourceLocation(topAndBottom));
+        simpleBlockWithItemWithCustomModel(block, model);
+        simpleBlockItem(block, model);
+    }
+
     protected void woodenSign(Block standing, Block wall, ResourceLocation texture)
     {
         signBlock((StandingSignBlock) standing, (WallSignBlock) wall, texture);
@@ -1381,6 +1420,129 @@ public class ModBlockStateProvider extends BlockStateProvider
                     .build();
         });
         itemModels().getBuilder(getKey(block).getPath()).parent(baseModel);
+    }
+
+    private void crystalClusterWithItem(GrowingCrystalCluster block, String generalTextureFolder)
+    {
+        //todo it only handle facing up
+        String name = getModName(block);
+        String baseTexturePath = generalTextureFolder + name + "_";
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            String modelName = getKey(block) + "_";
+            int currentAgeState = state.getValue(GrowingCrystalCluster.AGE);
+            int xRotation = 0;
+            int yRotation = 0;
+            switch (state.getValue(BlockStateProperties.FACING))
+            {
+                case DOWN -> xRotation = 180;
+                case NORTH -> xRotation = 90;
+                case EAST ->
+                {
+                    xRotation = 90;
+                    yRotation = 90;
+                }
+                case SOUTH ->
+                {
+                    xRotation = 90;
+                    yRotation = 180;
+                }
+                case WEST ->
+                {
+                    xRotation = 90;
+                    yRotation = 270;
+                }
+                default ->
+                {
+                }
+            }
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName + currentAgeState, "block/cross")
+                            .texture("cross", baseTexturePath + currentAgeState)
+                            .renderType("cutout"))
+                    .rotationX(xRotation)
+                    .rotationY(yRotation)
+                    .build();
+        });
+        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/", "premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0", baseTexturePath + 0);
+    }
+
+    private void pointedCrystalWithItem(PointedCrystalBlock block, String generalTextureFolder)
+    {
+        //todo it only handle facing up
+        String baseTexturePath = generalTextureFolder + "/" + getModName(block) + "_";
+        VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
+        variantBuilder.forAllStates(state ->
+        {
+            String modelName = getKey(block) + "_";
+            String textureName = baseTexturePath;
+            int xRotation = 0;
+            int yRotation = 0;
+            switch (state.getValue(PointedCrystalBlock.POINTED_CRYSTAL_STATE))
+            {
+                case PointedCrystalState.BASE ->
+                {
+                    modelName += "base";
+                    textureName += "base";
+                }
+                case PointedCrystalState.MIDDLE ->
+                {
+                    modelName += "middle";
+                    textureName += "middle";
+                }
+                case PointedCrystalState.START_TOP ->
+                {
+                    modelName += "start_top";
+                    textureName += "start_top";
+                }
+                case PointedCrystalState.TOP ->
+                {
+                    modelName += "top";
+                    textureName += "top";
+                }
+            }
+            switch (state.getValue(BlockStateProperties.FACING))
+            {
+                case DOWN -> xRotation = 180;
+                case NORTH -> xRotation = 90;
+                case EAST ->
+                {
+                    xRotation = 90;
+                    yRotation = 90;
+                }
+                case SOUTH ->
+                {
+                    xRotation = 90;
+                    yRotation = 180;
+                }
+                case WEST ->
+                {
+                    xRotation = 90;
+                    yRotation = 270;
+                }
+                default ->
+                {
+                }
+            }
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(modelName, "block/cross")
+                            .texture("cross", textureName)
+                            .renderType("cutout"))
+                    .rotationX(xRotation)
+                    .rotationY(yRotation)
+                    .build();
+
+        });
+
+        itemModels().getBuilder((getKey(block).getPath()).replace("premierpainmod:block/", "premierpainmod:item/"))
+                .parent(models()
+                        .getExistingFile(mcLoc("item/generated")))
+                .texture("layer0", baseTexturePath + "top");
     }
 
     private String textureCarpetSelection(VillagerCarpetColor villagerCarpetColor)

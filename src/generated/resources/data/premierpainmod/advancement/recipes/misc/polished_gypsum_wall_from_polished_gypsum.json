@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_gypsum_wall_from_polished_gypsum": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:polished_gypsum"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:polished_gypsum_wall_from_polished_gypsum"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_gypsum_wall_from_polished_gypsum"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:polished_gypsum_wall_from_polished_gypsum"
+    ]
+  }
+}

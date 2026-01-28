@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "premierpainmod:block/geology/gypsum/gypsum",
+    "side": "premierpainmod:block/geology/gypsum/gypsum",
+    "top": "premierpainmod:block/geology/gypsum/gypsum"
+  }
+}

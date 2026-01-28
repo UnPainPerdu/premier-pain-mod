@@ -2,13 +2,17 @@ package com.unpainperdu.premierpainmod.datagen.data.loot_table;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.*;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChiseledHead;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerDryToiletBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.crafting_block.CookingPotBlock;
 import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
+import com.unpainperdu.premierpainmod.level.world.block.geology.GrowingCrystalCluster;
 import com.unpainperdu.premierpainmod.level.world.block.help_interface.CarpetedBlock;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
@@ -23,6 +27,7 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_hei
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
+import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -45,6 +50,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
@@ -136,6 +142,24 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         leavesWithFruitRightClickLootTable(BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get("sapling").get(), ItemRegister.ACHIOTE_FRUIT.get());
         leavesLootTable(BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("leaves").get(), BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("sapling").get());
         leavesLootTable(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get(), BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get("sapling").get());
+        //slab
+        slabLootTableGenerator((SlabBlock) BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.SLAB.toString()).get());
+        slabLootTableGenerator((SlabBlock) BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.SLAB.toString()).get());
+        slabLootTableGenerator((SlabBlock) BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.SLAB.toString()).get());
+        slabLootTableGenerator((SlabBlock) BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.SLAB.toString()).get());
+        //geology
+        normalBlockLootTableGenerator(BlockRegister.GYPSUM.get());
+        slabLootTableGenerator((SlabBlock) BlockRegister.GYPSUM_SLAB.get());
+        normalBlockLootTableGenerator(BlockRegister.GYPSUM_STAIRS.get());
+        normalBlockLootTableGenerator(BlockRegister.GYPSUM_WALL.get());
+        normalBlockLootTableGenerator(BlockRegister.POINTED_GYPSUM.get());
+        GrowingCrystalCluster gypsumGluster = (GrowingCrystalCluster) BlockRegister.GYPSUM_CLUSTER.get();
+        fullDropMaxAge(gypsumGluster, ItemRegister.GYPSUM_SHARD.get(), gypsumGluster.getMaxAge(), 5);
+        normalBlockLootTableGenerator(BlockRegister.CUTTED_GYPSUM.get());
+        normalBlockLootTableGenerator(BlockRegister.POLISHED_GYPSUM.get());
+        slabLootTableGenerator((SlabBlock) BlockRegister.POLISHED_GYPSUM_SLAB.get());
+        normalBlockLootTableGenerator(BlockRegister.POLISHED_GYPSUM_STAIRS.get());
+        normalBlockLootTableGenerator(BlockRegister.POLISHED_GYPSUM_WALL.get());
     }
 
     private void carpetedBlockTableGenerator(Block block)
@@ -413,6 +437,11 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
         super.add(flowerPot, this.createPotFlowerItemTable(flowerBlock));
     }
 
+    private void slabLootTableGenerator(SlabBlock block)
+    {
+        super.add(block, this.createSlabItemTable(block));
+    }
+
     private void itemOr2ndItemIfShearLootTableProvider(Block deadBush, ItemLike resultIfNotShear)
     {
         super.add(deadBush, this.createShearsDispatchTable(deadBush, this.applyExplosionCondition(deadBush, LootItem.lootTableItem(resultIfNotShear))));
@@ -557,6 +586,49 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 );
     }
 
+    /***
+     * @param block the block to add loottable
+     * @param drop the item to drop
+     * @param maxAge the max age
+     * @param maxDropAtMaxAge will drop [maxDropAtMaxAge - 2, maxDropAtMaxAge] without fortune apllied
+     * only full age will produce full result, other will produce 1
+     */
+    private void fullDropMaxAge(Block block, Item drop, int maxAge, int maxDropAtMaxAge)
+    {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+
+        LootTable.Builder lootTable = LootTable.lootTable()
+                .withPool(
+                        LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(block)
+                                        .when(this.hasSilkTouch())
+                                        .otherwise(
+                                                this.applyExplosionCondition(
+                                                        block,
+                                                        LootItem.lootTableItem(drop)
+                                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(maxDropAtMaxAge - 3, maxDropAtMaxAge)))
+                                                                .apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))
+                                                                        .when(
+                                                                                LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StemBlock.AGE, maxAge))
+                                                                        )
+                                                                )
+                                                                .when(
+                                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                .setProperties(
+                                                                                        StatePropertiesPredicate.Builder.properties().hasProperty(StemBlock.AGE, maxAge)
+                                                                                )
+                                                                )
+                                                                .otherwise(LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+                                                                )
+                                                )
+                                        )
+                                )
+                );
+
+        this.add(block, lootTable);
+    }
+
     private LootItemCondition.Builder doesNotHaveShearsOrSilkTouch()
     {
         return this.hasShearsOrSilkTouch().invert();
@@ -580,7 +652,6 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                 || block instanceof FlammableBlock
                 || block instanceof LogBlock
                 || block instanceof StairBlock
-                || block instanceof SlabBlock
                 || block instanceof ButtonBlock
                 || block instanceof PressurePlateBlock
                 || block instanceof FenceBlock

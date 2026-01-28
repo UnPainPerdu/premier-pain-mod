@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "premierpainmod:stripped_weeping_willow_log"
+    },
+    "t": {
+      "item": "minecraft:chain"
+    }
+  },
+  "pattern": [
+    "t t",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "premierpainmod:weeping_willow_hanging_sign"
+  }
+}

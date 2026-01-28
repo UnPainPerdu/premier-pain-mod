@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.state.propertie;
 
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.PointedCrystalState;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -13,4 +14,5 @@ public class ModBlockStateProperties
     public static final EnumProperty<VillagerCarpetColor> VILLAGER_CARPET_COLOR = EnumProperty.create("villager_carpet_color", VillagerCarpetColor.class);
     public static final BooleanProperty HANGING = BooleanProperty.create("hanging");
     public static final BooleanProperty BOTTOM_PART = BooleanProperty.create("bottom_part");
+    public static final EnumProperty<PointedCrystalState> POINTED_CRYSTAL_STATE = EnumProperty.create("bottom_part", PointedCrystalState.class);
 }

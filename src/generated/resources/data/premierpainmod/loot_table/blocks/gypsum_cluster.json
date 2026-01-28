@@ -1,0 +1,100 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "name": "premierpainmod:gypsum_cluster"
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "conditions": [
+                    {
+                      "block": "premierpainmod:gypsum_cluster",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "age": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "add": false,
+                      "count": {
+                        "type": "minecraft:uniform",
+                        "max": 5.0,
+                        "min": 2.0
+                      },
+                      "function": "minecraft:set_count"
+                    },
+                    {
+                      "conditions": [
+                        {
+                          "block": "premierpainmod:gypsum_cluster",
+                          "condition": "minecraft:block_state_property",
+                          "properties": {
+                            "age": "3"
+                          }
+                        }
+                      ],
+                      "enchantment": "minecraft:fortune",
+                      "formula": "minecraft:uniform_bonus_count",
+                      "function": "minecraft:apply_bonus",
+                      "parameters": {
+                        "bonusMultiplier": 1
+                      }
+                    }
+                  ],
+                  "name": "premierpainmod:gypsum_shard"
+                },
+                {
+                  "type": "minecraft:item",
+                  "functions": [
+                    {
+                      "add": false,
+                      "count": 1.0,
+                      "function": "minecraft:set_count"
+                    }
+                  ],
+                  "name": "premierpainmod:gypsum_shard"
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:survives_explosion"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "premierpainmod:blocks/gypsum_cluster"
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "premierpainmod:block/polished_gypsum_slab"
+    },
+    "type=double": {
+      "model": "premierpainmod:block/polished_gypsum_slab_full"
+    },
+    "type=top": {
+      "model": "premierpainmod:block/polished_gypsum_slab_top"
+    }
+  }
+}

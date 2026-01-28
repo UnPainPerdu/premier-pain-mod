@@ -12,6 +12,8 @@ public class ModBlockTags
     public static final TagKey<Block> MORICHE_PALM_LOGS = create("moriche_palm_logs");
     public static final TagKey<Block> ACHIOTE_LOGS = create("achiote_logs");
     public static final TagKey<Block> WEEPING_WILLOW_LOGS = create("weeping_willow_logs");
+    public static final TagKey<Block> GYPSUM = create("gypsum");
+    //All Material Blocks
     public static final TagKey<Block> VILLAGER_STATUE = create("villager_statue");
     public static final TagKey<Block> VILLAGER_PEDESTAL = create("villager_pedestal");
     public static final TagKey<Block> VILLAGER_BRAZIER = create("villager_brazier");

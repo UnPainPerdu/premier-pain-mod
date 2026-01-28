@@ -1,14 +1,18 @@
 package com.unpainperdu.premierpainmod.util.register.creative_tab;
 
+import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTallGrass;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.*;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerChiseledHead;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerPedestalBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerTableBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerDryToiletBlock;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerBench;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.adaptable.VillagerCouch;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerBrazier;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height.VillagerStatue;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit.VillagerThroneChairBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
@@ -38,6 +42,7 @@ import java.util.Map;
 
 public class CreativeMainTab
 {
+    //todo rework to only take item (if block transform into item else don't process)
     private CreativeMainTab()
     {
     }
@@ -56,6 +61,9 @@ public class CreativeMainTab
         generateVegetation(output);
         //wood and tree
         generateWood(output);
+        //geology
+        output.accept(ItemRegister.GYPSUM_SHARD);
+        generateGeology(output);
         //crafting machine
         output.accept(BlockRegister.VILLAGER_WORKSHOP.get());
         output.accept(BlockRegister.COOKING_POT_BLOCK.get());
@@ -119,6 +127,17 @@ public class CreativeMainTab
             output.accept(item);
         }
 
+    }
+
+    private static void generateGeology(CreativeModeTab.Output output)
+    {
+        for (Block block : ModBLockList.ALL_BLOCKS)
+        {
+            if (block.defaultBlockState().is(ModBlockTags.GYPSUM))
+            {
+                output.accept(block);
+            }
+        }
     }
 
     private static void generateAllMaterials(CreativeModeTab.Output output)

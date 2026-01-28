@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cutted_gypsum": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:polished_gypsum_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:cutted_gypsum"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cutted_gypsum"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:cutted_gypsum"
+    ]
+  }
+}

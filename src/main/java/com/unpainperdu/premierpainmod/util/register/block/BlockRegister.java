@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.crafting_block.CookingPotBlock;
 import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.event_block.LibertyBlock;
+import com.unpainperdu.premierpainmod.level.world.block.geology.*;
 import com.unpainperdu.premierpainmod.level.world.block.tree.*;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.basicFlower.CuriosityFlower;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.crop.JellyShroomBlock;
@@ -52,6 +53,19 @@ public class BlockRegister
 
     public static final Map<String, DeferredBlock<Block>> ALL_MATERIALS_MAP = createAllMaterialsBlocks();
 
+    //geology
+    //gypsum
+    public static final DeferredBlock<Block> GYPSUM = registerBlock("gypsum", () -> new AmethystBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_LIGHT_GRAY)));
+    public static final DeferredBlock<Block> GYPSUM_STAIRS = registerBlock("gypsum_stairs", () -> registerCrystalStair(() -> GYPSUM));
+    public static final DeferredBlock<Block> GYPSUM_SLAB = registerBlock("gypsum_slab", () -> registerCrystalSlab(() -> GYPSUM));
+    public static final DeferredBlock<Block> GYPSUM_WALL = registerBlock("gypsum_wall", () -> registerCrystalWall(() -> GYPSUM));
+    public static final DeferredBlock<Block> POINTED_GYPSUM = registerBlock("pointed_gypsum", () -> new PointedCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_LIGHT_GRAY).noOcclusion()));
+    public static final DeferredBlock<Block> GYPSUM_CLUSTER = registerBlock("gypsum_cluster", () -> new GrowingCrystalCluster(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_LIGHT_GRAY).noOcclusion()));
+    public static final DeferredBlock<Block> CUTTED_GYPSUM = registerBlock("cutted_gypsum", () -> new AmethystBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_LIGHT_GRAY)));
+    public static final DeferredBlock<Block> POLISHED_GYPSUM = registerBlock("polished_gypsum", () -> new AmethystBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_LIGHT_GRAY)));
+    public static final DeferredBlock<Block> POLISHED_GYPSUM_STAIRS = registerBlock("polished_gypsum_stairs", () -> registerCrystalStair(() -> POLISHED_GYPSUM));
+    public static final DeferredBlock<Block> POLISHED_GYPSUM_SLAB = registerBlock("polished_gypsum_slab", () -> registerCrystalSlab(() -> POLISHED_GYPSUM));
+    public static final DeferredBlock<Block> POLISHED_GYPSUM_WALL = registerBlock("polished_gypsum_wall", () -> registerCrystalWall(() -> POLISHED_GYPSUM));
     //crafting_block
     public static final DeferredBlock<Block> VILLAGER_WORKSHOP = registerBlock("villager_workshop", () -> new VillagerWorkshop(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     public static final DeferredBlock<Block> COOKING_POT_BLOCK = registerBlock("cooking_pot_block", () -> new CookingPotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()));
@@ -105,7 +119,7 @@ public class BlockRegister
             for (AllMaterialsBlockEnum.Material material : AllMaterialsBlockEnum.getAllMaterialValues())
             {
                 String id = material.toString() + "_" + blockType;
-                if (blockType == AllMaterialsBlockEnum.Type.WALL_VILLAGER_SHELF ||blockType == AllMaterialsBlockEnum.Type.STANDING_VILLAGER_SHELF)
+                if (blockType == AllMaterialsBlockEnum.Type.WALL_VILLAGER_SHELF || blockType == AllMaterialsBlockEnum.Type.STANDING_VILLAGER_SHELF)
                 {
                     map.put(id, registerBlockOnly(id, () -> blockType.getBlock(BlockBehaviour.Properties.ofFullCopy(material.getBaseBlockBehaviour()))));
                 }
@@ -207,6 +221,11 @@ public class BlockRegister
         return new PressurePlateBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
     }
 
+    private static Block registerWall(Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new WallBlock(BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
     private static Block registerFence(Supplier<DeferredBlock<Block>> baseBlock)
     {
         return new FenceBlock(BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
@@ -225,6 +244,21 @@ public class BlockRegister
     private static Block registerTrapdoor(BlockSetType type, Supplier<DeferredBlock<Block>> baseBlock)
     {
         return new TrapDoorBlock(type, BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()).noOcclusion().isValidSpawn(Blocks::never));
+    }
+
+    private static Block registerCrystalStair(Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new CrystalStairBlock(baseBlock.get().get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
+    private static Block registerCrystalSlab(Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new CrystalSlabBlock(BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
+    }
+
+    private static Block registerCrystalWall(Supplier<DeferredBlock<Block>> baseBlock)
+    {
+        return new CrystalWallBlock(BlockBehaviour.Properties.ofFullCopy(baseBlock.get().get()));
     }
 
     private static DeferredBlock<Block> registerTallFlower(String name)

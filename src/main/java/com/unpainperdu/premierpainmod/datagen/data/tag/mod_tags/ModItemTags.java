@@ -14,6 +14,7 @@ public class ModItemTags
     public static final TagKey<Item> MORICHE_PALM_LOGS = create("moriche_palm_logs");
     public static final TagKey<Item> ACHIOTE_LOGS = create("achiote_logs");
     public static final TagKey<Item> WEEPING_WILLOW_LOGS = create("weeping_willow_logs");
+    public static final TagKey<Item> GYPSUM = create("gypsum");
     public static final TagKey<Item> VILLAGER_STATUE = create("villager_statue");
     public static final TagKey<Item> VILLAGER_PEDESTAL = create("villager_pedestal");
     public static final TagKey<Item> VILLAGER_BRAZIER = create("villager_brazier");

@@ -65,6 +65,8 @@ public class ModItemStateProvider extends ItemModelProvider
         stewFoodItem(ItemRegister.CACTUS_STEW.get());
         stewFoodItem(ItemRegister.POTATOES_AND_SPEARS_BOWL.get());
         stewFoodItem(ItemRegister.FRUITS_BOWL.get());
+        //geology
+        item(ItemRegister.GYPSUM_SHARD.get(), "geology/");
         //tree
         woodItems("mountain_currant");
         woodItems("moriche_palm");

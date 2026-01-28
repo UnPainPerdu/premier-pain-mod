@@ -4,6 +4,8 @@ import net.minecraft.util.RandomSource;
 
 public class RandomUtil
 {
+    //TODO read the fucking random java class, minecraft random class has same doc
+
     private RandomUtil(){}
     /**
      * maxExcludedBorn must be >= 2, or it will be set to 2

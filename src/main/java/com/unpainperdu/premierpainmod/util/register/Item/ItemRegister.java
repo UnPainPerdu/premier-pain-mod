@@ -38,6 +38,8 @@ public class ItemRegister
     //register zone
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(PremierPainMod.MOD_ID);
     public static final Map<String, DeferredItem<Item>> AllMaterialsMap = createAllMaterialsItems();
+    //geology
+    public static final DeferredItem<Item> GYPSUM_SHARD = ITEMS.register("gypsum_shard", () -> new Item(new Item.Properties()));
     //villager's singing stone
     public static final DeferredItem<Item> LIBERTY_VILLAGER_SINGING_STONE = registerVillagerSingingStone("liberty_villager_singing_stone", () -> ItemEventRegister.LIBERTY, 200);
     public static final DeferredItem<Item> DIGGY_VILLAGER_SINGING_STONE = registerVillagerSingingStone("diggy_villager_singing_stone", () -> ItemEventRegister.DIGGY, 200);

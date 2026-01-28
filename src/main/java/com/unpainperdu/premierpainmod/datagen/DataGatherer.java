@@ -8,7 +8,7 @@ import com.unpainperdu.premierpainmod.datagen.asset.model.ModItemStateProvider;
 import com.unpainperdu.premierpainmod.datagen.asset.model.block.ModBlockStateProvider;
 import com.unpainperdu.premierpainmod.datagen.data.ModAdvancementProvider;
 import com.unpainperdu.premierpainmod.datagen.data.ModGlobalLootModifierProvider;
-import com.unpainperdu.premierpainmod.datagen.data.ModRecipeProvider;
+import com.unpainperdu.premierpainmod.datagen.data.recipe.ModRecipeProvider;
 import com.unpainperdu.premierpainmod.datagen.data.datamap.ModDataMap;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.block.entity.ModPaintingVariant;

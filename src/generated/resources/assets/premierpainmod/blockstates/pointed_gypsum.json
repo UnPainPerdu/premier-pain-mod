@@ -1,0 +1,212 @@
+{
+  "variants": {
+    "bottom_part=base,facing=down,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 180
+    },
+    "bottom_part=base,facing=down,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 180
+    },
+    "bottom_part=base,facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 90,
+      "y": 90
+    },
+    "bottom_part=base,facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 90,
+      "y": 90
+    },
+    "bottom_part=base,facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 90
+    },
+    "bottom_part=base,facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 90
+    },
+    "bottom_part=base,facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 90,
+      "y": 180
+    },
+    "bottom_part=base,facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 90,
+      "y": 180
+    },
+    "bottom_part=base,facing=up,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_base"
+    },
+    "bottom_part=base,facing=up,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_base"
+    },
+    "bottom_part=base,facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 90,
+      "y": 270
+    },
+    "bottom_part=base,facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_base",
+      "x": 90,
+      "y": 270
+    },
+    "bottom_part=middle,facing=down,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 180
+    },
+    "bottom_part=middle,facing=down,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 180
+    },
+    "bottom_part=middle,facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 90,
+      "y": 90
+    },
+    "bottom_part=middle,facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 90,
+      "y": 90
+    },
+    "bottom_part=middle,facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 90
+    },
+    "bottom_part=middle,facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 90
+    },
+    "bottom_part=middle,facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 90,
+      "y": 180
+    },
+    "bottom_part=middle,facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 90,
+      "y": 180
+    },
+    "bottom_part=middle,facing=up,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_middle"
+    },
+    "bottom_part=middle,facing=up,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_middle"
+    },
+    "bottom_part=middle,facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 90,
+      "y": 270
+    },
+    "bottom_part=middle,facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_middle",
+      "x": 90,
+      "y": 270
+    },
+    "bottom_part=start_top,facing=down,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 180
+    },
+    "bottom_part=start_top,facing=down,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 180
+    },
+    "bottom_part=start_top,facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 90,
+      "y": 90
+    },
+    "bottom_part=start_top,facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 90,
+      "y": 90
+    },
+    "bottom_part=start_top,facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 90
+    },
+    "bottom_part=start_top,facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 90
+    },
+    "bottom_part=start_top,facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 90,
+      "y": 180
+    },
+    "bottom_part=start_top,facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 90,
+      "y": 180
+    },
+    "bottom_part=start_top,facing=up,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top"
+    },
+    "bottom_part=start_top,facing=up,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top"
+    },
+    "bottom_part=start_top,facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 90,
+      "y": 270
+    },
+    "bottom_part=start_top,facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_start_top",
+      "x": 90,
+      "y": 270
+    },
+    "bottom_part=top,facing=down,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 180
+    },
+    "bottom_part=top,facing=down,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 180
+    },
+    "bottom_part=top,facing=east,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 90,
+      "y": 90
+    },
+    "bottom_part=top,facing=east,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 90,
+      "y": 90
+    },
+    "bottom_part=top,facing=north,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 90
+    },
+    "bottom_part=top,facing=north,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 90
+    },
+    "bottom_part=top,facing=south,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 90,
+      "y": 180
+    },
+    "bottom_part=top,facing=south,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 90,
+      "y": 180
+    },
+    "bottom_part=top,facing=up,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_top"
+    },
+    "bottom_part=top,facing=up,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_top"
+    },
+    "bottom_part=top,facing=west,waterlogged=false": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 90,
+      "y": 270
+    },
+    "bottom_part=top,facing=west,waterlogged=true": {
+      "model": "premierpainmod:block/pointed_gypsum_top",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

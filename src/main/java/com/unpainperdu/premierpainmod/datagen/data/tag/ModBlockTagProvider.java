@@ -280,6 +280,39 @@ public class ModBlockTagProvider extends BlockTagsProvider
         {
             this.tag(BlockTags.ENDERMAN_HOLDABLE).add(block);
         }
+
+        this.tag(ModBlockTags.GYPSUM).add(
+                BlockRegister.GYPSUM_STAIRS.get(),
+                BlockRegister.GYPSUM_SLAB.get(),
+                BlockRegister.GYPSUM_WALL.get(),
+                BlockRegister.GYPSUM.get(),
+                BlockRegister.POINTED_GYPSUM.get(),
+                BlockRegister.GYPSUM_CLUSTER.get(),
+                BlockRegister.CUTTED_GYPSUM.get(),
+                BlockRegister.POLISHED_GYPSUM.get(),
+                BlockRegister.POLISHED_GYPSUM_STAIRS.get(),
+                BlockRegister.POLISHED_GYPSUM_SLAB.get(),
+                BlockRegister.POLISHED_GYPSUM_WALL.get()
+        );
+
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                BlockRegister.GYPSUM_STAIRS.get(),
+                BlockRegister.GYPSUM_SLAB.get(),
+                BlockRegister.GYPSUM_WALL.get(),
+                BlockRegister.GYPSUM.get(),
+                BlockRegister.POINTED_GYPSUM.get(),
+                BlockRegister.GYPSUM_CLUSTER.get(),
+                BlockRegister.CUTTED_GYPSUM.get(),
+                BlockRegister.POLISHED_GYPSUM.get(),
+                BlockRegister.POLISHED_GYPSUM_STAIRS.get(),
+                BlockRegister.POLISHED_GYPSUM_SLAB.get(),
+                BlockRegister.POLISHED_GYPSUM_WALL.get()
+        );
+
+        for (Block block : ModBLockList.getAllBlocksFromClass(WallBlock.class))
+        {
+            this.tag(BlockTags.WALLS).add(block);
+        }
     }
 
     private void addTagForAllMaterialsBlock(Block block, String blockName)

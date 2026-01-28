@@ -190,6 +190,19 @@ public class FrenchLanguageProvider extends LanguageProvider
         //crafting_block
         add(BlockRegister.VILLAGER_WORKSHOP.get(), "Atelier du villageois");
         add(BlockRegister.COOKING_POT_BLOCK.get(), "Marmite");
+        //geology
+        add(BlockRegister.GYPSUM.get(), "Gypse");
+        add(BlockRegister.GYPSUM_STAIRS.get(), "Escalier de gypse");
+        add(BlockRegister.GYPSUM_SLAB.get(), "Dalle de gypse");
+        add(BlockRegister.GYPSUM_WALL.get(), "Mur de gypse");
+        add(BlockRegister.POINTED_GYPSUM.get(), "Gypse pointu");
+        add(BlockRegister.GYPSUM_CLUSTER.get(), "Amas de gypse");
+        add(BlockRegister.CUTTED_GYPSUM.get(), "Gypse taillé");
+        add(BlockRegister.POLISHED_GYPSUM.get(), "Gypse poli");
+        add(BlockRegister.POLISHED_GYPSUM_STAIRS.get(), "Escalier de gypse poli");
+        add(BlockRegister.POLISHED_GYPSUM_SLAB.get(), "Dalle de gypse poli");
+        add(BlockRegister.POLISHED_GYPSUM_WALL.get(), "Mur de gypse poli");
+        add(ItemRegister.GYPSUM_SHARD.get(), "Éclat de Gypse");
         //vegetation
         //tall grass
         add(BlockRegister.SKY_SPEARS.get(), "Lances du ciel");

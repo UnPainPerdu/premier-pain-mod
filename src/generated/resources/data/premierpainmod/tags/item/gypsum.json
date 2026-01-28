@@ -1,0 +1,16 @@
+{
+  "values": [
+    "premierpainmod:gypsum_shard",
+    "premierpainmod:gypsum_stairs",
+    "premierpainmod:gypsum_slab",
+    "premierpainmod:gypsum_wall",
+    "premierpainmod:gypsum",
+    "premierpainmod:pointed_gypsum",
+    "premierpainmod:gypsum_cluster",
+    "premierpainmod:cutted_gypsum",
+    "premierpainmod:polished_gypsum",
+    "premierpainmod:polished_gypsum_stairs",
+    "premierpainmod:polished_gypsum_slab",
+    "premierpainmod:polished_gypsum_wall"
+  ]
+}

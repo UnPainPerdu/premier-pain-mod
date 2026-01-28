@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "premierpainmod:gypsum"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:cutted_gypsum"
+  }
+}

@@ -64,6 +64,7 @@ public class ModItemTagProvider extends ItemTagsProvider
         copy(ModBlockTags.MORICHE_PALM_LOGS, ModItemTags.MORICHE_PALM_LOGS);
         copy(ModBlockTags.ACHIOTE_LOGS, ModItemTags.ACHIOTE_LOGS);
         copy(ModBlockTags.WEEPING_WILLOW_LOGS, ModItemTags.WEEPING_WILLOW_LOGS);
+        copy(ModBlockTags.GYPSUM, ModItemTags.GYPSUM);
         copy(ModBlockTags.VILLAGER_STATUE, ModItemTags.VILLAGER_STATUE);
         copy(ModBlockTags.VILLAGER_PEDESTAL, ModItemTags.VILLAGER_PEDESTAL);
         copy(ModBlockTags.VILLAGER_BRAZIER, ModItemTags.VILLAGER_BRAZIER);
@@ -127,5 +128,6 @@ public class ModItemTagProvider extends ItemTagsProvider
                 this.tag(ModItemTags.VILLAGER_SHELF).add(item);
             }
         }
+        this.tag(ModItemTags.GYPSUM).add(ItemRegister.GYPSUM_SHARD.get());
     }
 }

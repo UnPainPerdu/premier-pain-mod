@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-21T20:20:21.5746402	Tags for minecraft:block mod id premierpainmod
+// 1.21.1	2026-01-18T10:36:24.2405775	Tags for minecraft:block mod id premierpainmod
 7f17a84c5867cc54c0582449818379348abefb56 data/c/tags/block/fences.json
 7f17a84c5867cc54c0582449818379348abefb56 data/c/tags/block/fences/wooden.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/block/fence_gates.json
@@ -23,7 +23,7 @@ f50c631b284f62b40ebd484f83e46eddbbd4f149 data/minecraft/tags/block/leaves.json
 0ab56d45d7b5f725a23e44b36ae187b22a4a9f23 data/minecraft/tags/block/logs_that_burn.json
 dda99b986eca06f6b46bca276e9aa97f625c23da data/minecraft/tags/block/mineable/axe.json
 f50c631b284f62b40ebd484f83e46eddbbd4f149 data/minecraft/tags/block/mineable/hoe.json
-84f16c4d6fece9c85999362d4c33466b08d35e16 data/minecraft/tags/block/mineable/pickaxe.json
+e9bb4702a17fe00224d15aef8e51eacebb78ee83 data/minecraft/tags/block/mineable/pickaxe.json
 3f5efd47cd7468d6a072cd9fc2a277ffe2af96cd data/minecraft/tags/block/mob_interactable_doors.json
 cde6a5aacf6ed7020478f40d295360cb3bca5993 data/minecraft/tags/block/needs_diamond_tool.json
 b50bdda69d7342170366d302856013a102876fee data/minecraft/tags/block/needs_iron_tool.json
@@ -43,6 +43,7 @@ c9fd7da17286e4d6d92bade21bb267d3fc1ca361 data/minecraft/tags/block/signs.json
 75e9c8973323bdfe8a73516c2883bef9982f76cb data/minecraft/tags/block/tall_flowers.json
 4cab7d2e5ae3b2b1b18b4ec067f1b1b2a8e4d59b data/minecraft/tags/block/trapdoors.json
 f999c4cc0482667908be53c0d728201e56227a51 data/minecraft/tags/block/unstable_bottom_center.json
+8d6cf48cfa89342e97f10204612ac0cb41b0b224 data/minecraft/tags/block/walls.json
 58f68a14ebc953180a92d9f88c05c945189e6dcd data/minecraft/tags/block/wall_hanging_signs.json
 c9dbfb509ac30964c62321b866bc99ac29e12cd4 data/minecraft/tags/block/wall_post_override.json
 aacebafc2bdaf0aa95f9f91d0be1985b18d85c18 data/minecraft/tags/block/wall_signs.json
@@ -54,6 +55,7 @@ c9dbfb509ac30964c62321b866bc99ac29e12cd4 data/minecraft/tags/block/wooden_pressu
 9d8ffe6b1d04ba11c9d9dc4f5eff1d5acaee72c0 data/minecraft/tags/block/wooden_stairs.json
 4cab7d2e5ae3b2b1b18b4ec067f1b1b2a8e4d59b data/minecraft/tags/block/wooden_trapdoors.json
 0f2d22db5ed2ef47d3a9f9ef7e0309b57dc86de8 data/premierpainmod/tags/block/achiote_logs.json
+f1b58265fe0ac0c8e0a206f8e5f10bb94e1d2009 data/premierpainmod/tags/block/gypsum.json
 4142cf164df7095eb85135b75c685735116f73b8 data/premierpainmod/tags/block/moriche_palm_logs.json
 42af769f30598361a3ec9358563efb7116ca9510 data/premierpainmod/tags/block/mountain_currant_logs.json
 45b7604d84730aa70de2b47f1fa507724715334c data/premierpainmod/tags/block/villager_bench.json

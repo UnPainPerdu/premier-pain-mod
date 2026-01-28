@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "premierpainmod:block/geology/gypsum/polished_gypsum",
+    "side": "premierpainmod:block/geology/gypsum/polished_gypsum",
+    "top": "premierpainmod:block/geology/gypsum/polished_gypsum"
+  }
+}

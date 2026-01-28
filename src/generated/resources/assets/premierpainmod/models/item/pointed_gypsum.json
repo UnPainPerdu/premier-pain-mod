@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:block/geology/gypsum/pointed_gypsum_top"
+  }
+}

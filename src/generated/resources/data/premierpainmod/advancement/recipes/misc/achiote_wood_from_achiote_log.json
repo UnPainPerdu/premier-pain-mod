@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_achiote_wood_from_achiote_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:achiote_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:achiote_wood_from_achiote_log"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_achiote_wood_from_achiote_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:achiote_wood_from_achiote_log"
+    ]
+  }
+}

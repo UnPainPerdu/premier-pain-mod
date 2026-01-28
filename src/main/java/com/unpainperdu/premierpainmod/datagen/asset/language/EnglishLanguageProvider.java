@@ -190,6 +190,19 @@ public class EnglishLanguageProvider extends LanguageProvider
         //crafting_block
         add(BlockRegister.VILLAGER_WORKSHOP.get(), "Villager Workshop");
         add(BlockRegister.COOKING_POT_BLOCK.get(), "Cooking Pot");
+        //geology
+        add(BlockRegister.GYPSUM.get(), "Gypsum");
+        add(BlockRegister.GYPSUM_STAIRS.get(), "Gypsum Stairs");
+        add(BlockRegister.GYPSUM_SLAB.get(), "Gypsum Slab");
+        add(BlockRegister.GYPSUM_WALL.get(), "Gypsum Wall");
+        add(BlockRegister.POINTED_GYPSUM.get(), "Pointed Gypsum");
+        add(BlockRegister.GYPSUM_CLUSTER.get(), "Gypsum Cluster");
+        add(BlockRegister.CUTTED_GYPSUM.get(), "Cutted Gypsum");
+        add(BlockRegister.POLISHED_GYPSUM.get(), "Polished Gypsum");
+        add(BlockRegister.POLISHED_GYPSUM_STAIRS.get(), "Polished Gypsum Stairs");
+        add(BlockRegister.POLISHED_GYPSUM_SLAB.get(), "Polished Gypsum Slab");
+        add(BlockRegister.POLISHED_GYPSUM_WALL.get(), "Polished Gypsum Wall");
+        add(ItemRegister.GYPSUM_SHARD.get(), "Gypsum Shard");
         //vegetation
         //tall grass
         add(BlockRegister.SKY_SPEARS.get(), "Sky Spears");
