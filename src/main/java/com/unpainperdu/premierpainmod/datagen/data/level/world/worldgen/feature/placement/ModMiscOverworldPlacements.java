@@ -1,6 +1,6 @@
-package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.placement;
+package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.feature.placement;
 
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.feature.features.ModMiscOverworldFeatures;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.feature.features.ModMiscOverworldFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;

@@ -1,7 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome.surface;
 
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
-import net.minecraft.world.level.biome.Biomes;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.overworld.ModOverworldSurfaceBiomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
@@ -16,7 +15,7 @@ public class ModSurfaceRule
 
     public static SurfaceRules.RuleSource makeRules()
     {
-        SurfaceRules.ConditionSource surfacerules$conditionsource = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(97), 2);
+        SurfaceRules.ConditionSource surfacerules$conditionsource = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(97), 2);  //TODO undestand all this messs
         SurfaceRules.ConditionSource surfacerules$conditionsource1 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(256), 0);
         SurfaceRules.ConditionSource surfacerules$conditionsource2 = SurfaceRules.yStartCheck(VerticalAnchor.absolute(63), -1);
         SurfaceRules.ConditionSource surfacerules$conditionsource3 = SurfaceRules.yStartCheck(VerticalAnchor.absolute(74), 1);
@@ -36,16 +35,16 @@ public class ModSurfaceRule
 
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS),
+                        SurfaceRules.isBiome(ModOverworldSurfaceBiomes.SAND_DESERT_PREMIER_PAIN_RUINS),
                         sandSurface
                 ),
                 SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(ModBiomes.SWAMP_PREMIER_PAIN_RUINS),
+                        SurfaceRules.isBiome(ModOverworldSurfaceBiomes.SWAMP_PREMIER_PAIN_RUINS),
                         SurfaceRules.ifTrue(isAtOrAboveWaterLevel, mudSurface)
                 ),
                 SurfaceRules.ifTrue(
                         SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(
-                                SurfaceRules.isBiome(ModBiomes.SWAMP_PREMIER_PAIN_RUINS),
+                                SurfaceRules.isBiome(ModOverworldSurfaceBiomes.SWAMP_PREMIER_PAIN_RUINS),
                                 SurfaceRules.ifTrue(
                                         surfacerules$conditionsource4,
                                         SurfaceRules.ifTrue(

@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome;
 
 import com.mojang.datafixers.util.Pair;
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.overworld.ModOverworldSurfaceBiomes;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -48,7 +48,7 @@ public class ModOverworldRegion extends Region
                 .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_2, ParameterUtils.Erosion.EROSION_5))
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING, ParameterUtils.Weirdness.MID_SLICE_VARIANT_ASCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.FOREST_PREMIER_PAIN_RUINS));
+                .build().forEach(point -> builder.add(point, ModOverworldSurfaceBiomes.FOREST_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.NEUTRAL))
@@ -57,7 +57,7 @@ public class ModOverworldRegion extends Region
                 .erosion(ParameterUtils.Erosion.EROSION_6)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(Climate.Parameter.span(-0.17F, 0.17F))
-                .build().forEach(point -> builder.add(point, ModBiomes.OLD_GREAT_FIELD));
+                .build().forEach(point -> builder.add(point, ModOverworldSurfaceBiomes.OLD_GREAT_FIELD));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.HOT))
@@ -66,7 +66,7 @@ public class ModOverworldRegion extends Region
                 .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_3, ParameterUtils.Erosion.EROSION_5))
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.SAND_DESERT_PREMIER_PAIN_RUINS));
+                .build().forEach(point -> builder.add(point, ModOverworldSurfaceBiomes.SAND_DESERT_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.HOT))
@@ -75,7 +75,7 @@ public class ModOverworldRegion extends Region
                 .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_5, ParameterUtils.Erosion.EROSION_6))
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.LOW_SLICE_NORMAL_DESCENDING, ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.SWAMP_PREMIER_PAIN_RUINS));
+                .build().forEach(point -> builder.add(point, ModOverworldSurfaceBiomes.SWAMP_PREMIER_PAIN_RUINS));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.HOT))
@@ -84,7 +84,7 @@ public class ModOverworldRegion extends Region
                 .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_4, ParameterUtils.Erosion.EROSION_6))
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.JUNGLE_PREMIER_PAIN_RUINS));
+                .build().forEach(point -> builder.add(point, ModOverworldSurfaceBiomes.JUNGLE_PREMIER_PAIN_RUINS));
 
         builder.build().forEach(mapper);
     }
