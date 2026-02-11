@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-18T10:36:24.2415778	Item Models: premierpainmod
+// 1.21.1	2026-02-11T12:30:34.2511282	Item Models: premierpainmod
 2a502a92574e29da258b543bbb828355e51af2e8 assets/premierpainmod/models/item/acacia_villager_shelf.json
 ff0517561b9f1d2db5e334037757b9c62d936e6d assets/premierpainmod/models/item/achiote_boat.json
 ef22b5b135b4311ca498ecc77ccb22a14bfeca00 assets/premierpainmod/models/item/achiote_chest_boat.json
@@ -55,6 +55,7 @@ ede00b82cf8e686e6e9bf70e1f7b3063901132a7 assets/premierpainmod/models/item/fruit
 adc6e627cd2c4801e055f96e81af98d10f036ee3 assets/premierpainmod/models/item/gold_block_villager_shelf.json
 64c27344a316cc25c94c07a87888af2d12983d89 assets/premierpainmod/models/item/granite_villager_shelf.json
 d25e0e5c5b4783a69bc0fd8c96de3d8f82d4cd90 assets/premierpainmod/models/item/gypsum_shard.json
+1d56e9b49ed5f9dab34b6fff795c0dd1307dbbd6 assets/premierpainmod/models/item/gypsum_villager_shelf.json
 3810c9717d591e05ba4244330d29b38128631b03 assets/premierpainmod/models/item/half_cooked_fries.json
 aa58aef0b03c39a02c2fc25a5b76a806fbbc2bea assets/premierpainmod/models/item/hard_boiled_egg.json
 fb2026d28b616ffb2de2fd079c322158edfef0bc assets/premierpainmod/models/item/iron_block_villager_shelf.json

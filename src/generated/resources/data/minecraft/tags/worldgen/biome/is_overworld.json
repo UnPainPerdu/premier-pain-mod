@@ -20,6 +20,10 @@
       "id": "premierpainmod:old_great_field",
       "required": false
     },
+    {
+      "id": "premierpainmod:gypsum_cave",
+      "required": false
+    },
     "minecraft:mushroom_fields",
     "minecraft:deep_frozen_ocean",
     "minecraft:frozen_ocean",

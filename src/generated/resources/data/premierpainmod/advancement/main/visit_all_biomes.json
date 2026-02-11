@@ -17,6 +17,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "has_visited_gypsum_cave": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "premierpainmod:gypsum_cave"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "has_visited_jungle_premier_pain_ruins": {
       "conditions": {
         "player": [
@@ -110,6 +126,9 @@
     ],
     [
       "has_visited_jungle_premier_pain_ruins"
+    ],
+    [
+      "has_visited_gypsum_cave"
     ]
   ],
   "rewards": {

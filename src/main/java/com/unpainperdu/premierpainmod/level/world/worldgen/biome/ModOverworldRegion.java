@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.worldgen.biome;
 
 import com.mojang.datafixers.util.Pair;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.overworld.ModOverWorldUndergroundBiomes;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.overworld.ModOverworldSurfaceBiomes;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -85,6 +86,15 @@ public class ModOverworldRegion extends Region
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, ModOverworldSurfaceBiomes.JUNGLE_PREMIER_PAIN_RUINS));
+
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.HOT))
+                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.WET, ParameterUtils.Humidity.HUMID))
+                .continentalness(Climate.Parameter.span(mushroomFields, farInland))
+                .erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_4, ParameterUtils.Erosion.EROSION_6))
+                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .weirdness(ParameterUtils.Weirdness.FULL_RANGE)
+                .build().forEach(point -> builder.add(point, ModOverWorldUndergroundBiomes.GYPSUM_CAVE));
 
         builder.build().forEach(mapper);
     }

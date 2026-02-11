@@ -5,17 +5,16 @@ import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properti
 import com.unpainperdu.premierpainmod.util.tool_kit.VoxelShapeHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -136,6 +135,15 @@ public class PointedCrystalBlock extends AmethystBlock implements SimpleWaterlog
         BlockState oppositeState = level.getBlockState(oppositePos);
         Block opposeiteBlock = oppositeState.getBlock();
         return oppositeState.isFaceSturdy(level, oppositePos, direction) || (opposeiteBlock instanceof PointedCrystalBlock && oppositeState.getValue(FACING) == direction);
+    }
+
+    @Override
+    public void fallOn(@NotNull Level level, BlockState state, @NotNull BlockPos pos, @NotNull Entity entity, float fallDistance) {
+        if (state.getValue(FACING) == Direction.UP && state.getValue(POINTED_CRYSTAL_STATE) == PointedCrystalState.TOP) {
+            entity.causeFallDamage(fallDistance + 2.0F, 2.0F, level.damageSources().stalagmite());
+        } else {
+            super.fallOn(level, state, pos, entity, fallDistance);
+        }
     }
 
     @Override

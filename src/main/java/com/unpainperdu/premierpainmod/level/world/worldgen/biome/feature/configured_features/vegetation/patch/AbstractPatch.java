@@ -56,7 +56,7 @@ public abstract class AbstractPatch extends AbstractFeature<PatchConfiguration>
         for (BlockPos pos1 : listPos)
         {
             ChunkPos placementChunk = new ChunkPos(pos1);
-            if (isValidPlacementLocation(worldIn, pos1, groundAllowed) && placementChunk.equals(originChunk))
+            if (isValidPlacementLocation(worldIn, pos1, groundAllowed) && isInGeneratedChunks(originChunk, placementChunk))
             {
                 placeFeature(context, pos1);
             }

@@ -40,6 +40,7 @@ import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.getModNa
 
 public class ModBlockTagProvider extends BlockTagsProvider
 {
+    //TODO simplify all
     public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper)
     {
         super(packOutput, lookupProvider, PremierPainMod.MOD_ID, fileHelper);
@@ -282,10 +283,11 @@ public class ModBlockTagProvider extends BlockTagsProvider
         }
 
         this.tag(ModBlockTags.GYPSUM).add(
+                BlockRegister.GYPSUM.get()
+                ,
                 BlockRegister.GYPSUM_STAIRS.get(),
                 BlockRegister.GYPSUM_SLAB.get(),
                 BlockRegister.GYPSUM_WALL.get(),
-                BlockRegister.GYPSUM.get(),
                 BlockRegister.POINTED_GYPSUM.get(),
                 BlockRegister.GYPSUM_CLUSTER.get(),
                 BlockRegister.CUTTED_GYPSUM.get(),
@@ -348,6 +350,7 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 || (blockName.contains("netherite"))
                 || (blockName.contains("obsidian"))
                 || (blockName.contains("amethyst"))
+                || (blockName.contains("gypsum"))
         )
         {
             this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);

@@ -80,9 +80,10 @@ public class AllMaterialsBlockEnum
         MOUNTAIN_CURRANT(Blocks.OAK_PLANKS),
         MORICHE_PALM(Blocks.OAK_PLANKS),
         ACHIOTE(Blocks.OAK_PLANKS),
-        WEEPING_WILLOW(Blocks.OAK_PLANKS);
+        WEEPING_WILLOW(Blocks.OAK_PLANKS),
+        GYPSUM(Blocks.AMETHYST_BLOCK);
 
-        private final BlockBehaviour baseBlockBehaviour;
+        private final BlockBehaviour baseBlockBehaviour; //todo transform to Properties
 
         Material(BlockBehaviour baseBlockBehaviour)
         {

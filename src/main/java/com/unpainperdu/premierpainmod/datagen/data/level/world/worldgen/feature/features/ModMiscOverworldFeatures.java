@@ -1,5 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.feature.features;
 
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.pointed_crystal.PointedCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.tall_crystal.TallCrystalConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.outside_dry_toilet.OutsideDryToiletConfiguration;
@@ -20,7 +22,9 @@ import java.util.List;
 
 public class ModMiscOverworldFeatures
 {
-    private ModMiscOverworldFeatures(){}
+    private ModMiscOverworldFeatures()
+    {
+    }
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> FOREST_VILLAGER_STATUE_RUINS = ModFeatureUtil.createKey("forest_villager_statue_ruins");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUSH_AND_ROCK = ModFeatureUtil.createKey("bush_and_rock");
@@ -30,14 +34,17 @@ public class ModMiscOverworldFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> VILLAGER_TOTEM = ModFeatureUtil.createKey("villager_totem");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET = ModFeatureUtil.createKey("swamp_weeping_willow_outside_dry_toilet");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET = ModFeatureUtil.createKey("swamp_mangrove_outside_dry_toilet");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> POINTED_CRYSTAL = ModFeatureUtil.createKey("pointed_crystal");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_CRYSTAL = ModFeatureUtil.createKey("tall_crystal");
+
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> pContext)
     {
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.FOREST_VILLAGER_STATUE_RUINS, FeatureRegister.VILLAGER_STATUE_RUINS.get(),
                 new VillagerStatueRuinsConfiguration.Builder()
-                        .blockStates(List.of(Blocks.STONE_BRICKS.defaultBlockState(),Blocks.MOSSY_STONE_BRICKS.defaultBlockState(),Blocks.CRACKED_STONE_BRICKS.defaultBlockState()))
-                        .stairStates(List.of(Blocks.STONE_BRICK_STAIRS.defaultBlockState(),Blocks.MOSSY_STONE_BRICK_STAIRS.defaultBlockState()))
-                        .slabStates(List.of(Blocks.STONE_BRICK_SLAB.defaultBlockState(),Blocks.MOSSY_STONE_BRICK_SLAB.defaultBlockState()))
+                        .blockStates(List.of(Blocks.STONE_BRICKS.defaultBlockState(), Blocks.MOSSY_STONE_BRICKS.defaultBlockState(), Blocks.CRACKED_STONE_BRICKS.defaultBlockState()))
+                        .stairStates(List.of(Blocks.STONE_BRICK_STAIRS.defaultBlockState(), Blocks.MOSSY_STONE_BRICK_STAIRS.defaultBlockState()))
+                        .slabStates(List.of(Blocks.STONE_BRICK_SLAB.defaultBlockState(), Blocks.MOSSY_STONE_BRICK_SLAB.defaultBlockState()))
                         .build()
         );
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.BUSH_AND_ROCK, FeatureRegister.BUSH_AND_ROCK.get(),
@@ -50,7 +57,7 @@ public class ModMiscOverworldFeatures
                         ))
                         .statesFor2ndLayer(List.of(BlockStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState().setValue(LeavesBlock.PERSISTENT, true))))
                         .build()
-                );
+        );
         FeatureUtils.register(pContext, ModMiscOverworldFeatures.HOUSE_FOUNDATION_RUINS, FeatureRegister.HOUSE_FOUNDATION_RUINS.get(),
                 new HouseFoundationRuinsConfiguration.Builder()
                         .states(List.of(
@@ -91,6 +98,26 @@ public class ModMiscOverworldFeatures
                                 BlockStateProvider.simple(Blocks.MANGROVE_DOOR),
                                 BlockStateProvider.simple(BlockRegister.ALL_MATERIALS_MAP.get("mangrove_villager_dry_toilet").get())
                         ))
+                        .build()
+        );
+
+        FeatureUtils.register(pContext, ModMiscOverworldFeatures.POINTED_CRYSTAL, FeatureRegister.POINTED_CRYSTAL.get(),
+                new PointedCrystalConfiguration.Builder()
+                        .spread(0.5F, 1.0F)
+                        .density(0.4F, 0.9F)
+                        .blockAndPointedAndCluster(
+                                BlockStateProvider.simple(BlockRegister.GYPSUM.get()),
+                                BlockStateProvider.simple(BlockRegister.POINTED_GYPSUM.get()),
+                                BlockStateProvider.simple(BlockRegister.GYPSUM_CLUSTER.get())
+                        )
+                        .build()
+        );
+
+        FeatureUtils.register(pContext, ModMiscOverworldFeatures.TALL_CRYSTAL, FeatureRegister.TALL_CRYSTAL.get(),
+                new TallCrystalConfiguration.Builder()
+                        .height(10, 25)
+                        .block(BlockStateProvider.simple(BlockRegister.GYPSUM.get()))
+                        .cluster(BlockStateProvider.simple(BlockRegister.GYPSUM_CLUSTER.get()))
                         .build()
         );
     }

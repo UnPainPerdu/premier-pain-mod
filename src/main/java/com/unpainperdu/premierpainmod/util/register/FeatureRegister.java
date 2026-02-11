@@ -1,6 +1,10 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.pointed_crystal.PointedCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.pointed_crystal.PointedCrystalFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.tall_crystal.TallCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.tall_crystal.TallCrystalFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
@@ -40,12 +44,15 @@ public class FeatureRegister
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> VILLAGER_TOTEM = FEATURES.register("villager_totem", () -> new VillagerTotemFeature(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<OutsideDryToiletConfiguration>> OUTSIDE_DRY_TOILET = FEATURES.register("outside_dry_toilet", () -> new OutsideDryToiletFeature(OutsideDryToiletConfiguration.CODEC));
     //vegetation
-    //flower
+    //  flower
     public static final DeferredHolder<Feature<?>, Feature<PatchConfiguration>> BASIC_VEGETATION_PATCH = FEATURES.register("basic_vegetation_flower", () -> new BasicFlowerPatchFeature(PatchConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<PatchConfiguration>> TALL_VEGETATION_PATCH = FEATURES.register("tall_vegetation_flower", () -> new TallVegetationPatchFeature(PatchConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<PatchConfiguration>> GROWING_ABOVE_VEGETATION_PATCH = FEATURES.register("growing_above_vegetation_flower", () -> new GrowingAboveVegetationPatchFeature(PatchConfiguration.CODEC));
-    //misc
+    //  misc
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> FLOWERED_CACTUS = FEATURES.register("flowered_cactus", () -> new FloweredCactusFeature(NoneFeatureConfiguration.CODEC));
+    //geology
+    public static final DeferredHolder<Feature<?>, Feature<PointedCrystalConfiguration>> POINTED_CRYSTAL = FEATURES.register("pointed_crystal", () -> new PointedCrystalFeature(PointedCrystalConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<TallCrystalConfiguration>> TALL_CRYSTAL = FEATURES.register("tall_crystal", () -> new TallCrystalFeature(TallCrystalConfiguration.CODEC));
 
     public static void register(IEventBus modEventBus)
     {

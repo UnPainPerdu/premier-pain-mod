@@ -1,0 +1,27 @@
+{
+  "type": "premierpainmod:tall_crystal",
+  "config": {
+    "block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "premierpainmod:gypsum"
+      }
+    },
+    "cluster": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "premierpainmod:gypsum_cluster",
+        "Properties": {
+          "age": "0",
+          "facing": "up",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "height": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 25,
+      "min_inclusive": 10
+    }
+  }
+}

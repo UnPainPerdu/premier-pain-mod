@@ -300,7 +300,10 @@ What would be a world without bugs ?
     - Update neoforge and requerement to 21.1.215
 
 ## Add :
-    - Gypsum block and variant, gypsum cluster, pointed gypsum
+### Blocks :
+    - Gypsum block and variant, gypsum cluster, pointed gypsum and all materials variants
+### Biomes :
+    - Gypsum cave, an underground biome spawning gypsum crystal
 
 ## Change :
 ### Structures :

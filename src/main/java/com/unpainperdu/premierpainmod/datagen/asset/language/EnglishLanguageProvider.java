@@ -24,7 +24,7 @@ public class EnglishLanguageProvider extends LanguageProvider
 
         add("itemGroup.premierpainmod", "Premier Pain mod");
         //text_display
-        //toilet_seat
+        //  toilet_seat
         add("entity.toilet_seat.not_only_fart", "You feel lighter !");
         //gui
         add("container." + PremierPainMod.MOD_ID + ".villager_workshop", "Villager workshop");
@@ -33,7 +33,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("container." + PremierPainMod.MOD_ID + ".villager_brewing_station", "Brewing station");
         add("container." + PremierPainMod.MOD_ID + ".villager_musical_fridge", "Musical fridge");
         add(PremierPainMod.MOD_ID + ".tooltip.liquid.amount.with.capacity", "%s / %s mB");
-        //advancements
+        //  advancements
         clp.generateRootAdvancementTranslation("main", "PremierPainMod", "Do you like villager ?");
         clp.generateAdvancementTranslation("villager_workshop", "A Wonderfull Block", "Craft your first villager workshop");
         clp.generateAdvancementTranslation("first_beer", "Fresh Enough", "Get your first mug from Villager Brewing Station");
@@ -52,29 +52,29 @@ public class EnglishLanguageProvider extends LanguageProvider
         clp.deathTranslation(ModDamageType.LIBERTY_DAMAGE3, "%s didn't give honor to a Super-Earth flag");
         clp.deathTranslation(ModDamageType.HUG_TO_DEATH, "%s has been huged to death");
         //item
-        //villagerSingingStone
+        //  villagerSingingStone
         add(ItemRegister.LIBERTY_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Liberty");
         clp.itemEventDescriptionMaker(ItemEventRegister.LIBERTY.get(), "Are you a true patriot ?");
         add(ItemRegister.DIGGY_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Digging");
         clp.itemEventDescriptionMaker(ItemEventRegister.DIGGY.get(), "Don't fear the depth");
         add(ItemRegister.MADNESS_VILLAGER_SINGING_STONE.get(), "Villager Singing Stone of Madness");
         clp.itemEventDescriptionMakerWIP(ItemEventRegister.MADNESS.get(), "Enough! I have endured more than enough...");
-        //paint
+        //  paint
         clp.generatePaintingTranslation("landscape_0", "Forest LandScape", "UnPainPerdu");
         clp.generatePaintingTranslation("landscape_1", "Swamp LandScape", "UnPainPerdu");
         clp.generatePaintingTranslation("landscape_2", "Field LandScape", "UnPainPerdu");
         clp.generatePaintingTranslation("flowered_cactus", "Flowered Cactus", "UnPainPerdu");
         clp.generatePaintingTranslation("underground_gate", "UnderGround Gate", "UnPainPerdu");
         //fluid
-        //oil
+        //  oil
         add(PremierPainMod.MOD_ID + ".block.description.moriche_palm_oil_type", "Moriche Palm Oil");
         add(ItemRegister.MORICHE_PALM_OIL_BUCKET.get(), "Moriche Palm Oil Bucket");
         //beer
-        //empty
+        //  empty
         add(ItemRegister.EMPTY_GLASS.get(), "Empty Polymorphic Glass");
         add(ItemRegister.EMPTY_BOTTLE.get(), "Empty Polymorphic Bottle");
         add(ItemRegister.EMPTY_MUG.get(), "Empty Mug");
-        //pain dieux
+        //  pain dieux
         add(PremierPainMod.MOD_ID + ".block.description.pain_dieux_type", "Pain Dieux");
         add(ItemRegister.PAIN_DIEUX_BUCKET.get(), "Pain Dieux Bucket");
         add(ItemRegister.PAIN_DIEUX_GLASS.get(), "Pain Dieux Glass");
@@ -83,7 +83,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.pain_dieux_glass", "A unique glass for an unique beer.");
         add("item.description.pain_dieux_bottle", "A classy bottle of good beverage.");
         add("item.description.pain_dieux_mug", "Nothing better than a fresh Pain Dieux");
-        //la chateau
+        //  la chateau
         add(PremierPainMod.MOD_ID + ".block.description.la_chateau_type", "La Chateau");
         add(ItemRegister.LA_CHATEAU_BUCKET.get(), "La Chateau Bucket");
         add(ItemRegister.LA_CHATEAU_GLASS.get(), "La Chateau Glass");
@@ -92,7 +92,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.la_chateau_glass", "A solid royal glass.");
         add("item.description.la_chateau_bottle", "You already know you will enjoy it.");
         add("item.description.la_chateau_mug", "A big mug worthy for a knight!");
-        //debier
+        //  debier
         add(PremierPainMod.MOD_ID + ".block.description.debier_type", "DeBier");
         add(ItemRegister.DEBIER_BUCKET.get(), "DeBier Bucket");
         add(ItemRegister.DEBIER_GLASS.get(), "DeBier Glass");
@@ -101,7 +101,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.debier_glass", "Strong luck well served.");
         add("item.description.debier_bottle", "Saint-Patrick's favorite.");
         add("item.description.debier_mug", "you will be traeted as an Irish!");
-        //envahisseur_rouge
+        //  envahisseur_rouge
         add(PremierPainMod.MOD_ID + ".block.description.envahisseur_rouge_type", "Envahisseur Rouge");
         add(ItemRegister.ENVAHISSEUR_ROUGE_BUCKET.get(), "Envahisseur Rouge Bucket");
         add(ItemRegister.ENVAHISSEUR_ROUGE_GLASS.get(), "Envahisseur Rouge Glass");
@@ -110,7 +110,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.envahisseur_rouge_glass", "VIOLENCE.");
         add("item.description.envahisseur_rouge_bottle", "Only this bottle can handle it.");
         add("item.description.envahisseur_rouge_mug", "Lead a raid like a god!");
-        //raspbuisson
+        //  raspbuisson
         add(PremierPainMod.MOD_ID + ".block.description.raspbuisson_type", "RaspBuisson");
         add(ItemRegister.RASPBUISSON_BUCKET.get(), "RaspBuisson Bucket");
         add(ItemRegister.RASPBUISSON_GLASS.get(), "RaspBuisson Glass");
@@ -119,7 +119,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.raspbuisson_glass", "Delicate raspberry flavor well served.");
         add("item.description.raspbuisson_bottle", "Such a color attract everyone.");
         add("item.description.raspbuisson_mug", "So fresh!");
-        //la_blanche_citadine
+        //  la_blanche_citadine
         add(PremierPainMod.MOD_ID + ".block.description.la_blanche_citadine_type", "La Blanche Citadine");
         add(ItemRegister.LA_BLANCHE_CITADINE_BUCKET.get(), "La Blanche Citadine Bucket");
         add(ItemRegister.LA_BLANCHE_CITADINE_GLASS.get(), "La Blanche Citadine Glass");
@@ -128,7 +128,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.la_blanche_citadine_glass", "Light and perfect for the evening.");
         add("item.description.la_blanche_citadine_bottle", "Simply delicious.");
         add("item.description.la_blanche_citadine_mug", "Faster toward the barrel!");
-        //crane_noir
+        //  crane_noir
         add(PremierPainMod.MOD_ID + ".block.description.crane_noir_type", "Crane Noir");
         add(ItemRegister.CRANE_NOIR_BUCKET.get(), "Crane Noir Bucket");
         add(ItemRegister.CRANE_NOIR_GLASS.get(), "Crane Noir Glass");
@@ -137,7 +137,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.crane_noir_glass", "A quality drink to drink into the skulls of your enemies.");
         add("item.description.crane_noir_bottle", "Solide as obsidian.");
         add("item.description.crane_noir_mug", "Your stamina is getting multiplied!");
-        //tak
+        //  tak
         add(PremierPainMod.MOD_ID + ".block.description.tak_type", "Tak");
         add(ItemRegister.TAK_BUCKET.get(), "Tak Bucket");
         add(ItemRegister.TAK_GLASS.get(), "Tak Glass");
@@ -146,7 +146,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add("item.description.tak_glass", "TakTakTak.");
         add("item.description.tak_bottle", "TakTak.");
         add("item.description.tak_mug", "TakTakTakTakTakTakTakTak!");
-        //disender
+        //  disender
         add(PremierPainMod.MOD_ID + ".block.description.disender_type", "DisEnder");
         add(ItemRegister.DISENDER_BUCKET.get(), "DisEnder Bucket");
         add(ItemRegister.DISENDER_GLASS.get(), "DisEnder Glass");
@@ -167,30 +167,30 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.UNCOOKED_SCHNITZEL.get(), "Uncooked Schnitzel");
         add(ItemRegister.SCHNITZEL.get(), "Schnitzel");
         add(ItemRegister.HARD_BOILED_EGG.get(), "Hard Boiled Egg");
-        //vegetation
+        //  vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky Spears Fruit");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Cactus Flower Fruit");
         add(ItemRegister.JELLY_HAT.get(), "Jelly Hat");
         add(ItemRegister.MOUNTAIN_CURRANT.get(), "Mountain Currant");
         add(ItemRegister.MORICHE_PALM_FRUIT.get(), "Moriche Palm Fruit");
         add(ItemRegister.ACHIOTE_FRUIT.get(), "Achiote Fruit");
-        //stew
+        //  stew
         add(ItemRegister.JELLYSHROOM_STEW.get(), "Jellyshroom Stew");
         add(ItemRegister.CACTUS_STEW.get(), "Cactus Fruit Stew");
         add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Potatoes and Spear Fruit Bowl");
         add(ItemRegister.FRUITS_BOWL.get(), "Fruits Bowl");
-        //egg
+        //  egg
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Mountain Currant Golem Spawn Egg");
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "Wool Golem Spawn Egg");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brewer");
         //block
-        //blockEvent
+        //  blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");
-        //crafting_block
+        //  crafting_block
         add(BlockRegister.VILLAGER_WORKSHOP.get(), "Villager Workshop");
         add(BlockRegister.COOKING_POT_BLOCK.get(), "Cooking Pot");
-        //geology
+        //  geology
         add(BlockRegister.GYPSUM.get(), "Gypsum");
         add(BlockRegister.GYPSUM_STAIRS.get(), "Gypsum Stairs");
         add(BlockRegister.GYPSUM_SLAB.get(), "Gypsum Slab");
@@ -203,35 +203,35 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(BlockRegister.POLISHED_GYPSUM_SLAB.get(), "Polished Gypsum Slab");
         add(BlockRegister.POLISHED_GYPSUM_WALL.get(), "Polished Gypsum Wall");
         add(ItemRegister.GYPSUM_SHARD.get(), "Gypsum Shard");
-        //vegetation
-        //tall grass
+        //  vegetation
+        //      tall grass
         add(BlockRegister.SKY_SPEARS.get(), "Sky Spears");
         add(BlockRegister.SKY_SPEARS_FLOWER.get(), "Sky Spears Flower");
         add(BlockRegister.DEAD_TALL_BUSH.get(), "Dry Bush");
         add(BlockRegister.OLD_WILD_WHEAT.get(), "Old Wild Wheat");
-        //misc
+        //  misc
         add(BlockRegister.FLOWERED_CACTUS_BLOCK.get(), "Flowered Cactus");
         add(BlockRegister.CACTUS_FLOWER_BLOCK.get(), "Cactus Flower");
 
-        //flower
-        //1 block flower
+        //  flower
+        //      1 block flower
         add(BlockRegister.RUINS_FLOWER.get(), "Ruins Flower");
         add(BlockRegister.CURIOSITY_FLOWER.get(), "Curiosity Flower");
-        //growing flower
+        //      growing flower
         add(BlockRegister.CIVILIZATIONS_FLOWER.get(), "Civilizations Flower");
-        //tall flower
+        //      tall flower
         add(BlockRegister.FALLING_HELICON_FLOWER.get(), "Falling Helicon");
-        //dead bush
+        //      dead bush
         add(BlockRegister.DEAD_RUINS_FLOWER.get(), "Dead Ruins Flower");
-        //crop
+        //      crop
         add(BlockRegister.JELLYSHROOM.get(), "Jellyshroom");
-        //tree
+        //      tree
         treeTranslator("mountain_currant", "Mountain Currant");
         treeTranslator("moriche_palm", "Moriche Palm");
         treeTranslator("achiote", "Achiote");
         treeTranslator("weeping_willow", "Weeping Willow");
         add(BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get(), "Falling Weeping Willow Leaves");
-        // "All material"
+        //  "All material"
         globalAllMaterialTranslation("oak", "Oak");
         globalAllMaterialTranslation("birch", "Birch");
         globalAllMaterialTranslation("spruce", "Spruce");
@@ -278,6 +278,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         globalAllMaterialTranslation("moriche_palm", "Moriche Palm");
         globalAllMaterialTranslation("achiote", "Achiote");
         globalAllMaterialTranslation("weeping_willow", "Weeping Willow");
+        globalAllMaterialTranslation("gypsum", "Gypsum");
     }
 
     //Only use for "all material" blocks

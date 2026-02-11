@@ -100,7 +100,7 @@ public class ModAdvancementProvider extends AdvancementProvider
                     Map.of("cooking_pot", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegister.COOKING_POT_BLOCK)));
 
             Map<String, Criterion<?>> conditions = new LinkedHashMap<>();
-            for (ResourceKey<Biome> biome : ModOverworldSurfaceBiomes.OVERWORLD_BIOMES)
+            for (ResourceKey<Biome> biome : ModBiomes.OVERWORLD_BIOMES)
             {
                 String name = "has_visited_" + biome.location().toString().replace("premierpainmod:", "").replace("/", "_");
                 conditions.put(name, PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeHoldergetter.getOrThrow(biome))));

@@ -7,6 +7,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.valueproviders.ClampedNormalInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -22,35 +24,104 @@ public class ModMiscOverworldPlacements
     public static final ResourceKey<PlacedFeature> VILLAGER_TOTEM = ModPlacementUtil.createKey("villager_totem");
     public static final ResourceKey<PlacedFeature> SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET = ModPlacementUtil.createKey("swamp_weeping_willow_outside_dry_toilet");
     public static final ResourceKey<PlacedFeature> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET = ModPlacementUtil.createKey("swamp_mangrove_outside_dry_toilet");
+    public static final ResourceKey<PlacedFeature> POINTED_CRYSTAL = ModPlacementUtil.createKey("pointed_crystal");
+    public static final ResourceKey<PlacedFeature> TALL_CRYSTAL = ModPlacementUtil.createKey("tall_crystal");
 
-    public static void bootstrap(BootstrapContext<PlacedFeature> pContext)
+    public static void bootstrap(BootstrapContext<PlacedFeature> context)
     {
-        HolderGetter<ConfiguredFeature<?, ?>> holdergetter = pContext.lookup(Registries.CONFIGURED_FEATURE);
+        HolderGetter<ConfiguredFeature<?, ?>> holdergetter = context.lookup(Registries.CONFIGURED_FEATURE);
 
         final Holder<ConfiguredFeature<?, ?>> FOREST_VILLAGER_STATUE_RUINS_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.FOREST_VILLAGER_STATUE_RUINS);
-        register(pContext, FOREST_VILLAGER_STATUE_RUINS, FOREST_VILLAGER_STATUE_RUINS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context,
+                FOREST_VILLAGER_STATUE_RUINS,
+                FOREST_VILLAGER_STATUE_RUINS_HOLDER,
+                RarityFilter.onAverageOnceEvery(2),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> BUSH_AND_ROCK_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.BUSH_AND_ROCK);
-        register(pContext, BUSH_AND_ROCK, BUSH_AND_ROCK_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context,
+                BUSH_AND_ROCK,
+                BUSH_AND_ROCK_HOLDER,
+                CountPlacement.of(1),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> HOUSE_FOUNDATION_RUINS_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.HOUSE_FOUNDATION_RUINS);
-        register(pContext, HOUSE_FOUNDATION_RUINS, HOUSE_FOUNDATION_RUINS_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, HOUSE_FOUNDATION_RUINS,
+                HOUSE_FOUNDATION_RUINS_HOLDER,
+                RarityFilter.onAverageOnceEvery(2),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> VILLAGER_PILLAR_RUINS_DESERT_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.VILLAGER_PILLAR_RUINS_DESERT);
-        register(pContext, VILLAGER_PILLAR_RUINS_DESERT, VILLAGER_PILLAR_RUINS_DESERT_HOLDER, RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context,
+                VILLAGER_PILLAR_RUINS_DESERT,
+                VILLAGER_PILLAR_RUINS_DESERT_HOLDER,
+                RarityFilter.onAverageOnceEvery(3),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> MUD_PACK_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.MUD_PACK);
-        register(pContext, MUD_PACK, MUD_PACK_HOLDER, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context,
+                MUD_PACK,
+                MUD_PACK_HOLDER,
+                CountPlacement.of(1),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> VILLAGER_TOTEM_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.VILLAGER_TOTEM);
-        register(pContext, VILLAGER_TOTEM, VILLAGER_TOTEM_HOLDER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context,
+                VILLAGER_TOTEM,
+                VILLAGER_TOTEM_HOLDER,
+                RarityFilter.onAverageOnceEvery(2),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET);
-        register(pContext, SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET, SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET_HOLDER, RarityFilter.onAverageOnceEvery(45), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context,
+                SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET,
+                SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET_HOLDER,
+                RarityFilter.onAverageOnceEvery(45),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.SWAMP_MANGROVE_OUTSIDE_DRY_TOILET);
-        register(pContext, SWAMP_MANGROVE_OUTSIDE_DRY_TOILET, SWAMP_MANGROVE_OUTSIDE_DRY_TOILET_HOLDER, RarityFilter.onAverageOnceEvery(60), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context,
+                SWAMP_MANGROVE_OUTSIDE_DRY_TOILET,
+                SWAMP_MANGROVE_OUTSIDE_DRY_TOILET_HOLDER,
+                RarityFilter.onAverageOnceEvery(60),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome());
 
+        final Holder<ConfiguredFeature<?, ?>> POINTED_CRYSTAL_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.POINTED_CRYSTAL);
+        register(context,
+                POINTED_CRYSTAL,
+                POINTED_CRYSTAL_HOLDER,
+                CountPlacement.of(UniformInt.of(238, 256)),  // 256 - 256 try to place
+                InSquarePlacement.spread(), // spread in the chunk
+                PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, // 1 - 5 try to place in selected place upper
+                CountPlacement.of(UniformInt.of(5, 10)),
+                RandomOffsetPlacement.of(ClampedNormalInt.of(0.0F, 3.0F, -10, 10), ClampedNormalInt.of(0.0F, 0.6F, -2, 2)),
+                BiomeFilter.biome());
+
+        final Holder<ConfiguredFeature<?, ?>> TALL_CRYSTAL_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.TALL_CRYSTAL);
+        register(context,
+                TALL_CRYSTAL,
+                TALL_CRYSTAL_HOLDER,
+                CountPlacement.of(UniformInt.of(15, 200)),
+                InSquarePlacement.spread(),
+                PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+                CountPlacement.of(UniformInt.of(5, 10)),
+                BiomeFilter.biome());
     }
 
     protected static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> placedFeatureKey, Holder<ConfiguredFeature<?, ?>> configuredFeature, PlacementModifier... modifiers)

@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.tag;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.overworld.ModOverWorldUndergroundBiomes;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.overworld.ModOverworldSurfaceBiomes;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBiomeTags;
 import net.minecraft.core.HolderLookup;
@@ -27,28 +28,29 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider)
     {
-        //Premier Pain ruins
-        //forest
+        //overworld
+        //  surface
+        //      forest
         generateTagsForOverWorldBiome(ModOverworldSurfaceBiomes.FOREST_PREMIER_PAIN_RUINS,
                 BiomeTags.IS_FOREST,
                 Tags.Biomes.IS_DENSE_VEGETATION,
                 ModBiomeTags.HAS_FOREST_PREMIER_PAIN_TEMPLE
         );
-        //desert
+        //      desert
         generateTagsForOverWorldBiome(ModOverworldSurfaceBiomes.SAND_DESERT_PREMIER_PAIN_RUINS,
                 Tags.Biomes.IS_DESERT,
                 Tags.Biomes.IS_HOT,
                 BiomeTags.SNOW_GOLEM_MELTS,
                 ModBiomeTags.HAS_SAND_DESERT_PREMIER_PAIN_TEMPLE
         );
-        //swamp
+        //      swamp
         generateTagsForOverWorldBiome(ModOverworldSurfaceBiomes.SWAMP_PREMIER_PAIN_RUINS,
                 Tags.Biomes.IS_SWAMP,
                 Tags.Biomes.IS_WET,
                 BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS,
                 ModBiomeTags.HAS_SWAMP_PREMIER_PAIN_TEMPLE
         );
-        //jungle
+        //      jungle
         generateTagsForOverWorldBiome(ModOverworldSurfaceBiomes.JUNGLE_PREMIER_PAIN_RUINS,
                 Tags.Biomes.IS_JUNGLE,
                 Tags.Biomes.IS_WET,
@@ -56,10 +58,17 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
                 Tags.Biomes.IS_DENSE_VEGETATION,
                 ModBiomeTags.HAS_JUNGLE_PREMIER_PAIN_TEMPLE
         );
-        //old great field
+        //      old great field
         generateTagsForOverWorldBiome(ModOverworldSurfaceBiomes.OLD_GREAT_FIELD,
                 Tags.Biomes.IS_PLAINS,
                 ModBiomeTags.HAS_OLD_GREAT_FIELD
+        );
+        //  underground
+                //gypsum cave
+        generateTagsForOverWorldBiome(ModOverWorldUndergroundBiomes.GYPSUM_CAVE,
+                Tags.Biomes.IS_CAVE,
+                Tags.Biomes.IS_WET,
+                Tags.Biomes.IS_HOT
         );
 
         super.addTags(provider);

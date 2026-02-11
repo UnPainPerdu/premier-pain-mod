@@ -71,7 +71,7 @@ public class ModVegetationPlacement
                 context,
                 ModVegetationPlacement.TREE_OAK_SWAMP,
                 TREE_OAK_SWAMP_HOLDER,
-                RarityFilter.onAverageOnceEvery(1),
+                RarityFilter.onAverageOnceEvery(1), // 1 attempt every 5 chunk
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(2),
                 BlockPredicateFilter.forPredicate(BlockPredicate.matchesTag(BlockTags.DIRT)),

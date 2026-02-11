@@ -20,6 +20,10 @@
       "id": "premierpainmod:old_great_field",
       "required": false
     },
+    {
+      "id": "premierpainmod:gypsum_cave",
+      "required": false
+    },
     "#minecraft:is_ocean",
     "#minecraft:is_river",
     "#minecraft:is_beach",

@@ -16,19 +16,21 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes.*;
 
 public class ModOverworldSurfaceBiomes
 {
-    public static final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = createKey("forest_premier_pain_ruins");
-    public static final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = createKey("sand_desert_premier_pain_ruins");
-    public static final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = createKey("swamp_premier_pain_ruins");
-    public static final ResourceKey<Biome> OLD_GREAT_FIELD = createKey("old_great_field");
-    public static final ResourceKey<Biome> JUNGLE_PREMIER_PAIN_RUINS = createKey("jungle_premier_pain_ruins");
+    public static final List<ResourceKey<Biome>> OVERWORLD_SURFACE_BIOMES = new ArrayList<>();
 
-    public static final List<ResourceKey<Biome>> OVERWORLD_BIOMES = List.of(FOREST_PREMIER_PAIN_RUINS, SAND_DESERT_PREMIER_PAIN_RUINS, SWAMP_PREMIER_PAIN_RUINS, OLD_GREAT_FIELD, JUNGLE_PREMIER_PAIN_RUINS);
+    public static final ResourceKey<Biome> FOREST_PREMIER_PAIN_RUINS = createKey("forest_premier_pain_ruins", OVERWORLD_BIOMES, OVERWORLD_SURFACE_BIOMES);
+    public static final ResourceKey<Biome> SAND_DESERT_PREMIER_PAIN_RUINS = createKey("sand_desert_premier_pain_ruins", OVERWORLD_BIOMES, OVERWORLD_SURFACE_BIOMES);
+    public static final ResourceKey<Biome> SWAMP_PREMIER_PAIN_RUINS = createKey("swamp_premier_pain_ruins", OVERWORLD_BIOMES, OVERWORLD_SURFACE_BIOMES);
+    public static final ResourceKey<Biome> OLD_GREAT_FIELD = createKey("old_great_field", OVERWORLD_BIOMES, OVERWORLD_SURFACE_BIOMES);
+    public static final ResourceKey<Biome> JUNGLE_PREMIER_PAIN_RUINS = createKey("jungle_premier_pain_ruins", OVERWORLD_BIOMES, OVERWORLD_SURFACE_BIOMES);
+
 
     public static void boostrap(BootstrapContext<Biome> context)
     {
