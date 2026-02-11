@@ -1,11 +1,11 @@
 package com.unpainperdu.premierpainmod.util.mod_list;
 
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.StandingVillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.WallVillagerShelf;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.java_comparator.ItemComparator;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class ModItemList
 
     /**
      * Little reminder that's ALL items, so item from blocks included
-    **/
+     **/
     public static List<Item> ALL_ITEMS = generateAllItemsList();
 
     private static List<Item> generateAllItemsList()
@@ -46,17 +46,11 @@ public class ModItemList
      */
     public static List<Item> getAllMaterialsBlocksAsItem()
     {
-        List<Item> list = new ArrayList<>();
-        for (Block block : ModBLockList.getAllMaterialsBlocks())
-        {
-
-            if (!(block instanceof WallVillagerShelf)
-                    && !(block instanceof StandingVillagerShelf)
-            )
-            {
-                list.add(block.asItem());
-            }
-        }
+        List<Item> list = new ArrayList<>(ModBLockList.getAllMaterialsBlocks().stream()
+                .filter(block -> !(block instanceof VillagerShelf))
+                .map(Block::asItem)
+                .filter(item -> item != Items.AIR)
+                .toList());
 
         for (Item item : ALL_ITEMS)
         {

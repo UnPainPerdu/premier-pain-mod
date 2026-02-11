@@ -2,17 +2,15 @@ package com.unpainperdu.premierpainmod.datagen.data.recipe;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.VillagerShelf;
 import com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block.CookingPotBlockEntity;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.*;
 import com.unpainperdu.premierpainmod.level.world.fluid.oil.MorichePalmOilFluid;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.CookingPotRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerBrewingStationRecipeBuilder;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
-import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
-import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.core.HolderLookup;
@@ -54,7 +52,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(output, lookupProvider);
     }
 
-    //TODO if block is in a recipe -> it has an item -> filter block without and unse ItemLike
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput)
     {
@@ -189,407 +186,201 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_WALL, BlockRegister.POLISHED_GYPSUM);
         //villager workshop
         //  all materials recipes
-        for (Block block : ModBLockList.getAllMaterialsBlocks())
-        {
-            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
-            if (!(block instanceof VillagerShelf))
-            {
-                // order mater for compose material
-                //oak like
-                if (blockName.contains("dark_oak"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.DARK_OAK_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-
-                }
-                else if (blockName.contains("pale_oak"))
-                {
-                    villagerWorkshopResultFromBase(block, Items.STICK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("oak"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.OAK_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                //stone like
-                //sandstone like
-                else if (blockName.contains("red_sandstone"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.RED_SANDSTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("sandstone"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.SANDSTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                //other
-                else if (blockName.contains("mossy_stone"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.MOSSY_COBBLESTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("mountain_currant"))
-                {
-                    villagerWorkshopResultFromBase(block, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("moriche_palm"))
-                {
-                    villagerWorkshopResultFromBase(block, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("achiote"))
-                {
-                    villagerWorkshopResultFromBase(block, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("weeping_willow"))
-                {
-                    villagerWorkshopResultFromBase(block, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("end_stone"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.END_STONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("blackstone"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.BLACKSTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("redstone"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.REDSTONE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("dripstone"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.DRIPSTONE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("stone"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.COBBLESTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                //other
-                else if (blockName.contains("birch"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.BIRCH_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("spruce"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.SPRUCE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("jungle"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.JUNGLE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("acacia"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.ACACIA_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("mangrove"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.MANGROVE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("cherry"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.CHERRY_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("bamboo"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.BAMBOO_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("crimson"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.CRIMSON_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("warped"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.WARPED_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("andesite"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.ANDESITE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("diorite"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.DIORITE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("granite"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.GRANITE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("prismarine"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.PRISMARINE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("purpur"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.PURPUR_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("deepslate"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.COBBLED_DEEPSLATE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("tuff"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.TUFF, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("packed_mud"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.PACKED_MUD, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("quartz"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.QUARTZ_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("nether_bricks"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.NETHER_BRICKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("basalt"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.BASALT, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("coal"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.COAL_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("iron"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.IRON_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("gold"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.GOLD_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("emerald"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.EMERALD_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("diamond"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.DIAMOND_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("copper"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.COPPER_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("lapis"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.LAPIS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("netherite"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.NETHERITE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("obsidian"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.OBSIDIAN, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("amethyst"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.AMETHYST_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("bedrock"))
-                {
-                    villagerWorkshopResultFromBase(block, Blocks.BEDROCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (blockName.contains("gypsum"))
-                {
-                    villagerWorkshopResultFromBase(block, BlockRegister.GYPSUM, RecipeCategory.BUILDING_BLOCKS);
-                }
-            }
-        }
-        for (
-                Item item : ModItemList.ALL_ITEMS)
+        for (Item item : ModItemList.getAllMaterialsBlocksAsItem())
         {
             String itemName = BuiltInRegistries.ITEM.getKey(item).toString().replace(PremierPainMod.MOD_ID + ":", "");
-            if ((item instanceof VillagerShelfItem))
+            //oak like
+            if (itemName.contains("dark_oak"))
             {
-                //oak like
-                if (itemName.contains("dark_oak"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.DARK_OAK_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("pale_oak"))
-                {
-                    villagerWorkshopResultFromBase(item, Items.STICK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("oak"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.OAK_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                //stone like
-                //sandstone like
-                else if (itemName.contains("red_sandstone"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.RED_SANDSTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("sandstone"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.SANDSTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                //other
-                else if (itemName.contains("mossy_stone"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.MOSSY_COBBLESTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("mountain_currant"))
-                {
-                    villagerWorkshopResultFromBase(item, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("moriche_palm"))
-                {
-                    villagerWorkshopResultFromBase(item, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("achiote"))
-                {
-                    villagerWorkshopResultFromBase(item, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("weeping_willow"))
-                {
-                    villagerWorkshopResultFromBase(item, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("end_stone"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.END_STONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("blackstone"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.BLACKSTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("redstone"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.REDSTONE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("dripstone"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.DRIPSTONE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("stone"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.COBBLESTONE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                //other
-                else if (itemName.contains("birch"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.BIRCH_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("spruce"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.SPRUCE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("jungle"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.JUNGLE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("acacia"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.ACACIA_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("mangrove"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.MANGROVE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("cherry"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.CHERRY_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("bamboo"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.BAMBOO_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("crimson"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.CRIMSON_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("warped"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.WARPED_PLANKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("andesite"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.ANDESITE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("diorite"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.DIORITE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("granite"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.GRANITE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("prismarine"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.PRISMARINE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("purpur"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.PURPUR_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("deepslate"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.COBBLED_DEEPSLATE, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("tuff"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.TUFF, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("packed_mud"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.PACKED_MUD, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("quartz"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.QUARTZ_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("nether_bricks"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.NETHER_BRICKS, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("basalt"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.BASALT, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("coal"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.COAL_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("iron"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.IRON_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("gold"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.GOLD_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("emerald"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.EMERALD_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("diamond"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.DIAMOND_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("copper"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.COPPER_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("lapis"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.LAPIS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("netherite"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.NETHERITE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("obsidian"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.OBSIDIAN, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("amethyst"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.AMETHYST_BLOCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("bedrock"))
-                {
-                    villagerWorkshopResultFromBase(item, Blocks.BEDROCK, RecipeCategory.BUILDING_BLOCKS);
-                }
-                else if (itemName.contains("gypsum"))
-                {
-                    villagerWorkshopResultFromBase(item, BlockRegister.GYPSUM, RecipeCategory.BUILDING_BLOCKS);
-                }
+                villagerWorkshopResultFromBase(item, Blocks.DARK_OAK_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("pale_oak"))
+            {
+                villagerWorkshopResultFromBase(item, Items.STICK, RecipeCategory.BUILDING_BLOCKS); //TODO replace with paleOakPlank when updating MC version
+            }
+            else if (itemName.contains("oak"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.OAK_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            //stone like
+            //sandstone like
+            else if (itemName.contains("red_sandstone"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.RED_SANDSTONE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("sandstone"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.SANDSTONE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            //other
+            else if (itemName.contains("mossy_stone"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.MOSSY_COBBLESTONE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("mountain_currant"))
+            {
+                villagerWorkshopResultFromBase(item, BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("moriche_palm"))
+            {
+                villagerWorkshopResultFromBase(item, BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("achiote"))
+            {
+                villagerWorkshopResultFromBase(item, BlockRegister.ACHIOTE_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("weeping_willow"))
+            {
+                villagerWorkshopResultFromBase(item, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(WoodBlockEnum.PLANKS.toString()), RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("end_stone"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.END_STONE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("blackstone"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.BLACKSTONE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("redstone"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.REDSTONE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("dripstone"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.DRIPSTONE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("stone"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.COBBLESTONE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            //other
+            else if (itemName.contains("birch"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.BIRCH_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("spruce"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.SPRUCE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("jungle"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.JUNGLE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("acacia"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.ACACIA_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("mangrove"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.MANGROVE_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("cherry"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.CHERRY_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("bamboo"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.BAMBOO_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("crimson"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.CRIMSON_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("warped"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.WARPED_PLANKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("andesite"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.ANDESITE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("diorite"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.DIORITE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("granite"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.GRANITE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("prismarine"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.PRISMARINE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("purpur"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.PURPUR_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("deepslate"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.COBBLED_DEEPSLATE, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("tuff"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.TUFF, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("packed_mud"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.PACKED_MUD, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("quartz"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.QUARTZ_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("nether_bricks"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.NETHER_BRICKS, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("basalt"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.BASALT, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("coal"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.COAL_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("iron"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.IRON_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("gold"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.GOLD_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("emerald"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.EMERALD_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("diamond"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.DIAMOND_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("copper"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.COPPER_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("lapis"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.LAPIS_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("netherite"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.NETHERITE_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("obsidian"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.OBSIDIAN, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("amethyst"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.AMETHYST_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("bedrock"))
+            {
+                villagerWorkshopResultFromBase(item, Blocks.BEDROCK, RecipeCategory.BUILDING_BLOCKS);
+            }
+            else if (itemName.contains("gypsum"))
+            {
+                villagerWorkshopResultFromBase(item, BlockRegister.GYPSUM, RecipeCategory.BUILDING_BLOCKS);
             }
         }
     }
