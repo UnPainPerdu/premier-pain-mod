@@ -77,22 +77,27 @@ public class AllMaterialsBlockEnum
         AMETHYST_BLOCK(Blocks.AMETHYST_BLOCK),
         DRIPSTONE_BLOCK(Blocks.DRIPSTONE_BLOCK),
         BEDROCK(Blocks.BEDROCK),
-        MOUNTAIN_CURRANT(Blocks.OAK_PLANKS),
-        MORICHE_PALM(Blocks.OAK_PLANKS),
-        ACHIOTE(Blocks.OAK_PLANKS),
-        WEEPING_WILLOW(Blocks.OAK_PLANKS),
-        GYPSUM(Blocks.AMETHYST_BLOCK);
+        MOUNTAIN_CURRANT(ModBlockProperties.MOUNTAIN_CURRANT_GENERIC),
+        MORICHE_PALM(ModBlockProperties.MORICHE_PALM_GENERIC),
+        ACHIOTE(ModBlockProperties.ACHIOTE_GENERIC),
+        WEEPING_WILLOW(ModBlockProperties.WEEPING_WILLOW_GENERIC),
+        GYPSUM(ModBlockProperties.GYPSUM);
 
-        private final BlockBehaviour baseBlockBehaviour; //todo transform to Properties
+        private final BlockBehaviour.Properties properties;
 
         Material(BlockBehaviour baseBlockBehaviour)
         {
-            this.baseBlockBehaviour = baseBlockBehaviour;
+            this.properties = ModBlockProperties.getPropertiesCopy(baseBlockBehaviour.properties());
         }
 
-        public BlockBehaviour getBaseBlockBehaviour()
+        Material(BlockBehaviour.Properties properties)
         {
-            return this.baseBlockBehaviour;
+            this.properties = ModBlockProperties.getPropertiesCopy(properties);
+        }
+
+        public BlockBehaviour.Properties getProperties()
+        {
+            return this.properties;
         }
 
         @Override
