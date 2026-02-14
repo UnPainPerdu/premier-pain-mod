@@ -1,0 +1,45 @@
+{
+  "type": "premierpainmod:pointed_blob_crystal",
+  "config": {
+    "blockAndPointedAndCluster": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:gypsum"
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:pointed_gypsum",
+          "Properties": {
+            "bottom_part": "top",
+            "facing": "up",
+            "waterlogged": "false"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "premierpainmod:gypsum_cluster",
+          "Properties": {
+            "age": "0",
+            "facing": "up",
+            "waterlogged": "false"
+          }
+        }
+      }
+    ],
+    "density": {
+      "type": "minecraft:uniform",
+      "max_exclusive": 1.0,
+      "min_inclusive": 0.7
+    },
+    "spread": {
+      "type": "minecraft:uniform",
+      "max_exclusive": 1.0,
+      "min_inclusive": 0.8
+    }
+  }
+}

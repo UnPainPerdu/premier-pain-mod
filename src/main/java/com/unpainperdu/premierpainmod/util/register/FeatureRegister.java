@@ -1,10 +1,12 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.pointed_crystal.PointedCrystalConfiguration;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.pointed_crystal.PointedCrystalFeature;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.tall_crystal.TallCrystalConfiguration;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.tall_crystal.TallCrystalFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.pointed.PointedCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.pointed.PointedCrystalFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.pointed.blob.PointedBlobCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.pointed.blob.PointedBlobCrystalFeature;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.tall.TallCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.tall.TallCrystalFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockFeature;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
@@ -52,6 +54,7 @@ public class FeatureRegister
     public static final DeferredHolder<Feature<?>, Feature<NoneFeatureConfiguration>> FLOWERED_CACTUS = FEATURES.register("flowered_cactus", () -> new FloweredCactusFeature(NoneFeatureConfiguration.CODEC));
     //geology
     public static final DeferredHolder<Feature<?>, Feature<PointedCrystalConfiguration>> POINTED_CRYSTAL = FEATURES.register("pointed_crystal", () -> new PointedCrystalFeature(PointedCrystalConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, Feature<PointedBlobCrystalConfiguration>> POINTED_BLOB_CRYSTAL = FEATURES.register("pointed_blob_crystal", () -> new PointedBlobCrystalFeature(PointedBlobCrystalConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, Feature<TallCrystalConfiguration>> TALL_CRYSTAL = FEATURES.register("tall_crystal", () -> new TallCrystalFeature(TallCrystalConfiguration.CODEC));
 
     public static void register(IEventBus modEventBus)

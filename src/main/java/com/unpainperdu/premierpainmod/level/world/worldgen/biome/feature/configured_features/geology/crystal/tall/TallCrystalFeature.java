@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.tall_crystal;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.tall;
 
 import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.block.geology.GrowingCrystalCluster;
@@ -7,6 +7,7 @@ import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Vec3i;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -44,6 +46,11 @@ public class TallCrystalFeature extends AbstractFeature<TallCrystalConfiguration
         return state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(BlockTags.DIRT);
     }
 
+    private boolean canConvert(BlockState state, BlockState stateWanted)
+    {
+        return state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(BlockTags.DIRT) || state.is(stateWanted.getBlock());
+    }
+
     @Override
     public void generate(FeaturePlaceContext<TallCrystalConfiguration> context)
     {
@@ -61,19 +68,30 @@ public class TallCrystalFeature extends AbstractFeature<TallCrystalConfiguration
     }
 
     private void generateCrystal(WorldGenLevel worldIn, BlockPos basePos, BlockPos tipPos, RandomSource rand, BlockStateProvider block, BlockStateProvider cluster)
-    {
+    { //TODO fix crystal generating outside cave -- partially fixed now
         BlockState crystal = block.getState(rand, basePos);
-        List<BlockPos> crystalPosList = PosHelper.getBlockPosLine(basePos, tipPos);
+        List<BlockPos> crystalPosList = PosHelper.getBlockPosLine(PosHelper.minY(basePos, tipPos), PosHelper.maxY(basePos, tipPos));
+        crystalPosList.sort(Comparator.comparingInt(Vec3i::getY));
         List<BlockPos> PlacedcrystalPosList = new ArrayList<>();
         ChunkPos originChunk = new ChunkPos(basePos);
         for (BlockPos pos : crystalPosList)
         {
             ChunkPos placementChunk = new ChunkPos(pos);
             BlockState existingState = worldIn.getBlockState(pos);
-            if (isInGeneratedChunks(originChunk, placementChunk) && (canConvert(existingState) || existingState.isAir() || existingState.is(Blocks.WATER)))
+            if (isInGeneratedChunks(originChunk, placementChunk)
+                    && !(worldIn.canSeeSkyFromBelowWater(pos))
+                    && (
+                    canConvert(existingState, crystal)
+                            || existingState.isAir()
+                            || existingState.is(Blocks.WATER)
+            ))
             {
                 worldIn.setBlock(pos, crystal, 2);
                 PlacedcrystalPosList.add(pos);
+            }
+            else
+            {
+                break;
             }
         }
         if (cluster != null)
@@ -97,7 +115,7 @@ public class TallCrystalFeature extends AbstractFeature<TallCrystalConfiguration
             ChunkPos placementChunk = new ChunkPos(clusterPos);
             if (isInGeneratedChunks(originChunk, placementChunk) && (currentState.isAir() || currentState.is(Blocks.WATER)))
             {
-                worldIn.setBlock(clusterPos, cluster.setValue(GrowingCrystalCluster.FACING, direction).setValue(GrowingCrystalCluster.WATERLOGGED, worldIn.isWaterAt(clusterPos)).setValue(GrowingCrystalCluster.AGE, RandomUtil.getRandomPositiveIntInRange(4,rand)), 2);
+                worldIn.setBlock(clusterPos, cluster.setValue(GrowingCrystalCluster.FACING, direction).setValue(GrowingCrystalCluster.WATERLOGGED, worldIn.isWaterAt(clusterPos)).setValue(GrowingCrystalCluster.AGE, RandomUtil.getRandomPositiveIntInRange(4, rand)), 2);
             }
         }
     }

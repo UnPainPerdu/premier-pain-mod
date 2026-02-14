@@ -75,7 +75,8 @@
       "minecraft:disk_gravel"
     ],
     [
-      "premierpainmod:pointed_crystal"
+      "premierpainmod:pointed_crystal",
+      "premierpainmod:pointed_blob_crystal"
     ],
     [
       "minecraft:spring_water",

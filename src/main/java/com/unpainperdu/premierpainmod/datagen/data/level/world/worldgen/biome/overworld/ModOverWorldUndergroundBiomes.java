@@ -41,11 +41,9 @@ public class ModOverWorldUndergroundBiomes
         BiomeDefaultFeatures.addPlainVegetation(featureBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(featureBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(featureBuilder);
-        //featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, CavePlacements.LARGE_DRIPSTONE);
-        //featureBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.DRIPSTONE_CLUSTER); // == énorme amas de dripstone + base
-        //featureBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.POINTED_DRIPSTONE);
         featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.TALL_CRYSTAL);
         featureBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, ModMiscOverworldPlacements.POINTED_CRYSTAL);
+        featureBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, ModMiscOverworldPlacements.POINTED_BLOB_CRYSTAL);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)

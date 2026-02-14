@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.pointed_crystal;
+package com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.pointed;
 
 import com.mojang.serialization.Codec;
 import com.unpainperdu.premierpainmod.level.world.block.geology.GrowingCrystalCluster;

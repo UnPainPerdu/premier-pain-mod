@@ -25,6 +25,7 @@ public class ModMiscOverworldPlacements
     public static final ResourceKey<PlacedFeature> SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET = ModPlacementUtil.createKey("swamp_weeping_willow_outside_dry_toilet");
     public static final ResourceKey<PlacedFeature> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET = ModPlacementUtil.createKey("swamp_mangrove_outside_dry_toilet");
     public static final ResourceKey<PlacedFeature> POINTED_CRYSTAL = ModPlacementUtil.createKey("pointed_crystal");
+    public static final ResourceKey<PlacedFeature> POINTED_BLOB_CRYSTAL = ModPlacementUtil.createKey("pointed_blob_crystal");
     public static final ResourceKey<PlacedFeature> TALL_CRYSTAL = ModPlacementUtil.createKey("tall_crystal");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context)
@@ -111,6 +112,16 @@ public class ModMiscOverworldPlacements
                 PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, // 1 - 5 try to place in selected place upper
                 CountPlacement.of(UniformInt.of(5, 10)),
                 RandomOffsetPlacement.of(ClampedNormalInt.of(0.0F, 3.0F, -10, 10), ClampedNormalInt.of(0.0F, 0.6F, -2, 2)),
+                BiomeFilter.biome());
+
+        final Holder<ConfiguredFeature<?, ?>> POINTED_BLOB_CRYSTAL_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.POINTED_BLOB_CRYSTAL);
+        register(context,
+                POINTED_BLOB_CRYSTAL,
+                POINTED_BLOB_CRYSTAL_HOLDER,
+                CountPlacement.of(UniformInt.of(25, 125)),
+                InSquarePlacement.spread(),
+                PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+                CountPlacement.of(UniformInt.of(2, 7)),
                 BiomeFilter.biome());
 
         final Holder<ConfiguredFeature<?, ?>> TALL_CRYSTAL_HOLDER = holdergetter.getOrThrow(ModMiscOverworldFeatures.TALL_CRYSTAL);

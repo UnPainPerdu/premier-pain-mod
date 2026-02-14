@@ -1,7 +1,8 @@
 package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.feature.features;
 
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.pointed_crystal.PointedCrystalConfiguration;
-import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.tall_crystal.TallCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.pointed.PointedCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.pointed.blob.PointedBlobCrystalConfiguration;
+import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.geology.crystal.tall.TallCrystalConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.bush_and_rock.BushAndRockConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.house_foundation_ruins.HouseFoundationRuinsConfiguration;
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.feature.configured_features.misc.outside_dry_toilet.OutsideDryToiletConfiguration;
@@ -35,6 +36,7 @@ public class ModMiscOverworldFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> SWAMP_WEEPING_WILLOW_OUTSIDE_DRY_TOILET = ModFeatureUtil.createKey("swamp_weeping_willow_outside_dry_toilet");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SWAMP_MANGROVE_OUTSIDE_DRY_TOILET = ModFeatureUtil.createKey("swamp_mangrove_outside_dry_toilet");
     public static final ResourceKey<ConfiguredFeature<?, ?>> POINTED_CRYSTAL = ModFeatureUtil.createKey("pointed_crystal");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> POINTED_BLOB_CRYSTAL = ModFeatureUtil.createKey("pointed_blob_crystal");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_CRYSTAL = ModFeatureUtil.createKey("tall_crystal");
 
 
@@ -105,6 +107,18 @@ public class ModMiscOverworldFeatures
                 new PointedCrystalConfiguration.Builder()
                         .spread(0.5F, 1.0F)
                         .density(0.4F, 0.9F)
+                        .blockAndPointedAndCluster(
+                                BlockStateProvider.simple(BlockRegister.GYPSUM.get()),
+                                BlockStateProvider.simple(BlockRegister.POINTED_GYPSUM.get()),
+                                BlockStateProvider.simple(BlockRegister.GYPSUM_CLUSTER.get())
+                        )
+                        .build()
+        );
+
+        FeatureUtils.register(pContext, ModMiscOverworldFeatures.POINTED_BLOB_CRYSTAL, FeatureRegister.POINTED_BLOB_CRYSTAL.get(),
+                new PointedBlobCrystalConfiguration.Builder()
+                        .spread(0.8F, 1.0F)
+                        .density(0.7F, 1.0F)
                         .blockAndPointedAndCluster(
                                 BlockStateProvider.simple(BlockRegister.GYPSUM.get()),
                                 BlockStateProvider.simple(BlockRegister.POINTED_GYPSUM.get()),

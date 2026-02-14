@@ -352,4 +352,14 @@ public class PosHelper
         finalPosList.add(new BlockPos(endPosX, endPosY, endPosZ));
         return finalPosList;
     }
+
+    public static BlockPos minY(BlockPos b1, BlockPos b2)
+    {
+        return (b1.getY() <= b2.getY()) ? b1 : b2;
+    }
+
+    public static BlockPos maxY(BlockPos b1, BlockPos b2)
+    {
+        return (b1.getY() >= b2.getY()) ? b1 : b2;
+    }
 }
