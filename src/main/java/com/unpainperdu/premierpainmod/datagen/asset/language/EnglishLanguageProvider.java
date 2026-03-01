@@ -180,9 +180,9 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Potatoes and Spear Fruit Bowl");
         add(ItemRegister.FRUITS_BOWL.get(), "Fruits Bowl");
         //  egg
-        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Mountain Currant Golem Spawn Egg");
-        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "Wool Golem Spawn Egg");
-        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("flowered_lizard_spawn_egg").get(), "Flowered Lizard Spawn Egg");
+        add(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY).get(), "Mountain Currant Golem Spawn Egg");
+        add(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.WOOL_GOLEM_ENTITY).get(), "Wool Golem Spawn Egg");
+        add((AllInOneEntityRegister.getEgg(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY)).get(), "Flowered Lizard Spawn Egg");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brewer");
         //block

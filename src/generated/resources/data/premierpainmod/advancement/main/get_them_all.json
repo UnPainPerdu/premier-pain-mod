@@ -22,7 +22,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "premierpainmod:mountain_currant_golem_entity"
+              "type": "premierpainmod:mountain_currant_golem"
             }
           }
         ]
@@ -50,7 +50,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "premierpainmod:wool_golem_entity"
+              "type": "premierpainmod:wool_golem"
             }
           }
         ]

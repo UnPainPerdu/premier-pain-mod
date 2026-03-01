@@ -27,37 +27,39 @@ public class AllInOneEntityRegister
     }
 
     //always mob_name_spawn_egg
-    public static final Map<String, DeferredItem<Item>> EGG_ITEM_MAP = new HashMap<>(); //TODO use ENUM to forbid typo
+    public static final Map<String, DeferredItem<Item>> EGG_ITEM_MAP = new HashMap<>();
+
+    private static final String EGG_SUFFIX = "_spawn_egg";
 
     //All entity must end with _entity
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, PremierPainMod.MOD_ID);
 
     //utility
-    public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> SEAT_ENTITY = registerEntity("seat_entity",
+    public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> SEAT_ENTITY = registerEntity("seat",
             EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC)
                     .setTrackingRange(256)
                     .setUpdateInterval(20)
                     .sized(0.0001F, 0.0001F));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> TOILET_SEAT_ENTITY = registerEntity("toilet_seat_entity",
+    public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> TOILET_SEAT_ENTITY = registerEntity("toilet_seat",
             EntityType.Builder.<SeatEntity>of(ToiletSeatEntity::new, MobCategory.MISC)
                     .setTrackingRange(256)
                     .setUpdateInterval(20)
                     .sized(0.0001F, 0.0001F));
     //mob
     //  golem
-    public static final DeferredHolder<EntityType<?>, EntityType<MountainCurrantGolemEntity>> MOUNTAIN_CURRANT_GOLEM_ENTITY = registerEntityWithEggs("mountain_currant_golem_entity",
+    public static final DeferredHolder<EntityType<?>, EntityType<MountainCurrantGolemEntity>> MOUNTAIN_CURRANT_GOLEM_ENTITY = registerEntityWithEggs("mountain_currant_golem",
             EntityType.Builder.of(MountainCurrantGolemEntity::new, MobCategory.CREATURE)
                     .sized(0.6F, 3.6F)
     );
 
-    public static final DeferredHolder<EntityType<?>, EntityType<WoolGolemEntity>> WOOL_GOLEM_ENTITY = registerEntityWithEggs("wool_golem_entity",
+    public static final DeferredHolder<EntityType<?>, EntityType<WoolGolemEntity>> WOOL_GOLEM_ENTITY = registerEntityWithEggs("wool_golem",
             EntityType.Builder.of(WoolGolemEntity::new, MobCategory.CREATURE)
                     .sized(1.66F, 3.0F)
     );
     //  animal
 
-    public static final DeferredHolder<EntityType<?>, EntityType<FloweredLizardEntity>> FLOWERED_LIZARD_ENTITY = registerEntityWithEggs("flowered_lizard_entity",
+    public static final DeferredHolder<EntityType<?>, EntityType<FloweredLizardEntity>> FLOWERED_LIZARD_ENTITY = registerEntityWithEggs("flowered_lizard",
             EntityType.Builder.of(FloweredLizardEntity::new, MobCategory.CREATURE)
                     .sized(1.2F, 1.8F)
     );
@@ -67,7 +69,7 @@ public class AllInOneEntityRegister
      */
     public static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> registerEntityWithEggs(String name, EntityType.Builder<T> entityBuilder)
     {
-        String eggName = name.replace("_entity", "_spawn_egg");
+        String eggName = name + EGG_SUFFIX;
         DeferredHolder<EntityType<?>, EntityType<T>> entity = EntityRegister.registerEntity(name, entityBuilder);
         EGG_ITEM_MAP.put(eggName, EggItemRegister.generateEgg(eggName, entity));
         return entity;
@@ -81,5 +83,13 @@ public class AllInOneEntityRegister
     public static void register(IEventBus modEventBus)
     {
         ENTITY_TYPES.register(modEventBus);
+    }
+
+    /**
+     * @param registerdMob must have been register with registerEntityWithEggs
+     */
+    public static <T extends Mob> DeferredItem<Item> getEgg(DeferredHolder<EntityType<?>, EntityType<T>> registerdMob)
+    {
+        return EGG_ITEM_MAP.get(registerdMob.getId().getPath() + EGG_SUFFIX);
     }
 }

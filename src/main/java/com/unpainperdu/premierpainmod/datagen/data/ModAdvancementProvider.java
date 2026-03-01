@@ -135,7 +135,7 @@ public class ModAdvancementProvider extends AdvancementProvider
             conditions.put("has_build_mountain_currant_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get())));
             conditions.put("has_build_wool_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get())));
 
-            generateAdvancementWithMainAsRoot(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "get_them_all", "root", AdvancementType.GOAL, conditions);
+            generateAdvancementWithMainAsRoot(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY).get(), "get_them_all", "root", AdvancementType.GOAL, conditions);
         }
 
         /**
