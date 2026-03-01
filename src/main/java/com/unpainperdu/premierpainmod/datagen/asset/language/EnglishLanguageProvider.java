@@ -182,6 +182,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         //  egg
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Mountain Currant Golem Spawn Egg");
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "Wool Golem Spawn Egg");
+        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("flowered_lizard_spawn_egg").get(), "Flowered Lizard Spawn Egg");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brewer");
         //block

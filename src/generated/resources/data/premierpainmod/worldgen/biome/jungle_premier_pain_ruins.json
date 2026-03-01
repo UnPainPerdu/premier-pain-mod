@@ -138,7 +138,19 @@
         "type": "minecraft:parrot",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 40
+        "weight": 5
+      },
+      {
+        "type": "minecraft:ocelot",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 8
+      },
+      {
+        "type": "premierpainmod:flowered_lizard_entity",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
       }
     ],
     "misc": [],
@@ -190,12 +202,6 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 5
-      },
-      {
-        "type": "minecraft:ocelot",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 2
       }
     ],
     "underground_water_creature": [

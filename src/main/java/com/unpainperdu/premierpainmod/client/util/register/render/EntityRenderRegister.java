@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.client.util.register.render;
 
 import com.unpainperdu.premierpainmod.client.render.entity.EmptyRenderer;
+import com.unpainperdu.premierpainmod.client.render.entity.flowered_lizard.FloweredLizardRender;
 import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem.MountainCurrantGolemRender;
 import com.unpainperdu.premierpainmod.client.render.entity.wool_golem.WoolGolemRender;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
@@ -16,5 +17,6 @@ public class EntityRenderRegister
         //mobs
         EntityRenderers.register(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get(), MountainCurrantGolemRender::new);
         EntityRenderers.register(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get(), WoolGolemRender::new);
+        EntityRenderers.register(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY.get(), FloweredLizardRender::new);
     }
 }

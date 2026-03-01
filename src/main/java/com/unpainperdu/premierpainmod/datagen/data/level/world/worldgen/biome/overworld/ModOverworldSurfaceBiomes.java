@@ -2,6 +2,7 @@ package com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.o
 
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.feature.placement.ModMiscOverworldPlacements;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.feature.placement.ModVegetationPlacement;
+import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -104,10 +105,11 @@ public class ModOverworldSurfaceBiomes
 
         //mob spawn
         BiomeDefaultFeatures.commonSpawns(mobBuilder, 70);
-        mobBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1));
-        mobBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.BOGGED, 30, 4, 4));
-        mobBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 10, 2, 5));
-        mobBuilder.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8));
+        mobBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1))
+        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.BOGGED, 30, 4, 4))
+        .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 25, 2, 5))
+        .addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8))
+        .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY.get(), 20, 1, 3));
 
         //block spawn
         BiomeDefaultFeatures.addFossilDecoration(featureBuilder);
@@ -243,8 +245,9 @@ public class ModOverworldSurfaceBiomes
         BiomeGenerationSettings.Builder featureBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
         BiomeDefaultFeatures.baseJungleSpawns(mobBuilder);
-        mobBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2))
-                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3));
+        mobBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 5, 1, 2))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 8, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY.get(), 10, 1, 3));
         featureBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModMiscOverworldPlacements.VILLAGER_TOTEM);
         BiomeDefaultFeatures.addDefaultCarversAndLakes(featureBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(featureBuilder);

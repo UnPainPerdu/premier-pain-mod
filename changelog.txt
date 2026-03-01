@@ -304,6 +304,8 @@ What would be a world without bugs ?
     - Gypsum block and variant, gypsum cluster, pointed gypsum and all materials variants
 ### Biomes :
     - Gypsum cave, an underground biome spawning gypsum crystal
+### Mobs :
+    - Flowered Lizard, an animal that can lay egg and drop scale by the time
 
 ## Change :
 ### Structures :

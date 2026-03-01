@@ -25,10 +25,10 @@ public class ModItemStateProvider extends ItemModelProvider
     protected void registerModels()
     {
         //fluid
-        //oil
+        //  oil
         item(ItemRegister.MORICHE_PALM_OIL_BUCKET.get(), "fluid/");
-        //beer
-        //empty
+        //  beer
+        //      empty
         item(ItemRegister.EMPTY_GLASS.get(), "fluid/beer/glass/");
         item(ItemRegister.EMPTY_BOTTLE.get(), "fluid/beer/bottle/");
         item(ItemRegister.EMPTY_MUG.get(), "fluid/beer/mug/");
@@ -60,7 +60,7 @@ public class ModItemStateProvider extends ItemModelProvider
         item(ItemRegister.UNCOOKED_SCHNITZEL.asItem(), "food/");
         item(ItemRegister.SCHNITZEL.asItem(), "food/");
         item(ItemRegister.HARD_BOILED_EGG.asItem(), "food/");
-        //stew
+        //  stew
         stewFoodItem(ItemRegister.JELLYSHROOM_STEW.get());
         stewFoodItem(ItemRegister.CACTUS_STEW.get());
         stewFoodItem(ItemRegister.POTATOES_AND_SPEARS_BOWL.get());
@@ -76,6 +76,7 @@ public class ModItemStateProvider extends ItemModelProvider
         //spawn_eggs
         item(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "spawn_egg/");
         item(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "spawn_egg/");
+        item(AllInOneEntityRegister.EGG_ITEM_MAP.get("flowered_lizard_spawn_egg").get(), "spawn_egg/");
 
         for (Item item : ModItemList.ALL_ITEMS)
         {

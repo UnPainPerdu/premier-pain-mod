@@ -29,11 +29,23 @@ public class ModItemTags
     public static final TagKey<Item> VILLAGER_MUSICAL_FRIDGE = create("villager_musical_fridge");
     public static final TagKey<Item> VILLAGER_CHISELED_HEAD = create("villager_chiseled_head");
     public static final TagKey<Item> VILLAGER_DRY_TOILET = create("villager_dry_toilet");
+    public static final TagKey<Item> FLOWERED_LIZARD_FOOD = create("flowered_lizard_food");
 
-    public static final List<TagKey<Item>> ALL_MATERIALS_TAGS = List.of(VILLAGER_STATUE, VILLAGER_PEDESTAL, VILLAGER_BRAZIER, VILLAGER_TABLE,
-            VILLAGER_CHAIR, VILLAGER_THRONE_CHAIR, VILLAGER_DRAWER, VILLAGER_SHELF,
-            VILLAGER_BENCH, VILLAGER_COUCH, VILLAGER_BREWING_STATION, VILLAGER_MUSICAL_FRIDGE,
-            VILLAGER_CHISELED_HEAD, VILLAGER_DRY_TOILET);
+    public static final List<TagKey<Item>> ALL_MATERIALS_TAGS = List.of(
+            VILLAGER_STATUE,
+            VILLAGER_PEDESTAL,
+            VILLAGER_BRAZIER,
+            VILLAGER_TABLE,
+            VILLAGER_CHAIR,
+            VILLAGER_THRONE_CHAIR,
+            VILLAGER_DRAWER,
+            VILLAGER_SHELF,
+            VILLAGER_BENCH,
+            VILLAGER_COUCH,
+            VILLAGER_BREWING_STATION,
+            VILLAGER_MUSICAL_FRIDGE,
+            VILLAGER_CHISELED_HEAD,
+            VILLAGER_DRY_TOILET);
 
     private static TagKey<Item> create(String name)
     {

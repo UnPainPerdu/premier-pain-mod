@@ -25,20 +25,27 @@ public class SoundEventRegister
     public static final DeferredHolder<SoundEvent, SoundEvent> MADNESS_SOUND = register("item.villager_singing_stone.madness_sound");
     public static final DeferredHolder<SoundEvent, SoundEvent> PREMIER_PAIN_SOUND = register("item.villager_singing_stone.premier_pain_sound");
     //entity
-    //mountain_currant_golem
+    //  toilet_seat
+    public static final DeferredHolder<SoundEvent, SoundEvent> TOILET_SEAT_FART = register("entity.toilet_seat.fart");
+    public static final DeferredHolder<SoundEvent, SoundEvent> TOILET_SEAT_NOT_ONLY_FART = register("entity.toilet_seat.not_only_fart");
+    //  mob
+    //      mountain_currant_golem
     public static final DeferredHolder<SoundEvent, SoundEvent> MCG_WALK = register("entity.mountain_currant_golem.walk");
     public static final DeferredHolder<SoundEvent, SoundEvent> MCG_HURT = register("entity.mountain_currant_golem.hurt");
     public static final DeferredHolder<SoundEvent, SoundEvent> MCG_DEATH = register("entity.mountain_currant_golem.death");
     public static final DeferredHolder<SoundEvent, SoundEvent> MCG_BONE_MEALING = register("entity.mountain_currant_golem.bone_mealing");
     public static final DeferredHolder<SoundEvent, SoundEvent> MCG_AMBIENT = register("entity.mountain_currant_golem.ambient");
-    //toilet_seat
-    public static final DeferredHolder<SoundEvent, SoundEvent> TOILET_SEAT_FART = register("entity.toilet_seat.fart");
-    public static final DeferredHolder<SoundEvent, SoundEvent> TOILET_SEAT_NOT_ONLY_FART = register("entity.toilet_seat.not_only_fart");
-    //wool_golem
+
+    //      wool_golem
     public static final DeferredHolder<SoundEvent, SoundEvent> WG_WALK = register("entity.wool_golem.walk");
     public static final DeferredHolder<SoundEvent, SoundEvent> WG_HURT = register("entity.wool_golem.hurt");
     public static final DeferredHolder<SoundEvent, SoundEvent> WG_DEATH = register("entity.wool_golem.death");
     public static final DeferredHolder<SoundEvent, SoundEvent> WG_AMBIENT = register("entity.wool_golem.ambient");
+    //      flowered lizard
+    public static final DeferredHolder<SoundEvent, SoundEvent> FLOWERED_LIZARD_DEATH = register("entity.flowered_lizard.death");
+    public static final DeferredHolder<SoundEvent, SoundEvent> FLOWERED_LIZARD_EAT = register("entity.flowered_lizard.eat");
+    public static final DeferredHolder<SoundEvent, SoundEvent> FLOWERED_LIZARD_HURT = register("entity.flowered_lizard.hurt");
+    public static final DeferredHolder<SoundEvent, SoundEvent> FLOWERED_LIZARD_AMBIENT = register("entity.flowered_lizard.ambient");
 
     //Method register
     private static DeferredHolder<SoundEvent, SoundEvent> register(String soundName)

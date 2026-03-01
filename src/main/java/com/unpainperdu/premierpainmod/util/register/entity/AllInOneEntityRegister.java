@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register.entity;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.FloweredLizardEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.MountainCurrantGolemEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.WoolGolemEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.seat.SeatEntity;
@@ -26,11 +27,12 @@ public class AllInOneEntityRegister
     }
 
     //always mob_name_spawn_egg
-    public static final Map<String, DeferredItem<Item>> EGG_ITEM_MAP = new HashMap<>();
+    public static final Map<String, DeferredItem<Item>> EGG_ITEM_MAP = new HashMap<>(); //TODO use ENUM to forbid typo
 
     //All entity must end with _entity
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, PremierPainMod.MOD_ID);
 
+    //utility
     public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> SEAT_ENTITY = registerEntity("seat_entity",
             EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC)
                     .setTrackingRange(256)
@@ -42,7 +44,8 @@ public class AllInOneEntityRegister
                     .setTrackingRange(256)
                     .setUpdateInterval(20)
                     .sized(0.0001F, 0.0001F));
-
+    //mob
+    //  golem
     public static final DeferredHolder<EntityType<?>, EntityType<MountainCurrantGolemEntity>> MOUNTAIN_CURRANT_GOLEM_ENTITY = registerEntityWithEggs("mountain_currant_golem_entity",
             EntityType.Builder.of(MountainCurrantGolemEntity::new, MobCategory.CREATURE)
                     .sized(0.6F, 3.6F)
@@ -51,6 +54,12 @@ public class AllInOneEntityRegister
     public static final DeferredHolder<EntityType<?>, EntityType<WoolGolemEntity>> WOOL_GOLEM_ENTITY = registerEntityWithEggs("wool_golem_entity",
             EntityType.Builder.of(WoolGolemEntity::new, MobCategory.CREATURE)
                     .sized(1.66F, 3.0F)
+    );
+    //  animal
+
+    public static final DeferredHolder<EntityType<?>, EntityType<FloweredLizardEntity>> FLOWERED_LIZARD_ENTITY = registerEntityWithEggs("flowered_lizard_entity",
+            EntityType.Builder.of(FloweredLizardEntity::new, MobCategory.CREATURE)
+                    .sized(1.2F, 1.8F)
     );
 
     /**

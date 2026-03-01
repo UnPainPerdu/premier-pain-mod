@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.loot_table;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
@@ -70,6 +71,24 @@ public class ModEntityLootTableSubProvider extends EntityLootSubProvider
                                         .add(
                                                 LootItem.lootTableItem(Items.STRING)
                                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F)))
+                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(1.0F, 2.0F)))
+                                        )
+                        )
+        );
+
+        this.add(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY.get(),
+                LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(
+                                                LootItem.lootTableItem(ItemRegister.ACHIOTE_FRUIT)
+                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(1.0F, 2.0F)))
+                                        )
+                                        .add(
+                                                LootItem.lootTableItem(BlockRegister.CURIOSITY_FLOWER)
+                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
                                                         .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(1.0F, 2.0F)))
                                         )
                         )

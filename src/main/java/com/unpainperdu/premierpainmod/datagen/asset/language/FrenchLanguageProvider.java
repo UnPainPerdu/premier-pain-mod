@@ -182,6 +182,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         //  egg
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("mountain_currant_golem_spawn_egg").get(), "Oeuf d'apparition de golem en groseillier des montagnes");
         add(AllInOneEntityRegister.EGG_ITEM_MAP.get("wool_golem_spawn_egg").get(), "Oeuf d'apparition de golem en laine");
+        add(AllInOneEntityRegister.EGG_ITEM_MAP.get("flowered_lizard_spawn_egg").get(), "Oeuf d'apparition de lézard fleuri");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brasseur");
         //block

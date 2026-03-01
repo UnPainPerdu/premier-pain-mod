@@ -1,4 +1,28 @@
 {
+  "entity.flowered_lizard.ambient": {
+    "sounds": [
+      "premierpainmod:entity/flowered_lizard/ambient_01",
+      "premierpainmod:entity/flowered_lizard/ambient_02",
+      "premierpainmod:entity/flowered_lizard/ambient_03"
+    ]
+  },
+  "entity.flowered_lizard.death": {
+    "sounds": [
+      "premierpainmod:entity/flowered_lizard/death_01"
+    ]
+  },
+  "entity.flowered_lizard.eat": {
+    "sounds": [
+      "premierpainmod:entity/flowered_lizard/eat_01",
+      "premierpainmod:entity/flowered_lizard/eat_02"
+    ]
+  },
+  "entity.flowered_lizard.hurt": {
+    "sounds": [
+      "premierpainmod:entity/flowered_lizard/hurt_01",
+      "premierpainmod:entity/flowered_lizard/hurt_02"
+    ]
+  },
   "entity.mountain_currant_golem.ambient": {
     "sounds": [
       "premierpainmod:entity/mountain_currant_golem/ambient_01",

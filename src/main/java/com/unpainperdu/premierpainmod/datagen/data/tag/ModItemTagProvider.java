@@ -6,6 +6,7 @@ import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.PackOutput;
@@ -35,6 +36,12 @@ public class ModItemTagProvider extends ItemTagsProvider
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider)
     {
+        this.tag(ModItemTags.GYPSUM).add(ItemRegister.GYPSUM_SHARD.get());
+        this.tag(ModItemTags.FLOWERED_LIZARD_FOOD).add(
+                BlockRegister.CURIOSITY_FLOWER.asItem(),
+                ItemRegister.ACHIOTE_FRUIT.asItem()
+        );
+
         copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
         copy(BlockTags.TALL_FLOWERS, ItemTags.TALL_FLOWERS);
         copy(BlockTags.LOGS, ItemTags.LOGS);
@@ -128,6 +135,5 @@ public class ModItemTagProvider extends ItemTagsProvider
                 this.tag(ModItemTags.VILLAGER_SHELF).add(item);
             }
         }
-        this.tag(ModItemTags.GYPSUM).add(ItemRegister.GYPSUM_SHARD.get());
     }
 }

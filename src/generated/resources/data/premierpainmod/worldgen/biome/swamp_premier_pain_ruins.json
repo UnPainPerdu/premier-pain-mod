@@ -115,7 +115,13 @@
         "type": "minecraft:frog",
         "maxCount": 5,
         "minCount": 2,
-        "weight": 10
+        "weight": 25
+      },
+      {
+        "type": "premierpainmod:flowered_lizard_entity",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 20
       }
     ],
     "misc": [],

@@ -43,7 +43,7 @@ public class TallCrystalFeature extends AbstractFeature<TallCrystalConfiguration
 
     private boolean canConvert(BlockState state)
     {
-        return state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(BlockTags.DIRT);
+        return state.is(BlockTags.BASE_STONE_OVERWORLD);
     }
 
     private boolean canConvert(BlockState state, BlockState stateWanted)

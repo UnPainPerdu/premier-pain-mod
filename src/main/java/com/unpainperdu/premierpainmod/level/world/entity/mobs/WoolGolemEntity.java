@@ -157,7 +157,7 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
                 new FirstApplicableBehaviour<WoolGolemEntity>(
                         new RestoreHitbox<>(),
                         new SetHugTarget<>(),
-                        new SetEntityFollowTargetWhenItemInHand<>(Items.EMERALD, 10),
+                        SetEntityFollowTargetWhenItemInHand.builder().setItems(Items.EMERALD).setMaxDistanceSight(10).build(),
                         new SetEntityLookTarget<>(5),
                         new SetRandomLookTarget<>()),
                 new OneRandomBehaviour<>(

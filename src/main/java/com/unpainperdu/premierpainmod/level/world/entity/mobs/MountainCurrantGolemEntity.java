@@ -1,10 +1,10 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.mountain_currant_golem.BoneMealingField;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityFollowTargetWhenItemInHand;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityGoToBlockAndMemorizeIt;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
+import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.mountain_currant_golem.BoneMealingField;
 import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -87,7 +87,7 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
         return BrainActivityGroup.idleTasks(
                 new FirstApplicableBehaviour<MountainCurrantGolemEntity>(      // Run only one of the below behaviours, trying each one in order. Include the generic type because JavaC is silly
                         new SetEntityGoToBlockAndMemorizeIt<>().closeEnoughWhen((e, p) -> 0),
-                        new SetEntityFollowTargetWhenItemInHand<>(Items.EMERALD, 10),
+                        SetEntityFollowTargetWhenItemInHand.builder().setItems(Items.EMERALD).setMaxDistanceSight(10).build(),
                         new SetEntityLookTarget<>(5),
                         new SetRandomLookTarget<>()),         // Set a random look target
                 new OneRandomBehaviour<>(                 // Run a random task from the below options

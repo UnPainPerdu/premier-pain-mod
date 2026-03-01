@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-11T13:18:26.5147577	Tags for minecraft:item mod id premierpainmod
+// 1.21.1	2026-02-20T09:08:58.0955292	Tags for minecraft:item mod id premierpainmod
 c62386c681e815d41f2c3f42ebd16f0db592952f data/c/tags/item/buckets.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/item/fence_gates.json
 f999c4cc0482667908be53c0d728201e56227a51 data/c/tags/item/fence_gates/wooden.json
@@ -31,6 +31,7 @@ c9dbfb509ac30964c62321b866bc99ac29e12cd4 data/minecraft/tags/item/wooden_pressur
 9d8ffe6b1d04ba11c9d9dc4f5eff1d5acaee72c0 data/minecraft/tags/item/wooden_stairs.json
 4cab7d2e5ae3b2b1b18b4ec067f1b1b2a8e4d59b data/minecraft/tags/item/wooden_trapdoors.json
 0f2d22db5ed2ef47d3a9f9ef7e0309b57dc86de8 data/premierpainmod/tags/item/achiote_logs.json
+aa567277802778c6020067b415d1ec3915d63ae0 data/premierpainmod/tags/item/flowered_lizard_food.json
 da41e70a8ed1809233f5c84c8c5b1b9b1bb90d68 data/premierpainmod/tags/item/gypsum.json
 4142cf164df7095eb85135b75c685735116f73b8 data/premierpainmod/tags/item/moriche_palm_logs.json
 42af769f30598361a3ec9358563efb7116ca9510 data/premierpainmod/tags/item/mountain_currant_logs.json
