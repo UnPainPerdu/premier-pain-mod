@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.advancements.ModInventoryChangeTrigger;
+import com.unpainperdu.premierpainmod.level.advancements.ModInventoryChangeTrigger;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.bus.api.IEventBus;

@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block;
 
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_shelf_menu.VillagerShelfMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_shelf_menu.VillagerShelfMenu;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;

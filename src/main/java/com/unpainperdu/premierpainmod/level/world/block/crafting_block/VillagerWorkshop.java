@@ -4,7 +4,7 @@ import com.mojang.serialization.MapCodec;
 import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTwoBlockWidth;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_workshop_menu.VillagerWorkshopMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_workshop_menu.VillagerWorkshopMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;

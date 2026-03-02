@@ -30,6 +30,7 @@ public class RegisterHandler
 
     public static void globalRegister(IEventBus modEventBus)
     {
+        modEventBus.addListener(RegistriesRegister::registerRegistries);
         BlockRegister.register(modEventBus);
         BlockEntityRegister.register(modEventBus);
         AllInOneEntityRegister.register(modEventBus);

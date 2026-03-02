@@ -1,12 +1,12 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.CookingPotMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.VillagerBrewingStationMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.VillagerMusicalFridgeMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_drawer_menu.VillagerDrawerMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_shelf_menu.VillagerShelfMenu;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.villager_workshop_menu.VillagerWorkshopMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.CookingPotMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerBrewingStationMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerMusicalFridgeMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_drawer_menu.VillagerDrawerMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_shelf_menu.VillagerShelfMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_workshop_menu.VillagerWorkshopMenu;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.AbstractContainerMenu;

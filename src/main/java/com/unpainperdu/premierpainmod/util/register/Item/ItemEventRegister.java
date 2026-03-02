@@ -6,7 +6,7 @@ import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_sing
 import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.LibertyEvent;
 import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.MadnessEvent;
 import com.unpainperdu.premierpainmod.level.world.event.item_event.villager_singing_stone_event.PremierPainEvent;
-import com.unpainperdu.premierpainmod.neo_event.RegistriesRegister;
+import com.unpainperdu.premierpainmod.util.register.RegistriesRegister;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;

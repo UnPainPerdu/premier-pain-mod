@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_
 
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotRecipe;
-import com.unpainperdu.premierpainmod.level.world.menu.menu.all_materials_block.CookingPotMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.CookingPotMenu;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
