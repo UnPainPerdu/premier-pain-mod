@@ -38,17 +38,17 @@ public class TallCrystalFeature extends AbstractFeature<TallCrystalConfiguration
         WorldGenLevel worldIn = context.level();
         BlockPos pos = context.origin();
         BlockState state = worldIn.getBlockState(pos.below());
-        return canConvert(state);
+        return canConvertForStart(state);
     }
 
-    private boolean canConvert(BlockState state)
+    private boolean canConvertForStart(BlockState state)
     {
         return state.is(BlockTags.BASE_STONE_OVERWORLD);
     }
 
     private boolean canConvert(BlockState state, BlockState stateWanted)
     {
-        return state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(BlockTags.DIRT) || state.is(stateWanted.getBlock());
+        return state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(stateWanted.getBlock());
     }
 
     @Override
