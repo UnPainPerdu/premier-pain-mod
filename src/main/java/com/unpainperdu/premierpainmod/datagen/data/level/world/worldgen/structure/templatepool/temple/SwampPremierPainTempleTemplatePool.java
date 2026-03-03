@@ -29,9 +29,31 @@ public class SwampPremierPainTempleTemplatePool
                 START,
                 new StructureTemplatePool(
                         emptyFallBack,
-                        ImmutableList.of(
-                                Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/swamp/frist_floor", processorListHolderGetter.getOrThrow(ModStructureProcessorList.RANDOM_BLOCK_REMOVER)), 1)
-                        ),
+                        ImmutableList.of(Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/swamp/frist_floor", processorListHolderGetter.getOrThrow(ModStructureProcessorList.RANDOM_BLOCK_REMOVER)), 1)),
+                        StructureTemplatePool.Projection.RIGID
+                )
+        );
+
+        ModStructureTemplatePool.registerPool(context, "premier_pain_temple/swamp/connector_0-1",
+                new StructureTemplatePool(
+                        emptyFallBack,
+                        ImmutableList.of(Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/swamp/connector_0-1"), 1)),
+                        StructureTemplatePool.Projection.RIGID
+                )
+        );
+
+        ModStructureTemplatePool.registerPool(context, "premier_pain_temple/swamp/connector_1-2",
+                new StructureTemplatePool(
+                        emptyFallBack,
+                        ImmutableList.of(Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/swamp/connector_1-2"), 1)),
+                        StructureTemplatePool.Projection.RIGID
+                )
+        );
+
+        ModStructureTemplatePool.registerPool(context, "premier_pain_temple/swamp/connector_2-3",
+                new StructureTemplatePool(
+                        emptyFallBack,
+                        ImmutableList.of(Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/swamp/connector_2-3"), 1)),
                         StructureTemplatePool.Projection.RIGID
                 )
         );
@@ -40,9 +62,7 @@ public class SwampPremierPainTempleTemplatePool
                 new StructureTemplatePool(
                         emptyFallBack,
                         ImmutableList.of(
-                                Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/swamp/second_floor", processorListHolderGetter.getOrThrow(ModStructureProcessorList.RANDOM_BLOCK_REMOVER)), 1)
-
-                        ),
+                                Pair.of(StructurePoolElement.single("premierpainmod:premier_pain_temple/swamp/second_floor", processorListHolderGetter.getOrThrow(ModStructureProcessorList.RANDOM_BLOCK_REMOVER)), 1)),
                         StructureTemplatePool.Projection.RIGID
                 )
         );

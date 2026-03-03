@@ -92,7 +92,7 @@ public class ModStructure
                                 .build(),
                         STPHoldergetter.getOrThrow(SwampPremierPainTempleTemplatePool.START),
                         Optional.empty(),
-                        7,
+                        20,
                         ConstantHeight.of(VerticalAnchor.absolute(0)),
                         Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
                         80,
