@@ -28,6 +28,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
@@ -35,6 +36,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.getModName;
 
@@ -46,274 +48,330 @@ public class ModBlockTagProvider extends BlockTagsProvider
         super(packOutput, lookupProvider, PremierPainMod.MOD_ID, fileHelper);
     }
 
+    // only one this.tag(...) per tags
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider)
     {
-        //villager workshop
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BlockRegister.VILLAGER_WORKSHOP.get());
+        //block mined behavor
+        this.addToTag(
+                BlockTags.MINEABLE_WITH_PICKAXE,
+                Stream.of(
+                        BlockRegister.VILLAGER_WORKSHOP.get(),
+                        BlockRegister.GYPSUM_STAIRS.get(),
+                        BlockRegister.GYPSUM_SLAB.get(),
+                        BlockRegister.GYPSUM_WALL.get(),
+                        BlockRegister.GYPSUM.get(),
+                        BlockRegister.POINTED_GYPSUM.get(),
+                        BlockRegister.GYPSUM_CLUSTER.get(),
+                        BlockRegister.CUTTED_GYPSUM.get(),
+                        BlockRegister.POLISHED_GYPSUM.get(),
+                        BlockRegister.POLISHED_GYPSUM_STAIRS.get(),
+                        BlockRegister.POLISHED_GYPSUM_SLAB.get(),
+                        BlockRegister.POLISHED_GYPSUM_WALL.get()
+                )
+        );
+        this.addToTag(
+                BlockTags.MINEABLE_WITH_HOE,
+                ModBLockList.getAllBlocksFromClass(ModLeavesBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.MINEABLE_WITH_AXE,
+                ModBLockList.getAllBlocksFromClass(
+                        LogBlock.class,
+                        SaplingBlock.class,
+                        AbstractCropLikeBlock.class
+                ).stream(),
+                ModBLockList.getAllBlocksFromClass(FlammableBlock.class).stream().filter(block -> (getModName(block).contains("planks"))),
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(
+                        StairBlock.class,
+                        SlabBlock.class,
+                        ButtonBlock.class,
+                        PressurePlateBlock.class,
+                        FenceBlock.class,
+                        FenceGateBlock.class,
+                        DoorBlock.class,
+                        TrapDoorBlock.class,
+                        SignBlock.class
+                ).stream())
+        );
+        this.addToTag(
+                BlockTags.SWORD_EFFICIENT,
+                ModBLockList.getAllBlocksFromClass(
+                        ModLeavesBlock.class,
+                        SaplingBlock.class,
+                        AbstractCropLikeBlock.class,
+                        TallFlowerBlock.class
+                ).stream()
+        );
+        //block category
+        this.addToTag(
+                BlockTags.FLOWER_POTS,
+                ModBLockList.getAllBlocksFromClass(FlowerPotBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.PLANKS,
+                ModBLockList.getAllBlocksFromClass(FlammableBlock.class).stream().filter(block -> (getModName(block).contains("planks")))
+        );
+        //  geology
+        this.addToTag(
+                ModBlockTags.GYPSUM,
+                Stream.of(
+                        BlockRegister.GYPSUM.get(),
+                        BlockRegister.GYPSUM_STAIRS.get(),
+                        BlockRegister.GYPSUM_SLAB.get(),
+                        BlockRegister.GYPSUM_WALL.get(),
+                        BlockRegister.POINTED_GYPSUM.get(),
+                        BlockRegister.GYPSUM_CLUSTER.get(),
+                        BlockRegister.CUTTED_GYPSUM.get(),
+                        BlockRegister.POLISHED_GYPSUM.get(),
+                        BlockRegister.POLISHED_GYPSUM_STAIRS.get(),
+                        BlockRegister.POLISHED_GYPSUM_SLAB.get(),
+                        BlockRegister.POLISHED_GYPSUM_WALL.get()
+                )
+        );
+        //  construction
+        this.addToTag(
+                BlockTags.STAIRS,
+                ModBLockList.getAllBlocksFromClass(StairBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WOODEN_STAIRS,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(StairBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.SLABS,
+                ModBLockList.getAllBlocksFromClass(SlabBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WOODEN_SLABS,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(SlabBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.BUTTONS,
+                ModBLockList.getAllBlocksFromClass(ButtonBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WOODEN_BUTTONS,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(ButtonBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.PRESSURE_PLATES,
+                ModBLockList.getAllBlocksFromClass(PressurePlateBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WOODEN_PRESSURE_PLATES,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(PressurePlateBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.WALL_POST_OVERRIDE,
+                ModBLockList.getAllBlocksFromClass(PressurePlateBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.FENCES,
+                ModBLockList.getAllBlocksFromClass(FenceBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WOODEN_FENCES,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(FenceBlock.class).stream())
+        );
+        this.addToTag(
+                Tags.Blocks.FENCES,
+                ModBLockList.getAllBlocksFromClass(FenceBlock.class).stream()
+        );
+        this.addToTag(
+                Tags.Blocks.FENCES_WOODEN,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(FenceBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.FENCE_GATES,
+                ModBLockList.getAllBlocksFromClass(FenceGateBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.UNSTABLE_BOTTOM_CENTER,
+                ModBLockList.getAllBlocksFromClass(FenceGateBlock.class).stream()
+        );
+        this.addToTag(
+                Tags.Blocks.FENCE_GATES,
+                ModBLockList.getAllBlocksFromClass(FenceGateBlock.class).stream()
+        );
+        this.addToTag(
+                Tags.Blocks.FENCE_GATES_WOODEN,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(FenceGateBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.DOORS,
+                ModBLockList.getAllBlocksFromClass(DoorBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WOODEN_DOORS,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(DoorBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.MOB_INTERACTABLE_DOORS,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(DoorBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.TRAPDOORS,
+                ModBLockList.getAllBlocksFromClass(TrapDoorBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WOODEN_TRAPDOORS,
+                getWoodTypeFilter(ModBLockList.getAllBlocksFromClass(TrapDoorBlock.class).stream())
+        );
+        this.addToTag(
+                BlockTags.ALL_SIGNS,
+                ModBLockList.getAllBlocksFromClass(SignBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.SIGNS,
+                ModBLockList.getAllBlocksFromClass(
+                        ModStandingSignBlock.class,
+                        ModWallSignBlock.class
+                ).stream()
+        );
+        this.addToTag(
+                BlockTags.STANDING_SIGNS,
+                ModBLockList.getAllBlocksFromClass(ModStandingSignBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WALL_SIGNS,
+                ModBLockList.getAllBlocksFromClass(ModWallSignBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.ALL_HANGING_SIGNS,
+                ModBLockList.getAllBlocksFromClass(
+                        ModHangingSignBlock.class,
+                        ModWallHangingSignBlock.class
+                ).stream()
+        );
+        this.addToTag(
+                BlockTags.CEILING_HANGING_SIGNS,
+                ModBLockList.getAllBlocksFromClass(ModHangingSignBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WALL_HANGING_SIGNS,
+                ModBLockList.getAllBlocksFromClass(ModWallHangingSignBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.WALLS,
+                ModBLockList.getAllBlocksFromClass(WallBlock.class).stream()
+        );
+        //  vegetation
+        this.addToTag(
+                BlockTags.CROPS,
+                ModBLockList.getAllBlocksFromClass(AbstractCropLikeBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.FLOWERS,
+                ModBLockList.getAllBlocksFromClass(
+                        FlowerBlock.class,
+                        AbstractGrowingAboveVegetation.class,
+                        CactusFlowerBlock.class,
+                        SkySpearsFlower.class,
+                        TallFlowerBlock.class
+                ).stream()
+        );
+        this.addToTag(
+                BlockTags.TALL_FLOWERS,
+                ModBLockList.getAllBlocksFromClass(TallFlowerBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.SAPLINGS,
+                ModBLockList.getAllBlocksFromClass(SaplingBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.LEAVES,
+                ModBLockList.getAllBlocksFromClass(ModLeavesBlock.class).stream()
+        );
+        //      wood
+        this.addToTag(
+                BlockTags.LOGS,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.LOGS_THAT_BURN,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.OVERWORLD_NATURAL_LOGS,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream().filter(block -> !(getModName(block).contains("stripped")))
+        );
+        this.addToTag(
+                Tags.Blocks.STRIPPED_LOGS,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream().filter(block -> (getModName(block).contains("stripped")) && (getModName(block).contains("log")))
+        );
+        this.addToTag(
+                Tags.Blocks.STRIPPED_WOODS,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream().filter(block -> (getModName(block).contains("stripped")) && (getModName(block).contains("wood")))
+        );
+        this.addToTag(
+                ModBlockTags.MOUNTAIN_CURRANT_LOGS,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream().filter(block -> (getModName(block).contains("mountain_currant")))
+        );
+        this.addToTag(
+                ModBlockTags.MORICHE_PALM_LOGS,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream().filter(block -> (getModName(block).contains("moriche_palm")))
+        );
+        this.addToTag(
+                ModBlockTags.ACHIOTE_LOGS,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream().filter(block -> (getModName(block).contains("achiote")))
+        );
+        this.addToTag(
+                ModBlockTags.WEEPING_WILLOW_LOGS,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream().filter(block -> (getModName(block).contains("weeping_willow")))
+        );
+        //mob interaction
+        this.addToTag(
+                BlockTags.SNAPS_GOAT_HORN,
+                ModBLockList.getAllBlocksFromClass(LogBlock.class).stream()
+        );
+        this.addToTag(
+                BlockTags.ENDERMAN_HOLDABLE,
+                ModBLockList.getAllBlocksFromClass(
+                        FlowerBlock.class,
+                        CactusFlowerBlock.class,
+                        SkySpearsFlower.class
+                ).stream()
+        );
+        //tutorial
+        this.addToTag(
+                BlockTags.COMPLETES_FIND_TREE_TUTORIAL,
+                ModBLockList.getAllBlocksFromClass(
+                        LogBlock.class,
+                        ModLeavesBlock.class
+                ).stream(),
+                ModBLockList.getAllBlocksFromClass(ModLeavesBlock.class).stream()
+        );
+        //generation
+        //  world
+        this.addToTag(
+                BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE,
+                ModBLockList.getAllBlocksFromClass(
+                        LogBlock.class,
+                        ModLeavesBlock.class
+                ).stream()
+        );
+        this.addToTag(
+                BlockTags.REPLACEABLE_BY_TREES,
+                ModBLockList.getAllBlocksFromClass(
+                        ModLeavesBlock.class,
+                        TallFlowerBlock.class
+                ).stream()
+        );
+        //  mob spawn
+        this.addToTag(
+                BlockTags.PARROTS_SPAWNABLE_ON,
+                ModBLockList.getAllBlocksFromClass(
+                        LogBlock.class,
+                        ModLeavesBlock.class
+                ).stream()
+        );
 
         for (Block block : ModBLockList.getAllMaterialsBlocks())
         {
+            //TODO simplify at the end
             String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
             addTagForAllMaterialsBlock(block, blockName);
-        }
-
-        //potted thing
-        for (Block block : ModBLockList.getAllBlocksFromClass(FlowerPotBlock.class))
-        {
-            this.tag(BlockTags.FLOWER_POTS).add(block);
-        }
-
-        //leaves
-        for (Block block : ModBLockList.getAllBlocksFromClass(ModLeavesBlock.class))
-        {
-            this.tag(BlockTags.LEAVES).add(block);
-            this.tag(BlockTags.REPLACEABLE_BY_TREES).add(block);
-            this.tag(BlockTags.MINEABLE_WITH_HOE).add(block);
-            this.tag(BlockTags.SWORD_EFFICIENT).add(block);
-            this.tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(block);
-            this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(block);
-            this.tag(BlockTags.PARROTS_SPAWNABLE_ON).add(block);
-        }
-
-        //logs
-        for (Block block : ModBLockList.getAllBlocksFromClass(LogBlock.class))
-        {
-            String blockName = getModName(block);
-            this.tag(BlockTags.LOGS).add(block);
-            this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
-            this.tag(BlockTags.LOGS_THAT_BURN).add(block);
-            this.tag(BlockTags.SNAPS_GOAT_HORN).add(block);
-            this.tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(block);
-            this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(block);
-            this.tag(BlockTags.PARROTS_SPAWNABLE_ON).add(block);
-            if (!blockName.contains("stripped"))
-            {
-                this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(block);
-            }
-            else
-            {
-                if (blockName.contains("log"))
-                {
-                    this.tag(Tags.Blocks.STRIPPED_LOGS).add(block);
-                }
-                else if (blockName.contains("wood"))
-                {
-                    this.tag(Tags.Blocks.STRIPPED_WOODS).add(block);
-                }
-
-            }
-            if (blockName.contains("mountain_currant"))
-            {
-                tag(ModBlockTags.MOUNTAIN_CURRANT_LOGS).add(block);
-            }
-            if (blockName.contains("moriche_palm"))
-            {
-                tag(ModBlockTags.MORICHE_PALM_LOGS).add(block);
-            }
-            if (blockName.contains("achiote"))
-            {
-                tag(ModBlockTags.ACHIOTE_LOGS).add(block);
-            }
-            if (blockName.contains("weeping_willow"))
-            {
-                tag(ModBlockTags.WEEPING_WILLOW_LOGS).add(block);
-            }
-        }
-
-        //planks
-        for (Block block : ModBLockList.getAllBlocksFromClass(FlammableBlock.class))
-        {
-            String blockName = getModName(block);
-            if (blockName.contains("planks"))
-            {
-                this.tag(BlockTags.PLANKS).add(block);
-                this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
-            }
-        }
-
-        //mountain currant crafted thing
-        for (Block block : ModBLockList.getAllBlocksFromClass(
-                StairBlock.class,
-                SlabBlock.class,
-                ButtonBlock.class,
-                PressurePlateBlock.class,
-                FenceBlock.class,
-                FenceGateBlock.class,
-                DoorBlock.class,
-                TrapDoorBlock.class,
-                SignBlock.class
-        ))
-        {
-            String blockName = getModName(block);
-            if (blockName.contains("mountain_currant")
-                    || blockName.contains("moriche_palm")
-                    || blockName.contains("achiote")
-            )
-            {
-                this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
-                switch (block)
-                {
-                    case StairBlock ignored ->
-                    {
-                        this.tag(BlockTags.STAIRS).add(block);
-                        this.tag(BlockTags.WOODEN_STAIRS).add(block);
-                    }
-                    case SlabBlock ignored ->
-                    {
-                        this.tag(BlockTags.SLABS).add(block);
-                        this.tag(BlockTags.WOODEN_SLABS).add(block);
-                    }
-                    case ButtonBlock ignored ->
-                    {
-                        this.tag(BlockTags.BUTTONS).add(block);
-                        this.tag(BlockTags.WOODEN_BUTTONS).add(block);
-                    }
-                    case PressurePlateBlock ignored ->
-                    {
-                        this.tag(BlockTags.PRESSURE_PLATES).add(block);
-                        this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(block);
-                        this.tag(BlockTags.WALL_POST_OVERRIDE).add(block);
-                    }
-                    case FenceBlock ignored ->
-                    {
-                        this.tag(BlockTags.FENCES).add(block);
-                        this.tag(BlockTags.WOODEN_FENCES).add(block);
-                        this.tag(Tags.Blocks.FENCES).add(block);
-                        this.tag(Tags.Blocks.FENCES_WOODEN).add(block);
-                    }
-                    case FenceGateBlock ignored ->
-                    {
-                        this.tag(BlockTags.FENCE_GATES).add(block);
-                        this.tag(BlockTags.UNSTABLE_BOTTOM_CENTER).add(block);
-                        this.tag(Tags.Blocks.FENCE_GATES).add(block);
-                        this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(block);
-                    }
-                    case DoorBlock ignored ->
-                    {
-                        this.tag(BlockTags.WOODEN_DOORS).add(block);
-                        this.tag(BlockTags.DOORS).add(block);
-                        this.tag(BlockTags.MOB_INTERACTABLE_DOORS).add(block);
-                    }
-                    case TrapDoorBlock ignored ->
-                    {
-                        this.tag(BlockTags.WOODEN_TRAPDOORS).add(block);
-                        this.tag(BlockTags.TRAPDOORS).add(block);
-                    }
-                    case SignBlock ignored ->
-                    {
-                        this.tag(BlockTags.ALL_SIGNS).add(block);
-                        switch (block)
-                        {
-                            case ModStandingSignBlock ignored1 ->
-                            {
-                                this.tag(BlockTags.STANDING_SIGNS).add(block);
-                                this.tag(BlockTags.SIGNS).add(block);
-                            }
-                            case ModWallSignBlock ignored1 ->
-                            {
-                                this.tag(BlockTags.WALL_SIGNS).add(block);
-                                this.tag(BlockTags.SIGNS).add(block);
-                            }
-                            case ModHangingSignBlock ignored1 ->
-                            {
-                                this.tag(BlockTags.ALL_HANGING_SIGNS).add(block);
-                                this.tag(BlockTags.CEILING_HANGING_SIGNS).add(block);
-                            }
-                            case ModWallHangingSignBlock ignored1 ->
-                            {
-                                this.tag(BlockTags.ALL_HANGING_SIGNS).add(block);
-                                this.tag(BlockTags.WALL_HANGING_SIGNS).add(block);
-                            }
-                            default ->
-                            {
-                            }
-                        }
-                    }
-                    default ->
-                    {
-                    }
-                }
-            }
-        }
-
-        //sapling
-        for (Block block : ModBLockList.getAllBlocksFromClass(SaplingBlock.class))
-        {
-            this.tag(BlockTags.SAPLINGS).add(block);
-            this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
-            this.tag(BlockTags.SWORD_EFFICIENT).add(block);
-        }
-
-        //crop
-        for (Block block : ModBLockList.getAllBlocksFromClass(AbstractCropLikeBlock.class))
-        {
-            this.tag(BlockTags.CROPS).add(block);
-            this.tag(BlockTags.SWORD_EFFICIENT).add(block);
-            this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
-        }
-
-        //flower
-        for (Block block : ModBLockList.getAllBlocksFromClass(
-                FlowerBlock.class,
-                AbstractGrowingAboveVegetation.class,
-                CactusFlowerBlock.class,
-                SkySpearsFlower.class
-        ))
-        {
-            this.tag(BlockTags.FLOWERS).add(block);
-        }
-        //tall flower
-        for (Block block : ModBLockList.getAllBlocksFromClass(TallFlowerBlock.class))
-        {
-            this.tag(BlockTags.SWORD_EFFICIENT).add(block);
-            this.tag(BlockTags.REPLACEABLE_BY_TREES).add(block);
-            this.tag(BlockTags.FLOWERS).add(block);
-            this.tag(BlockTags.TALL_FLOWERS).add(block);
-        }
-
-        //stealable by enderman
-        for (Block block : ModBLockList.getAllBlocksFromClass(
-                FlowerBlock.class,
-                CactusFlowerBlock.class,
-                SkySpearsFlower.class
-        ))
-        {
-            this.tag(BlockTags.ENDERMAN_HOLDABLE).add(block);
-        }
-
-        this.tag(ModBlockTags.GYPSUM).add(
-                BlockRegister.GYPSUM.get()
-                ,
-                BlockRegister.GYPSUM_STAIRS.get(),
-                BlockRegister.GYPSUM_SLAB.get(),
-                BlockRegister.GYPSUM_WALL.get(),
-                BlockRegister.POINTED_GYPSUM.get(),
-                BlockRegister.GYPSUM_CLUSTER.get(),
-                BlockRegister.CUTTED_GYPSUM.get(),
-                BlockRegister.POLISHED_GYPSUM.get(),
-                BlockRegister.POLISHED_GYPSUM_STAIRS.get(),
-                BlockRegister.POLISHED_GYPSUM_SLAB.get(),
-                BlockRegister.POLISHED_GYPSUM_WALL.get()
-        );
-
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                BlockRegister.GYPSUM_STAIRS.get(),
-                BlockRegister.GYPSUM_SLAB.get(),
-                BlockRegister.GYPSUM_WALL.get(),
-                BlockRegister.GYPSUM.get(),
-                BlockRegister.POINTED_GYPSUM.get(),
-                BlockRegister.GYPSUM_CLUSTER.get(),
-                BlockRegister.CUTTED_GYPSUM.get(),
-                BlockRegister.POLISHED_GYPSUM.get(),
-                BlockRegister.POLISHED_GYPSUM_STAIRS.get(),
-                BlockRegister.POLISHED_GYPSUM_SLAB.get(),
-                BlockRegister.POLISHED_GYPSUM_WALL.get()
-        );
-
-        for (Block block : ModBLockList.getAllBlocksFromClass(WallBlock.class))
-        {
-            this.tag(BlockTags.WALLS).add(block);
         }
     }
 
@@ -418,5 +476,24 @@ public class ModBlockTagProvider extends BlockTagsProvider
             {
             }
         }
+    }
+
+    @SafeVarargs
+    private void addToTag(TagKey<Block> blockTag, Stream<Block>... blockSteams)
+    {
+        this.tag(blockTag).add(
+                Stream.of(blockSteams)
+                        .flatMap(s -> s)
+                        .toArray(Block[]::new)
+        );
+    }
+
+    private Stream<Block> getWoodTypeFilter(Stream<Block> notFiltered)
+    {
+        return notFiltered.filter(block -> (getModName(block).contains("mountain_currant"))
+                || (getModName(block).contains("moriche_palm"))
+                || (getModName(block).contains("achiote"))
+                || (getModName(block).contains("weeping_willow"))
+        );
     }
 }

@@ -1,7 +1,10 @@
 {
   "values": [
     "premierpainmod:achiote_stairs",
+    "premierpainmod:gypsum_stairs",
     "premierpainmod:moriche_palm_stairs",
-    "premierpainmod:mountain_currant_stairs"
+    "premierpainmod:mountain_currant_stairs",
+    "premierpainmod:polished_gypsum_stairs",
+    "premierpainmod:weeping_willow_stairs"
   ]
 }

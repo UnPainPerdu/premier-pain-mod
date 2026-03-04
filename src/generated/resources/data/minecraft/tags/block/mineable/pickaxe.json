@@ -1,6 +1,17 @@
 {
   "values": [
     "premierpainmod:villager_workshop",
+    "premierpainmod:gypsum_stairs",
+    "premierpainmod:gypsum_slab",
+    "premierpainmod:gypsum_wall",
+    "premierpainmod:gypsum",
+    "premierpainmod:pointed_gypsum",
+    "premierpainmod:gypsum_cluster",
+    "premierpainmod:cutted_gypsum",
+    "premierpainmod:polished_gypsum",
+    "premierpainmod:polished_gypsum_stairs",
+    "premierpainmod:polished_gypsum_slab",
+    "premierpainmod:polished_gypsum_wall",
     "premierpainmod:amethyst_block_standing_villager_shelf",
     "premierpainmod:amethyst_block_villager_bench",
     "premierpainmod:amethyst_block_villager_brazier",
@@ -450,17 +461,6 @@
     "premierpainmod:tuff_villager_statue",
     "premierpainmod:tuff_villager_table",
     "premierpainmod:tuff_villager_throne_chair",
-    "premierpainmod:tuff_wall_villager_shelf",
-    "premierpainmod:gypsum_stairs",
-    "premierpainmod:gypsum_slab",
-    "premierpainmod:gypsum_wall",
-    "premierpainmod:gypsum",
-    "premierpainmod:pointed_gypsum",
-    "premierpainmod:gypsum_cluster",
-    "premierpainmod:cutted_gypsum",
-    "premierpainmod:polished_gypsum",
-    "premierpainmod:polished_gypsum_stairs",
-    "premierpainmod:polished_gypsum_slab",
-    "premierpainmod:polished_gypsum_wall"
+    "premierpainmod:tuff_wall_villager_shelf"
   ]
 }

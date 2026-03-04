@@ -327,6 +327,7 @@ What would be a world without bugs ?
 
 ## Fix :
     - add missing craft related to weeping willow wood type
+    - add missing tags related to weeping willow wood type
     - fix occlusion on dry toilet All material block
     - fix weeping willow tree had some time flying trunck
     - fix console error spam when generating some patch flower feature
