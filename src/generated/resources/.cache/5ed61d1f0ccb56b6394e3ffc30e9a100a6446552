@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-04T15:07:57.4652785	Tags for minecraft:block mod id premierpainmod
+// 1.21.1	2026-03-04T15:39:33.5175017	Tags for minecraft:block mod id premierpainmod
 74393a7f8eb88b9e8a3a1aa654a744b3fe0df56f data/c/tags/block/fences.json
 74393a7f8eb88b9e8a3a1aa654a744b3fe0df56f data/c/tags/block/fences/wooden.json
 2cc789041fe51604c6bffdd4e36ad9d5e7997dbb data/c/tags/block/fence_gates.json
@@ -21,7 +21,7 @@ a0b1225766df40eeea18116493c2e615b033f0e9 data/minecraft/tags/block/lava_pool_sto
 f50c631b284f62b40ebd484f83e46eddbbd4f149 data/minecraft/tags/block/leaves.json
 0ab56d45d7b5f725a23e44b36ae187b22a4a9f23 data/minecraft/tags/block/logs.json
 0ab56d45d7b5f725a23e44b36ae187b22a4a9f23 data/minecraft/tags/block/logs_that_burn.json
-e85d511e29048f08d488c36da20ba64f217f47f8 data/minecraft/tags/block/mineable/axe.json
+5a2c29f9376f77865457ac62b1943787d2cb4e7b data/minecraft/tags/block/mineable/axe.json
 f50c631b284f62b40ebd484f83e46eddbbd4f149 data/minecraft/tags/block/mineable/hoe.json
 6c9f9c936703af7ab3fc93f51fbbc42765254168 data/minecraft/tags/block/mineable/pickaxe.json
 9f7702e83c81b30706055c32b0a04e2acb82d2ad data/minecraft/tags/block/mob_interactable_doors.json

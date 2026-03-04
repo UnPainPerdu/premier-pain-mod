@@ -17,7 +17,6 @@ import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf.VillagerShelf;
-import com.unpainperdu.premierpainmod.level.world.block.crafting_block.VillagerWorkshop;
 import com.unpainperdu.premierpainmod.level.world.block.tree.*;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.growing_above_vegetation.AbstractGrowingAboveVegetation;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.special_vegetation.CactusFloweredBlock.CactusFlowerBlock;
@@ -25,7 +24,6 @@ import com.unpainperdu.premierpainmod.level.world.block.vegetation.two_block_hei
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -54,6 +52,29 @@ public class ModBlockTagProvider extends BlockTagsProvider
     {
         //block mined behavor
         this.addToTag(
+                BlockTags.NEEDS_STONE_TOOL,
+                ModBLockList.getAllMaterialsBlocks().stream().filter(
+                        b -> (getModName(b).contains("iron"))
+                                || (getModName(b).contains("lapis"))
+                                || (getModName(b).contains("copper"))
+                )
+        );
+        this.addToTag(
+                BlockTags.NEEDS_IRON_TOOL,
+                ModBLockList.getAllMaterialsBlocks().stream().filter(
+                        b -> (getModName(b).contains("gold"))
+                                || (getModName(b).contains("emerald"))
+                                || (getModName(b).contains("diamond"))
+                )
+        );
+        this.addToTag(
+                BlockTags.NEEDS_DIAMOND_TOOL,
+                ModBLockList.getAllMaterialsBlocks().stream().filter(
+                        b -> (getModName(b).contains("netherite"))
+                                || (getModName(b).contains("obsidian"))
+                )
+        );
+        this.addToTag(
                 BlockTags.MINEABLE_WITH_PICKAXE,
                 Stream.of(
                         BlockRegister.VILLAGER_WORKSHOP.get(),
@@ -68,6 +89,38 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.POLISHED_GYPSUM_STAIRS.get(),
                         BlockRegister.POLISHED_GYPSUM_SLAB.get(),
                         BlockRegister.POLISHED_GYPSUM_WALL.get()
+                ),
+                ModBLockList.getAllMaterialsBlocks().stream().filter(
+                        b -> (getModName(b).contains("red_sandstone"))
+                                || (getModName(b).contains("sandstone"))
+                                || (getModName(b).contains("mossy_stone"))
+                                || (getModName(b).contains("end_stone"))
+                                || (getModName(b).contains("blackstone"))
+                                || (getModName(b).contains("redstone"))
+                                || (getModName(b).contains("dripstone"))
+                                || (getModName(b).contains("stone"))
+                                || (getModName(b).contains("andesite"))
+                                || (getModName(b).contains("diorite"))
+                                || (getModName(b).contains("granite"))
+                                || (getModName(b).contains("prismarine"))
+                                || (getModName(b).contains("purpur"))
+                                || (getModName(b).contains("deepslate"))
+                                || (getModName(b).contains("tuff"))
+                                || (getModName(b).contains("packed_mud"))
+                                || (getModName(b).contains("quartz"))
+                                || (getModName(b).contains("nether_bricks"))
+                                || (getModName(b).contains("basalt"))
+                                || (getModName(b).contains("coal"))
+                                || (getModName(b).contains("iron"))
+                                || (getModName(b).contains("gold"))
+                                || (getModName(b).contains("emerald"))
+                                || (getModName(b).contains("diamond"))
+                                || (getModName(b).contains("copper"))
+                                || (getModName(b).contains("lapis"))
+                                || (getModName(b).contains("netherite"))
+                                || (getModName(b).contains("obsidian"))
+                                || (getModName(b).contains("amethyst"))
+                                || (getModName(b).contains("gypsum"))
                 )
         );
         this.addToTag(
@@ -92,7 +145,24 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         DoorBlock.class,
                         TrapDoorBlock.class,
                         SignBlock.class
-                ).stream())
+                ).stream()),
+                ModBLockList.getAllMaterialsBlocks().stream().filter(
+                        b -> getModName(b).contains("dark_oak")
+                                || getModName(b).contains("oak")
+                                || getModName(b).contains("birch")
+                                || getModName(b).contains("spruce")
+                                || getModName(b).contains("jungle")
+                                || getModName(b).contains("acacia")
+                                || getModName(b).contains("mangrove")
+                                || getModName(b).contains("cherry")
+                                || getModName(b).contains("crimson")
+                                || getModName(b).contains("warped")
+                                || getModName(b).contains("bamboo")
+                                || getModName(b).contains("mountain_currant")
+                                || getModName(b).contains("moriche_palm")
+                                || getModName(b).contains("achiote")
+                                || getModName(b).contains("weeping_willow")
+                )
         );
         this.addToTag(
                 BlockTags.SWORD_EFFICIENT,
@@ -128,6 +198,63 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         BlockRegister.POLISHED_GYPSUM_SLAB.get(),
                         BlockRegister.POLISHED_GYPSUM_WALL.get()
                 )
+        );
+        //  all materials
+        this.addToTag(
+                ModBlockTags.VILLAGER_STATUE,
+                ModBLockList.getAllBlocksFromClass(VillagerStatue.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_PEDESTAL,
+                ModBLockList.getAllBlocksFromClass(VillagerPedestalBlock.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_BRAZIER,
+                ModBLockList.getAllBlocksFromClass(VillagerBrazier.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_TABLE,
+                ModBLockList.getAllBlocksFromClass(VillagerTableBlock.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_CHAIR,
+                ModBLockList.getAllBlocksFromClass(VillagerChairBlock.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_THRONE_CHAIR,
+                ModBLockList.getAllBlocksFromClass(VillagerThroneChairBlock.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_DRAWER,
+                ModBLockList.getAllBlocksFromClass(VillagerDrawer.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_SHELF,
+                ModBLockList.getAllBlocksFromClass(VillagerShelf.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_BENCH,
+                ModBLockList.getAllBlocksFromClass(VillagerBench.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_COUCH,
+                ModBLockList.getAllBlocksFromClass(VillagerCouch.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_BREWING_STATION,
+                ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_MUSICAL_FRIDGE,
+                ModBLockList.getAllBlocksFromClass(VillagerMusicalFridgeBlock.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_CHISELED_HEAD,
+                ModBLockList.getAllBlocksFromClass(VillagerChiseledHead.class).stream()
+        );
+        this.addToTag(
+                ModBlockTags.VILLAGER_DRY_TOILET,
+                ModBLockList.getAllBlocksFromClass(VillagerDryToiletBlock.class).stream()
         );
         //  construction
         this.addToTag(
@@ -367,115 +494,6 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 ).stream()
         );
 
-        for (Block block : ModBLockList.getAllMaterialsBlocks())
-        {
-            //TODO simplify at the end
-            String blockName = BuiltInRegistries.BLOCK.getKey(block).toString().replace(PremierPainMod.MOD_ID + ":", "");
-            addTagForAllMaterialsBlock(block, blockName);
-        }
-    }
-
-    private void addTagForAllMaterialsBlock(Block block, String blockName)
-    {
-        //mineable with pickaxe
-        if ((block instanceof VillagerWorkshop)
-                || (blockName.contains("red_sandstone"))
-                || (blockName.contains("sandstone"))
-                || (blockName.contains("mossy_stone"))
-                || (blockName.contains("end_stone"))
-                || (blockName.contains("blackstone"))
-                || (blockName.contains("redstone"))
-                || (blockName.contains("dripstone"))
-                || (blockName.contains("stone"))
-                || (blockName.contains("andesite"))
-                || (blockName.contains("diorite"))
-                || (blockName.contains("granite"))
-                || (blockName.contains("prismarine"))
-                || (blockName.contains("purpur"))
-                || (blockName.contains("deepslate"))
-                || (blockName.contains("tuff"))
-                || (blockName.contains("packed_mud"))
-                || (blockName.contains("quartz"))
-                || (blockName.contains("nether_bricks"))
-                || (blockName.contains("basalt"))
-                || (blockName.contains("coal"))
-                || (blockName.contains("iron"))
-                || (blockName.contains("gold"))
-                || (blockName.contains("emerald"))
-                || (blockName.contains("diamond"))
-                || (blockName.contains("copper"))
-                || (blockName.contains("lapis"))
-                || (blockName.contains("netherite"))
-                || (blockName.contains("obsidian"))
-                || (blockName.contains("amethyst"))
-                || (blockName.contains("gypsum"))
-        )
-        {
-            this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
-            //need stone tool
-            if ((blockName.contains("iron"))
-                    || (blockName.contains("lapis"))
-                    || (blockName.contains("copper"))
-            )
-            {
-                this.tag(BlockTags.NEEDS_STONE_TOOL).add(block);
-            }
-            //need iron tool
-            else if ((blockName.contains("gold"))
-                    || (blockName.contains("emerald"))
-                    || (blockName.contains("diamond"))
-            )
-            {
-                this.tag(BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            //need diamond tool
-            else if ((blockName.contains("netherite"))
-                    || (blockName.contains("obsidian"))
-            )
-            {
-                this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block);
-            }
-        }
-        //mineable with axe
-        else if ((blockName.contains("dark_oak"))
-                || (blockName.contains("oak"))
-                || (blockName.contains("birch"))
-                || (blockName.contains("spruce"))
-                || (blockName.contains("jungle"))
-                || (blockName.contains("acacia"))
-                || (blockName.contains("mangrove"))
-                || (blockName.contains("cherry"))
-                || (blockName.contains("crimson"))
-                || (blockName.contains("warped"))
-                || (blockName.contains("bamboo"))
-                || (blockName.contains("mountain_currant"))
-                || (blockName.contains("moriche_palm"))
-        )
-        {
-            this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
-        }
-
-        //type tag
-        switch (block)
-        {
-            case VillagerStatue ignored -> this.tag(ModBlockTags.VILLAGER_STATUE).add(block);
-            case VillagerPedestalBlock ignored -> this.tag(ModBlockTags.VILLAGER_PEDESTAL).add(block);
-            case VillagerBrazier ignored -> this.tag(ModBlockTags.VILLAGER_BRAZIER).add(block);
-            case VillagerTableBlock ignored -> this.tag(ModBlockTags.VILLAGER_TABLE).add(block);
-            case VillagerChairBlock ignored -> this.tag(ModBlockTags.VILLAGER_CHAIR).add(block);
-            case VillagerThroneChairBlock ignored -> this.tag(ModBlockTags.VILLAGER_THRONE_CHAIR).add(block);
-            case VillagerDrawer ignored -> this.tag(ModBlockTags.VILLAGER_DRAWER).add(block);
-            case VillagerShelf ignored -> this.tag(ModBlockTags.VILLAGER_SHELF).add(block);
-            case VillagerBench ignored -> this.tag(ModBlockTags.VILLAGER_BENCH).add(block);
-            case VillagerCouch ignored -> this.tag(ModBlockTags.VILLAGER_COUCH).add(block);
-            case VillagerBrewingStation ignored -> this.tag(ModBlockTags.VILLAGER_BREWING_STATION).add(block);
-            case VillagerMusicalFridgeBlock ignored -> this.tag(ModBlockTags.VILLAGER_MUSICAL_FRIDGE).add(block);
-            case VillagerChiseledHead ignored -> this.tag(ModBlockTags.VILLAGER_CHISELED_HEAD).add(block);
-            case VillagerDryToiletBlock ignored -> this.tag(ModBlockTags.VILLAGER_DRY_TOILET).add(block);
-            default ->
-            {
-            }
-        }
     }
 
     @SafeVarargs
