@@ -40,7 +40,6 @@ import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.getModNa
 
 public class ModBlockTagProvider extends BlockTagsProvider
 {
-    //TODO simplify all
     public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper)
     {
         super(packOutput, lookupProvider, PremierPainMod.MOD_ID, fileHelper);

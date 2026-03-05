@@ -68,7 +68,7 @@ public class TallCrystalFeature extends AbstractFeature<TallCrystalConfiguration
     }
 
     private void generateCrystal(WorldGenLevel worldIn, BlockPos basePos, BlockPos tipPos, RandomSource rand, BlockStateProvider block, BlockStateProvider cluster)
-    { //TODO fix crystal generating outside cave -- partially fixed now
+    {
         BlockState crystal = block.getState(rand, basePos);
         List<BlockPos> crystalPosList = PosHelper.getBlockPosLine(PosHelper.minY(basePos, tipPos), PosHelper.maxY(basePos, tipPos));
         crystalPosList.sort(Comparator.comparingInt(Vec3i::getY));

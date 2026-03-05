@@ -1424,7 +1424,6 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void crystalClusterWithItem(GrowingCrystalCluster block, String generalTextureFolder)
     {
-        //todo it only handle facing up
         String name = getModName(block);
         String baseTexturePath = generalTextureFolder + name + "_";
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
@@ -1473,7 +1472,6 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void pointedCrystalWithItem(PointedCrystalBlock block, String generalTextureFolder)
     {
-        //todo it only handle facing up
         String baseTexturePath = generalTextureFolder + "/" + getModName(block) + "_";
         VariantBlockStateBuilder variantBuilder = getVariantBuilder(block);
         variantBuilder.forAllStates(state ->
