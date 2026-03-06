@@ -1,7 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractCropLikeBlock;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityFollowTargetWhenItemInHand;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityGoToBlockAndMemorizeIt;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.mountain_currant_golem.BoneMealingField;
@@ -25,6 +24,7 @@ import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.schedule.Activity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -37,11 +37,13 @@ import net.tslat.smartbrainlib.api.core.behaviour.FirstApplicableBehaviour;
 import net.tslat.smartbrainlib.api.core.behaviour.OneRandomBehaviour;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.look.LookAtTarget;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.misc.Idle;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.move.FollowTemptation;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.move.MoveToWalkTarget;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.path.SetRandomWalkTarget;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetRandomLookTarget;
 import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 import net.tslat.smartbrainlib.api.core.sensor.custom.NearbyBlocksSensor;
+import net.tslat.smartbrainlib.api.core.sensor.vanilla.ItemTemptingSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -58,6 +60,11 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
         super(entityType, level);
     }
 
+    public boolean isFollowedItem(@NotNull ItemStack stack)
+    {
+        return stack.is(Items.EMERALD);
+    }
+
     //https://github.com/Tslat/SmartBrainLib/wiki/Making-an-Entity-With-SmartBrainLib
     @Override
     public List<ExtendedSensor<MountainCurrantGolemEntity>> getSensors()
@@ -68,7 +75,9 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
                                 target instanceof Player ||
                                         target instanceof Villager ||
                                         target instanceof IronGolem),
-                new NearbyBlocksSensor<MountainCurrantGolemEntity>().setRadius(15).setPredicate(this::isValidBlockToBoneMeal) // Keep track of nearby block the golem is interested in
+                new NearbyBlocksSensor<MountainCurrantGolemEntity>().setRadius(15).setPredicate(this::isValidBlockToBoneMeal), // Keep track of nearby block the golem is interested in
+                new ItemTemptingSensor<MountainCurrantGolemEntity>().temptedWith(MountainCurrantGolemEntity::isFollowedItem)
+                        .setRadius(10, 8)
         );
     }
 
@@ -87,7 +96,7 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
         return BrainActivityGroup.idleTasks(
                 new FirstApplicableBehaviour<MountainCurrantGolemEntity>(      // Run only one of the below behaviours, trying each one in order. Include the generic type because JavaC is silly
                         new SetEntityGoToBlockAndMemorizeIt<>().closeEnoughWhen((e, p) -> 0),
-                        SetEntityFollowTargetWhenItemInHand.builder().setItems(Items.EMERALD).setMaxDistanceSight(10).build(),
+                        new FollowTemptation<>().speedMod((g, p) -> 1.5F),
                         new SetEntityLookTarget<>(5),
                         new SetRandomLookTarget<>()),         // Set a random look target
                 new OneRandomBehaviour<>(                 // Run a random task from the below options

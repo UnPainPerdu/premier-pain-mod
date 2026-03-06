@@ -120,7 +120,7 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
         return BrainActivityGroup.idleTasks(
                 new FirstApplicableBehaviour<FloweredLizardEntity>(
                         new BreedWithPartner<>(),
-                        new FollowTemptation<>(),
+                        new FollowTemptation<>().speedMod((f, p) -> 1.5F),
                         new FollowParent<>(),
                         new SetEntityLookTarget<>(5),
                         new SetRandomLookTarget<>()

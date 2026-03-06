@@ -2,7 +2,6 @@ package com.unpainperdu.premierpainmod.level.world.entity.mobs;
 
 import com.google.common.collect.Maps;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.RestoreHitbox;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityFollowTargetWhenItemInHand;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.wool_golem.Huging;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.wool_golem.SetHugTarget;
@@ -49,10 +48,12 @@ import net.tslat.smartbrainlib.api.core.behaviour.FirstApplicableBehaviour;
 import net.tslat.smartbrainlib.api.core.behaviour.OneRandomBehaviour;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.look.LookAtTarget;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.misc.Idle;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.move.FollowTemptation;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.move.MoveToWalkTarget;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.path.SetRandomWalkTarget;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetRandomLookTarget;
 import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
+import net.tslat.smartbrainlib.api.core.sensor.vanilla.ItemTemptingSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
 import net.tslat.smartbrainlib.util.BrainUtils;
 import org.jetbrains.annotations.NotNull;
@@ -128,6 +129,11 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         super(entityType, level);
     }
 
+    public boolean isFollowedItem(@NotNull ItemStack stack)
+    {
+        return stack.is(Items.EMERALD);
+    }
+
     @Override
     public List<ExtendedSensor<WoolGolemEntity>> getSensors()
     {
@@ -137,7 +143,9 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
                                 target instanceof Player ||
                                         target instanceof Villager ||
                                         (target instanceof AbstractGolem && !(target instanceof Shulker)) ||
-                                        target instanceof Monster)
+                                        target instanceof Monster),
+                new ItemTemptingSensor<WoolGolemEntity>().temptedWith(WoolGolemEntity::isFollowedItem)
+                        .setRadius(10, 8)
         );
     }
 
@@ -157,7 +165,7 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
                 new FirstApplicableBehaviour<WoolGolemEntity>(
                         new RestoreHitbox<>(),
                         new SetHugTarget<>(),
-                        SetEntityFollowTargetWhenItemInHand.builder().setItems(Items.EMERALD).setMaxDistanceSight(10).build(),
+                        new FollowTemptation<>().speedMod((g, p) -> 1.5F),
                         new SetEntityLookTarget<>(5),
                         new SetRandomLookTarget<>()),
                 new OneRandomBehaviour<>(
