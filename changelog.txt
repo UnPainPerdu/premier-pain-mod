@@ -301,8 +301,8 @@ What would be a world without bugs ?
 
 ## !!! WARNING !!!
 
-- Note where are all your premier pain golem before updating -> they have high chance to dispawn this update
-- Note where are all your premier pain egg golem before updating -> they have high chance to dispawn this update
+- Note where are all your premier pain golem before updating -> they have high chance to dispawn when updating this mod this time
+- Note where are all your premier pain egg golem before updating ->  they have high chance to dispawn when updating this mod this time
 
 ## Add :
 ### Blocks :
