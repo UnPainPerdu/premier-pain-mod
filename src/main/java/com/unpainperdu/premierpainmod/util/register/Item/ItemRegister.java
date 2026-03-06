@@ -116,7 +116,7 @@ public class ItemRegister
     public static final DeferredItem<Item> JELLY_HAT = basicFoodItemRegister("jelly_hat", 64, 3, 0.10f);
     public static final DeferredItem<Item> MOUNTAIN_CURRANT = fastFoodItemRegister("mountain_currant", 64, 1, 0.2f);
     public static final DeferredItem<Item> MORICHE_PALM_FRUIT = basicFoodItemRegister("moriche_palm_fruit", 64, 3, 0.2f);
-    public static final DeferredItem<Item> ACHIOTE_FRUIT = fastFoodItemRegister("achiote_fruit", 64, 1, 0.2f); //TODO better texture
+    public static final DeferredItem<Item> ACHIOTE_FRUIT = fastFoodItemRegister("achiote_fruit", 64, 1, 0.2f);
     //stew
     public static final DeferredItem<Item> JELLYSHROOM_STEW = stewFoodItemRegister("jellyshroom_stew", 5);
     public static final DeferredItem<Item> CACTUS_STEW = stewFoodItemRegister("cactus_stew", 6);

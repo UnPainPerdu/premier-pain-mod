@@ -313,6 +313,8 @@ What would be a world without bugs ?
     - Flowered Lizard, an animal that can lay egg and drop scale by the time
 
 ## Change :
+### Items :
+    - Achiote fruit has now a better texture
 ### Structures :
     - forest premier pain temple has now multiples forms, better balance in loot chest and better generation
     - sand desert premier pain temple has now multiples forms, better balance in loot chest and better generation
