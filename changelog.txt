@@ -310,8 +310,11 @@ What would be a world without bugs ?
 ### Biomes :
     - Gypsum cave, an underground biome spawning gypsum crystal
 ### Mobs :
-    - Flowered Lizard, an animal that can lay egg and drop scale by the time
-
+    - Flowered Lizard, an animal that can lay egg and drop scale when brushing
+### Items :
+    - Flowered lizard scale that is used to craft the 2 following items:
+        - TODO Scale Horse Armor
+        - TODO Scale Wolf Armor
 ## Change :
 ### Items :
     - Achiote fruit has now a better texture

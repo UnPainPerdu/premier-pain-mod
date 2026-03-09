@@ -45,54 +45,54 @@ public class ItemRegister
     public static final DeferredItem<Item> DIGGY_VILLAGER_SINGING_STONE = registerVillagerSingingStone("diggy_villager_singing_stone", () -> ItemEventRegister.DIGGY, 200);
     public static final DeferredItem<Item> MADNESS_VILLAGER_SINGING_STONE = registerVillagerSingingStone("madness_villager_singing_stone", () -> ItemEventRegister.MADNESS, 400);
     //fluid
-    //oil
+    //  oil
     public static final DeferredItem<Item> MORICHE_PALM_OIL_BUCKET = ITEMS.register("moriche_palm_oil_bucket", () -> new BucketItem(getFluid(MorichePalmOilFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    //beer
-    //empty
+    //  beer
+    //      empty
     public static final DeferredItem<Item> EMPTY_GLASS = ITEMS.register("empty_glass", () -> new Item(new Item.Properties().stacksTo(16)));
     public static final DeferredItem<Item> EMPTY_BOTTLE = ITEMS.register("empty_bottle", () -> new Item(new Item.Properties().stacksTo(16)));
     public static final DeferredItem<Item> EMPTY_MUG = ITEMS.register("empty_mug", () -> new Item(new Item.Properties().stacksTo(16)));
-    //PainDieux
+    //      PainDieux
     public static final DeferredItem<Item> PAIN_DIEUX_BUCKET = ITEMS.register("pain_dieux_bucket", () -> new BucketItem(getFluid(PainDieuxFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> PAIN_DIEUX_GLASS = glassBeerRegister("pain_dieux_glass", MobEffects.DIG_SPEED, 2, 1);
     public static final DeferredItem<Item> PAIN_DIEUX_BOTTLE = bottleBeerRegister("pain_dieux_bottle", MobEffects.DIG_SPEED, 2, 1);
     public static final DeferredItem<Item> PAIN_DIEUX_MUG = mugBeerRegister("pain_dieux_mug", MobEffects.DIG_SPEED, 2, 1);
-    //LA_CHATEAU
+    //      LA_CHATEAU
     public static final DeferredItem<Item> LA_CHATEAU_BUCKET = ITEMS.register("la_chateau_bucket", () -> new BucketItem(getFluid(LaChateauFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> LA_CHATEAU_GLASS = glassBeerRegister("la_chateau_glass", MobEffects.HEAL, 1, 0);
     public static final DeferredItem<Item> LA_CHATEAU_BOTTLE = bottleBeerRegister("la_chateau_bottle", MobEffects.HEAL, 1, 0);
     public static final DeferredItem<Item> LA_CHATEAU_MUG = mugBeerRegister("la_chateau_mug", MobEffects.HEAL, 1, 0);
-    //DEBIER
+    //      DEBIER
     public static final DeferredItem<Item> DEBIER_BUCKET = ITEMS.register("debier_bucket", () -> new BucketItem(getFluid(DeBierFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> DEBIER_GLASS = glassBeerRegister("debier_glass", MobEffects.LUCK, 2, 1);
     public static final DeferredItem<Item> DEBIER_BOTTLE = bottleBeerRegister("debier_bottle", MobEffects.LUCK, 2, 1);
     public static final DeferredItem<Item> DEBIER_MUG = mugBeerRegister("debier_mug", MobEffects.LUCK, 2, 1);
-    //ENVAHISSEUR_ROUGE
+    //      ENVAHISSEUR_ROUGE
     public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_BUCKET = ITEMS.register("envahisseur_rouge_bucket", () -> new BucketItem(getFluid(EnvahisseurRougeFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_GLASS = glassBeerRegister("envahisseur_rouge_glass", MobEffects.DAMAGE_BOOST, 2, 0.25f);
     public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_BOTTLE = bottleBeerRegister("envahisseur_rouge_bottle", MobEffects.DAMAGE_BOOST, 2, 0.25f);
     public static final DeferredItem<Item> ENVAHISSEUR_ROUGE_MUG = mugBeerRegister("envahisseur_rouge_mug", MobEffects.DAMAGE_BOOST, 2, 0.25f);
-    //RASPBUISSON
+    //      RASPBUISSON
     public static final DeferredItem<Item> RASPBUISSON_BUCKET = ITEMS.register("raspbuisson_bucket", () -> new BucketItem(getFluid(RaspBuissonFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> RASPBUISSON_GLASS = glassBeerRegister("raspbuisson_glass", MobEffects.REGENERATION, 1, 0.8f);
     public static final DeferredItem<Item> RASPBUISSON_BOTTLE = bottleBeerRegister("raspbuisson_bottle", MobEffects.REGENERATION, 1, 0.8f);
     public static final DeferredItem<Item> RASPBUISSON_MUG = mugBeerRegister("raspbuisson_mug", MobEffects.REGENERATION, 1, 0.8f);
-    //LA_BLANCHE_CITADINE
+    //      LA_BLANCHE_CITADINE
     public static final DeferredItem<Item> LA_BLANCHE_CITADINE_BUCKET = ITEMS.register("la_blanche_citadine_bucket", () -> new BucketItem(getFluid(LaBlancheCitadineFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> LA_BLANCHE_CITADINE_GLASS = glassBeerRegister("la_blanche_citadine_glass", MobEffects.MOVEMENT_SPEED, 2, 1);
     public static final DeferredItem<Item> LA_BLANCHE_CITADINE_BOTTLE = bottleBeerRegister("la_blanche_citadine_bottle", MobEffects.MOVEMENT_SPEED, 2, 1);
     public static final DeferredItem<Item> LA_BLANCHE_CITADINE_MUG = mugBeerRegister("la_blanche_citadine_mug", MobEffects.MOVEMENT_SPEED, 2, 1);
-    //CRANE_NOIR
+    //      CRANE_NOIR
     public static final DeferredItem<Item> CRANE_NOIR_BUCKET = ITEMS.register("crane_noir_bucket", () -> new BucketItem(getFluid(CraneNoirFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> CRANE_NOIR_GLASS = glassBeerRegister("crane_noir_glass", MobEffects.DAMAGE_RESISTANCE, 1, 1.2f);
     public static final DeferredItem<Item> CRANE_NOIR_BOTTLE = bottleBeerRegister("crane_noir_bottle", MobEffects.DAMAGE_RESISTANCE, 1, 1.2f);
     public static final DeferredItem<Item> CRANE_NOIR_MUG = mugBeerRegister("crane_noir_mug", MobEffects.DAMAGE_RESISTANCE, 1, 1.2f);
-    //TAK
+    //      TAK
     public static final DeferredItem<Item> TAK_BUCKET = ITEMS.register("tak_bucket", () -> new BucketItem(getFluid(TakFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> TAK_GLASS = glassBeerRegister("tak_glass", MobEffects.FIRE_RESISTANCE, 1, 1);
     public static final DeferredItem<Item> TAK_BOTTLE = bottleBeerRegister("tak_bottle", MobEffects.FIRE_RESISTANCE, 1, 1);
     public static final DeferredItem<Item> TAK_MUG = mugBeerRegister("tak_mug", MobEffects.FIRE_RESISTANCE, 1, 1);
-    //DISENDER
+    //      DISENDER
     public static final DeferredItem<Item> DISENDER_BUCKET = ITEMS.register("disender_bucket", () -> new BucketItem(getFluid(DisEnderFluid.NAME).get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredItem<Item> DISENDER_GLASS = glassBeerRegister("disender_glass", MobEffects.SLOW_FALLING, 2, 1);
     public static final DeferredItem<Item> DISENDER_BOTTLE = bottleBeerRegister("disender_bottle", MobEffects.SLOW_FALLING, 2, 1);
@@ -110,27 +110,29 @@ public class ItemRegister
     public static final DeferredItem<Item> SCHNITZEL = basicFoodItemRegister("schnitzel", 64, 10, 0.8f);
     public static final DeferredItem<Item> HARD_BOILED_EGG = basicFoodItemRegister("hard_boiled_egg", 16, 6, 0.9f);
 
-    //vegetation
+    //  vegetation
     public static final DeferredItem<Item> CACTUS_FLOWER_FRUIT = basicFoodItemRegister("cactus_flower_fruit", 64, 4, 0.3f);
     public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit", 64, 4, 0.3f);
     public static final DeferredItem<Item> JELLY_HAT = basicFoodItemRegister("jelly_hat", 64, 3, 0.10f);
     public static final DeferredItem<Item> MOUNTAIN_CURRANT = fastFoodItemRegister("mountain_currant", 64, 1, 0.2f);
     public static final DeferredItem<Item> MORICHE_PALM_FRUIT = basicFoodItemRegister("moriche_palm_fruit", 64, 3, 0.2f);
     public static final DeferredItem<Item> ACHIOTE_FRUIT = fastFoodItemRegister("achiote_fruit", 64, 1, 0.2f);
-    //stew
+    //  stew
     public static final DeferredItem<Item> JELLYSHROOM_STEW = stewFoodItemRegister("jellyshroom_stew", 5);
     public static final DeferredItem<Item> CACTUS_STEW = stewFoodItemRegister("cactus_stew", 6);
     public static final DeferredItem<Item> POTATOES_AND_SPEARS_BOWL = stewFoodItemRegister("potatoes_and_spears_bowl", 6);
     public static final DeferredItem<Item> FRUITS_BOWL = stewFoodItemRegister("fruits_bowl", 9);
     //tree
-    //mountain_currant
+    //  mountain_currant
     public static final Map<String, DeferredItem<Item>> ITEM_MOUNTAIN_CURRANT_WOOD_TYPE_MAP = generateAllItemForWood("mountain_currant", () -> BlockRegister.MOUNTAIN_CURRANT_WOOD_TYPE_MAP);
-    //moriche_palm
+    //  moriche_palm
     public static final Map<String, DeferredItem<Item>> ITEM_MORICHE_PALM_WOOD_TYPE_MAP = generateAllItemForWood("moriche_palm", () -> BlockRegister.MORICHE_PALM_WOOD_TYPE_MAP);
-    //achiote
+    //  achiote
     public static final Map<String, DeferredItem<Item>> ITEM_ACHIOTE_WOOD_TYPE_MAP = generateAllItemForWood("achiote", () -> BlockRegister.ACHIOTE_WOOD_TYPE_MAP);
-    //achiote
+    //  achiote
     public static final Map<String, DeferredItem<Item>> ITEM_WEEPING_WILLOW_WOOD_TYPE_MAP = generateAllItemForWood("weeping_willow", () -> BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP);
+    //loot_mob
+    public static final DeferredItem<Item> FLOWERED_LIZARD_SCALE = ITEMS.register("flowered_lizard_scale", () -> new Item(new Item.Properties()));
 
     private static Map<String, DeferredItem<Item>> createAllMaterialsItems()
     {

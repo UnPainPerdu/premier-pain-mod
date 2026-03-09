@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.ConvertLastHitByEntityIntoTarget;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.ModAnimatableMeleeAttack;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.behaviour.SetEntityLookTarget;
+import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
@@ -11,9 +12,11 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.Brain;
@@ -28,6 +31,7 @@ import net.minecraft.world.entity.schedule.Activity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.tslat.smartbrainlib.api.SmartBrainOwner;
 import net.tslat.smartbrainlib.api.core.BrainActivityGroup;
 import net.tslat.smartbrainlib.api.core.SmartBrainProvider;
@@ -213,6 +217,24 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
         this.level().broadcastEntityEvent(this, (byte) 4);
         this.playEatSound();
         super.usePlayerItem(player, hand, stack);
+    }
+
+    @Override
+    public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand hand)
+    {
+        ItemStack itemstack = player.getItemInHand(hand);
+        if (itemstack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.BRUSH_BRUSH) && !this.isBaby())
+        {
+            this.spawnAtLocation(new ItemStack(ItemRegister.FLOWERED_LIZARD_SCALE.get()));
+            this.gameEvent(GameEvent.ENTITY_INTERACT);
+            this.playSound(SoundEvents.ARMADILLO_BRUSH);
+            itemstack.hurtAndBreak(16, player, getSlotForHand(hand));
+            return InteractionResult.sidedSuccess(this.level().isClientSide);
+        }
+        else
+        {
+            return super.mobInteract(player, hand);
+        }
     }
 
     @Override

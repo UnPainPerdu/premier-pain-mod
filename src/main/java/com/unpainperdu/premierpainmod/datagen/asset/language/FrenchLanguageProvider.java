@@ -179,10 +179,12 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.CACTUS_STEW.get(), "Soupe de fruits de cactus");
         add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Bol de patates et de fruit de lance");
         add(ItemRegister.FRUITS_BOWL.get(), "Bol de fruits");
-        //  egg
+        //egg
         add(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY).get(), "Oeuf d'apparition de golem en groseillier des montagnes");
         add(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.WOOL_GOLEM_ENTITY).get(), "Oeuf d'apparition de golem en laine");
         add((AllInOneEntityRegister.getEgg(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY)).get(), "Oeuf d'apparition de lézard fleuri");
+        //loot_mob
+        add(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "Écaile de lézard fleuri");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brasseur");
         //block

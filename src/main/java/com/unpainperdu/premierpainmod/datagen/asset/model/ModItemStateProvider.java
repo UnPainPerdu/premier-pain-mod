@@ -72,11 +72,12 @@ public class ModItemStateProvider extends ItemModelProvider
         woodItems("moriche_palm");
         woodItems("achiote");
         woodItems("weeping_willow");
-
         //spawn_eggs
         item(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY).get(), "spawn_egg/");
         item(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.WOOL_GOLEM_ENTITY).get(), "spawn_egg/");
         item(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY).get(), "spawn_egg/");
+        //loot_mob
+        item(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "loot_mob/");
 
         for (Item item : ModItemList.ALL_ITEMS)
         {

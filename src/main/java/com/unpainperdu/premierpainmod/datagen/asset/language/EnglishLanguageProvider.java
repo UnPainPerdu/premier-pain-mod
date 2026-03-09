@@ -179,10 +179,12 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.CACTUS_STEW.get(), "Cactus Fruit Stew");
         add(ItemRegister.POTATOES_AND_SPEARS_BOWL.get(), "Potatoes and Spear Fruit Bowl");
         add(ItemRegister.FRUITS_BOWL.get(), "Fruits Bowl");
-        //  egg
+        //egg
         add(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY).get(), "Mountain Currant Golem Spawn Egg");
         add(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.WOOL_GOLEM_ENTITY).get(), "Wool Golem Spawn Egg");
         add((AllInOneEntityRegister.getEgg(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY)).get(), "Flowered Lizard Spawn Egg");
+        //loot_mob
+        add(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "Flowered Lizard Scale");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brewer");
         //block
