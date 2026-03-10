@@ -10,7 +10,6 @@ import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.Village
 import com.unpainperdu.premierpainmod.level.world.item.crafting.builders.VillagerWorkshopRecipeBuilder;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
-import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
 import net.minecraft.core.HolderLookup;
@@ -86,6 +85,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 , BlockRegister.CIVILIZATIONS_FLOWER.get(), Items.SUGAR, Items.FEATHER, ItemRegister.JELLY_HAT.get());
         //standart craft
         //  item
+        //      armor
+        horseArmorRecipeBuilder(ItemRegister.FLOWERED_LIZARD_SCALE, ItemRegister.FLOWERED_LIZARD_SCALE_HORSE_ARMOR);
         //      fluid
         //          oil
         shapelessRecipeBuilder(ItemRegister.MORICHE_PALM_OIL_BUCKET, ItemRegister.MORICHE_PALM_FRUIT, 1, Items.BUCKET, ItemRegister.MORICHE_PALM_FRUIT, ItemRegister.MORICHE_PALM_FRUIT, ItemRegister.MORICHE_PALM_FRUIT, ItemRegister.MORICHE_PALM_FRUIT);
@@ -735,6 +736,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("#")
                 .pattern("#")
                 .unlockedBy("has_" + resultName, has(twoInputItemLike))
+                .save(this.recipeOutput);
+    }
+
+    private void horseArmorRecipeBuilder(ItemLike ingredient, ItemLike result)
+    {
+        String resultName = getName(result.asItem());
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+                .define('#', ingredient)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("# #")
+                .unlockedBy("has_" + resultName, has(ingredient))
                 .save(this.recipeOutput);
     }
 

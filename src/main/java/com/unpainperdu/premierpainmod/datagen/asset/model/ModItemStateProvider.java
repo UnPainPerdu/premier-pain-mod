@@ -78,7 +78,8 @@ public class ModItemStateProvider extends ItemModelProvider
         item(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY).get(), "spawn_egg/");
         //loot_mob
         item(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "loot_mob/");
-
+        //armor
+        item(ItemRegister.FLOWERED_LIZARD_SCALE_HORSE_ARMOR.get(), "armor/");
         for (Item item : ModItemList.ALL_ITEMS)
         {
             if (item instanceof VillagerShelfItem)

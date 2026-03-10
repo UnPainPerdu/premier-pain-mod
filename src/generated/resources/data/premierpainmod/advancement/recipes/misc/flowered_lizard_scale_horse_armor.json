@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flowered_lizard_scale_horse_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:flowered_lizard_scale"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:flowered_lizard_scale_horse_armor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flowered_lizard_scale_horse_armor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:flowered_lizard_scale_horse_armor"
+    ]
+  }
+}

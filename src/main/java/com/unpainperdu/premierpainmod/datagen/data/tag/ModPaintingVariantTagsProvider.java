@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.datagen.data.tag;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.datagen.data.level.world.block.entity.ModPaintingVariant;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.entity.ModPaintingVariant;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.PaintingVariantTags;

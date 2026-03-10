@@ -187,6 +187,8 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "Écaile de lézard fleuri");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brasseur");
+        //armor
+        add(ItemRegister.FLOWERED_LIZARD_SCALE_HORSE_ARMOR.get(), "Armur en écailles de lézard fleuri pour cheval");
         //block
         //  blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");

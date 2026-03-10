@@ -1,4 +1,4 @@
-package com.unpainperdu.premierpainmod.datagen.data.level.world.block.entity;
+package com.unpainperdu.premierpainmod.datagen.data.level.world.entity;
 
 import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.core.registries.Registries;
@@ -8,13 +8,13 @@ import net.minecraft.world.entity.decoration.PaintingVariant;
 
 public class ModPaintingVariant
 {
-    public static final ResourceKey<PaintingVariant> LANDSCAPE_0 = damageTypesRegister("landscape_0");
-    public static final ResourceKey<PaintingVariant> LANDSCAPE_1 = damageTypesRegister("landscape_1");
-    public static final ResourceKey<PaintingVariant> LANDSCAPE_2 = damageTypesRegister("landscape_2");
-    public static final ResourceKey<PaintingVariant> FLOWERD_CACTUS = damageTypesRegister("flowered_cactus");
-    public static final ResourceKey<PaintingVariant> UNDERGROUND_GATE = damageTypesRegister("underground_gate");
+    public static final ResourceKey<PaintingVariant> LANDSCAPE_0 = paintingVariantRegister("landscape_0");
+    public static final ResourceKey<PaintingVariant> LANDSCAPE_1 = paintingVariantRegister("landscape_1");
+    public static final ResourceKey<PaintingVariant> LANDSCAPE_2 = paintingVariantRegister("landscape_2");
+    public static final ResourceKey<PaintingVariant> FLOWERD_CACTUS = paintingVariantRegister("flowered_cactus");
+    public static final ResourceKey<PaintingVariant> UNDERGROUND_GATE = paintingVariantRegister("underground_gate");
 
-    private static ResourceKey<PaintingVariant> damageTypesRegister(String path)
+    private static ResourceKey<PaintingVariant> paintingVariantRegister(String path)
     {
         return ResourceKey.create(Registries.PAINTING_VARIANT, ResourceUtil.createResourceLocation(path));
     }

@@ -187,6 +187,8 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "Flowered Lizard Scale");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brewer");
+        //armor
+        add(ItemRegister.FLOWERED_LIZARD_SCALE_HORSE_ARMOR.get(), "Flowered Lizard Scale Horse Armor");
         //block
         //  blockEvent
         add(BlockRegister.LIBERTY_BLOCK.get(), "HellPod");

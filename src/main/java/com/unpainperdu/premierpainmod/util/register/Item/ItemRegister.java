@@ -109,7 +109,6 @@ public class ItemRegister
     public static final DeferredItem<Item> UNCOOKED_SCHNITZEL = basicFoodItemRegister("uncooked_schnitzel", 64, 4, 0.3f);
     public static final DeferredItem<Item> SCHNITZEL = basicFoodItemRegister("schnitzel", 64, 10, 0.8f);
     public static final DeferredItem<Item> HARD_BOILED_EGG = basicFoodItemRegister("hard_boiled_egg", 16, 6, 0.9f);
-
     //  vegetation
     public static final DeferredItem<Item> CACTUS_FLOWER_FRUIT = basicFoodItemRegister("cactus_flower_fruit", 64, 4, 0.3f);
     public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit", 64, 4, 0.3f);
@@ -133,6 +132,9 @@ public class ItemRegister
     public static final Map<String, DeferredItem<Item>> ITEM_WEEPING_WILLOW_WOOD_TYPE_MAP = generateAllItemForWood("weeping_willow", () -> BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP);
     //loot_mob
     public static final DeferredItem<Item> FLOWERED_LIZARD_SCALE = ITEMS.register("flowered_lizard_scale", () -> new Item(new Item.Properties()));
+    //armor
+    //  horrse
+    public static final DeferredItem<Item> FLOWERED_LIZARD_SCALE_HORSE_ARMOR = horseArmorRegister("flowered_lizard_scale_horse_armor", ArmorMaterialsRegister.FLOWERED_LIZARD_SCALE); //TODO create armor material
 
     private static Map<String, DeferredItem<Item>> createAllMaterialsItems()
     {
@@ -252,6 +254,11 @@ public class ItemRegister
         map.put("boat", ITEMS.register(name + "_boat", () -> new BoatItem(false, Boat.Type.valueOf("premierpainmod_" + (name.toUpperCase())), new Item.Properties().stacksTo(1))));
         map.put("chest_boat", ITEMS.register(name + "_chest_boat", () -> new BoatItem(true, Boat.Type.valueOf("premierpainmod_" + (name.toUpperCase())), new Item.Properties().stacksTo(1))));
         return map;
+    }
+
+    private static DeferredItem<Item> horseArmorRegister(String name, Holder<ArmorMaterial> material)
+    {
+        return ITEMS.register(name, () -> new AnimalArmorItem(material, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
     }
 
     public static void register(IEventBus modEventBus)

@@ -312,9 +312,8 @@ What would be a world without bugs ?
 ### Mobs :
     - Flowered Lizard, an animal that can lay egg and drop scale when brushing
 ### Items :
-    - Flowered lizard scale that is used to craft the 2 following items:
-        - TODO Scale Horse Armor
-        - TODO Scale Wolf Armor
+    - Flowered lizard scale that is a craft material
+    - Flowered lizard Scale Horse Armor, stronger than leather but weaker than iron, craftable by making an H with flowered lizard scale in crafting table
 ## Change :
 ### Items :
     - Achiote fruit has now a better texture

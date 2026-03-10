@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "premierpainmod:item/armor/flowered_lizard_scale_horse_armor"
+  }
+}
