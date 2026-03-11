@@ -41,7 +41,7 @@ public class PointedCrystalFeature extends AbstractFeature<PointedCrystalConfigu
 
     private boolean canConvert(BlockState state)
     {
-        return state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(BlockTags.DIRT);
+        return state.is(BlockTags.BASE_STONE_OVERWORLD);
     }
 
     @Override
