@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "premierpainmod:flowered_lizard_meat"
+  },
+  "result": {
+    "count": 1,
+    "id": "premierpainmod:cooked_flowered_lizard_meat"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fried_flowered_lizard_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "premierpainmod:flowered_lizard_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "premierpainmod:fried_flowered_lizard_egg_fire_camp"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fried_flowered_lizard_egg"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "premierpainmod:fried_flowered_lizard_egg_fire_camp"
+    ]
+  }
+}
