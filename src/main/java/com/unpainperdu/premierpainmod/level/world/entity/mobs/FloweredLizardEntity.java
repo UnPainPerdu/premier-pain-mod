@@ -10,6 +10,7 @@ import com.unpainperdu.premierpainmod.util.register.entity.AllInOneEntityRegiste
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -68,6 +69,8 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
     public final AnimationState attack1AnimationState = new AnimationState();
     public final AnimationState attack2AnimationState = new AnimationState();
     public final AnimationState eatAnimationState = new AnimationState();
+
+    public int eggTime = this.random.nextInt(9000) + 9000;
 
     public FloweredLizardEntity(EntityType<? extends FloweredLizardEntity> entityType, Level level)
     {
@@ -177,6 +180,13 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
         if (this.level().isClientSide())
         {
             this.setupAnimationStates();
+        }
+        else if (this.isAlive() && !this.isBaby() && --this.eggTime <= 0)
+        {
+            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.spawnAtLocation(ItemRegister.FLOWERED_LIZARD_EGG);
+            this.gameEvent(GameEvent.ENTITY_PLACE);
+            this.eggTime = this.random.nextInt(9000) + 9000;
         }
     }
 
@@ -292,5 +302,22 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
     public static boolean checkFloweredLizardSpawnRules(EntityType<? extends FloweredLizardEntity> floweredLizard, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random)
     {
         return level.getBlockState(pos.below()).is(BlockTags.DIRT) && isBrightEnoughToSpawn(level, pos);
+    }
+
+    @Override
+    public void readAdditionalSaveData(@NotNull CompoundTag compound)
+    {
+        super.readAdditionalSaveData(compound);
+        if (compound.contains("EggLayTime"))
+        {
+            this.eggTime = compound.getInt("EggLayTime");
+        }
+    }
+
+    @Override
+    public void addAdditionalSaveData(@NotNull CompoundTag compound)
+    {
+        super.addAdditionalSaveData(compound);
+        compound.putInt("EggLayTime", this.eggTime);
     }
 }

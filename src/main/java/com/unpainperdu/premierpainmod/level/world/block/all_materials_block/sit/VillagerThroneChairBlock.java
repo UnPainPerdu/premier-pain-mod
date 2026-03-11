@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock implements CarpetedBlock
+public class VillagerThroneChairBlock extends AbstractTwoBlockHeightBlock implements CarpetedBlock //TODO, transform it in simple a BE fusion with seat entity ? child seat entity spawn if no seat entity and dispawn only if no carpet ?
 {
     public static final MapCodec<VillagerStatue> CODEC = simpleCodec(VillagerStatue::new);
     public static final EnumProperty<VillagerCarpetColor> COLOR = ModBlockStateProperties.VILLAGER_CARPET_COLOR;

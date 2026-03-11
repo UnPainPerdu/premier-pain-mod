@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock, CarpetedBlock
+public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock, CarpetedBlock //TODO, transform it in simple a BE
 {
     public static final MapCodec<VillagerTableBlock> CODEC = simpleCodec(VillagerTableBlock::new);
     public static final BooleanProperty NORTH = PipeBlock.NORTH;

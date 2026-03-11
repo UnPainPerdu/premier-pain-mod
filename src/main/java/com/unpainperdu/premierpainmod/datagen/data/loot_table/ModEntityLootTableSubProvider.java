@@ -92,6 +92,17 @@ public class ModEntityLootTableSubProvider extends EntityLootSubProvider
                                                         .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(1.0F, 2.0F)))
                                         )
                         )
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(
+                                                LootItem.lootTableItem(ItemRegister.COOKED_FLOWERED_LIZARD_MEAT)
+                                                        .when(shouldSmeltLoot())
+                                                        .otherwise(LootItem.lootTableItem(ItemRegister.FLOWERED_LIZARD_MEAT))
+                                        )
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))
+                                        .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 3.0F)))
+                        )
         );
     }
 }

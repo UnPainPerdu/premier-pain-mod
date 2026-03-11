@@ -310,8 +310,10 @@ What would be a world without bugs ?
 ### Biomes :
     - Gypsum cave, an underground biome spawning gypsum crystal
 ### Mobs :
-    - Flowered Lizard, an animal that can lay egg and drop scale when brushing
+    - Flowered Lizard, an animal that can lay eggs and, give scale when brushing and loot its meat when killed
 ### Items :
+    - FLowered lizard egg that can be cooked in furnace and cooking pot (and 2 cooked version)
+    - Flowered lizard meat that can be cooked in furnace (and cooked version)
     - Flowered lizard scale that is a craft material
     - Flowered lizard Scale Horse Armor, stronger than leather but weaker than iron, craftable by making an H with flowered lizard scale in crafting table
 ## Change :
@@ -328,7 +330,6 @@ What would be a world without bugs ?
     - forest premier pain ruins has better feature balance, add new oak variant and birch variant also growable from sapling
     - sand desert premier pain ruins has better feature balance, add camel to natural spawn
     - swamp premier pain ruins has better feature balance, add water swamp patch
-
 ## Fix :
     - add missing craft related to weeping willow wood type
     - add missing tags related to weeping willow wood type

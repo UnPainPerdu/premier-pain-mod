@@ -167,6 +167,10 @@ public class FrenchLanguageProvider extends LanguageProvider
         add(ItemRegister.UNCOOKED_SCHNITZEL.get(), "Schnitzel non-cuit");
         add(ItemRegister.SCHNITZEL.get(), "Schnitzel");
         add(ItemRegister.HARD_BOILED_EGG.get(), "Oeuf cuit dur");
+        add(ItemRegister.FLOWERED_LIZARD_MEAT.get(), "Viande de lézard fleuri");
+        add(ItemRegister.COOKED_FLOWERED_LIZARD_MEAT.get(), "Viande de lézard fleuri cuite");
+        add(ItemRegister.HARD_BOILED_FLOWERED_LIZARD_EGG.get(), "Oeuf de lézard fleuri cuite cuit dur");
+        add(ItemRegister.FRIED_FLOWERED_LIZARD_EGG.get(), "Oeuf de lézard fleuri sur le plat");
         //  vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Fruit de lances du ciel");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Fruit de fleure de cactus");
@@ -185,6 +189,7 @@ public class FrenchLanguageProvider extends LanguageProvider
         add((AllInOneEntityRegister.getEgg(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY)).get(), "Oeuf d'apparition de lézard fleuri");
         //loot_mob
         add(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "Écaile de lézard fleuri");
+        add(ItemRegister.FLOWERED_LIZARD_EGG.get(), "Oeuf de lézard fleuri");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brasseur");
         //armor

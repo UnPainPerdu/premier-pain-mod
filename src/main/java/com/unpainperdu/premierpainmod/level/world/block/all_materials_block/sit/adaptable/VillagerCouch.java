@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import org.jetbrains.annotations.NotNull;
 
-public class VillagerCouch extends AbstractAdaptableSit
+public class VillagerCouch extends AbstractAdaptableSit //TODO, transform it in simple a BE fusion with seat entity ? child seat entity spawn if no seat entity and dispawn only if no carpet ?
 {
     public static final EnumProperty<VillagerCarpetColor> CARPET_COLOR = ModBlockStateProperties.VILLAGER_CARPET_COLOR;
     public static final MapCodec<VillagerCouch> CODEC = simpleCodec(VillagerCouch::new);

@@ -8,6 +8,7 @@ import com.unpainperdu.premierpainmod.level.world.item.items.VillagerSingingSton
 import com.unpainperdu.premierpainmod.level.world.item.items.all_materials_block.VillagerShelfItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItemType;
+import com.unpainperdu.premierpainmod.level.world.item.items.projectile.egg.FloweredLizardEggItem;
 import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.Holder;
@@ -109,6 +110,10 @@ public class ItemRegister
     public static final DeferredItem<Item> UNCOOKED_SCHNITZEL = basicFoodItemRegister("uncooked_schnitzel", 64, 4, 0.3f);
     public static final DeferredItem<Item> SCHNITZEL = basicFoodItemRegister("schnitzel", 64, 10, 0.8f);
     public static final DeferredItem<Item> HARD_BOILED_EGG = basicFoodItemRegister("hard_boiled_egg", 16, 6, 0.9f);
+    public static final DeferredItem<Item> FLOWERED_LIZARD_MEAT = basicFoodItemRegister("flowered_lizard_meat", 64, 3, 0.1f);
+    public static final DeferredItem<Item> COOKED_FLOWERED_LIZARD_MEAT = basicFoodItemRegister("cooked_flowered_lizard_meat", 64, 8, 0.6f);
+    public static final DeferredItem<Item> HARD_BOILED_FLOWERED_LIZARD_EGG = basicFoodItemRegister("hard_boiled_flowered_lizard_egg", 64, 8, 0.9f);
+    public static final DeferredItem<Item> FRIED_FLOWERED_LIZARD_EGG = basicFoodItemRegister("fried_flowered_lizard_egg", 64, 7, 1.0f);
     //  vegetation
     public static final DeferredItem<Item> CACTUS_FLOWER_FRUIT = basicFoodItemRegister("cactus_flower_fruit", 64, 4, 0.3f);
     public static final DeferredItem<Item> SKY_SPEARS_FRUIT = basicFoodItemRegister("sky_spears_fruit", 64, 4, 0.3f);
@@ -132,6 +137,7 @@ public class ItemRegister
     public static final Map<String, DeferredItem<Item>> ITEM_WEEPING_WILLOW_WOOD_TYPE_MAP = generateAllItemForWood("weeping_willow", () -> BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP);
     //loot_mob
     public static final DeferredItem<Item> FLOWERED_LIZARD_SCALE = ITEMS.register("flowered_lizard_scale", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> FLOWERED_LIZARD_EGG = ITEMS.register("flowered_lizard_egg", () -> new FloweredLizardEggItem(new Item.Properties().stacksTo(16)));
     //armor
     //  horrse
     public static final DeferredItem<Item> FLOWERED_LIZARD_SCALE_HORSE_ARMOR = horseArmorRegister("flowered_lizard_scale_horse_armor", ArmorMaterialsRegister.FLOWERED_LIZARD_SCALE); //TODO create armor material

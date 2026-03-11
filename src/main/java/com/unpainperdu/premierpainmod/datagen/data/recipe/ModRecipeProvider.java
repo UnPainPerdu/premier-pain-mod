@@ -44,6 +44,7 @@ import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRe
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder
 {
+    //TODO separate each craft type in own class
     protected RecipeOutput recipeOutput;
 
     public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider)
@@ -56,13 +57,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         this.recipeOutput = recipeOutput;
         //cooking_pot
-        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, Items.POTATO, ItemRegister.HALF_COOKED_FRIES);
-        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.HALF_COOKED_FRIES, ItemRegister.FRIES);
-        cookingPotRecipeBuilder(Fluids.WATER, 10, Items.POTATO, Items.BAKED_POTATO);
-        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.UNCOOKED_BREADED_CHICKEN_WING, ItemRegister.BREADED_CHICKEN_WING);
-        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.UNCOOKED_BREADED_FISH, ItemRegister.BREADED_FISH);
-        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), 10, ItemRegister.UNCOOKED_SCHNITZEL, ItemRegister.SCHNITZEL);
-        cookingPotRecipeBuilder(Fluids.WATER, 10, Items.EGG, ItemRegister.HARD_BOILED_EGG);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), Items.POTATO, ItemRegister.HALF_COOKED_FRIES);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), ItemRegister.HALF_COOKED_FRIES, ItemRegister.FRIES);
+        cookingPotRecipeBuilder(Fluids.WATER, Items.POTATO, Items.BAKED_POTATO);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), ItemRegister.UNCOOKED_BREADED_CHICKEN_WING, ItemRegister.BREADED_CHICKEN_WING);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), ItemRegister.UNCOOKED_BREADED_FISH, ItemRegister.BREADED_FISH);
+        cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), ItemRegister.UNCOOKED_SCHNITZEL, ItemRegister.SCHNITZEL);
+        cookingPotRecipeBuilder(Fluids.WATER, Items.EGG, ItemRegister.HARD_BOILED_EGG);
+        cookingPotRecipeBuilder(Fluids.WATER, ItemRegister.FLOWERED_LIZARD_EGG, ItemRegister.HARD_BOILED_FLOWERED_LIZARD_EGG);
+        //furnace
+        foodCookingRecipeBuilder(ItemRegister.FLOWERED_LIZARD_MEAT, ItemRegister.COOKED_FLOWERED_LIZARD_MEAT, RecipeCategory.FOOD, 0.35f, 200);
+        foodCookingRecipeBuilder(ItemRegister.FLOWERED_LIZARD_EGG, ItemRegister.FRIED_FLOWERED_LIZARD_EGG, RecipeCategory.FOOD, 0.2f, 200);
         //fluid
         //  beer
         brewingStationRecipeBuilder(new FluidStack(Fluids.WATER, 1000), new FluidStack(getFluid(PainDieuxFluid.NAME), 1000)
@@ -457,6 +462,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(this.recipeOutput, "premierpainmod:" + resultName + "_furnace");
     }
 
+    private void oneItemToAnotherOneRecipeInSmokeFurnaceBuilder(ItemLike resource, ItemLike result, RecipeCategory recipeCategory, float exp, int cookingTime)
+    {
+        String resultName = getName(result.asItem());
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(resource), recipeCategory, result, exp, cookingTime)
+                .unlockedBy("has_" + resultName, has(resource))
+                .save(this.recipeOutput, "premierpainmod:" + resultName + "_smoke_furnace");
+    }
+
+    private void oneItemToAnotherOneRecipeInFireCampBuilder(ItemLike resource, ItemLike result, RecipeCategory recipeCategory, float exp, int cookingTime)
+    {
+        String resultName = getName(result.asItem());
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(resource), recipeCategory, result, exp, cookingTime)
+                .unlockedBy("has_" + resultName, has(resource))
+                .save(this.recipeOutput, "premierpainmod:" + resultName + "_fire_camp");
+    }
+
+    private void foodCookingRecipeBuilder(ItemLike resource, ItemLike result, RecipeCategory recipeCategory, float exp, int furnaceCookingTime)
+    {
+        oneItemToAnotherOneRecipeInFurnaceBuilder(resource, result, recipeCategory, exp, furnaceCookingTime);
+        oneItemToAnotherOneRecipeInSmokeFurnaceBuilder(resource, result, recipeCategory, exp, furnaceCookingTime/2);
+        oneItemToAnotherOneRecipeInFireCampBuilder(resource, result, recipeCategory, exp, furnaceCookingTime*3);
+    }
+
 
     private void shapelessRecipeBuilder(ItemLike result, ItemLike unlockItem, int numberOutput, ItemLike... resource)
     {
@@ -711,12 +739,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(this.recipeOutput);
     }
 
-    private void cookingPotRecipeBuilder(Fluid fluidInput, int mBFluid, ItemLike itemStackInput, ItemLike itemStackOutput)
+    private void cookingPotRecipeBuilder(Fluid fluidInput, ItemLike itemStackInput, ItemLike itemStackOutput)
     {
-        cookingPotRecipeBuilder(fluidInput, mBFluid, itemStackInput, itemStackOutput, 1);
+        cookingPotRecipeBuilder(fluidInput, itemStackInput, itemStackOutput, 1);
     }
 
-    private void cookingPotRecipeBuilder(Fluid fluidInput, int mBFluid, ItemLike itemStackInput, ItemLike itemStackOutput, int itemNumberOutput)
+    private void cookingPotRecipeBuilder(Fluid fluidInput, ItemLike itemStackInput, ItemLike itemStackOutput, int itemNumberOutput)
     {
         String resultName = getName(itemStackOutput.asItem());
         SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.single(fluidInput), CookingPotBlockEntity.MB_CONSUMED_BY_RECIPE);

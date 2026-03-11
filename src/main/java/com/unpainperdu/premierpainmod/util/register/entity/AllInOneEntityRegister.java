@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.FloweredLizardEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.MountainCurrantGolemEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.mobs.WoolGolemEntity;
+import com.unpainperdu.premierpainmod.level.world.entity.projectile.egg.FloweredLizardThrownEgg;
 import com.unpainperdu.premierpainmod.level.world.entity.seat.SeatEntity;
 import com.unpainperdu.premierpainmod.level.world.entity.seat.ToiletSeatEntity;
 import net.minecraft.core.registries.Registries;
@@ -31,7 +32,6 @@ public class AllInOneEntityRegister
 
     private static final String EGG_SUFFIX = "_spawn_egg";
 
-    //All entity must end with _entity
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, PremierPainMod.MOD_ID);
 
     //utility
@@ -46,6 +46,12 @@ public class AllInOneEntityRegister
                     .setTrackingRange(256)
                     .setUpdateInterval(20)
                     .sized(0.0001F, 0.0001F));
+    //projectile
+    public static final DeferredHolder<EntityType<?>, EntityType<FloweredLizardThrownEgg>> FLOWERED_LIZARD_THROWN_EGG = registerEntity("flowered_lizard_thrown_egg",
+            EntityType.Builder.<FloweredLizardThrownEgg>of(FloweredLizardThrownEgg::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10));
     //mob
     //  golem
     public static final DeferredHolder<EntityType<?>, EntityType<MountainCurrantGolemEntity>> MOUNTAIN_CURRANT_GOLEM_ENTITY = registerEntityWithEggs("mountain_currant_golem",

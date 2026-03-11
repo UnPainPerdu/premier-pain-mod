@@ -1,8 +1,8 @@
-// 1.21.1	2026-03-04T15:07:57.4697948	Tags for minecraft:item mod id premierpainmod
+// 1.21.1	2026-03-11T12:02:05.5411921	Tags for minecraft:item mod id premierpainmod
 c62386c681e815d41f2c3f42ebd16f0db592952f data/c/tags/item/buckets.json
 2cc789041fe51604c6bffdd4e36ad9d5e7997dbb data/c/tags/item/fence_gates.json
 2cc789041fe51604c6bffdd4e36ad9d5e7997dbb data/c/tags/item/fence_gates/wooden.json
-0f00f7f49a43ea21e385eba6dd6fb0990bbb36bb data/c/tags/item/foods.json
+75f382fe0e180ab908f8d6691b3f8ecbe323713d data/c/tags/item/foods.json
 f6c5482ff430875bf018bdde73ccbb1216c18ddf data/c/tags/item/foods/fruit.json
 71c93c6b79a63160b21044f92b3c4b3c7ca1ad95 data/c/tags/item/stripped_logs.json
 b9dc877125359ddd63f908ee6d81a60fe4c13388 data/c/tags/item/stripped_woods.json

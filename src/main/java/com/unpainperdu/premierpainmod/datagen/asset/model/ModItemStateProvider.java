@@ -60,6 +60,10 @@ public class ModItemStateProvider extends ItemModelProvider
         item(ItemRegister.UNCOOKED_SCHNITZEL.asItem(), "food/");
         item(ItemRegister.SCHNITZEL.asItem(), "food/");
         item(ItemRegister.HARD_BOILED_EGG.asItem(), "food/");
+        item(ItemRegister.FLOWERED_LIZARD_MEAT.asItem(), "food/");
+        item(ItemRegister.COOKED_FLOWERED_LIZARD_MEAT.asItem(), "food/");
+        item(ItemRegister.HARD_BOILED_FLOWERED_LIZARD_EGG.asItem(), "food/");
+        item(ItemRegister.FRIED_FLOWERED_LIZARD_EGG.asItem(), "food/");
         //  stew
         stewFoodItem(ItemRegister.JELLYSHROOM_STEW.get());
         stewFoodItem(ItemRegister.CACTUS_STEW.get());
@@ -78,6 +82,7 @@ public class ModItemStateProvider extends ItemModelProvider
         item(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY).get(), "spawn_egg/");
         //loot_mob
         item(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "loot_mob/");
+        item(ItemRegister.FLOWERED_LIZARD_EGG.get(), "loot_mob/");
         //armor
         item(ItemRegister.FLOWERED_LIZARD_SCALE_HORSE_ARMOR.get(), "armor/");
         for (Item item : ModItemList.ALL_ITEMS)

@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-01T11:57:27.578853	Loot Tables
+// 1.21.1	2026-03-11T12:27:10.0490011	Loot Tables
 85e1b3be3a251346dee3b4a9e87e45d4d2a39670 data/premierpainmod/loot_table/blocks/acacia_standing_villager_shelf.json
 9aad298b58d17b0b5fe25d63ee29528f848013c4 data/premierpainmod/loot_table/blocks/acacia_villager_bench.json
 2fb10e5cf5f79a7045462e9fd6fd5bafd71b829a data/premierpainmod/loot_table/blocks/acacia_villager_brazier.json
@@ -811,7 +811,7 @@ c481a8c986e8bb284417211a2d49d052c81bfd84 data/premierpainmod/loot_table/chests/j
 f09f8ef9d205c6cb48acda5bb4507590f16be890 data/premierpainmod/loot_table/chests/premier_pain_temple/forest.json
 080135bdbfb2466bfac12557c35b4bc601285ecd data/premierpainmod/loot_table/chests/premier_pain_temple/sand_desert.json
 149a57ba426a892caaa9ed8f2e490c344d31197c data/premierpainmod/loot_table/chests/premier_pain_temple/swamp.json
-b882467bbacd61ba31242236fd4f0165c7d9002c data/premierpainmod/loot_table/entities/flowered_lizard.json
+e004729c20a9a26d6d8b5a5c3f49ccc6589beb4e data/premierpainmod/loot_table/entities/flowered_lizard.json
 f58d2650e61ce1d7b7f9cbe8ade426404ad14fe0 data/premierpainmod/loot_table/entities/mountain_currant_golem.json
 c5574a58f9bf6d868b4f454bd07a0e19e8877eef data/premierpainmod/loot_table/entities/wool_golem.json
 b70df09d75e9e8da4661d608a40ca48f9d4c0f73 data/premierpainmod/loot_table/item_events/liberty.json

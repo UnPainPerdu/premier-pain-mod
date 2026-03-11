@@ -167,6 +167,10 @@ public class EnglishLanguageProvider extends LanguageProvider
         add(ItemRegister.UNCOOKED_SCHNITZEL.get(), "Uncooked Schnitzel");
         add(ItemRegister.SCHNITZEL.get(), "Schnitzel");
         add(ItemRegister.HARD_BOILED_EGG.get(), "Hard Boiled Egg");
+        add(ItemRegister.FLOWERED_LIZARD_MEAT.get(), "Flowered Lizard Meat");
+        add(ItemRegister.COOKED_FLOWERED_LIZARD_MEAT.get(), "Cooked Flowered Lizard Meat");
+        add(ItemRegister.HARD_BOILED_FLOWERED_LIZARD_EGG.get(), "Hard Boiled Flowered Lizard Egg");
+        add(ItemRegister.FRIED_FLOWERED_LIZARD_EGG.get(), "Fried Flowered Lizard Egg");
         //  vegetation
         add(ItemRegister.SKY_SPEARS_FRUIT.get(), "Sky Spears Fruit");
         add(ItemRegister.CACTUS_FLOWER_FRUIT.get(), "Cactus Flower Fruit");
@@ -185,6 +189,7 @@ public class EnglishLanguageProvider extends LanguageProvider
         add((AllInOneEntityRegister.getEgg(AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY)).get(), "Flowered Lizard Spawn Egg");
         //loot_mob
         add(ItemRegister.FLOWERED_LIZARD_SCALE.get(), "Flowered Lizard Scale");
+        add(ItemRegister.FLOWERED_LIZARD_EGG.get(), "Flowered Lizard Egg");
         //entity
         clp.generateVillagerProfessionTranslation(VillagerProfessionRegister.BREWER, "Brewer");
         //armor
