@@ -2,7 +2,7 @@ package com.unpainperdu.premierpainmod.level.world.fluid.oil;
 
 import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.Level;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -40,13 +40,13 @@ public abstract class OilFluid extends WaterFluid
     }
 
     @Override
-    protected boolean canConvertToSource(@NotNull Level level)
+    protected boolean canConvertToSource(@NotNull ServerLevel level)
     {
         return false;
     }
 
     @Override
-    public boolean canConvertToSource(@NotNull FluidState state, @NotNull Level level, @NotNull BlockPos pos)
+    public boolean canConvertToSource(@NotNull FluidState state, @NotNull ServerLevel level, @NotNull BlockPos pos)
     {
         return false;
     }

@@ -9,7 +9,7 @@ import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.tslat.smartbrainlib.api.core.behaviour.ExtendedBehaviour;
 import net.tslat.smartbrainlib.object.MemoryTest;
-import net.tslat.smartbrainlib.util.BrainUtils;
+import net.tslat.smartbrainlib.util.BrainUtil;
 
 import java.util.List;
 import java.util.function.BiPredicate;
@@ -45,7 +45,12 @@ public class SetEntityLookTarget<E extends LivingEntity> extends ExtendedBehavio
     @Override
     protected boolean checkExtraStartConditions(ServerLevel level, E entity)
     {
-        for (LivingEntity livingEntity : BrainUtils.getMemory(entity, MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES).findAll((e) -> true))
+        var memory = BrainUtil.getMemory(entity, MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES);
+        if (memory == null)
+        {
+            return false;
+        }
+        for (LivingEntity livingEntity : memory.findAll(e -> true))
         {
             if (this.predicate.test(livingEntity) && this.lookPredicate.test(entity, livingEntity))
             {
@@ -81,7 +86,7 @@ public class SetEntityLookTarget<E extends LivingEntity> extends ExtendedBehavio
     @Override
     protected void start(E entity)
     {
-        BrainUtils.setForgettableMemory(entity, MemoryModuleType.LOOK_TARGET, new EntityTracker(this.target, true),this.lookTime.apply(entity));
+        BrainUtil.setForgettableMemory(entity, MemoryModuleType.LOOK_TARGET, new EntityTracker(this.target, true), this.lookTime.apply(entity));
     }
 
     @Override

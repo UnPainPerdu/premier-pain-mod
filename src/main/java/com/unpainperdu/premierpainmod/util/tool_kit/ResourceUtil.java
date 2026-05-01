@@ -11,10 +11,6 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 public class ResourceUtil
 {
-    private ResourceUtil()
-    {
-    }
-
     public static ResourceLocation createResourceLocation(String path)
     {
         return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
@@ -22,12 +18,12 @@ public class ResourceUtil
 
     public static Item getModItemFromId(String path)
     {
-        return BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path));
+        return BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path)).get().value();
     }
 
     public static Block getModBlockFromId(String path)
     {
-        return BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path));
+        return BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path)).get().value();
     }
 
     public static ResourceLocation getKey(Block block)

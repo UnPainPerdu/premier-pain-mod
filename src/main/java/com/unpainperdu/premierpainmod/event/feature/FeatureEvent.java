@@ -8,10 +8,6 @@ import net.neoforged.neoforge.event.level.BlockGrowFeatureEvent;
 @EventBusSubscriber(modid = PremierPainMod.MOD_ID)
 public class FeatureEvent
 {
-    private FeatureEvent()
-    {
-    }
-
     @SubscribeEvent
     public static void blockGrowFeatureEvent(BlockGrowFeatureEvent event)
     {

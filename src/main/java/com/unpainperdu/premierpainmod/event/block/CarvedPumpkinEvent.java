@@ -10,6 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
@@ -31,10 +32,6 @@ import static com.unpainperdu.premierpainmod.util.tool_kit.PosHelper.getRight;
 @EventBusSubscriber(modid = PremierPainMod.MOD_ID)
 public class CarvedPumpkinEvent
 {
-    private CarvedPumpkinEvent()
-    {
-    }
-
     @SubscribeEvent
     public static void onPlacedBlock(PlayerInteractEvent.RightClickBlock event)
     {
@@ -94,7 +91,7 @@ public class CarvedPumpkinEvent
         }
         if (canSpawn)
         {
-            entity = AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get().create(level);
+            entity = AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get().create(level, EntitySpawnReason.MOB_SUMMONED);
         }
         return new Pair<>(entity, posList);
     }
@@ -142,7 +139,7 @@ public class CarvedPumpkinEvent
         });
         if (boxedCanSpawn.canSpawn)
         {
-            entity = AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().create(level);
+            entity = AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get().create(level, EntitySpawnReason.MOB_SUMMONED);
             if (entity != null)
             {
                 entity.setWoolDye(boxedselectedDyeColor.selectedDyeColor);

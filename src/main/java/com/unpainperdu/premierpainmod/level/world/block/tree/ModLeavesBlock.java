@@ -1,7 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.tree;
 
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
+import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,10 +13,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -79,13 +76,14 @@ public class ModLeavesBlock extends LeavesBlock
         return fireSpreadSpeed;
     }
 
-    protected BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos pos, BlockPos facingPos)
+    @Override
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (state.getValue(WATERLOGGED))
+        if (selfState.getValue(WATERLOGGED))
         {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        return super.updateShape(state, facing, facingState, level, pos, facingPos);
+        return super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
@@ -107,13 +105,13 @@ public class ModLeavesBlock extends LeavesBlock
     @Override
     protected boolean isRandomlyTicking(BlockState state)
     {
-        return ((this.CAN_HAVE_FRUIT) && !(state.getValue(ModLeavesBlock.HAS_FRUIT))) || super.isRandomlyTicking(state) ;
+        return ((this.CAN_HAVE_FRUIT) && !(state.getValue(ModLeavesBlock.HAS_FRUIT))) || super.isRandomlyTicking(state);
     }
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
-        if((RandomUtil.getRandomPositiveIntInRange(10, random) <= 3) && !decaying(state))
+        if ((RandomUtil.getRandomPositiveIntInRange(10, random) <= 3) && !decaying(state))
         {
             level.setBlock(pos, state.setValue(ModLeavesBlock.HAS_FRUIT, true), 2);
         }
@@ -126,14 +124,14 @@ public class ModLeavesBlock extends LeavesBlock
         if (state.getValue(ModLeavesBlock.HAS_FRUIT))
         {
             int j = 1 + RandomUtil.getRandomIntInRange(3, level.random);
-            popResource(level, pos, new ItemStack(getFruitForLeaves(state), j ));
+            popResource(level, pos, new ItemStack(getFruitForLeaves(state), j));
             level.playSound(
                     null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F
             );
             BlockState blockstate = state.setValue(ModLeavesBlock.HAS_FRUIT, false);
             level.setBlock(pos, blockstate, 2);
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockstate));
-            return InteractionResult.sidedSuccess(level.isClientSide);
+            return InteractionResult.SUCCESS;
         }
         else
         {
@@ -172,7 +170,7 @@ public class ModLeavesBlock extends LeavesBlock
 
         if (fruitAndLeavesMap.containsKey(state.getBlock().defaultBlockState()))
         {
-            return  fruitAndLeavesMap.get(state.getBlock().defaultBlockState());
+            return fruitAndLeavesMap.get(state.getBlock().defaultBlockState());
         }
         else
         {

@@ -3,11 +3,10 @@ package com.unpainperdu.premierpainmod.client.render.entity;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.world.entity.Entity;
-import org.jetbrains.annotations.NotNull;
 
-public class EmptyRenderer<T extends Entity> extends EntityRenderer<T>
+public class EmptyRenderer<T extends Entity> extends EntityRenderer<T, EntityRenderState>
 {
     public EmptyRenderer(EntityRendererProvider.Context ctx)
     {
@@ -15,14 +14,14 @@ public class EmptyRenderer<T extends Entity> extends EntityRenderer<T>
     }
 
     @Override
-    public boolean shouldRender(@NotNull T entity, @NotNull Frustum camera, double camX, double camY, double camZ)
+    public EntityRenderState createRenderState()
     {
-        return false;
+        return new EntityRenderState();
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(@NotNull T entity)
+    public boolean shouldRender(Entity livingEntity, Frustum camera, double camX, double camY, double camZ)
     {
-        return null;
+        return false;
     }
 }

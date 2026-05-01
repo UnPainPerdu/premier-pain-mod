@@ -474,7 +474,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
                                 , LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootItem.lootTableItem(block)
-                                                .when(HAS_SHEARS)
+                                                .when(hasShears())
                                                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, valueOfProperty)))
                                                 .otherwise(builder))));
@@ -636,7 +636,7 @@ public class ModBlockLootTableSubProvider extends BlockLootSubProvider
 
     private LootItemCondition.Builder hasShearsOrSilkTouch()
     {
-        return HAS_SHEARS.or(this.hasSilkTouch());
+        return hasShears().or(this.hasSilkTouch());
     }
 
     private boolean isNormalLoot(Block block)

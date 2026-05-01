@@ -1,14 +1,14 @@
 package com.unpainperdu.premierpainmod.level.world.block.abstract_block;
 
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.*;
@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 
 public abstract class AbstractTwoBlockHeightBlockWithBlockEntity extends BaseEntityBlock implements SimpleWaterloggedBlock
 {
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = ModBlockStateProperties.DIRECTION;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
@@ -44,7 +44,7 @@ public abstract class AbstractTwoBlockHeightBlockWithBlockEntity extends BaseEnt
         Level level = context.getLevel();
         FluidState fluidstateDown = level.getFluidState(blockpos);
         boolean flag = fluidstateDown.getType() == Fluids.WATER;
-        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(context))
+        if (blockpos.getY() < level.getMaxY() && level.getBlockState(blockpos.above()).canBeReplaced(context))
         {
             return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, flag).setValue(FACING, context.getHorizontalDirection());
         }
@@ -71,24 +71,24 @@ public abstract class AbstractTwoBlockHeightBlockWithBlockEntity extends BaseEnt
 
     //Si dessous pété, péte le dessus
     @Override
-    public @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
-        if (state.getValue(WATERLOGGED))
+        DoubleBlockHalf doubleblockhalf = selfState.getValue(HALF);
+        if (selfState.getValue(WATERLOGGED))
         {
-            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        if (facing.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (facing == Direction.UP))
+        if (direction.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (direction == Direction.UP))
         {
             return facingState.is(this) && facingState.getValue(HALF) != doubleblockhalf
-                    ? state.setValue(FACING, facingState.getValue(FACING))
+                    ? selfState.setValue(FACING, facingState.getValue(FACING))
                     : Blocks.AIR.defaultBlockState();
         }
         else
         {
-            return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN && !state.canSurvive(level, currentPos)
+            return doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !selfState.canSurvive(level, selfPos)
                     ? Blocks.AIR.defaultBlockState()
-                    : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+                    : super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
         }
     }
 

@@ -1,9 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.fluid.fluid_type;
 
-import com.mojang.blaze3d.shaders.FogShape;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.FogParameters;
 import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -12,7 +11,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
-import org.joml.Vector3f;
+import org.joml.Vector4f;
 
 public class OilFluidType extends AbstractFluidType
 {
@@ -22,9 +21,9 @@ public class OilFluidType extends AbstractFluidType
     private final float fogStart;
     private final float fogEnd;
     private final int tintColor;
-    private final Vector3f fogColor;
+    private final Vector4f fogColor;
 
-    public OilFluidType(Properties properties, int tintColor, Vector3f fogColor)
+    public OilFluidType(Properties properties, int tintColor, Vector4f fogColor)
     {
         super(properties);
         this.tintColor = tintColor;
@@ -74,16 +73,23 @@ public class OilFluidType extends AbstractFluidType
             }
 
             @Override
-            public @NotNull Vector3f modifyFogColor(@NotNull Camera camera, float partialTick, @NotNull ClientLevel level, int renderDistance, float darkenWorldAmount, @NotNull Vector3f fluidFogColor)
+            public FogParameters modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, FogParameters fogParameters)
             {
-                return fogColor;
+                return new FogParameters(
+                        fogStart,
+                        fogEnd,
+                        fogParameters.shape(),
+                        fogParameters.red(),
+                        fogParameters.green(),
+                        fogParameters.blue(),
+                        fogParameters.alpha()
+                );
             }
 
             @Override
-            public void modifyFogRender(@NotNull Camera camera, FogRenderer.@NotNull FogMode mode, float renderDistance, float partialTick, float nearDistance, float farDistance, @NotNull FogShape shape)
+            public Vector4f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector4f fluidFogColor)
             {
-                RenderSystem.setShaderFogStart(fogStart);
-                RenderSystem.setShaderFogEnd(fogEnd);
+                return fogColor;
             }
         };
     }

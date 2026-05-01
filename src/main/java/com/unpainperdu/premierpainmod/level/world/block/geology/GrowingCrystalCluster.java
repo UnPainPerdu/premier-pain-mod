@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.geology;
 
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModBlockTags;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.util.tool_kit.RandomUtil;
 import com.unpainperdu.premierpainmod.util.tool_kit.VoxelShapeHelper;
 import net.minecraft.core.BlockPos;
@@ -11,12 +12,13 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -31,7 +33,7 @@ public class GrowingCrystalCluster extends AmethystBlock implements SimpleWaterl
     private static final int MAX_AGE = 3;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final EnumProperty<Direction> FACING = ModBlockStateProperties.DIRECTION;
 
     protected static final VoxelShape SHAPE_AGE_0 = Block.box(4.0, 0.0, 4.0, 12.0, 2.0, 12.0);
     protected static final VoxelShape SHAPE_AGE_1 = Block.box(4.0, 0.0, 4.0, 12.0, 4.0, 12.0);
@@ -71,15 +73,15 @@ public class GrowingCrystalCluster extends AmethystBlock implements SimpleWaterl
     }
 
     @Override
-    protected @NotNull BlockState updateShape(@NotNull BlockState selfState, @NotNull Direction direction, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos selfPos, @NotNull BlockPos facingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
         if (selfState.getValue(WATERLOGGED))
         {
-            level.scheduleTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
         return direction == selfState.getValue(FACING).getOpposite() && !selfState.canSurvive(level, selfPos)
                 ? Blocks.AIR.defaultBlockState()
-                : super.updateShape(selfState, direction, facingState, level, selfPos, facingPos);
+                : super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override

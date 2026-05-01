@@ -8,10 +8,6 @@ import net.neoforged.neoforge.event.level.BlockGrowFeatureEvent;
 
 public class VanillaBirchReplacer
 {
-    private VanillaBirchReplacer()
-    {
-    }
-
     public static void event(BlockGrowFeatureEvent event)
     {
         RandomSource rand = event.getRandom();

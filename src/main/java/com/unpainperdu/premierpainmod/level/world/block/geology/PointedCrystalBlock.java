@@ -5,16 +5,16 @@ import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properti
 import com.unpainperdu.premierpainmod.util.tool_kit.VoxelShapeHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 public class PointedCrystalBlock extends AmethystBlock implements SimpleWaterloggedBlock
 {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final EnumProperty<Direction> FACING = ModBlockStateProperties.DIRECTION;
     public static final EnumProperty<PointedCrystalState> POINTED_CRYSTAL_STATE = ModBlockStateProperties.POINTED_CRYSTAL_STATE;
 
     protected static final VoxelShape SHAPE_TOP = Block.box(5.0, 0.0, 5.0, 11.0, 12.0, 11.0);
@@ -81,11 +81,11 @@ public class PointedCrystalBlock extends AmethystBlock implements SimpleWaterlog
     }
 
     @Override
-    protected @NotNull BlockState updateShape(@NotNull BlockState selfState, @NotNull Direction direction, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos selfPos, @NotNull BlockPos facingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
         if (selfState.getValue(WATERLOGGED))
         {
-            level.scheduleTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
         if (selfState.canSurvive(level, selfPos))
         {
@@ -105,8 +105,10 @@ public class PointedCrystalBlock extends AmethystBlock implements SimpleWaterlog
                 {
                     switch (nextBlockState.getValue(POINTED_CRYSTAL_STATE))
                     {
-                        case TOP -> finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.START_TOP);
-                        case START_TOP -> finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.MIDDLE);
+                        case TOP ->
+                                finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.START_TOP);
+                        case START_TOP ->
+                                finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.MIDDLE);
                         case MIDDLE -> finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.BASE);
                     }
                 }
@@ -114,12 +116,14 @@ public class PointedCrystalBlock extends AmethystBlock implements SimpleWaterlog
                 {
                     switch (nextBlockState.getValue(POINTED_CRYSTAL_STATE))
                     {
-                        case TOP -> finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.START_TOP);
-                        case START_TOP -> finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.MIDDLE);
+                        case TOP ->
+                                finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.START_TOP);
+                        case START_TOP ->
+                                finalState = selfState.setValue(POINTED_CRYSTAL_STATE, PointedCrystalState.MIDDLE);
                     }
                 }
             }
-            return super.updateShape(finalState, direction, facingState, level, selfPos, facingPos);
+            return super.updateShape(finalState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
         }
         else
         {
@@ -138,10 +142,14 @@ public class PointedCrystalBlock extends AmethystBlock implements SimpleWaterlog
     }
 
     @Override
-    public void fallOn(@NotNull Level level, BlockState state, @NotNull BlockPos pos, @NotNull Entity entity, float fallDistance) {
-        if (state.getValue(FACING) == Direction.UP && state.getValue(POINTED_CRYSTAL_STATE) == PointedCrystalState.TOP) {
+    public void fallOn(@NotNull Level level, BlockState state, @NotNull BlockPos pos, @NotNull Entity entity, float fallDistance)
+    {
+        if (state.getValue(FACING) == Direction.UP && state.getValue(POINTED_CRYSTAL_STATE) == PointedCrystalState.TOP)
+        {
             entity.causeFallDamage(fallDistance + 2.0F, 2.0F, level.damageSources().stalagmite());
-        } else {
+        }
+        else
+        {
             super.fallOn(level, state, pos, entity, fallDistance);
         }
     }

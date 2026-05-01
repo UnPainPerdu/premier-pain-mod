@@ -8,13 +8,14 @@ import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.tslat.smartbrainlib.api.core.behaviour.ExtendedBehaviour;
 import net.tslat.smartbrainlib.object.MemoryTest;
-import net.tslat.smartbrainlib.util.BrainUtils;
+import net.tslat.smartbrainlib.util.BrainUtil;
 
 import java.util.List;
 
 public class RestoreHitbox<E extends LivingEntity> extends ExtendedBehaviour<E>
 {
     private static final MemoryTest MEMORY_REQUIREMENTS = MemoryTest.builder(3).noMemory(MemoryModuleTypeRegister.TARGET.get()).noMemory(MemoryModuleTypeRegister.HAS_CHANGED_HITBOX_TIMER.get()).hasMemory(MemoryModuleTypeRegister.HAS_CHANGED_HITBOX.get());
+
     @Override
     protected List<Pair<MemoryModuleType<?>, MemoryStatus>> getMemoryRequirements()
     {
@@ -30,6 +31,6 @@ public class RestoreHitbox<E extends LivingEntity> extends ExtendedBehaviour<E>
     @Override
     protected void stop(E entity)
     {
-        BrainUtils.clearMemory(entity, MemoryModuleTypeRegister.HAS_CHANGED_HITBOX.get());
+        BrainUtil.clearMemory(entity, MemoryModuleTypeRegister.HAS_CHANGED_HITBOX.get());
     }
 }

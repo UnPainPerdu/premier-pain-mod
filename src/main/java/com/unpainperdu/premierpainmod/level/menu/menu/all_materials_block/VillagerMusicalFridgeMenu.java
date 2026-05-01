@@ -24,7 +24,7 @@ public class VillagerMusicalFridgeMenu extends AbstractContainerMenu
 
     public VillagerMusicalFridgeMenu(int id, Inventory inv, Container container)
     {
-        super(MenuTypesRegister.VILLAGER_MUSICAL_FRIDGE.get(),id);
+        super(MenuTypesRegister.VILLAGER_MUSICAL_FRIDGE.get(), id);
         checkContainerSize(container, SLOTS);
         this.container = container;
         this.container.startOpen(inv.player);
@@ -38,7 +38,7 @@ public class VillagerMusicalFridgeMenu extends AbstractContainerMenu
             }
         }
 
-        this.addSlot(new DiscSlot(this.container, 0, 147,108));
+        this.addSlot(new DiscSlot(this.container, 0, 147, 108));
 
 
         //player inv drawing
@@ -57,15 +57,15 @@ public class VillagerMusicalFridgeMenu extends AbstractContainerMenu
     }
 
     @Override
-    public ItemStack quickMoveStack(Player pPlayer, int pIndex)
+    public ItemStack quickMoveStack(Player player, int index)
     {
         ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = this.slots.get(pIndex);
-        if (slot != null && slot.hasItem())
+        Slot slot = this.slots.get(index);
+        if (slot.hasItem())
         {
             ItemStack itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
-            if (pIndex < SLOTS)
+            if (index < SLOTS)
             {
                 if (!this.moveItemStackTo(itemstack1, SLOTS, this.slots.size(), true))
                 {
@@ -80,7 +80,8 @@ public class VillagerMusicalFridgeMenu extends AbstractContainerMenu
             if (itemstack1.isEmpty())
             {
                 slot.setByPlayer(ItemStack.EMPTY);
-            } else
+            }
+            else
             {
                 slot.setChanged();
             }
@@ -91,16 +92,16 @@ public class VillagerMusicalFridgeMenu extends AbstractContainerMenu
 
 
     @Override
-    public boolean stillValid(Player pPlayer)
+    public boolean stillValid(Player player)
     {
-        return this.container.stillValid(pPlayer);
+        return this.container.stillValid(player);
     }
 
     @Override
-    public void removed(Player pPlayer)
+    public void removed(Player player)
     {
-        super.removed(pPlayer);
-        this.container.stopOpen(pPlayer);
+        super.removed(player);
+        this.container.stopOpen(player);
     }
 
     public Container getContainer()

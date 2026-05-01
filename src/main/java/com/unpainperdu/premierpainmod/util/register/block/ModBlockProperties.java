@@ -1,9 +1,6 @@
 package com.unpainperdu.premierpainmod.util.register.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -11,7 +8,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import org.jetbrains.annotations.NotNull;
 
 public class ModBlockProperties
 {
@@ -43,13 +39,16 @@ public class ModBlockProperties
     //  dead bush like
     public static final Properties DEAD_RUINS_FLOWER = Properties.ofFullCopy(Blocks.DEAD_BUSH).noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ);
     //  tree
+    public static final Properties SAPLING = BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY);
+    //  wood generic
     public static final Properties MOUNTAIN_CURRANT_GENERIC = Properties.of().mapColor(DyeColor.GREEN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava();
     public static final Properties MORICHE_PALM_GENERIC = Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava();
     public static final Properties ACHIOTE_GENERIC = Properties.of().mapColor(DyeColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava();
     public static final Properties WEEPING_WILLOW_GENERIC = Properties.of().mapColor(DyeColor.LIGHT_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava();
     public static final Properties FALLING_WEEPING_WILLOW_LEAVES = Properties.ofFullCopy(Blocks.ALLIUM).noOcclusion().noCollission();
 
-    public static Properties getPropertiesCopy(Properties properties){
+    public static Properties getPropertiesCopy(Properties properties)
+    {
         Properties finalProperties = Properties.of();
         finalProperties.destroyTime = properties.destroyTime;
         finalProperties.explosionResistance = properties.explosionResistance;

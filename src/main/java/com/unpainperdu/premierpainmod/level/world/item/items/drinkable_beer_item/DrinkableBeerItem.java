@@ -4,17 +4,19 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class DrinkableBeerItem extends Item
     private final int potionLevel;
     private final float timeMultiplicater;
 
-    public DrinkableBeerItem(Properties properties, DrinkableBeerItemType type, String translatableDescriptionId, Holder<MobEffect> effect, int potionLevel, float timeMultiplicater)
+    public DrinkableBeerItem(DrinkableBeerItemType type, String translatableDescriptionId, Holder<MobEffect> effect, int potionLevel, float timeMultiplicater, Properties properties)
     {
         super(properties);
         this.type = type;
@@ -40,37 +42,19 @@ public class DrinkableBeerItem extends Item
     public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
     {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-        MutableComponent mutablecomponent = Component.translatable("item.description."+this.translatableDescriptionId);
+        MutableComponent mutablecomponent = Component.translatable("item.description." + this.translatableDescriptionId);
         pTooltipComponents.add(mutablecomponent.withStyle(ChatFormatting.GRAY));
     }
 
     @Override
-    public SoundEvent getDrinkingSound() {
-        return SoundEvents.GENERIC_DRINK;
-    }
-
-    //when end eating
-    @Override
-    public SoundEvent getEatingSound() {
-        return SoundEvents.HONEY_DRINK;
-    }
-
-
-    @Override
-    public UseAnim getUseAnimation(ItemStack stack)
-    {
-        return UseAnim.DRINK;
-    }
-
-    @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity)
+    public @NotNull ItemStack finishUsingItem(ItemStack stack, @NotNull Level level, @NotNull LivingEntity livingEntity)
     {
         FoodProperties foodproperties = stack.getFoodProperties(livingEntity);
         ItemStack stack1;
         if (foodproperties != null)
         {
             stack1 = livingEntity.eat(level, stack, foodproperties);
-            int time = (int) (type.getEffectDuration()*this.timeMultiplicater);
+            int time = (int) (type.getEffectDuration() * this.timeMultiplicater);
             if (time < 1)
             {
                 time = 1;
@@ -94,7 +78,7 @@ public class DrinkableBeerItem extends Item
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand)
+    public @NotNull InteractionResult use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand)
     {
         return ItemUtils.startUsingInstantly(level, player, hand);
     }

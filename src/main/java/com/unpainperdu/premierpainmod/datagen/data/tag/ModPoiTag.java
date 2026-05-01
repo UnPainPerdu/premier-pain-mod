@@ -6,18 +6,16 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.PoiTypeTagsProvider;
 import net.minecraft.tags.PoiTypeTags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class ModPoiTag extends PoiTypeTagsProvider
 {
-    public ModPoiTag(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper)
+    public ModPoiTag(PackOutput output, CompletableFuture<HolderLookup.Provider> provider)
     {
-        super(output, provider, PremierPainMod.MOD_ID, existingFileHelper);
+        super(output, provider, PremierPainMod.MOD_ID);
     }
 
     @Override

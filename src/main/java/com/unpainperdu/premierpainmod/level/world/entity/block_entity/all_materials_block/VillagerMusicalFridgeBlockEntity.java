@@ -1,8 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerMusicalFridgeMenu;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_height_with_block_entity.VillagerMusicalFridgeBlock;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -36,18 +36,18 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
 {
     public static final int CONTAINER_SIZE = 37;
     public static final int DISC_SLOT = 0;
-    private static final int[] ITEMS_SLOTS = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36};
+    private static final int[] ITEMS_SLOTS = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36};
     private final JukeboxSongPlayer jukeboxSongPlayer = new JukeboxSongPlayer(this::onSongChanged, this.getBlockPos());
-    private static int BASE_TIME_TO_WAIT = 6000;
+    private static final int BASE_TIME_TO_WAIT = 6000;
     private int timeInTickForLastMusicPlay;
-    private static String TIME_IN_TICK_FOR_LAST_MUSIC_PLAY_ID ="timeInTickForLastMusicPlay";
+    private static final String TIME_IN_TICK_FOR_LAST_MUSIC_PLAY_ID = "timeInTickForLastMusicPlay";
 
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter()
     {
         @Override
         protected void onOpen(Level level, BlockPos pos, BlockState state)
         {
-            VillagerMusicalFridgeBlockEntity.this.playSound(state, SoundEvents.BARREL_OPEN, pos, level);
+            VillagerMusicalFridgeBlockEntity.this.playSound(SoundEvents.BARREL_OPEN, pos, level);
             VillagerMusicalFridgeBlockEntity.this.updateBlockStateIsOpen(state, pos, true);
             Optional<Holder<JukeboxSong>> optional = JukeboxSong.fromStack(level.registryAccess(), VillagerMusicalFridgeBlockEntity.this.getDisc());
 
@@ -66,7 +66,7 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
         @Override
         protected void onClose(Level level, BlockPos pos, BlockState state)
         {
-            VillagerMusicalFridgeBlockEntity.this.playSound(state, SoundEvents.BARREL_CLOSE, pos, level);
+            VillagerMusicalFridgeBlockEntity.this.playSound(SoundEvents.BARREL_CLOSE, pos, level);
             VillagerMusicalFridgeBlockEntity.this.updateBlockStateIsOpen(state, pos, false);
             boolean flag = VillagerMusicalFridgeBlockEntity.this.getDisc().isEmpty();
             if (flag)
@@ -85,7 +85,7 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
         {
             if (player.containerMenu instanceof VillagerMusicalFridgeMenu)
             {
-                Container container = ((VillagerMusicalFridgeMenu)player.containerMenu).getContainer();
+                Container container = ((VillagerMusicalFridgeMenu) player.containerMenu).getContainer();
                 return container == VillagerMusicalFridgeBlockEntity.this;
             }
             else
@@ -106,7 +106,7 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
     @Override
     public Component getDefaultName()
     {
-        return Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_musical_fridge");
+        return Component.translatable("container." + PremierPainMod.MOD_ID + ".villager_musical_fridge");
     }
 
     @Override
@@ -124,11 +124,6 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
     public ItemStack getDisc()
     {
         return this.items.get(DISC_SLOT);
-    }
-
-    protected void setDisc(ItemStack itemStack)
-    {
-        this.items.set(DISC_SLOT, itemStack);
     }
 
     @Override
@@ -191,10 +186,11 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
         }
     }
 
-    void playSound(BlockState pState, SoundEvent pSound, BlockPos pos, Level level)
+    void playSound(SoundEvent sound, BlockPos pos, Level level)
     {
-        level.playSound(null, pos, pSound, SoundSource.BLOCKS, 1.0F, 1.0F);
+        level.playSound(null, pos, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
     }
+
     void updateBlockStateIsOpen(BlockState state, BlockPos pos, boolean open)
     {
         if (state.getValue(VillagerMusicalFridgeBlock.HALF) == DoubleBlockHalf.LOWER)
@@ -218,7 +214,7 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
     {
         if (blockEntity.timeInTickForLastMusicPlay < VillagerMusicalFridgeBlockEntity.BASE_TIME_TO_WAIT)
         {
-            blockEntity.timeInTickForLastMusicPlay ++;
+            blockEntity.timeInTickForLastMusicPlay++;
         }
     }
 
@@ -231,7 +227,7 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
     @javax.annotation.Nullable
     public static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> serverType, BlockEntityType<E> clientType, BlockEntityTicker<? super E> ticker)
     {
-        return clientType == serverType ? (BlockEntityTicker<A>)ticker : null;
+        return clientType == serverType ? (BlockEntityTicker<A>) ticker : null;
     }
 
 
@@ -270,5 +266,4 @@ public class VillagerMusicalFridgeBlockEntity extends BaseContainerBlockEntity
         ContainerHelper.saveAllItems(compoundtag, this.items, true, pRegistries);
         return compoundtag;
     }
-    //-----------------------------------------------
 }

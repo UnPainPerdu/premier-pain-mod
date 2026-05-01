@@ -4,9 +4,11 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.client.gui.render.FluidTankRenderer;
 import com.unpainperdu.premierpainmod.client.util.tool_kit.MouseUtil;
 import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.CookingPotMenu;
+import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -30,31 +32,26 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
     {
-        guiGraphics.blit(getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, 185);
+        guiGraphics.blit(RenderType::guiTextured, getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, 185, 256, 256);
         renderLit(guiGraphics);
         renderProgress(guiGraphics);
         renderFluidStack(guiGraphics);
         renderButton(guiGraphics, mouseX, mouseY);
     }
 
-    private static ResourceLocation loc(String path)
-    {
-        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
-    }
-
     private ResourceLocation getBackgroundTexture()
     {
-        return loc("textures/gui/container/functional_block/cooking_pot.png");
+        return ResourceUtil.createResourceLocation("textures/gui/container/functional_block/cooking_pot.png");
     }
 
     private ResourceLocation getArrowTexture()
     {
-        return loc("container/functional_block/cooking_pot/arrow");
+        return ResourceUtil.createResourceLocation("container/functional_block/cooking_pot/arrow");
     }
 
     private ResourceLocation getLitTexture()
     {
-        return loc("container/functional_block/cooking_pot/lit");
+        return ResourceUtil.createResourceLocation("container/functional_block/cooking_pot/lit");
     }
 
     private ResourceLocation getButtonTexture(boolean isHighlighted)
@@ -68,7 +65,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
         {
             path = "container/functional_block/cooking_pot/button_unlit";
         }
-        return loc(path);
+        return ResourceUtil.createResourceLocation(path);
     }
 
     private void renderLit(GuiGraphics guiGraphics)
@@ -76,7 +73,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
         boolean isLit = this.menu.getState().getValue(BlockStateProperties.LIT);
         if (isLit)
         {
-            guiGraphics.blitSprite(getLitTexture(), 14, 14, 0, 0, leftPos + 58, topPos + 77, 14, 14);
+            guiGraphics.blitSprite(RenderType::guiTextured, getLitTexture(), 14, 14, 0, 0, leftPos + 58, topPos + 77, 14, 14);
         }
     }
 
@@ -99,7 +96,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
     private void renderArrow(int indexOfCookingTime, GuiGraphics guiGraphics)
     {
         int j = this.menu.getBrewingProgress(indexOfCookingTime);
-        guiGraphics.blitSprite(getArrowTexture(), 26, 10, 0, 0, leftPos + 113, topPos + 21 + (indexOfCookingTime * 24), j, 10);
+        guiGraphics.blitSprite(RenderType::guiTextured, getArrowTexture(), 26, 10, 0, 0, leftPos + 113, topPos + 21 + (indexOfCookingTime * 24), j, 10);
     }
 
     private void renderFluidStack(GuiGraphics guiGraphics)
@@ -110,7 +107,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotMenu> im
 
     private void renderButton(GuiGraphics guiGraphics, int mouseX, int mouseY)
     {
-        guiGraphics.blitSprite(getButtonTexture(isAboveBinButton(mouseX, mouseY)), 16, 16, 0, 0, leftPos + 28, topPos + 45, 16, 16);
+        guiGraphics.blitSprite(RenderType::guiTextured, getButtonTexture(isAboveBinButton(mouseX, mouseY)), 16, 16, 0, 0, leftPos + 28, topPos + 45, 16, 16);
     }
 
     @Override

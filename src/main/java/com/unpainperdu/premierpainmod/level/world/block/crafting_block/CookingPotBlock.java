@@ -6,15 +6,14 @@ import com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_b
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -23,7 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.LavaFluid;
@@ -39,7 +38,7 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final BooleanProperty HANGING = ModBlockStateProperties.HANGING;
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = ModBlockStateProperties.DIRECTION;
 
     public CookingPotBlock(Properties properties)
     {
@@ -89,31 +88,31 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
     }
 
     @Override
-    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction direction, @NotNull BlockState neighborState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (state.getValue(WATERLOGGED))
+        if (selfState.getValue(WATERLOGGED))
         {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-            state = state.setValue(BlockStateProperties.LIT, false);
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            selfState = selfState.setValue(BlockStateProperties.LIT, false);
         }
-        if (canBeHanging(level, pos))
+        if (canBeHanging(level, selfPos))
         {
-            state = state.setValue(ModBlockStateProperties.HANGING, true);
-        }
-        else
-        {
-            state = state.setValue(ModBlockStateProperties.HANGING, false);
-        }
-        if (canBeLit(level, pos) && !state.getValue(WATERLOGGED))
-        {
-            state = state.setValue(BlockStateProperties.LIT, true);
+            selfState = selfState.setValue(ModBlockStateProperties.HANGING, true);
         }
         else
         {
-            state = state.setValue(BlockStateProperties.LIT, false);
+            selfState = selfState.setValue(ModBlockStateProperties.HANGING, false);
+        }
+        if (canBeLit(level, selfPos) && !selfState.getValue(WATERLOGGED))
+        {
+            selfState = selfState.setValue(BlockStateProperties.LIT, true);
+        }
+        else
+        {
+            selfState = selfState.setValue(BlockStateProperties.LIT, false);
         }
 
-        return state;
+        return selfState;
     }
 
     @Override
@@ -175,7 +174,7 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
         }
     }
 
-    private boolean canBeLit(LevelAccessor level, BlockPos potPos)
+    private boolean canBeLit(LevelReader level, BlockPos potPos)
     {
         boolean isFireBlockBehind = false;
         BlockPos belowPos = potPos.below();
@@ -211,7 +210,7 @@ public class CookingPotBlock extends BaseEntityBlock implements SimpleWaterlogge
         return isFireBlockBehind;
     }
 
-    private boolean canBeHanging(LevelAccessor level, BlockPos potPos)
+    private boolean canBeHanging(LevelReader level, BlockPos potPos)
     {
         boolean canBeHanging = false;
         BlockPos belowPos = potPos.below();

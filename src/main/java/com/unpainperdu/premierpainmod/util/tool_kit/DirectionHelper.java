@@ -8,10 +8,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class DirectionHelper
 {
-    private DirectionHelper()
-    {
-    }
-
     public static Direction getLeftDirection(Direction direction)
     {
         return direction.getCounterClockWise();

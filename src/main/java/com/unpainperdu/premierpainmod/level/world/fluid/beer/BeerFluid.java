@@ -3,6 +3,7 @@ package com.unpainperdu.premierpainmod.level.world.fluid.beer;
 import com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
@@ -51,13 +52,13 @@ public abstract class BeerFluid extends WaterFluid
     }
 
     @Override
-    protected boolean canConvertToSource(@NotNull Level level)
+    protected boolean canConvertToSource(@NotNull ServerLevel level)
     {
         return false;
     }
 
     @Override
-    public boolean canConvertToSource(@NotNull FluidState state, @NotNull Level level, @NotNull BlockPos pos)
+    public boolean canConvertToSource(@NotNull FluidState state, @NotNull ServerLevel level, @NotNull BlockPos pos)
     {
         return false;
     }
@@ -66,7 +67,7 @@ public abstract class BeerFluid extends WaterFluid
     public void animateTick(Level level, BlockPos pos, @NotNull FluidState state, @NotNull RandomSource random)
     {
         BlockPos blockpos = pos.above();
-        if (level.getBlockState(blockpos).isAir() && !level.getBlockState(blockpos).isSolidRender(level, blockpos))
+        if (level.getBlockState(blockpos).isAir() && !level.getBlockState(blockpos).isSolidRender())
         {
             if (random.nextInt(1) == 0)
             {

@@ -23,7 +23,6 @@ public class VillagerBench extends AbstractAdaptableSit
                         .setValue(WATERLOGGED, Boolean.FALSE));
     }
 
-
     @Override
     public @NotNull MapCodec<? extends AbstractAdaptableSit> codec()
     {

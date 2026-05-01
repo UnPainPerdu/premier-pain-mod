@@ -6,7 +6,7 @@ import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.tslat.smartbrainlib.api.core.behaviour.ExtendedBehaviour;
 import net.tslat.smartbrainlib.object.MemoryTest;
-import net.tslat.smartbrainlib.util.BrainUtils;
+import net.tslat.smartbrainlib.util.BrainUtil;
 
 import java.util.List;
 
@@ -23,13 +23,12 @@ public class ConvertLastHitByEntityIntoTarget<E extends LivingEntity> extends Ex
     @Override
     protected void start(E entity)
     {
-        LivingEntity livingEntity = BrainUtils.getMemory(entity, MemoryModuleType.HURT_BY_ENTITY);
+        LivingEntity livingEntity = BrainUtil.getMemory(entity, MemoryModuleType.HURT_BY_ENTITY);
 
         if (livingEntity != null)
         {
-            BrainUtils.clearMemory(entity, MemoryModuleType.HURT_BY_ENTITY);
-            BrainUtils.setForgettableMemory(entity, MemoryModuleType.ATTACK_TARGET, livingEntity, 120);
+            BrainUtil.clearMemory(entity, MemoryModuleType.HURT_BY_ENTITY);
+            BrainUtil.setForgettableMemory(entity, MemoryModuleType.ATTACK_TARGET, livingEntity, 120);
         }
-
     }
 }

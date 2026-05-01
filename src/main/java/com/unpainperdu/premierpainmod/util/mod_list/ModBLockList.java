@@ -20,8 +20,6 @@ import java.util.*;
 
 public class ModBLockList
 {
-    private ModBLockList(){}
-
     public static final List<Block> ALL_BLOCKS = generateAllBlocksList();
 
     private static List<Block> generateAllBlocksList()
@@ -87,4 +85,3 @@ public class ModBLockList
         return list;
     }
 }
-

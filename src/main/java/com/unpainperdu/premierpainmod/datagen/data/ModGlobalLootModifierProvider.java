@@ -18,7 +18,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
 {
     public ModGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider)
     {
-        super(output, lookupProvider,PremierPainMod.MOD_ID);
+        super(output, lookupProvider, PremierPainMod.MOD_ID);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
     {
         float chance = 0.25f;
         name = name + "_singing_villager_stone_glm";
-        String namePlains = name +"_for_plains";
+        String namePlains = name + "_for_plains";
         add(
                 namePlains,
                 new VillagerSingingStoneGLM(new LootItemCondition[]
@@ -48,7 +48,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
                         }
                         , item));
 
-        String nameSavanna = name +"_for_savanna";
+        String nameSavanna = name + "_for_savanna";
         add(
                 nameSavanna,
                 new VillagerSingingStoneGLM(new LootItemCondition[]
@@ -58,7 +58,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
                         }
                         , item));
 
-        String nameDesert = name +"_for_desert";
+        String nameDesert = name + "_for_desert";
         add(
                 nameDesert,
                 new VillagerSingingStoneGLM(new LootItemCondition[]
@@ -68,7 +68,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
                         }
                         , item));
 
-        String nameSnowy = name +"_for_snowy";
+        String nameSnowy = name + "_for_snowy";
         add(
                 nameSnowy,
                 new VillagerSingingStoneGLM(new LootItemCondition[]
@@ -78,7 +78,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
                         }
                         , item));
 
-        String nameTaiga = name +"_for_taiga";
+        String nameTaiga = name + "_for_taiga";
         add(
                 nameTaiga,
                 new VillagerSingingStoneGLM(new LootItemCondition[]
@@ -89,4 +89,3 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider
                         , item));
     }
 }
-

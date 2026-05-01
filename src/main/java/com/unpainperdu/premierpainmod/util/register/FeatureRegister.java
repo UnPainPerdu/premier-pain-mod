@@ -32,10 +32,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class FeatureRegister
 {
-    private FeatureRegister()
-    {
-    }
-
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, PremierPainMod.MOD_ID);
     //misc
     public static final DeferredHolder<Feature<?>, Feature<VillagerStatueRuinsConfiguration>> VILLAGER_STATUE_RUINS = FEATURES.register("villager_statue_ruins", () -> new VillagerStatueRuinsFeature(VillagerStatueRuinsConfiguration.CODEC));

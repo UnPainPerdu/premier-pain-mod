@@ -20,7 +20,6 @@ import static net.minecraft.world.level.block.Blocks.WATER;
 
 public class BlockFluidRegister
 {
-
     //liquid block zone, see FluidRegister too
     //beer
     private static final BlockBehaviour.Properties fluidStandardProperties = BlockBehaviour.Properties.of().replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY);

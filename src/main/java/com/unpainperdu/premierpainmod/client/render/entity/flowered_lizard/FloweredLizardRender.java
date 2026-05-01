@@ -7,9 +7,8 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
 
-public class FloweredLizardRender extends MobRenderer<FloweredLizardEntity, FloweredLizardModel>
+public class FloweredLizardRender extends MobRenderer<FloweredLizardEntity, FloweredLizardRenderState, FloweredLizardModel>
 {
     public FloweredLizardRender(EntityRendererProvider.Context context)
     {
@@ -17,17 +16,34 @@ public class FloweredLizardRender extends MobRenderer<FloweredLizardEntity, Flow
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(@NotNull FloweredLizardEntity entity)
+    public FloweredLizardRenderState createRenderState()
+    {
+        return new FloweredLizardRenderState();
+    }
+
+    @Override
+    public void render(FloweredLizardRenderState floweredLizardRenderState, PoseStack poseStack, MultiBufferSource buffer, int packedLight)
+    {
+        float scale = floweredLizardRenderState.isBaby ? FloweredLizardEntity.BABY_SCALE : 1F;
+        poseStack.scale(scale, scale, scale);
+        super.render(floweredLizardRenderState, poseStack, buffer, packedLight);
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(FloweredLizardRenderState renderState)
     {
         return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/entity/mob/flowered_lizard/main.png");
     }
 
     @Override
-    public void render(FloweredLizardEntity entity, float entityYaw, float partialTicks, @NotNull PoseStack poseStack, @NotNull MultiBufferSource buffer, int packedLight)
+    public void extractRenderState(FloweredLizardEntity entity, FloweredLizardRenderState renderState, float partialTick)
     {
-        float scale = entity.isBaby() ? FloweredLizardEntity.BABY_SCALE : 1F;
-        poseStack.scale(scale, scale, scale);
-
-        super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
+        super.extractRenderState(entity, renderState, partialTick);
+        renderState.idleAnimationState.copyFrom(entity.idleAnimationState);
+        renderState.walkAnimationState.copyFrom(entity.walkAnimationState);
+        renderState.attack0AnimationState.copyFrom(entity.attack0AnimationState);
+        renderState.attack1AnimationState.copyFrom(entity.attack1AnimationState);
+        renderState.attack2AnimationState.copyFrom(entity.attack2AnimationState);
+        renderState.eatAnimationState.copyFrom(entity.eatAnimationState);
     }
 }

@@ -8,7 +8,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
 
@@ -19,9 +18,9 @@ import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRe
 
 public class ModFluidTag extends FluidTagsProvider
 {
-    public ModFluidTag(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, ExistingFileHelper fileHelper)
+    public ModFluidTag(PackOutput output, CompletableFuture<HolderLookup.Provider> provider)
     {
-        super(output, provider, PremierPainMod.MOD_ID, fileHelper);
+        super(output, provider, PremierPainMod.MOD_ID);
     }
 
     @Override

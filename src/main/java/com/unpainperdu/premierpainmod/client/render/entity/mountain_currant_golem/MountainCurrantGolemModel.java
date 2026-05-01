@@ -1,19 +1,15 @@
 package com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.MountainCurrantGolemEntity;
-import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import org.jetbrains.annotations.NotNull;
 
-public class MountainCurrantGolemModel extends HierarchicalModel<MountainCurrantGolemEntity>
+public class MountainCurrantGolemModel extends EntityModel<MountainCurrantGolemRenderState>
 {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "mountain_currant_golem"), "main");
@@ -29,6 +25,7 @@ public class MountainCurrantGolemModel extends HierarchicalModel<MountainCurrant
 
     public MountainCurrantGolemModel(ModelPart root)
     {
+        super(root);
         this.body = root.getChild("Body");
         this.bodyTop = this.body.getChild("bodyTop");
         this.head = this.bodyTop.getChild("Head");
@@ -75,25 +72,13 @@ public class MountainCurrantGolemModel extends HierarchicalModel<MountainCurrant
     }
 
     @Override
-    public @NotNull ModelPart root()
+    public void setupAnim(MountainCurrantGolemRenderState renderState)
     {
-        return this.body;
-    }
+        super.setupAnim(renderState);
+        this.applyHeadRotation(renderState.yRot, renderState.xRot);
 
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int color)
-    {
-        this.body.render(poseStack, buffer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public void setupAnim(@NotNull MountainCurrantGolemEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
-    {
-        this.root().getAllParts().forEach(ModelPart::resetPose);
-        this.applyHeadRotation(netHeadYaw, headPitch);
-
-        this.animateWalk(MountainCurrantGolemAnimation.WALK, limbSwing, limbSwingAmount, 2F, 2.5F);
-        this.animate(entity.boneMealingAnimationState, MountainCurrantGolemAnimation.BONEMEALING, ageInTicks, 1F);
+        this.animateWalk(MountainCurrantGolemAnimation.WALK, renderState.walkAnimationPos, renderState.walkAnimationSpeed, 2F, 2.5F);
+        this.animate(renderState.boneMealingAnimationState, MountainCurrantGolemAnimation.BONEMEALING, renderState.ageInTicks, 1F);
     }
 
     private void applyHeadRotation(float headYaw, float headPitch)

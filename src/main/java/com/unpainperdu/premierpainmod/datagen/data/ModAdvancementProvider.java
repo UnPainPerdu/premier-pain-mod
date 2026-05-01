@@ -1,10 +1,9 @@
 package com.unpainperdu.premierpainmod.datagen.data;
 
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.overworld.ModOverworldSurfaceBiomes;
+import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.structure.ModStructure;
 import com.unpainperdu.premierpainmod.datagen.data.tag.mod_tags.ModItemTags;
 import com.unpainperdu.premierpainmod.level.world.item.items.drinkable_beer_item.DrinkableBeerItem;
-import com.unpainperdu.premierpainmod.datagen.data.level.world.worldgen.biome.ModBiomes;
 import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlockEnum;
@@ -18,6 +17,7 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -28,9 +28,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.structure.Structure;
-import net.neoforged.neoforge.common.data.AdvancementProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -44,26 +41,23 @@ import static com.unpainperdu.premierpainmod.util.register.block.AllMaterialsBlo
 
 public class ModAdvancementProvider extends AdvancementProvider
 {
-    // for full tutorial https://docs.neoforged.net/docs/1.21.1/resources/server/advancements
-    public ModAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, ExistingFileHelper existingFileHelper)
+    public ModAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)
     {
-        super(output, registries, existingFileHelper, List.of(new ModAdvancementGenerator()));
+        super(output, registries, List.of(new ModAdvancementGenerator()));
     }
 
-    private static final class ModAdvancementGenerator implements AdvancementProvider.AdvancementGenerator
+    private static final class ModAdvancementGenerator implements AdvancementSubProvider
     {
         private Consumer<AdvancementHolder> saver;
-        private ExistingFileHelper existingFileHelper;
-        private HolderLookup.Provider registries;
 
         @Override
-        public void generate(HolderLookup.@NotNull Provider registries, @NotNull Consumer<AdvancementHolder> saver, @NotNull ExistingFileHelper existingFileHelper)
+        public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> saver)
         {
             this.saver = saver;
-            this.existingFileHelper = existingFileHelper;
-            this.registries = registries;
-            HolderGetter<Biome> biomeHoldergetter = this.registries.lookupOrThrow(Registries.BIOME);
-            HolderGetter<Structure> structureHolderGetter = this.registries.lookupOrThrow(Registries.STRUCTURE);
+            HolderGetter<Biome> biomeHoldergetter = registries.lookupOrThrow(Registries.BIOME);
+            HolderGetter<Structure> structureHolderGetter = registries.lookupOrThrow(Registries.STRUCTURE);
+            HolderGetter<Item> itemHolderGetter = registries.lookupOrThrow(Registries.ITEM);
+            HolderGetter<EntityType<?>> entityHolderGetter = registries.lookupOrThrow(Registries.ENTITY_TYPE);
             //root
             generateRootAdvancement("main", Items.EMERALD);
             //main
@@ -77,7 +71,9 @@ public class ModAdvancementProvider extends AdvancementProvider
                     ));
             generateAdvancementWithMainAsRoot(ItemRegister.PAIN_DIEUX_MUG, "first_beer", "civilization_flower", AdvancementType.TASK,
                     Map.of(
-                            "has_beer", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(
+                            "has_beer", InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ItemPredicate.Builder.item().of(
+                                            itemHolderGetter,
                                             ModItemList.getAllItemsFromClass(DrinkableBeerItem.class).stream()
                                                     .filter(item -> ResourceUtil.getKey(item).toString().contains("mug"))
                                                     .toList()
@@ -122,7 +118,7 @@ public class ModAdvancementProvider extends AdvancementProvider
             conditions = new LinkedHashMap<>();
             for (TagKey<Item> tagKey : ModItemTags.ALL_MATERIALS_TAGS)
             {
-                conditions.put(tagKey.toString(), InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(tagKey)));
+                conditions.put(tagKey.toString(), InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemHolderGetter, tagKey)));
             }
 
             generateAdvancementWithMainAsRoot(getAllMaterialBlock(Type.VILLAGER_STATUE, Material.EMERALD_BLOCK), "full_set_all_material", "villager_workshop", AdvancementType.CHALLENGE,
@@ -130,10 +126,10 @@ public class ModAdvancementProvider extends AdvancementProvider
                     AdvancementRewards.Builder.experience(250));
 
             conditions = new LinkedHashMap<>();
-            conditions.put("has_build_iron_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(EntityType.IRON_GOLEM)));
-            conditions.put("has_build_snow_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(EntityType.SNOW_GOLEM)));
-            conditions.put("has_build_mountain_currant_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get())));
-            conditions.put("has_build_wool_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get())));
+            conditions.put("has_build_iron_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(entityHolderGetter, EntityType.IRON_GOLEM)));
+            conditions.put("has_build_snow_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(entityHolderGetter, EntityType.SNOW_GOLEM)));
+            conditions.put("has_build_mountain_currant_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(entityHolderGetter, AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY.get())));
+            conditions.put("has_build_wool_golem", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(entityHolderGetter, AllInOneEntityRegister.WOOL_GOLEM_ENTITY.get())));
 
             generateAdvancementWithMainAsRoot(AllInOneEntityRegister.getEgg(AllInOneEntityRegister.MOUNTAIN_CURRANT_GOLEM_ENTITY).get(), "get_them_all", "root", AdvancementType.GOAL, conditions);
         }
@@ -159,7 +155,7 @@ public class ModAdvancementProvider extends AdvancementProvider
             );
             builder.addCriterion("craft_crafting_table", InventoryChangeTrigger.TriggerInstance.hasItems(Items.CRAFTING_TABLE));
             builder.requirements(AdvancementRequirements.allOf(List.of("craft_crafting_table")));
-            builder.save(this.saver, ResourceUtil.createResourceLocation(folder + "/root"), this.existingFileHelper);
+            builder.save(this.saver, ResourceUtil.createResourceLocation(folder + "/root"));
         }
 
         /**
@@ -197,7 +193,7 @@ public class ModAdvancementProvider extends AdvancementProvider
             {
                 builder.rewards(rewardsBuilder);
             }
-            builder.save(saver, ResourceUtil.createResourceLocation(page + "/" + advancementName), existingFileHelper);
+            builder.save(saver, ResourceUtil.createResourceLocation(page + "/" + advancementName));
         }
     }
 }

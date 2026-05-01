@@ -17,10 +17,9 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.tslat.smartbrainlib.api.core.behaviour.ExtendedBehaviour;
 import net.tslat.smartbrainlib.object.MemoryTest;
-import net.tslat.smartbrainlib.util.BrainUtils;
+import net.tslat.smartbrainlib.util.BrainUtil;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 public class SetHugTarget<E extends LivingEntity> extends ExtendedBehaviour<E>
 {
@@ -41,21 +40,21 @@ public class SetHugTarget<E extends LivingEntity> extends ExtendedBehaviour<E>
     @Override
     protected void stop(E entity)
     {
-        BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.TARGET_CD.get(), Unit.INSTANCE, 350 + RandomUtil.getRandomIntInRange(200, entity.getRandom()));
+        BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.TARGET_CD.get(), Unit.INSTANCE, 350 + RandomUtil.getRandomIntInRange(200, entity.getRandom()));
     }
 
     private void setTarget(E entity)
     {
-        NearestVisibleLivingEntities nearestVisibleLivingEntities = BrainUtils.getMemory(entity, MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES);
+        NearestVisibleLivingEntities nearestVisibleLivingEntities = BrainUtil.getMemory(entity, MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES);
         if (nearestVisibleLivingEntities != null)
         {
             LivingEntity target = null;
             List<LivingEntity> monsters = nearestVisibleLivingEntities.find(livingEntity -> livingEntity instanceof Monster).toList();
             List<LivingEntity> players = nearestVisibleLivingEntities.find(livingEntity -> livingEntity instanceof Player).filter(livingEntity ->
-            {
-                Player player = (Player) livingEntity;
-                return !player.isCreative();
-            }).filter(SetHugTarget::hasMissingHP)
+                    {
+                        Player player = (Player) livingEntity;
+                        return !player.isCreative();
+                    }).filter(SetHugTarget::hasMissingHP)
                     .toList();
             List<LivingEntity> villagers = nearestVisibleLivingEntities.find(livingEntity -> livingEntity instanceof Villager).filter(SetHugTarget::hasMissingHP).toList();
             List<LivingEntity> golems = nearestVisibleLivingEntities.find(livingEntity -> livingEntity instanceof AbstractGolem).filter(SetHugTarget::hasMissingHP).toList();
@@ -80,10 +79,10 @@ public class SetHugTarget<E extends LivingEntity> extends ExtendedBehaviour<E>
                 if (entity instanceof WoolGolemEntity)
                 {
                     entity.setPose(Pose.SHOOTING);
-                    BrainUtils.setMemory(entity, MemoryModuleTypeRegister.HAS_CHANGED_HITBOX.get(), Unit.INSTANCE);
+                    BrainUtil.setMemory(entity, MemoryModuleTypeRegister.HAS_CHANGED_HITBOX.get(), Unit.INSTANCE);
                 }
-                BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.TARGET.get(), target, 300);
-                BrainUtils.setForgettableMemory(entity, MemoryModuleType.WALK_TARGET, new WalkTarget(target, 2F, 0), 300);
+                BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.TARGET.get(), target, 300);
+                BrainUtil.setForgettableMemory(entity, MemoryModuleType.WALK_TARGET, new WalkTarget(target, 2F, 0), 300);
             }
         }
     }

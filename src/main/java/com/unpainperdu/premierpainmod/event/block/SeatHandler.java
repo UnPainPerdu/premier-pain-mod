@@ -25,8 +25,6 @@ import static com.unpainperdu.premierpainmod.level.world.block.abstract_block.Ab
 @EventBusSubscriber(modid = PremierPainMod.MOD_ID)
 public class SeatHandler
 {
-    private SeatHandler() {}
-
     @SubscribeEvent
     public static void onRightClickBlock(RightClickBlock event)
     {

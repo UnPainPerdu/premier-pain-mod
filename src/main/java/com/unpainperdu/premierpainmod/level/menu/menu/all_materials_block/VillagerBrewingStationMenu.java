@@ -1,9 +1,9 @@
 package com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block;
 
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
-import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
 import com.unpainperdu.premierpainmod.level.menu.slot.NoPlacementSlot;
 import com.unpainperdu.premierpainmod.level.menu.slot.OnlyTheseItemsSlot;
+import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.VillagerBrewingStation;
+import com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block.VillagerBrewingStationBlockEntity;
 import com.unpainperdu.premierpainmod.util.mod_list.ModBLockList;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.MenuTypesRegister;
@@ -71,15 +71,15 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
     }
 
     @Override
-    public ItemStack quickMoveStack(Player pPlayer, int pIndex)
+    public ItemStack quickMoveStack(Player player, int index)
     {
         ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = this.slots.get(pIndex);
-        if (slot != null && slot.hasItem())
+        Slot slot = this.slots.get(index);
+        if (slot.hasItem())
         {
             ItemStack itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
-            if (pIndex < SLOTS)
+            if (index < SLOTS)
             {
                 if (!this.moveItemStackTo(itemstack1, SLOTS, this.slots.size(), true))
                 {
@@ -106,16 +106,21 @@ public class VillagerBrewingStationMenu extends AbstractContainerMenu
 
 
     @Override
-    public boolean stillValid(Player pPlayer)
+    public boolean stillValid(Player player)
     {
         boolean flag = false;
-        for (Block block : ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class))
+        if (villagerBrewingStationBlockEntity.getLevel() != null)
         {
-            if (stillValid(ContainerLevelAccess.create(villagerBrewingStationBlockEntity.getLevel(), villagerBrewingStationBlockEntity.getBlockPos()), pPlayer, block))
+            for (Block block : ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class))
             {
-                flag = true;
+                if (stillValid(ContainerLevelAccess.create(villagerBrewingStationBlockEntity.getLevel(), villagerBrewingStationBlockEntity.getBlockPos()), player, block))
+                {
+                    flag = true;
+                    break;
+                }
             }
         }
+
         return flag;
     }
 

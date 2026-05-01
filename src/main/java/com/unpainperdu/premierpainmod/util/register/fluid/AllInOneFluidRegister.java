@@ -12,7 +12,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import org.joml.Vector3f;
+import org.joml.Vector4f;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,10 +23,6 @@ import static com.unpainperdu.premierpainmod.util.register.fluid.FluidTypeRegist
 
 public class AllInOneFluidRegister
 {
-    private AllInOneFluidRegister()
-    {
-    }
-
     public static final DeferredRegister<Fluid> FLUID_REGISTRIES = DeferredRegister.create(Registries.FLUID, PremierPainMod.MOD_ID);
     public static final DeferredRegister<FluidType> FLUID_TYPE_REGISTRIES = DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, PremierPainMod.MOD_ID);
 
@@ -41,20 +37,20 @@ public class AllInOneFluidRegister
     //don't forget blockstate json and add type to FluidTypeRegister
     private static boolean createFluids()
     {
-        registerNewFluid(PainDieuxFluid.NAME, BEER_TYPE, PainDieuxFluid.Source::new, PainDieuxFluid.Flowing::new, 0xf1faa12d, new Vector3f(250f / 255f, 161f / 255f, 45f / 255f));
-        registerNewFluid(LaChateauFluid.NAME, BEER_TYPE, LaChateauFluid.Source::new, LaChateauFluid.Flowing::new, 0xf1935800, new Vector3f(147f / 255f, 88f / 255f, 0f));
-        registerNewFluid(DeBierFluid.NAME, BEER_TYPE, DeBierFluid.Source::new, DeBierFluid.Flowing::new, 0xf1369244, new Vector3f(54f / 255f, 146f / 255f, 68f / 255f));
-        registerNewFluid(EnvahisseurRougeFluid.NAME, BEER_TYPE, EnvahisseurRougeFluid.Source::new, EnvahisseurRougeFluid.Flowing::new, 0xf1ce2222, new Vector3f(206f / 255f, 34f / 255f, 34f / 255f));
-        registerNewFluid(RaspBuissonFluid.NAME, BEER_TYPE, RaspBuissonFluid.Source::new, RaspBuissonFluid.Flowing::new, 0xf1520c0c, new Vector3f(82f / 255f, 12f / 255f, 12f / 255f));
-        registerNewFluid(LaBlancheCitadineFluid.NAME, BEER_TYPE, LaBlancheCitadineFluid.Source::new, LaBlancheCitadineFluid.Flowing::new, 0xf1e9de95, new Vector3f(233f / 255f, 222f / 255f, 149f / 255f));
-        registerNewFluid(CraneNoirFluid.NAME, BEER_TYPE, CraneNoirFluid.Source::new, CraneNoirFluid.Flowing::new, 0xf12c1a04, new Vector3f(44f / 255f, 26f / 255f, 04f / 255f));
-        registerNewFluid(TakFluid.NAME, BEER_TYPE, TakFluid.Source::new, TakFluid.Flowing::new, 0xf1fa7700, new Vector3f(250f / 255f, 119f / 255f, 0));
-        registerNewFluid(DisEnderFluid.NAME, BEER_TYPE, DisEnderFluid.Source::new, DisEnderFluid.Flowing::new, 0xf1ac08cc, new Vector3f(172f / 255f, 8f / 255f, 204f / 255f));
-        registerNewFluid(MorichePalmOilFluid.NAME, OIL_TYPE, MorichePalmOilFluid.Source::new, MorichePalmOilFluid.Flowing::new, 0xff1e1700, new Vector3f(14f / 255f, 23f / 255f, 0f));
+        registerNewFluid(PainDieuxFluid.NAME, BEER_TYPE, PainDieuxFluid.Source::new, PainDieuxFluid.Flowing::new, 0xf1faa12d, new Vector4f(250f / 255f, 161f / 255f, 45f / 255f, 1f));
+        registerNewFluid(LaChateauFluid.NAME, BEER_TYPE, LaChateauFluid.Source::new, LaChateauFluid.Flowing::new, 0xf1935800, new Vector4f(147f / 255f, 88f / 255f, 0f, 1f));
+        registerNewFluid(DeBierFluid.NAME, BEER_TYPE, DeBierFluid.Source::new, DeBierFluid.Flowing::new, 0xf1369244, new Vector4f(54f / 255f, 146f / 255f, 68f / 255f, 1f));
+        registerNewFluid(EnvahisseurRougeFluid.NAME, BEER_TYPE, EnvahisseurRougeFluid.Source::new, EnvahisseurRougeFluid.Flowing::new, 0xf1ce2222, new Vector4f(206f / 255f, 34f / 255f, 34f / 255f, 1f));
+        registerNewFluid(RaspBuissonFluid.NAME, BEER_TYPE, RaspBuissonFluid.Source::new, RaspBuissonFluid.Flowing::new, 0xf1520c0c, new Vector4f(82f / 255f, 12f / 255f, 12f / 255f, 1f));
+        registerNewFluid(LaBlancheCitadineFluid.NAME, BEER_TYPE, LaBlancheCitadineFluid.Source::new, LaBlancheCitadineFluid.Flowing::new, 0xf1e9de95, new Vector4f(233f / 255f, 222f / 255f, 149f / 255f, 1f));
+        registerNewFluid(CraneNoirFluid.NAME, BEER_TYPE, CraneNoirFluid.Source::new, CraneNoirFluid.Flowing::new, 0xf12c1a04, new Vector4f(44f / 255f, 26f / 255f, 04f / 255f, 1f));
+        registerNewFluid(TakFluid.NAME, BEER_TYPE, TakFluid.Source::new, TakFluid.Flowing::new, 0xf1fa7700, new Vector4f(250f / 255f, 119f / 255f, 0, 1f));
+        registerNewFluid(DisEnderFluid.NAME, BEER_TYPE, DisEnderFluid.Source::new, DisEnderFluid.Flowing::new, 0xf1ac08cc, new Vector4f(172f / 255f, 8f / 255f, 204f / 255f, 1f));
+        registerNewFluid(MorichePalmOilFluid.NAME, OIL_TYPE, MorichePalmOilFluid.Source::new, MorichePalmOilFluid.Flowing::new, 0xff1e1700, new Vector4f(14f / 255f, 23f / 255f, 0f, 1f));
         return true;
     }
 
-    private static void registerNewFluid(String name, String type, Supplier<Fluid> source, Supplier<Fluid> flowing, int tintColor, Vector3f fogColor)
+    private static void registerNewFluid(String name, String type, Supplier<Fluid> source, Supplier<Fluid> flowing, int tintColor, Vector4f fogColor)
     {
         FluidRegister.registerFluid(name, source, flowing);
         FluidTypeRegister.fluidTypeRegister(name, type, tintColor, fogColor);

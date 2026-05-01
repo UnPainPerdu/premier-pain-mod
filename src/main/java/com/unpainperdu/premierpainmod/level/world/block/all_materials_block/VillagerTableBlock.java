@@ -6,11 +6,16 @@ import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlock
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -29,10 +34,10 @@ import java.util.Map;
 public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock, CarpetedBlock //TODO, transform it in simple a BE
 {
     public static final MapCodec<VillagerTableBlock> CODEC = simpleCodec(VillagerTableBlock::new);
-    public static final BooleanProperty NORTH = PipeBlock.NORTH;
-    public static final BooleanProperty EAST = PipeBlock.EAST;
-    public static final BooleanProperty SOUTH = PipeBlock.SOUTH;
-    public static final BooleanProperty WEST = PipeBlock.WEST;
+    public static final BooleanProperty NORTH = BlockStateProperties.NORTH;
+    public static final BooleanProperty EAST = BlockStateProperties.EAST;
+    public static final BooleanProperty SOUTH = BlockStateProperties.SOUTH;
+    public static final BooleanProperty WEST = BlockStateProperties.WEST;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final EnumProperty<VillagerCarpetColor> COLOR = ModBlockStateProperties.VILLAGER_CARPET_COLOR;
     protected static final Map<Direction, BooleanProperty> PROPERTY_BY_DIRECTION = PipeBlock.PROPERTY_BY_DIRECTION;
@@ -68,6 +73,7 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock,
     {
         return SHAPE;
     }
+
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext)
@@ -84,61 +90,59 @@ public class VillagerTableBlock extends Block implements SimpleWaterloggedBlock,
         BlockState blockstate2 = blockgetter.getBlockState(blockpos3);
         BlockState blockstate3 = blockgetter.getBlockState(blockpos4);
         return super.getStateForPlacement(pContext)
-                .setValue(NORTH, this.connectsTo(blockstate, blockstate.isFaceSturdy(blockgetter, blockpos1, Direction.SOUTH), Direction.SOUTH))
-                .setValue(EAST, this.connectsTo(blockstate1, blockstate1.isFaceSturdy(blockgetter, blockpos2, Direction.WEST), Direction.WEST))
-                .setValue(SOUTH, this.connectsTo(blockstate2, blockstate2.isFaceSturdy(blockgetter, blockpos3, Direction.NORTH), Direction.NORTH))
-                .setValue(WEST, this.connectsTo(blockstate3, blockstate3.isFaceSturdy(blockgetter, blockpos4, Direction.EAST), Direction.EAST))
+                .setValue(NORTH, this.connectsTo(blockstate))
+                .setValue(EAST, this.connectsTo(blockstate1))
+                .setValue(SOUTH, this.connectsTo(blockstate2))
+                .setValue(WEST, this.connectsTo(blockstate3))
                 .setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
     }
-    public boolean connectsTo(BlockState pState, boolean pIsSideSolid, Direction pDirection)
+
+    public boolean connectsTo(BlockState pState)
     {
-        Block block = pState.getBlock();
-        return block instanceof VillagerTableBlock;
+        return pState.getBlock() instanceof VillagerTableBlock;
     }
+
     @Override
     protected @NotNull FluidState getFluidState(BlockState pState)
     {
         return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
     }
+
     @Override
-    protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (pState.getValue(WATERLOGGED))
+        if (selfState.getValue(WATERLOGGED))
         {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
-        return pFacing.getAxis().getPlane() == Direction.Plane.HORIZONTAL
-                ? pState.setValue(
-                PROPERTY_BY_DIRECTION.get(pFacing),
-                this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite())
+        return direction.getAxis().getPlane() == Direction.Plane.HORIZONTAL
+                ? selfState.setValue(
+                PROPERTY_BY_DIRECTION.get(direction),
+                this.connectsTo(facingState)
         )
-                : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+                : super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
     protected BlockState rotate(BlockState state, Rotation rot)
     {
-        switch (rot)
+        return switch (rot)
         {
-            case CLOCKWISE_180:
-                return state.setValue(NORTH, state.getValue(SOUTH))
-                        .setValue(EAST, state.getValue(WEST))
-                        .setValue(SOUTH, state.getValue(NORTH))
-                        .setValue(WEST, state.getValue(EAST));
-            case COUNTERCLOCKWISE_90:
-                return state.setValue(NORTH, state.getValue(EAST))
-                        .setValue(EAST, state.getValue(SOUTH))
-                        .setValue(SOUTH, state.getValue(WEST))
-                        .setValue(WEST, state.getValue(NORTH));
-            case CLOCKWISE_90:
-                return state.setValue(NORTH, state.getValue(WEST))
-                        .setValue(EAST, state.getValue(NORTH))
-                        .setValue(SOUTH, state.getValue(EAST))
-                        .setValue(WEST, state.getValue(SOUTH));
-            default:
-                return state;
-        }
+            case CLOCKWISE_180 -> state.setValue(NORTH, state.getValue(SOUTH))
+                    .setValue(EAST, state.getValue(WEST))
+                    .setValue(SOUTH, state.getValue(NORTH))
+                    .setValue(WEST, state.getValue(EAST));
+            case COUNTERCLOCKWISE_90 -> state.setValue(NORTH, state.getValue(EAST))
+                    .setValue(EAST, state.getValue(SOUTH))
+                    .setValue(SOUTH, state.getValue(WEST))
+                    .setValue(WEST, state.getValue(NORTH));
+            case CLOCKWISE_90 -> state.setValue(NORTH, state.getValue(WEST))
+                    .setValue(EAST, state.getValue(NORTH))
+                    .setValue(SOUTH, state.getValue(EAST))
+                    .setValue(WEST, state.getValue(SOUTH));
+            default -> state;
+        };
     }
 
     @Override

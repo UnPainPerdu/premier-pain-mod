@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import com.unpainperdu.premierpainmod.datagen.data.level.world.ModDamageType;
 import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
 import com.unpainperdu.premierpainmod.util.tool_kit.DamageSourcesCreator;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Unit;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -15,7 +16,7 @@ import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.minecraft.world.entity.monster.Monster;
 import net.tslat.smartbrainlib.api.core.behaviour.ExtendedBehaviour;
 import net.tslat.smartbrainlib.object.MemoryTest;
-import net.tslat.smartbrainlib.util.BrainUtils;
+import net.tslat.smartbrainlib.util.BrainUtil;
 
 import java.util.List;
 
@@ -41,14 +42,14 @@ public class Huging<E extends LivingEntity> extends ExtendedBehaviour<E>
     @Override
     protected void stop(E entity)
     {
-        BrainUtils.clearMemory(entity, MemoryModuleTypeRegister.TARGET.get());
-        BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.HAS_CHANGED_HITBOX_TIMER.get(), Unit.INSTANCE, 60);
+        BrainUtil.clearMemory(entity, MemoryModuleTypeRegister.TARGET.get());
+        BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.HAS_CHANGED_HITBOX_TIMER.get(), Unit.INSTANCE, 60);
     }
 
     private boolean isInHugRange(E entity)
     {
         boolean isInHugRange = false;
-        LivingEntity target = BrainUtils.getMemory(entity, MemoryModuleTypeRegister.TARGET.get());
+        LivingEntity target = BrainUtil.getMemory(entity, MemoryModuleTypeRegister.TARGET.get());
         if (target != null)
         {
             PositionTracker positionTracker = new EntityTracker(target, false);
@@ -62,12 +63,12 @@ public class Huging<E extends LivingEntity> extends ExtendedBehaviour<E>
 
     private void hug(E entity)
     {
-        LivingEntity target = BrainUtils.getMemory(entity, MemoryModuleTypeRegister.TARGET.get());
+        LivingEntity target = BrainUtil.getMemory(entity, MemoryModuleTypeRegister.TARGET.get());
         if (target != null)
         {
             if (target instanceof Monster)
             {
-                target.hurt(DamageSourcesCreator.create(ModDamageType.HUG_TO_DEATH, entity.level(), entity), Float.MAX_VALUE);
+                target.hurtServer((ServerLevel) entity.level(), DamageSourcesCreator.create(ModDamageType.HUG_TO_DEATH, entity.level(), entity), Float.MAX_VALUE);
             }
             else
             {

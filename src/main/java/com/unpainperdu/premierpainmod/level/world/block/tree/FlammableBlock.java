@@ -33,5 +33,4 @@ public class FlammableBlock extends Block
     {
         return fireSpreadSpeed;
     }
-
 }

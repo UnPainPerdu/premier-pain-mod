@@ -6,6 +6,7 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,14 +17,14 @@ public class FloweredLizardThrownEgg extends UniversalThrownEgg
         super(entityType, level);
     }
 
-    public FloweredLizardThrownEgg(Level level, LivingEntity shooter)
+    public FloweredLizardThrownEgg(Level level, LivingEntity shooter, ItemStack itemStack)
     {
-        super(AllInOneEntityRegister.FLOWERED_LIZARD_THROWN_EGG.get(), shooter, level);
+        super(AllInOneEntityRegister.FLOWERED_LIZARD_THROWN_EGG.get(), shooter, level, itemStack);
     }
 
-    public FloweredLizardThrownEgg(Level level, double x, double y, double z)
+    public FloweredLizardThrownEgg(Level level, double x, double y, double z, ItemStack itemStack)
     {
-        super(AllInOneEntityRegister.FLOWERED_LIZARD_THROWN_EGG.get(), x, y, z, level);
+        super(AllInOneEntityRegister.FLOWERED_LIZARD_THROWN_EGG.get(), x, y, z, level, itemStack);
     }
 
     @Override

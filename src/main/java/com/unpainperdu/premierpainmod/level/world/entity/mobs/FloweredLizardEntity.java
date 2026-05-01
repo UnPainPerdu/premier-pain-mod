@@ -84,7 +84,7 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
     }
 
     @Override
-    protected void customServerAiStep()
+    protected void customServerAiStep(ServerLevel level)
     {
         tickBrain(this);
     }
@@ -157,7 +157,7 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
     @Override
     public AgeableMob getBreedOffspring(@NotNull ServerLevel level, @NotNull AgeableMob otherParent)
     {
-        return AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY.get().create(level);
+        return AllInOneEntityRegister.FLOWERED_LIZARD_ENTITY.get().create(level, EntitySpawnReason.BREEDING);
     }
 
     public static AttributeSupplier.Builder createAttributes()
@@ -184,7 +184,7 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
         else if (this.isAlive() && !this.isBaby() && --this.eggTime <= 0)
         {
             this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-            this.spawnAtLocation(ItemRegister.FLOWERED_LIZARD_EGG);
+            this.spawnAtLocation((ServerLevel) this.level(), ItemRegister.FLOWERED_LIZARD_EGG);
             this.gameEvent(GameEvent.ENTITY_PLACE);
             this.eggTime = this.random.nextInt(9000) + 9000;
         }
@@ -233,13 +233,13 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
     public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand hand)
     {
         ItemStack itemstack = player.getItemInHand(hand);
-        if (itemstack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.BRUSH_BRUSH) && !this.isBaby())
+        if (itemstack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.BRUSH_BRUSH) && !this.isBaby() && !this.level().isClientSide())
         {
-            this.spawnAtLocation(new ItemStack(ItemRegister.FLOWERED_LIZARD_SCALE.get()));
+            this.spawnAtLocation((ServerLevel) this.level(), new ItemStack(ItemRegister.FLOWERED_LIZARD_SCALE.get()));
             this.gameEvent(GameEvent.ENTITY_INTERACT);
             this.playSound(SoundEvents.ARMADILLO_BRUSH);
             itemstack.hurtAndBreak(16, player, getSlotForHand(hand));
-            return InteractionResult.sidedSuccess(this.level().isClientSide);
+            return InteractionResult.SUCCESS;
         }
         else
         {
@@ -299,7 +299,7 @@ public class FloweredLizardEntity extends Animal implements SmartBrainOwner<Flow
         this.playSound(SoundEventRegister.FLOWERED_LIZARD_EAT.get(), 1.0F, 1.0F);
     }
 
-    public static boolean checkFloweredLizardSpawnRules(EntityType<? extends FloweredLizardEntity> floweredLizard, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random)
+    public static boolean checkFloweredLizardSpawnRules(EntityType<? extends FloweredLizardEntity> floweredLizard, LevelAccessor level, EntitySpawnReason entitySpawnReason, BlockPos pos, RandomSource random)
     {
         return level.getBlockState(pos.below()).is(BlockTags.DIRT) && isBrightEnoughToSpawn(level, pos);
     }

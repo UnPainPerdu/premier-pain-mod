@@ -1,11 +1,12 @@
 package com.unpainperdu.premierpainmod.client.gui.screen;
 
-import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.client.gui.render.FluidTankRenderer;
 import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerBrewingStationMenu;
+import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -30,21 +31,16 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
     {
-        guiGraphics.blit(getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(RenderType::guiTextured, getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, imageHeight, 256, 256);
         renderOutputItems(guiGraphics, partialTick);
         renderBrewingProgress(guiGraphics);
         renderFluidStack(guiGraphics);
     }
 
-    private static ResourceLocation loc(String path)
-    {
-        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
-    }
-
     @Override
     protected void containerTick()
     {
-        this.itemOutputStateTime ++;
+        this.itemOutputStateTime++;
         if (this.itemOutputStateTime == 30)
         {
             this.itemOutputState = 1;
@@ -66,24 +62,27 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
         ResourceLocation item;
         switch (this.itemOutputState)
         {
-            case 0 -> item = loc("container/functional_block/villager_brewing_station/bucket");
-            case 1 -> item = loc("container/functional_block/villager_brewing_station/bottle");
-            default -> item = loc("container/functional_block/villager_brewing_station/mug");
+            case 0 ->
+                    item = ResourceUtil.createResourceLocation("container/functional_block/villager_brewing_station/bucket");
+            case 1 ->
+                    item = ResourceUtil.createResourceLocation("container/functional_block/villager_brewing_station/bottle");
+            default ->
+                    item = ResourceUtil.createResourceLocation("container/functional_block/villager_brewing_station/mug");
         }
         if (this.menu.villagerBrewingStationBlockEntity.getItems().get(13).isEmpty())
         {
-            guiGraphics.blitSprite(item, 16,16, 0, 0, leftPos + 152,  topPos + 18, 16, 16);
+            guiGraphics.blitSprite(RenderType::guiTextured, item, 16, 16, 0, 0, leftPos + 152, topPos + 18, 16, 16);
         }
     }
 
     protected ResourceLocation getBackgroundTexture()
     {
-        return loc("textures/gui/container/all_materials_block/villager_brewing_station.png");
+        return ResourceUtil.createResourceLocation("textures/gui/container/all_materials_block/villager_brewing_station.png");
     }
 
     protected ResourceLocation getProgressTexture()
     {
-        return loc("container/functional_block/villager_brewing_station/bubble");
+        return ResourceUtil.createResourceLocation("container/functional_block/villager_brewing_station/bubble");
     }
 
     @Override
@@ -98,7 +97,7 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
         if (this.menu.isBrewing())
         {
             int j = this.menu.getBrewingProgress();
-            guiGraphics.blitSprite(getProgressTexture(), 16,27, 0, 27 - j, leftPos + 14,  topPos + 41 + 27 - j, 16, j);
+            guiGraphics.blitSprite(RenderType::guiTextured, getProgressTexture(), 16, 27, 0, 27 - j, leftPos + 14, topPos + 41 + 27 - j, 16, j);
         }
     }
 
@@ -119,7 +118,8 @@ public class VillagerBrewingStationScreen extends AbstractContainerScreen<Villag
     public void renderFluidTooltipArea(GuiGraphics guiGraphics, int pMouseX, int pMouseY, int x, int y,
                                        FluidStack stack, int offsetX, int offsetY, FluidTankRenderer renderer)
     {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, offsetX, offsetY, renderer)) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, offsetX, offsetY, renderer))
+        {
             guiGraphics.renderTooltip(this.font, renderer.getTooltip(stack, TooltipFlag.Default.NORMAL),
                     Optional.empty(), pMouseX - x, pMouseY - y);
         }

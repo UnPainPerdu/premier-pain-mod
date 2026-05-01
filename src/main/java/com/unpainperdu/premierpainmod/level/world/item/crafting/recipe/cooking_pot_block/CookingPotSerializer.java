@@ -13,7 +13,7 @@ public class CookingPotSerializer implements RecipeSerializer<CookingPotRecipe>
 {
 
     public static final MapCodec<CookingPotRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
-            SizedFluidIngredient.NESTED_CODEC.fieldOf("fluidInput").forGetter(CookingPotRecipe::getInputFluid),
+            SizedFluidIngredient.CODEC.fieldOf("fluidInput").forGetter(CookingPotRecipe::getInputFluid),
             Ingredient.CODEC.fieldOf("ingredient").forGetter(CookingPotRecipe::getInputItem),
             ItemStack.CODEC.fieldOf("result").forGetter(CookingPotRecipe::getResultItem)
     ).apply(inst, CookingPotRecipe::new));

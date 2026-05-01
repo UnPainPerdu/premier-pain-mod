@@ -15,8 +15,9 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.util.FastColor;
+import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -55,7 +56,7 @@ import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetRandomLookTar
 import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.ItemTemptingSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
-import net.tslat.smartbrainlib.util.BrainUtils;
+import net.tslat.smartbrainlib.util.BrainUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -163,7 +164,7 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     {
         return BrainActivityGroup.idleTasks(
                 new FirstApplicableBehaviour<WoolGolemEntity>(
-                        new RestoreHitbox<>(),
+                        new RestoreHitbox<>(), //TODO is this still used ? I remember fixed this
                         new SetHugTarget<>(),
                         new FollowTemptation<>().speedMod((g, p) -> 1.5F),
                         new SetEntityLookTarget<>(5),
@@ -238,7 +239,7 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
     }
 
     @Override
-    protected void customServerAiStep()
+    protected void customServerAiStep(ServerLevel level)
     {
         if (!isSat())
         {
@@ -376,8 +377,8 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         {
             setIsSat(true);
             this.getNavigation().stop();
-            BrainUtils.clearMemory(this, MemoryModuleType.WALK_TARGET);
-            BrainUtils.clearMemory(this, MemoryModuleTypeRegister.TARGET.get());
+            BrainUtil.clearMemory(this, MemoryModuleType.WALK_TARGET);
+            BrainUtil.clearMemory(this, MemoryModuleTypeRegister.TARGET.get());
             startSittingAnimation();
         }
         this.satCD = 60;
@@ -498,11 +499,11 @@ public class WoolGolemEntity extends AbstractGolem implements SmartBrainOwner<Wo
         else
         {
             int i = dyeColor.getTextureDiffuseColor();
-            return FastColor.ARGB32.color(
+            return ARGB.color(
                     255,
-                    Mth.floor((float) FastColor.ARGB32.red(i) * 0.75F),
-                    Mth.floor((float) FastColor.ARGB32.green(i) * 0.75F),
-                    Mth.floor((float) FastColor.ARGB32.blue(i) * 0.75F)
+                    Mth.floor((float) ARGB.red(i) * 0.75F),
+                    Mth.floor((float) ARGB.green(i) * 0.75F),
+                    Mth.floor((float) ARGB.blue(i) * 0.75F)
             );
         }
     }

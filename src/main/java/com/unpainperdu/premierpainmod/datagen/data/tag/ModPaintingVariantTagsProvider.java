@@ -5,17 +5,17 @@ import com.unpainperdu.premierpainmod.datagen.data.level.world.entity.ModPaintin
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.PaintingVariantTags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
 public class ModPaintingVariantTagsProvider extends net.minecraft.data.tags.PaintingVariantTagsProvider
 {
-    public ModPaintingVariantTagsProvider(PackOutput packOutput
-            , CompletableFuture<HolderLookup.Provider> lookupProvider
-            , ExistingFileHelper fileHelper)
+    public ModPaintingVariantTagsProvider(
+            PackOutput packOutput,
+            CompletableFuture<HolderLookup.Provider> lookupProvider
+    )
     {
-        super(packOutput, lookupProvider, PremierPainMod.MOD_ID, fileHelper);
+        super(packOutput, lookupProvider, PremierPainMod.MOD_ID);
     }
 
     @Override
@@ -31,6 +31,5 @@ public class ModPaintingVariantTagsProvider extends net.minecraft.data.tags.Pain
                         ModPaintingVariant.FLOWERD_CACTUS,
                         ModPaintingVariant.UNDERGROUND_GATE
                 );
-
     }
 }

@@ -114,10 +114,10 @@ public class CookingPotMenu extends AbstractContainerMenu
     }
 
     @Override
-    public void removed(@NotNull Player pPlayer)
+    public void removed(@NotNull Player player)
     {
-        super.removed(pPlayer);
-        this.container.stopOpen(pPlayer);
+        super.removed(player);
+        this.container.stopOpen(player);
     }
 
     /**

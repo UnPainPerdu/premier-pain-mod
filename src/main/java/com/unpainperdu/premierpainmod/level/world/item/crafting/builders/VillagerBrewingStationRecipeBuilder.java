@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.item.crafting.builders;
 
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
+import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;
@@ -8,9 +9,10 @@ import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import org.jetbrains.annotations.Nullable;
@@ -34,6 +36,7 @@ public class VillagerBrewingStationRecipeBuilder implements RecipeBuilder
         this.ingredients = ingredients;
         this.result = result;
     }
+
     @Override
     public RecipeBuilder unlockedBy(String name, Criterion<?> criterion)
     {
@@ -55,14 +58,14 @@ public class VillagerBrewingStationRecipeBuilder implements RecipeBuilder
     }
 
     @Override
-    public void save(RecipeOutput output, ResourceLocation id)
+    public void save(RecipeOutput output, ResourceKey<Recipe<?>> resourceKey)
     {
         Advancement.Builder advancement = output.advancement()
-                .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
-                .rewards(AdvancementRewards.Builder.recipe(id))
+                .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(resourceKey))
+                .rewards(AdvancementRewards.Builder.recipe(resourceKey))
                 .requirements(AdvancementRequirements.Strategy.OR);
         this.criteria.forEach(advancement::addCriterion);
         VillagerBrewingStationRecipe recipe = new VillagerBrewingStationRecipe(this.inputFluid, this.ingredients, this.result);
-        output.accept(id, recipe, advancement.build(id.withPrefix("recipes/")));
+        output.accept(resourceKey, recipe, advancement.build(ResourceUtil.createResourceLocation("recipes/" + resourceKey.location().getPath())));
     }
 }

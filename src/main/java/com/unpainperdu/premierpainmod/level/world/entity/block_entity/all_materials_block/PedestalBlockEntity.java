@@ -27,42 +27,50 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
 {
     private final NonNullList<ItemStack> items = NonNullList.withSize(1, ItemStack.EMPTY);
 
-    public PedestalBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(BlockEntityRegister.PEDESTAL_BLOCK_ENTITY.get(), pPos, pBlockState);
+    public PedestalBlockEntity(BlockPos pos, BlockState blockState)
+    {
+        super(BlockEntityRegister.PEDESTAL_BLOCK_ENTITY.get(), pos, blockState);
     }
+
     @Override
-    public void clearContent() {
+    public void clearContent()
+    {
         this.items.clear();
     }
-    public NonNullList<ItemStack> getItems() {
+
+    public NonNullList<ItemStack> getItems()
+    {
         return this.items;
     }
 
-    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+    public ClientboundBlockEntityDataPacket getUpdatePacket()
+    {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
-    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider pRegistries)
+    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider registries)
     {
         CompoundTag compoundtag = new CompoundTag();
-        ContainerHelper.saveAllItems(compoundtag, this.items, true, pRegistries);
+        ContainerHelper.saveAllItems(compoundtag, this.items, true, registries);
         return compoundtag;
-    }
-    @Override
-    protected void loadAdditional(@NotNull CompoundTag pTag, HolderLookup.@NotNull Provider pRegistries)
-    {
-        super.loadAdditional(pTag, pRegistries);
-        this.items.clear();
-        ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
     }
 
     @Override
-    protected void saveAdditional(@NotNull CompoundTag pTag, HolderLookup.@NotNull Provider pRegistries)
+    protected void loadAdditional(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries)
     {
-        super.saveAdditional(pTag, pRegistries);
-        ContainerHelper.saveAllItems(pTag, this.items, true, pRegistries);
+        super.loadAdditional(tag, registries);
+        this.items.clear();
+        ContainerHelper.loadAllItems(tag, this.items, registries);
     }
+
+    @Override
+    protected void saveAdditional(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries)
+    {
+        super.saveAdditional(tag, registries);
+        ContainerHelper.saveAllItems(tag, this.items, true, registries);
+    }
+
     private void markUpdated()
     {
         if (this.level != null)
@@ -71,6 +79,7 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
             this.level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
         }
     }
+
     public boolean placeItem(@Nullable LivingEntity entity, ItemStack itemStack)
     {
         for (int i = 0; i < this.items.size(); i++)
@@ -86,6 +95,7 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
         }
         return false;
     }
+
     public boolean removeItem(BlockPos pPos, Level level, @Nullable LivingEntity entity, ItemStack itemStack)
     {
         for (int i = 0; i < this.items.size(); i++)
@@ -103,24 +113,17 @@ public class PedestalBlockEntity extends BlockEntity implements Clearable
         return false;
     }
 
-    public void dowse()
+    @Override
+    protected void applyImplicitComponents(BlockEntity.@NotNull DataComponentInput componentInput)
     {
-        if (this.level != null)
-        {
-            this.markUpdated();
-        }
+        super.applyImplicitComponents(componentInput);
+        componentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(this.getItems());
     }
 
     @Override
-    protected void applyImplicitComponents(BlockEntity.@NotNull DataComponentInput pComponentInput) {
-        super.applyImplicitComponents(pComponentInput);
-        pComponentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(this.getItems());
-    }
-
-    @Override
-    protected void collectImplicitComponents(DataComponentMap.@NotNull Builder pComponents) {
-        super.collectImplicitComponents(pComponents);
-        pComponents.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItems()));
+    protected void collectImplicitComponents(DataComponentMap.@NotNull Builder components)
+    {
+        super.collectImplicitComponents(components);
+        components.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItems()));
     }
 }
-

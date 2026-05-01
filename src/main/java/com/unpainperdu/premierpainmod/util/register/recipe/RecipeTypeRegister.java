@@ -13,10 +13,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class RecipeTypeRegister
 {
-    private RecipeTypeRegister()
-    {
-    }
-
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPE = DeferredRegister.create(Registries.RECIPE_TYPE, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<RecipeType<?>, RecipeType<VillagerWorkshopRecipe>> VILLAGER_WORKSHOP_RECIPE_TYPE = registerType("villager_workshopping");

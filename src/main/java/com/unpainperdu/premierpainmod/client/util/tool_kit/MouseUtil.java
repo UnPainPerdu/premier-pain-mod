@@ -4,10 +4,6 @@ import com.unpainperdu.premierpainmod.client.gui.render.FluidTankRenderer;
 
 public class MouseUtil
 {
-    private MouseUtil()
-    {
-    }
-
     public static boolean isMouseAboveFluidArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, FluidTankRenderer renderer)
     {
         return isMouseOver(pMouseX, pMouseY, x + offsetX, y + offsetY, renderer.getWidth(), renderer.getHeight());

@@ -12,10 +12,6 @@ import java.util.function.Supplier;
 
 public class CodecForGLMRegister
 {
-    private CodecForGLMRegister()
-    {
-    }
-
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> GLOBAL_LOOT_MODIFIER_SERIALIZERS =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, PremierPainMod.MOD_ID);
 

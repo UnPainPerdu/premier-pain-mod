@@ -1,15 +1,14 @@
 package com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTwoBlockWidthWithBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -32,7 +31,6 @@ public class WallVillagerShelf extends VillagerShelf
     public static final MapCodec<WallVillagerShelf> CODEC = simpleCodec(WallVillagerShelf::new);
 
 
-
     public WallVillagerShelf(Properties pProperties)
     {
         super(pProperties);
@@ -52,36 +50,47 @@ public class WallVillagerShelf extends VillagerShelf
         TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
         Direction direction = state.getValue(FACING);
 
-        if(direction == Direction.SOUTH)
+        if (direction == Direction.SOUTH)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_SOUTH;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_SOUTH;
             }
-        } else if (direction == Direction.WEST)
+        }
+        else if (direction == Direction.WEST)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_WEST;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_WEST;
             }
-        } else if (direction == Direction.EAST)
+        }
+        else if (direction == Direction.EAST)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_EAST;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_EAST;
             }
-        } else
+        }
+        else
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_NORTH;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_NORTH;
             }
         }
@@ -89,7 +98,7 @@ public class WallVillagerShelf extends VillagerShelf
 
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder)
     {
-        builder.add(new Property[]{FACING, PART, WATERLOGGED});
+        builder.add(FACING, PART, WATERLOGGED);
     }
 
     @Override

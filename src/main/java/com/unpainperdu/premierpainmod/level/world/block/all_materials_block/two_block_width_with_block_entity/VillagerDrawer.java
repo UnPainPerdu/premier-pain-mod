@@ -14,7 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -62,36 +61,47 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
         TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
         Direction direction = state.getValue(FACING);
 
-        if(direction == Direction.SOUTH)
+        if (direction == Direction.SOUTH)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_SOUTH;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_SOUTH;
             }
-        } else if (direction == Direction.WEST)
+        }
+        else if (direction == Direction.WEST)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_WEST;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_WEST;
             }
-        } else if (direction == Direction.EAST)
+        }
+        else if (direction == Direction.EAST)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_EAST;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_EAST;
             }
-        } else
+        }
+        else
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_NORTH;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_NORTH;
             }
         }
@@ -99,7 +109,7 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
 
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder)
     {
-        builder.add(new Property[]{FACING, PART, WATERLOGGED, OPEN});
+        builder.add(FACING, PART, WATERLOGGED, OPEN);
     }
 
     @Nullable
@@ -108,11 +118,6 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
     {
         return new VillagerDrawerBlockEntity(pPos, pState);
-    }
-
-    @Override
-    protected RenderShape getRenderShape(BlockState pState) {
-        return RenderShape.MODEL;
     }
 
     @Override
@@ -127,7 +132,7 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
             BlockEntity blockentity = pLevel.getBlockEntity(pPos);
             if (blockentity instanceof VillagerDrawerBlockEntity)
             {
-                pPlayer.openMenu((VillagerDrawerBlockEntity)blockentity);
+                pPlayer.openMenu((VillagerDrawerBlockEntity) blockentity);
             }
             return InteractionResult.CONSUME;
         }
@@ -146,7 +151,7 @@ public class VillagerDrawer extends AbstractTwoBlockWidthWithBlockEntity
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
         if (blockentity instanceof VillagerDrawerBlockEntity)
         {
-            ((VillagerDrawerBlockEntity)blockentity).recheckOpen();
+            ((VillagerDrawerBlockEntity) blockentity).recheckOpen();
         }
     }
 }

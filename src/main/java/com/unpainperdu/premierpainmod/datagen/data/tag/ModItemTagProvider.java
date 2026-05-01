@@ -16,7 +16,6 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -25,12 +24,13 @@ import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.getModNa
 
 public class ModItemTagProvider extends ItemTagsProvider
 {
-    public ModItemTagProvider(PackOutput packOutput
+    public ModItemTagProvider(
+            PackOutput packOutput
             , CompletableFuture<HolderLookup.Provider> lookupProvider
             , CompletableFuture<TagLookup<Block>> blockTags
-            , ExistingFileHelper fileHelper)
+    )
     {
-        super(packOutput, lookupProvider, blockTags, PremierPainMod.MOD_ID, fileHelper);
+        super(packOutput, lookupProvider, blockTags, PremierPainMod.MOD_ID);
     }
 
     @Override
@@ -42,8 +42,6 @@ public class ModItemTagProvider extends ItemTagsProvider
                 ItemRegister.ACHIOTE_FRUIT.asItem()
         );
 
-        copy(BlockTags.FLOWERS, ItemTags.FLOWERS);
-        copy(BlockTags.TALL_FLOWERS, ItemTags.TALL_FLOWERS);
         copy(BlockTags.LOGS, ItemTags.LOGS);
         copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
         copy(BlockTags.PLANKS, ItemTags.PLANKS);

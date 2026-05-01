@@ -1,11 +1,12 @@
 package com.unpainperdu.premierpainmod.client.gui.screen;
 
-import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerWorkshopMenu;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.VillagerWorkshopRecipe;
-import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_workshop_menu.VillagerWorkshopMenu;
+import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -43,6 +44,7 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
         menu.registerUpdateListener(this::containerChanged);
         --titleLabelY;
     }
+
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick)
     {
@@ -53,10 +55,10 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
     {
-        guiGraphics.blit(getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(RenderType::guiTextured, getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, imageHeight, 256, 256);
         int i = (int) (41 * scrollOffs);
         ResourceLocation scrollerLoc = isScrollBarActive() ? getScrollerSprite() : getScrollerDisabledSprite();
-        guiGraphics.blitSprite(scrollerLoc, leftPos + 119, topPos + 15 + i, SCROLLER_WIDTH, SCROLLER_HEIGHT);
+        guiGraphics.blitSprite(RenderType::guiTextured, scrollerLoc, leftPos + 119, topPos + 15 + i, SCROLLER_WIDTH, SCROLLER_HEIGHT);
         int listStartX = leftPos + RECIPE_LIST_X;
         int listStartY = topPos + RECIPE_LIST_Y;
         int j1 = startIndex + 12;
@@ -82,7 +84,7 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
                 int i2 = listStartY + i / 4 * RECIPE_BUTTON_HEIGHT + 2;
                 if (mouseX >= i1 && mouseX < i1 + RECIPE_BUTTON_WIDTH && mouseY >= i2 && mouseY < i2 + RECIPE_BUTTON_HEIGHT)
                 {
-                    guiGraphics.renderTooltip(font, recipes.get(l).value().getResultItem(minecraft.level.registryAccess()), mouseX, mouseY);
+                    guiGraphics.renderTooltip(font, recipes.get(l).value().result(), mouseX, mouseY);
                 }
             }
         }
@@ -97,7 +99,8 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
             int l = j / RECIPE_COLUMNS;
             int i1 = listStartY + l * RECIPE_BUTTON_HEIGHT + 2;
             ResourceLocation buttonLoc = getRecipeSprite();
-            if (i == menu.getSelectedRecipeIndex()) {
+            if (i == menu.getSelectedRecipeIndex())
+            {
                 buttonLoc = getRecipeSelectedSprite();
             }
             else if (mouseX >= k && mouseY >= i1 && mouseX < k + RECIPE_BUTTON_WIDTH && mouseY < i1 + RECIPE_BUTTON_HEIGHT)
@@ -105,7 +108,7 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
                 buttonLoc = getRecipeHighlightedSprite();
             }
 
-            guiGraphics.blitSprite(buttonLoc, k, i1 - 1, 16, 18);
+            guiGraphics.blitSprite(RenderType::guiTextured, buttonLoc, k, i1 - 1, 16, 18);
         }
     }
 
@@ -119,7 +122,7 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
             int x = listStartX + j % RECIPE_COLUMNS * RECIPE_BUTTON_WIDTH;
             int l = j / RECIPE_COLUMNS;
             int y = listStartY + l * RECIPE_BUTTON_HEIGHT + 2;
-            guiGraphics.renderItem(recipes.get(i).value().getResultItem(minecraft.level.registryAccess()), x, y);
+            guiGraphics.renderItem(recipes.get(i).value().result(), x, y);
         }
     }
 
@@ -175,7 +178,8 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double d, double d1)
     {
-        if (isScrollBarActive()) {
+        if (isScrollBarActive())
+        {
             int i = getOffscreenRows();
             float f = (float) d1 / (float) i;
             scrollOffs = Mth.clamp(scrollOffs - f, 0.0F, 1.0F);
@@ -198,37 +202,40 @@ public class VillagerWorkshopRecipeScreen extends AbstractContainerScreen<Villag
     private void containerChanged()
     {
         displayRecipes = menu.hasInputItem();
-        if (!displayRecipes) {
+        if (!displayRecipes)
+        {
             scrollOffs = 0;
             startIndex = 0;
         }
     }
-    private static ResourceLocation loc(String path)
+
+    protected ResourceLocation getBackgroundTexture()
     {
-        return ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, path);
+        return ResourceUtil.createResourceLocation("textures/gui/container/functional_block/villager_workshop.png");
     }
 
-    protected ResourceLocation getBackgroundTexture() {
-        return loc("textures/gui/container/functional_block/villager_workshop.png");
+    protected ResourceLocation getScrollerSprite()
+    {
+        return ResourceUtil.createResourceLocation("container/functional_block/villager_workshop/scroller");
     }
 
-    protected ResourceLocation getScrollerSprite() {
-        return loc("container/functional_block/villager_workshop/scroller");
+    protected ResourceLocation getScrollerDisabledSprite()
+    {
+        return ResourceUtil.createResourceLocation("container/functional_block/villager_workshop/scroller_disabled");
     }
 
-    protected ResourceLocation getScrollerDisabledSprite() {
-        return loc("container/functional_block/villager_workshop/scroller_disabled");
+    protected ResourceLocation getRecipeSprite()
+    {
+        return ResourceUtil.createResourceLocation("container/functional_block/villager_workshop/recipe");
     }
 
-    protected ResourceLocation getRecipeSprite() {
-        return loc("container/functional_block/villager_workshop/recipe");
+    protected ResourceLocation getRecipeSelectedSprite()
+    {
+        return ResourceUtil.createResourceLocation("container/functional_block/villager_workshop/recipe_selected");
     }
 
-    protected ResourceLocation getRecipeSelectedSprite() {
-        return loc("container/functional_block/villager_workshop/recipe_selected");
-    }
-
-    protected ResourceLocation getRecipeHighlightedSprite() {
-        return loc("container/functional_block/villager_workshop/recipe_highlighted");
+    protected ResourceLocation getRecipeHighlightedSprite()
+    {
+        return ResourceUtil.createResourceLocation("container/functional_block/villager_workshop/recipe_highlighted");
     }
 }

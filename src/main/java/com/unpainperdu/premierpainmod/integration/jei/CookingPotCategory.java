@@ -9,13 +9,14 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
-import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.api.recipe.types.IRecipeType;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,7 +32,7 @@ public class CookingPotCategory implements IRecipeCategory<CookingPotRecipe>
     }
 
     @Override
-    public @NotNull RecipeType<CookingPotRecipe> getRecipeType()
+    public @NotNull IRecipeType<CookingPotRecipe> getRecipeType()
     {
         return JEIRecipeType.COOKING_POT_STATION_TYPE;
     }
@@ -51,13 +52,12 @@ public class CookingPotCategory implements IRecipeCategory<CookingPotRecipe>
     @Override
     public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull CookingPotRecipe recipe, @NotNull IFocusGroup focuses)
     {
-        FluidStack inputFluid = recipe.getInputFluid().getFluids()[0];
-        ItemStack inputItem = recipe.getInputItem().getItems()[0];
+        SizedFluidIngredient inputFluid = recipe.getInputFluid();
+        Item inputItem = recipe.getInputItem().getValues().get(0).value();
         ItemStack outputItem = recipe.getResultItem();
-
-        builder.addSlot(RecipeIngredientRole.INPUT, 13, 14).addFluidStack(inputFluid.getFluid(), inputFluid.getAmount()).setFluidRenderer(1000, true, 16, 43);
-        builder.addSlot(RecipeIngredientRole.INPUT, 43, 28).addItemStack(inputItem);
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 91, 28).addItemStack(outputItem);
+        builder.addSlot(RecipeIngredientRole.INPUT, 13, 14).add(inputFluid.ingredient().fluids().getFirst().value(), inputFluid.amount()).setFluidRenderer(1000, true, 16, 43);
+        builder.addSlot(RecipeIngredientRole.INPUT, 43, 28).add(inputItem);
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 91, 28).add(outputItem);
     }
 
     @Override

@@ -5,7 +5,6 @@ import com.unpainperdu.premierpainmod.util.register.ParticleTypeRegister;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.ParticleDescriptionProvider;
 
 public class ModParticleDescriptionProvider extends ParticleDescriptionProvider
@@ -13,12 +12,11 @@ public class ModParticleDescriptionProvider extends ParticleDescriptionProvider
     /**
      * Creates an instance of the data provider.
      *
-     * @param output     the expected root directory the data generator outputs to
-     * @param fileHelper the helper used to validate a texture's existence
+     * @param output the expected root directory the data generator outputs to
      */
-    public ModParticleDescriptionProvider(PackOutput output, ExistingFileHelper fileHelper)
+    public ModParticleDescriptionProvider(PackOutput output)
     {
-        super(output, fileHelper);
+        super(output);
     }
 
     @Override

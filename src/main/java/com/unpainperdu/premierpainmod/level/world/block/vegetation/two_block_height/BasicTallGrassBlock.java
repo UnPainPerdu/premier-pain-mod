@@ -27,6 +27,5 @@ public class BasicTallGrassBlock extends AbstractTallGrass
     @Override
     protected void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, Entity entity)
     {
-
     }
 }

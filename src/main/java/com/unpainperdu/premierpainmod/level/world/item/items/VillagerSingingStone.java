@@ -6,7 +6,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -25,7 +25,7 @@ public class VillagerSingingStone extends Item
     private final Supplier<ItemEvent> eventSupplier;
     private final int delay;
 
-    public VillagerSingingStone(Properties properties, Supplier<ItemEvent> eventSupplier, int delay)
+    public VillagerSingingStone(Supplier<ItemEvent> eventSupplier, int delay, Properties properties)
     {
         super(properties);
         this.eventSupplier = eventSupplier;
@@ -39,19 +39,19 @@ public class VillagerSingingStone extends Item
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand usedHand)
+    public @NotNull InteractionResult use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand)
     {
         playSound(level, player, getEvent().getMusicEvent());
-        ItemStack itemstack = player.getItemInHand(usedHand);
-        player.startUsingItem(usedHand);
-        player.getCooldowns().addCooldown(this, this.delay);
+        ItemStack itemstack = player.getItemInHand(hand);
+        player.startUsingItem(hand);
+        player.getCooldowns().addCooldown(itemstack, this.delay);
         player.awardStat(Stats.ITEM_USED.get(this));
         int randomNumber = new Random().nextInt(100);
         if ((player.isCreative()) || (randomNumber < 35) || ((randomNumber < 95) && (player.hasEffect(MobEffects.HERO_OF_THE_VILLAGE))))
         {
-            this.getEvent().castEvent(level, player, usedHand);
+            this.getEvent().castEvent(level, player, hand);
         }
-        return InteractionResultHolder.consume(itemstack);
+        return InteractionResult.CONSUME;
     }
 
     @Override

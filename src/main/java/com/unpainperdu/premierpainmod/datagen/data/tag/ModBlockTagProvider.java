@@ -30,7 +30,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -40,9 +39,9 @@ import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.getModNa
 
 public class ModBlockTagProvider extends BlockTagsProvider
 {
-    public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper fileHelper)
+    public ModBlockTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider)
     {
-        super(packOutput, lookupProvider, PremierPainMod.MOD_ID, fileHelper);
+        super(packOutput, lookupProvider, PremierPainMod.MOD_ID);
     }
 
     // only one this.tag(...) per tags
@@ -396,10 +395,6 @@ public class ModBlockTagProvider extends BlockTagsProvider
                         SkySpearsFlower.class,
                         TallFlowerBlock.class
                 ).stream()
-        );
-        this.addToTag(
-                BlockTags.TALL_FLOWERS,
-                ModBLockList.getAllBlocksFromClass(TallFlowerBlock.class).stream()
         );
         this.addToTag(
                 BlockTags.SAPLINGS,

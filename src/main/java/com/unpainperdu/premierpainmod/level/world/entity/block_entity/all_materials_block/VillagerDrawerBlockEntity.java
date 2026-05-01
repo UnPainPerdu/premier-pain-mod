@@ -1,8 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerDrawerMenu;
 import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
-import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_drawer_menu.VillagerDrawerMenu;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -30,46 +30,48 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter()
     {
         @Override
-        protected void onOpen(Level pLevel, BlockPos pBlockPos, BlockState pBlockState)
+        protected void onOpen(Level level, BlockPos blockPos, BlockState blockState)
         {
-            VillagerDrawerBlockEntity.this.playSound(pBlockState, SoundEvents.BARREL_OPEN, pBlockPos, pLevel);
-            VillagerDrawerBlockEntity.this.updateBlockState(pBlockState, true);
+            VillagerDrawerBlockEntity.this.playSound(SoundEvents.BARREL_OPEN, blockPos, level);
+            VillagerDrawerBlockEntity.this.updateBlockState(blockState, true);
         }
 
         @Override
-        protected void onClose(Level pLevel, BlockPos pBlockPos, BlockState pBlockState)
+        protected void onClose(Level level, BlockPos pos, BlockState state)
         {
-            VillagerDrawerBlockEntity.this.playSound(pBlockState, SoundEvents.BARREL_CLOSE, pBlockPos, pLevel);
-            VillagerDrawerBlockEntity.this.updateBlockState(pBlockState, false);
+            VillagerDrawerBlockEntity.this.playSound(SoundEvents.BARREL_CLOSE, pos, level);
+            VillagerDrawerBlockEntity.this.updateBlockState(state, false);
         }
 
         @Override
-        protected void openerCountChanged(Level p_155066_, BlockPos p_155067_, BlockState p_155068_, int p_155069_, int p_155070_)
+        protected void openerCountChanged(Level level, BlockPos pos, BlockState state, int count, int openCount)
         {
         }
 
         @Override
-        protected boolean isOwnContainer(Player p_155060_)
+        protected boolean isOwnContainer(Player player)
         {
-            if (p_155060_.containerMenu instanceof VillagerDrawerMenu)
+            if (player.containerMenu instanceof VillagerDrawerMenu)
             {
-                Container container = ((VillagerDrawerMenu)p_155060_.containerMenu).getContainer();
+                Container container = ((VillagerDrawerMenu) player.containerMenu).getContainer();
                 return container == VillagerDrawerBlockEntity.this;
-            } else {
+            }
+            else
+            {
                 return false;
             }
         }
     };
 
-    public VillagerDrawerBlockEntity( BlockPos pPos, BlockState pBlockState)
+    public VillagerDrawerBlockEntity(BlockPos pos, BlockState state)
     {
-        super(BlockEntityRegister.VILLAGER_DRAWER_BLOCK_ENTITY.get(), pPos, pBlockState);
+        super(BlockEntityRegister.VILLAGER_DRAWER_BLOCK_ENTITY.get(), pos, state);
     }
 
     @Override
     protected Component getDefaultName()
     {
-        return Component.translatable("container."+ PremierPainMod.MOD_ID +".villager_drawer");
+        return Component.translatable("container." + PremierPainMod.MOD_ID + ".villager_drawer");
     }
 
     @Override
@@ -79,15 +81,15 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
     }
 
     @Override
-    protected void setItems(NonNullList<ItemStack> pItems)
+    protected void setItems(NonNullList<ItemStack> items)
     {
-        this.items = pItems;
+        this.items = items;
     }
 
     @Override
-    protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer)
+    protected AbstractContainerMenu createMenu(int id, Inventory player)
     {
-        return VillagerDrawerMenu.VillagerDrawerMenu(pId, pPlayer, this);
+        return VillagerDrawerMenu.VillagerDrawerMenu(id, player, this);
     }
 
     @Override
@@ -97,36 +99,36 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
     }
 
     @Override
-    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)
     {
-        super.loadAdditional(pTag, pRegistries);
+        super.loadAdditional(tag, registries);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
+        ContainerHelper.loadAllItems(tag, this.items, registries);
     }
 
     @Override
-    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)
     {
-        super.saveAdditional(pTag, pRegistries);
-        ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
+        super.saveAdditional(tag, registries);
+        ContainerHelper.saveAllItems(tag, this.items, registries);
     }
 
 
     @Override
-    public void startOpen(Player pPlayer)
+    public void startOpen(Player player)
     {
-        if (!this.remove && !pPlayer.isSpectator())
+        if (!this.remove && !player.isSpectator())
         {
-            this.openersCounter.incrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+            this.openersCounter.incrementOpeners(player, this.getLevel(), this.getBlockPos(), this.getBlockState());
         }
     }
 
     @Override
-    public void stopOpen(Player pPlayer)
+    public void stopOpen(Player player)
     {
-        if (!this.remove && !pPlayer.isSpectator())
+        if (!this.remove && !player.isSpectator())
         {
-            this.openersCounter.decrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+            this.openersCounter.decrementOpeners(player, this.getLevel(), this.getBlockPos(), this.getBlockState());
         }
     }
 
@@ -137,12 +139,14 @@ public class VillagerDrawerBlockEntity extends BaseContainerBlockEntity
             this.openersCounter.recheckOpeners(this.getLevel(), this.getBlockPos(), this.getBlockState());
         }
     }
-    void playSound(BlockState pState, SoundEvent pSound, BlockPos pos, Level level)
+
+    void playSound(SoundEvent sound, BlockPos pos, Level level)
     {
-        level.playSound(null, pos, pSound, SoundSource.BLOCKS, 1.0F, 1.0F);
+        level.playSound(null, pos, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
     }
-    void updateBlockState(BlockState pState, boolean pOpen)
+
+    void updateBlockState(BlockState state, boolean open)
     {
-        this.level.setBlock(this.getBlockPos(), pState.setValue(VillagerDrawer.OPEN, Boolean.valueOf(pOpen)), 3);
+        this.level.setBlock(this.getBlockPos(), state.setValue(VillagerDrawer.OPEN, open), 3);
     }
 }

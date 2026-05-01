@@ -30,7 +30,8 @@ public class BlockAndItemTintingEvent
         setTintingForVegetation(event, BlockRegister.WEEPING_WILLOW_WOOD_TYPE_MAP.get(leaves).get());
         setTintingForTintedCrossModel(event, BlockRegister.FALLING_WEEPING_WILLOW_LEAVES.get());
     }
-
+    //TODO primer 1.21.4 -> now in item model
+    /*
     @SubscribeEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event)
     {
@@ -43,12 +44,13 @@ public class BlockAndItemTintingEvent
                 BlockRegister.FALLING_WEEPING_WILLOW_LEAVES
         );
     }
+    */
 
     private static void setTintingForVegetation(RegisterColorHandlersEvent.Block event, Block block)
     {
         event.register((state, level, pos, tintIndex) -> level != null && pos != null
                         ? BiomeColors.getAverageFoliageColor(level, pos)
-                        : FoliageColor.getDefaultColor(),
+                        : FoliageColor.FOLIAGE_DEFAULT,
                 block);
     }
 
@@ -65,7 +67,7 @@ public class BlockAndItemTintingEvent
         {
             color = level != null && pos != null
                     ? BiomeColors.getAverageFoliageColor(level, pos)
-                    : FoliageColor.getDefaultColor();
+                    : FoliageColor.FOLIAGE_DEFAULT;
         }
 
         return color;
@@ -84,7 +86,7 @@ public class BlockAndItemTintingEvent
         {
             color = level != null && pos != null
                     ? BiomeColors.getAverageFoliageColor(level, pos)
-                    : FoliageColor.getDefaultColor();
+                    : FoliageColor.FOLIAGE_DEFAULT;
         }
 
         return color;

@@ -12,17 +12,15 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
 public class ModBiomeTagProvider extends BiomeTagsProvider
 {
-    public ModBiomeTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper)
+    public ModBiomeTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> provider)
     {
-        super(pOutput, provider, PremierPainMod.MOD_ID, existingFileHelper);
+        super(pOutput, provider, PremierPainMod.MOD_ID);
     }
 
     @Override
@@ -64,7 +62,7 @@ public class ModBiomeTagProvider extends BiomeTagsProvider
                 ModBiomeTags.HAS_OLD_GREAT_FIELD
         );
         //  underground
-                //gypsum cave
+        //gypsum cave
         generateTagsForOverWorldBiome(ModOverWorldUndergroundBiomes.GYPSUM_CAVE,
                 Tags.Biomes.IS_CAVE,
                 Tags.Biomes.IS_WET,

@@ -9,8 +9,8 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -69,14 +69,14 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
     }
 
     @Override
-    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction direction, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos facingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (!state.canSurvive(level, pos))
+        if (!selfState.canSurvive(level, selfPos))
         {
-            level.scheduleTick(pos, this, 1);
+            scheduledTickAccess.createTick(selfPos, this, 1);
         }
 
-        return super.updateShape(state, direction, facingState, level, pos, facingPos);
+        return super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
@@ -85,7 +85,7 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
         boolean flag = false;
         state = level.getBlockState(pos);
         BlockState stateBelow = level.getBlockState(pos.below());
-        if(state.getBlock() instanceof AirBlock)
+        if (state.getBlock() instanceof AirBlock)
         {
             if (stateBelow.is(BLOCKS_ON))
             {
@@ -147,15 +147,18 @@ public abstract class AbstractCropLikeBlock extends Block implements Bonemealabl
     @Override
     protected abstract @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context);
 
-    public final boolean isMaxAge(BlockState state) {
+    public final boolean isMaxAge(BlockState state)
+    {
         return this.getAge(state) >= this.getMaxAge();
     }
 
-    public int getAge(BlockState state) {
+    public int getAge(BlockState state)
+    {
         return state.getValue(this.getAgeProperty());
     }
 
-    protected IntegerProperty getAgeProperty() {
+    protected IntegerProperty getAgeProperty()
+    {
         return AGE;
     }
 

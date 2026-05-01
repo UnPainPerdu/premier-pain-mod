@@ -4,10 +4,7 @@ import com.unpainperdu.premierpainmod.util.register.recipe.RecipeSerializerRegis
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
@@ -18,6 +15,7 @@ public class CookingPotRecipe implements Recipe<CookingPotInput>
     private final SizedFluidIngredient inputFluid;
     private final Ingredient inputItem;
     private final ItemStack result;
+    private PlacementInfo placementInfo;
 
     public CookingPotRecipe(SizedFluidIngredient inputFluid, Ingredient inputItem, ItemStack result)
     {
@@ -51,17 +49,6 @@ public class CookingPotRecipe implements Recipe<CookingPotInput>
         return this.result.copy();
     }
 
-    @Override
-    public boolean canCraftInDimensions(int width, int height)
-    {
-        return false;
-    }
-
-    @Override
-    public @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider registries)
-    {
-        return getResultItem();
-    }
 
     public ItemStack getResultItem()
     {
@@ -79,15 +66,32 @@ public class CookingPotRecipe implements Recipe<CookingPotInput>
     }
 
     @Override
-    public @NotNull RecipeSerializer<?> getSerializer()
+    public RecipeSerializer<? extends Recipe<CookingPotInput>> getSerializer()
     {
         return RecipeSerializerRegister.COOKING_POT_SERIALIZER.get();
     }
 
     @Override
-    public @NotNull RecipeType<?> getType()
+    public @NotNull RecipeType<? extends Recipe<CookingPotInput>> getType()
     {
         return RecipeTypeRegister.COOKING_POT_RECIPE_TYPE.get();
+    }
+
+    @Override
+    public PlacementInfo placementInfo()
+    {
+        if (this.placementInfo == null)
+        {
+            this.placementInfo = PlacementInfo.create(this.getInputItem());
+        }
+
+        return this.placementInfo;
+    }
+
+    @Override
+    public RecipeBookCategory recipeBookCategory()
+    {
+        return null;
     }
 
     @Override

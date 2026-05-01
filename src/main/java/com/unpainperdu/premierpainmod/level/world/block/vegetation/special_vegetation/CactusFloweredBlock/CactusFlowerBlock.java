@@ -7,8 +7,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -36,14 +36,14 @@ public class CactusFlowerBlock extends Block
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, Direction direction, BlockState pFacingState, LevelAccessor level, BlockPos pos, BlockPos pFacingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (!state.canSurvive(level, pos))
+        if (!selfState.canSurvive(level, selfPos))
         {
-            level.scheduleTick(pos, this, 1);
+            scheduledTickAccess.createTick(selfPos, this, 1);
         }
 
-        return super.updateShape(state, direction, pFacingState, level, pos, pFacingPos);
+        return super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class CactusFlowerBlock extends Block
         }
         if (level.getBlockState(pos.below()).is(BlockTags.SAND) || level.getBlockState(pos.below()).is(BlockTags.DIRT))
         {
-            flag = true ;
+            flag = true;
         }
         return flag;
     }
@@ -79,7 +79,7 @@ public class CactusFlowerBlock extends Block
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        Vec3 vec3 = state.getOffset(level, pos);
-        return Block.box(5,0,5, 11, 10 ,11).move(vec3.x, vec3.y, vec3.z);
+        Vec3 vec3 = state.getOffset(pos);
+        return Block.box(5, 0, 5, 11, 10, 11).move(vec3.x, vec3.y, vec3.z);
     }
 }

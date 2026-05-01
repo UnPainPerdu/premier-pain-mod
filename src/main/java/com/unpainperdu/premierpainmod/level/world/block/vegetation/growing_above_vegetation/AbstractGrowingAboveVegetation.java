@@ -7,8 +7,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -27,56 +27,55 @@ public abstract class AbstractGrowingAboveVegetation extends Block
 
     public final int max_height;
 
-    public AbstractGrowingAboveVegetation(Properties properties, int max_height)
+    public AbstractGrowingAboveVegetation(Properties properties, int maxHeight)
     {
         super(properties);
-        this.max_height = max_height;
+        this.max_height = maxHeight;
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0).setValue(MAX_HEIGHT, 0));
     }
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        Vec3 vec3 = state.getOffset(level, pos);
+        Vec3 vec3 = state.getOffset(pos);
         return SHAPE.move(vec3.x, vec3.y, vec3.z);
     }
 
     @Override
-    protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
+    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
-        if (!pState.canSurvive(pLevel, pPos))
+        if (!state.canSurvive(level, pos))
         {
-            pLevel.destroyBlock(pPos, true);
+            level.destroyBlock(pos, true);
         }
     }
 
     @Override
-    protected void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
-        if (pLevel.isEmptyBlock(pPos.above()))
+        if (level.isEmptyBlock(pos.above()))
         {
             int i = 1;
-
-            while (pLevel.getBlockState(pPos.below(i)).getBlock() instanceof AbstractGrowingAboveVegetation)
+            while (level.getBlockState(pos.below(i)).getBlock() instanceof AbstractGrowingAboveVegetation)
             {
                 i++;
             }
 
-            int maxHeight = pState.getValue(MAX_HEIGHT);
+            int maxHeight = state.getValue(MAX_HEIGHT);
             if (i < maxHeight)
             {
-                int j = pState.getValue(AGE);
-                if (net.neoforged.neoforge.common.CommonHooks.canCropGrow(pLevel, pPos, pState, true))
+                int j = state.getValue(AGE);
+                if (net.neoforged.neoforge.common.CommonHooks.canCropGrow(level, pos, state, true))
                 {
                     if (j == 15)
                     {
-                        pLevel.setBlockAndUpdate(pPos.above(), this.defaultBlockState().setValue(MAX_HEIGHT, maxHeight));
-                        net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(pLevel, pPos.above(), this.defaultBlockState());
-                        pLevel.setBlock(pPos, pState.setValue(AGE, 0).setValue(MAX_HEIGHT, getRandomMaxHeight(getSeedFromPos(pPos))), 4);
+                        level.setBlockAndUpdate(pos.above(), this.defaultBlockState().setValue(MAX_HEIGHT, maxHeight));
+                        net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(level, pos.above(), this.defaultBlockState());
+                        level.setBlock(pos, state.setValue(AGE, 0).setValue(MAX_HEIGHT, getRandomMaxHeight(getSeedFromPos(pos))), 4);
                     }
                     else
                     {
-                        pLevel.setBlock(pPos, pState.setValue(AGE, j + 1), 4);
+                        level.setBlock(pos, state.setValue(AGE, j + 1), 4);
                     }
                 }
             }
@@ -84,67 +83,52 @@ public abstract class AbstractGrowingAboveVegetation extends Block
     }
 
     @Override
-    protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (!pState.canSurvive(pLevel, pCurrentPos))
+        if (!selfState.canSurvive(level, selfPos))
         {
-            pLevel.scheduleTick(pCurrentPos, this, 1);
+            scheduledTickAccess.createTick(selfPos, this, 1);
         }
 
-        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+        return super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
-    protected boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos)
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos)
     {
-        BlockState blockstate = pLevel.getBlockState(pPos.below());
-        if (blockstate.is(this))
-        {
-            return true;
-        }
-        else
-        {
-            if (blockstate.is(BlockTags.DIRT))
-            {
-                return true;
-            }
-            return false;
-        }
+        BlockState blockstate = level.getBlockState(pos.below());
+        return blockstate.is(this) || blockstate.is(BlockTags.DIRT);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
-        pBuilder.add(AGE, MAX_HEIGHT);
+        builder.add(AGE, MAX_HEIGHT);
     }
 
     @Override
-    protected boolean isRandomlyTicking(BlockState pState)
+    protected boolean isRandomlyTicking(BlockState state)
     {
         return true;
     }
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext)
+    public BlockState getStateForPlacement(BlockPlaceContext context)
     {
-        BlockPos pos = pContext.getClickedPos();
+        BlockPos pos = context.getClickedPos();
         long seed = getSeedFromPos(pos);
         int randomMaxHeight = getRandomMaxHeight(seed);
         return this.defaultBlockState().setValue(MAX_HEIGHT, randomMaxHeight);
     }
 
-    public int getRandomMaxHeight()
-    {
-        return getRandomMaxHeight((long) (Math.abs(RandomSource.create().nextInt()))%20);
-    }
     public int getRandomMaxHeight(long seed)
     {
-        return ((Math.abs(RandomSource.create(seed).nextInt())) % (this.max_height -1) ) + 2 ;
+        return ((Math.abs(RandomSource.create(seed).nextInt())) % (this.max_height - 1)) + 2;
     }
 
     public long getSeedFromPos(BlockPos pos)
     {
-        return pos.getX() + pos.getY() + pos.getZ() + (long) (Math.abs(RandomSource.create().nextInt()))%20;
+        return pos.getX() + pos.getY() + pos.getZ() + (long) (Math.abs(RandomSource.create().nextInt())) % 20;
     }
 }

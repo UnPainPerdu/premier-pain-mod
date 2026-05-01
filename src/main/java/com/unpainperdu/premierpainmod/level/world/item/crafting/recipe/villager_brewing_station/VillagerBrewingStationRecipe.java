@@ -18,6 +18,7 @@ public class VillagerBrewingStationRecipe implements Recipe<VillagerBrewingStati
     private final SizedFluidIngredient inputFluid;
     private final List<Ingredient> inputItem;
     private final FluidStack result;
+    private PlacementInfo placementInfo;
 
     public VillagerBrewingStationRecipe(SizedFluidIngredient inputFluid, List<Ingredient> inputItem, FluidStack result)
     {
@@ -43,7 +44,7 @@ public class VillagerBrewingStationRecipe implements Recipe<VillagerBrewingStati
 
             for (ItemStack itemStack : itemStacks)
             {
-                if(ingredient.test(itemStack))
+                if (ingredient.test(itemStack))
                 {
                     flagIngr = true;
                 }
@@ -67,18 +68,6 @@ public class VillagerBrewingStationRecipe implements Recipe<VillagerBrewingStati
         return this.result.copy();
     }
 
-    @Override
-    public boolean canCraftInDimensions(int width, int height)
-    {
-        return width * height >= 1;
-    }
-
-    @Override
-    public ItemStack getResultItem(HolderLookup.Provider registries)
-    {
-        return new ItemStack(Blocks.AIR);
-    }
-
     public List<Ingredient> getInputItems()
     {
         return inputItem;
@@ -95,15 +84,32 @@ public class VillagerBrewingStationRecipe implements Recipe<VillagerBrewingStati
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer()
+    public RecipeSerializer<? extends Recipe<VillagerBrewingStationInput>> getSerializer()
     {
         return RecipeSerializerRegister.VILLAGER_BREWING_STATION_SERIALIZER.get();
     }
 
     @Override
-    public RecipeType<?> getType()
+    public RecipeType<? extends Recipe<VillagerBrewingStationInput>> getType()
     {
         return RecipeTypeRegister.VILLAGER_BREWING_STATION_RECIPE_TYPE.get();
+    }
+
+    @Override
+    public PlacementInfo placementInfo()
+    {
+        if (this.placementInfo == null)
+        {
+            this.placementInfo = PlacementInfo.create(this.getInputItems());
+        }
+
+        return this.placementInfo;
+    }
+
+    @Override
+    public RecipeBookCategory recipeBookCategory()
+    {
+        return null;
     }
 
     @Override

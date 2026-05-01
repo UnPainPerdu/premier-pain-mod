@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.path.SetWalkTargetToBlock;
 import net.tslat.smartbrainlib.object.MemoryTest;
 import net.tslat.smartbrainlib.registry.SBLMemoryTypes;
-import net.tslat.smartbrainlib.util.BrainUtils;
+import net.tslat.smartbrainlib.util.BrainUtil;
 
 import java.util.List;
 
@@ -36,21 +36,21 @@ public class SetEntityGoToBlockAndMemorizeIt<E extends PathfinderMob> extends Se
     @Override
     protected boolean checkExtraStartConditions(ServerLevel level, E entity)
     {
-        List<Pair<BlockPos, BlockState>> nearbyBlocks = BrainUtils.getMemory(entity, SBLMemoryTypes.NEARBY_BLOCKS.get());
+        List<Pair<BlockPos, BlockState>> nearbyBlocks = BrainUtil.getMemory(entity, SBLMemoryTypes.NEARBY_BLOCKS.get());
         if (nearbyBlocks != null)
         {
             int sizeList = nearbyBlocks.size();
             if (sizeList == 1)
             {
                 this.target = nearbyBlocks.getFirst();
-                BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.CHOSEN_BLOCK.get(), this.target.getFirst(), 200);
-                BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.FAIL_CD.get(), Unit.INSTANCE, 400);
+                BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.CHOSEN_BLOCK.get(), this.target.getFirst(), 200);
+                BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.FAIL_CD.get(), Unit.INSTANCE, 400);
             }
             else if (sizeList > 1)
             {
                 this.target = nearbyBlocks.get(RandomUtil.getRandomPositiveIntInRange(nearbyBlocks.size(), level.getRandom()));
-                BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.CHOSEN_BLOCK.get(), this.target.getFirst(), 200);
-                BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.FAIL_CD.get(), Unit.INSTANCE, 400);
+                BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.CHOSEN_BLOCK.get(), this.target.getFirst(), 200);
+                BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.FAIL_CD.get(), Unit.INSTANCE, 400);
             }
         }
 
@@ -60,7 +60,7 @@ public class SetEntityGoToBlockAndMemorizeIt<E extends PathfinderMob> extends Se
     @Override
     protected void start(E entity)
     {
-        BrainUtils.setMemory(entity, MemoryModuleType.WALK_TARGET, new WalkTarget(this.target.getFirst(), this.speedMod.apply(entity, this.target), this.closeEnoughDist.apply(entity, this.target)));
-        BrainUtils.setForgettableMemory(entity, MemoryModuleType.LOOK_TARGET, new BlockPosTracker(this.target.getFirst()), 150);
+        BrainUtil.setMemory(entity, MemoryModuleType.WALK_TARGET, new WalkTarget(this.target.getFirst(), this.speedMod.applyAsFloat(entity, this.target), this.closeEnoughDist.applyAsInt(entity, this.target)));
+        BrainUtil.setForgettableMemory(entity, MemoryModuleType.LOOK_TARGET, new BlockPosTracker(this.target.getFirst()), 150);
     }
 }

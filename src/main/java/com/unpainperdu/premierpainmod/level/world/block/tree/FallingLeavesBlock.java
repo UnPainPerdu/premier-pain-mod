@@ -6,10 +6,11 @@ import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
@@ -64,14 +65,14 @@ public class FallingLeavesBlock extends Block implements SimpleWaterloggedBlock
     }
 
     @Override
-    protected @NotNull BlockState updateShape(@NotNull BlockState state, @NotNull Direction direction, @NotNull BlockState neighborState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        BlockState resultState = state;
-        if (!state.canSurvive(level, pos))
+        BlockState resultState = selfState;
+        if (!selfState.canSurvive(level, selfPos))
         {
             resultState = Blocks.AIR.defaultBlockState();
         }
-        else if (level.getBlockState(pos.below()).getBlock() instanceof FallingLeavesBlock)
+        else if (level.getBlockState(selfPos.below()).getBlock() instanceof FallingLeavesBlock)
         {
             resultState = resultState.setValue(ModBlockStateProperties.BOTTOM_PART, false);
         }

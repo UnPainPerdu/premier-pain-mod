@@ -12,10 +12,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class RuleTestRegister
 {
-    private RuleTestRegister()
-    {
-    }
-
     public static final DeferredRegister<RuleTestType<?>> RULE_TEST_TYPE = DeferredRegister.create(BuiltInRegistries.RULE_TEST, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<RuleTestType<?>, RuleTestType<?>> BLOCK_NOT_MATCH = RULE_TEST_TYPE.register("block_not_match", () -> explicitRuleTestTypeTyping(BlockNotMatchTest.CODEC));

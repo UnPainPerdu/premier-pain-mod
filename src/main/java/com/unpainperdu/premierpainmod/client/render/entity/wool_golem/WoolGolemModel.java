@@ -1,28 +1,23 @@
 package com.unpainperdu.premierpainmod.client.render.entity.wool_golem;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.WoolGolemEntity;
-import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import org.jetbrains.annotations.NotNull;
 
-public class WoolGolemModel extends HierarchicalModel<WoolGolemEntity>
+public class WoolGolemModel extends EntityModel<WoolGolemRenderState>
 {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "wool_golem"), "main");
 
-    private final ModelPart root;
     private final ModelPart head;
 
     public WoolGolemModel(ModelPart root)
     {
-        this.root = root;
+        super(root);
         ModelPart body = root.getChild("Body");
         ModelPart bodyTop = body.getChild("bodyTop");
         this.head = bodyTop.getChild("Head");
@@ -62,17 +57,16 @@ public class WoolGolemModel extends HierarchicalModel<WoolGolemEntity>
         return LayerDefinition.create(meshdefinition, 128, 128);
     }
 
-
     @Override
-    public void setupAnim(WoolGolemEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
+    public void setupAnim(WoolGolemRenderState renderState)
     {
-        this.root().getAllParts().forEach(ModelPart::resetPose);
-        this.applyHeadRotation(netHeadYaw, headPitch);
+        super.setupAnim(renderState);
+        this.applyHeadRotation(renderState.yRot, renderState.xRot);
 
-        this.animateWalk(WoolGolemAnimation.WALK, limbSwing, limbSwingAmount, 2F, 2.5F);
-        this.animate(entity.HUG, WoolGolemAnimation.HUG, ageInTicks, 1F);
-        this.animate(entity.SIT, WoolGolemAnimation.SIT, ageInTicks, 1F);
-        this.animate(entity.GETUP, WoolGolemAnimation.GETUP, ageInTicks, 1F);
+        this.animateWalk(WoolGolemAnimation.WALK, renderState.walkAnimationPos, renderState.walkAnimationSpeed, 2F, 2.5F);
+        this.animate(renderState.HUG, WoolGolemAnimation.HUG, renderState.ageInTicks, 1F);
+        this.animate(renderState.SIT, WoolGolemAnimation.SIT, renderState.ageInTicks, 1F);
+        this.animate(renderState.GETUP, WoolGolemAnimation.GETUP, renderState.ageInTicks, 1F);
     }
 
     private void applyHeadRotation(float headYaw, float headPitch)
@@ -82,17 +76,5 @@ public class WoolGolemModel extends HierarchicalModel<WoolGolemEntity>
 
         this.head.yRot = headYaw * ((float) Math.PI / 180F);
         this.head.xRot = headPitch * ((float) Math.PI / 180F);
-    }
-
-    @Override
-    public @NotNull ModelPart root()
-    {
-        return this.root;
-    }
-
-    @Override
-    public void renderToBuffer(@NotNull PoseStack poseStack, @NotNull VertexConsumer buffer, int packedLight, int packedOverlay, int color)
-    {
-        this.root.render(poseStack, buffer, packedLight, packedOverlay, color);
     }
 }

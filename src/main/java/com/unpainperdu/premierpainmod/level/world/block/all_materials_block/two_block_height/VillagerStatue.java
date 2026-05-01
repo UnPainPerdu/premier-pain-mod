@@ -44,5 +44,4 @@ public class VillagerStatue extends AbstractTwoBlockHeightBlock
     {
         return false;
     }
-
 }

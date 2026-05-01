@@ -1,7 +1,5 @@
 package com.unpainperdu.premierpainmod.level.world.block.all_materials_block;
 
-import com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.VillagerDrawer;
-import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -57,8 +55,7 @@ public class VillagerChiseledHead extends Block
     @Override
     public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext)
     {
-        VoxelShape BASE_SHAPE = Block.box(1, 0, 1, 15, 16, 15);
-        return BASE_SHAPE;
+        return Block.box(1, 0, 1, 15, 16, 15);
     }
 
     @Nullable
@@ -69,7 +66,7 @@ public class VillagerChiseledHead extends Block
         FluidState fluidstate = level.getFluidState(blockpos);
 
         boolean flag = fluidstate.getType() == Fluids.WATER;
-        if (blockpos.getY() < level.getMaxBuildHeight())
+        if (blockpos.getY() < level.getMaxY())
         {
             return this.defaultBlockState().setValue(WATERLOGGED, flag).setValue(AXIS, pContext.getClickedFace().getAxis());
         }

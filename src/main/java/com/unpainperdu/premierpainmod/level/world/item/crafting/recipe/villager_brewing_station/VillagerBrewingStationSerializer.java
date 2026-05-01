@@ -1,5 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -13,8 +14,8 @@ import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 public class VillagerBrewingStationSerializer implements RecipeSerializer<VillagerBrewingStationRecipe>
 {
     public static final MapCodec<VillagerBrewingStationRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
-            SizedFluidIngredient.NESTED_CODEC.fieldOf("fluidInput").forGetter(VillagerBrewingStationRecipe::getInputFluid),
-            Ingredient.LIST_CODEC.fieldOf("ingredients").forGetter(VillagerBrewingStationRecipe::getInputItems),
+            SizedFluidIngredient.CODEC.fieldOf("fluidInput").forGetter(VillagerBrewingStationRecipe::getInputFluid),
+            Codec.list(Ingredient.CODEC).fieldOf("ingredients").forGetter(VillagerBrewingStationRecipe::getInputItems),
             FluidStack.CODEC.fieldOf("fluidResult").forGetter(VillagerBrewingStationRecipe::getResultFluid)
     ).apply(inst, VillagerBrewingStationRecipe::new));
 

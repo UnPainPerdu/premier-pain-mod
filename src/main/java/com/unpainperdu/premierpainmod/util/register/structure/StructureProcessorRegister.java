@@ -12,10 +12,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class StructureProcessorRegister
 {
-    private StructureProcessorRegister()
-    {
-    }
-
     public static final DeferredRegister<StructureProcessorType<?>> PROCESSOR_TYPE = DeferredRegister.create(BuiltInRegistries.STRUCTURE_PROCESSOR, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<StructureProcessorType<?>, StructureProcessorType<?>> EXTENDED_ROT = PROCESSOR_TYPE.register("extended_rot", () -> explicitProcessorTypeTyping(ExtendedBlockRemover.CODEC));

@@ -8,18 +8,18 @@ import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.recipe.RecipeType;
+import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -56,28 +56,22 @@ public class JEIPlugin implements IModPlugin
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration)
     {
-        registration.addRecipeCatalyst(new ItemStack(BlockRegister.VILLAGER_WORKSHOP), JEIRecipeType.VILLAGER_WORKSHOP_TYPE);
-
-        for (Block block : ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class))
-        {
-            registration.addRecipeCatalyst(new ItemStack(block), JEIRecipeType.VILLAGER_BREWING_STATION_TYPE);
-        }
-
-        registration.addRecipeCatalyst(new ItemStack(BlockRegister.COOKING_POT_BLOCK), JEIRecipeType.COOKING_POT_STATION_TYPE);
+        registration.addCraftingStation(JEIRecipeType.VILLAGER_WORKSHOP_TYPE, BlockRegister.VILLAGER_WORKSHOP);
+        registration.addCraftingStation(JEIRecipeType.VILLAGER_BREWING_STATION_TYPE, ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class).stream().map(Block::asItem).toArray(Item[]::new));
+        registration.addCraftingStation(JEIRecipeType.COOKING_POT_STATION_TYPE, BlockRegister.COOKING_POT_BLOCK);
     }
 
-    private <E extends RecipeInput, T extends Recipe<E>> void register(IRecipeRegistration registration, net.minecraft.world.item.crafting.RecipeType<T> vanillaRecipeType, RecipeType<T> jeiRecipeType)
+    private <E extends RecipeInput, T extends Recipe<E>> void register(IRecipeRegistration registration, net.minecraft.world.item.crafting.RecipeType<T> vanillaRecipeType, IRecipeType<T> jeiRecipeType)
     {
         registration.addRecipes(jeiRecipeType, getAllRecipesFor(vanillaRecipeType));
     }
 
     private <E extends RecipeInput, T extends Recipe<E>> List<T> getAllRecipesFor(net.minecraft.world.item.crafting.RecipeType<T> vanillaRecipeType)
     {
-        assert Minecraft.getInstance().level != null;
-        RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
+        RecipeManager manager = ServerLifecycleHooks.getCurrentServer().getRecipeManager();
         List<T> outputList = new ArrayList<>();
 
-        for (RecipeHolder<T> recipeHolder : manager.getAllRecipesFor(vanillaRecipeType))
+        for (RecipeHolder<T> recipeHolder : manager.recipeMap().byType(vanillaRecipeType))
         {
             outputList.add(recipeHolder.value());
         }

@@ -7,7 +7,9 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.renderer.CoreShaders;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.ShaderProgram;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -30,6 +32,8 @@ public class FluidTankRenderer
     private static final NumberFormat nf = NumberFormat.getIntegerInstance();
     private static final int TEXTURE_SIZE = 16;
     private static final int MIN_FLUID_HEIGHT = 1; // ensure tiny amounts of fluid are still visible
+    private static final ResourceLocation BLOCK_ATLAS = ResourceLocation.withDefaultNamespace("blocks"); //si foire, essayer TextureAtlas.LOCATION_BLOCKS ?
+
 
     private final long capacity;
     private final TooltipMode tooltipMode;
@@ -105,7 +109,7 @@ public class FluidTankRenderer
 
         IClientFluidTypeExtensions renderProperties = IClientFluidTypeExtensions.of(fluid);
         ResourceLocation fluidStill = renderProperties.getStillTexture(fluidStack);
-        return Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(fluidStill);
+        return Minecraft.getInstance().getTextureAtlas(BLOCK_ATLAS).apply(fluidStill);
     }
 
 
@@ -118,7 +122,7 @@ public class FluidTankRenderer
 
     public static void drawTiledSprite(GuiGraphics guiGraphics, final int tiledWidth, final int tiledHeight, int color, long scaledAmount, TextureAtlasSprite sprite)
     {
-        RenderSystem.setShaderTexture(0, InventoryMenu.BLOCK_ATLAS);
+        RenderSystem.setShaderTexture(0, BLOCK_ATLAS);
         Matrix4f matrix = guiGraphics.pose().last().pose();
         setGLColorFromInt(color);
 
@@ -165,7 +169,7 @@ public class FluidTankRenderer
         float vMax = textureSprite.getV1();
         uMax = uMax - (maskRight / 16F * (uMax - uMin));
         vMin = vMin + (maskTop / 16F * (vMax - vMin));
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShader(CoreShaders.POSITION_TEX);
         Tesselator tessellator = Tesselator.getInstance();
         BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
         bufferBuilder.addVertex(matrix, xCoord, yCoord + 16, zLevel).setUv(uMin, vMax);

@@ -5,9 +5,8 @@ import com.unpainperdu.premierpainmod.level.world.entity.mobs.MountainCurrantGol
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
 
-public class MountainCurrantGolemRender extends MobRenderer<MountainCurrantGolemEntity, MountainCurrantGolemModel>
+public class MountainCurrantGolemRender extends MobRenderer<MountainCurrantGolemEntity, MountainCurrantGolemRenderState, MountainCurrantGolemModel>
 {
 
     public MountainCurrantGolemRender(EntityRendererProvider.Context context)
@@ -16,16 +15,26 @@ public class MountainCurrantGolemRender extends MobRenderer<MountainCurrantGolem
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(@NotNull MountainCurrantGolemEntity entity)
+    public MountainCurrantGolemRenderState createRenderState()
+    {
+        return new MountainCurrantGolemRenderState();
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(MountainCurrantGolemRenderState renderState)
     {
         ResourceLocation result = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/entity/mob/mountain_currant_golem/main.png");
-        if (entity.getCustomName() != null)
+        if (renderState.customName != null && renderState.customName.getString().equals("Mr.Fruit"))
         {
-            if (entity.getCustomName().getString().equals("Mr.Fruit"))
-            {
-                result = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/entity/mob/mountain_currant_golem/mr_fruit.png");
-            }
+            result = ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "textures/entity/mob/mountain_currant_golem/mr_fruit.png");
         }
         return result;
+    }
+
+    @Override
+    public void extractRenderState(MountainCurrantGolemEntity mountainCurrantGolemEntity, MountainCurrantGolemRenderState mountainCurrantGolemRenderState, float partialTick)
+    {
+        super.extractRenderState(mountainCurrantGolemEntity, mountainCurrantGolemRenderState, partialTick);
+        mountainCurrantGolemRenderState.boneMealingAnimationState.copyFrom(mountainCurrantGolemEntity.boneMealingAnimationState);
     }
 }

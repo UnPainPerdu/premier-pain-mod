@@ -43,10 +43,6 @@ import java.util.Map;
 public class CreativeMainTab
 {
     //todo rework to only take item (if block transform into item else don't process)
-    private CreativeMainTab()
-    {
-    }
-
     public static void generateCreativeMainTab(CreativeModeTab.ItemDisplayParameters param, CreativeModeTab.Output output)
     {
         //Items
@@ -246,4 +242,3 @@ public class CreativeMainTab
         }
     }
 }
-

@@ -8,11 +8,6 @@ import net.minecraft.core.Direction;
 //xyz is the same as shape of block
 public class FluidDisplayRenderHelper
 {
-    private FluidDisplayRenderHelper()
-    {
-    }
-
-
     public static void drawVertex(VertexConsumer builder, PoseStack poseStack,
                                   float x, float y, float z,
                                   float u, float v,

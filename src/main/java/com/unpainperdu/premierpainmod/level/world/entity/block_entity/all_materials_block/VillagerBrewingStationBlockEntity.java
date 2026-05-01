@@ -1,10 +1,10 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block;
 
 import com.unpainperdu.premierpainmod.PremierPainMod;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerBrewingStationMenu;
 import com.unpainperdu.premierpainmod.level.world.fluid.beer.BeerFluid;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.villager_brewing_station.VillagerBrewingStationRecipe;
-import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerBrewingStationMenu;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
@@ -24,7 +24,7 @@ import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.StackedContents;
+import net.minecraft.world.entity.player.StackedItemContents;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeCraftingHolder;
@@ -185,7 +185,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
 
         if (blockEntity.hasEnoughItems(itemStacks) && blockEntity.fluidTank.getFluid().is(Fluids.WATER) && blockEntity.fluidTank.getFluidAmount() >= 1000)
         {
-            RecipeHolder<?> recipeholder = blockEntity.quickCheck.getRecipeFor(new VillagerBrewingStationInput(fluidStackInput, itemStacks), level).orElse(null);
+            RecipeHolder<?> recipeholder = blockEntity.quickCheck.getRecipeFor(new VillagerBrewingStationInput(fluidStackInput, itemStacks), (ServerLevel) level).orElse(null);
 
             if (!canBrew(level.registryAccess(), recipeholder, fluidStackInput, blockEntity.getIngredientItem(), blockEntity))
             {
@@ -380,7 +380,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     {
         if (recipe != null)
         {
-            ResourceLocation resourcelocation = recipe.id();
+            ResourceLocation resourcelocation = recipe.id().location();
             this.recipesUsed.addTo(resourcelocation, 1);
         }
     }
@@ -393,7 +393,7 @@ public class VillagerBrewingStationBlockEntity extends BaseContainerBlockEntity 
     }
 
     @Override
-    public void fillStackedContents(@NotNull StackedContents contents)
+    public void fillStackedContents(StackedItemContents contents)
     {
         for (ItemStack itemstack : this.items)
         {

@@ -9,14 +9,15 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
-import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.api.recipe.types.IRecipeType;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,7 +36,7 @@ public class VillagerBrewingStationCategory implements IRecipeCategory<VillagerB
     }
 
     @Override
-    public @NotNull RecipeType<VillagerBrewingStationRecipe> getRecipeType()
+    public @NotNull IRecipeType<VillagerBrewingStationRecipe> getRecipeType()
     {
         return JEIRecipeType.VILLAGER_BREWING_STATION_TYPE;
     }
@@ -76,8 +77,8 @@ public class VillagerBrewingStationCategory implements IRecipeCategory<VillagerB
         int row = 3;
         int slotPerRow = 4;
 
-        FluidStack inputFluid = recipe.getInputFluid().getFluids()[0];
-        builder.addSlot(RecipeIngredientRole.INPUT, 12, 11).addFluidStack(inputFluid.getFluid(), inputFluid.getAmount()).setFluidRenderer(1000, true, 16, 48);
+        SizedFluidIngredient inputFluid = recipe.getInputFluid();
+        builder.addSlot(RecipeIngredientRole.INPUT, 12, 11).add(inputFluid.ingredient().fluids().getFirst().value(), inputFluid.amount()).setFluidRenderer(1000, true, 16, 48);
         for (int i = 0; i < row; i++)
         {
             for (int j = 0; j < slotPerRow; j++)
@@ -92,11 +93,11 @@ public class VillagerBrewingStationCategory implements IRecipeCategory<VillagerB
                 {
                     ingredient = Ingredient.of();
                 }
-                builder.addSlot(RecipeIngredientRole.INPUT, 33 + j * 18, 9 + i * 18).addIngredients(ingredient);
+                builder.addSlot(RecipeIngredientRole.INPUT, 33 + j * 18, 9 + i * 18).add(ingredient);
             }
         }
         FluidStack outputFluid = recipe.getResultFluid();
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 118, 11).addFluidStack(outputFluid.getFluid(), outputFluid.getAmount()).setFluidRenderer(1000, true, 16, 48);
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 118, 11).add(outputFluid.getFluid(), outputFluid.getAmount()).setFluidRenderer(1000, true, 16, 48);
     }
 
     private static ResourceLocation getBackgroundTexture()

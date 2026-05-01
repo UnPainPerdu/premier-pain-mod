@@ -9,11 +9,6 @@ import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRe
 
 public class FluidRegister
 {
-
-    private FluidRegister()
-    {
-    }
-
     public static <T extends Fluid> void registerFluid(String name, Supplier<Fluid> source, Supplier<Fluid> flowing)
     {
         String fluidName = name + "_fluid";

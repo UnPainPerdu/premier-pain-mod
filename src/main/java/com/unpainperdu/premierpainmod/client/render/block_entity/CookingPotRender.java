@@ -50,12 +50,11 @@ public class CookingPotRender implements BlockEntityRenderer<CookingPotBlockEnti
                 FluidStack fluid = tank.getFluid();
                 IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid.getFluid());
                 ResourceLocation stillTexture = fluidTypeExtensions.getStillTexture(fluid);
-                TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(stillTexture);
+                TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(ResourceLocation.withDefaultNamespace("blocks")).apply(stillTexture); //si foire, essayer TextureAtlas.LOCATION_BLOCKS ?
                 BlockPos pos = blockEntity.getBlockPos();
                 FluidState fluidState = fluid.getFluid().defaultFluidState();
                 int tintColor = fluidTypeExtensions.getTintColor(fluidState, level, pos);
                 VertexConsumer builder = buffer.getBuffer(RenderType.entityTranslucent(sprite.atlasLocation()));
-
 
                 renderFluid(builder, sprite, poseStack,
                         tintColor, packedLight, packedOverlay,

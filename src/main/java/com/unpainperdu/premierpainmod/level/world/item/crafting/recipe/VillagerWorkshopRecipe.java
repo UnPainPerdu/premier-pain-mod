@@ -1,30 +1,44 @@
 package com.unpainperdu.premierpainmod.level.world.item.crafting.recipe;
 
-import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeSerializerRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
-import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 public class VillagerWorkshopRecipe extends SingleItemRecipe
 {
-    public VillagerWorkshopRecipe(String pGroup, Ingredient pIngredient, ItemStack pResult)
+    public VillagerWorkshopRecipe(String group, Ingredient ingredient, ItemStack result)
     {
-        super(RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE.get(), RecipeSerializerRegister.VILLAGER_WORKSHOP_SERIALIZER.get(), pGroup, pIngredient, pResult);
+        super(group, ingredient, result);
+    }
+
+    @Override
+    public RecipeSerializer<? extends SingleItemRecipe> getSerializer()
+    {
+        return RecipeSerializerRegister.VILLAGER_WORKSHOP_SERIALIZER.get();
+    }
+
+    @Override
+    public RecipeType<? extends SingleItemRecipe> getType()
+    {
+        return RecipeTypeRegister.VILLAGER_WORKSHOP_RECIPE_TYPE.get();
+    }
+
+    @Override
+    public RecipeBookCategory recipeBookCategory()
+    {
+        return null;
+    }
+
+    public ItemStack result() {
+        return super.result();
     }
 
     @Override
     public boolean matches(SingleRecipeInput singleRecipeInput, Level level)
     {
-        return this.ingredient.test(singleRecipeInput.item());
-    }
-
-    @Override
-    public ItemStack getToastSymbol()
-    {
-        return new ItemStack(BlockRegister.VILLAGER_WORKSHOP);
+        return this.input().test(singleRecipeInput.item());
     }
 
     public static class Serializer<VillagerWorkshopRecipe extends SingleItemRecipe> extends SingleItemRecipe.Serializer<VillagerWorkshopRecipe>
@@ -34,15 +48,10 @@ public class VillagerWorkshopRecipe extends SingleItemRecipe
             super(factory);
         }
     }
+
     @Override
     public boolean isSpecial()
     {
         return true;
-    }
-
-    @Override
-    public NonNullList<Ingredient> getIngredients()
-    {
-        return super.getIngredients();
     }
 }

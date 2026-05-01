@@ -14,10 +14,6 @@ import java.util.List;
 
 public class PosHelper
 {
-    private PosHelper()
-    {
-    }
-
     public static BlockPos getLeft(BlockPos pos, Direction direction)
     {
         return getLeft(pos, direction, 1);

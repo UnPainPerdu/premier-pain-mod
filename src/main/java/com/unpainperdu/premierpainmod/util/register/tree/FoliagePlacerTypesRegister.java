@@ -10,10 +10,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class FoliagePlacerTypesRegister
 {
-    private FoliagePlacerTypesRegister()
-    {
-    }
-
     public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER = DeferredRegister.create(Registries.FOLIAGE_PLACER_TYPE, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<FoliagePlacerType<?>, FoliagePlacerType<MountainCurrantFoliagePlacer>> MOUNTAIN_CURRANT_FOLIAGE_PLACER = FOLIAGE_PLACER.register("mountain_currant_foliage_placer", () -> new FoliagePlacerType<>(MountainCurrantFoliagePlacer.CODEC));

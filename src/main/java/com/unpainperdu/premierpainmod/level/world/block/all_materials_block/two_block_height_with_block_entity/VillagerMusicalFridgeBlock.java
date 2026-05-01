@@ -15,7 +15,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -88,12 +87,6 @@ public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithB
     }
 
     @Override
-    protected RenderShape getRenderShape(BlockState pState)
-    {
-        return RenderShape.MODEL;
-    }
-
-    @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult)
     {
         if (level.isClientSide)
@@ -105,7 +98,7 @@ public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithB
             BlockEntity blockentity = getRealBlockEntity(level, pos, state);
             if (blockentity instanceof VillagerMusicalFridgeBlockEntity)
             {
-                player.openMenu((VillagerMusicalFridgeBlockEntity)blockentity);
+                player.openMenu((VillagerMusicalFridgeBlockEntity) blockentity);
             }
             return InteractionResult.CONSUME;
         }
@@ -131,7 +124,7 @@ public class VillagerMusicalFridgeBlock extends AbstractTwoBlockHeightBlockWithB
         BlockEntity blockEntity = getRealBlockEntity(level, pos, state);
         if (blockEntity instanceof VillagerMusicalFridgeBlockEntity)
         {
-            ((VillagerMusicalFridgeBlockEntity)blockEntity).recheckOpen();
+            ((VillagerMusicalFridgeBlockEntity) blockEntity).recheckOpen();
         }
     }
 

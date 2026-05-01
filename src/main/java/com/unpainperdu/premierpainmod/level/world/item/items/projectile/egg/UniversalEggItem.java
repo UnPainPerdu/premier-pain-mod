@@ -7,7 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
@@ -24,7 +24,7 @@ public abstract class UniversalEggItem extends Item implements ProjectileItem
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand hand)
+    public @NotNull InteractionResult use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand)
     {
         ItemStack itemstack = player.getItemInHand(hand);
         level.playSound(
@@ -47,7 +47,7 @@ public abstract class UniversalEggItem extends Item implements ProjectileItem
 
         player.awardStat(Stats.ITEM_USED.get(this));
         itemstack.consume(1, player);
-        return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
+        return InteractionResult.SUCCESS;
     }
 
     @Override

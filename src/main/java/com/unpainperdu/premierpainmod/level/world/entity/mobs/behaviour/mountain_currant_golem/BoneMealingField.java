@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.tslat.smartbrainlib.api.core.behaviour.ExtendedBehaviour;
 import net.tslat.smartbrainlib.object.MemoryTest;
-import net.tslat.smartbrainlib.util.BrainUtils;
+import net.tslat.smartbrainlib.util.BrainUtil;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class BoneMealingField<E extends LivingEntity> extends ExtendedBehaviour<
     {
         boolean canStart = false;
         BlockPos entityPos = entity.getOnPos().above();
-        BlockPos targetField = BrainUtils.getMemory(entity, MemoryModuleTypeRegister.CHOSEN_BLOCK.get());
+        BlockPos targetField = BrainUtil.getMemory(entity, MemoryModuleTypeRegister.CHOSEN_BLOCK.get());
         if (entityPos.equals(targetField))
         {
             BlockState state = level.getBlockState(targetField);
@@ -62,7 +62,7 @@ public class BoneMealingField<E extends LivingEntity> extends ExtendedBehaviour<
             }
             else
             {
-                BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.BONE_MEALING_CD.get(), Unit.INSTANCE, 300 + RandomUtil.getRandomIntInRange(100, entity.getRandom()));
+                BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.BONE_MEALING_CD.get(), Unit.INSTANCE, 300 + RandomUtil.getRandomIntInRange(100, entity.getRandom()));
             }
         }
         return canStart;
@@ -78,7 +78,7 @@ public class BoneMealingField<E extends LivingEntity> extends ExtendedBehaviour<
     protected void stop(E entity)
     {
         this.target = null;
-        BrainUtils.setForgettableMemory(entity, MemoryModuleTypeRegister.BONE_MEALING_CD.get(), Unit.INSTANCE, 600 + RandomUtil.getRandomIntInRange(200, entity.getRandom()));
+        BrainUtil.setForgettableMemory(entity, MemoryModuleTypeRegister.BONE_MEALING_CD.get(), Unit.INSTANCE, 600 + RandomUtil.getRandomIntInRange(200, entity.getRandom()));
     }
 
     public void startBoneMealing(E entity)

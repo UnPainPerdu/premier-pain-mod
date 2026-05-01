@@ -1,7 +1,6 @@
 package com.unpainperdu.premierpainmod.util.register;
 
 import com.unpainperdu.premierpainmod.level.world.worldgen.biome.ModTerraBlender;
-import com.unpainperdu.premierpainmod.util.register.Item.ArmorMaterialsRegister;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemEventRegister;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
@@ -25,10 +24,6 @@ import net.neoforged.bus.api.IEventBus;
 
 public class RegisterHandler
 {
-    private RegisterHandler()
-    {
-    }
-
     public static void globalRegister(IEventBus modEventBus)
     {
         modEventBus.addListener(RegistriesRegister::registerRegistries);
@@ -57,6 +52,5 @@ public class RegisterHandler
         ItemEventRegister.register(modEventBus);
         StructureProcessorRegister.register(modEventBus);
         RuleTestRegister.register(modEventBus);
-        ArmorMaterialsRegister.register(modEventBus);
     }
 }

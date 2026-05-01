@@ -4,7 +4,6 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import net.minecraft.data.PackOutput;
 import net.minecraft.sounds.SoundEvent;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.SoundDefinition;
 import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
 
@@ -14,9 +13,9 @@ import java.util.function.Supplier;
 
 public class ModSoundProvider extends SoundDefinitionsProvider
 {
-    public ModSoundProvider(PackOutput output, ExistingFileHelper existingFileHelper)
+    public ModSoundProvider(PackOutput output)
     {
-        super(output, PremierPainMod.MOD_ID, existingFileHelper);
+        super(output, PremierPainMod.MOD_ID);
     }
 
     @Override

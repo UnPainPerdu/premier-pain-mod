@@ -4,9 +4,9 @@ import com.unpainperdu.premierpainmod.PremierPainMod;
 import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.CookingPotMenu;
 import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerBrewingStationMenu;
 import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerMusicalFridgeMenu;
-import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_drawer_menu.VillagerDrawerMenu;
-import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_shelf_menu.VillagerShelfMenu;
-import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_workshop_menu.VillagerWorkshopMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerDrawerMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerShelfMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerWorkshopMenu;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -20,10 +20,6 @@ import java.util.function.Supplier;
 
 public class MenuTypesRegister
 {
-    private MenuTypesRegister()
-    {
-    }
-
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(BuiltInRegistries.MENU, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<MenuType<?>, MenuType<VillagerWorkshopMenu>> VILLAGER_WORKSHOP = register("villager_workshop", () -> new MenuType<>(VillagerWorkshopMenu::new, FeatureFlags.DEFAULT_FLAGS));

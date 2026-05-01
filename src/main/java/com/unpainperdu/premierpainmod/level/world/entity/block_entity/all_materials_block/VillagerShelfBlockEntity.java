@@ -1,6 +1,6 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.all_materials_block;
 
-import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.villager_shelf_menu.VillagerShelfMenu;
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.VillagerShelfMenu;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -55,7 +55,8 @@ public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
         return this.items;
     }
 
-    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+    public ClientboundBlockEntityDataPacket getUpdatePacket()
+    {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
@@ -65,14 +66,6 @@ public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
         CompoundTag compoundtag = new CompoundTag();
         ContainerHelper.saveAllItems(compoundtag, this.items, true, pRegistries);
         return compoundtag;
-    }
-
-    public void dowse()
-    {
-        if (this.level != null)
-        {
-            this.markUpdated();
-        }
     }
 
     @Override
@@ -113,6 +106,7 @@ public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
         this.setChanged();
         this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
     }
+
     @Override
     public void stopOpen(Player pPlayer)
     {
@@ -124,20 +118,22 @@ public class VillagerShelfBlockEntity extends BaseContainerBlockEntity
     }
 
     @Override
-    protected void applyImplicitComponents(BlockEntity.DataComponentInput pComponentInput) {
+    protected void applyImplicitComponents(BlockEntity.DataComponentInput pComponentInput)
+    {
         super.applyImplicitComponents(pComponentInput);
         pComponentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(this.getItems());
     }
 
     @Override
-    protected void collectImplicitComponents(DataComponentMap.Builder pComponents) {
+    protected void collectImplicitComponents(DataComponentMap.Builder pComponents)
+    {
         super.collectImplicitComponents(pComponents);
         pComponents.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItems()));
     }
 
     @Override
-    public void removeComponentsFromTag(CompoundTag pTag) {
+    public void removeComponentsFromTag(CompoundTag pTag)
+    {
         pTag.remove("Items");
     }
-
 }

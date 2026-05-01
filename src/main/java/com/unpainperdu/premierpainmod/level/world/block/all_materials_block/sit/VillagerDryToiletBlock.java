@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.all_materials_block.sit;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -14,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -29,7 +30,7 @@ public class VillagerDryToiletBlock extends Block implements SimpleWaterloggedBl
 {
     public static final MapCodec<VillagerDryToiletBlock> CODEC = simpleCodec(VillagerDryToiletBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = ModBlockStateProperties.DIRECTION;
 
     public VillagerDryToiletBlock(Properties properties)
     {
@@ -65,7 +66,7 @@ public class VillagerDryToiletBlock extends Block implements SimpleWaterloggedBl
         FluidState fluidstate = level.getFluidState(blockpos);
 
         boolean flag = fluidstate.getType() == Fluids.WATER;
-        if (blockpos.getY() < level.getMaxBuildHeight())
+        if (blockpos.getY() < level.getMaxY())
         {
             return this.defaultBlockState().setValue(WATERLOGGED, flag).setValue(FACING, pContext.getHorizontalDirection());
         }

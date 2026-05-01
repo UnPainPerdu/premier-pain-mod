@@ -1,20 +1,15 @@
 package com.unpainperdu.premierpainmod.client.render.entity.flowered_lizard;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.unpainperdu.premierpainmod.PremierPainMod;
-import com.unpainperdu.premierpainmod.client.render.entity.mountain_currant_golem.MountainCurrantGolemAnimation;
-import com.unpainperdu.premierpainmod.level.world.entity.mobs.FloweredLizardEntity;
-import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import org.jetbrains.annotations.NotNull;
 
-public class FloweredLizardModel extends HierarchicalModel<FloweredLizardEntity>
+public class FloweredLizardModel extends EntityModel<FloweredLizardRenderState>
 {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "flowered_lizard"), "main");
     private final ModelPart root;
@@ -46,6 +41,7 @@ public class FloweredLizardModel extends HierarchicalModel<FloweredLizardEntity>
 
     public FloweredLizardModel(ModelPart root)
     {
+        super(root);
         this.root = root;
         this.body = root.getChild("body");
         this.bottom = this.body.getChild("bottom");
@@ -184,29 +180,17 @@ public class FloweredLizardModel extends HierarchicalModel<FloweredLizardEntity>
     }
 
     @Override
-    public @NotNull ModelPart root()
+    public void setupAnim(FloweredLizardRenderState renderState)
     {
-        return this.root;
-    }
+        super.setupAnim(renderState);
+        this.applyHeadRotation(renderState.yRot, renderState.xRot);
 
-    @Override
-    public void renderToBuffer(@NotNull PoseStack poseStack, @NotNull VertexConsumer buffer, int packedLight, int packedOverlay, int color)
-    {
-        this.root.render(poseStack, buffer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public void setupAnim(@NotNull FloweredLizardEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
-    {
-        this.root().getAllParts().forEach(ModelPart::resetPose);
-        this.applyHeadRotation(netHeadYaw, headPitch);
-
-        this.animate(entity.idleAnimationState, FloweredLizardAnimation.IDLE, ageInTicks, 1F);
-        this.animate(entity.walkAnimationState, FloweredLizardAnimation.WALK, ageInTicks, 1F);
-        this.animate(entity.attack0AnimationState, FloweredLizardAnimation.ATTACK0, ageInTicks, 1F);
-        this.animate(entity.attack1AnimationState, FloweredLizardAnimation.ATTACK1, ageInTicks, 1F);
-        this.animate(entity.attack2AnimationState, FloweredLizardAnimation.ATTACK2, ageInTicks, 1F);
-        this.animate(entity.eatAnimationState, FloweredLizardAnimation.EAT, ageInTicks, 1F);
+        this.animate(renderState.idleAnimationState, FloweredLizardAnimation.IDLE, renderState.ageInTicks, 1F);
+        this.animate(renderState.walkAnimationState, FloweredLizardAnimation.WALK, renderState.ageInTicks, 1F);
+        this.animate(renderState.attack0AnimationState, FloweredLizardAnimation.ATTACK0, renderState.ageInTicks, 1F);
+        this.animate(renderState.attack1AnimationState, FloweredLizardAnimation.ATTACK1, renderState.ageInTicks, 1F);
+        this.animate(renderState.attack2AnimationState, FloweredLizardAnimation.ATTACK2, renderState.ageInTicks, 1F);
+        this.animate(renderState.eatAnimationState, FloweredLizardAnimation.EAT, renderState.ageInTicks, 1F);
     }
 
     private void applyHeadRotation(float headYaw, float headPitch)

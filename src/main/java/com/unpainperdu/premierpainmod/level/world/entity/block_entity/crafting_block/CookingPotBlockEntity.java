@@ -1,8 +1,8 @@
 package com.unpainperdu.premierpainmod.level.world.entity.block_entity.crafting_block;
 
+import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.CookingPotMenu;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotInput;
 import com.unpainperdu.premierpainmod.level.world.item.crafting.recipe.cooking_pot_block.CookingPotRecipe;
-import com.unpainperdu.premierpainmod.level.menu.menu.all_materials_block.CookingPotMenu;
 import com.unpainperdu.premierpainmod.util.register.block.BlockEntityRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.recipe.RecipeTypeRegister;
@@ -26,7 +26,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.StackedContents;
+import net.minecraft.world.entity.player.StackedItemContents;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeCraftingHolder;
@@ -197,7 +197,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements R
         int currentIndexCookingTime = currentInputItemIndex - 1;
         FluidStack fluidStackInput = fluidTank.getFluid();
         ItemStack currentInputItem = blockEntity.getItem(currentInputItemIndex);
-        RecipeHolder<?> recipeholder = blockEntity.quickCheck.getRecipeFor(new CookingPotInput(fluidStackInput, currentInputItem), level).orElse(null);
+        RecipeHolder<?> recipeholder = blockEntity.quickCheck.getRecipeFor(new CookingPotInput(fluidStackInput, currentInputItem), (ServerLevel) level).orElse(null);
 
         if (!canCook(level.registryAccess(), recipeholder, fluidStackInput, currentInputItem, blockEntity, currentInputItemIndex))
         {
@@ -302,7 +302,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements R
     {
         if (recipe != null)
         {
-            ResourceLocation resourcelocation = recipe.id();
+            ResourceLocation resourcelocation = recipe.id().location();
             this.recipesUsed.addTo(resourcelocation, 1);
         }
     }
@@ -315,7 +315,7 @@ public class CookingPotBlockEntity extends BaseContainerBlockEntity implements R
     }
 
     @Override
-    public void fillStackedContents(@NotNull StackedContents contents)
+    public void fillStackedContents(StackedItemContents contents)
     {
         for (ItemStack itemstack : this.items)
         {

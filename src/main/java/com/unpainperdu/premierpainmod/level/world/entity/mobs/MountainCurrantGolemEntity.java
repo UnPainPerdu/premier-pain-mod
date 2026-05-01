@@ -8,6 +8,7 @@ import com.unpainperdu.premierpainmod.util.register.SoundEventRegister;
 import com.unpainperdu.premierpainmod.util.register.ai.MemoryModuleTypeRegister;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -140,7 +141,7 @@ public class MountainCurrantGolemEntity extends AbstractGolem implements SmartBr
     }
 
     @Override
-    protected void customServerAiStep()
+    protected void customServerAiStep(ServerLevel level)
     {
         tickBrain(this);
     }

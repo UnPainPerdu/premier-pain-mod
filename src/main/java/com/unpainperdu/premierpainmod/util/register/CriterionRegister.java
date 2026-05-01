@@ -10,10 +10,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CriterionRegister
 {
-    private CriterionRegister()
-    {
-    }
-
     public static final DeferredRegister<CriterionTrigger<?>> CRITERION = DeferredRegister.create(BuiltInRegistries.TRIGGER_TYPES, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<CriterionTrigger<?>, ModInventoryChangeTrigger> MOD_INVENTORY_CHANGE_TRIGGER = CRITERION.register("mod_inventory_change_trigger", ModInventoryChangeTrigger::new);

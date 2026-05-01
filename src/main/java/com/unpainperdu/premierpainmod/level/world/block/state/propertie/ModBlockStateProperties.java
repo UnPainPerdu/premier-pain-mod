@@ -4,6 +4,7 @@ import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properti
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.PointedCrystalState;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.VillagerCarpetColor;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 
@@ -15,4 +16,5 @@ public class ModBlockStateProperties
     public static final BooleanProperty HANGING = BooleanProperty.create("hanging");
     public static final BooleanProperty BOTTOM_PART = BooleanProperty.create("bottom_part");
     public static final EnumProperty<PointedCrystalState> POINTED_CRYSTAL_STATE = EnumProperty.create("bottom_part", PointedCrystalState.class);
+    public static final EnumProperty<Direction> DIRECTION = EnumProperty.create("facing", Direction.class);
 }

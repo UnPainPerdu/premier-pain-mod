@@ -29,10 +29,6 @@ import static com.unpainperdu.premierpainmod.util.register.block.BlockRegister.l
 
 public class AllMaterialsBlockEnum
 {
-    private AllMaterialsBlockEnum()
-    {
-    }
-
     public enum Material
     {
         OAK(Blocks.OAK_PLANKS),
@@ -125,16 +121,16 @@ public class AllMaterialsBlockEnum
         VILLAGER_CHISELED_HEAD(properties -> new VillagerChiseledHead(properties.lightLevel(litBlockEmission(13)))),
         VILLAGER_DRY_TOILET(properties -> new VillagerDryToiletBlock(properties.noOcclusion()));
 
-        private final Function<BlockBehaviour.Properties, Block> block;
+        private final Function<BlockBehaviour.Properties, Block> constructor;
 
-        Type(Function<BlockBehaviour.Properties, Block> block)
+        Type(Function<BlockBehaviour.Properties, Block> constructor)
         {
-            this.block = block;
+            this.constructor = constructor;
         }
 
-        public Block getBlock(BlockBehaviour.Properties properties)
+        public Function<BlockBehaviour.Properties, Block> getContructor()
         {
-            return block.apply(properties);
+            return constructor;
         }
 
         @Override

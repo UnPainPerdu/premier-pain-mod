@@ -6,8 +6,6 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class ModWoodTypes
 {
-    private ModWoodTypes(){}
-
     public static final WoodType MOUNTAIN_CURRANT = create("mountain_currant", ModBlockSetType.MOUNTAIN_CURRANT);
     public static final WoodType MORICHE_PALM = create("moriche_palm", ModBlockSetType.MORICHE_PALM);
     public static final WoodType ACHIOTE = create("achiote", ModBlockSetType.ACHIOTE);

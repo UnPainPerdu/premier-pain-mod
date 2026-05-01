@@ -19,8 +19,6 @@ public class SeatUtil
      */
     private static final Map<ResourceLocation, Map<BlockPos, Pair<SeatEntity, Vec3>>> OCCUPIED = new HashMap<>();
 
-    private SeatUtil() {}
-
     /**
      * Adds a sit entity to the map that keeps track of them. This does not spawn the entity itself.
      *

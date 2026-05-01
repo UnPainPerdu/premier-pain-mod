@@ -20,11 +20,9 @@ import java.util.Map;
 
 import static com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum.*;
 
-
 public class LogBlock extends RotatedPillarBlock
 {
     private static final List<Map<String, DeferredBlock<Block>>> WOOD_TYPE_LIST = new ArrayList<>();
-
 
     public LogBlock(Properties properties)
     {

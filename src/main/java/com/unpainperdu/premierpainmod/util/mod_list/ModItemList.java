@@ -13,7 +13,6 @@ import java.util.List;
 
 public class ModItemList
 {
-
     /**
      * Little reminder that's ALL items, so item from blocks included
      **/

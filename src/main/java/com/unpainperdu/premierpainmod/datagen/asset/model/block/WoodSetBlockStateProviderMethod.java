@@ -12,9 +12,9 @@ import static com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil.*;
 
 public class WoodSetBlockStateProviderMethod
 {
-    private final ModBlockStateProvider bs;
+    private final ModBlockModelProvider bs;
 
-    public WoodSetBlockStateProviderMethod(ModBlockStateProvider bs)
+    public WoodSetBlockStateProviderMethod(ModBlockModelProvider bs)
     {
         this.bs = bs;
     }

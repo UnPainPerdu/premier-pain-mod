@@ -10,8 +10,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -33,14 +33,14 @@ public class SkySpearsFlower extends Block
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
-        if(RandomUtil.getRandomIntInRange(100, random) >=80)
+        if (RandomUtil.getRandomIntInRange(100, random) >= 80)
         {
             if (level.getBlockState(pos.below()).is(BlockTags.DIRT))
             {
                 if (level.getBlockState(pos.above()).isAir())
                 {
-                    level.setBlock(pos,BlockRegister.SKY_SPEARS.get().defaultBlockState().setValue(SkySpears.HALF, DoubleBlockHalf.LOWER), 2);
-                    level.setBlock(pos.above(),BlockRegister.SKY_SPEARS.get().defaultBlockState().setValue(SkySpears.HALF, DoubleBlockHalf.UPPER), 2);
+                    level.setBlock(pos, BlockRegister.SKY_SPEARS.get().defaultBlockState().setValue(SkySpears.HALF, DoubleBlockHalf.LOWER), 2);
+                    level.setBlock(pos.above(), BlockRegister.SKY_SPEARS.get().defaultBlockState().setValue(SkySpears.HALF, DoubleBlockHalf.UPPER), 2);
                 }
             }
         }
@@ -56,14 +56,14 @@ public class SkySpearsFlower extends Block
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, Direction direction, BlockState pFacingState, LevelAccessor level, BlockPos pos, BlockPos pFacingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (!state.canSurvive(level, pos))
+        if (!selfState.canSurvive(level, selfPos))
         {
-            level.scheduleTick(pos, this, 1);
+            scheduledTickAccess.createTick(selfPos, this, 1);
         }
 
-        return super.updateShape(state, direction, pFacingState, level, pos, pFacingPos);
+        return super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class SkySpearsFlower extends Block
         boolean flag = false;
         BlockState stateBelow = level.getBlockState(pos.below());
         if (stateBelow == BlockRegister.SKY_SPEARS.get().defaultBlockState().setValue(AbstractTallGrass.HALF, DoubleBlockHalf.UPPER)
-            || stateBelow.is(BlockTags.DIRT)
+                || stateBelow.is(BlockTags.DIRT)
         )
         {
             flag = true;
@@ -95,8 +95,8 @@ public class SkySpearsFlower extends Block
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        Vec3 vec3 = state.getOffset(level, pos);
-        return Block.box(0,0,0,16,16,16).move(vec3.x, vec3.y, vec3.z);
+        Vec3 vec3 = state.getOffset(pos);
+        return Block.box(0, 0, 0, 16, 16, 16).move(vec3.x, vec3.y, vec3.z);
     }
 
     @Override

@@ -9,17 +9,13 @@ import net.minecraft.world.level.ItemLike;
 
 public class VillagerWorkshopRecipeBuilder extends SingleItemRecipeBuilder
 {
-    public VillagerWorkshopRecipeBuilder(RecipeCategory p_251425_, SingleItemRecipe.Factory<?> p_312361_, Ingredient p_251221_, ItemLike p_251302_, int p_250964_)
+    public VillagerWorkshopRecipeBuilder(RecipeCategory category, SingleItemRecipe.Factory<?> factory, Ingredient ingredient, ItemLike itemLike, int count)
     {
-        super(p_251425_, p_312361_, p_251221_, p_251302_, p_250964_);
-    }
-    public static SingleItemRecipeBuilder villagerWorkshoping(Ingredient pIngredient, RecipeCategory pCategory, ItemLike pResult)
-    {
-        return new SingleItemRecipeBuilder(pCategory, VillagerWorkshopRecipe::new, pIngredient, pResult, 1);
+        super(category, factory, ingredient, itemLike, count);
     }
 
-    public static SingleItemRecipeBuilder villagerWorkshoping(Ingredient pIngredient, RecipeCategory pCategory, ItemLike pResult, int pCount)
+    public static SingleItemRecipeBuilder villagerWorkshoping(Ingredient ingredient, RecipeCategory category, ItemLike result, int count)
     {
-        return new SingleItemRecipeBuilder(pCategory, VillagerWorkshopRecipe::new, pIngredient, pResult, pCount);
+        return new SingleItemRecipeBuilder(category, VillagerWorkshopRecipe::new, ingredient, result, count);
     }
 }

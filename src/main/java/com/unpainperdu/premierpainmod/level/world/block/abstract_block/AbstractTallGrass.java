@@ -12,8 +12,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -46,30 +46,30 @@ public abstract class AbstractTallGrass extends Block
     @Override
     public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter blockGetter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
-        Vec3 vec3 = state.getOffset(blockGetter, pos);
+        Vec3 vec3 = state.getOffset(pos);
         return Block.box(0, 0, 0, 16, 16, 16).move(vec3.x, vec3.y, vec3.z);
     }
 
     @Override
-    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction direction, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos facingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (!state.canSurvive(level, pos))
+        if (!selfState.canSurvive(level, selfPos))
         {
-            level.scheduleTick(pos, this, 1);
+            scheduledTickAccess.createTick(selfPos, this, 1);
         }
 
-        DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
+        DoubleBlockHalf doubleblockhalf = selfState.getValue(HALF);
         if (direction.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (direction == Direction.UP))
         {
             return facingState.is(this) && facingState.getValue(HALF) != doubleblockhalf
-                    ? state
+                    ? selfState
                     : Blocks.AIR.defaultBlockState();
         }
         else
         {
-            return doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canSurvive(level, pos)
+            return doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !selfState.canSurvive(level, selfPos)
                     ? Blocks.AIR.defaultBlockState()
-                    : super.updateShape(state, direction, facingState, level, pos, facingPos);
+                    : super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
         }
 
     }
@@ -164,7 +164,7 @@ public abstract class AbstractTallGrass extends Block
     {
         BlockPos blockpos = context.getClickedPos();
         Level level = context.getLevel();
-        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(context))
+        if (blockpos.getY() < level.getMaxY() && level.getBlockState(blockpos.above()).canBeReplaced(context))
         {
             return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER);
         }

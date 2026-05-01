@@ -12,10 +12,13 @@ import com.unpainperdu.premierpainmod.util.mod_list.ModItemList;
 import com.unpainperdu.premierpainmod.util.register.Item.ItemRegister;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import com.unpainperdu.premierpainmod.util.register.block.WoodBlockEnum;
+import com.unpainperdu.premierpainmod.util.tool_kit.ResourceUtil;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -23,18 +26,17 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
-import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.FluidIngredient;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -42,20 +44,19 @@ import java.util.concurrent.CompletableFuture;
 
 import static com.unpainperdu.premierpainmod.util.register.fluid.AllInOneFluidRegister.getFluid;
 
-public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder
+public class ModRecipeProvider extends RecipeProvider
 {
     //TODO separate each craft type in own class
     protected RecipeOutput recipeOutput;
 
-    public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider)
+    public ModRecipeProvider(HolderLookup.Provider provider, RecipeOutput output)
     {
-        super(output, lookupProvider);
+        super(provider, output);
     }
 
     @Override
-    protected void buildRecipes(@NotNull RecipeOutput recipeOutput)
+    protected void buildRecipes()
     {
-        this.recipeOutput = recipeOutput;
         //cooking_pot
         cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), Items.POTATO, ItemRegister.HALF_COOKED_FRIES);
         cookingPotRecipeBuilder(getFluid(MorichePalmOilFluid.NAME).get(), ItemRegister.HALF_COOKED_FRIES, ItemRegister.FRIES);
@@ -179,17 +180,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //stone cutter
         //  geology
         //      gypsum
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.GYPSUM_STAIRS, BlockRegister.GYPSUM);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.GYPSUM_SLAB, BlockRegister.GYPSUM, 2);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.GYPSUM_WALL, BlockRegister.GYPSUM);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.CUTTED_GYPSUM, BlockRegister.GYPSUM);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM, BlockRegister.GYPSUM);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_STAIRS, BlockRegister.GYPSUM);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_SLAB, BlockRegister.GYPSUM, 2);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_WALL, BlockRegister.GYPSUM);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_STAIRS, BlockRegister.POLISHED_GYPSUM);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_SLAB, BlockRegister.POLISHED_GYPSUM, 2);
-        stonecutterResultFromBase(this.recipeOutput, RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_WALL, BlockRegister.POLISHED_GYPSUM);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.GYPSUM_STAIRS, BlockRegister.GYPSUM);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.GYPSUM_SLAB, BlockRegister.GYPSUM, 2);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.GYPSUM_WALL, BlockRegister.GYPSUM);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.CUTTED_GYPSUM, BlockRegister.GYPSUM);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM, BlockRegister.GYPSUM);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_STAIRS, BlockRegister.GYPSUM);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_SLAB, BlockRegister.GYPSUM, 2);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_WALL, BlockRegister.GYPSUM);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_STAIRS, BlockRegister.POLISHED_GYPSUM);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_SLAB, BlockRegister.POLISHED_GYPSUM, 2);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, BlockRegister.POLISHED_GYPSUM_WALL, BlockRegister.POLISHED_GYPSUM);
         //villager workshop
         //  all materials recipes
         for (Item item : ModItemList.getAllMaterialsBlocksAsItem())
@@ -394,7 +395,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void villagerWorkshopRecipeBuilder()
     {
         Block craftedBlock = BlockRegister.VILLAGER_WORKSHOP.get();
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(craftedBlock, 1))
+        this.shaped(RecipeCategory.MISC, craftedBlock)
                 .define('1', Items.COPPER_INGOT)
                 .define('2', Items.EMERALD)
                 .define('#', Blocks.STONE)
@@ -425,7 +426,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         String resultName = getName(result.asItem());
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput)
+        this.shapeless(RecipeCategory.MISC, result, numberOutput)
                 .requires(resource)
                 .unlockedBy("has_" + resultName, has(resource))
                 .save(this.recipeOutput);
@@ -444,7 +445,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     {
         String resultName = getName(result.asItem());
         String ingredientName = getName(resource.asItem());
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput)
+        this.shapeless(RecipeCategory.MISC, result, numberOutput)
                 .requires(resource)
                 .unlockedBy("has_" + resultName, has(resource))
                 .save(this.recipeOutput, "premierpainmod:" + resultName + "_from_" + ingredientName);
@@ -481,8 +482,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void foodCookingRecipeBuilder(ItemLike resource, ItemLike result, RecipeCategory recipeCategory, float exp, int furnaceCookingTime)
     {
         oneItemToAnotherOneRecipeInFurnaceBuilder(resource, result, recipeCategory, exp, furnaceCookingTime);
-        oneItemToAnotherOneRecipeInSmokeFurnaceBuilder(resource, result, recipeCategory, exp, furnaceCookingTime/2);
-        oneItemToAnotherOneRecipeInFireCampBuilder(resource, result, recipeCategory, exp, furnaceCookingTime*3);
+        oneItemToAnotherOneRecipeInSmokeFurnaceBuilder(resource, result, recipeCategory, exp, furnaceCookingTime / 2);
+        oneItemToAnotherOneRecipeInFireCampBuilder(resource, result, recipeCategory, exp, furnaceCookingTime * 3);
     }
 
 
@@ -492,7 +493,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         String ingredientName = getName(unlockItem.asItem());
 
-        ShapelessRecipeBuilder shapelessRecipeBuilder = ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, numberOutput);
+        ShapelessRecipeBuilder shapelessRecipeBuilder = this.shapeless(RecipeCategory.MISC, result, numberOutput);
         for (ItemLike r : resource)
         {
             shapelessRecipeBuilder = shapelessRecipeBuilder.requires(r);
@@ -503,7 +504,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void stairsRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem()) + "_from_" + getName(blockNeeded.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 4))
+        this.shaped(RecipeCategory.MISC, result, 4)
                 .define('#', blockNeeded)
                 .pattern("#  ")
                 .pattern("## ")
@@ -515,7 +516,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void slabRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem()) + "_from_" + getName(blockNeeded.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 6))
+        this.shaped(RecipeCategory.MISC, result, 6)
                 .define('#', blockNeeded)
                 .pattern("###")
                 .unlockedBy("has_" + resultName, has(blockNeeded))
@@ -525,7 +526,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void buttonRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+        this.shaped(RecipeCategory.MISC, result, 1)
                 .define('#', blockNeeded)
                 .pattern("#")
                 .unlockedBy("has_" + resultName, has(blockNeeded))
@@ -535,7 +536,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void pressurePlateRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+        this.shaped(RecipeCategory.MISC, result, 1)
                 .define('#', blockNeeded)
                 .pattern("##")
                 .unlockedBy("has_" + resultName, has(blockNeeded))
@@ -545,7 +546,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void fenceRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 3))
+        this.shaped(RecipeCategory.MISC, result, 3)
                 .define('#', blockNeeded)
                 .define('s', Items.STICK)
                 .pattern("#s#")
@@ -557,7 +558,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void fenceGateRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+        this.shaped(RecipeCategory.MISC, result, 1)
                 .define('#', blockNeeded)
                 .define('s', Items.STICK)
                 .pattern("s#s")
@@ -569,7 +570,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void doorRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 3))
+        this.shaped(RecipeCategory.MISC, result, 3)
                 .define('#', blockNeeded)
                 .pattern("##")
                 .pattern("##")
@@ -581,7 +582,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void trapdoorOrWallRecipeBuilder(ItemLike result, ItemLike blockNeeded, int resultNumber)
     {
         String resultName = getName(result.asItem()) + "_from_" + getName(blockNeeded.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, resultNumber))
+        this.shaped(RecipeCategory.MISC, result, resultNumber)
                 .define('#', blockNeeded)
                 .pattern("###")
                 .pattern("###")
@@ -592,7 +593,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void signRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 3))
+        this.shaped(RecipeCategory.MISC, result, 3)
                 .define('#', blockNeeded)
                 .define('t', Items.STICK)
                 .pattern("###")
@@ -605,7 +606,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void hangingSignRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 6))
+        this.shaped(RecipeCategory.MISC, result, 6)
                 .define('#', blockNeeded)
                 .define('t', Items.CHAIN)
                 .pattern("t t")
@@ -618,7 +619,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void boatRecipeBuilder(ItemLike result, ItemLike blockNeeded)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+        this.shaped(RecipeCategory.MISC, result, 1)
                 .define('#', blockNeeded)
                 .pattern("# #")
                 .pattern("###")
@@ -629,7 +630,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void boatWithChestRecipeBuilder(ItemLike ChestBoat, ItemLike boat)
     {
         String resultName = getName(ChestBoat.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(ChestBoat, 1))
+        this.shaped(RecipeCategory.MISC, ChestBoat, 1)
                 .define('$', Blocks.CHEST)
                 .define('#', boat)
                 .pattern("$")
@@ -646,7 +647,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void fourSameIntoOneRecipeBuilder(ItemLike result, ItemLike blockNeeded, int resultCount)
     {
         String resultName = getName(result.asItem()) + "_from_" + getName(blockNeeded.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, resultCount))
+        this.shaped(RecipeCategory.MISC, result, resultCount)
                 .define('#', blockNeeded)
                 .pattern("##")
                 .pattern("##")
@@ -660,7 +661,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void brewingStationRecipeBuilder(FluidStack fluidInput, FluidStack fluidOutput, ItemLike... itemLikes)
     {
         String resultName = getName(fluidOutput);
-        SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.single(fluidInput), 1000);
+        SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.of(fluidInput), 1000);
         ArrayList<Ingredient> ingredientList = new ArrayList<>();
         for (ItemLike itemLike : itemLikes)
         {
@@ -668,7 +669,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
         new VillagerBrewingStationRecipeBuilder(sizedFluidIngredient, ingredientList, fluidOutput)
                 .unlockedBy("has_civilization_flower", has(BlockRegister.CIVILIZATIONS_FLOWER))
-                .save(this.recipeOutput, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "brewing_" + resultName));
+                .save(this.recipeOutput, createReousceKey("brewing_" + resultName));
     }
 
     private void createEmptyBeerContainer()
@@ -679,7 +680,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         Item result = ItemRegister.EMPTY_GLASS.get();
         String resultName = getName(result);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 5))
+        this.shaped(RecipeCategory.MISC, result, 5)
                 .define('#', glass)
                 .pattern("# #")
                 .pattern("###")
@@ -688,7 +689,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         result = ItemRegister.EMPTY_BOTTLE.get();
         resultName = getName(result);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 7))
+        this.shaped(RecipeCategory.MISC, result, 7)
                 .define('#', glass)
                 .pattern("# #")
                 .pattern("# #")
@@ -698,7 +699,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         result = ItemRegister.EMPTY_MUG.get();
         resultName = getName(result);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 7))
+        this.shaped(RecipeCategory.MISC, result, 7)
                 .define('#', wood)
                 .define('$', ironNugget)
                 .pattern("# #")
@@ -730,7 +731,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void cookingPotBlockRecipeBuilder()
     {
         Block craftedBlock = BlockRegister.COOKING_POT_BLOCK.get();
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(craftedBlock, 1))
+        this.shaped(RecipeCategory.MISC, craftedBlock)
                 .define('1', Items.IRON_INGOT)
                 .define('2', Items.WOODEN_SHOVEL)
                 .pattern("121")
@@ -747,19 +748,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void cookingPotRecipeBuilder(Fluid fluidInput, ItemLike itemStackInput, ItemLike itemStackOutput, int itemNumberOutput)
     {
         String resultName = getName(itemStackOutput.asItem());
-        SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.single(fluidInput), CookingPotBlockEntity.MB_CONSUMED_BY_RECIPE);
+        SizedFluidIngredient sizedFluidIngredient = new SizedFluidIngredient(FluidIngredient.of(fluidInput), CookingPotBlockEntity.MB_CONSUMED_BY_RECIPE);
         Ingredient ingredient = Ingredient.of(itemStackInput);
         ItemStack itemStackResult = new ItemStack(itemStackOutput, itemNumberOutput);
 
         new CookingPotRecipeBuilder(sizedFluidIngredient, ingredient, itemStackResult)
                 .unlockedBy("has_" + getName(itemStackInput.asItem()), has(itemStackInput))
-                .save(this.recipeOutput, ResourceLocation.fromNamespaceAndPath(PremierPainMod.MOD_ID, "cooking_pot_" + resultName));
+                .save(this.recipeOutput, createReousceKey("cooking_pot_" + resultName));
     }
 
     private void cuttedStoneRecipeBuilder(ItemLike twoInputItemLike, ItemLike result, int resultAmount)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, resultAmount))
+        this.shaped(RecipeCategory.MISC, result, resultAmount)
                 .define('#', twoInputItemLike)
                 .pattern("#")
                 .pattern("#")
@@ -770,7 +771,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void horseArmorRecipeBuilder(ItemLike ingredient, ItemLike result)
     {
         String resultName = getName(result.asItem());
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, new ItemStack(result, 1))
+        this.shaped(RecipeCategory.MISC, result, 1)
                 .define('#', ingredient)
                 .pattern("# #")
                 .pattern("###")
@@ -796,5 +797,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private ResourceLocation getKey(Item item)
     {
         return BuiltInRegistries.ITEM.getKey(item);
+    }
+
+    private ResourceKey<Recipe<?>> createReousceKey(String path)
+    {
+        return ResourceKey.create(Registries.RECIPE, ResourceUtil.createResourceLocation(path));
+    }
+
+    public static class Runner extends RecipeProvider.Runner
+    {
+        public Runner(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider)
+        {
+            super(output, lookupProvider);
+        }
+
+        @Override
+        protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput output)
+        {
+            return new ModRecipeProvider(provider, output);
+        }
+
+        @Override
+        public String getName()
+        {
+            return PremierPainMod.MOD_ID + " recipes";
+        }
     }
 }

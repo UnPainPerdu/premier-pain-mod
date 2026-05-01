@@ -1,5 +1,10 @@
 package com.unpainperdu.premierpainmod.util.register.block;
 
+import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.Map;
+
 public enum WoodBlockEnum
 {
     LOG,
@@ -22,6 +27,11 @@ public enum WoodBlockEnum
     WALL_HANGING_SIGN,
     SAPLING,
     POTTED_SAPLING;
+
+    public static DeferredBlock<Block> getWoodBlock(WoodBlockEnum type, Map<String, DeferredBlock<Block>> woodBlockMap)
+    {
+        return woodBlockMap.get(type.toString());
+    }
 
     @Override
     public String toString()

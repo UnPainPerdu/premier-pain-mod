@@ -2,11 +2,10 @@ package com.unpainperdu.premierpainmod.level.world.entity.projectile.egg;
 
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -22,14 +21,14 @@ public abstract class UniversalThrownEgg extends ThrowableItemProjectile
         super(entityType, level);
     }
 
-    public UniversalThrownEgg(EntityType<? extends UniversalThrownEgg> entityType, LivingEntity shooter, Level level)
+    public UniversalThrownEgg(EntityType<? extends UniversalThrownEgg> entityType, LivingEntity shooter, Level level, ItemStack itemstack)
     {
-        super(entityType, shooter, level);
+        super(entityType, shooter, level, itemstack);
     }
 
-    public UniversalThrownEgg(EntityType<? extends UniversalThrownEgg> entityType, double x, double y, double z, Level level)
+    public UniversalThrownEgg(EntityType<? extends UniversalThrownEgg> entityType, double x, double y, double z, Level level, ItemStack itemstack)
     {
-        super(entityType, x, y, z, level);
+        super(entityType, x, y, z, level, itemstack);
     }
 
     @Override
@@ -59,8 +58,11 @@ public abstract class UniversalThrownEgg extends ThrowableItemProjectile
     @Override
     protected void onHitEntity(@NotNull EntityHitResult result)
     {
+        if (!this.level().isClientSide())
+        {
+            result.getEntity().hurtServer((ServerLevel) this.level(), this.damageSources().thrown(this, this.getOwner()), 0.0F);
+        }
         super.onHitEntity(result);
-        result.getEntity().hurt(this.damageSources().thrown(this, this.getOwner()), 0.0F);
     }
 
     /**
@@ -82,7 +84,7 @@ public abstract class UniversalThrownEgg extends ThrowableItemProjectile
 
                 for (int j = 0; j < i; j++)
                 {
-                    AgeableMob ageableMob = getMobThatCanSpawn().create(this.level());
+                    AgeableMob ageableMob = getMobThatCanSpawn().create(this.level(), EntitySpawnReason.MOB_SUMMONED);
                     if (ageableMob != null)
                     {
                         ageableMob.setAge(-24000);

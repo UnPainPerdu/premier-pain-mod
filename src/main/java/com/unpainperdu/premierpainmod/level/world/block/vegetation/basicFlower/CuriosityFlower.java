@@ -26,7 +26,7 @@ public class CuriosityFlower extends FlowerBlock
     @Override
     protected void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, RandomSource rand)
     {
-        if(blockState.getValue(MAX_FLOWER_SPREAD) < MAX_FLOWER_STATE)
+        if (blockState.getValue(MAX_FLOWER_SPREAD) < MAX_FLOWER_STATE)
         {
             BlockPos newPos = VegetationUtil.getRandomPosWithSameY(pos, rand);
             newPos = VegetationUtil.checkAndChangeIfPosBad(newPos, level);

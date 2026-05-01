@@ -5,19 +5,20 @@ import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlock
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -25,14 +26,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-
 import javax.annotation.Nullable;
 
 public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlock implements SimpleWaterloggedBlock
 {
     public static final EnumProperty<TwoBlockWidthPart> PART = ModBlockStateProperties.TWO_BLOCK_WIDTH_PART;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = ModBlockStateProperties.DIRECTION;
 
     public AbstractTwoBlockWidthWithBlockEntity(Properties properties)
     {
@@ -50,30 +50,30 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
     protected abstract @NotNull MapCodec<? extends AbstractTwoBlockWidthWithBlockEntity> codec();
 
     @Override
-    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (state.getValue(WATERLOGGED))
+        if (selfState.getValue(WATERLOGGED))
         {
-            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
-        if (facing != getNeighbourDirection(state.getValue(PART), DirectionSwitcher(state.getValue(FACING))))
+        TwoBlockWidthPart twoBlockWidthPart = selfState.getValue(PART);
+        if (direction != getNeighbourDirection(selfState.getValue(PART), DirectionSwitcher(selfState.getValue(FACING))))
         {
-            return twoBlockWidthPart == TwoBlockWidthPart.RIGHT && facing == reverseDirectionSwitcher(state.getValue(FACING)) && !state.canSurvive(level, currentPos)
+            return twoBlockWidthPart == TwoBlockWidthPart.RIGHT && direction == reverseDirectionSwitcher(selfState.getValue(FACING)) && !selfState.canSurvive(level, selfPos)
                     ? Blocks.AIR.defaultBlockState()
-                    : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+                    : super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
         }
         else
         {
-            return facingState.is(this) && facingState.getValue(PART) != state.getValue(PART)
-                    ? state
+            return facingState.is(this) && facingState.getValue(PART) != selfState.getValue(PART)
+                    ? selfState
                     : Blocks.AIR.defaultBlockState();
         }
     }
 
-    protected BlockState superUpdateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos)
+    protected BlockState superUpdateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        return super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+        return super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
@@ -98,6 +98,7 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
         super.playerWillDestroy(level, pos, state, player);
         return state;
     }
+
     //Pète le bloc de droite si gauche cassé
     protected static void preventCreativeDropFromRightPart(Level level, BlockPos pos, BlockState state, Player player)
     {
@@ -142,6 +143,7 @@ public abstract class AbstractTwoBlockWidthWithBlockEntity extends BaseEntityBlo
             default -> Direction.WEST;
         };
     }
+
     protected static Direction reverseDirectionSwitcher(Direction direction)
     {
         return switch (direction)

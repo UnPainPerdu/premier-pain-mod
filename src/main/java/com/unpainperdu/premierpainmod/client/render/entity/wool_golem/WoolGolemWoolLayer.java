@@ -7,44 +7,42 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.FastColor;
+import net.minecraft.util.ARGB;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.DyeColor;
-import org.jetbrains.annotations.NotNull;
 
-public class WoolGolemWoolLayer extends RenderLayer<WoolGolemEntity, WoolGolemModel>
+public class WoolGolemWoolLayer extends RenderLayer<WoolGolemRenderState, WoolGolemModel>
 {
 
     private static final ResourceLocation WOOL_LOCATION = ResourceUtil.createResourceLocation("textures/entity/mob/wool_golem/wool.png");
 
-    public WoolGolemWoolLayer(RenderLayerParent<WoolGolemEntity, WoolGolemModel> renderer)
+    public WoolGolemWoolLayer(RenderLayerParent<WoolGolemRenderState, WoolGolemModel> renderer)
     {
         super(renderer);
     }
 
     @Override
-    public void render(@NotNull PoseStack poseStack, @NotNull MultiBufferSource bufferSource, int packedLight,
-                       @NotNull WoolGolemEntity livingEntity, float limbSwing, float limbSwingAmount,
-                       float partialTick, float ageInTicks, float netHeadYaw, float headPitch)
+    public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, WoolGolemRenderState renderState, float yRot, float xRot)
     {
-        if (!livingEntity.isInvisible())
+        if (!renderState.isInvisible)
         {
             int i;
-            if (livingEntity.hasCustomName() && "UnPainPerdu".equals(livingEntity.getName().getString()))
+            if (renderState.customName != null && "UnPainPerdu".equals(renderState.customName.getString()))
             {
-                int k = livingEntity.tickCount / 25 + livingEntity.getId();
+                int k = (int) (renderState.ageInTicks / 25 + renderState.id);
                 int l = DyeColor.values().length;
                 int i1 = k % l;
                 int j1 = (k + 1) % l;
-                float f = ((float) (livingEntity.tickCount % 25) + partialTick) / 25.0F;
+                float f = ((float) (k % 25) + Mth.frac(renderState.ageInTicks)) / 25.0F;
                 int k1 = WoolGolemEntity.getColor(DyeColor.byId(i1));
                 int l1 = WoolGolemEntity.getColor(DyeColor.byId(j1));
-                i = FastColor.ARGB32.lerp(f, k1, l1);
+                i = ARGB.lerp(f, k1, l1);
             }
             else
             {
-                i = WoolGolemEntity.getColor(livingEntity.getWoolDye());
+                i = WoolGolemEntity.getColor(renderState.woolColor);
             }
-            renderColoredCutoutModel(this.getParentModel(), WOOL_LOCATION, poseStack, bufferSource, packedLight, livingEntity, i);
+            renderColoredCutoutModel(this.getParentModel(), WOOL_LOCATION, poseStack, bufferSource, packedLight, renderState, i);
         }
     }
 }

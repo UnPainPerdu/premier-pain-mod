@@ -24,46 +24,35 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class BlockEntityRegister
 {
-    private BlockEntityRegister()
-    {
-    }
-
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<PedestalBlockEntity>> PEDESTAL_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register(
             "pedestal_block_entity",
-            () -> BlockEntityType.Builder.of(PedestalBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerPedestalBlock.class).toArray(new Block[0])).build(null));
-
+            () -> new BlockEntityType<>(PedestalBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerPedestalBlock.class).toArray(new Block[0])));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VillagerDrawerBlockEntity>> VILLAGER_DRAWER_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register(
             "villager_drawer_block_entity",
-            () -> BlockEntityType.Builder.of(VillagerDrawerBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerDrawer.class).toArray(new Block[0])).build(null));
-
+            () -> new BlockEntityType<>(VillagerDrawerBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerDrawer.class).toArray(new Block[0])));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VillagerShelfBlockEntity>> VILLAGER_SHELF_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register(
             "villager_shelf_block_entity",
-            () -> BlockEntityType.Builder.of(VillagerShelfBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerShelf.class).toArray(new Block[0])).build(null));
-
+            () -> new BlockEntityType<>(VillagerShelfBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerShelf.class).toArray(new Block[0])));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ModSignBlockEntity>> MOD_SIGN = BLOCK_ENTITY_TYPES.register(
             "mod_sign",
-            () -> BlockEntityType.Builder.of(ModSignBlockEntity::new, ModBLockList.getAllBlocksFromClass(ModStandingSignBlock.class, ModWallSignBlock.class).toArray(new Block[0])).build(null));
-
+            () -> new BlockEntityType<>(ModSignBlockEntity::new, ModBLockList.getAllBlocksFromClass(ModStandingSignBlock.class, ModWallSignBlock.class).toArray(new Block[0])));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ModHangingSignBlockEntity>> MOD_HANGING_SIGN = BLOCK_ENTITY_TYPES.register(
             "mod_hanging_sign",
-            () -> BlockEntityType.Builder.of(ModHangingSignBlockEntity::new, ModBLockList.getAllBlocksFromClass(ModHangingSignBlock.class, ModWallHangingSignBlock.class).toArray(new Block[0])).build(null));
-
+            () -> new BlockEntityType<>(ModHangingSignBlockEntity::new, ModBLockList.getAllBlocksFromClass(ModHangingSignBlock.class, ModWallHangingSignBlock.class).toArray(new Block[0])));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VillagerBrewingStationBlockEntity>> VILLAGER_BREWING_STATION_ENTITY = BLOCK_ENTITY_TYPES.register(
             "villager_brewing_station_entity",
-            () -> BlockEntityType.Builder.of(VillagerBrewingStationBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class).toArray(new Block[0])).build(null));
+            () -> new BlockEntityType<>(VillagerBrewingStationBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerBrewingStation.class).toArray(new Block[0])));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VillagerMusicalFridgeBlockEntity>> VILLAGER_MUSICAL_FRIDGE_ENTITY = BLOCK_ENTITY_TYPES.register(
             "villager_musical_fridge_entity",
-            () -> BlockEntityType.Builder.of(VillagerMusicalFridgeBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerMusicalFridgeBlock.class).toArray(new Block[0])).build(null));
+            () -> new BlockEntityType<>(VillagerMusicalFridgeBlockEntity::new, ModBLockList.getAllBlocksFromClass(VillagerMusicalFridgeBlock.class).toArray(new Block[0])));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CookingPotBlockEntity>> COOKING_POT_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register(
             "cooking_pot_block_entity",
-            () -> BlockEntityType.Builder.of(CookingPotBlockEntity::new, BlockRegister.COOKING_POT_BLOCK.get()).build(null));
-
+            () -> new BlockEntityType<>(CookingPotBlockEntity::new, BlockRegister.COOKING_POT_BLOCK.get()));
 
     public static void register(IEventBus modEventBus)
     {
         BLOCK_ENTITY_TYPES.register(modEventBus);
     }
-
 }

@@ -9,8 +9,6 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class CommonSetupEventPottedThing
 {
-    private CommonSetupEventPottedThing(){}
-
     public static void setupEventPottedThing(final FMLCommonSetupEvent event)
     {
         //misc

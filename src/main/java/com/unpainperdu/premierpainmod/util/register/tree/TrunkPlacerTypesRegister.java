@@ -10,10 +10,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class TrunkPlacerTypesRegister
 {
-    TrunkPlacerTypesRegister()
-    {
-    }
-
     public static final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACER = DeferredRegister.create(Registries.TRUNK_PLACER_TYPE, PremierPainMod.MOD_ID);
 
     public static final DeferredHolder<TrunkPlacerType<?>, TrunkPlacerType<MountainCurrantTrunkPlacer>> MOUNTAIN_CURRANT_TRUNK_PLACER = TRUNK_PLACER.register("mountain_currant_trunk_placer", () -> new TrunkPlacerType<>(MountainCurrantTrunkPlacer.CODEC));

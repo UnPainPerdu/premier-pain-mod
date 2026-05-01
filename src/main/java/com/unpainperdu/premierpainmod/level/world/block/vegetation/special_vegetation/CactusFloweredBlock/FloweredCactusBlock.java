@@ -1,6 +1,7 @@
 package com.unpainperdu.premierpainmod.level.world.block.vegetation.special_vegetation.CactusFloweredBlock;
 
 import com.mojang.serialization.MapCodec;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
 import com.unpainperdu.premierpainmod.level.world.block.vegetation.VegetationUtil;
 import com.unpainperdu.premierpainmod.util.register.block.BlockRegister;
 import net.minecraft.core.BlockPos;
@@ -12,15 +13,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -46,7 +46,7 @@ public class FloweredCactusBlock extends Block
     public static final IntegerProperty PART_NUM = IntegerProperty.create("part_num", 0, 3);
     public static final IntegerProperty GROW_STAGE = IntegerProperty.create("grow_stage", 0, 15);
     public static final BooleanProperty CAN_GROW = BooleanProperty.create("can_grow");
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = ModBlockStateProperties.DIRECTION;
     //all collision shape
 
     public static final MapCodec<FloweredCactusBlock> CODEC = simpleCodec(FloweredCactusBlock::new);
@@ -55,7 +55,7 @@ public class FloweredCactusBlock extends Block
     public FloweredCactusBlock(Properties properties)
     {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(PART_NUM, 0).setValue(GROW_STAGE, 0).setValue(CAN_GROW, true).setValue(FACING ,Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(PART_NUM, 0).setValue(GROW_STAGE, 0).setValue(CAN_GROW, true).setValue(FACING, Direction.NORTH));
     }
 
     @Override
@@ -65,7 +65,7 @@ public class FloweredCactusBlock extends Block
         Direction direction = state.getValue(FACING);
 
         VoxelShape finalShape = Block.box(1.0, 0, 1.0, 15, 16, 15); // default -> 0
-        if(part_num == ARM_TOP_PART)
+        if (part_num == ARM_TOP_PART)
         {
             finalShape = Block.box(5.0, 0, 5.0, 11, 16, 11);
         }
@@ -102,7 +102,7 @@ public class FloweredCactusBlock extends Block
         Direction direction = state.getValue(FACING);
 
         VoxelShape finalCollisionShape = Block.box(1.0, 0, 1.0, 15, 15, 15); // default -> 0
-        if(part_num == ARM_TOP_PART)
+        if (part_num == ARM_TOP_PART)
         {
             finalCollisionShape = Block.box(5.0, 0, 5.0, 11, 15, 11);
         }
@@ -144,7 +144,7 @@ public class FloweredCactusBlock extends Block
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand)
     {
-        if(state.getValue(CAN_GROW))
+        if (state.getValue(CAN_GROW))
         {
             int randomInt = VegetationUtil.getRandomPositiveIntInRange(10, rand); //[0,9]
             int actualGrowStage = state.getValue(GROW_STAGE);
@@ -157,11 +157,11 @@ public class FloweredCactusBlock extends Block
             {
                 if (state.getValue(GROW_STAGE) == 15)
                 {
-                    if(actualAmountOfCactusBelow < MAX_HEIGHT && level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
+                    if (actualAmountOfCactusBelow < MAX_HEIGHT && level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
                     {
                         level.setBlock(pos.above(), state.setValue(PART_NUM, BASE_PART).setValue(GROW_STAGE, 0), 2);
                     }
-                    else if (getNumberOfArm(state, level, pos)<=1 && randomInt < 7)
+                    else if (getNumberOfArm(state, level, pos) <= 1 && randomInt < 7)
                     {
                         generateNewArm(state, level, pos, rand);
                     }
@@ -179,7 +179,7 @@ public class FloweredCactusBlock extends Block
             {
                 if (state.getValue(GROW_STAGE) == 15)
                 {
-                    if(level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
+                    if (level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
                     {
                         level.setBlock(pos.above(), BlockRegister.CACTUS_FLOWER_BLOCK.get().defaultBlockState(), 2);
                         level.setBlock(pos, state.setValue(GROW_STAGE, 0), 4);
@@ -187,7 +187,7 @@ public class FloweredCactusBlock extends Block
                 }
                 else
                 {
-                    if(level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
+                    if (level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
                     {
                         level.setBlock(pos, state.setValue(GROW_STAGE, actualGrowStage + 1), 4);
                     }
@@ -197,7 +197,7 @@ public class FloweredCactusBlock extends Block
             {
                 if (state.getValue(GROW_STAGE) == 15)
                 {
-                    if(level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
+                    if (level.getBlockState(pos.above()).getBlock() instanceof AirBlock)
                     {
                         level.setBlock(pos.above(), state.setValue(PART_NUM, ARM_TOP_PART).setValue(GROW_STAGE, 0), 2);
                         level.setBlock(pos, state.setValue(CAN_GROW, false).setValue(PART_NUM, ARM_WITH_ARM_TOP_ABOVE_PART), 2);
@@ -216,22 +216,22 @@ public class FloweredCactusBlock extends Block
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, Direction direction, BlockState pFacingState, LevelAccessor level, BlockPos pos, BlockPos pFacingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (!state.canSurvive(level, pos))
+        if (!selfState.canSurvive(level, selfPos))
         {
-            level.scheduleTick(pos, this, 1);
+            scheduledTickAccess.createTick(selfPos, this, 1);
         }
 
-        return super.updateShape(state, direction, pFacingState, level, pos, pFacingPos);
+        return super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
-    protected boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos)
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos)
     {
         boolean flag = false;
-        BlockState selfBlockstate = pLevel.getBlockState(pPos);
-        BlockState blockstateBelow = pLevel.getBlockState(pPos.below());
+        BlockState selfBlockstate = level.getBlockState(pos);
+        BlockState blockstateBelow = level.getBlockState(pos.below());
 
         if (selfBlockstate.getBlock() instanceof FloweredCactusBlock)
         {
@@ -243,7 +243,7 @@ public class FloweredCactusBlock extends Block
                 }
                 else if (blockstateBelow.is(this))
                 {
-                    if(blockstateBelow.getValue(PART_NUM) == BASE_PART)
+                    if (blockstateBelow.getValue(PART_NUM) == BASE_PART)
                     {
                         flag = true;
                     }
@@ -251,13 +251,13 @@ public class FloweredCactusBlock extends Block
             }
             if (selfBlockstate.getValue(PART_NUM) >= 2)
             {
-                List<BlockPos> NSEWPos = Arrays.asList(pPos.north(), pPos.south(), pPos.east(), pPos.west());
+                List<BlockPos> NSEWPos = Arrays.asList(pos.north(), pos.south(), pos.east(), pos.west());
                 for (BlockPos pos1 : NSEWPos)
                 {
-                    BlockState state = pLevel.getBlockState(pos1);
-                    if (state.is(this))
+                    BlockState otherState = level.getBlockState(pos1);
+                    if (otherState.is(this))
                     {
-                        if (state.getValue(PART_NUM) < 3)
+                        if (otherState.getValue(PART_NUM) < 3)
                         {
                             flag = true;
                         }
@@ -268,7 +268,7 @@ public class FloweredCactusBlock extends Block
             {
                 if (blockstateBelow.is(this))
                 {
-                    if(blockstateBelow.getValue(PART_NUM) == ARM_WITH_ARM_TOP_ABOVE_PART)
+                    if (blockstateBelow.getValue(PART_NUM) == ARM_WITH_ARM_TOP_ABOVE_PART)
                     {
                         flag = true;
                     }
@@ -277,13 +277,13 @@ public class FloweredCactusBlock extends Block
         }
         else
         {
-            if(blockstateBelow.is(BlockTags.SAND))
+            if (blockstateBelow.is(BlockTags.SAND))
             {
                 flag = true;
             }
             else if (blockstateBelow.is(this))
             {
-                if(blockstateBelow.getValue(PART_NUM) == BASE_PART)
+                if (blockstateBelow.getValue(PART_NUM) == BASE_PART)
                 {
                     flag = true;
                 }
@@ -293,9 +293,9 @@ public class FloweredCactusBlock extends Block
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
-        pBuilder.add(PART_NUM, GROW_STAGE, CAN_GROW, FACING);
+        builder.add(PART_NUM, GROW_STAGE, CAN_GROW, FACING);
     }
 
     @Override
@@ -306,9 +306,9 @@ public class FloweredCactusBlock extends Block
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext)
+    public BlockState getStateForPlacement(BlockPlaceContext context)
     {
-        return this.defaultBlockState().setValue(PART_NUM, 0).setValue(GROW_STAGE, 0).setValue(CAN_GROW, true).setValue(FACING, pContext.getHorizontalDirection());
+        return this.defaultBlockState().setValue(PART_NUM, 0).setValue(GROW_STAGE, 0).setValue(CAN_GROW, true).setValue(FACING, context.getHorizontalDirection());
     }
 
     @Override
@@ -318,9 +318,12 @@ public class FloweredCactusBlock extends Block
     }
 
     @Override
-    protected void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity)
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity)
     {
-        pEntity.hurt(pLevel.damageSources().cactus(), 1.0F);
+        if (!level.isClientSide())
+        {
+            entity.hurtServer((ServerLevel) level, level.damageSources().cactus(), 1.0F);
+        }
     }
 
     @Override
@@ -338,9 +341,9 @@ public class FloweredCactusBlock extends Block
             BlockState stateFor = level.getBlockState(pos1);
             if (stateFor.is(this))
             {
-                if(state.getValue(PART_NUM) < 3)
+                if (state.getValue(PART_NUM) < 3)
                 {
-                    arm ++;
+                    arm++;
                 }
             }
         }
@@ -354,17 +357,17 @@ public class FloweredCactusBlock extends Block
         Direction direction;
         switch (randomInt)
         {
-            case 0 :
+            case 0:
             {
                 direction = Direction.NORTH;
                 break;
             }
-            case 1 :
+            case 1:
             {
                 direction = Direction.SOUTH;
                 break;
             }
-            case 2 :
+            case 2:
             {
                 direction = Direction.WEST;
                 break;
@@ -381,10 +384,5 @@ public class FloweredCactusBlock extends Block
         {
             level.setBlock(newPos, state.setValue(PART_NUM, 2).setValue(FACING, direction.getOpposite()).setValue(GROW_STAGE, 0), 2);
         }
-    }
-
-    public static int getMaxHeight()
-    {
-        return MAX_HEIGHT;
     }
 }

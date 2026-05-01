@@ -1,12 +1,14 @@
 package com.unpainperdu.premierpainmod.level.world.block.all_materials_block.two_block_width_with_block_entity.villager_shelf;
 
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractTwoBlockWidthWithBlockEntity;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.TwoBlockWidthPart;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,7 +43,7 @@ public class StandingVillagerShelf extends VillagerShelf
     public StandingVillagerShelf(Properties pProperties)
     {
         super(pProperties);
-        BlockState blockstate = this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE).setValue(HAS_SHELF_ON_TOP,Boolean.FALSE).setValue(HAS_SHELF_BELOW,Boolean.FALSE);
+        BlockState blockstate = this.stateDefinition.any().setValue(PART, TwoBlockWidthPart.RIGHT).setValue(WATERLOGGED, Boolean.FALSE).setValue(HAS_SHELF_ON_TOP, Boolean.FALSE).setValue(HAS_SHELF_BELOW, Boolean.FALSE);
 
         this.registerDefaultState(blockstate);
     }
@@ -58,36 +60,47 @@ public class StandingVillagerShelf extends VillagerShelf
         TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
         Direction direction = state.getValue(FACING);
 
-        if(direction == Direction.SOUTH)
+        if (direction == Direction.SOUTH)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_SOUTH;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_SOUTH;
             }
-        } else if (direction == Direction.WEST)
+        }
+        else if (direction == Direction.WEST)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_WEST;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_WEST;
             }
-        } else if (direction == Direction.EAST)
+        }
+        else if (direction == Direction.EAST)
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_EAST;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_EAST;
             }
-        } else
+        }
+        else
         {
             if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT)
             {
                 return RIGHT_SHAPE_NORTH;
-            } else {
+            }
+            else
+            {
                 return LEFT_SHAPE_NORTH;
             }
         }
@@ -105,46 +118,49 @@ public class StandingVillagerShelf extends VillagerShelf
     }
 
     @Override
-    protected @NotNull BlockState updateShape(BlockState state, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
-        if (state.getValue(WATERLOGGED))
+        if (selfState.getValue(WATERLOGGED))
         {
-            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
-        TwoBlockWidthPart twoBlockWidthPart = state.getValue(PART);
-        if (facing != getNeighbourDirection(twoBlockWidthPart, DirectionSwitcher(state.getValue(FACING))))
+        TwoBlockWidthPart twoBlockWidthPart = selfState.getValue(PART);
+        if (direction != getNeighbourDirection(twoBlockWidthPart, DirectionSwitcher(selfState.getValue(FACING))))
         {
-            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT && facing == reverseDirectionSwitcher(state.getValue(FACING)) && !state.canSurvive(level, currentPos))
+            if (twoBlockWidthPart == TwoBlockWidthPart.RIGHT && direction == reverseDirectionSwitcher(selfState.getValue(FACING)) && !selfState.canSurvive(level, selfPos))
             {
                 return Blocks.AIR.defaultBlockState();
             }
             else
             {
-                if(facing == Direction.UP)
+                if (direction == Direction.UP)
                 {
-                    return state.setValue(HAS_SHELF_ON_TOP, this.connectsTo(facingState, facingState.isFaceSturdy(level, facingPos, facing.getOpposite()), facing.getOpposite()));
-                } else if (facing == Direction.DOWN)
+                    return selfState.setValue(HAS_SHELF_ON_TOP, this.connectsTo(facingState, facingState.isFaceSturdy(level, facingPos, direction.getOpposite()), direction.getOpposite()));
+                }
+                else if (direction == Direction.DOWN)
                 {
-                    return state.setValue(HAS_SHELF_BELOW, this.connectsTo(facingState, facingState.isFaceSturdy(level, facingPos, facing.getOpposite()), facing.getOpposite()));
-                } else
+                    return selfState.setValue(HAS_SHELF_BELOW, this.connectsTo(facingState, facingState.isFaceSturdy(level, facingPos, direction.getOpposite()), direction.getOpposite()));
+                }
+                else
                 {
-                    return super.superUpdateShape(state, facing, facingState, level, currentPos, facingPos);
+                    return super.superUpdateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
                 }
             }
         }
         else
         {
-            if (facingState.is(this) && facingState.getValue(PART) != state.getValue(PART))
+            if (facingState.is(this) && facingState.getValue(PART) != selfState.getValue(PART))
             {
-                return (BlockState) state;
+                return selfState;
             }
             else
             {
-               return Blocks.AIR.defaultBlockState();
+                return Blocks.AIR.defaultBlockState();
             }
         }
     }
+
     public boolean connectsTo(BlockState pState, boolean pIsSideSolid, Direction pDirection)
     {
         Block block = pState.getBlock();

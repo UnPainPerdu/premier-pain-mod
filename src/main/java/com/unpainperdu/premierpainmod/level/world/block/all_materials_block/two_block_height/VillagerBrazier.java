@@ -5,6 +5,7 @@ import com.unpainperdu.premierpainmod.level.world.block.abstract_block.AbstractT
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -69,7 +70,7 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
         Level level = context.getLevel();
         FluidState fluidstateDown = level.getFluidState(blockpos);
         boolean flag = fluidstateDown.getType() == WATER;
-        if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(context))
+        if (blockpos.getY() < level.getMaxY() && level.getBlockState(blockpos.above()).canBeReplaced(context))
         {
             return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER)
                     .setValue(WATERLOGGED, flag)
@@ -113,7 +114,7 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
         BlockPos blockpos = pHit.getBlockPos();
         if (!level.isClientSide
                 && projectile.isOnFire()
-                && projectile.mayInteract(level, blockpos)
+                && projectile.mayInteract((ServerLevel) level, blockpos)
                 && !state.getValue(LIT)
                 && !state.getValue(WATERLOGGED)
                 && !(state.getValue(HALF) == DoubleBlockHalf.LOWER)
@@ -165,13 +166,9 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
     {
         if (!state.getValue(BlockStateProperties.WATERLOGGED) && fluidState.getType() == WATER)
         {
-            boolean flag = state.getValue(LIT);
-            if (flag)
+            if (state.getValue(LIT) && !level.isClientSide() && state.getValue(HALF) == DoubleBlockHalf.UPPER)
             {
-                if (!level.isClientSide() && state.getValue(HALF) == DoubleBlockHalf.UPPER)
-                {
-                    level.playSound(null, pos, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                }
+                level.playSound(null, pos, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
 
             level.setBlock(pos, state.setValue(WATERLOGGED, TRUE).setValue(LIT, FALSE), 3);
@@ -193,12 +190,9 @@ public class VillagerBrazier extends AbstractTwoBlockHeightBlock
     @Override
     public void stepOn(@NotNull Level level, @NotNull BlockPos pos, BlockState state, @NotNull Entity entity)
     {
-        if (state.getValue(LIT))
+        if (!level.isClientSide() && state.getValue(LIT) && !entity.isSteppingCarefully() && entity instanceof LivingEntity)
         {
-            if (!entity.isSteppingCarefully() && entity instanceof LivingEntity)
-            {
-                entity.hurt(level.damageSources().hotFloor(), 1.0F);
-            }
+            entity.hurtServer((ServerLevel) level, level.damageSources().hotFloor(), 1.0F);
         }
         super.stepOn(level, pos, state, entity);
     }

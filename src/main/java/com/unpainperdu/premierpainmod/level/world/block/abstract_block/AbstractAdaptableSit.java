@@ -1,21 +1,23 @@
 package com.unpainperdu.premierpainmod.level.world.block.abstract_block;
 
-
 import com.mojang.serialization.MapCodec;
-import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
 import com.unpainperdu.premierpainmod.level.world.block.state.propertie.ModBlockStateProperties;
+import com.unpainperdu.premierpainmod.level.world.block.state.propertie.properties.AdaptableSitShape;
 import com.unpainperdu.premierpainmod.util.tool_kit.DirectionHelper;
 import com.unpainperdu.premierpainmod.util.tool_kit.PosHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -27,7 +29,7 @@ import javax.annotation.Nullable;
 
 public abstract class AbstractAdaptableSit extends Block implements SimpleWaterloggedBlock
 {
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = ModBlockStateProperties.DIRECTION;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final EnumProperty<AdaptableSitShape> ADAPTABLE_SIT = ModBlockStateProperties.ADAPTABLE_SIT_SHAPE;
 
@@ -65,7 +67,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
         }
 
         boolean flag = fluidstate.getType() == Fluids.WATER;
-        if (!(pos.getY() < level.getMaxBuildHeight()))
+        if (!(pos.getY() < level.getMaxY()))
         {
             return null;
         }
@@ -73,33 +75,33 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     }
 
     @Override
-    protected @NotNull BlockState updateShape(BlockState selfState, @NotNull Direction direction, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos selfPos, @NotNull BlockPos facingPos)
+    protected BlockState updateShape(BlockState selfState, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos selfPos, Direction direction, BlockPos facingPos, BlockState facingState, RandomSource rand)
     {
         if (selfState.getValue(WATERLOGGED))
         {
-            level.scheduleTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            scheduledTickAccess.createTick(selfPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
         Direction currentDirection = selfState.getValue(FACING);
 
-        boolean isLeftPos = direction ==  DirectionHelper.getLeftDirection(currentDirection);
+        boolean isLeftPos = direction == DirectionHelper.getLeftDirection(currentDirection);
         boolean isRightPos = direction == DirectionHelper.getRightDirection(currentDirection);
 
         if (isRightPos || isLeftPos)
         {
             AdaptableSitShape selfShape = selfState.getValue(ADAPTABLE_SIT);
-            if(selfShape == AdaptableSitShape.ALONE)
+            if (selfShape == AdaptableSitShape.ALONE)
             {
                 if (isLeftPos && facingState.is(this))
                 {
-                    if(facingState.getValue(FACING) == selfState.getValue(FACING))
+                    if (facingState.getValue(FACING) == selfState.getValue(FACING))
                     {
                         return selfState.setValue(ADAPTABLE_SIT, AdaptableSitShape.WITH_LEFT);
                     }
                 }
-                else if(isRightPos && facingState.is(this))
+                else if (isRightPos && facingState.is(this))
                 {
-                    if(facingState.getValue(FACING) == selfState.getValue(FACING))
+                    if (facingState.getValue(FACING) == selfState.getValue(FACING))
                     {
                         return selfState.setValue(ADAPTABLE_SIT, AdaptableSitShape.WITH_RIGHT);
                     }
@@ -113,7 +115,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
                 }
                 else if (isLeftPos && facingState.is(this))
                 {
-                    if(facingState.getValue(FACING) == selfState.getValue(FACING))
+                    if (facingState.getValue(FACING) == selfState.getValue(FACING))
                     {
                         return selfState.setValue(ADAPTABLE_SIT, AdaptableSitShape.WITH_LEFT_AND_RIGHT);
                     }
@@ -127,7 +129,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
                 }
                 else if (isRightPos && facingState.is(this))
                 {
-                    if(facingState.getValue(FACING) == selfState.getValue(FACING))
+                    if (facingState.getValue(FACING) == selfState.getValue(FACING))
                     {
                         return selfState.setValue(ADAPTABLE_SIT, AdaptableSitShape.WITH_LEFT_AND_RIGHT);
                     }
@@ -146,14 +148,14 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
             }
         }
 
-        return super.updateShape(selfState, direction, facingState, level, selfPos, facingPos);
+        return super.updateShape(selfState, level, scheduledTickAccess, selfPos, direction, facingPos, facingState, rand);
     }
 
     @Override
     public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         VoxelShape shape;
-        if(state.getValue(FACING) == Direction.NORTH)
+        if (state.getValue(FACING) == Direction.NORTH)
         {
             shape = Shapes.or(Block.box(0, 4, 1, 16, 7, 14), Block.box(0, 7, 1, 16, 16, 3));
         }
@@ -197,7 +199,7 @@ public abstract class AbstractAdaptableSit extends Block implements SimpleWaterl
     {
         boolean flag = false;
         BlockState stateChecked = level.getBlockState(pos);
-        if(stateChecked.is(this))
+        if (stateChecked.is(this))
         {
             flag = stateChecked.getValue(FACING) == directionWanted;
         }

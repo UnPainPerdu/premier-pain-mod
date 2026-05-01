@@ -41,7 +41,7 @@ public class VillagerBrewingStationRender implements BlockEntityRenderer<Village
         {
             return;
         }
-        TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(stillTexture);
+        TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(ResourceLocation.withDefaultNamespace("blocks")).apply(stillTexture); //si foire, essayer TextureAtlas.LOCATION_BLOCKS ?
         BlockState state = blockEntity.getBlockState();
         BlockPos pos = blockEntity.getBlockPos();
         FluidState fluidState = fluid.getFluid().defaultFluidState();

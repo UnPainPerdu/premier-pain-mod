@@ -6,8 +6,6 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class ModBlockSetType
 {
-    private ModBlockSetType(){}
-
     public static final BlockSetType MOUNTAIN_CURRANT = create(new BlockSetType(
             "mountain_currant",
             true,
